@@ -517,16 +517,16 @@ K_v & K_v & T        & K_v & J_K(v,w) & T\\
 T   & T   & T        & T   & T        & T
 \end{array}
 \]
-Each entry is the least common upper bound, so join is commutative, associative, and idempotent. Comparable pairs meet at their lesser element. Distinct $K_v,K_w$ meet at $U$, and all remaining incomparable pairs meet at $B$.
+Each entry is the least common upper bound, so join is commutative, associative, and idempotent. Comparable pairs meet at their lesser element. Distinct $K_v,K_w$ meet at $U$, and all remaining incomparable pairs meet at $B$. The join of competing offers alone cannot determine which result the recorder retained, as shown below.
 
 Two denials conflict when they assign different selected reasons to the \emph{same authoritative decision}. Retirement and closure can both hold. At a stable generation and revision the first source decision for a mutating operation selects retirement when both hold. Likewise, $K_v\sqcup K_w=T$ for distinct canonical results even if both offers support the weaker proposition that some application occurred. Decisions for later dispatch opportunities or new retry generations have their own scope.
 
 The \hyperref[par:peer-refusal-witness]{two-call invocation witness} uses the same distinction between a selected reason and all the predicates that hold. There the reason is a public input to the caller's next branch. Here $S_r$ records what one mutation decision established.
 
-Belnap's information order distinguishes absence of evidence from conflicting evidence and has a four-element diamond alongside a separate truth order~\cite{belnap1977useful}. The indexed ALAN order has a different shape. For any $r,v$, the elements $B,U,K_v,S_r,T$ form a nondistributive pentagon. Indeed $K_v\sqcap(U\sqcup S_r)=K_v$ while $(K_v\sqcap U)\sqcup(K_v\sqcap S_r)=U$.
+Belnap's information order distinguishes absence from conflict in a four-element diamond alongside a separate truth order~\cite{belnap1977useful}. In ALAN, whenever $R$ and $V$ are nonempty, $B,U,K_v,S_r,T$ form the pentagon $N_5$. Since $U\le K_v$, modularity would require $U\sqcup(S_r\sqcap K_v)=(U\sqcup S_r)\sqcap K_v$. The left side is $U$ and the right side is $K_v$. The lattice is therefore nonmodular and hence nondistributive. It is also ungraded. The saturated chains $B<U<K_v<T$ and $B<S_r<T$ have the same endpoints and lengths three and two, so no rank increases by one on every cover. A monotone confidence score would require a separate choice of scale.
 
 \paragraph{Preservation of the first correlated result.}
-Fix one mutating operation on the baseline raw or adapter recording path and two individually valid canonical results for that original. After validation the recorder compares the complete offered result with the first retained row. An identical duplicate is accepted. For distinct results $v,w$, offering $v$ first leaves it retained when $w$ is refused. Reversing the offers leaves $w$. The abstract join gives $T$ in both cases. A validation error may also concern a foreign key, and a local refusal can produce a selectable denial envelope.
+Fix one mutating operation on the baseline raw or adapter recording path and two individually valid canonical results for that original. An identical duplicate is accepted. If $v$ commits first, a conflicting offer $w$ leaves $v$ retained. If $w$ commits first, the row retains $w$. The abstract join is $T$ in both orders. The recorder returns the conflict before writing the losing offer. Replay checks the committed row and cannot reconstruct the rejected offer or its arrival order from this journal. A foreign key can also fail validation, and a local refusal can produce a selectable denial envelope.
 
 \begin{theorem}[Source closure before first permission]
 \label{thm:dichotomy}
