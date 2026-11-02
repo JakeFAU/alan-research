@@ -118,3 +118,95 @@ func TestNestedLostAcceptedResultPreservesSameObligation(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+func TestRetryProbeDistinguishesSilentChildWithoutTerminalDelivery(t *testing.T) {
+	worker := Lit(Text("worker"))
+	generation := Lit(Int(1))
+	obligation := Lit(Text("work"))
+	parentCode := []Instruction{
+		{Op: "emit", Dst: "pending", Effect: &Effect{
+			Kind: "lifecycle", Target: worker, Generation: generation, Obligation: obligation,
+			Payload: map[string]Operand{"operation": Lit(Text("Retry")), "revision": Lit(Int(1))},
+		}},
+		{Op: "receive", Match: &Match{
+			Kind: "lifecycle", Provenance: "runtime-lifecycle", Source: worker,
+			Generation: generation, Obligation: obligation, Operation: Ref("pending"),
+		}, Bind: map[string]string{"accepted": "accepted", "reason": "reason", "successor": "successor"}},
+		{Op: "branch", A: Ref("accepted"), B: Lit(Value{Kind: "bool", Flag: true}), Target: 4, Otherwise: 3},
+		{Op: "end", Outcome: "succeeded"},
+		{Op: "end", Outcome: "failed"},
+	}
+	workerCode := []Instruction{
+		{Op: "branch", A: Ref("bit"), B: Lit(Int(0)), Target: 1, Otherwise: 2},
+		{Op: "end", Outcome: "succeeded"},
+		{Op: "end", Outcome: "failed"},
+	}
+	for _, tc := range []struct {
+		outcome   string
+		bit       int64
+		accepted  bool
+		reason    string
+		successor int64
+	}{
+		{"succeeded", 0, false, "not_retryable", 0},
+		{"failed", 1, true, "retried", 2},
+	} {
+		t.Run(tc.outcome, func(t *testing.T) {
+			p := Provision{Permissions: []Permission{
+				{Kind: "lifecycle", Source: "parent", Target: "worker", Operation: "Retry", Revision: 1},
+				{Kind: "observation", Source: "worker", Target: "parent", Operation: "terminal", Obligation: "work", Revision: 1},
+			}}
+			addProgram(t, &p, "parent", parentCode, map[string]Value{})
+			addProgram(t, &p, "worker", workerCode, map[string]Value{"bit": Int(tc.bit)})
+			s, path := messageStore(t, p)
+			commit := func(subject, selected string) RunState {
+				t.Helper()
+				next, err := s.Commit(t.Context(), current(t, s, subject).Authority(), selected)
+				if err != nil {
+					t.Fatal(err)
+				}
+				return next
+			}
+
+			initialParent := current(t, s, "parent")
+			commit("worker", "")
+			ended := commit("worker", "")
+			if ended.Projection.Status != tc.outcome || count(t, s, "terminal_obligations") != 1 || count(t, s, "intents") != 0 {
+				t.Fatalf("silent child End = %+v", ended)
+			}
+			if parent := current(t, s, "parent"); parent.Authority() != initialParent.Authority() || parent.ProgramID != initialParent.ProgramID ||
+				parent.Projection.PC != 0 || parent.Projection.Status != "open" || len(parent.Projection.Data) != 0 {
+				t.Fatalf("child End changed the parent before its Retry: %+v", parent)
+			}
+			request := committedRequest(t, s, "parent")
+			authorizedDecision(t, s, request)
+			if count(t, s, "observations") != 0 {
+				t.Fatal("parent received an observation before lifecycle settlement")
+			}
+			if _, err := s.Commit(t.Context(), current(t, s, "parent").Authority(), ""); !errors.Is(err, ErrIneligible) {
+				t.Fatalf("unserviced receive = %v, want ErrIneligible", err)
+			}
+			settlement, err := s.SettleLifecycle(t.Context(), request.Intent.ID, "retry-result")
+			if err != nil || !settlement.Accepted {
+				t.Fatalf("settle original Retry = %+v, %v", settlement, err)
+			}
+			received := commit("parent", settlement.ObservationID)
+			data := received.Projection.Data
+			if data["accepted"] != (Value{Kind: "bool", Flag: tc.accepted}) || data["reason"] != Text(tc.reason) || data["successor"] != Int(tc.successor) {
+				t.Fatalf("consumed lifecycle fields = %+v", data)
+			}
+			target, err := loadSubject(t.Context(), s.conn, "worker")
+			if err != nil || target.Generation != max(1, tc.successor) {
+				t.Fatalf("worker generation after Retry = %d, %v", target.Generation, err)
+			}
+			commit("parent", "")
+			parent := commit("parent", "")
+			if parent.Projection.Status != tc.outcome || count(t, s, "observations") != 1 || count(t, s, "admissions") != 1 {
+				t.Fatalf("parent End after only the original settlement = %+v", parent)
+			}
+			if _, err := Replay(t.Context(), path, DefaultLimits()); err != nil {
+				t.Fatal(err)
+			}
+		})
+	}
+}
