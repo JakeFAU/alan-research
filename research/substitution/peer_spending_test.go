@@ -52,12 +52,22 @@ type peerCut struct {
 	marker    string
 }
 
+type peerClient struct {
+	refusal    func(peerBudget, string) string
+	markerPair [2]string
+}
+
+var literalClient = peerClient{
+	refusal:    func(_ peerBudget, reason string) string { return reason },
+	markerPair: [2]string{"created_run_limit", "invocation_limit"},
+}
+
 // Enumerate X and Y separately. The product offers one static peer's original
 // singleton at every interleaving of the displayed cuts. The open model instead
 // offers an at-most-once successful (1,1) environment debit at every funded cut.
 // Admission and matched outcome selection are diagnostic output labels. Only
 // the marker port participates in the mailbox/continuation readiness projection.
-func spendingGraph(b peerBudget, markerBranch bool, context string) peerGraph {
+func (client peerClient) graph(b peerBudget, markerBranch bool, context string) peerGraph {
 	handles := [2]string{"c1", "c2"}
 	start := peerCut{remaining: b}
 	cuts := []peerCut{start}
@@ -86,7 +96,12 @@ func spendingGraph(b peerBudget, markerBranch bool, context string) peerGraph {
 		case decideFirst, decideSecond:
 			call := s.pc / 2
 			next.remaining, next.original[call] = s.remaining.decide(2)
-			add(peerLabel{"decision", handles[call], next.original[call]}, next)
+			decision := next.original[call]
+			if decision != "accepted" {
+				// Fix the delivered reason at admission, even if the peer spends before selection.
+				next.original[call] = client.refusal(s.remaining, decision)
+			}
+			add(peerLabel{"decision", handles[call], decision}, next)
 		case selectFirst, selectSecond:
 			call := s.pc / 2
 			result := s.original[call]
@@ -96,7 +111,7 @@ func spendingGraph(b peerBudget, markerBranch bool, context string) peerGraph {
 			next.selected[call] = result
 			add(peerLabel{"selected", handles[call], result}, next)
 		case branchOnReasons:
-			if !markerBranch || s.selected != [2]string{"created_run_limit", "invocation_limit"} {
+			if !markerBranch || s.selected != client.markerPair {
 				next.pc = candidateDone
 			}
 			add(peerLabel{}, next)
@@ -260,7 +275,7 @@ func TestPeerSpendingRelation(t *testing.T) {
 			for i := 0; i <= maxI; i++ {
 				for r := 0; r <= maxR; r++ {
 					b := peerBudget{i, r}
-					x, y := spendingGraph(b, false, context), spendingGraph(b, true, context)
+					x, y := literalClient.graph(b, false, context), literalClient.graph(b, true, context)
 					wantDifference := context != "isolated" && b == (peerBudget{1, 1})
 					if peerBisimilar(x, y) == wantDifference {
 						t.Fatalf("remaining %+v: want distinguishable=%t", b, wantDifference)
@@ -281,7 +296,7 @@ func TestPeerSpendingRelation(t *testing.T) {
 					}
 					if wantDifference {
 						distinguished++
-						if !peerBisimilar(x, spendingGraph(b, false, context)) {
+						if !peerBisimilar(x, literalClient.graph(b, false, context)) {
 							t.Fatal("identical fallback distinguished")
 						}
 					}
@@ -294,30 +309,75 @@ func TestPeerSpendingRelation(t *testing.T) {
 }
 
 func TestPeerSpendingOriginalTrace(t *testing.T) {
-	// The peer spends even before c1's outcome is selected. Its retained
-	// reason still belongs to c1. Only the fresh c2 receives the new refusal.
-	sequence := []peerTransfer{
-		{label: peerLabel{"decision", "c1", "created_run_limit"}},
-		{peerLabel{"decision", "p", "accepted"}, peerBudget{1, 1}},
-		{label: peerLabel{"selected", "c1", "created_run_limit"}},
-		{label: peerLabel{"decision", "c2", "invocation_limit"}},
-		{label: peerLabel{"selected", "c2", "invocation_limit"}},
-		{label: peerLabel{"out", "marker", ""}},
-		{label: peerLabel{"in", "marker", ""}},
-	}
-	for _, markerBranch := range []bool{false, true} {
-		views := peerViews(spendingGraph(peerBudget{1, 1}, markerBranch, "product"))
-		states := []int{0}
-		for index, action := range sequence {
-			var next []int
-			for _, state := range states {
-				next = append(next, views[state].weak[action]...)
-			}
-			if (len(next) > 0) != (markerBranch || index < 5) {
-				t.Fatalf("marker branch %t, step %d, %v: reached %v", markerBranch, index, action, next)
-			}
-			states = next
+	predicates := func(b peerBudget, _ string) string {
+		switch {
+		case b.invocations == 0 && b.runs < 2:
+			return "{I,R}"
+		case b.invocations == 0:
+			return "{I}"
+		default:
+			return "{R}" // Called only on refusal of a two-member invocation.
 		}
+	}
+	coarse := func(peerBudget, string) string { return "insufficient_allowance" }
+	sets := [2]string{"{R}", "{I,R}"}
+	same := [2]string{"insufficient_allowance", "insufficient_allowance"}
+	for _, tc := range []struct {
+		name     string
+		client   peerClient
+		selected [2]string
+		marks    bool
+	}{
+		{"priority", literalClient, literalClient.markerPair, true},
+		{"sets_literal_guard", peerClient{predicates, literalClient.markerPair}, sets, false},
+		{"sets_adapted_guard", peerClient{predicates, sets}, sets, true},
+		{"coarse_literal_guard", peerClient{coarse, literalClient.markerPair}, same, false},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			b := peerBudget{1, 1}
+			if !peerBisimilar(tc.client.graph(b, false, "isolated"), tc.client.graph(b, true, "isolated")) {
+				t.Fatal("distinguished without the peer")
+			}
+			x, y := tc.client.graph(b, false, "product"), tc.client.graph(b, true, "product")
+			if peerBisimilar(x, y) == tc.marks {
+				t.Fatalf("with peer: want distinguished=%t", tc.marks)
+			}
+			// The peer spends before c1 is selected. Both candidates must still
+			// read the two original results; only the enabled guard may emit.
+			sequence := []peerTransfer{
+				{label: peerLabel{"decision", "c1", "created_run_limit"}},
+				{peerLabel{"decision", "p", "accepted"}, peerBudget{1, 1}},
+				{label: peerLabel{"selected", "c1", tc.selected[0]}},
+				{label: peerLabel{"decision", "c2", "invocation_limit"}},
+				{label: peerLabel{"selected", "c2", tc.selected[1]}},
+				{label: peerLabel{"out", "marker", ""}},
+				{label: peerLabel{"in", "marker", ""}},
+			}
+			for side, g := range [2]peerGraph{x, y} {
+				views, states := peerViews(g), []int{0}
+				for index, action := range sequence {
+					var next []int
+					for _, state := range states {
+						next = append(next, views[state].weak[action]...)
+					}
+					if (len(next) > 0) != (index < 5 || side == 1 && tc.marks) {
+						t.Fatalf("side %d, step %d, %v: reached %v", side, index, action, next)
+					}
+					states = next
+				}
+				// Erase diagnostics only after generating the candidate's behavior.
+				for _, n := range g {
+					for j, e := range n.steps {
+						if e.label.kind == "decision" || e.label.kind == "selected" {
+							n.steps[j].label.value = ""
+						}
+					}
+				}
+			}
+			if peerBisimilar(x, y) == tc.marks {
+				t.Fatal("erasing recorded reasons changed the marker distinction")
+			}
+		})
 	}
 }
 
