@@ -1,6 +1,7 @@
 package executor
 
 import (
+	"bytes"
 	"context"
 	"crypto/sha256"
 	"database/sql"
@@ -382,14 +383,32 @@ func (s *Store) recordAdapterResult(ctx context.Context, a AdapterAttempt, c eff
 	if e = validateAdapterResult(a, r, s.limits); e != nil {
 		return r, e
 	}
-	b, _ := json.Marshal(r)
+	b, e := json.Marshal(r)
+	if e != nil {
+		return r, e
+	}
 	var prior []byte
 	e = tx.QueryRowContext(ctx, "SELECT descriptor FROM adapter_results WHERE intent_id=?", a.Intent.ID).Scan(&prior)
 	if e == nil {
-		if !sameJSON(prior, r) {
+		if bytes.Equal(prior, b) {
+			return r, s.commitOwnedTx(ctx, tx)
+		}
+		if !a.Allowed || a.Intent.Target == receiptReadCapability || r.Disposition != "validated" {
 			return r, ErrConflict
 		}
-		return r, s.commitOwnedTx(ctx, tx)
+		var winner AdapterResult
+		if decode(prior, &winner) != nil || !sameJSON(prior, winner) {
+			return r, corrupt("invalid first adapter result")
+		}
+		if e = validateAdapterResult(a, winner, s.limits); e != nil {
+			return r, e
+		}
+		if winner.Read != nil || winner.Reconciled != nil || winner.RefusalWitness != "" {
+			return r, ErrConflict
+		}
+		// A failed first interaction stays selectable. A later successful
+		// receipt can still establish application for this allowed original.
+		return r, s.commitReceiptConflict(ctx, tx, a.Intent.ID, prior, b)
 	}
 	if !errors.Is(e, sql.ErrNoRows) {
 		return r, e

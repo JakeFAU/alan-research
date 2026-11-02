@@ -17,6 +17,7 @@ type ReplayReport struct {
 	HistoryCount, IntentCount int
 	Runs                      []RunState
 	Roots                     []RootCompletion
+	ReceiptEvidence           []ReceiptEvidence `json:",omitempty"`
 }
 
 func Replay(ctx context.Context, path string, limits Limits) (report ReplayReport, err error) {
@@ -261,7 +262,8 @@ func validateOrdinaryLedger(ctx context.Context, q queryer, limits Limits) (Repl
 	if err = validateMessaging(ctx, q, limits); err != nil {
 		return report, err
 	}
-	return report, nil
+	report.ReceiptEvidence, err = readReceiptEvidence(ctx, q, limits)
+	return report, err
 }
 func stringList(ctx context.Context, q queryer, query string) ([]string, error) {
 	rows, err := q.QueryContext(ctx, query)

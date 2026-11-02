@@ -30,6 +30,7 @@ type RunOptions = executor.RunOptions
 type RunReport = executor.RunReport
 type Inspection = executor.Inspection
 type ReplayReport = executor.ReplayReport
+type ReceiptEvidence = executor.ReceiptEvidence
 type Value = schema.Value
 
 var ErrLimit = executor.ErrLimit

@@ -15,11 +15,12 @@ type ConnectionSettings struct {
 // Inspection exposes exact retained BLOB bytes as UTF-8 JSON strings, including
 // program artifacts. It is a coherent read-only snapshot, with no policy reducer.
 type Inspection struct {
-	Namespace  string
-	KeyVersion int
-	Settings   ConnectionSettings
-	Tables     map[string][]map[string]any
-	Roots      []RootCompletion
+	Namespace       string
+	KeyVersion      int
+	Settings        ConnectionSettings
+	Tables          map[string][]map[string]any
+	Roots           []RootCompletion
+	ReceiptEvidence []ReceiptEvidence `json:",omitempty"`
 }
 
 var inspectionTables = []string{"metadata", "programs", "subjects", "permissions", "runs", "history", "observations", "intents", "attempts", "admissions", "lifecycle_results", "settlements", "terminal_obligations", "message_acknowledgments", "run_origins", "external_attempts", "external_receipts", "corpus_assets", "adapter_attempts", "adapter_results"}
@@ -60,18 +61,41 @@ func Inspect(ctx context.Context, path string, limits Limits) (snapshot Inspecti
 		return snapshot, err
 	}
 	tables := inspectionTables
+	var evidence []ReceiptEvidence
 	if isCompositionSchema(schemaVersion) {
 		report, e := validateLedger(ctx, tx, limits)
 		if e != nil {
 			return snapshot, e
 		}
 		snapshot.Roots = report.Roots
+		evidence = report.ReceiptEvidence
 		tables = append(append([]string{}, inspectionTables...), compositionInspectionTables...)
 		if schemaVersion == reconciliationSchemaVersion {
 			tables = append(tables, "reconciliation_profile", "receipt_read_ordinals")
 		}
-	} else if schemaVersion != SchemaVersion {
+	} else if schemaVersion == SchemaVersion {
+		evidence, err = readReceiptEvidence(ctx, tx, limits)
+		if err != nil {
+			return snapshot, err
+		}
+		if len(evidence) != 0 {
+			// Baseline inspection does not run the policy reducer. Verify the
+			// original reservation, source permission and first-result settlement.
+			if err = validateExternal(ctx, tx); err != nil {
+				return snapshot, err
+			}
+			if err = validateLifecycleSettlements(ctx, tx); err != nil {
+				return snapshot, err
+			}
+			if err = validateMessaging(ctx, tx, limits); err != nil {
+				return snapshot, err
+			}
+		}
+	} else {
 		return snapshot, ErrVersion
+	}
+	if len(evidence) != 0 {
+		tables = append(append([]string{}, tables...), "receipt_conflicts")
 	}
 	snapshot.Namespace, err = readNamespace(ctx, tx)
 	if err != nil {
@@ -98,6 +122,7 @@ func Inspect(ctx context.Context, path string, limits Limits) (snapshot Inspecti
 		}
 		snapshot.Tables[table] = records
 	}
+	snapshot.ReceiptEvidence = evidence
 	return snapshot, tx.Commit()
 }
 func inspectTable(ctx context.Context, q queryer, table string) ([]map[string]any, error) {

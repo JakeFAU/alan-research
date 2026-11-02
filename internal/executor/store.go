@@ -921,7 +921,8 @@ func readNamespace(ctx context.Context, q queryer) (string, error) {
 	if err := q.QueryRowContext(ctx, "PRAGMA user_version").Scan(&userVersion); err != nil {
 		return "", err
 	}
-	if (schemaVersion != SchemaVersion && !isCompositionSchema(schemaVersion)) || userVersion != schemaVersion || semantics != SemanticVersion {
+	protocol := protocolSchemaNumber(schemaVersion)
+	if (protocol != SchemaVersion && !isCompositionSchema(protocol)) || userVersion != schemaVersion || semantics != SemanticVersion {
 		return "", ErrVersion
 	}
 	var namespace string
