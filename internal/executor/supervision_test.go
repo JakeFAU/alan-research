@@ -151,11 +151,16 @@ func TestRetryProbeDistinguishesSilentChildWithoutTerminalDelivery(t *testing.T)
 		{"succeeded", 0, false, "not_retryable", 0},
 		{"failed", 1, true, "retried", 2},
 	} {
-		t.Run(tc.outcome, func(t *testing.T) {
+		runProbe := func(t *testing.T, terminalGranted bool) {
 			p := Provision{Permissions: []Permission{
 				{Kind: "lifecycle", Source: "parent", Target: "worker", Operation: "Retry", Revision: 1},
-				{Kind: "observation", Source: "worker", Target: "parent", Operation: "terminal", Obligation: "work", Revision: 1},
 			}}
+			if terminalGranted {
+				p.Permissions = append(p.Permissions, Permission{
+					Kind: "observation", Source: "worker", Target: "parent",
+					Operation: "terminal", Obligation: "work", Revision: 1,
+				})
+			}
 			addProgram(t, &p, "parent", parentCode, map[string]Value{})
 			addProgram(t, &p, "worker", workerCode, map[string]Value{"bit": Int(tc.bit)})
 			s, path := messageStore(t, p)
@@ -173,6 +178,13 @@ func TestRetryProbeDistinguishesSilentChildWithoutTerminalDelivery(t *testing.T)
 			ended := commit("worker", "")
 			if ended.Projection.Status != tc.outcome || count(t, s, "terminal_obligations") != 1 || count(t, s, "intents") != 0 {
 				t.Fatalf("silent child End = %+v", ended)
+			}
+			if !terminalGranted {
+				destination := TerminalDestination{Target: "parent", Obligation: "work"}
+				_, err := s.DeliverTerminal(t.Context(), ended.ID, destination, "child-end")
+				if err == nil || err.Error() != "terminal destination not retained" {
+					t.Fatalf("unprovisioned terminal delivery = %v, want missing-route error", err)
+				}
 			}
 			if parent := current(t, s, "parent"); parent.Authority() != initialParent.Authority() || parent.ProgramID != initialParent.ProgramID ||
 				parent.Projection.PC != 0 || parent.Projection.Status != "open" || len(parent.Projection.Data) != 0 {
@@ -207,6 +219,8 @@ func TestRetryProbeDistinguishesSilentChildWithoutTerminalDelivery(t *testing.T)
 			if _, err := Replay(t.Context(), path, DefaultLimits()); err != nil {
 				t.Fatal(err)
 			}
-		})
+		}
+		t.Run(tc.outcome, func(t *testing.T) { runProbe(t, true) })
+		t.Run(tc.outcome+"_without_terminal_grant", func(t *testing.T) { runProbe(t, false) })
 	}
 }
