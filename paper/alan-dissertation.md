@@ -107,7 +107,7 @@ A rigorous programming-languages monograph must draw a sharp line between **arch
    - *Deterministic Log Replay and Fencing Tokens:* Re-evaluating deterministic transitions from an append-only history log (`Replay` in [`internal/executor/replay.go`](file:///Users/jacob/dev/personal/alan/internal/executor/replay.go)) and fencing stale worker processes via monotonically increasing epoch numbers $e \mapsto e+1$ synthesize Schneider's (1990) state-machine approach and Burrows's (2006) Chubby lock-sequencer model.
 
 2. **Where Existing Formalisms Break and What This Paper Contributes Mathematically:**
-   - **The Asynchronous Handler Gap Between $\mathsf{Emit}$ and $\mathsf{Receive}$ (§5.2–5.3):** In Plotkin & Pretnar's effect handlers and Xia et al.'s `interp : (E ~> M) -> ITree E R -> M R`, even if a program is lowered to $\mathsf{ITree}_{E_{\text{split}}, R}$, the handler $h : E_{\text{split}} \leadsto \mathsf{StateT}(\mathcal{D}, M)$ interprets each event *atomically* inside the evaluator's thread of control. It cannot model an effect that has been committed by the program, authorized by the store, and transmitted over the network while a concurrent supervisor issues `CancelRun` or the OS delivers `SIGKILL`. Our semantic contribution in Section 5 is the **Split-Phase Journaled Handler Algebra ($\mathcal{H}_{\text{journal}}$)**, which models the gap between `Emit` and `Receive` as a concurrent coalgebraic protocol over a four-stage consistent epistemic poset $\mathbb{O}_{\text{eff}}^{\text{cons}}$ completed by a conflict element $\top_{\text{conflict}}$ into the bounded lattice $\widehat{\mathbb{O}}_{\text{eff}}$, together with the **first-permission suppression theorem and physical-launch counterexample (Theorem 5.4)**.
+   - **The Asynchronous Handler Gap Between $\mathsf{Emit}$ and $\mathsf{Receive}$ (§5.2–5.3):** In Plotkin & Pretnar's effect handlers and Xia et al.'s `interp : (E ~> M) -> ITree E R -> M R`, even if a program is lowered to $\mathsf{ITree}_{E_{\text{split}}, R}$, the handler $h : E_{\text{split}} \leadsto \mathsf{StateT}(\mathcal{D}, M)$ interprets each event *atomically* inside the evaluator's thread of control. It cannot model an effect that has been committed by the program, authorized by the store, and transmitted over the network while a concurrent supervisor issues `CancelRun` or the OS delivers `SIGKILL`. Our semantic contribution in Section 5 is the **Split-Phase Journaled Handler Algebra ($\mathcal{H}_{\text{journal}}$)**, which models the gap between `Emit` and `Receive` as a concurrent coalgebraic protocol over a consistent evidence poset $\mathbb{O}_{\text{eff}}^{\text{cons}}$ completed by a conflict element $\top_{\text{conflict}}$ into the bounded lattice $\widehat{\mathbb{O}}_{\text{eff}}$, together with the **first-permission suppression theorem and physical-launch counterexample (Theorem 5.4)**.
    - **What a bounded supervisor must observe (§2.4).** The fixed inner program uses an authenticated child outcome, a budget and an original retry decision. A two-sided induction at a ledger-only boundary separates even zero-retry outcome propagation from ordinary parent computation. A current-Store experiment shows why program-issued lifecycle requests fall outside that induction.
    - **Congruence Under Shared External Effects, Dual Refusals, and Bounded Envelopes (§4.5):** Standard weak Milner bisimulation fails to be a congruence for ALAN composites because of three domain-specific interactions: (i) shared root resource budgets $\mathcal{B}(r)$, (ii) the separation between asynchronous *mailbox admission refusals* (`target_closed`) and synchronous *continuation `receive` readiness*, and (iii) interleaved mutations on shared external endpoints $\mathcal{W}_\ell$. Section 4.5 formulates **Budget-Indexed Interface-Scoped Failure/Divergence Bisimulation ($\approx^{\Delta}_{I,\mathcal{B}}$)** and records the missing interference, invocation, hiding and scheduler arguments for the proposed general congruence claim. Finite contract-relative qualification is a separate result category.
    - **The Impossibility of Unconditional Symmetric Crash Bisimulation and the Two-Regime Recovery Theorem (§6.3–6.5):** When an executor crashes in the in-flight window $W_3$ of a non-idempotent external effect, the recovery operator faces a fundamental epistemic dilemma: re-sending violates at-most-once world safety, whereas withholding re-transmission halts the waiting continuation (or forces a supervisor onto a recovery branch). We prove that **unconditional symmetric forward bisimulation across unreconciled non-idempotent Window-$W_3$ crashes is impossible (Proposition 6.1)**, and distinguish conservative recovery safety from the stronger **Two-Regime claim (Theorem 6.6)**. Symmetric and directed simulation require the additional independence and contextual obligations stated in §6; absence of a missing non-idempotent receipt alone does not establish them.
@@ -663,45 +663,44 @@ Therefore, ALAN's mathematical contribution in Pillar IV is **not** a new tree f
 stateDiagram-v2
     [*] --> EphemeralProposal: Prepare (Pure Reduce)
     EphemeralProposal --> [*]: Interrupt / Crash (Window W1: No side effects)
-    EphemeralProposal --> BotUnauth: Commit(x, e, n) [Estado: bot_unauth]
-    BotUnauth --> Suppressed: Cancel / Retire / GrantDenied wins [Estado: Suppressed(r)]
-    BotUnauth --> AllowedWorldUnknown: Authorize + ReserveAttempt wins [Estado: Unknown]
-    AllowedWorldUnknown --> KnownOutcome: Verified Receipt v Recorded [Estado: Known(v)]
-    AllowedWorldUnknown --> UnknownQuiescent: Crash / Timeout / Cancel in Window W3 [Estado: Unknown]
-    UnknownQuiescent --> KnownOutcome: Late Verified Receipt v Arrives [Estado: Known(v)]
-    Suppressed --> TopConflict: Incompatible application evidence offered [recording refused]
-    KnownOutcome --> TopConflict: Conflicting Receipt v' != v Arrives [Estado: top_conflict / ErrConflict]
+    EphemeralProposal --> BotUnauth: Commit original intent
+    BotUnauth --> BotUnauth: First source permission allowed, reservation pending
+    BotUnauth --> Suppressed: Original permission or reservation denied
+    BotUnauth --> AllowedWorldUnknown: Original reservation allowed
+    AllowedWorldUnknown --> KnownOutcome: Verified receipt v recorded
+    AllowedWorldUnknown --> UnknownQuiescent: Crash or timeout before recording
+    UnknownQuiescent --> KnownOutcome: Late verified receipt v recorded
     KnownOutcome --> SettledInbox: Settle (Admit to Target Inbox)
     SettledInbox --> ConsumedInHistory: Next Commit(x, e, n') via Receive(Match)
 ```
 
-The following information order concerns evidence for a specified original effect proposition about each committed intent $\iota \in \mathcal{D}.\mathsf{Int}$, resolving the distinction between consistent epistemic states and fault detection.
+**Definition 5.2 (Evidence for one original effect).** Fix a store namespace, an original operation, and its reservation and receipt contract. We track whether the original mutation was suppressed or had an allowed reservation, and which canonical receipt, if any, establishes its application. Let $R$ be the set of retained denial reasons and $V$ the possible canonical receipt values. Each consistent state has one of four forms.
 
-**Definition 5.2 (The Four-Stage Consistent Epistemic Poset $\mathbb{O}_{\text{eff}}^{\text{cons}}$ and Its Five-Kind Conflict Lattice $\widehat{\mathbb{O}}_{\text{eff}}$).**
-Let $\mathsf{Reason}_{\text{deny}}$ range over retained refusal reasons at the applicable boundary, including $\mathtt{source\_closed}$, $\mathtt{source\_retired}$, $\mathtt{grant\_denied}$, $\mathtt{scope\_closed}$ and $\mathtt{effect\_limit}$. For the historical application proposition, $\mathsf{Val}$ ranges over correlated receipts from an endpoint that issues a receipt only after durable application. $\mathsf{Unknown}$ in this order carries an allowed reservation with unresolved historical application. That retained permission distinguishes it from $\mathsf{Suppressed}(r)$. The endpoint and dispatcher are trusted. Correlation checks do not authenticate an adversarial endpoint. A recorded adapter candidate establishes its returned observation; the application proposition can remain unknown.
-1. The **Consistent Epistemic Poset** $(\mathbb{O}_{\text{eff}}^{\text{cons}}, \sqsubseteq_{\text{info}})$ consists of four kinds of consistent epistemic states:
-   $$\mathbb{O}_{\text{eff}}^{\text{cons}} \;\triangleq\; \{\bot_{\text{unauth}}\} \;\uplus\; \big\{\mathsf{Suppressed}(r) \mid r \in \mathsf{Reason}_{\text{deny}}\big\} \;\uplus\; \{\mathsf{Unknown}\} \;\uplus\; \big\{\mathsf{Known}(v) \mid v \in \mathsf{Val}\big\},$$
-   ordered by the information refinement relation $\sqsubseteq_{\text{info}}$ generated by the covering relations:
-   $$\bot_{\text{unauth}} \;\sqsubset_{\text{info}}\; \mathsf{Suppressed}(r) \quad (\forall r \in \mathsf{Reason}_{\text{deny}}), \qquad \bot_{\text{unauth}} \;\sqsubset_{\text{info}}\; \mathsf{Unknown} \;\sqsubset_{\text{info}}\; \mathsf{Known}(v) \quad (\forall v \in \mathsf{Val}).$$
-   Crucially, in $(\mathbb{O}_{\text{eff}}^{\text{cons}}, \sqsubseteq_{\text{info}})$, **$\mathsf{Suppressed}(r)$ and $\mathsf{Unknown}$ (as well as $\mathsf{Suppressed}(r)$ and $\mathsf{Known}(v)$) are strictly incomparable**: $\mathsf{Suppressed}(r)$ is a *maximal consistent element* certifying that transport was never authorized, whereas $\mathsf{Known}(v)$ refines *only* $\mathsf{Unknown}$! Similarly, $\mathsf{Known}(v_1)$ and $\mathsf{Known}(v_2)$ are incomparable for $v_1 \ne v_2$.
-2. Adjoining an improper top fault element $\top_{\text{conflict}}$ yields the **Five-Kind Bounded Epistemic Lattice** $(\widehat{\mathbb{O}}_{\text{eff}}, \sqsubseteq_{\text{info}}, \sqcup, \sqcap)$ of height $3$:
-   $$\widehat{\mathbb{O}}_{\text{eff}} \;\triangleq\; \mathbb{O}_{\text{eff}}^{\text{cons}} \;\uplus\; \{\top_{\text{conflict}}\},$$
-   with the Hasse diagram:
-   $$
-   \begin{array}{ccccc}
-   & & \top_{\text{conflict}} & & \\
-   & \diagup & \uparrow & \diagbackslash & \\
-   \mathsf{Suppressed}(r) & & \mathsf{Known}(v_1) \;\cdots\; \mathsf{Known}(v_k) & & \\
-   \uparrow & & \uparrow & & \\
-   & \diagnw & \mathsf{Unknown} & & \\
-   & & \uparrow & & \\
-   & & \bot_{\text{unauth}} & &
-   \end{array}
-   $$
-   where any join of incompatible evidence evaluates to $\top_{\text{conflict}}$:
-   $$\mathsf{Suppressed}(r) \sqcup \mathsf{Unknown} = \top_{\text{conflict}}, \qquad \mathsf{Suppressed}(r) \sqcup \mathsf{Known}(v) = \top_{\text{conflict}}, \qquad \mathsf{Known}(v_1) \sqcup \mathsf{Known}(v_2) = \top_{\text{conflict}} \;\; (v_1 \ne v_2).$$
+- $B=\bot_{\text{unauth}}$ carries no decisive reservation evidence. An allowed first source permission followed by no reservation yet still projects to $B$. The journal retains that permission separately.
+- $S_r=\mathsf{Suppressed}(r)$ records the decisive refusal for the original mutation, with selected reason $r\in R$. Examples include `source_retired`, `source_closed`, `grant_denied`, `scope_closed`, and `effect_limit`.
+- $U=\mathsf{Unknown}$ carries an allowed reservation. Historical application remains unresolved, even if a later dispatch opportunity is refused.
+- $K_v=\mathsf{Known}(v)$ records the correlated receipt $v\in V$. The dispatcher is trusted and the endpoint issues this receipt only after durable application. A failed adapter response establishes its returned observation while application can remain unresolved.
 
-**Lemma 5.3 (Preservation of the first correlated result).** Fix the original attempt and a validated retained result. The raw and adapter recorders accept an identical duplicate and reject an incompatible second result. Both compare with the original row before writing, so rejection preserves that row. The conflict element describes the incompatible evidence offered to the recorder. The baseline does not append it as a second authoritative result. Other validation failures have their own causes. A local refusal may itself produce a selectable denial envelope while the mutation is suppressed.
+The information order on $\mathbb O_{\rm eff}^{\rm cons}$ is generated by $B<S_r$ and $B<U<K_v$. Adjoin $T=\top_{\rm conflict}$ above every element to obtain $\widehat{\mathbb O}_{\rm eff}$. The five constructors give $3+\lvert R\rvert+\lvert V\rvert$ elements. The lattice is infinite if either index set is infinite. A finite profile can have a finite carrier. For nonempty $V$ its height is three edges. The full join table uses $J_S(r,s)=S_r$ if $r=s$ and $T$ otherwise, and $J_K(v,w)=K_v$ if $v=w$ and $T$ otherwise.
+
+$$
+\begin{array}{c|ccccc}
+\sqcup & B & S_s & U & K_w & T\\ \hline
+B   & B   & S_s      & U   & K_w      & T\\
+S_r & S_r & J_S(r,s) & T   & T        & T\\
+U   & U   & T        & U   & K_w      & T\\
+K_v & K_v & T        & K_v & J_K(v,w) & T\\
+T   & T   & T        & T   & T        & T
+\end{array}
+$$
+
+Each entry is the least common upper bound, so join is commutative, associative, and idempotent. Comparable pairs meet at their lesser element. Distinct $K_v,K_w$ meet at $U$, and all remaining incomparable pairs meet at $B$.
+
+Two denials conflict when they assign different selected reasons to the **same authoritative decision**. Retirement and closure can both hold. At a stable generation and revision the first source decision for a mutating operation selects retirement when both hold. Likewise, $K_v\sqcup K_w=T$ for distinct canonical results even if both offers support the weaker proposition that some application occurred. Decisions for later dispatch opportunities or new retry generations have their own scope. [First source decision](../internal/executor/messages.go) · [Reservation after source permission](../internal/executor/composition_limits_integration_test.go)
+
+Belnap’s information order distinguishes absence of evidence from conflicting evidence and has a four-element diamond alongside a separate truth order. The indexed ALAN order has a different shape. For any $r,v$, the elements $B,U,K_v,S_r,T$ form a nondistributive pentagon. Indeed $K_v\sqcap(U\sqcup S_r)=K_v$ while $(K_v\sqcap U)\sqcup(K_v\sqcap S_r)=U$. [Belnap (1977)](https://doi.org/10.1007/978-94-010-1161-7_2)
+
+**Lemma 5.3 (Preservation of the first correlated result).** Fix one mutating operation on the baseline raw or adapter recording path and two individually valid canonical results for that original. After validation the recorder compares the complete offered result with the first retained row. An identical duplicate is accepted. For distinct results $v,w$, offering $v$ first leaves it retained when $w$ is refused. Reversing the offers leaves $w$. The abstract join gives $T$ in both cases. A validation error may also concern a foreign key, and a local refusal can produce a selectable denial envelope. [Raw recording](../internal/executor/external.go) · [Adapter recording](../internal/executor/adapters.go) · [Recorder controls](../internal/executor/phase2a_conflict_test.go)
 
 **Theorem 5.4 (Source closure before first permission).** Fix a committed mutating external or adapter intent of an open source with stable revision and generation. Suppose a granted CancelRun actually closes that source, or RetireSubject retires it, before its first source permission decision. Assume all launches of this original operation go through the trusted dispatcher. Then the first decision denies permission and the dispatcher cannot send this mutation. At first permission the raw reason is source_retired if the subject is retired, otherwise source_closed.
 
@@ -1028,3 +1027,4 @@ Just as importantly, the rigor of ALAN's framework clarifies what is *not yet pr
 18. **Turing, A. M.** (1936). On Computable Numbers, with an Application to the Entscheidungsproblem. *Proceedings of the London Mathematical Society*, s2-42(1), 230–265.
 19. **Turi, D., & Plotkin, G. D.** (1997). Towards a Mathematical Operational Semantics. In *Proceedings of the 12th Annual IEEE Symposium on Logic in Computer Science (LICS '97)*, 280–291.
 20. **Xia, L.-Y., Zakowski, Y., He, P., Hur, C.-K., Malecha, G., Pierce, B. C., & Zdancewic, S.** (2020). Interaction Trees: Representing Recursive and Impure Programs in Coq. *Proceedings of the ACM on Programming Languages*, 4(POPL), Article 51, 1–32.
+21. **Belnap, N. D., Jr.** (1977). A Useful Four-Valued Logic. In J. M. Dunn and G. Epstein (eds.), *Modern Uses of Multiple-Valued Logic*, 5–37. D. Reidel. [Publisher](https://doi.org/10.1007/978-94-010-1161-7_2)
