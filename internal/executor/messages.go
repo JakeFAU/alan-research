@@ -508,6 +508,73 @@ func admissionPermitted(ctx context.Context, q queryer, d AdmissionDescriptor) (
 	return count > 0, err
 }
 
+// validatedAuthorization checks one retained decision against its original intent
+// and historical source projection. Later closure or reopening may have changed
+// the current source while a valid receipt was in flight.
+func validatedAuthorization(ctx context.Context, q queryer, id string) (Authorization, error) {
+	var auth Authorization
+	var intentID string
+	var descriptor, result []byte
+	if err := q.QueryRowContext(ctx, "SELECT intent_id,descriptor,result FROM attempts WHERE id=?", id).Scan(&intentID, &descriptor, &result); err != nil {
+		return auth, err
+	}
+	intent, e := loadIntent(ctx, q, intentID)
+	if e != nil {
+		return auth, e
+	}
+	if !sameJSON(descriptor, authorizationRequest{intent.Intent, intent.revision}) {
+		return auth, corrupt("authorization descriptor %s", id)
+	}
+	if err := decode(result, &auth); err != nil {
+		return auth, err
+	}
+	if !sameJSON(result, auth) || id != identity("authorization", intentID) || auth.ID != id || auth.IntentID != intentID || auth.Source.Run != intent.Run || auth.Source.Sequence < intent.Sequence || auth.Source.Epoch <= 0 || auth.Source.Revision <= 0 {
+		return auth, corrupt("authorization identity %s", id)
+	}
+	source, e := loadRun(ctx, q, intent.Run)
+	if e != nil {
+		return auth, e
+	}
+	if auth.Source.Sequence > source.Sequence || auth.Source.Epoch > source.Epoch {
+		return auth, corrupt("authorization source boundary %s", id)
+	}
+	projection, e := authorizationProjection(ctx, q, auth)
+	if e != nil {
+		return auth, e
+	}
+	reply := false
+	enabled, e := compositionProtocol(ctx, q)
+	if e != nil {
+		return auth, e
+	}
+	if enabled {
+		_, reply, e = compositionReplyBinding(ctx, q, intent.Intent)
+		if e != nil {
+			return auth, e
+		}
+	}
+	if auth.Allowed {
+		if auth.Reason != "authorized" || auth.Source.Revision != intent.revision || (projection.Status != "open" && !reply) {
+			return auth, corrupt("unsupported authorization %s", id)
+		}
+	} else {
+		switch auth.Reason {
+		case "source_closed":
+			if projection.Status == "open" {
+				return auth, corrupt("unsupported closure denial")
+			}
+		case "source_revision_changed":
+			if auth.Source.Revision == intent.revision {
+				return auth, corrupt("unsupported revision denial")
+			}
+		case "source_generation_changed", "source_retired":
+		default:
+			return auth, corrupt("unknown authorization denial")
+		}
+	}
+	return auth, nil
+}
+
 // validateMessaging checks protocol evidence without choosing new work or
 // reevaluating retained admissions against changed target circumstances.
 func validateMessaging(ctx context.Context, q queryer, limits Limits) error {
@@ -521,67 +588,11 @@ func validateMessaging(ctx context.Context, q queryer, limits Limits) error {
 	}
 	authorizations := map[string]Authorization{}
 	for _, id := range authIDs {
-		var intentID string
-		var descriptor, result []byte
-		if err = q.QueryRowContext(ctx, "SELECT intent_id,descriptor,result FROM attempts WHERE id=?", id).Scan(&intentID, &descriptor, &result); err != nil {
+		auth, err := validatedAuthorization(ctx, q, id)
+		if err != nil {
 			return err
 		}
-		intent, e := loadIntent(ctx, q, intentID)
-		if e != nil {
-			return e
-		}
-		if !sameJSON(descriptor, authorizationRequest{intent.Intent, intent.revision}) {
-			return corrupt("authorization descriptor %s", id)
-		}
-		var auth Authorization
-		if err = decode(result, &auth); err != nil {
-			return err
-		}
-		if !sameJSON(result, auth) || id != identity("authorization", intentID) || auth.ID != id || auth.IntentID != intentID || auth.Source.Run != intent.Run || auth.Source.Sequence < intent.Sequence || auth.Source.Epoch <= 0 || auth.Source.Revision <= 0 {
-			return corrupt("authorization identity %s", id)
-		}
-		source, e := loadRun(ctx, q, intent.Run)
-		if e != nil {
-			return e
-		}
-		if auth.Source.Sequence > source.Sequence || auth.Source.Epoch > source.Epoch {
-			return corrupt("authorization source boundary %s", id)
-		}
-		projection, e := authorizationProjection(ctx, q, auth)
-		if e != nil {
-			return e
-		}
-		reply := false
-		enabled, e := compositionProtocol(ctx, q)
-		if e != nil {
-			return e
-		}
-		if enabled {
-			_, reply, e = compositionReplyBinding(ctx, q, intent.Intent)
-			if e != nil {
-				return e
-			}
-		}
-		if auth.Allowed {
-			if auth.Reason != "authorized" || auth.Source.Revision != intent.revision || (projection.Status != "open" && !reply) {
-				return corrupt("unsupported authorization %s", id)
-			}
-		} else {
-			switch auth.Reason {
-			case "source_closed":
-				if projection.Status == "open" {
-					return corrupt("unsupported closure denial")
-				}
-			case "source_revision_changed":
-				if auth.Source.Revision == intent.revision {
-					return corrupt("unsupported revision denial")
-				}
-			case "source_generation_changed", "source_retired":
-			default:
-				return corrupt("unknown authorization denial")
-			}
-		}
-		authorizations[intentID] = auth
+		authorizations[auth.IntentID] = auth
 	}
 	ids, err := stringList(ctx, q, "SELECT id FROM admissions ORDER BY id")
 	if err != nil {

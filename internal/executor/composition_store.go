@@ -34,7 +34,14 @@ func createCompositionStore(ctx context.Context, path string, p Provision, c com
 func openCompositionStore(ctx context.Context, path string, l Limits) (*Store, error) {
 	return openStore(ctx, path, l, true)
 }
+
+// schemaNumber selects the protocol. storedSchemaNumber reads the physical format.
 func schemaNumber(ctx context.Context, q queryer) (int, error) {
+	stored, err := storedSchemaNumber(ctx, q)
+	return protocolSchemaNumber(stored), err
+}
+
+func storedSchemaNumber(ctx context.Context, q queryer) (int, error) {
 	var n int
 	err := q.QueryRowContext(ctx, "SELECT schema_version FROM metadata WHERE singleton=1").Scan(&n)
 	return n, err

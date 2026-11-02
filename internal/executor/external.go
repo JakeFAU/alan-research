@@ -346,10 +346,21 @@ func (s *Store) recordExternalReceipt(ctx context.Context, a ExternalAttempt, r 
 	var prior []byte
 	err = tx.QueryRowContext(ctx, "SELECT descriptor FROM external_receipts WHERE intent_id=?", a.Intent.ID).Scan(&prior)
 	if err == nil {
-		if !bytes.Equal(prior, raw) {
-			return ErrConflict
+		if bytes.Equal(prior, raw) {
+			return s.commitOwnedTx(ctx, tx)
 		}
-		return s.commitOwnedTx(ctx, tx)
+		allowed, reason, err := retainedExternalReservation(ctx, tx, intent, auth)
+		if err != nil {
+			return err
+		}
+		if !allowed || reason != a.Reason {
+			return corrupt("conflicting external receipt without original grant")
+		}
+		var winner resource.Receipt
+		if len(prior) > s.limits.MaxObservationBytes || decode(prior, &winner) != nil || !sameJSON(prior, winner) || !validReceipt(a, winner) {
+			return corrupt("invalid first external receipt")
+		}
+		return s.commitReceiptConflict(ctx, tx, a.Intent.ID, prior, raw)
 	}
 	if !errors.Is(err, sql.ErrNoRows) {
 		return err
@@ -422,6 +433,13 @@ func (s *Store) settleExternalLocked(ctx context.Context, o ExternalOutcome) err
 		return err
 	}
 	defer tx.Rollback()
+	first, err := externalOutcome(ctx, tx, o.Attempt.Intent.ID)
+	if err != nil {
+		return err
+	}
+	if !reflect.DeepEqual(first, o) {
+		return ErrConflict
+	}
 	d := externalDescriptor(o)
 	raw, err := json.Marshal(d)
 	if err != nil {
@@ -459,6 +477,20 @@ func (s *Store) settleExternalLocked(ctx context.Context, o ExternalOutcome) err
 	}
 	return s.commitOwnedTx(ctx, tx)
 }
+func retainedExternalReservation(ctx context.Context, q queryer, intent retainedIntent, auth Authorization) (bool, string, error) {
+	allowed, reason := auth.Allowed, auth.Reason
+	if allowed {
+		var count int
+		if err := q.QueryRowContext(ctx, "SELECT count(*) FROM permissions WHERE kind='external' AND source=? AND target=? AND operation='apply' AND revision=?", intent.Run.Subject, intent.Target, intent.revision).Scan(&count); err != nil {
+			return false, "", err
+		}
+		if count == 0 {
+			allowed, reason = false, "grant_denied"
+		}
+	}
+	return retainedCompositionReservation(ctx, q, intent.Intent, allowed, reason)
+}
+
 func validateExternal(ctx context.Context, q queryer) error {
 	namespace, err := readNamespace(ctx, q)
 	if err != nil {
@@ -501,18 +533,7 @@ func validateExternal(ctx context.Context, q queryer) error {
 		request.Key = ExternalKey(namespace, id)
 		request.Epoch = auth.Source.Epoch
 		request.Authorization = auth.ID
-		allowed, reason := auth.Allowed, auth.Reason
-		if allowed {
-			var count int
-			if err = q.QueryRowContext(ctx, "SELECT count(*) FROM permissions WHERE kind='external' AND source=? AND target=? AND operation='apply' AND revision=?", intent.Run.Subject, intent.Target, intent.revision).Scan(&count); err != nil {
-				return err
-			}
-			if count == 0 {
-				allowed = false
-				reason = "grant_denied"
-			}
-		}
-		allowed, reason, err = retainedCompositionReservation(ctx, q, intent.Intent, allowed, reason)
+		allowed, reason, err := retainedExternalReservation(ctx, q, intent, auth)
 		if err != nil {
 			return err
 		}
