@@ -525,6 +525,8 @@ Let $R_L$ be a symmetric relation on candidate states at ledger $L$ with equal p
 
 *Proof.* Relate $(x,q,L)$ to $(y,q,L)$ whenever $R_L(x,y)$. A candidate move has its stipulated match. The peer has identical private state and sees the same successor ledger on both sides. For a peer move, copy its transition from the identical $(q,L)$, then apply stability under $D$ at the new ledger. Symmetry gives both transfer directions. The enabled label classes agree, so quiescence matches immediately with zero debit and both readiness unions agree. An infinite hidden path is matched one hidden step at a time in either direction. This proves the rule for this product semantics. Extending it to weak matches requires controlling the cuts at which a peer can move *inside* a matching path. Exact debits at its endpoints do not settle that question.
 
+<a id="peer-refusal-witness"></a>
+
 **Two refusals separated by a peer debit.** Fix an open root, stable grants, adequate depth and byte limits, and no external effects. Candidates $X,Y$ each invoke the same two-member template twice with distinct original handles. Only $Y$ sends a public marker after selecting `created_run_limit` followed by `invocation_limit`. An isolated first refusal spends nothing, so the second call sees the same guard. With one invocation and one created run remaining, the peer's singleton can intervene as follows.
 
 $$
@@ -536,9 +538,13 @@ $$
 \end{array}
 $$
 
-The finite admission/selection model checks two-sided weak transfer with equal per-transfer debits, quiescent admission and continuation readiness on the marker port, and hidden divergence. All 15 isolated starting allowances ($0\le I\le2$, $0\le R\le4$) relate $X$ and $Y$. With the peer present, exactly $(1,1)$ separates them among 24 allowances ($0\le I\le3$, $0\le R\le5$). Allowing one funded peer debit at any cut in the local model also separates them there. The model exposes original decisions and selections as labels and abstracts successful two-member service to a common response. Its readiness projection distinguishes the root's open marker mailbox from its current receive guard.
+For a two-member call write $p_I$ for $I<1$ and $p_R$ for $R<2$. At $(1,1)$ only $p_R$ holds. At $(0,0)$ both hold, and the Store tests $p_I$ first. Reversing the guard order would give `created_run_limit` twice and keep $Y$ silent. [Invocation admission](../internal/executor/invocation.go)
+
+With the Store's selected reasons, the finite admission/selection model checks two-sided weak transfer with equal per-transfer debits, quiescent admission and continuation readiness on the marker port, and hidden divergence. All 15 isolated starting allowances ($0\le I\le2$, $0\le R\le4$) relate $X$ and $Y$. With the peer present, exactly $(1,1)$ separates them among 24 allowances ($0\le I\le3$, $0\le R\le5$). Allowing one funded peer debit at any cut in the local model also separates them there. The model exposes original decisions and selections as labels and abstracts successful two-member service to a common response. Its readiness projection distinguishes the root's open marker mailbox from its current receive guard.
 
 Six manually stepped Store executions used three static runs, depth two, and physical capacity one. Both candidates selected the original refusals through their saved handles. The root consumed one marker only for $Y$ with the singleton admitted between the calls. Moving the singleton before or after both calls gave zero markers for either candidate. Looking up the first handle after spending preserved its original refusal. These prefixes stop with the singleton admitted. They witness the effect of an intermediate debit on a parent-visible decision. The general weak congruence and correspondence with automatic scheduling remain open. [Finite relation and controls](../research/substitution/peer_spending_test.go) · [Store schedules](../internal/substitutiontest/peer_spending_test.go)
+
+The finite model also varies the reasons delivered to the candidate at $(1,1)$. Reporting all violated allowance predicates gives $\{p_R\}$ followed by $\{p_I,p_R\}$ on the displayed schedule. The original string tests miss both sets. A client testing for that sequence of sets still emits a marker only when the singleton intervenes. Reporting `insufficient_allowance` for either refusal gives the same two reasons with the singleton before, between, or after the calls. Those reasons cannot reveal its placement. A peer can still change acceptance itself. At $(1,2)$ a pair fits, while a prior singleton leaves $(0,1)$. Erasing diagnostic fields after the candidate has run leaves any emitted marker visible. The two refusals above belong to distinct invocation handles. The analogous choice in the effect evidence concerns the selected denial for one original mutation. [Effect evidence in Definition 5.2](#effect-evidence)
 
 **Bounded behavioral-contract investigation (Phase 1I).** The frozen K1 contract under `docs/foundational/phase1i` distinguishes schema compatibility, asymmetric local refinement and symmetric contextual equivalence. Its independently authored local and one-helper candidates preserve an application request id and compute a Boolean complement, with explicit failure, missing-reply and pending modes. Five named context templates (bare, sequential, parallel, hidden and one wrapper), finite payloads and residual allowances define 3,840 configurations per reference/candidate graph; the contract fixes 84 completion-entitled answer configurations independently of candidate behavior. The specification product $C[K1]$, local component relation and candidate products are checked separately. Artifact-to-graph correspondence inspection, bounded model checking, sampled runtime execution and replay are different evidence categories.
 
@@ -689,6 +695,8 @@ stateDiagram-v2
     SettledInbox --> ConsumedInHistory: Next Commit(x, e, n') via Receive(Match)
 ```
 
+<a id="effect-evidence"></a>
+
 **Definition 5.2 (Evidence for one original effect).** Fix a store namespace, an original operation, and its reservation and receipt contract. We track whether the original mutation was suppressed or had an allowed reservation, and which canonical receipt, if any, establishes its application. Let $R$ be the set of retained denial reasons and $V$ the possible canonical receipt values. Each consistent state has one of four forms.
 
 - $B=\bot_{\text{unauth}}$ carries no decisive reservation evidence. An allowed first source permission followed by no reservation yet still projects to $B$. The journal retains that permission separately.
@@ -712,6 +720,8 @@ $$
 Each entry is the least common upper bound, so join is commutative, associative, and idempotent. Comparable pairs meet at their lesser element. Distinct $K_v,K_w$ meet at $U$, and all remaining incomparable pairs meet at $B$.
 
 Two denials conflict when they assign different selected reasons to the **same authoritative decision**. Retirement and closure can both hold. At a stable generation and revision the first source decision for a mutating operation selects retirement when both hold. Likewise, $K_v\sqcup K_w=T$ for distinct canonical results even if both offers support the weaker proposition that some application occurred. Decisions for later dispatch opportunities or new retry generations have their own scope. [First source decision](../internal/executor/messages.go) · [Reservation after source permission](../internal/executor/composition_limits_integration_test.go)
+
+The two-call invocation witness in §4.5 uses the same distinction between a selected reason and all the predicates that hold. There the reason is a public input to the caller’s next branch. Here $S_r$ records what one mutation decision established. [Two refusals separated by a peer debit](#peer-refusal-witness)
 
 Belnap’s information order distinguishes absence of evidence from conflicting evidence and has a four-element diamond alongside a separate truth order. The indexed ALAN order has a different shape. For any $r,v$, the elements $B,U,K_v,S_r,T$ form a nondistributive pentagon. Indeed $K_v\sqcap(U\sqcup S_r)=K_v$ while $(K_v\sqcap U)\sqcup(K_v\sqcap S_r)=U$. [Belnap (1977)](https://doi.org/10.1007/978-94-010-1161-7_2)
 
