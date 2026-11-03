@@ -2,9 +2,9 @@ package substitution
 
 import (
 	"fmt"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Probe constructs separate experimental artifacts. They are not K1 candidates.

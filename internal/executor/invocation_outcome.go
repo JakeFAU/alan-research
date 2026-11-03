@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 	"slices"
 	"strings"
 )

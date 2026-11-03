@@ -4,8 +4,8 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/runtime"
 	"net/http"
 	"net/http/httptest"
 	"os"

@@ -9,8 +9,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // These are retained-row shapes, not a second reducer. The checks below link

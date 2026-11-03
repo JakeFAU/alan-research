@@ -1,8 +1,8 @@
 package adaptive
 
 import (
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const ScalarCapability = "adaptive-observe"

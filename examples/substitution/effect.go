@@ -1,9 +1,9 @@
 package substitution
 
 import (
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const EffectCapability = "phase1i-controlled-effect"

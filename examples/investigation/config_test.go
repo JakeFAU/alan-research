@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/investigation"
+	"github.com/JakeFAU/alan-research/examples/investigation"
 )
 
 func TestProvisionRejectsInvalidConfiguration(t *testing.T) {

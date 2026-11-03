@@ -2,8 +2,8 @@ package communication
 
 import (
 	"fmt"
-	"github.com/JakeFAU/alan/research/join"
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/join"
+	"github.com/JakeFAU/alan-research/research/substitution"
 	"math/big"
 	"sort"
 )

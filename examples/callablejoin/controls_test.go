@@ -1,10 +1,10 @@
 package callablejoin_test
 
 import (
-	"github.com/JakeFAU/alan/examples/callablejoin"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/callablejoin"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/runtime"
 	"testing"
 )
 

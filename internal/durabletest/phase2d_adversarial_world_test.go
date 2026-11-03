@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	frame "github.com/JakeFAU/alan/examples/effectfulcomposition"
-	x "github.com/JakeFAU/alan/internal/executor"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	frame "github.com/JakeFAU/alan-research/examples/effectfulcomposition"
+	x "github.com/JakeFAU/alan-research/internal/executor"
 )
 
 // Extra external submissions use the real committed L key with different

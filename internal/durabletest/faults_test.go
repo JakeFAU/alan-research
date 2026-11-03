@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/executor"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func retryProbe(t *testing.T) executor.Provision {

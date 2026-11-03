@@ -2,7 +2,7 @@ package executor
 
 import (
 	"fmt"
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 )
 
 // Cursor is the immutable iteration snapshot and the next element index. Binding

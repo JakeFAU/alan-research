@@ -15,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Reading Runs from a second transaction while the runner progresses must fail

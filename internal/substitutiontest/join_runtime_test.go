@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	joinapp "github.com/JakeFAU/alan/examples/join"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/internal/boundary"
-	joinmodel "github.com/JakeFAU/alan/research/join"
-	"github.com/JakeFAU/alan/runtime"
+	joinapp "github.com/JakeFAU/alan-research/examples/join"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	joinmodel "github.com/JakeFAU/alan-research/research/join"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // These are concrete samples of the frozen profile, not all-schedule claims.

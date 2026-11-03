@@ -9,8 +9,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func sampleQuery() Query {

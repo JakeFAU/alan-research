@@ -6,8 +6,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/effects"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/effects"
 )
 
 func validateOrdinalBinding(ctx context.Context, q queryer, namespace string, a AdapterAttempt, o receiptReadOrdinal) error {

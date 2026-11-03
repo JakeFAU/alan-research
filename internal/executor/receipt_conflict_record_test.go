@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 	"github.com/mattn/go-sqlite3"
 )
 

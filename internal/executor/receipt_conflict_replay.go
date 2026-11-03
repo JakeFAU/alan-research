@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // ReceiptEvidence summarizes an original with at least one additional retained

@@ -17,10 +17,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 var buildOnce sync.Once

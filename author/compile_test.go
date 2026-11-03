@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func textRecord(name string) schema.Record {

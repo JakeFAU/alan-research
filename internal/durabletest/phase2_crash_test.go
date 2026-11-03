@@ -15,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/internal/executor"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func phaseProvision(t *testing.T, route, endpoint string, peer bool) executor.Provision {

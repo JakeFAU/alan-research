@@ -16,15 +16,15 @@ import (
 	"syscall"
 	"unicode/utf8"
 
-	"github.com/JakeFAU/alan/adapters/lookup"
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/adaptive"
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/examples/worktree"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/lookup"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/adaptive"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/examples/worktree"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type usageError struct{ message string }

@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	resourcefixture "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	resourcefixture "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // Cancellation after dequeue must not discard evidence now owned by Run.

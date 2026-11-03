@@ -9,10 +9,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // monitorReplay is unchanged for both the correct replay and deliberately faulty

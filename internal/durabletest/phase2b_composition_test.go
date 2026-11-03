@@ -12,12 +12,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/internal/boundary"
-	x "github.com/JakeFAU/alan/internal/executor"
-	rt "github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	x "github.com/JakeFAU/alan-research/internal/executor"
+	rt "github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type compositionProbe struct {

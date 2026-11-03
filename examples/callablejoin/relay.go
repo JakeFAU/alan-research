@@ -1,9 +1,9 @@
 package callablejoin
 
 import (
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // NewRelay constructs a single-child diagnostic caller. It checks the envelope

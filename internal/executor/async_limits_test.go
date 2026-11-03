@@ -14,8 +14,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func addExternalClient(t *testing.T, p *Provision, name, target, profile string, delta int64) {

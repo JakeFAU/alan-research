@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
-	"github.com/JakeFAU/alan/internal/executor"
+	"github.com/JakeFAU/alan-research/internal/executor"
 	"os"
 	"path/filepath"
 	"testing"

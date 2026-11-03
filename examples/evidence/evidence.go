@@ -4,9 +4,9 @@ package evidence
 
 import (
 	"fmt"
-	"github.com/JakeFAU/alan/adapters/lookup"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/lookup"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const ModelCapability = "evidence-model"

@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"errors"
 
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 )
 
 // DispatchAuthority identifies one retained source generation in a Store. With

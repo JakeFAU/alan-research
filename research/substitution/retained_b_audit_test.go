@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const auditBundleSHA = "8693f675a4ec4be6d14a859157fbbf9d21b3608e4485d32b900421c0d7d7b5aa"

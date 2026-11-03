@@ -6,6 +6,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"testing"
 )
@@ -26,7 +27,7 @@ func TestExternalConsumerCompileRunReopenReplay(t *testing.T) {
 	if err = os.WriteFile(filepath.Join(dir, "main.go"), source, 0600); err != nil {
 		t.Fatal(err)
 	}
-	mod := "module external.example/consumer\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan v0.0.0\nreplace github.com/JakeFAU/alan => " + root + "\n"
+	mod := "module external.example/consumer\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan-research v0.0.0\nreplace github.com/JakeFAU/alan-research => " + strconv.Quote(root) + "\n"
 	if err = os.WriteFile(filepath.Join(dir, "go.mod"), []byte(mod), 0600); err != nil {
 		t.Fatal(err)
 	}

@@ -10,7 +10,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
+	"github.com/JakeFAU/alan-research/effects"
 )
 
 func TestAdapterReceiptEvidenceRejectsRehashedInvalidOffer(t *testing.T) {

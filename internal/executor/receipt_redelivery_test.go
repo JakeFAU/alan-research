@@ -12,7 +12,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/JakeFAU/alan/effects"
+	"github.com/JakeFAU/alan-research/effects"
 )
 
 func openReceiptCut(t *testing.T, family, label string) (*Store, string) {

@@ -5,10 +5,10 @@ package effectfulcomposition
 import (
 	"fmt"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/owningtree"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/owningtree"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
 )
 
 // Tree carries the retained template and Series 1's common occurrence bounds.

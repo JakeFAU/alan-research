@@ -9,7 +9,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 )
 
 func silentChildProvision(t *testing.T, bit int64, terminalRoute bool) Provision {

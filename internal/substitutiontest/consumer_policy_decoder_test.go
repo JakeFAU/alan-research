@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"testing"
 
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func consumerPolicyOrderViolation(violations []model.Violation) bool {

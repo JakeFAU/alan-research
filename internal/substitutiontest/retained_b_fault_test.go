@@ -8,13 +8,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	join "github.com/JakeFAU/alan/examples/callablejoin"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/research/nominal"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	join "github.com/JakeFAU/alan-research/examples/callablejoin"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/research/nominal"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // A distinct, freshly certified program actually selects an absent outcome and

@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/adaptive"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/adaptive"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestProcessAdaptiveCuts(t *testing.T) {

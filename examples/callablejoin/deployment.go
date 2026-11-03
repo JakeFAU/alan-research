@@ -2,10 +2,10 @@
 package callablejoin
 
 import (
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type Deployment struct {

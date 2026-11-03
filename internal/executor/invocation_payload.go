@@ -2,7 +2,7 @@ package executor
 
 import (
 	"fmt"
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 	"strings"
 )
 

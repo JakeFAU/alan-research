@@ -8,8 +8,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // Use the actual stopped CLI input and its wildcard filter from review CR1.

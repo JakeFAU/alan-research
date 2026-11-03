@@ -12,10 +12,10 @@ import (
 	"sort"
 	"testing"
 
-	policyapp "github.com/JakeFAU/alan/examples/consumingpolicy"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	policyapp "github.com/JakeFAU/alan-research/examples/consumingpolicy"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // Reuse authenticated original records; only the context verdicts differ.

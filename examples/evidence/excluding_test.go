@@ -4,11 +4,12 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func TestExcludingHelperIsAnExternalPublicConsumer(t *testing.T) {
@@ -31,7 +32,7 @@ func TestExcludingHelperIsAnExternalPublicConsumer(t *testing.T) {
 		t.Fatal(err)
 	}
 	dir := t.TempDir()
-	module := "module external.example/excludingconsumer\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan v0.0.0\nreplace github.com/JakeFAU/alan => " + root + "\n"
+	module := "module external.example/excludingconsumer\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan-research v0.0.0\nreplace github.com/JakeFAU/alan-research => " + strconv.Quote(root) + "\n"
 	for name, data := range map[string][]byte{"main.go": source, "go.mod": []byte(module)} {
 		if err = os.WriteFile(filepath.Join(dir, name), data, 0600); err != nil {
 			t.Fatal(err)

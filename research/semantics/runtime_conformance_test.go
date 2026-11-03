@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	ex "github.com/JakeFAU/alan/internal/executor"
-	resourcefixture "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	ex "github.com/JakeFAU/alan-research/internal/executor"
+	resourcefixture "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // This bridge runs the preserved step+inspect oracle and independently authored

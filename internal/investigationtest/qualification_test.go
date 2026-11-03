@@ -11,11 +11,11 @@ import (
 	"syscall"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // compact retains public projections and the exact causal tables without copying

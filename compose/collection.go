@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Options bounds each accepted list and its retained results. MaxBytes is the

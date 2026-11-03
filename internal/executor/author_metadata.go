@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unicode/utf8"
 
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 )
 
 const AuthorSemanticVersion = "alan/1e/v1"

@@ -1,7 +1,7 @@
 package effects
 
 import (
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/schema"
 	"testing"
 )
 

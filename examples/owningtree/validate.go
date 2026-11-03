@@ -1,6 +1,6 @@
 package owningtree
 
-import "github.com/JakeFAU/alan/author"
+import "github.com/JakeFAU/alan-research/author"
 
 func flag(reg string, v bool) author.Step { return author.Set(reg, author.Boolean(v)) }
 func decision(value string) author.Step   { return author.Set("decision", author.String(value)) }

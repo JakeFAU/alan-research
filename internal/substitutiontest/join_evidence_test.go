@@ -6,12 +6,12 @@ import (
 	"fmt"
 	"reflect"
 
-	app "github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/internal/executor"
-	joinmodel "github.com/JakeFAU/alan/research/join"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	joinmodel "github.com/JakeFAU/alan-research/research/join"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func joinReport(p map[string]schema.Value) joinmodel.Report {

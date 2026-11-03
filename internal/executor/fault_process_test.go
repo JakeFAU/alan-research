@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 	"github.com/mattn/go-sqlite3"
 )
 

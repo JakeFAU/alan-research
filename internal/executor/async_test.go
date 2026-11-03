@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // This oracle is deliberately unchanged between the synchronous RED and repaired GREEN.

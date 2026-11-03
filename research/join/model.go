@@ -1,6 +1,6 @@
 package join
 
-import "github.com/JakeFAU/alan/research/substitution"
+import "github.com/JakeFAU/alan-research/research/substitution"
 
 const (
 	C0         = "C0"

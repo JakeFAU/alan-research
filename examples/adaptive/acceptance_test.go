@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Inspect an authentic retained transition that emitted the first round-two

@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // A missing demo grant, wrong receipt correlation, or blind non-idempotent

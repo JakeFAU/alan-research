@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 )
 
 type dispatchPause struct{ held, release chan struct{} }

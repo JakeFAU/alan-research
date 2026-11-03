@@ -5,11 +5,11 @@ package substitutiontest
 import (
 	"encoding/json"
 	"fmt"
-	callableapp "github.com/JakeFAU/alan/examples/callablejoin"
-	"github.com/JakeFAU/alan/internal/executor"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	callableapp "github.com/JakeFAU/alan-research/examples/callablejoin"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 	"reflect"
 	"strings"
 )

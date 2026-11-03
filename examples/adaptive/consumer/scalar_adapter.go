@@ -8,8 +8,8 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // scalarHTTP is a controlled deployment transport for the exact {value:int}

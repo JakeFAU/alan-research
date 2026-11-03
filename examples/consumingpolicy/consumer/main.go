@@ -12,12 +12,12 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/consumingpolicy"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/consumingpolicy"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func execute(ctx context.Context, args []string, out io.Writer) error {

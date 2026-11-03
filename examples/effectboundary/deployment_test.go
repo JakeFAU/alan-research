@@ -14,9 +14,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // This process-local endpoint is an additional public-interface probe, not the

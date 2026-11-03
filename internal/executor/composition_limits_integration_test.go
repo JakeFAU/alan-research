@@ -4,9 +4,9 @@ package executor
 
 import (
 	"context"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	recordschema "github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 	"reflect"
 	"testing"
 	"time"

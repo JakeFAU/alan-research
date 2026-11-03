@@ -8,7 +8,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
 )
 
 // The opt-in format commits its identity and all tables atomically at creation.

@@ -8,10 +8,10 @@ import (
 	"reflect"
 	"sort"
 
-	app "github.com/JakeFAU/alan/examples/substitution"
-	communication "github.com/JakeFAU/alan/research/communication"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	communication "github.com/JakeFAU/alan-research/research/communication"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 type communicationAuth struct {

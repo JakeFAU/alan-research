@@ -1,9 +1,9 @@
 package openai_test
 
 import (
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 	"testing"
 )
 

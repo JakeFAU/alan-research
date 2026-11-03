@@ -7,9 +7,9 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/effects"
-	publicschema "github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/effects"
+	publicschema "github.com/JakeFAU/alan-research/schema"
 )
 
 // Interpret the controlled transport without interpreting an arbitrary adapter.

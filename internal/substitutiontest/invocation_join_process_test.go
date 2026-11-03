@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func startInvocationJoin(t *testing.T, path string, cut bool) *process {

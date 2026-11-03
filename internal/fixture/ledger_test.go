@@ -4,7 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
-	"github.com/JakeFAU/alan/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
 	"path/filepath"
 	"reflect"
 	"strings"

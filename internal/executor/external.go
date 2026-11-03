@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 	"io"
 	"net"
 	"net/http"
@@ -15,7 +15,7 @@ import (
 	"reflect"
 	"time"
 
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 type ExternalAttempt struct {

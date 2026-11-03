@@ -7,7 +7,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
 )
 
 const reconciliationSchemaVersion = 5

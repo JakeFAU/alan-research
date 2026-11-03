@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	frame "github.com/JakeFAU/alan/examples/effectfulcomposition"
-	"github.com/JakeFAU/alan/schema"
+	frame "github.com/JakeFAU/alan-research/examples/effectfulcomposition"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // This source inventory has no endpoint service. The schema-5 URL is a literal

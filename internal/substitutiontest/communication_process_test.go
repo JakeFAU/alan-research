@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	communication "github.com/JakeFAU/alan/research/communication"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	communication "github.com/JakeFAU/alan-research/research/communication"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func startCommunication(t *testing.T, path, cut, profile, order string) *process {

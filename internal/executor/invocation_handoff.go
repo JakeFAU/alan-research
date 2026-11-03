@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"slices"
 
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 )
 
 func validHandoffPort(p PortDeclaration, peer string) bool {

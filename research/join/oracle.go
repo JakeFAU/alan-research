@@ -4,7 +4,7 @@ package join
 
 import (
 	"fmt"
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/substitution"
 )
 
 type Outcome struct {

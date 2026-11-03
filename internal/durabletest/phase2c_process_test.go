@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/internal/fixture"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/internal/fixture"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func (h *history2c) originalCut(cut *barrier, endpoint *child, raw bool) {

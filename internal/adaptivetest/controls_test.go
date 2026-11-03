@@ -13,9 +13,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/adaptive"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/adaptive"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func jsonUnmarshal(raw any, out any) error { return json.Unmarshal([]byte(raw.(string)), out) }

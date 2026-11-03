@@ -9,8 +9,8 @@ import (
 	"errors"
 	"reflect"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/effects"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/effects"
 )
 
 // The ordinal is spent before entry, even if the owning worker never transmits.

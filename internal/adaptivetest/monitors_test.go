@@ -10,9 +10,9 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func emit(t *testing.T, v any) {

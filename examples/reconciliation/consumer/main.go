@@ -9,8 +9,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/JakeFAU/alan/examples/reconciliation"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/reconciliation"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // static schedules only ordinary commits and delivery of the two real intents.
