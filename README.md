@@ -10,7 +10,9 @@ This repository contains the monograph, models, experiments and qualification re
 
 Historical transcripts and citations keep the repository names, commit IDs and package paths recorded when the experiments ran. For a pre-split GitHub link that names `JakeFAU/alan`, use `JakeFAU/alan-research` with the same commit, path or pull request number. To reproduce a source-bound result, check out its recorded commit in this repository or use the source archive named in its runbook. The runtime extraction started at [research commit `003dc9c4`](https://github.com/JakeFAU/alan-research/commit/003dc9c45ac9b0c1f48565632f5be80f0f05beed).
 
-Run the research tests from a full Git checkout. They read frozen programs, journals and SQLite stores under `docs/foundational`. The `docs/go.mod` boundary keeps those archives in the research repository while allowing the root Go module download to fit Go's 500 MiB limit.
+Run the research tests from a full Git checkout. They read frozen programs, journals and SQLite stores under `docs/foundational`. The `docs/go.mod` boundary identifies those archives as separate from the root Go module. Go also applies a 500 MiB limit to the intermediate Git archive, which the complete research tree exceeds.
+
+To import research packages from another Go module, use `go get github.com/JakeFAU/alan-research/runtime@go-module`. The `go-module` branch contains exactly the files Go distributes from the research commit named in its commit message, preserving their bytes and modes. For each new snapshot, verify that file set, test a fresh consumer and keep the previous distribution tip as a parent so the branch advances by fast-forward. Application developers can install the standalone runtime directly with `go get github.com/JakeFAU/alan/runtime`.
 
 For a fix that affects both implementations, land it with a regression test in the repository where it was discovered. Port the change in a separate reviewed pull request that cites the originating commit and runs the receiving repository's tests. If the change affects a research claim, qualify the new source separately and retain the original evidence.
 
