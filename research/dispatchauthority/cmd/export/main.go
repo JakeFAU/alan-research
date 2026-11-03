@@ -3,7 +3,7 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/JakeFAU/alan/research/dispatchauthority"
+	"github.com/JakeFAU/alan-research/research/dispatchauthority"
 	"log"
 	"os"
 )

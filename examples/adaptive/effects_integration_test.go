@@ -8,10 +8,10 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Exercise the unchanged helper through the real bounded Responses adapter.

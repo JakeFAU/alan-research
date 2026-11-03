@@ -1,9 +1,9 @@
 package effectfulcomposition
 
 import (
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/runtime"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // All five required selections precede any completed decision or final ACK.

@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	publicschema "github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	publicschema "github.com/JakeFAU/alan-research/schema"
 )
 
 // Challenge the recorder directly. The public parent has no corresponding

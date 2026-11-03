@@ -13,10 +13,10 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // The local control has no external world. It deliberately leaves both original

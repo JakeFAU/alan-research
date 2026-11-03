@@ -5,7 +5,7 @@ import (
 	"compress/gzip"
 	"encoding/json"
 	"fmt"
-	ec "github.com/JakeFAU/alan/research/effectfulcomposition"
+	ec "github.com/JakeFAU/alan-research/research/effectfulcomposition"
 	"log"
 	"os"
 	"path/filepath"

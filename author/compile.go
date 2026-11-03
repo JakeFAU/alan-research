@@ -6,8 +6,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type compiler struct {

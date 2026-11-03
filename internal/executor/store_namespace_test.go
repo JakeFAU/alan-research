@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 // Removing store isolation must produce one mutation for two independent programs.

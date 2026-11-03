@@ -11,8 +11,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestSeparateConsumerUnknownAndPeer(t *testing.T) {

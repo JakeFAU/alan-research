@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestPublicProvisionAndReplay(t *testing.T) {

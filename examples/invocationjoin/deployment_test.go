@@ -5,12 +5,12 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/invocationjoin"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/invocationjoin"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestNewOriginalTemplatesAndInvokeBeforeAwait(t *testing.T) {

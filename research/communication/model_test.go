@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/research/join"
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/join"
+	"github.com/JakeFAU/alan-research/research/substitution"
 )
 
 func emit(t *testing.T, name string, v any) {

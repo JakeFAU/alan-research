@@ -15,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/examples/reconciliation"
-	"github.com/JakeFAU/alan/runtime"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/examples/reconciliation"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 type history2c struct {

@@ -8,11 +8,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/lookup"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/lookup"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Identical lexical queries initially select the earlier tied spans. Only

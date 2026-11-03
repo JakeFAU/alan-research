@@ -6,9 +6,9 @@ import (
 	"context"
 	"database/sql"
 	"errors"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	runtime "github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	runtime "github.com/JakeFAU/alan-research/runtime"
 	"path/filepath"
 	"testing"
 )

@@ -6,12 +6,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	join "github.com/JakeFAU/alan/examples/callablejoin"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/research/nominal"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	join "github.com/JakeFAU/alan-research/examples/callablejoin"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/research/nominal"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func TestRetainedBClosedHelperReply(t *testing.T) {

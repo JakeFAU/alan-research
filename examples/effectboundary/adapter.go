@@ -10,8 +10,8 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const Capability = "phase2a.counter"

@@ -4,6 +4,7 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
+	"strconv"
 	"testing"
 )
 
@@ -13,11 +14,11 @@ func TestStandaloneModuleCompilesPublicComposition(t *testing.T) {
 		t.Fatal(err)
 	}
 	dir := t.TempDir()
-	module := "module external.example/investigation\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan v0.0.0\nreplace github.com/JakeFAU/alan => " + root + "\n"
+	module := "module external.example/investigation\n\ngo 1.27.3\n\nrequire github.com/JakeFAU/alan-research v0.0.0\nreplace github.com/JakeFAU/alan-research => " + strconv.Quote(root) + "\n"
 	source := `package main
 import (
- "github.com/JakeFAU/alan/author"
- "github.com/JakeFAU/alan/examples/investigation"
+ "github.com/JakeFAU/alan-research/author"
+ "github.com/JakeFAU/alan-research/examples/investigation"
 )
 func main() {
  for _, nested := range []bool{false,true} {

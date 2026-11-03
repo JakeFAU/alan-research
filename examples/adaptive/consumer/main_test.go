@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestCLIAdaptiveRequest(t *testing.T) {

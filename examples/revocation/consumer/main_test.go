@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // The host observes Q and the program selects only its original invocation.

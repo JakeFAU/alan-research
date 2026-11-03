@@ -1,7 +1,7 @@
 package join
 
 import (
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/substitution"
 	"testing"
 )
 

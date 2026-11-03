@@ -3,8 +3,8 @@
 package communication
 
 import (
-	"github.com/JakeFAU/alan/research/join"
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/join"
+	"github.com/JakeFAU/alan-research/research/substitution"
 )
 
 const (

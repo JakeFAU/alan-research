@@ -8,14 +8,14 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	join "github.com/JakeFAU/alan/examples/callablejoin"
-	tree "github.com/JakeFAU/alan/examples/owningtree"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	join "github.com/JakeFAU/alan-research/examples/callablejoin"
+	tree "github.com/JakeFAU/alan-research/examples/owningtree"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type owningSchedule struct {

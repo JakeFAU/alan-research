@@ -8,7 +8,7 @@ import (
 	"sync/atomic"
 	"testing"
 
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func dispatchEndFixture(t *testing.T, target string) (*Store, string, RunState) {

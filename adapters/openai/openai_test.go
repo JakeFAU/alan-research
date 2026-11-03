@@ -12,9 +12,9 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func request(t *testing.T) effects.Request {

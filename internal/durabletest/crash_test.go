@@ -5,7 +5,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 	"io"
 	"os"
 	"os/exec"
@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/internal/executor"
+	"github.com/JakeFAU/alan-research/internal/executor"
 )
 
 var buildOnce sync.Once

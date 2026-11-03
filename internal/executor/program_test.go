@@ -3,7 +3,7 @@ package executor
 import (
 	"encoding/json"
 	"errors"
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 	"strings"
 	"testing"
 )

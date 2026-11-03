@@ -3,10 +3,10 @@
 package substitutiontest
 
 import (
-	app "github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 	"testing"
 )
 

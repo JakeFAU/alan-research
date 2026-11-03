@@ -1,6 +1,6 @@
 package author
 
-import "github.com/JakeFAU/alan/schema"
+import "github.com/JakeFAU/alan-research/schema"
 
 // Validate every identifier emitted by a step, including unreachable code.
 // JSON must preserve distinct Go names exactly rather than replacing bad UTF-8.

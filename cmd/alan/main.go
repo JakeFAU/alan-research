@@ -6,13 +6,13 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 	"io"
 	"os"
 	"os/signal"
 	"syscall"
 
-	"github.com/JakeFAU/alan/internal/executor"
+	"github.com/JakeFAU/alan-research/internal/executor"
 )
 
 type usageError struct{ message string }

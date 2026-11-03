@@ -5,8 +5,8 @@ import (
 	"maps"
 	"slices"
 
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // Each register has one lifetime sort, even across mutually exclusive paths,

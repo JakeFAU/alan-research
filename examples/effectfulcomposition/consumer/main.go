@@ -11,11 +11,11 @@ import (
 	"os"
 	"time"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/effects"
-	product "github.com/JakeFAU/alan/examples/effectfulcomposition"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/effects"
+	product "github.com/JakeFAU/alan-research/examples/effectfulcomposition"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 var parent = runtime.RunID{Subject: "parent", Generation: 1}

@@ -12,9 +12,9 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // This catches dropping manifest identity, reading sources on recovery, losing

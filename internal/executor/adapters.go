@@ -12,9 +12,9 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	publicschema "github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	publicschema "github.com/JakeFAU/alan-research/schema"
 )
 
 type AdapterAttempt struct {

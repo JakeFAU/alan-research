@@ -6,12 +6,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	join "github.com/JakeFAU/alan/examples/join"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/author"
+	join "github.com/JakeFAU/alan-research/examples/join"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func TestJoinRuntimeControls(t *testing.T) {

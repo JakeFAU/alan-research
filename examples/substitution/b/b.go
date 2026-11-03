@@ -2,9 +2,9 @@
 package b
 
 import (
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // New returns one candidate member that awaits one ordinary singleton helper in

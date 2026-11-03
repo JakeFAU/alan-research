@@ -11,7 +11,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 func observe(ctx context.Context, args []string, out io.Writer) (err error) {

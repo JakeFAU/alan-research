@@ -3,7 +3,7 @@ package executor
 import (
 	"context"
 	"encoding/json"
-	resourcefixture "github.com/JakeFAU/alan/internal/fixture"
+	resourcefixture "github.com/JakeFAU/alan-research/internal/fixture"
 	"net/http"
 	"net/http/httptest"
 	"strings"

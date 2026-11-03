@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"os"
 
-	"github.com/JakeFAU/alan/research/reconciliation"
+	"github.com/JakeFAU/alan-research/research/reconciliation"
 )
 
 func main() {

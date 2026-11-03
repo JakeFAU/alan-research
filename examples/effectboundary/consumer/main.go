@@ -7,8 +7,8 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/runtime"
 	"io"
 	"os"
 )

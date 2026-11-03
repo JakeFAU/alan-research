@@ -9,7 +9,7 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // These literals derive from the behavioral contract. A mode-based decision,

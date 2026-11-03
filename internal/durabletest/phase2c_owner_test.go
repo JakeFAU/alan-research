@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/runtime"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 var resolver2c = runtime.RunID{Subject: "resolver", Generation: 1}

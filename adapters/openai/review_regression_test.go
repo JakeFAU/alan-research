@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const reviewCredential = "review-fake-secret"

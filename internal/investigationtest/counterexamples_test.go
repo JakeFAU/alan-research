@@ -7,9 +7,9 @@ import (
 	"os"
 	"testing"
 
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // Original live-process counterexample inputs are immutable regression fixtures.

@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	rt "github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	rt "github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func bindingInput(t *testing.T, s *rt.Store, run rt.RunID, port string, values map[string]rt.Value) string {

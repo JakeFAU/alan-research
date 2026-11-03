@@ -16,9 +16,9 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func main() {

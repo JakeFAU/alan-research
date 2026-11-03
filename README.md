@@ -6,6 +6,14 @@
 
 The repository contains a runnable **single-host Go executor** and an independent bounded semantic model. The executor persists versioned programs, residual computation, observations, intents and lifecycle outcomes in SQLite. The provisional public `author` package compiles named finite steps into retained programs; the `runtime` facade uses the same executor.
 
+This repository contains the monograph, models, experiments and qualification records. Research programs import packages such as `github.com/JakeFAU/alan-research/author`. The application library has a separate Go module and repository. [Research repository](https://github.com/JakeFAU/alan-research) · [Go runtime library](https://github.com/JakeFAU/alan)
+
+Historical transcripts and citations keep the repository names, commit IDs and package paths recorded when the experiments ran. For a pre-split GitHub link that names `JakeFAU/alan`, use `JakeFAU/alan-research` with the same commit, path or pull request number. To reproduce a source-bound result, check out its recorded commit in this repository or use the source archive named in its runbook. The runtime extraction started at [research commit `003dc9c4`](https://github.com/JakeFAU/alan-research/commit/003dc9c45ac9b0c1f48565632f5be80f0f05beed).
+
+Run the research tests from a full Git checkout. They read frozen programs, journals and SQLite stores under `docs/foundational`. The `docs/go.mod` boundary keeps those archives in the research repository while allowing the root Go module download to fit Go's 500 MiB limit.
+
+For a fix that affects both implementations, land it with a regression test in the repository where it was discovered. Port the change in a separate reviewed pull request that cites the originating commit and runs the receiving repository's tests. If the change affects a research claim, qualify the new source separately and retain the original evidence.
+
 ALAN makes each stage of the work explicit:
 
 - **Plan:** compose named, finite steps into retained programs.

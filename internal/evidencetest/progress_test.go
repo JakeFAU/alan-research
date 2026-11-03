@@ -14,14 +14,14 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/adapters/lookup"
-	"github.com/JakeFAU/alan/adapters/openai"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/adapters/lookup"
+	"github.com/JakeFAU/alan-research/adapters/openai"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // TestRunnerChild is a test-only generic owner host, used for additional static

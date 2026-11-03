@@ -9,8 +9,8 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/boundary"
 )
 
 // The first owner obtains a real transport result and stops immediately after

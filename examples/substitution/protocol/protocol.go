@@ -3,7 +3,7 @@
 // the scalar schema validates kinds, not integer ranges.
 package protocol
 
-import "github.com/JakeFAU/alan/schema"
+import "github.com/JakeFAU/alan-research/schema"
 
 const (
 	Port       = "public"

@@ -14,13 +14,13 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	frame "github.com/JakeFAU/alan/examples/effectfulcomposition"
-	"github.com/JakeFAU/alan/internal/boundary"
-	rt "github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	frame "github.com/JakeFAU/alan-research/examples/effectfulcomposition"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	rt "github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func adverseFrame(t *testing.T, endpoint string, l, r frame.RoleOptions) rt.Provision {

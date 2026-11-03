@@ -17,12 +17,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/effects"
-	eb "github.com/JakeFAU/alan/examples/effectboundary"
-	"github.com/JakeFAU/alan/internal/boundary"
-	x "github.com/JakeFAU/alan/internal/executor"
-	resource "github.com/JakeFAU/alan/internal/fixture"
-	"github.com/JakeFAU/alan/runtime"
+	"github.com/JakeFAU/alan-research/effects"
+	eb "github.com/JakeFAU/alan-research/examples/effectboundary"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	x "github.com/JakeFAU/alan-research/internal/executor"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 type authorityCase struct {

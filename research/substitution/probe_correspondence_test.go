@@ -1,6 +1,7 @@
 package substitution
 
 import (
+	"bytes"
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
@@ -41,7 +42,13 @@ func TestActualProbeMappingCoverage(t *testing.T) {
 		t.Fatal(err)
 	}
 	digest := func(b []byte) string { return fmt.Sprintf("%x", sha256.Sum256(b)) }
-	if digest(read(filepath.Join(root, manifest.SourcePath))) != manifest.SourceDigest {
+	archived := read(filepath.Join(dir, "probes.go.txt"))
+	if digest(archived) != manifest.SourceDigest {
+		t.Fatal("archived public probe source differs from inspected mapping")
+	}
+	// The qualified source predates the research module rename.
+	migrated := bytes.ReplaceAll(archived, []byte(`"github.com/JakeFAU/alan/`), []byte(`"github.com/JakeFAU/alan-research/`))
+	if !bytes.Equal(read(filepath.Join(root, manifest.SourcePath)), migrated) {
 		t.Fatal("public probe source differs from inspected mapping")
 	}
 	expected := map[string]string{"weak-a": "receive set set emit end", "weak-b": "receive emit receive branch jump end emit end", "p": "receive emit receive branch jump end emit end", "q": "receive set emit receive branch jump end emit end", "helper-zero-false": "receive branch set jump set emit end", "helper-zero-true": "receive set emit end"}

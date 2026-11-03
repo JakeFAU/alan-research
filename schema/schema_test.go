@@ -1,7 +1,7 @@
 package schema_test
 
 import (
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/schema"
 	"testing"
 )
 

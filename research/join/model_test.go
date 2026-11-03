@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"compress/gzip"
 	"encoding/json"
-	"github.com/JakeFAU/alan/research/substitution"
+	"github.com/JakeFAU/alan-research/research/substitution"
 	"os"
 	"path/filepath"
 	"testing"

@@ -7,7 +7,7 @@ import (
 	"crypto/sha256"
 	"encoding/json"
 	"fmt"
-	resourcefixture "github.com/JakeFAU/alan/internal/fixture"
+	resourcefixture "github.com/JakeFAU/alan-research/internal/fixture"
 	"io"
 	"net"
 	"net/http"

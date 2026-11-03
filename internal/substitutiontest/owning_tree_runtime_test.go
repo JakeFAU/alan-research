@@ -8,11 +8,11 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	tree "github.com/JakeFAU/alan/examples/owningtree"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	tree "github.com/JakeFAU/alan-research/examples/owningtree"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 var owningModes = []string{"answer", "fail", "absent", "pending"}

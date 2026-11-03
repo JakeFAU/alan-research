@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 )
 
 func bindingProgram(t *testing.T, peer, obligation string) (Program, Artifact) {

@@ -11,8 +11,8 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const MaxSnippetBytes = 2048

@@ -1,4 +1,4 @@
-module github.com/JakeFAU/alan
+module github.com/JakeFAU/alan-research
 
 go 1.27.3
 

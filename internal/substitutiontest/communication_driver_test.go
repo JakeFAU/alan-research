@@ -11,9 +11,9 @@ import (
 	"sort"
 	"testing"
 
-	communication "github.com/JakeFAU/alan/research/communication"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
+	communication "github.com/JakeFAU/alan-research/research/communication"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
 )
 
 // This host apparatus selects only exported operations on unchanged artifacts.

@@ -11,12 +11,12 @@ import (
 	"os/signal"
 	"strings"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/owningtree"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/owningtree"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type term struct {

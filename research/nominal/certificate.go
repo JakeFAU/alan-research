@@ -11,9 +11,9 @@ import (
 	"reflect"
 	"slices"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const Version = "alan/research/nomcert/v1"

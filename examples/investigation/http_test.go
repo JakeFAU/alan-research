@@ -8,10 +8,10 @@ import (
 	"sync/atomic"
 	"testing"
 
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/investigation"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/investigation"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 // The controlled HTTP service sees the real public schemas and all retained

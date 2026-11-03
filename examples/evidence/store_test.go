@@ -1,7 +1,7 @@
 package evidence_test
 
 import (
-	"github.com/JakeFAU/alan/examples/evidence"
+	"github.com/JakeFAU/alan-research/examples/evidence"
 	"testing"
 	"time"
 )

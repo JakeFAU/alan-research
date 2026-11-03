@@ -3,9 +3,9 @@ package adaptive
 import (
 	"fmt"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/evidence"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/evidence"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type profile struct {

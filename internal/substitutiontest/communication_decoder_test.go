@@ -7,12 +7,12 @@ import (
 	"slices"
 	"testing"
 
-	joinapp "github.com/JakeFAU/alan/examples/join"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	communication "github.com/JakeFAU/alan/research/communication"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	joinapp "github.com/JakeFAU/alan-research/examples/join"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	communication "github.com/JakeFAU/alan-research/research/communication"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func TestCommunicationDecoder(t *testing.T) {

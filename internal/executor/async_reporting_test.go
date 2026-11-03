@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	resource "github.com/JakeFAU/alan/internal/fixture"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
 	"net/http"
 	"net/http/httptest"
 	"strings"

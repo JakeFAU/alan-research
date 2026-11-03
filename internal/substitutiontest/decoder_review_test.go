@@ -4,10 +4,10 @@ package substitutiontest
 
 import (
 	"encoding/json"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	model "github.com/JakeFAU/alan/research/substitution"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	model "github.com/JakeFAU/alan-research/research/substitution"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 	"reflect"
 	"testing"
 )

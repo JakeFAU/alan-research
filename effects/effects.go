@@ -8,7 +8,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 	"errors"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/schema"
 	"io"
 	"os"
 	"unicode/utf8"

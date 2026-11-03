@@ -3,14 +3,14 @@ package owningtree_test
 import (
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/callablejoin"
-	"github.com/JakeFAU/alan/examples/owningtree"
-	"github.com/JakeFAU/alan/examples/substitution"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/protocol"
-	"github.com/JakeFAU/alan/runtime"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/callablejoin"
+	"github.com/JakeFAU/alan-research/examples/owningtree"
+	"github.com/JakeFAU/alan-research/examples/substitution"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/protocol"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func check(t *testing.T, err error) {

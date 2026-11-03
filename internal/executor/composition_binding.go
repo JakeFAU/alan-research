@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"slices"
 
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 )
 
 func retainCompositionTemplate(ctx context.Context, q queryer, t compositionTemplate, l Limits) (compositionTemplate, error) {

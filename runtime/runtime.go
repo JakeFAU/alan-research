@@ -4,9 +4,9 @@ package runtime
 
 import (
 	"context"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/internal/executor"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 type Asset = effects.Asset

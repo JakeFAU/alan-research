@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/research/nominal"
-	"github.com/JakeFAU/alan/schema"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/research/nominal"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 const operationLiteral = `["probeA",1,2,0]`

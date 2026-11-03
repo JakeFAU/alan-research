@@ -17,8 +17,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/internal/fixture"
+	"github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/internal/fixture"
 )
 
 func TestLedgerCLIHelper(t *testing.T) {

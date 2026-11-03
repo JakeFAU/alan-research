@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"os"
 
-	m "github.com/JakeFAU/alan/research/effectprotocol"
+	m "github.com/JakeFAU/alan-research/research/effectprotocol"
 )
 
 type summary struct {

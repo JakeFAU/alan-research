@@ -7,7 +7,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	recordschema "github.com/JakeFAU/alan/schema"
+	recordschema "github.com/JakeFAU/alan-research/schema"
 	"io"
 	"math"
 	"strings"

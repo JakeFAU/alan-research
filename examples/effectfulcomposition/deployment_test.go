@@ -4,11 +4,11 @@ import (
 	"bytes"
 	"testing"
 
-	frame "github.com/JakeFAU/alan/examples/effectfulcomposition"
-	"github.com/JakeFAU/alan/examples/owningtree"
-	"github.com/JakeFAU/alan/examples/substitution/a"
-	"github.com/JakeFAU/alan/examples/substitution/b"
-	"github.com/JakeFAU/alan/schema"
+	frame "github.com/JakeFAU/alan-research/examples/effectfulcomposition"
+	"github.com/JakeFAU/alan-research/examples/owningtree"
+	"github.com/JakeFAU/alan-research/examples/substitution/a"
+	"github.com/JakeFAU/alan-research/examples/substitution/b"
+	"github.com/JakeFAU/alan-research/schema"
 )
 
 func TestFrameArtifacts(t *testing.T) {

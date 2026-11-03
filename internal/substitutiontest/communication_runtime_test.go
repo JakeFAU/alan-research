@@ -8,10 +8,10 @@ import (
 	"reflect"
 	"testing"
 
-	joinapp "github.com/JakeFAU/alan/examples/join"
-	app "github.com/JakeFAU/alan/examples/substitution"
-	communication "github.com/JakeFAU/alan/research/communication"
-	model "github.com/JakeFAU/alan/research/substitution"
+	joinapp "github.com/JakeFAU/alan-research/examples/join"
+	app "github.com/JakeFAU/alan-research/examples/substitution"
+	communication "github.com/JakeFAU/alan-research/research/communication"
+	model "github.com/JakeFAU/alan-research/research/substitution"
 )
 
 func communicationFixture(t *testing.T) string {

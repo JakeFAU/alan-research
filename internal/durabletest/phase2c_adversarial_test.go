@@ -11,13 +11,13 @@ import (
 	"testing"
 	"time"
 
-	rq "github.com/JakeFAU/alan/adapters/receiptquery"
-	"github.com/JakeFAU/alan/author"
-	"github.com/JakeFAU/alan/effects"
-	"github.com/JakeFAU/alan/examples/reconciliation"
-	"github.com/JakeFAU/alan/internal/boundary"
-	x "github.com/JakeFAU/alan/internal/executor"
-	rt "github.com/JakeFAU/alan/runtime"
+	rq "github.com/JakeFAU/alan-research/adapters/receiptquery"
+	"github.com/JakeFAU/alan-research/author"
+	"github.com/JakeFAU/alan-research/effects"
+	"github.com/JakeFAU/alan-research/examples/reconciliation"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	x "github.com/JakeFAU/alan-research/internal/executor"
+	rt "github.com/JakeFAU/alan-research/runtime"
 )
 
 // The primary target follows the ordinary three-actor handoff. Only the
