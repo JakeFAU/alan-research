@@ -1,0 +1,86 @@
+{
+  "Profile": "serial_serial",
+  "SendOrder": [
+    "a",
+    "b"
+  ],
+  "DeliveryOrder": [
+    "a",
+    "b"
+  ],
+  "Counts": {
+    "RequestsAdmitted": 2,
+    "RequestsConsumed": 0,
+    "ResultsAdmitted": 0,
+    "ResultsConsumed": 0,
+    "Unpaid": [
+      "a-request",
+      "b-request"
+    ]
+  },
+  "Reports": {
+    "first": {
+      "Steps": 0,
+      "Dispatches": 0,
+      "Quiescent": true,
+      "OpenRuns": [
+        {
+          "Subject": "a",
+          "Generation": 1
+        },
+        {
+          "Subject": "b",
+          "Generation": 1
+        }
+      ],
+      "UnresolvedIntents": [],
+      "PendingDeliveries": [],
+      "UnknownExternal": [],
+      "UnknownAdapters": [],
+      "Roots": null,
+      "RejectedAdmissions": 0
+    },
+    "reopened": {
+      "Steps": 0,
+      "Dispatches": 0,
+      "Quiescent": true,
+      "OpenRuns": [
+        {
+          "Subject": "a",
+          "Generation": 1
+        },
+        {
+          "Subject": "b",
+          "Generation": 1
+        }
+      ],
+      "UnresolvedIntents": [],
+      "PendingDeliveries": [],
+      "UnknownExternal": [],
+      "UnknownAdapters": [],
+      "Roots": null,
+      "RejectedAdmissions": 0
+    },
+    "repeated": {
+      "Steps": 0,
+      "Dispatches": 0,
+      "Quiescent": true,
+      "OpenRuns": [
+        {
+          "Subject": "a",
+          "Generation": 1
+        },
+        {
+          "Subject": "b",
+          "Generation": 1
+        }
+      ],
+      "UnresolvedIntents": [],
+      "PendingDeliveries": [],
+      "UnknownExternal": [],
+      "UnknownAdapters": [],
+      "Roots": null,
+      "RejectedAdmissions": 0
+    }
+  }
+}

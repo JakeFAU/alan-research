@@ -1,0 +1,6 @@
+--- FAIL: TestReciprocalRuntime (0.00s)
+    --- FAIL: TestReciprocalRuntime/serial_serial/send_a/deliver_a (0.00s)
+        runtime_test.go:78: two ordinary roots required, got 0
+FAIL
+FAIL	github.com/JakeFAU/alan-research/examples/communication/mutual	0.125s
+FAIL

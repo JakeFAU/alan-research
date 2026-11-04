@@ -1,0 +1,6 @@
+--- FAIL: TestSerialTrapAndAsymmetricCompletion (0.00s)
+    model_test.go:8: serial/serial: missing finite graph/cycles: {States:0 Edges:0 CyclicStates:0 LocalSafetyViolations:0 LocalTransitionViolations:0 CustodyViolations:0 AppliedStates:0 ReleasedStates:0 CompleteStates:0 CannotComplete:0 TrapMismatch:0 ShortestTrap:<nil> AdmittedWait:<nil> RecoveredWait:<nil>}
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/mutualobligations	0.074s
+FAIL
+exit=1

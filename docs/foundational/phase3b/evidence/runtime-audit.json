@@ -1,0 +1,815 @@
+{
+  "CasesChecked": 32,
+  "SerialCases": 8,
+  "ServicingCases": 24,
+  "Cases": [
+    {
+      "Mode": "normal",
+      "Case": "serial_serial-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "55b4d55b5fe65667771bc2875fff9ac7adbb2528b5f0e01a39444583e17a9cb9"
+    },
+    {
+      "Mode": "normal",
+      "Case": "serial_serial-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "7da25b70190e67ce2e7608ff1648fd87aaee315f39743d1b213c263ac2a2cbd9"
+    },
+    {
+      "Mode": "normal",
+      "Case": "serial_serial-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "90c17450ed39b2b891e6f2db3c489af861b0d829ea3f957814bfbebcd80a2a9e"
+    },
+    {
+      "Mode": "normal",
+      "Case": "serial_serial-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "038a8c1ad9c5465e42bae5ef539f2b67391474f6d7cbb54600a858f37abafeb3"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_a-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "c5871035f2058af99463f46070da0078e984cf0aeb156268a63d43574a2545ed"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_a-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "6a424584f76cff8304c8a2103bc928056e8955a77746a28896e4f280ac6280cd"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_a-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "70f1c25e7af18942df311ac8bfa4b5d5f95ade6cec96b18a0496212a20326e28"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_a-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "40424e99dd45e2c7609803c982da21f52cf65bf4ceea07064daebd496b5a0e26"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_b-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "b63c92a8dec127c7ab8b873340f6ae2de475b277b1903438fc2d0cbd30412c9a"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_b-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "6eed694cf0224ba4ff937b04bfa2b862d6191f6c8e5760ba680be6e0b75bf5bb"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_b-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "1d3e49a92660256a80b52353d7496a352a39f6151374f26ce977e46cd0c5ca5c"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_b-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "a67f0334b6163dd98f362ecfd099ffe7c986cdea7c189d7f24998dbf26dbf3b0"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_both-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "0266fe5bdf16a0c015e6f20efed8cf22ff7e2c6622aa7c06fc927fb9750c5a03"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_both-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "fad8f78b8834c780527628d43f95b9ab0e085ab9331ea1281c294dcf6dd0693e"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_both-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "896733f1fa392a1c2e166fd6daddd9e285ef2c3392b43ee2861b7b746ba83b81"
+    },
+    {
+      "Mode": "normal",
+      "Case": "service_both-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "e639b189c6047986d14ce4aadc81a62bdc809f2960cdc2890f75f2e5a8cd8e4f"
+    },
+    {
+      "Mode": "race",
+      "Case": "serial_serial-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "849ddcc6a1a29dd4bf67bace876991694d4bdc28af9074c250f2017e488de2fd"
+    },
+    {
+      "Mode": "race",
+      "Case": "serial_serial-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "ec4553b2507a8ed239f55aa7dbba3447871018aafb9d96d1bd596a185d871aea"
+    },
+    {
+      "Mode": "race",
+      "Case": "serial_serial-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "ba9e0f9f9409a1dd799bf878b0d8675d6b5e371b1298e311e7c286734d6063e0"
+    },
+    {
+      "Mode": "race",
+      "Case": "serial_serial-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 0,
+        "ResultsAdmitted": 0,
+        "ResultsConsumed": 0,
+        "Unpaid": [
+          "a-request",
+          "b-request"
+        ]
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 4,
+      "MessageAcknowledgments": 2,
+      "RunReports": {
+        "first": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "reopened": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        },
+        "repeated": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "66648786e810223ddd1483f37d30b5d01fbfb167c3d37479b739182d2e3c0414"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_a-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "b34ed1ef8bb6b5f6e015f31c76e7688c124e315596b7f2fd7f6d9efc7e09d1e4"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_a-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "30a0b525bc5ea6f4a091b1a8b4bd1ca732059586558bbc99474bad07739722b0"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_a-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "a972f7c78386de87504de535ec341ae860a35a59475cabe693b110256b91b6bc"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_a-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "f1b06315ff960301bae2963030fd3917289d30388d63c20666927a0e9e97255b"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_b-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "20da58ea1d1aee3b655aaa201417000cfcc3e1f796945737f4818fcd5f6f10cd"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_b-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "d7044b6340a2f9d974d2384cf72a6cab15f9f5e527faa06efb2cd90e6bc92a41"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_b-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "09a0f2725bd18c9c2572a44e24dec7e40400bbde796bfe5856b005b8d9aa0827"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_b-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "b52a0ddf2ea10e0a78fa5dcbefb99ea7752d156390dbbb242a8317f906ec5903"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_both-send_a-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "0ea7476ee19dfe33d18ebf70b966127efd731d3389505a8e23f5a14c98b48fdc"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_both-send_a-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "f630a0b0cdcf593dd89430dcab191da52dc53331455e03217bb66b7d7488d00a"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_both-send_b-deliver_a",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "a7360f2452c8386637a985a206c0c33ed4232d1b920c63695f766404b4ad5846"
+    },
+    {
+      "Mode": "race",
+      "Case": "service_both-send_b-deliver_b",
+      "RawCounts": {
+        "RequestsAdmitted": 2,
+        "RequestsConsumed": 2,
+        "ResultsAdmitted": 2,
+        "ResultsConsumed": 2,
+        "Unpaid": []
+      },
+      "PrefixCommits": 4,
+      "HistoryRows": 20,
+      "MessageAcknowledgments": 4,
+      "RunReports": {
+        "first": {
+          "Steps": 16,
+          "Dispatches": 2,
+          "Quiescent": true
+        }
+      },
+      "EvidenceSHA256": "6b46824290403f5fbd839c17a4c4d0a8fac677385646a01310c8fbc76c74c4bf"
+    }
+  ]
+}

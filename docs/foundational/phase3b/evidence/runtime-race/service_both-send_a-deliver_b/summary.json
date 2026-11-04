@@ -1,0 +1,41 @@
+{
+  "Profile": "service_both",
+  "SendOrder": [
+    "a",
+    "b"
+  ],
+  "DeliveryOrder": [
+    "b",
+    "a"
+  ],
+  "Counts": {
+    "RequestsAdmitted": 2,
+    "RequestsConsumed": 2,
+    "ResultsAdmitted": 2,
+    "ResultsConsumed": 2,
+    "Unpaid": []
+  },
+  "Reports": {
+    "first": {
+      "Steps": 16,
+      "Dispatches": 2,
+      "Quiescent": true,
+      "OpenRuns": [
+        {
+          "Subject": "a",
+          "Generation": 1
+        },
+        {
+          "Subject": "b",
+          "Generation": 1
+        }
+      ],
+      "UnresolvedIntents": [],
+      "PendingDeliveries": [],
+      "UnknownExternal": [],
+      "UnknownAdapters": [],
+      "Roots": null,
+      "RejectedAdmissions": 0
+    }
+  }
+}

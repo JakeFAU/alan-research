@@ -1,0 +1,50 @@
+ok  	github.com/JakeFAU/alan-research/adapters/lookup	0.302s
+ok  	github.com/JakeFAU/alan-research/adapters/openai	0.239s
+ok  	github.com/JakeFAU/alan-research/adapters/receiptquery	0.231s
+ok  	github.com/JakeFAU/alan-research/author	2.188s
+ok  	github.com/JakeFAU/alan-research/cmd/alan	0.464s
+ok  	github.com/JakeFAU/alan-research/cmd/alan-compose	1.267s
+ok  	github.com/JakeFAU/alan-research/cmd/alan-evidence	0.172s
+ok  	github.com/JakeFAU/alan-research/cmd/alan-investigate	2.364s
+ok  	github.com/JakeFAU/alan-research/cmd/alan-resource	0.281s
+ok  	github.com/JakeFAU/alan-research/compose	1.007s
+ok  	github.com/JakeFAU/alan-research/effects	0.127s
+ok  	github.com/JakeFAU/alan-research/examples/adaptive	1477.571s
+ok  	github.com/JakeFAU/alan-research/examples/callablejoin	0.191s
+ok  	github.com/JakeFAU/alan-research/examples/communication	0.227s
+ok  	github.com/JakeFAU/alan-research/examples/consumingpolicy	0.173s
+?   	github.com/JakeFAU/alan-research/examples/effectboundary	[no test files]
+ok  	github.com/JakeFAU/alan-research/examples/effectfulcomposition	0.766s
+ok  	github.com/JakeFAU/alan-research/examples/evidence	1.240s
+ok  	github.com/JakeFAU/alan-research/examples/investigation	55.934s
+ok  	github.com/JakeFAU/alan-research/examples/invocationjoin	0.161s
+ok  	github.com/JakeFAU/alan-research/examples/join	0.177s
+ok  	github.com/JakeFAU/alan-research/examples/owningtree	0.482s
+ok  	github.com/JakeFAU/alan-research/examples/reconciliation	0.260s
+ok  	github.com/JakeFAU/alan-research/examples/substitution	0.626s
+ok  	github.com/JakeFAU/alan-research/examples/substitution/a	0.918s
+?   	github.com/JakeFAU/alan-research/examples/substitution/b	[no test files]
+?   	github.com/JakeFAU/alan-research/examples/substitution/protocol	[no test files]
+?   	github.com/JakeFAU/alan-research/examples/worktree	[no test files]
+ok  	github.com/JakeFAU/alan-research/internal/boundary	0.114s
+ok  	github.com/JakeFAU/alan-research/internal/durabletest	6.721s
+ok  	github.com/JakeFAU/alan-research/internal/executor	6.216s
+ok  	github.com/JakeFAU/alan-research/internal/fixture	0.173s
+ok  	github.com/JakeFAU/alan-research/research/communication	0.162s
+ok  	github.com/JakeFAU/alan-research/research/dispatchauthority	0.118s
+?   	github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export	[no test files]
+ok  	github.com/JakeFAU/alan-research/research/effectfulcomposition	0.197s
+?   	github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export	[no test files]
+ok  	github.com/JakeFAU/alan-research/research/effectprotocol	0.136s
+?   	github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export	[no test files]
+ok  	github.com/JakeFAU/alan-research/research/join	0.867s
+ok  	github.com/JakeFAU/alan-research/research/nominal	0.156s
+ok  	github.com/JakeFAU/alan-research/research/owningtree	0.810s
+ok  	github.com/JakeFAU/alan-research/research/reconciliation	0.123s
+?   	github.com/JakeFAU/alan-research/research/reconciliation/cmd/export	[no test files]
+ok  	github.com/JakeFAU/alan-research/research/semantics	6.479s
+ok  	github.com/JakeFAU/alan-research/research/substitution	12.676s
+ok  	github.com/JakeFAU/alan-research/research/twoagent	0.193s
+?   	github.com/JakeFAU/alan-research/research/twoagent/cmd/export	[no test files]
+?   	github.com/JakeFAU/alan-research/runtime	[no test files]
+ok  	github.com/JakeFAU/alan-research/schema	0.149s

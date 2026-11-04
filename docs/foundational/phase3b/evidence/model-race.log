@@ -1,0 +1,187 @@
+=== RUN   TestSerialTrapAndAsymmetricCompletion
+    model_test.go:36: serial/serial frozen Phase3A projection: 409284 nonstutter + 613820 stutter checks
+    model_test.go:39: serial/serial states=68497 edges=511552 cyclic=56580 components=22384 applied=68272 released=45824 complete=16384 can=68353 cannot=144 trap=144
+    model_test.go:36: servicing/serial frozen Phase3A projection: 604708 nonstutter + 895516 stutter checks
+    model_test.go:39: servicing/serial states=96721 edges=750112 cyclic=80388 components=31408 applied=96496 released=63232 complete=16384 can=96721 cannot=0 trap=144
+    model_test.go:36: serial/servicing frozen Phase3A projection: 604708 nonstutter + 895516 stutter checks
+    model_test.go:39: serial/servicing states=96721 edges=750112 cyclic=80388 components=31408 applied=96496 released=63232 complete=16384 can=96721 cannot=0 trap=144
+    model_test.go:36: servicing/servicing frozen Phase3A projection: 606340 nonstutter + 897148 stutter checks
+    model_test.go:39: servicing/servicing states=96721 edges=751744 cyclic=80388 components=31408 applied=96496 released=63232 complete=16384 can=96721 cannot=0 trap=144
+--- PASS: TestSerialTrapAndAsymmetricCompletion (15.18s)
+=== RUN   TestIndependentAdversariesAndSharedAvailability
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/commit
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/send-request
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/admit
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/apply
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/send-result
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/receive-result
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/record
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/send-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/release
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/down/deduplicate
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/forgery
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/early-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/double-apply
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/send-without-retention
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/resend-deleted-receipt
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/ack-payload
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/double-consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/early-consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/unreceived-record
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/release-without-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/wrong-record-value
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/actor
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/edge
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/grant
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/resource
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/fully-rebound-cross-edge
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/generation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/callee-generation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/operation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/endpoint
+=== RUN   TestIndependentAdversariesAndSharedAvailability/A/binding/request
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/commit
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/send-request
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/admit
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/apply
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/send-result
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/receive-result
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/record
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/send-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/release
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/down/deduplicate
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/early-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/double-apply
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/unreceived-record
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/wrong-record-value
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/forgery
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/early-consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/release-without-ack
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/send-without-retention
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/resend-deleted-receipt
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/ack-payload
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/double-consume
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/actor
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/edge
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/callee-generation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/operation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/endpoint
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/request
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/resource
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/generation
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/grant
+=== RUN   TestIndependentAdversariesAndSharedAvailability/B/binding/fully-rebound-cross-edge
+--- PASS: TestIndependentAdversariesAndSharedAvailability (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/commit (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/send-request (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/admit (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/apply (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/send-result (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/receive-result (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/record (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/send-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/release (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/down/deduplicate (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/forgery (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/early-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/double-apply (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/send-without-retention (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/resend-deleted-receipt (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/ack-payload (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/double-consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/early-consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/unreceived-record (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/release-without-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/wrong-record-value (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/actor (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/edge (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/grant (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/resource (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/fully-rebound-cross-edge (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/generation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/callee-generation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/operation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/endpoint (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/A/binding/request (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/commit (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/send-request (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/admit (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/apply (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/send-result (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/receive-result (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/record (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/send-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/release (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/down/deduplicate (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/early-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/double-apply (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/unreceived-record (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/wrong-record-value (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/forgery (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/early-consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/release-without-ack (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/send-without-retention (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/resend-deleted-receipt (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/ack-payload (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/double-consume (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/actor (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/edge (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/callee-generation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/operation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/endpoint (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/request (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/resource (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/generation (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/grant (0.00s)
+    --- PASS: TestIndependentAdversariesAndSharedAvailability/B/binding/fully-rebound-cross-edge (0.00s)
+=== RUN   TestSerialGateOnlyBlocksApplication
+--- PASS: TestSerialGateOnlyBlocksApplication (0.00s)
+=== RUN   TestPreRecordCrashRetryAndCoincidentResults
+--- PASS: TestPreRecordCrashRetryAndCoincidentResults (0.00s)
+=== RUN   TestConcurrentReadersHaveNoSharedScratch
+=== RUN   TestConcurrentReadersHaveNoSharedScratch/serial/serial
+=== PAUSE TestConcurrentReadersHaveNoSharedScratch/serial/serial
+=== RUN   TestConcurrentReadersHaveNoSharedScratch/servicing/serial
+=== PAUSE TestConcurrentReadersHaveNoSharedScratch/servicing/serial
+=== RUN   TestConcurrentReadersHaveNoSharedScratch/serial/servicing
+=== PAUSE TestConcurrentReadersHaveNoSharedScratch/serial/servicing
+=== RUN   TestConcurrentReadersHaveNoSharedScratch/servicing/servicing
+=== PAUSE TestConcurrentReadersHaveNoSharedScratch/servicing/servicing
+=== CONT  TestConcurrentReadersHaveNoSharedScratch/servicing/serial
+=== CONT  TestConcurrentReadersHaveNoSharedScratch/servicing/servicing
+=== CONT  TestConcurrentReadersHaveNoSharedScratch/serial/serial
+=== CONT  TestConcurrentReadersHaveNoSharedScratch/serial/servicing
+--- PASS: TestConcurrentReadersHaveNoSharedScratch (0.00s)
+    --- PASS: TestConcurrentReadersHaveNoSharedScratch/servicing/serial (0.00s)
+    --- PASS: TestConcurrentReadersHaveNoSharedScratch/servicing/servicing (0.00s)
+    --- PASS: TestConcurrentReadersHaveNoSharedScratch/serial/serial (0.00s)
+    --- PASS: TestConcurrentReadersHaveNoSharedScratch/serial/servicing (0.00s)
+=== RUN   TestSafetyCheckersRejectLostFacts
+=== RUN   TestSafetyCheckersRejectLostFacts/consumption
+=== RUN   TestSafetyCheckersRejectLostFacts/record
+=== RUN   TestSafetyCheckersRejectLostFacts/actual
+=== RUN   TestSafetyCheckersRejectLostFacts/crash
+=== RUN   TestSafetyCheckersRejectLostFacts/activation
+=== RUN   TestSafetyCheckersRejectLostFacts/commit
+=== RUN   TestSafetyCheckersRejectLostFacts/admission
+=== RUN   TestSafetyCheckersRejectLostFacts/application
+--- PASS: TestSafetyCheckersRejectLostFacts (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/consumption (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/record (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/actual (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/crash (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/activation (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/commit (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/admission (0.00s)
+    --- PASS: TestSafetyCheckersRejectLostFacts/application (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/mutualobligations	16.378s
+=== RUN   TestExitCodesSeparateCounterexampleFromApparatus
+--- PASS: TestExitCodesSeparateCounterexampleFromApparatus (0.30s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/mutualobligations/cmd/export	1.457s
+exit=0
