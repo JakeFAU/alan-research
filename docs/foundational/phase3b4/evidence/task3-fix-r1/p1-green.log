@@ -1,0 +1,74 @@
+=== RUN   TestRequestAuthorityDormantPriorStore
+--- PASS: TestRequestAuthorityDormantPriorStore (0.03s)
+=== RUN   TestRequestAuthorityDormantClaimBoundary
+=== RUN   TestRequestAuthorityDormantClaimBoundary/malformed
+=== RUN   TestRequestAuthorityDormantClaimBoundary/wrong_version
+--- PASS: TestRequestAuthorityDormantClaimBoundary (0.02s)
+    --- PASS: TestRequestAuthorityDormantClaimBoundary/malformed (0.01s)
+    --- PASS: TestRequestAuthorityDormantClaimBoundary/wrong_version (0.01s)
+=== RUN   TestRequestAuthorityFormatsConflictPromotionAndOldReader
+=== RUN   TestRequestAuthorityFormatsConflictPromotionAndOldReader/13
+=== RUN   TestRequestAuthorityFormatsConflictPromotionAndOldReader/13/frozen_old_reader
+    request_authority_formats_test.go:64: set ALAN_PHASE3B3_OLD_READER for frozen-reader qualification
+=== RUN   TestRequestAuthorityFormatsConflictPromotionAndOldReader/14
+=== RUN   TestRequestAuthorityFormatsConflictPromotionAndOldReader/14/frozen_old_reader
+    request_authority_formats_test.go:64: set ALAN_PHASE3B3_OLD_READER for frozen-reader qualification
+--- PASS: TestRequestAuthorityFormatsConflictPromotionAndOldReader (0.06s)
+    --- PASS: TestRequestAuthorityFormatsConflictPromotionAndOldReader/13 (0.03s)
+        --- SKIP: TestRequestAuthorityFormatsConflictPromotionAndOldReader/13/frozen_old_reader (0.00s)
+    --- PASS: TestRequestAuthorityFormatsConflictPromotionAndOldReader/14 (0.03s)
+        --- SKIP: TestRequestAuthorityFormatsConflictPromotionAndOldReader/14/frozen_old_reader (0.00s)
+=== RUN   TestRequestAuthorityFormatsFeatureMasking
+--- PASS: TestRequestAuthorityFormatsFeatureMasking (0.01s)
+=== RUN   TestRequestAuthorityLegacyUnknownOperationCompatibility
+=== RUN   TestRequestAuthorityLegacyUnknownOperationCompatibility/DelegateAuthority/literal
+=== RUN   TestRequestAuthorityLegacyUnknownOperationCompatibility/DelegateAuthority/ref
+=== RUN   TestRequestAuthorityLegacyUnknownOperationCompatibility/RevokeAuthority/literal
+=== RUN   TestRequestAuthorityLegacyUnknownOperationCompatibility/RevokeAuthority/ref
+--- PASS: TestRequestAuthorityLegacyUnknownOperationCompatibility (0.02s)
+    --- PASS: TestRequestAuthorityLegacyUnknownOperationCompatibility/DelegateAuthority/literal (0.01s)
+    --- PASS: TestRequestAuthorityLegacyUnknownOperationCompatibility/DelegateAuthority/ref (0.01s)
+    --- PASS: TestRequestAuthorityLegacyUnknownOperationCompatibility/RevokeAuthority/literal (0.00s)
+    --- PASS: TestRequestAuthorityLegacyUnknownOperationCompatibility/RevokeAuthority/ref (0.00s)
+=== RUN   TestRequestAuthorityLegacyExternalWitness
+=== RUN   TestRequestAuthorityLegacyExternalWitness/clean
+=== RUN   TestRequestAuthorityLegacyExternalWitness/clean/Replay
+=== RUN   TestRequestAuthorityLegacyExternalWitness/clean/InspectExecution
+=== RUN   TestRequestAuthorityLegacyExternalWitness/clean/Open
+=== RUN   TestRequestAuthorityLegacyExternalWitness/forbidden_witness
+=== RUN   TestRequestAuthorityLegacyExternalWitness/forbidden_witness/Replay
+=== RUN   TestRequestAuthorityLegacyExternalWitness/forbidden_witness/InspectExecution
+=== RUN   TestRequestAuthorityLegacyExternalWitness/forbidden_witness/Open
+--- PASS: TestRequestAuthorityLegacyExternalWitness (0.01s)
+    --- PASS: TestRequestAuthorityLegacyExternalWitness/clean (0.01s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/clean/Replay (0.00s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/clean/InspectExecution (0.00s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/clean/Open (0.00s)
+    --- PASS: TestRequestAuthorityLegacyExternalWitness/forbidden_witness (0.01s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/forbidden_witness/Replay (0.00s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/forbidden_witness/InspectExecution (0.00s)
+        --- PASS: TestRequestAuthorityLegacyExternalWitness/forbidden_witness/Open (0.00s)
+=== RUN   TestRequestAuthorityFormatsRejectUnsupportedAndLegacy
+=== RUN   TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/unknown
+=== RUN   TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/legacy
+=== RUN   TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/dispatch_journal
+=== RUN   TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/extra_principal
+--- PASS: TestRequestAuthorityFormatsRejectUnsupportedAndLegacy (0.01s)
+    --- PASS: TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/unknown (0.00s)
+    --- PASS: TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/legacy (0.00s)
+    --- PASS: TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/dispatch_journal (0.00s)
+    --- PASS: TestRequestAuthorityFormatsRejectUnsupportedAndLegacy/extra_principal (0.00s)
+=== RUN   TestRequestAuthorityCanonicalClaims
+--- PASS: TestRequestAuthorityCanonicalClaims (0.01s)
+=== RUN   TestRequestAuthorityFormatsAndLogicalLocators
+--- PASS: TestRequestAuthorityFormatsAndLogicalLocators (0.01s)
+=== RUN   TestRequestBindingVersionInputs
+=== RUN   TestRequestBindingVersionInputs/use
+=== RUN   TestRequestBindingVersionInputs/claim
+=== RUN   TestRequestBindingVersionInputs/profile
+--- PASS: TestRequestBindingVersionInputs (0.01s)
+    --- PASS: TestRequestBindingVersionInputs/use (0.00s)
+    --- PASS: TestRequestBindingVersionInputs/claim (0.00s)
+    --- PASS: TestRequestBindingVersionInputs/profile (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/executor	0.392s

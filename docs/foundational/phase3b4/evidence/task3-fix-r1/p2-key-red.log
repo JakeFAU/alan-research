@@ -1,0 +1,11 @@
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/descending_index
+    request_binding_test.go:314: malformed ledger accepted
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/nocase_index
+    request_binding_test.go:314: malformed ledger accepted
+--- FAIL: TestRequestBindingMalformedOpenDoesNotRenew (0.05s)
+    --- FAIL: TestRequestBindingMalformedOpenDoesNotRenew/descending_index (0.03s)
+    --- FAIL: TestRequestBindingMalformedOpenDoesNotRenew/nocase_index (0.02s)
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	0.259s
+FAIL

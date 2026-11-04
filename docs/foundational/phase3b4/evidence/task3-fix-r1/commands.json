@@ -1,0 +1,276 @@
+[
+  {
+    "record": "base-create.json",
+    "output": "base-create.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "run",
+      "/tmp/alan-phase3b4-review-v1.go",
+      "/tmp/alan-phase3b4-fix-r1/v1-dormant.sqlite"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "final-diff-check.json",
+    "output": "final-diff-check.log",
+    "exit_code": 0,
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "final-format.json",
+    "output": "final-format.log",
+    "exit_code": 0,
+    "command": [
+      "gofmt",
+      "-l",
+      "internal/executor/request_authority.go",
+      "internal/executor/request_binding.go",
+      "internal/executor/request_binding_test.go",
+      "internal/executor/request_authority_compatibility_test.go"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "final-staticcheck-integration.json",
+    "output": "final-staticcheck-integration.log",
+    "exit_code": 0,
+    "command": [
+      "staticcheck",
+      "-tags",
+      "integration",
+      "./internal/executor"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "final-staticcheck.json",
+    "output": "final-staticcheck.log",
+    "exit_code": 0,
+    "command": [
+      "staticcheck",
+      "./internal/executor"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "p1-green.json",
+    "output": "p1-green.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestAuthorityDormant|TestRequestAuthorityCanonicalClaims|TestRequestBindingVersionInputs|TestRequestAuthorityFormats|TestRequestAuthorityLegacy)"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "p1-race.json",
+    "output": "p1-race.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestAuthorityDormant|TestRequestAuthorityCanonicalClaims|TestRequestBindingVersionInputs|TestRequestAuthorityFormats|TestRequestAuthorityLegacy)"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "p1-red.json",
+    "output": "p1-red.log",
+    "exit_code": 1,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./internal/executor",
+      "-run",
+      "^TestRequestAuthorityDormant"
+    ],
+    "execution": "sandbox",
+    "classification": "causal RED"
+  },
+  {
+    "record": "p1-staticcheck.json",
+    "output": "p1-staticcheck.log",
+    "exit_code": 0,
+    "command": [
+      "staticcheck",
+      "./internal/executor"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "p2-green.json",
+    "output": "p2-green.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./internal/executor",
+      "-run",
+      "^TestRequestBinding(MalformedOpenDoesNotRenew|DuplicateTransportAndIndex)$"
+    ],
+    "execution": "sandbox",
+    "classification": "successful check"
+  },
+  {
+    "record": "p2-key-red.json",
+    "output": "p2-key-red.log",
+    "exit_code": 1,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./internal/executor",
+      "-run",
+      "^TestRequestBindingMalformedOpenDoesNotRenew$/(nocase_index|descending_index)$"
+    ],
+    "execution": "sandbox",
+    "classification": "causal RED"
+  },
+  {
+    "record": "p2-red.json",
+    "output": "p2-red.log",
+    "exit_code": 1,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./internal/executor",
+      "-run",
+      "^TestRequestBindingMalformedOpenDoesNotRenew$/nocase_index$"
+    ],
+    "execution": "sandbox",
+    "classification": "causal RED"
+  },
+  {
+    "record": "scoped-green-escalated.json",
+    "output": "scoped-green-escalated.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "require_escalated",
+    "classification": "successful check"
+  },
+  {
+    "record": "scoped-green.json",
+    "output": "scoped-green.log",
+    "exit_code": 1,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "sandbox",
+    "classification": "apparatus loopback bind failure"
+  },
+  {
+    "record": "scoped-integration-race.json",
+    "output": "scoped-integration-race.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-timeout=10m",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "require_escalated",
+    "classification": "successful check"
+  },
+  {
+    "record": "scoped-integration.json",
+    "output": "scoped-integration.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "require_escalated",
+    "classification": "successful check"
+  },
+  {
+    "record": "scoped-race-escalated.json",
+    "output": "scoped-race-escalated.log",
+    "exit_code": 0,
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-timeout=10m",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "require_escalated",
+    "classification": "successful check"
+  },
+  {
+    "record": "scoped-race.json",
+    "output": "scoped-race.log",
+    "exit_code": 1,
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-timeout=10m",
+      "./internal/executor",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority)"
+    ],
+    "execution": "sandbox",
+    "classification": "apparatus loopback bind failure"
+  }
+]

@@ -1,0 +1,27 @@
+=== RUN   TestRequestBindingDuplicateTransportAndIndex
+    request_binding_test.go:192: SEARCH admissions USING INDEX admissions_observation_id (observation_id=?)
+--- PASS: TestRequestBindingDuplicateTransportAndIndex (0.02s)
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/missing_index
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/wrong_index
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/descending_index
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/nocase_index
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/unique_index
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/metadata
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/pragma
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/profile
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/observation
+=== RUN   TestRequestBindingMalformedOpenDoesNotRenew/admission
+--- PASS: TestRequestBindingMalformedOpenDoesNotRenew (0.10s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/missing_index (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/wrong_index (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/descending_index (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/nocase_index (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/unique_index (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/metadata (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/pragma (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/profile (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/observation (0.01s)
+    --- PASS: TestRequestBindingMalformedOpenDoesNotRenew/admission (0.01s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/executor	0.320s

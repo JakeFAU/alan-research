@@ -1,0 +1,14 @@
+=== RUN   TestRequestAuthorityDormantPriorStore
+    request_authority_compatibility_test.go:56: Inspect prior v1: unsupported version
+--- FAIL: TestRequestAuthorityDormantPriorStore (0.01s)
+=== RUN   TestRequestAuthorityDormantClaimBoundary
+=== RUN   TestRequestAuthorityDormantClaimBoundary/malformed
+    request_authority_compatibility_test.go:93: unsupported version
+=== RUN   TestRequestAuthorityDormantClaimBoundary/wrong_version
+    request_authority_compatibility_test.go:93: unsupported version
+--- FAIL: TestRequestAuthorityDormantClaimBoundary (0.01s)
+    --- FAIL: TestRequestAuthorityDormantClaimBoundary/malformed (0.00s)
+    --- FAIL: TestRequestAuthorityDormantClaimBoundary/wrong_version (0.00s)
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	0.222s
+FAIL
