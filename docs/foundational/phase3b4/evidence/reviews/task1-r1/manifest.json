@@ -1,0 +1,13 @@
+{
+  "review_status": "REJECT preserved; correction review-pending",
+  "research_fix_base": "7a6d6dad839442c59fc95b26af3e07c4ab9e7d1c",
+  "runtime_unchanged": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "rejected_contract_sha256": "4cd51e89ae56ff839c84f1440dcddc94b17f48e38648d8e1fe5bde25247d7fa8",
+  "review_sha256": "3b0df0f924445962542d43e32edbe59ccd8d3b94af57af6291bcef800820dd3c",
+  "revised_contract_sha256": "e04fe1e783718cb731204d2cb817a1f5cbe374955852faef7216a67ae9f760a0",
+  "files": {
+    "rejected_contract": "rejected-contract.md",
+    "exact_review": "review.md",
+    "checks": "checks.json"
+  }
+}
