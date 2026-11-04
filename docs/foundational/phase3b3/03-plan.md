@@ -18,7 +18,7 @@ deterministic endpoints, Tectonic and the existing manuscript sources.
 [frozen contract](02-contract.md). No production implementation begins until
 the exact contract and its falsifiers have been written and builder-checked.
 
-**Execution status:** Tasks 1–4 are complete. The public-runtime baseline
+**Execution status:** Tasks 1–5 are complete. The public-runtime baseline
 source is `8319a9067c16aaf5e3ecccb3d0c62f5c536e6140`; the reviewed primitive is
 `4f6f5f2500a48b2ca01ee7b09a823fa63656b7ab`. The reciprocal fixture and final
 runtime qualification use source `759df6e3d2505f27e1287b2cfeb07bc4290afc0a`,
@@ -30,8 +30,10 @@ runtime export. The reviewed research source is
 matched their declared outcomes, including the retained negative controls and
 six unchanged integration-lint diagnostics. Manuscript reconciliation and PDF
 inspection are complete. Independent whole-change specification, quality and
-overall review returned APPROVE within the declared scope; draft delivery remains
-pending.
+overall review returned APPROVE within the declared scope. Cross-linked draft
+[research PR #44](https://github.com/JakeFAU/alan-research/pull/44) and
+[runtime PR #10](https://github.com/JakeFAU/alan/pull/10) are open; see the
+[delivery record](07-delivery.md).
 The runtime pass is not a general model-refinement result.
 
 ## Global Constraints
@@ -122,4 +124,4 @@ checks, not redefine the contract.
 - [x] Freeze source in both repositories; run ordinary, relevant prior-model, integration, race, oracle, formatting and Staticcheck qualification with exact command records.
 - [x] Reconcile Markdown/TeX/BibTeX implications, rebuild PDF and inspect changed pages.
 - [x] Archive interpretable raw evidence, identities, digests and preserved rejected candidates; independently review manuscript/reproducibility and complete whole-change review.
-- [ ] Push narrowly scoped branches and open draft research/runtime PRs; verify final identities and clean working state. Do not merge or release.
+- [x] Push narrowly scoped branches and open draft research/runtime PRs; verify final identities and clean working state. Do not merge or release.

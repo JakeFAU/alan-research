@@ -398,8 +398,9 @@ that controller error is preserved separately from semantic RED evidence.
 ## Remaining work and limits
 
 The [independent whole-change review](evidence/final-review/review.md) returned
-specification, quality and overall APPROVE within the declared bounded scope;
-draft delivery remains pending. The checker/corpus and rebuilt manuscript record
+specification, quality and overall APPROVE within the declared bounded scope.
+Cross-linked research/runtime drafts are listed in the [delivery record](07-delivery.md).
+The checker/corpus and rebuilt manuscript record
 the tested protocol, actual cut distinctions and preserved correspondence
 counterexample. No unrestricted completion, independent-owner recovery, multihop
 or arbitrary-agent composition result is claimed.
