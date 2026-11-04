@@ -4,7 +4,7 @@
   "CommandsVerified": 23,
   "ExpectedNonzeroCommands": "Five candidate falsifications, one invalid-config control, two matched baseline/current integration Staticcheck records. Nonzero statuses are not recast as green.",
   "PreviousPhase3A3B1PathsUnchanged": true,
-  "WholeChangeConditions": "Ordinary suite passed and all final manifest entries will be validated before commit. Draft publication remains external delivery step.",
+  "WholeChangeConditions": "Ordinary suite passed; final manifest entries validated. Draft PR43 opened; no merge/release. Delivery metadata changes no frozen Go inputs.",
   "Rulings": [
     "Ruling: The user-supplied 19-section brief authorizes the full milestone and draft PR \u2014 proceed through scoped design choices without another permission gate. Cost if wrong: research choices may need revision, but no production engine or release is authorized.",
     "Ruling: Use one-hop grants and the established A-servicing/B-serial placement in the extension; retain earlier all-four-policy controls independently. Cost if wrong: valid multihop attenuation and new service placements need separate qualification, not inferred closure.",
@@ -12,5 +12,6 @@
     "Ruling: Record missing S2 runtime representation instead of adding broad delegation, and preserve generic unknown-adapter safe blocking. Cost if wrong: a narrower existing primitive must be demonstrated before claiming runtime S2 progress.",
     "Ruling: Run the independent checker and runtime fixture workers alongside model export work after the API/candidate freeze. The user requires independent methods; file ownership is disjoint and no shared mutation is allowed. Cost if wrong: integration rework, resolved before source freeze and independent review.",
     "Ruling: Preserve the six integration-tagged Staticcheck diagnostics in unchanged older tests; reproduce on merged base rather than suppressing or mixing unrelated fixes. Cost if wrong: broader lint remains non-green and must be stated explicitly; no new-file diagnostic is waived."
-  ]
+  ],
+  "DraftPR": "https://github.com/JakeFAU/alan-research/pull/43"
 }

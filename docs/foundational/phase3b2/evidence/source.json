@@ -1,7 +1,7 @@
 {
   "BaseCommit": "1d41d1e20b579443c98a6caa53e51036e55f2d82",
   "ExecutableGoSourceCommit": "f75e26984c84fe649f26d5e4eaf4ed70e7506e46",
-  "Status": "Qualification and all six scoped plus whole-change reviews complete; draft publication pending.",
+  "Status": "Complete: qualified, independently reviewed, delivered as draft PR43; no merge or release.",
   "Scope": "Go/model/runtime-test qualification is pinned to f75e2698 and frozen-source.json. Post-run archive inspection utility and manuscript/evidence inputs are separately hashed here. No self-containing delivery-commit hash is asserted; final PR identifies delivery head.",
   "Sources": [
     {
@@ -26,13 +26,13 @@
     },
     {
       "path": "docs/foundational/phase3b2/02-plan.md",
-      "sha256": "bc21f1517197a06131553d5e2a04e811bbd57ae5a95372d0563e0dfe0c14b886",
+      "sha256": "fb1a5b7c1aaca265f2621b43528487d0bd8db1d6e6b8a02a9d74b00f320f5509",
       "bytes": 9906
     },
     {
       "path": "docs/foundational/phase3b2/03-results.md",
-      "sha256": "a1439487b01a46a3fb1c3ce36779e5623d19d7160f62fcf9aeb4fb75afd89efb",
-      "bytes": 19840
+      "sha256": "eca3c38318f2bd4dbe920eb62b16dd84e89b8d273cacfaa68798eb191e3677ff",
+      "bytes": 19987
     },
     {
       "path": "docs/foundational/phase3b2/04-runbook.md",
@@ -413,13 +413,15 @@
     },
     {
       "path": "docs/foundational/phase3b2/evidence/verification-summary.json",
-      "sha256": "22c0c819cd9b94ed9399f33075f79a6963715757132262f5be613fad28f8f874",
-      "bytes": 2220
+      "sha256": "d22cbecea77207f6fedfd2f9993953afcbe871506663ac63969b88e07274c11e",
+      "bytes": 2290
     },
     {
       "path": "docs/foundational/phase3b2/evidence/whole-change-review.md",
       "sha256": "4f23287f1b3e552e9f3a132a9d84b338151178498a9d5235d0d0436bee3e48e7",
       "bytes": 11284
     }
-  ]
+  ],
+  "DraftPR": "https://github.com/JakeFAU/alan-research/pull/43",
+  "PRCreationHead": "53cc0fa39d2c3273ffaedbbd862745f3387de7fe"
 }

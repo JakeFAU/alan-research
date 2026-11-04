@@ -72,4 +72,4 @@
 - [x] Commit and identify immutable executable source. Run ordinary root suite, relevant previous/new normal/race tests, integration and SIGKILL suites, independent chain validation, formatting/Staticcheck, deterministic exports and hash checks against that source. Record exact commands/statuses/skips.
 - [x] Prove only the conditional rootedness/attenuation and progress claims warranted by the model. Distinguish finite enumeration, independent validation, proof argument, runtime observations and missing representation.
 - [x] Archive compact interpretable evidence with source/witness hashes, rebuild PDF, normalize new Markdown/TeX content and visually inspect changed pages.
-- [ ] Whole-change review; commit evidence/docs, verify executable hashes unchanged, push and open a draft PR against verified main. Report base and source/delivery commits, exact counts and remaining boundaries. Do not merge or release.
+- [x] Whole-change review; commit evidence/docs, verify executable hashes unchanged, push and open a draft PR against verified main. Report base and source/delivery commits, exact counts and remaining boundaries. Do not merge or release.
