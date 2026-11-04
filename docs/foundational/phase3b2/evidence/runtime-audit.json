@@ -1,0 +1,489 @@
+{
+  "audit_script_sha256": "1bd2650abee631047945aeeae0d67c73a47776009e313110fef0868e739e8465",
+  "executable_source_commit": "f75e26984c84fe649f26d5e4eaf4ed70e7506e46",
+  "format": 1,
+  "index_sha256": "6200a8f7ad0c1547213f8279f4369e23d2f93f4d64060b1ce4b5e7a90f1177ce",
+  "runs": {
+    "normal": {
+      "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+      "cases": {
+        "claim": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "local": {
+          "contacts": [
+            1,
+            1
+          ],
+          "paid": 2,
+          "unpaid": 0
+        },
+        "missing": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "mutual_wait": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "result_launder": {
+          "contacts": [
+            0,
+            1
+          ],
+          "paid": 1,
+          "unpaid": 1
+        }
+      },
+      "checked_kills": 9,
+      "crashes": {
+        "after-refusal": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": null,
+          "unpaid": 2
+        },
+        "after-source-authorization": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "before-authorization": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "mutual-wait": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": null,
+          "unpaid": 2
+        },
+        "one-paid-one-pending": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "physical-admission-before-call": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": "[\"a\",1,6,0]",
+          "unpaid": 2
+        },
+        "reserved-before-physical-admission": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": "[\"a\",1,6,0]",
+          "unpaid": 2
+        },
+        "result-before-settlement": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "settled-before-consumption": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        }
+      },
+      "disposable_Replay_controls": [
+        "launder-result-as-allow",
+        "remove-principal-permission"
+      ],
+      "endpoint_original_links": 13,
+      "inspection_controls": [
+        "all-selected-foreign-generation",
+        "final-consumption-foreign-generation",
+        "missing-original-request",
+        "permission-tuple",
+        "unrelated-result"
+      ],
+      "negative_self_controls": [
+        "final-only-generation rejected; intermediate chain retained",
+        "artifact digest tamper rejected"
+      ],
+      "raw_members": 519,
+      "readonly_Replay_records": 46,
+      "source_manifest_files": 490,
+      "source_manifest_sha256": "72f8adff13a99774971ea417525d46ca73166e507b8dd1a6b724e2bea9bf4be1",
+      "sqlite_backups_reconciled": 115
+    },
+    "race": {
+      "binary_sha256": "148bd990b7095df13c9706469791c5566a4788476263df9dc11371734b32decf",
+      "cases": {
+        "claim": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "local": {
+          "contacts": [
+            1,
+            1
+          ],
+          "paid": 2,
+          "unpaid": 0
+        },
+        "missing": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "mutual_wait": {
+          "contacts": [
+            0,
+            0
+          ],
+          "paid": 0,
+          "unpaid": 2
+        },
+        "result_launder": {
+          "contacts": [
+            0,
+            1
+          ],
+          "paid": 1,
+          "unpaid": 1
+        }
+      },
+      "checked_kills": 9,
+      "crashes": {
+        "after-refusal": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": null,
+          "unpaid": 2
+        },
+        "after-source-authorization": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "before-authorization": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "mutual-wait": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": null,
+          "unpaid": 2
+        },
+        "one-paid-one-pending": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "physical-admission-before-call": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": "[\"a\",1,6,0]",
+          "unpaid": 2
+        },
+        "reserved-before-physical-admission": {
+          "contacts": [
+            0,
+            0
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 0,
+          "unknown_original": "[\"a\",1,6,0]",
+          "unpaid": 2
+        },
+        "result-before-settlement": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        },
+        "settled-before-consumption": {
+          "contacts": [
+            1,
+            1
+          ],
+          "epochs": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "paid": 2,
+          "unknown_original": null,
+          "unpaid": 0
+        }
+      },
+      "disposable_Replay_controls": [
+        "launder-result-as-allow",
+        "remove-principal-permission"
+      ],
+      "endpoint_original_links": 13,
+      "inspection_controls": [
+        "all-selected-foreign-generation",
+        "final-consumption-foreign-generation",
+        "missing-original-request",
+        "permission-tuple",
+        "unrelated-result"
+      ],
+      "negative_self_controls": [
+        "final-only-generation rejected; intermediate chain retained",
+        "artifact digest tamper rejected"
+      ],
+      "raw_members": 519,
+      "readonly_Replay_records": 46,
+      "source_manifest_files": 490,
+      "source_manifest_sha256": "72f8adff13a99774971ea417525d46ca73166e507b8dd1a6b724e2bea9bf4be1",
+      "sqlite_backups_reconciled": 115
+    }
+  },
+  "scope": "post-run archive inspection, not a third full semantics proof or whole-history enumeration"
+}

@@ -203,6 +203,7 @@ The root integration tag includes the legacy author external-consumer, applicati
 | `research/semantics` | Test-only bounded model, searches, negative controls and selected runtime comparisons |
 | `research/twoagent` | Independent Phase 3A model of interrupted delegation and durable result custody |
 | `research/mutualobligations` | Independent Phase 3B.1 model of reciprocal custody and service-dependent completion |
+| `research/authorityservice` | Phase 3B.2 extension with rooted authority, reciprocal service and independent retained-chain validation |
 | `docs/foundational` | Architecture decisions, contracts, qualification records, review findings and source snapshots |
 
 Start with the [foundations](docs/foundational/01-foundations.md), [composition](docs/foundational/02-composition.md), [runtime boundary](docs/foundational/03-runtime-boundary.md), and [decisions](docs/foundational/05-decisions.md). The retained phase packages distinguish [finite semantics](docs/foundational/phase1/02-qualification.md), [nested composition](docs/foundational/phase1b/02-qualification.md), [ordinary supervision](docs/foundational/phase1c/02-qualification.md), and [first durable execution](docs/foundational/phase1d/02-qualification.md). Phase 1D.1's [qualification](docs/foundational/phase1d1/02-qualification.md), [contract](docs/foundational/phase1d1/01-dispatch-contract.md) and [runbook](docs/foundational/phase1d1/04-runbook.md) document the asynchronous dispatch repair and reproduction commands. Original evidence keeps its original source identity; current-source regression is reported separately. The [Phase 1E qualification](docs/foundational/phase1e/02-qualification.md) records the authoring API, controlled model/tool application, recovery and replay, independent reviews, and complete reproducible source package.
@@ -210,6 +211,8 @@ Start with the [foundations](docs/foundational/01-foundations.md), [composition]
 The [Phase 3 research program](docs/foundational/phase3/README.md) asks which interaction contracts let two individually durable agents form a correct system. Its [first slice](docs/foundational/phase3a/00-charter.md) attacks result custody across one caller interruption with an independent finite model. It does not extend the single-host runtime or establish arbitrary-agent composition.
 
 The [reciprocal-obligation slice](docs/foundational/phase3b/03-results.md) asks what changes when each agent owes the other a result. It separates preservation of authentic receipts from the service needed for both results to be consumed. A [public same-Store fixture](examples/communication/mutual) checks the corresponding request-order obstruction without adding runtime operations.
+
+The [authority-attenuation slice](docs/foundational/phase3b2/03-results.md) tests whether that service remains authorized when the two agents hold different permissions. It distinguishes explicit delegation, ambient borrowing, and scope mixing, with separate authority-safety and completion results and a bounded [same-Store effect fixture](examples/communication/authority).
 
 ## Current limits
 

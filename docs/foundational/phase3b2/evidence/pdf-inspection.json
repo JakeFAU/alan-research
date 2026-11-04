@@ -1,0 +1,20 @@
+{
+  "PDF": "paper/alan-dissertation.pdf",
+  "sha256": "b355847b31806a4f01b34f87b723cddc32c7970b26c9262b50815989e10f852e",
+  "Pages": 37,
+  "VisuallyInspectedPages": [
+    1,
+    2,
+    3,
+    34,
+    35,
+    36,
+    37
+  ],
+  "RenderCommands": [
+    "pdftoppm -f 34 -l 37 -r 95 -png paper/alan-dissertation.pdf /tmp/alan-phase3b2-paper-final",
+    "pdftoppm -f 1 -l 3 -r 90 -png paper/alan-dissertation.pdf /tmp/alan-phase3b2-front-final"
+  ],
+  "Result": "No clipping, overlapping text, missing mathematical glyphs or broken layout observed on inspected pages. New section/Abstract/Conclusion normalized MD/TeX equality checked. Historical section-number differences are unchanged.",
+  "KnownWarnings": "Existing Underfull hbox warnings at TeX lines215,559 and 5.2184pt Overfull hbox at559 remain; no new warning in edited authority section."
+}

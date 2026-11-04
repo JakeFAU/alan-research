@@ -1,0 +1,41 @@
+{
+  "Scope": "Historical pre-fix false acceptance R4.1, exact retained inputs and runtime test source. Not final passing evidence.",
+  "Files": [
+    {
+      "path": "before.json.gz",
+      "sha256": "c658a36846c51e8c1da48578eb88732e89dc57ef7e54219cf0eeb047d4f08dee",
+      "bytes": 6835,
+      "uncompressed_sha256": "33e01911c2af48381bafc9d2ca29df75cd27b658da25be0c54bce8fe7ab4e68d"
+    },
+    {
+      "path": "after.json.gz",
+      "sha256": "260c5da32d3846b800da816f0280eb88e98d2467fca55102bffc19d7fddf2173",
+      "bytes": 6837,
+      "uncompressed_sha256": "65289b2f38ac658d97a168eeb2e0c2b5a6cf0a39520ea8c7e22f3f8a1adbff1b"
+    },
+    {
+      "path": "runtime-probe.go.txt",
+      "sha256": "7da90ea4ce012f6c956d4d0754840ef1f528dfbe4be9b5e0898bcf5b8c9d598d",
+      "bytes": 1046,
+      "uncompressed_sha256": "7da90ea4ce012f6c956d4d0754840ef1f528dfbe4be9b5e0898bcf5b8c9d598d"
+    },
+    {
+      "path": "model-probe.go.txt",
+      "sha256": "44ca6eb99cce2185eda865f1ab86bb5e095e8b40a7e0e30936bb9e6909173e89",
+      "bytes": 423,
+      "uncompressed_sha256": "44ca6eb99cce2185eda865f1ab86bb5e095e8b40a7e0e30936bb9e6909173e89"
+    },
+    {
+      "path": "runtime-probe.log",
+      "sha256": "3c226d57d6132a6a138ccfeda2e35c60e5d43bb3fc1c2bf6c322b37cec121e0e",
+      "bytes": 3066,
+      "uncompressed_sha256": "3c226d57d6132a6a138ccfeda2e35c60e5d43bb3fc1c2bf6c322b37cec121e0e"
+    },
+    {
+      "path": "pre-fix-runtime-test.go.txt",
+      "sha256": "2d1ea47e0a340bd44901c2fce6206349c23bc5195a5b99f9a500065b54a3ed76",
+      "bytes": 29503,
+      "uncompressed_sha256": "2d1ea47e0a340bd44901c2fce6206349c23bc5195a5b99f9a500065b54a3ed76"
+    }
+  ]
+}

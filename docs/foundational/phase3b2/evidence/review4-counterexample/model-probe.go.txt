@@ -1,0 +1,3 @@
+package main
+import("fmt"; model "github.com/JakeFAU/alan-research/research/authorityservice")
+func main(){c,e:=model.OracleCorpus();if e!=nil{panic(e)};x:=c.Histories[0];for i,event:=range x.Events{events:=append([]model.Event{},x.Events[:i]...);events=append(events,x.Events[i+1:]...);a,err:=model.AuditTrace(x.Config,events);fmt.Printf("delete %d %s valid=%v paid=%v err=%v\n",i,event.Kind,a.ProtocolValid,a.Paid,err)}}
