@@ -1,0 +1,11 @@
+{
+  "ObservedUTC": "2026-11-04T16:13:30.222382+00:00",
+  "ResearchBase": "8197683c23a3ca774750fc3c2c389c5a64dd38b8",
+  "ResearchMergedPR43Head": "d82a69c7a576f94599138cc6eddca0b8aeb6d259",
+  "MergedTreeEqualsDelivery": true,
+  "PriorFrozenGoSource": "f75e26984c84fe649f26d5e4eaf4ed70e7506e46",
+  "PriorDeliveryManifestEntriesVerified": 83,
+  "PriorFrozenGoModuleFilesVerified": 563,
+  "RuntimeBase": "af6943a5805a9a6c0e8fe77f804264f4765d07ec",
+  "Interpretation": "Prior evidence bytes verified. This does not report new execution of prior tests or a model/runtime equivalence."
+}
