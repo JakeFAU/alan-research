@@ -1,0 +1,12 @@
+{
+  "Command": [
+    "python3",
+    "/tmp/alan-phase3b3-research-freeze.py",
+    "7894bfae6c011eeef967b1f8e8d1d92c236c76de"
+  ],
+  "Exit": 1,
+  "ObservedHEAD": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+  "Reason": "Controller mistyped expected full SHA; source identity assertion rejected before output creation or test execution.",
+  "Correction": "Restarted with observed full HEAD, without changing source or weakening guard.",
+  "QualificationRun": false
+}

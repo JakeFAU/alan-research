@@ -1,0 +1,165 @@
+{
+  "ArchiveSHA256": "f08868a7c4f196c5dae1336706820153c1497dcb1d590a1f86e68e5ca8c77a64",
+  "Files": [
+    {
+      "Path": "paper/alan-dissertation.md",
+      "Bytes": 258033,
+      "SHA256": "59126f9d3ee5886c527abc356c919fa21f085d9aee0583127f119f999b625348"
+    },
+    {
+      "Path": "paper/alan-dissertation.tex",
+      "Bytes": 159741,
+      "SHA256": "61fba7eac0f226c818e2947577f91d09986a4ff3c161522781e111bf32fc0221"
+    },
+    {
+      "Path": "paper/references.bib",
+      "Bytes": 8562,
+      "SHA256": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+    },
+    {
+      "Path": "paper/alan-dissertation.pdf",
+      "Bytes": 326648,
+      "SHA256": "a85407e18f221dfed46a24c7389c2c83898d5513862815e56d0feaf6adfee925"
+    },
+    {
+      "Path": "paper/alan-dissertation.log",
+      "Bytes": 16617,
+      "SHA256": "ba94b4c69e85e18987ca1a96892a6702b8442064a17ac8a26a693e91b048d2b0"
+    },
+    {
+      "Path": "paper/alan-dissertation.blg",
+      "Bytes": 204,
+      "SHA256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    {
+      "Path": "verification/final-build.log",
+      "Bytes": 2029,
+      "SHA256": "4e523048d4c8e0ea207823b68fefda670597ec815679dfb6dc19a1251480041f"
+    },
+    {
+      "Path": "verification/final.txt",
+      "Bytes": 159659,
+      "SHA256": "07050cc91836cadae41920245b82a2dcf076efb4c9d6eda34f8b3efd5b260bbd"
+    },
+    {
+      "Path": "verification/final-normalization.json",
+      "Bytes": 1359,
+      "SHA256": "b530005cc624357d7a85aa4d08f4b2715db5001816ddb030edc8c87541a82803"
+    },
+    {
+      "Path": "verification/draft1.log",
+      "Bytes": 16819,
+      "SHA256": "0480be3fca6f33acc47812a04698efa465b8b5764310e5ceb4c984738c360b13"
+    },
+    {
+      "Path": "verification/draft-normalization.json",
+      "Bytes": 1359,
+      "SHA256": "95bccefb6067c1619c841f9452ed92a757c0e442f105addf1b6d56ee55339269"
+    },
+    {
+      "Path": "verification/final-01.png",
+      "Bytes": 276147,
+      "SHA256": "729b4cf9b8472da5d106822cc5bfcaeda5420052eb22f5c4982ab85ab2308ecd"
+    },
+    {
+      "Path": "verification/final-02.png",
+      "Bytes": 172615,
+      "SHA256": "093d3d1eea81ab50cf0a492afdb4f20d1d7c1aa0900dc3e0773ed3dcc62c6d63"
+    },
+    {
+      "Path": "verification/final-35.png",
+      "Bytes": 414190,
+      "SHA256": "3a3e70f504953e6764b2da6c43c8fd4c7eee57cf44ad7cd50d6689963eaad3d3"
+    },
+    {
+      "Path": "verification/final-36.png",
+      "Bytes": 420226,
+      "SHA256": "00fc48a799750cdf6b1c38dac879935a9cd19cbbb864201bd3db185e5e612a5c"
+    },
+    {
+      "Path": "verification/final-37.png",
+      "Bytes": 403469,
+      "SHA256": "a3e942166040cd4896afb8a1c510ccddc7901b389588f424fe58e16d44931164"
+    },
+    {
+      "Path": "verification/final-38.png",
+      "Bytes": 384427,
+      "SHA256": "9e1bd713a4962fe80964a82409db61fe71c6b36f762746a33317b3f376b2ced6"
+    },
+    {
+      "Path": "verification/final-39.png",
+      "Bytes": 329796,
+      "SHA256": "eb39b58bbf5a660b276130ac832104cece52afc7cc4645a8d307474283362d4e"
+    }
+  ],
+  "Pages": 39,
+  "VisualInspection": {
+    "Performed": true,
+    "Pages": [
+      1,
+      2,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "Result": "No new clipping, overlap or unreadable mathematical text observed."
+  },
+  "Commands": [
+    [
+      "tectonic",
+      "--keep-logs",
+      "alan-dissertation.tex"
+    ],
+    [
+      "pdfinfo",
+      "paper/alan-dissertation.pdf"
+    ],
+    [
+      "pdftotext",
+      "-layout",
+      "paper/alan-dissertation.pdf",
+      "/tmp/alan-phase3b3-paper/final.txt"
+    ],
+    [
+      "python3",
+      "docs/foundational/phase3b3/evidence/manuscript-check.py",
+      "/tmp/alan-phase3b3-paper/final-normalization.json"
+    ],
+    [
+      "pdftoppm",
+      "-f",
+      "35",
+      "-l",
+      "39",
+      "-scale-to",
+      "1500",
+      "-png",
+      "paper/alan-dissertation.pdf",
+      "/tmp/alan-phase3b3-paper/final"
+    ],
+    [
+      "pdftoppm",
+      "-f",
+      "1",
+      "-l",
+      "2",
+      "-scale-to",
+      "1500",
+      "-png",
+      "paper/alan-dissertation.pdf",
+      "/tmp/alan-phase3b3-paper/final"
+    ]
+  ],
+  "Tectonic": "Tectonic 0.17.0",
+  "Poppler": "pdftoppm version 26.10.0",
+  "ExistingWarnings": [
+    "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215",
+    "warning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559"
+  ],
+  "Scope": "Edited sections aligned; historical Markdown/TeX structural differences remain explicit in normalization.json; BibTeX unchanged."
+}

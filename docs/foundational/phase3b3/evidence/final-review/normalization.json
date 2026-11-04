@@ -1,0 +1,32 @@
+{
+  "Checks": {
+    "Abstract": {
+      "Aligned": true,
+      "NormalizedSHA256": "59eed61594e74008eae76f44e5237561d05befa914f94bfa37463411d1b49bca"
+    },
+    "Phase3B3": {
+      "Aligned": true,
+      "NormalizedSHA256": "8fd062b1b12fefba7e5f1d0873debe4cfefa1b609643c69e331baa4fa8d2f816"
+    },
+    "Conclusion": {
+      "Aligned": true,
+      "NormalizedSHA256": "caa0c019e9f827db4229aad470bb98ea7f781ad9a0be83d84aa24e2efbb4eca8"
+    },
+    "Phase3B2BoundaryParagraph": {
+      "Aligned": true,
+      "NormalizedSHA256": "8e69937917b5500f16ae9af0e39d974d6ae7ea71cc43abaf4bba698d7b325064"
+    }
+  },
+  "BibTeXUnchanged": true,
+  "Files": {
+    "paper/alan-dissertation.md": "59126f9d3ee5886c527abc356c919fa21f085d9aee0583127f119f999b625348",
+    "paper/alan-dissertation.tex": "61fba7eac0f226c818e2947577f91d09986a4ff3c161522781e111bf32fc0221",
+    "paper/references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9",
+    "paper/alan-dissertation.pdf": "a85407e18f221dfed46a24c7389c2c83898d5513862815e56d0feaf6adfee925"
+  },
+  "Scope": "Edited paragraphs only; no universal manuscript consistency claim.",
+  "HistoricalDifferences": [
+    "Markdown new subsection6.11 is TeX/PDF6.6 because preceding structure differs.",
+    "Markdown has a separate historical falsification section absent from TeX; Conclusions are8 versus7."
+  ]
+}

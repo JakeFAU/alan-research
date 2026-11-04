@@ -1,0 +1,248 @@
+[
+  {
+    "Name": "normal-tests",
+    "Args": [
+      "go",
+      "test",
+      "./research/delegationcorrespondence/...",
+      "-count=1",
+      "-v"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "ALAN_TASK3_PROGRESS": "1"
+    },
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 8.133
+  },
+  {
+    "Name": "race-tests",
+    "Args": [
+      "go",
+      "test",
+      "-race",
+      "./research/delegationcorrespondence/...",
+      "-count=1",
+      "-v"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/race",
+      "ALAN_TASK3_PROGRESS": "1"
+    },
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 103.608
+  },
+  {
+    "Name": "staticcheck",
+    "Args": [
+      "staticcheck",
+      "./research/delegationcorrespondence/..."
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 0.305
+  },
+  {
+    "Name": "raw-mutations",
+    "Args": [
+      "go",
+      "run",
+      "./research/delegationcorrespondence/cmd/mutations",
+      "research/delegationcorrespondence/testdata/positive.json"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 0.435
+  },
+  {
+    "Name": "build-check",
+    "Args": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "./research/delegationcorrespondence/cmd/check"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 0.232
+  },
+  {
+    "Name": "normal-unqualified",
+    "Args": [
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/normal"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "ElapsedSeconds": 1.769
+  },
+  {
+    "Name": "normal-expected",
+    "Args": [
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "-expect",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/expectations.json"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 1.422
+  },
+  {
+    "Name": "race-unqualified",
+    "Args": [
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/race"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "ElapsedSeconds": 1.536
+  },
+  {
+    "Name": "race-expected",
+    "Args": [
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/race",
+      "-expect",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/expectations.json"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 1.426
+  },
+  {
+    "Name": "review-request-route",
+    "Args": [
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/check",
+      "-input",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/review-originals/missing-request-route.json"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "ElapsedSeconds": 0.013
+  },
+  {
+    "Name": "review-continuity",
+    "Args": [
+      "go",
+      "run",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/probes/continuity.go"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 0.167
+  },
+  {
+    "Name": "review-epoch",
+    "Args": [
+      "go",
+      "run",
+      "/tmp/alan-phase3b3-task3-evidence/fix-round1/probes/epoch.go"
+    ],
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3b3-task3-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-task3-staticcheck"
+    },
+    "ExtraEnvironment": {},
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "ElapsedSeconds": 0.229
+  }
+]

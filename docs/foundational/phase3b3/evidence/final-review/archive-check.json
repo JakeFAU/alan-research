@@ -1,0 +1,57 @@
+[
+  {
+    "manifest": "docs/foundational/phase3b3/evidence/manuscript-interim/manifest.json",
+    "verified": 19,
+    "unresolved": []
+  },
+  {
+    "manifest": "docs/foundational/phase3b3/evidence/task3-development/manifest.json",
+    "verified": 366,
+    "unresolved": []
+  },
+  {
+    "manifest": "docs/foundational/phase3b3/evidence/task3-round1/manifest.json",
+    "verified": 84,
+    "unresolved": []
+  },
+  {
+    "manifest": "docs/foundational/phase3b3/evidence/task3-rejected-review/manifest.json",
+    "verified": 13,
+    "unresolved": []
+  },
+  {
+    "manifest": "docs/foundational/phase3b3/evidence/manuscript-final/manifest.json",
+    "verified": 18,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/rejected-candidate-v2/manifest.json",
+    "verified": 29,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/task4-frozen/manifest.json",
+    "verified": 3784,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/legacy-matrix/manifest.json",
+    "verified": 419,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/round1/manifest.json",
+    "verified": 35,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/current-main/manifest.json",
+    "verified": 3396,
+    "unresolved": []
+  },
+  {
+    "manifest": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/task4-development/manifest.json",
+    "verified": 7249,
+    "unresolved": []
+  }
+]

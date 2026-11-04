@@ -1,0 +1,158 @@
+{
+  "ResearchBaseCommit": "31c8af68e818f97a842e790669fbc8f8c98dc8bd",
+  "RuntimeCommit": "759df6e3d2505f27e1287b2cfeb07bc4290afc0a",
+  "RejectedSourceManifestSHA256": "9ca9c230e7ebbe3185474fc5a52db07fda36af0a764f006733032bbe9d5477c6",
+  "Files": [
+    {
+      "Path": "research/delegationcorrespondence/README.md",
+      "SHA256": "6d209352a1f22acf186a1c3d57a393cc68c78c7d4edf4f6b22f2b19538a7237a",
+      "Size": 10107
+    },
+    {
+      "Path": "research/delegationcorrespondence/check.go",
+      "SHA256": "2fb4d070a63c5f050305a99adfaa0e3eadfe403bb067d0e896c3a035132c59b5",
+      "Size": 36598
+    },
+    {
+      "Path": "research/delegationcorrespondence/check_test.go",
+      "SHA256": "b0a7519ad82524cbf549ba174982e5115cd9fd0cbae73ea7f21cc0dbf2763eb5",
+      "Size": 13946
+    },
+    {
+      "Path": "research/delegationcorrespondence/cli.go",
+      "SHA256": "29f05eb815d757a712e8cdf8971d82656194d2b0ac36f12d85c61481b1194b81",
+      "Size": 2480
+    },
+    {
+      "Path": "research/delegationcorrespondence/cli_test.go",
+      "SHA256": "605b803e5a467e3c36acb7586146a623526bfebde3a3337e3189165fd1543939",
+      "Size": 1211
+    },
+    {
+      "Path": "research/delegationcorrespondence/cmd/check/main.go",
+      "SHA256": "a7cdf9817c913eeb86943e8553ebe1ae5db10355c60b781ad5d49a39ce14c329",
+      "Size": 175
+    },
+    {
+      "Path": "research/delegationcorrespondence/cmd/corpus/main.go",
+      "SHA256": "d850588720f248717e6a5bb283fd090b2fd3a631332e4ff0d3e6bbcd7ff14243",
+      "Size": 466
+    },
+    {
+      "Path": "research/delegationcorrespondence/cmd/mutations/main.go",
+      "SHA256": "cef9e23366f8c52d1bc4ba90c8f0dda2ec56b3baf97d4df8d237ba966fe673c6",
+      "Size": 683
+    },
+    {
+      "Path": "research/delegationcorrespondence/cmd/progress/main.go",
+      "SHA256": "8242239072c4f357f8499fae584c5ef69cdd7070b4b05d03ec277710cd0b264e",
+      "Size": 765
+    },
+    {
+      "Path": "research/delegationcorrespondence/corpus.go",
+      "SHA256": "982a5afb5385a5d45459d4a94add2f9fc0eef339e305a199a8c9f516a0dd4f9e",
+      "Size": 6257
+    },
+    {
+      "Path": "research/delegationcorrespondence/custody.go",
+      "SHA256": "25397f838435498b79553d714fdab9fe15106cc21ea30308ca1511f25e3e9ea9",
+      "Size": 13804
+    },
+    {
+      "Path": "research/delegationcorrespondence/external.go",
+      "SHA256": "428fda0c33ac92d7d434046ebdd91b6c0e9e945d78372cf5764c1e60291c68fe",
+      "Size": 17652
+    },
+    {
+      "Path": "research/delegationcorrespondence/external_test.go",
+      "SHA256": "896770a22a6bfc4bf81082e2a43bb8101945799c3b22a44e80f1baca1a632ca4",
+      "Size": 1134
+    },
+    {
+      "Path": "research/delegationcorrespondence/files.go",
+      "SHA256": "43cb2bcbad65be38ad0343f91e643fd2a1c80b1954f3ded9d2b6d5bef19c33df",
+      "Size": 9231
+    },
+    {
+      "Path": "research/delegationcorrespondence/mutations.go",
+      "SHA256": "9ff10db5540bcbc0e8083ac51917781175702220626a5b3dad7f04254cc92a96",
+      "Size": 7504
+    },
+    {
+      "Path": "research/delegationcorrespondence/mutations_test.go",
+      "SHA256": "8f9c2b846a7861468db98454141f563614d543f19cf62ea6ab71e10987d9c8f8",
+      "Size": 355
+    },
+    {
+      "Path": "research/delegationcorrespondence/progress.go",
+      "SHA256": "bb09efd0e96ab7862b981c3baab040962bc3a5a2cb1532d9bd25f2add2469c19",
+      "Size": 5557
+    },
+    {
+      "Path": "research/delegationcorrespondence/project.go",
+      "SHA256": "55e8fe287bb8f322444cdb2e3297c0e5b77ef29b431e72809a8a7e297fccaa64",
+      "Size": 7386
+    },
+    {
+      "Path": "research/delegationcorrespondence/projection_test.go",
+      "SHA256": "150fe4578f98e3fc9dc3391bde20be12b546373925bcd5b313ad627fa3c6ab87",
+      "Size": 2093
+    },
+    {
+      "Path": "research/delegationcorrespondence/review_fixes_test.go",
+      "SHA256": "f17211c6f0d1a2b4be4222ecbebe5304d4846747223bc2607a11cf5c586fae90",
+      "Size": 11612
+    },
+    {
+      "Path": "research/delegationcorrespondence/schema.go",
+      "SHA256": "01dc68c6cec10b850a0990d3f8ec817d2b3576d13c54daa27e16eef00eacda2c",
+      "Size": 6889
+    },
+    {
+      "Path": "research/delegationcorrespondence/testdata/positive.json",
+      "SHA256": "e371654a8b8b9def3ab6f29edfd067c7bc418f7c9e58a72da23fed2ff8296d18",
+      "Size": 178176
+    },
+    {
+      "Path": "research/delegationcorrespondence/wire.go",
+      "SHA256": "523fa1cd19d89f4e39b029dd833080700bfdce1ff17f675f533e7ab41019f9ff",
+      "Size": 11741
+    }
+  ],
+  "ModuleInputs": [
+    {
+      "Path": "go.mod",
+      "SHA256": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2"
+    },
+    {
+      "Path": "go.sum",
+      "SHA256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca"
+    }
+  ],
+  "ModelInputs": [
+    {
+      "Path": "research/authorityservice/explore.go",
+      "SHA256": "3916f87834709dcd7c0d55b2470daf6317fb9ab2ac637a01bcc0723a7eb0e26e"
+    },
+    {
+      "Path": "research/authorityservice/model.go",
+      "SHA256": "11ec7401ade2c4b5b942b70929cc5df8a8f47da4d072a0b5d980b86e19034dbe"
+    },
+    {
+      "Path": "research/authorityservice/model_test.go",
+      "SHA256": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb"
+    },
+    {
+      "Path": "research/authorityservice/oracle.go",
+      "SHA256": "06bbe53e48084a61b3b16fec8a1f096a4e35e3bb607fc58a678ea2f33f6b01dd"
+    },
+    {
+      "Path": "research/authorityservice/oracle_corpus.go",
+      "SHA256": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d"
+    },
+    {
+      "Path": "research/authorityservice/oracle_test.go",
+      "SHA256": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73"
+    }
+  ]
+}

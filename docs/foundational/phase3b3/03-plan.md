@@ -18,13 +18,21 @@ deterministic endpoints, Tectonic and the existing manuscript sources.
 [frozen contract](02-contract.md). No production implementation begins until
 the exact contract and its falsifiers have been written and builder-checked.
 
-**Execution status:** Tasks 1 and 2 are complete. The public-runtime baseline
+**Execution status:** Tasks 1–4 are complete. The public-runtime baseline
 source is `8319a9067c16aaf5e3ecccb3d0c62f5c536e6140`; the reviewed primitive is
-`4f6f5f2500a48b2ca01ee7b09a823fa63656b7ab`. Its evidence is retained through
-`6352969` in runtime `docs/qualification/phase3b3`, including independent reviews
-and both rejected contract/candidate corrections. Task 4 precedes Task 3 so the
-independent checker consumes the actual raw runtime export. Neither the full
-process-cut qualification nor model/runtime correspondence is established yet.
+`4f6f5f2500a48b2ca01ee7b09a823fa63656b7ab`. The reciprocal fixture and final
+runtime qualification use source `759df6e3d2505f27e1287b2cfeb07bc4290afc0a`,
+with archives/reviews in runtime evidence commit `2b8bb82`. All eight final
+runtime commands passed, with 48 indexed cases in each ordinary/race corpus.
+Task 4 preceded Task 3 so the independent checker consumes the actual raw
+runtime export. The reviewed research source is
+`7894bfae268e6dc0f5418bda3c6022f3a8a55540`. All 42 final research commands
+matched their declared outcomes, including the retained negative controls and
+six unchanged integration-lint diagnostics. Manuscript reconciliation and PDF
+inspection are complete. Independent whole-change specification, quality and
+overall review returned APPROVE within the declared scope; draft delivery remains
+pending.
+The runtime pass is not a general model-refinement result.
 
 ## Global Constraints
 
@@ -97,21 +105,21 @@ checks, not redefine the contract.
 
 ## Task 3: Independent correspondence corpus
 
-- [ ] Generate the bounded corpus from unchanged Phase 3B.2 graphs, selecting actual BA delegated witnesses rather than generic AB own-root cuts.
-- [ ] Freeze raw-evidence extraction and independent authority/custody checking interfaces from the runtime representation.
-- [ ] Preserve all eight required history classifications, mutation controls, unsupported mappings and discrepancies separately.
-- [ ] Independently review model/runtime correspondence, progress and retained obligations.
+- [x] Generate the bounded corpus from unchanged Phase 3B.2 graphs, selecting actual BA delegated witnesses rather than generic AB own-root cuts.
+- [x] Freeze raw-evidence extraction and independent authority/custody checking interfaces from the runtime representation.
+- [x] Preserve all eight required history classifications, mutation controls, unsupported mappings and discrepancies separately.
+- [x] Independently review model/runtime correspondence, progress and retained obligations. Three reproduced raw-policy findings were corrected and independently re-reviewed; rejected source and exact falsifiers remain retained.
 
 ## Task 4: Runtime recovery qualification
 
-- [ ] Exercise real two-agent S1/S2 service and adversarial S3/Cartesian attempts through the actual public runtime.
-- [ ] Execute the ten requested acknowledged process-cut boundaries, fresh-owner reopen, endpoint evidence, exact original selection and no invented grants/results.
-- [ ] Keep the supported stable-key idempotent endpoint contract separate from generic unknown-adapter blocking and selective revocation obstructions.
-- [ ] Independently review recovery, revocation and physical admission.
+- [x] Exercise real two-agent S1/S2 service and adversarial S3/Cartesian attempts through the actual public runtime.
+- [x] Execute the ten requested acknowledged process-cut boundaries, fresh-owner reopen, endpoint evidence, exact original selection and no invented grants/results.
+- [x] Keep the supported stable-key idempotent endpoint contract separate from generic unknown-adapter blocking and selective revocation obstructions.
+- [x] Independently review recovery, revocation and physical admission.
 
 ## Task 5: Freeze, reconcile, review and deliver
 
-- [ ] Freeze source in both repositories; run ordinary, relevant prior-model, integration, race, oracle, formatting and Staticcheck qualification with exact command records.
-- [ ] Reconcile Markdown/TeX/BibTeX implications, rebuild PDF and inspect changed pages.
-- [ ] Archive interpretable raw evidence, identities, digests and preserved rejected candidates; independently review manuscript/reproducibility and complete whole-change review.
+- [x] Freeze source in both repositories; run ordinary, relevant prior-model, integration, race, oracle, formatting and Staticcheck qualification with exact command records.
+- [x] Reconcile Markdown/TeX/BibTeX implications, rebuild PDF and inspect changed pages.
+- [x] Archive interpretable raw evidence, identities, digests and preserved rejected candidates; independently review manuscript/reproducibility and complete whole-change review.
 - [ ] Push narrowly scoped branches and open draft research/runtime PRs; verify final identities and clean working state. Do not merge or release.

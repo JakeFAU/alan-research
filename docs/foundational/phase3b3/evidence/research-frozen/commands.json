@@ -1,0 +1,1542 @@
+[
+  {
+    "Name": "format-new",
+    "Command": [
+      "gofmt",
+      "-l",
+      "research/delegationcorrespondence"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:51:17.940308+00:00",
+    "Seconds": 0.00836429200000044,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "format-new.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "ordinary-module",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-timeout=60m",
+      "./..."
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "ALAN_TASK3_PROGRESS": "1"
+    },
+    "StartedUTC": "2026-11-04T19:51:17.940462+00:00",
+    "Seconds": 1526.82201775,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "ordinary-module.log",
+    "SHA256": "e10e906997f07a94c8dc375b28eea15d3df931a21b6b83e1c0799ba0ebc34140",
+    "Tests": {
+      "PassEvents": 2382,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/adapters/lookup",
+        "github.com/JakeFAU/alan-research/adapters/openai",
+        "github.com/JakeFAU/alan-research/adapters/receiptquery",
+        "github.com/JakeFAU/alan-research/cmd/alan",
+        "github.com/JakeFAU/alan-research/cmd/alan-evidence",
+        "github.com/JakeFAU/alan-research/cmd/alan-resource",
+        "github.com/JakeFAU/alan-research/effects",
+        "github.com/JakeFAU/alan-research/examples/callablejoin",
+        "github.com/JakeFAU/alan-research/examples/communication/authority",
+        "github.com/JakeFAU/alan-research/examples/communication",
+        "github.com/JakeFAU/alan-research/examples/communication/mutual",
+        "github.com/JakeFAU/alan-research/examples/consumingpolicy",
+        "github.com/JakeFAU/alan-research/examples/invocationjoin",
+        "github.com/JakeFAU/alan-research/examples/join",
+        "github.com/JakeFAU/alan-research/examples/effectfulcomposition",
+        "github.com/JakeFAU/alan-research/compose",
+        "github.com/JakeFAU/alan-research/cmd/alan-compose",
+        "github.com/JakeFAU/alan-research/examples/owningtree",
+        "github.com/JakeFAU/alan-research/examples/reconciliation",
+        "github.com/JakeFAU/alan-research/examples/evidence",
+        "github.com/JakeFAU/alan-research/internal/boundary",
+        "github.com/JakeFAU/alan-research/internal/fixture",
+        "github.com/JakeFAU/alan-research/author",
+        "github.com/JakeFAU/alan-research/examples/substitution",
+        "github.com/JakeFAU/alan-research/research/communication",
+        "github.com/JakeFAU/alan-research/cmd/alan-investigate",
+        "github.com/JakeFAU/alan-research/examples/substitution/a",
+        "github.com/JakeFAU/alan-research/research/dispatchauthority",
+        "github.com/JakeFAU/alan-research/research/effectfulcomposition",
+        "github.com/JakeFAU/alan-research/research/effectprotocol",
+        "github.com/JakeFAU/alan-research/research/join",
+        "github.com/JakeFAU/alan-research/research/mutualobligations/cmd/export",
+        "github.com/JakeFAU/alan-research/research/nominal",
+        "github.com/JakeFAU/alan-research/research/authorityservice/cmd/export",
+        "github.com/JakeFAU/alan-research/research/reconciliation",
+        "github.com/JakeFAU/alan-research/research/owningtree",
+        "github.com/JakeFAU/alan-research/research/mutualobligations",
+        "github.com/JakeFAU/alan-research/research/twoagent",
+        "github.com/JakeFAU/alan-research/schema",
+        "github.com/JakeFAU/alan-research/internal/executor",
+        "github.com/JakeFAU/alan-research/internal/durabletest",
+        "github.com/JakeFAU/alan-research/research/semantics",
+        "github.com/JakeFAU/alan-research/research/authorityservice/cmd/audit",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+        "github.com/JakeFAU/alan-research/research/authorityservice",
+        "github.com/JakeFAU/alan-research/research/substitution",
+        "github.com/JakeFAU/alan-research/examples/investigation",
+        "github.com/JakeFAU/alan-research/examples/adaptive"
+      ],
+      "Failures": [],
+      "Skips": [
+        {
+          "Time": "2026-11-04T14:51:20.505302-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/effectboundary",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:20.536932-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/communication",
+          "Test": "TestCommunicationArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.357261-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/join",
+          "Test": "TestJoinArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:22.6291-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/b",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:22.629117-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/protocol",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:22.62914-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/worktree",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:23.991765-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+          "Test": "TestCandidateAExport",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.154064-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.154084-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.154129-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.154151-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.256749-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.425396-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:24.442079-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:26.681479-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/reconciliation/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:32.169878-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:32.16989-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/runtime",
+          "Elapsed": 0
+        }
+      ]
+    }
+  },
+  {
+    "Name": "model-race",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-race",
+      "-count=1",
+      "./research/twoagent/...",
+      "./research/mutualobligations/...",
+      "./research/authorityservice/...",
+      "./research/delegationcorrespondence/..."
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/race",
+      "ALAN_TASK3_PROGRESS": "1"
+    },
+    "StartedUTC": "2026-11-04T19:51:17.940531+00:00",
+    "Seconds": 128.17116925000002,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "model-race.log",
+    "SHA256": "841f08e31e0911408ac75fa6217d658680ff9534a6e023188de30532bf7b4ed7",
+    "Tests": {
+      "PassEvents": 303,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/research/twoagent",
+        "github.com/JakeFAU/alan-research/research/mutualobligations/cmd/export",
+        "github.com/JakeFAU/alan-research/research/authorityservice/cmd/export",
+        "github.com/JakeFAU/alan-research/research/mutualobligations",
+        "github.com/JakeFAU/alan-research/research/authorityservice/cmd/audit",
+        "github.com/JakeFAU/alan-research/research/authorityservice",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence"
+      ],
+      "Failures": [],
+      "Skips": [
+        {
+          "Time": "2026-11-04T14:51:18.465549-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.778187-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.778213-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.778226-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.778237-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 0
+        }
+      ]
+    }
+  },
+  {
+    "Name": "prior-reciprocal-normal",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-tags=integration",
+      "-count=1",
+      "./examples/communication/mutual"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_PHASE3B_RUNTIME_EXPORT": "/tmp/alan-phase3b3-research-frozen/prior-reciprocal-normal"
+    },
+    "StartedUTC": "2026-11-04T19:51:17.949148+00:00",
+    "Seconds": 3.049488708,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "prior-reciprocal-normal.log",
+    "SHA256": "d43ab018b711bd7db5e215389d55a43921dbf1759fa26ab8b5af37ea1dcd8c81",
+    "Tests": {
+      "PassEvents": 22,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/examples/communication/mutual"
+      ],
+      "Failures": [],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "prior-reciprocal-race",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-race",
+      "-tags=integration",
+      "-count=1",
+      "./examples/communication/mutual"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_PHASE3B_RUNTIME_EXPORT": "/tmp/alan-phase3b3-research-frozen/prior-reciprocal-race"
+    },
+    "StartedUTC": "2026-11-04T19:51:21.000281+00:00",
+    "Seconds": 15.931016791000001,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "prior-reciprocal-race.log",
+    "SHA256": "71e79b17cd6da3cc762969eaf96e4deec8874b3fca68b192089ec4064ade0a0e",
+    "Tests": {
+      "PassEvents": 22,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/examples/communication/mutual"
+      ],
+      "Failures": [],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "prior-authority-normal",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-tags=integration",
+      "-count=1",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B2"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_PHASE2_EVIDENCE": "/tmp/alan-phase3b3-research-frozen/prior-authority-normal"
+    },
+    "StartedUTC": "2026-11-04T19:51:36.932100+00:00",
+    "Seconds": 21.227349375,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "prior-authority-normal.log",
+    "SHA256": "303f2fdd2a9ede66622da5483d8de2e27a6302bfb9658684430a380245b9f9e4",
+    "Tests": {
+      "PassEvents": 20,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/internal/durabletest"
+      ],
+      "Failures": [],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "prior-authority-race",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-race",
+      "-tags=integration",
+      "-count=1",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B2"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_PHASE2_EVIDENCE": "/tmp/alan-phase3b3-research-frozen/prior-authority-race"
+    },
+    "StartedUTC": "2026-11-04T19:51:58.161032+00:00",
+    "Seconds": 50.480928000000006,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "prior-authority-race.log",
+    "SHA256": "87f95028a5b3c95ed6a02c07c781164b5322ae8772778819b571e6a42f17fe51",
+    "Tests": {
+      "PassEvents": 20,
+      "PackagePasses": [
+        "github.com/JakeFAU/alan-research/internal/durabletest"
+      ],
+      "Failures": [],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "staticcheck-new-model-fixtures",
+    "Command": [
+      "staticcheck",
+      "-tags=integration",
+      "./research/twoagent/...",
+      "./research/mutualobligations/...",
+      "./research/authorityservice/...",
+      "./research/delegationcorrespondence/...",
+      "./examples/communication/authority",
+      "./examples/communication/mutual"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:48.643398+00:00",
+    "Seconds": 0.5196477089999973,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "staticcheck-new-model-fixtures.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "staticcheck-durable-normal",
+    "Command": [
+      "staticcheck",
+      "./internal/durabletest"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:49.163441+00:00",
+    "Seconds": 0.20015983300000073,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "staticcheck-durable-normal.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "staticcheck-durable-integration",
+    "Command": [
+      "staticcheck",
+      "-tags=integration",
+      "./internal/durabletest"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:49.364042+00:00",
+    "Seconds": 0.31814116600000375,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "staticcheck-durable-integration.log",
+    "SHA256": "187866255489030de5d2691aa7ec605208b242aef54f22d9d5703f95d897114d"
+  },
+  {
+    "Name": "build-phase3a",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/phase3a-export",
+      "./research/twoagent/cmd/export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:49.682578+00:00",
+    "Seconds": 0.23823479200000008,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-phase3a.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "phase3a-export",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3a-export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:49.921158+00:00",
+    "Seconds": 0.09713150000000326,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3a.json",
+    "SHA256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "Stderr": {
+      "Path": "phase3a-export.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "build-phase3b1",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/phase3b1-export",
+      "./research/mutualobligations/cmd/export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:50.019307+00:00",
+    "Seconds": 0.12586983299999588,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-phase3b1.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "phase3b1-export",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b1-export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:50.145527+00:00",
+    "Seconds": 0.43449220799999466,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3b1.json",
+    "SHA256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "Stderr": {
+      "Path": "phase3b1-export.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "build-phase3b2",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "./research/authorityservice/cmd/export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:50.581262+00:00",
+    "Seconds": 0.11890787500000499,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-phase3b2.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "phase3b2-export",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:50.700473+00:00",
+    "Seconds": 3.836101333000002,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3b2.json",
+    "SHA256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+    "Stderr": {
+      "Path": "phase3b2-export.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "build-phase3b2-audit",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-audit-export",
+      "./research/authorityservice/cmd/audit"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:54.542194+00:00",
+    "Seconds": 0.11587691700000846,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-phase3b2-audit.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "phase3b2-audit-export",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-audit-export"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:54.658402+00:00",
+    "Seconds": 5.215177041999993,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3b2-audit.json",
+    "SHA256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+    "Stderr": {
+      "Path": "phase3b2-audit-export.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "phase3a-loss",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3a-export",
+      "-assert-naive-recovery"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:59.876584+00:00",
+    "Seconds": 0.006195583999996757,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3a-loss.json",
+    "SHA256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "Stderr": {
+      "Path": "phase3a-loss.stderr",
+      "SHA256": "48978f97f83597e211178ddab9be72f40cac0e694fe113efd91c17d3bfdd5746"
+    }
+  },
+  {
+    "Name": "phase3b1-serial",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b1-export",
+      "--profile",
+      "serial/serial",
+      "--assert-naive-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:59.883166+00:00",
+    "Seconds": 0.0666022919999989,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b1-serial.json",
+    "SHA256": "b8424c2286e02e83993440a1ee7c43d2c02350e844eadc16de07d2fa32b5e8b9",
+    "Stderr": {
+      "Path": "phase3b1-serial.stderr",
+      "SHA256": "bfbbbff03be0874b4e0c9f0356cb19f8df7aa4fee3c9a77ba459237226ab3805"
+    }
+  },
+  {
+    "Name": "phase3b1-positive",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b1-export",
+      "--profile",
+      "servicing/serial",
+      "--assert-naive-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:52:59.950157+00:00",
+    "Seconds": 0.0904235830000033,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3b1-positive.json",
+    "SHA256": "850b2ed8092e75ff6a160428c8b23ef32e6655ce78d250d9aa63098289768414",
+    "Stderr": {
+      "Path": "phase3b1-positive.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "phase3b2-S3-Missing",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "S3/Missing",
+      "-assert-authority-safe"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:00.041003+00:00",
+    "Seconds": 0.3219888329999918,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b2-S3-Missing.json",
+    "SHA256": "cf566fb88b8e593c627fcd70d9cbd4914635b2d109febc875d1a7fd7da2559d4",
+    "Stderr": {
+      "Path": "phase3b2-S3-Missing.stderr",
+      "SHA256": "4e04212b75476b7fa5f626f16bac6f7d661301965ff0542ab7c3f7d47249d68a"
+    }
+  },
+  {
+    "Name": "phase3b2-Cartesian-ScopeMix",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "Cartesian/ScopeMix",
+      "-assert-authority-safe"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:00.363394+00:00",
+    "Seconds": 0.3235174160000014,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b2-Cartesian-ScopeMix.json",
+    "SHA256": "d394adeeb2052e326150db6555feacd55f4518b8ae0c844b6939172dbe9948b1",
+    "Stderr": {
+      "Path": "phase3b2-Cartesian-ScopeMix.stderr",
+      "SHA256": "4e04212b75476b7fa5f626f16bac6f7d661301965ff0542ab7c3f7d47249d68a"
+    }
+  },
+  {
+    "Name": "phase3b2-S2-Missing",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "S2/Missing",
+      "-assert-universal-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:00.687347+00:00",
+    "Seconds": 0.02140504199999782,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b2-S2-Missing.json",
+    "SHA256": "12efebbb7ecc854f378a3789a61d70dd1ed08f464bb72e56a64ae19391178683",
+    "Stderr": {
+      "Path": "phase3b2-S2-Missing.stderr",
+      "SHA256": "4e04212b75476b7fa5f626f16bac6f7d661301965ff0542ab7c3f7d47249d68a"
+    }
+  },
+  {
+    "Name": "phase3b2-S2-LateGrant",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "S2/LateGrant",
+      "-assert-universal-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:00.709214+00:00",
+    "Seconds": 0.3405126669999987,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b2-S2-LateGrant.json",
+    "SHA256": "363403aa6301d3735b3c512479ada1f133e1675777329a86166b7cb261b3c275",
+    "Stderr": {
+      "Path": "phase3b2-S2-LateGrant.stderr",
+      "SHA256": "4e04212b75476b7fa5f626f16bac6f7d661301965ff0542ab7c3f7d47249d68a"
+    }
+  },
+  {
+    "Name": "phase3b2-S2-Revocable",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "S2/Revocable",
+      "-assert-universal-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:01.050144+00:00",
+    "Seconds": 0.7088933750000024,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "phase3b2-S2-Revocable.json",
+    "SHA256": "55f22681a99213e4b363c6e8f05bc15af5b5a5f157639eb1d678bd4377a4132d",
+    "Stderr": {
+      "Path": "phase3b2-S2-Revocable.stderr",
+      "SHA256": "4e04212b75476b7fa5f626f16bac6f7d661301965ff0542ab7c3f7d47249d68a"
+    }
+  },
+  {
+    "Name": "phase3b2-positive",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/phase3b2-export",
+      "-config",
+      "S2/Explicit",
+      "-assert-authority-safe",
+      "-assert-universal-completion"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:01.759404+00:00",
+    "Seconds": 0.322534791999999,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "phase3b2-positive.json",
+    "SHA256": "6be99f223c28b17ac5ac5f3250f3f2c4b1e41c11872266377ba00400bc81f749",
+    "Stderr": {
+      "Path": "phase3b2-positive.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "build-correspondence-corpus",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/correspondence-corpus",
+      "./research/delegationcorrespondence/cmd/corpus"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.082332+00:00",
+    "Seconds": 0.13674449999999183,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-correspondence-corpus.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "build-correspondence-check",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/correspondence-check",
+      "./research/delegationcorrespondence/cmd/check"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.219377+00:00",
+    "Seconds": 0.13650108299999886,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-correspondence-check.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "build-correspondence-progress",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/correspondence-progress",
+      "./research/delegationcorrespondence/cmd/progress"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.356225+00:00",
+    "Seconds": 0.12357912500000623,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-correspondence-progress.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "build-correspondence-mutations",
+    "Command": [
+      "go",
+      "build",
+      "-buildvcs=false",
+      "-o",
+      "/tmp/alan-phase3b3-research-frozen/correspondence-mutations",
+      "./research/delegationcorrespondence/cmd/mutations"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.480096+00:00",
+    "Seconds": 0.12457166699999789,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "build-correspondence-mutations.log",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Name": "correspondence-corpus",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-corpus"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.604960+00:00",
+    "Seconds": 0.09875766699998678,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "model-corpus.json",
+    "SHA256": "74289f6cb0f947b5268fa1497960aa908cd8bb380808796717ebb9ee1bdb58ec",
+    "Stderr": {
+      "Path": "correspondence-corpus.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-progress",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-progress"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:02.704968+00:00",
+    "Seconds": 1.941122582999995,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "progress.json",
+    "SHA256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b",
+    "Stderr": {
+      "Path": "correspondence-progress.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-mutations",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-mutations",
+      "/Users/jacob/dev/personal/alan-research/research/delegationcorrespondence/testdata/positive.json"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:04.646135+00:00",
+    "Seconds": 0.29205966700000374,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "raw-mutations.json",
+    "SHA256": "0bfb92abb4184b30f73c761ca24f2053e8f276b7e48c82d25f4d9b1d347b9f14",
+    "Stderr": {
+      "Path": "correspondence-mutations.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-normal-unqualified",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/normal"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:04.940413+00:00",
+    "Seconds": 2.0035224999999883,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "normal-unqualified.json",
+    "SHA256": "3768c2ecc62ebc2236f36882a920ed8152485766c6952a0b7d28ee2c9a2f9ec7",
+    "Stderr": {
+      "Path": "correspondence-normal-unqualified.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-normal-expected",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "-expect",
+      "/tmp/alan-phase3b3-research-frozen/expectations.json"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:06.948240+00:00",
+    "Seconds": 1.609264041000003,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "normal-expected.json",
+    "SHA256": "3768c2ecc62ebc2236f36882a920ed8152485766c6952a0b7d28ee2c9a2f9ec7",
+    "Stderr": {
+      "Path": "correspondence-normal-expected.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-race-unqualified",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/race"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:08.561892+00:00",
+    "Seconds": 1.6940946670000017,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "race-unqualified.json",
+    "SHA256": "076cade65deae19bae70ecb7829c224c894e532f8e5632072f07f35b67b3f906",
+    "Stderr": {
+      "Path": "correspondence-race-unqualified.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "correspondence-race-expected",
+    "Command": [
+      "/tmp/alan-phase3b3-research-frozen/correspondence-check",
+      "-root",
+      "/tmp/alan-phase3b3-runtime-frozen/race",
+      "-expect",
+      "/tmp/alan-phase3b3-research-frozen/expectations.json"
+    ],
+    "Cwd": "/Users/jacob/dev/personal/alan-research",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {},
+    "StartedUTC": "2026-11-04T19:53:10.260448+00:00",
+    "Seconds": 1.6294975830000027,
+    "Exit": 0,
+    "ExpectedExit": 0,
+    "Log": "race-expected.json",
+    "SHA256": "076cade65deae19bae70ecb7829c224c894e532f8e5632072f07f35b67b3f906",
+    "Stderr": {
+      "Path": "correspondence-race-expected.stderr",
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "Name": "checker-mutant-duplicate-keys",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-run",
+      "^(TestStrictDuplicateAndExactIntegers)$",
+      "."
+    ],
+    "Cwd": "/tmp/alan-phase3b3-research-frozen/checker-mutants/duplicate-keys",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal"
+    },
+    "StartedUTC": "2026-11-04T19:53:11.899074+00:00",
+    "Seconds": 0.4325384589999999,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "checker-mutant-duplicate-keys.log",
+    "SHA256": "3a6f70e73e79cf9c6bee071e7beeddcd01f20862026ea419aef042372fcb3068",
+    "Tests": {
+      "PassEvents": 0,
+      "PackagePasses": [],
+      "Failures": [
+        {
+          "Time": "2026-11-04T14:53:12.322289-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestStrictDuplicateAndExactIntegers",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:53:12.322648-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Elapsed": 0.099
+        }
+      ],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "checker-mutant-attempt-binding",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-run",
+      "^(TestPrimaryGatePolicyBeyondHashes)$",
+      "."
+    ],
+    "Cwd": "/tmp/alan-phase3b3-research-frozen/checker-mutants/attempt-binding",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal"
+    },
+    "StartedUTC": "2026-11-04T19:53:12.336618+00:00",
+    "Seconds": 0.4279827080000018,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "checker-mutant-attempt-binding.log",
+    "SHA256": "e63b0d5d866f6cc2df4b02d3af69b348a5ad5f1909a57fef336c92c5e2d5782d",
+    "Tests": {
+      "PassEvents": 2,
+      "PackagePasses": [],
+      "Failures": [
+        {
+          "Time": "2026-11-04T14:53:12.755232-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestPrimaryGatePolicyBeyondHashes/changed-attempt",
+          "Elapsed": 0.01
+        },
+        {
+          "Time": "2026-11-04T14:53:12.755247-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestPrimaryGatePolicyBeyondHashes",
+          "Elapsed": 0.03
+        },
+        {
+          "Time": "2026-11-04T14:53:12.755744-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Elapsed": 0.138
+        }
+      ],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "checker-mutant-fresh-policy",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-run",
+      "^(TestFrozenFreshRevocationAndSelection)$",
+      "."
+    ],
+    "Cwd": "/tmp/alan-phase3b3-research-frozen/checker-mutants/fresh-policy",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal"
+    },
+    "StartedUTC": "2026-11-04T19:53:12.769588+00:00",
+    "Seconds": 0.41626912499999946,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "checker-mutant-fresh-policy.log",
+    "SHA256": "52a034b73d20994721a2782ed02201603b3ea4b31bc73f8f609a46b7ef557f8d",
+    "Tests": {
+      "PassEvents": 0,
+      "PackagePasses": [],
+      "Failures": [
+        {
+          "Time": "2026-11-04T14:53:13.176391-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestFrozenFreshRevocationAndSelection",
+          "Elapsed": 0.02
+        },
+        {
+          "Time": "2026-11-04T14:53:13.176863-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Elapsed": 0.129
+        }
+      ],
+      "Skips": []
+    }
+  },
+  {
+    "Name": "checker-mutant-causal-prefix",
+    "Command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-run",
+      "^(TestObservationSelectionRequiresHistoricalPredecessor|TestMessageAndTerminalSelectionRequireHistoricalSource)$",
+      "."
+    ],
+    "Cwd": "/tmp/alan-phase3b3-research-frozen/checker-mutants/causal-prefix",
+    "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "Environment": {
+      "GOTOOLCHAIN": "local",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b3-staticcheck"
+    },
+    "AdditionalEnvironment": {
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal"
+    },
+    "StartedUTC": "2026-11-04T19:53:13.190876+00:00",
+    "Seconds": 0.4364415829999899,
+    "Exit": 1,
+    "ExpectedExit": 1,
+    "Log": "checker-mutant-causal-prefix.log",
+    "SHA256": "d01e7a269c77fc3aafde602460009e16f1a034064e57e45856528e26bee69fda",
+    "Tests": {
+      "PassEvents": 0,
+      "PackagePasses": [],
+      "Failures": [
+        {
+          "Time": "2026-11-04T14:53:13.585097-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestObservationSelectionRequiresHistoricalPredecessor/external_result",
+          "Elapsed": 0.01
+        },
+        {
+          "Time": "2026-11-04T14:53:13.595671-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestObservationSelectionRequiresHistoricalPredecessor/lifecycle",
+          "Elapsed": 0.01
+        },
+        {
+          "Time": "2026-11-04T14:53:13.595683-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestObservationSelectionRequiresHistoricalPredecessor",
+          "Elapsed": 0.02
+        },
+        {
+          "Time": "2026-11-04T14:53:13.606582-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestMessageAndTerminalSelectionRequireHistoricalSource/ordinary-message",
+          "Elapsed": 0.01
+        },
+        {
+          "Time": "2026-11-04T14:53:13.617954-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestMessageAndTerminalSelectionRequireHistoricalSource/runtime-terminal",
+          "Elapsed": 0.01
+        },
+        {
+          "Time": "2026-11-04T14:53:13.617963-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Test": "TestMessageAndTerminalSelectionRequireHistoricalSource",
+          "Elapsed": 0.02
+        },
+        {
+          "Time": "2026-11-04T14:53:13.618467-05:00",
+          "Action": "fail",
+          "Package": "phase3b3-checker-mutant",
+          "Elapsed": 0.145
+        }
+      ],
+      "Skips": []
+    }
+  }
+]

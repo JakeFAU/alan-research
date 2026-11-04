@@ -1,0 +1,245 @@
+{
+  "SourceCommit": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+  "GoModuleInputs": 584,
+  "UnchangedBaseInputs": 563,
+  "Commands": 42,
+  "ExpectedNonzeroCommands": [
+    "staticcheck-durable-integration",
+    "phase3a-loss",
+    "phase3b1-serial",
+    "phase3b2-S3-Missing",
+    "phase3b2-Cartesian-ScopeMix",
+    "phase3b2-S2-Missing",
+    "phase3b2-S2-LateGrant",
+    "phase3b2-S2-Revocable",
+    "correspondence-normal-unqualified",
+    "correspondence-race-unqualified",
+    "checker-mutant-duplicate-keys",
+    "checker-mutant-attempt-binding",
+    "checker-mutant-fresh-policy",
+    "checker-mutant-causal-prefix"
+  ],
+  "AllExpectedStatuses": true,
+  "OldLintByteIdentical": true,
+  "Tests": [
+    {
+      "Name": "ordinary-module",
+      "PassEvents": 2382,
+      "PassingPackages": 48,
+      "NamedSkips": [
+        {
+          "Time": "2026-11-04T14:51:20.536932-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/communication",
+          "Test": "TestCommunicationArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:21.357261-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/join",
+          "Test": "TestJoinArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-04T14:51:23.991765-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+          "Test": "TestCandidateAExport",
+          "Elapsed": 0
+        }
+      ],
+      "NoTestPackages": [
+        "github.com/JakeFAU/alan-research/examples/effectboundary",
+        "github.com/JakeFAU/alan-research/examples/substitution/b",
+        "github.com/JakeFAU/alan-research/examples/substitution/protocol",
+        "github.com/JakeFAU/alan-research/examples/worktree",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+        "github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export",
+        "github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export",
+        "github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export",
+        "github.com/JakeFAU/alan-research/research/reconciliation/cmd/export",
+        "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+        "github.com/JakeFAU/alan-research/runtime"
+      ]
+    },
+    {
+      "Name": "model-race",
+      "PassEvents": 303,
+      "PassingPackages": 7,
+      "NamedSkips": [],
+      "NoTestPackages": [
+        "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+        "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress"
+      ]
+    },
+    {
+      "Name": "prior-reciprocal-normal",
+      "PassEvents": 22,
+      "PassingPackages": 1,
+      "NamedSkips": [],
+      "NoTestPackages": []
+    },
+    {
+      "Name": "prior-reciprocal-race",
+      "PassEvents": 22,
+      "PassingPackages": 1,
+      "NamedSkips": [],
+      "NoTestPackages": []
+    },
+    {
+      "Name": "prior-authority-normal",
+      "PassEvents": 20,
+      "PassingPackages": 1,
+      "NamedSkips": [],
+      "NoTestPackages": []
+    },
+    {
+      "Name": "prior-authority-race",
+      "PassEvents": 20,
+      "PassingPackages": 1,
+      "NamedSkips": [],
+      "NoTestPackages": []
+    }
+  ],
+  "Corpora": [
+    {
+      "Root": "normal",
+      "Cases": 48,
+      "RawPhases": 117,
+      "Digests": 1761,
+      "RawValid": 43,
+      "Failures": [
+        {
+          "Name": "mutation-missing-grant",
+          "Edge": "lifecycle_settlement"
+        },
+        {
+          "Name": "mutation-forged-grant-origin",
+          "Edge": "lifecycle_origin"
+        },
+        {
+          "Name": "mutation-effect-use-result",
+          "Edge": "reservation"
+        },
+        {
+          "Name": "mutation-gate-attempt-digest",
+          "Edge": "gate_attempt_digest"
+        },
+        {
+          "Name": "mutation-result-link",
+          "Edge": "result_original"
+        }
+      ],
+      "Mismatches": [
+        {
+          "Name": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ParsedExpectedAndUnqualifiedEqual": true
+    },
+    {
+      "Root": "race",
+      "Cases": 48,
+      "RawPhases": 117,
+      "Digests": 1761,
+      "RawValid": 43,
+      "Failures": [
+        {
+          "Name": "mutation-missing-grant",
+          "Edge": "lifecycle_settlement"
+        },
+        {
+          "Name": "mutation-forged-grant-origin",
+          "Edge": "lifecycle_origin"
+        },
+        {
+          "Name": "mutation-effect-use-result",
+          "Edge": "reservation"
+        },
+        {
+          "Name": "mutation-gate-attempt-digest",
+          "Edge": "gate_attempt_digest"
+        },
+        {
+          "Name": "mutation-result-link",
+          "Edge": "result_original"
+        }
+      ],
+      "Mismatches": [
+        {
+          "Name": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ParsedExpectedAndUnqualifiedEqual": true
+    }
+  ],
+  "ModelCases": 22,
+  "ModelClasses": 8,
+  "PriorCorpusCounts": {
+    "Histories": 33,
+    "Chains": 4
+  },
+  "RawMutants": 15,
+  "CheckerSourceMutantsKilled": 4,
+  "PriorModelsByteEqual": [
+    {
+      "Name": "phase3a",
+      "PriorArchive": "docs/foundational/phase3a/evidence/model.json",
+      "Equal": true,
+      "SHA256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385"
+    },
+    {
+      "Name": "phase3b1",
+      "PriorArchive": "docs/foundational/phase3b/evidence/model.json",
+      "Equal": true,
+      "SHA256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533"
+    },
+    {
+      "Name": "phase3b2",
+      "PriorArchive": "docs/foundational/phase3b2/evidence/model.json.gz",
+      "Equal": true,
+      "SHA256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e"
+    },
+    {
+      "Name": "phase3b2-audit",
+      "PriorArchive": "docs/foundational/phase3b2/evidence/audit.json.gz",
+      "Equal": true,
+      "SHA256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1"
+    }
+  ],
+  "Progress": [
+    {
+      "Config": {
+        "Policy": "S2",
+        "Scenario": "LateGrant"
+      },
+      "States": 111065,
+      "Arcs": 840616,
+      "SafeCompletable": 107213,
+      "PredicateMismatches": 0,
+      "MaxSuffix": 23,
+      "IncompleteDeadEnds": 0
+    },
+    {
+      "Config": {
+        "Policy": "S2",
+        "Scenario": "Revocable"
+      },
+      "States": 220564,
+      "Arcs": 1740832,
+      "SafeCompletable": 193681,
+      "PredicateMismatches": 0,
+      "MaxSuffix": 22,
+      "IncompleteDeadEnds": 0
+    }
+  ]
+}
