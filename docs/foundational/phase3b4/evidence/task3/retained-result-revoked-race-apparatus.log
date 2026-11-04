@@ -1,0 +1,8 @@
+--- FAIL: TestRequestBindingAuthoredConflictFormats (1.58s)
+    --- FAIL: TestRequestBindingAuthoredConflictFormats/alan/request-authority/v1 (0.72s)
+        request_binding_adapter_test.go:125: {0xc0001ca4e0 {{<nil> ["B",1,2,0] {B 1} 2 0 lifecycle A 1 grant map[claim:{string 0 {"Version":"alan/request-authority/v1","Root":{"Run":{"Subject":"B","Generation":1},"RootRun":{"Subject":"B","Generation":1},"Permission":{"Kind":"adapter","Source":"B","Target":"resource1","Operation":"increment","Revision":1,"Obligation":"increment"}},"Recipient":{"Subject":"A","Generation":1},"RecipientRoot":{"Subject":"A","Generation":1},"RecipientRevision":1,"OriginalRequestID":"[\"B\",1,1,0]","ServiceOperationID":"[\"A\",1,2,0]"} false <nil>} operation:{string 0 DelegateAuthority false <nil>} revision:{int 1  false <nil>}]} 1 DelegateAuthority 1} 1 true delegated 0 0xc0006be380 0xc0006be400}
+    --- FAIL: TestRequestBindingAuthoredConflictFormats/alan/request-authority/v2 (0.87s)
+        request_binding_adapter_test.go:125: {0xc00025d1e0 {{<nil> ["B",1,2,0] {B 1} 2 0 lifecycle A 1 grant map[claim:{string 0 {"Version":"alan/request-authority/v2","Root":{"Run":{"Subject":"B","Generation":1},"RootRun":{"Subject":"B","Generation":1},"Permission":{"Kind":"adapter","Source":"B","Target":"resource1","Operation":"increment","Revision":1,"Obligation":"increment"}},"Recipient":{"Subject":"A","Generation":1},"RecipientRoot":{"Subject":"A","Generation":1},"RecipientRevision":1,"OriginalRequestID":"[\"B\",1,1,0]","ServiceOperationID":"[\"A\",1,2,0]"} false <nil>} operation:{string 0 DelegateAuthority false <nil>} revision:{int 1  false <nil>}]} 1 DelegateAuthority 1} 1 true delegated 0 0xc0003f8d80 0xc0003f8e00}
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	1.793s
+FAIL

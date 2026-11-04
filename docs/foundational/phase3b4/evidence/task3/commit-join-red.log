@@ -1,0 +1,8 @@
+--- FAIL: TestRequestBindingOriginalCommitJoin (0.02s)
+    --- FAIL: TestRequestBindingOriginalCommitJoin/A (0.01s)
+        request_binding_test.go:483: binding accepted intent absent from its committing reduction
+    --- FAIL: TestRequestBindingOriginalCommitJoin/B (0.01s)
+        request_binding_test.go:483: binding accepted intent absent from its committing reduction
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	0.192s
+FAIL

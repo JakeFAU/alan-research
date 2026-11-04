@@ -1,0 +1,367 @@
+diff --git a/examples/delegation/README.md b/examples/delegation/README.md
+new file mode 100644
+index 0000000..1eca21e
+--- /dev/null
++++ b/examples/delegation/README.md
+@@ -0,0 +1,30 @@
++# Finite reciprocal request binding
++
++`Reciprocal` preserves its v1 immediate-predecessor policy. `RequestBinding` opts a newly provisioned Store into `runtime.RequestAuthorityBindingVersion` (`alan/request-authority/v2`): an accepted grant identifies one original request and one exact service operation. The original request must have been genuinely selected earlier in the same service generation. Ready messages and permitted scratch reductions can intervene.
++
++```go
++provision, manifest, err := delegation.RequestBinding(delegation.RequestBindingOptions{
++    EndpointA: "http://127.0.0.1:1234/apply",
++    EndpointB: "http://127.0.0.1:1235/apply",
++    LocalSteps: 3,
++    TerminalHandshake: true,
++})
++```
++
++The caller supplies two distinct literal loopback HTTP endpoints implementing the existing resource protocol. Pass `provision` to `runtime.Create`; `manifest.ProgramIDs` and the exact original/service/reply locators describe that provision. They are planned coordinates, not evidence that any effect occurred. Inspect actual effects, retained results and their consumption after running.
++
++By default A selects the original request, then ready. `ReadyFirst` reverses these two receives. `LocalSteps` accepts 0 through 32 and alternates literal writes/copies in a scratch register. A non-nil `ForwardBranch` requires `LocalSteps=0`; either finite branch executes three reductions over five code positions. The service and planned reply are A(4+n) and A(7+n), where n is the number of executed inserted reductions, not textual PC displacement. B remains at B9/B12. The constructor updates every claim, affected branch target, authority version and program hash before provisioning. Principal request IDs remain AB/A1 and BA/B1.
++
++The v2 physical formats are 15/16, with a non-unique observation admission index. V1 formats 13/14 retain the original policy; there is no in-place migration. Receipt-conflict promotion preserves the selected authority policy. The fixed Store metadata semantics do not restrict supported authored artifacts to raw programs; the existing raw, authored and collection validation rules still apply. This example itself uses raw `alan/1d/v1` programs.
++
++Historical selection is provenance, not fresh permission. Current gates still require the original allowed operation, reservation/debit, current source/root policy, owner epoch and unrevoked selected grant. A future selection cannot repair an earlier refusal. Admission alone, a different equal-payload request, a result, or an application register cannot substitute for the exact original selection. Retained known results preserve their meaning after revocation; they do not authorize another contact.
++
++Focused checks:
++
++```sh
++go test -count=1 ./examples/delegation -run TestRequestBinding
++go test -count=1 ./internal/executor -run TestRequestBinding
++go test -count=1 -tags integration ./internal/executor ./internal/durabletest -run 'TestRequestBinding|TestPhase3B4AuthoredAdapterCompatibility|TestPhase3B3CartesianOperations'
++```
++
++The automatic example tests exercise adjacent/nonadjacent receive order, 1/3 local steps and both branch outcomes with two actual endpoint applications and retained-result consumption. These bounded tests and shared runtime Replay checks are not an independent policy proof, a general dynamic-locator construction, or a whole-Store crash qualification. The independent campaign, adverse cut corpus and cost measurements belong to the research qualification.
+diff --git a/examples/delegation/request_binding.go b/examples/delegation/request_binding.go
+new file mode 100644
+index 0000000..16724f3
+--- /dev/null
++++ b/examples/delegation/request_binding.go
+@@ -0,0 +1,140 @@
++package delegation
++
++import (
++	"crypto/sha256"
++	"encoding/hex"
++	"encoding/json"
++	"fmt"
++
++	"github.com/JakeFAU/alan/runtime"
++	"github.com/JakeFAU/alan/schema"
++)
++
++// RequestBindingOptions selects a finite, statically located service path.
++// ForwardBranch executes three local reductions and excludes LocalSteps.
++type RequestBindingOptions struct {
++	EndpointA, EndpointB string
++	LocalSteps           int
++	ForwardBranch        *bool
++	ReadyFirst           bool
++	TerminalHandshake    bool
++}
++
++// RequestBindingManifest records actual program hashes and planned locators.
++// A planned locator is not evidence that the corresponding service occurred.
++type RequestBindingManifest struct {
++	Version                        string
++	Options                        RequestBindingOptions
++	Reciprocal                     Manifest
++	ServiceSequence, ReplySequence int64
++	InsertedReductions             int
++	ProgramIDs                     map[string]string
++	PrincipalRequests              [2]string
++}
++
++// RequestBinding constructs ordinary v2 programs with exact earlier selection.
++// The optional local work changes only scratch state; B issues the grant through
++// its retained lifecycle program. Runtime authority is never supplied by this host.
++func RequestBinding(o RequestBindingOptions) (runtime.Provision, RequestBindingManifest, error) {
++	m := RequestBindingManifest{Version: "alan/request-binding-fixture/v1", Options: o}
++	if o.LocalSteps < 0 || o.LocalSteps > 32 || o.ForwardBranch != nil && o.LocalSteps != 0 {
++		return runtime.Provision{}, m, fmt.Errorf("LocalSteps must be 0..32 and zero with ForwardBranch")
++	}
++	if o.ForwardBranch != nil {
++		v := *o.ForwardBranch
++		m.Options.ForwardBranch = &v
++	}
++	p, inner, err := Reciprocal(Options{EndpointA: o.EndpointA, EndpointB: o.EndpointB, Scenario: S2Handshake, TerminalHandshake: o.TerminalHandshake})
++	if err != nil {
++		return p, m, err
++	}
++	n := o.LocalSteps
++	if o.ForwardBranch != nil {
++		n = 3
++	}
++	m.InsertedReductions = n
++	m.ServiceSequence = int64(4 + n)
++	m.ReplySequence = int64(7 + n)
++	inner.BAService = locator("a", 4+n)
++	inner.BAReply = locator("a", 7+n)
++	inner.Claim.Version = runtime.RequestAuthorityBindingVersion
++	inner.Claim.ServiceOperationID = inner.BAService
++	claim, err := json.Marshal(inner.Claim)
++	if err != nil {
++		return p, m, err
++	}
++	m.Reciprocal = inner
++	m.PrincipalRequests = [2]string{inner.ABRequest, inner.BARequest}
++	m.ProgramIDs = map[string]string{}
++	for ri := range p.Runs {
++		run := &p.Runs[ri]
++		for ai := range p.Programs {
++			artifact := &p.Programs[ai]
++			if artifact.ID != run.ProgramID {
++				continue
++			}
++			var program program
++			if err = json.Unmarshal(artifact.Bytes, &program); err != nil {
++				return p, m, err
++			}
++			for i := range program.Code {
++				e := program.Code[i].Effect
++				if e == nil {
++					continue
++				}
++				if e.Authority != nil {
++					e.Authority.Version = runtime.RequestAuthorityBindingVersion
++				}
++				if _, ok := e.Payload["claim"]; ok {
++					e.Payload["claim"] = str(string(claim))
++				}
++			}
++			if run.ID.Subject == "a" {
++				if !o.ReadyFirst {
++					program.Code[1], program.Code[2] = program.Code[2], program.Code[1]
++				}
++				var inserted []instruction
++				if o.ForwardBranch != nil {
++					inserted = []instruction{
++						{Op: "branch", A: lit(schema.Bool(*o.ForwardBranch)), B: lit(schema.Bool(true)), Target: 4, Otherwise: 6},
++						{Op: "set", Dst: "scratch", A: lit(schema.Int(1))},
++						{Op: "branch", A: lit(schema.Bool(true)), B: lit(schema.Bool(true)), Target: 8, Otherwise: 8},
++						{Op: "set", Dst: "scratch", A: lit(schema.Int(2))},
++						{Op: "set", Dst: "scratch", A: ref("scratch")},
++					}
++				} else {
++					for i := 0; i < n; i++ {
++						a := lit(schema.Int(int64(i + 1)))
++						if i%2 == 1 {
++							a = ref("scratch")
++						}
++						inserted = append(inserted, instruction{Op: "set", Dst: "scratch", A: a})
++					}
++				}
++				for i := 3; i < len(program.Code); i++ {
++					in := &program.Code[i]
++					if in.Op == "branch" {
++						in.Target += len(inserted)
++						in.Otherwise += len(inserted)
++					}
++				}
++				code := append([]instruction{}, program.Code[:3]...)
++				code = append(code, inserted...)
++				program.Code = append(code, program.Code[3:]...)
++			}
++			raw, err := json.Marshal(program)
++			if err != nil {
++				return p, m, err
++			}
++			sum := sha256.Sum256(raw)
++			id := hex.EncodeToString(sum[:])
++			artifact.ID = id
++			artifact.Bytes = raw
++			run.ProgramID = id
++			m.ProgramIDs[run.ID.Subject] = id
++			break
++		}
++	}
++	p.Composition.RequestAuthority = runtime.RequestAuthorityBindingVersion
++	return p, m, nil
++}
+diff --git a/examples/delegation/request_binding_run_test.go b/examples/delegation/request_binding_run_test.go
+new file mode 100644
+index 0000000..b74d23b
+--- /dev/null
++++ b/examples/delegation/request_binding_run_test.go
+@@ -0,0 +1,106 @@
++package delegation_test
++
++import (
++	"encoding/json"
++	"net/http"
++	"net/http/httptest"
++	"path/filepath"
++	"testing"
++
++	"github.com/JakeFAU/alan/examples/delegation"
++	resource "github.com/JakeFAU/alan/internal/fixture"
++	"github.com/JakeFAU/alan/runtime"
++)
++
++func TestRequestBindingAutomatic(t *testing.T) {
++	yes, no := true, false
++	for _, tc := range []struct {
++		name   string
++		steps  int
++		branch *bool
++		ready  bool
++	}{{name: "nonadjacent"}, {name: "adjacent", ready: true}, {name: "one", steps: 1}, {name: "three", steps: 3}, {name: "branch_true", branch: &yes}, {name: "branch_false", branch: &no}} {
++		t.Run(tc.name, func(t *testing.T) {
++			endpoint := func(name string) (string, string) {
++				path := filepath.Join(t.TempDir(), "endpoint.sqlite")
++				ledger, err := resource.Open(t.Context(), path, name)
++				if err != nil {
++					t.Fatal(err)
++				}
++				t.Cleanup(func() { ledger.Close() })
++				server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
++					var req resource.Request
++					if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
++						t.Error(err)
++						return
++					}
++					receipt, err := ledger.Apply(r.Context(), req)
++					if err != nil {
++						t.Error(err)
++						return
++					}
++					if err = json.NewEncoder(w).Encode(receipt); err != nil {
++						t.Error(err)
++					}
++				}))
++				t.Cleanup(server.Close)
++				return server.URL, path
++			}
++			ua, pa := endpoint("a")
++			ub, pb := endpoint("b")
++			p, m, err := delegation.RequestBinding(delegation.RequestBindingOptions{EndpointA: ua, EndpointB: ub, LocalSteps: tc.steps, ForwardBranch: tc.branch, ReadyFirst: tc.ready, TerminalHandshake: true})
++			if err != nil {
++				t.Fatal(err)
++			}
++			path := filepath.Join(t.TempDir(), "runtime.sqlite")
++			s, err := runtime.Create(t.Context(), path, p, runtime.DefaultLimits())
++			if err != nil {
++				t.Fatal(err)
++			}
++			report, err := s.Run(t.Context(), runtime.RunOptions{MaxSteps: 128, MaxDispatch: 128})
++			if err != nil {
++				t.Fatal(err)
++			}
++			if len(report.UnresolvedIntents) != 0 {
++				t.Fatal(report)
++			}
++			if err = s.Close(); err != nil {
++				t.Fatal(err)
++			}
++			snap, err := runtime.InspectExecution(t.Context(), path, runtime.DefaultLimits())
++			if err != nil {
++				t.Fatal(err)
++			}
++			for _, run := range []runtime.RunID{m.Reciprocal.A, m.Reciprocal.B} {
++				r, ok := snap.Run(run)
++				if !ok || r.Projection.Status != "succeeded" {
++					t.Fatal("not complete", r)
++				}
++			}
++			for _, id := range []string{m.Reciprocal.BAService, m.Reciprocal.ABService} {
++				e, ok := snap.Effect(id)
++				if !ok || e.ExternalAttempt == nil || !e.ExternalAttempt.Allowed || e.Settlement == nil {
++					t.Fatal("service", e)
++				}
++				o, ok := snap.Observation(e.Settlement.ObservationID)
++				if !ok || o.SelectedAt == nil {
++					t.Fatal("result unconsumed", o)
++				}
++			}
++			for _, path := range []string{pa, pb} {
++				endpoint, err := resource.Inspect(t.Context(), path)
++				if err != nil || endpoint.Contacts != 1 || len(endpoint.Applications) != 1 {
++					t.Fatal(endpoint, err)
++				}
++			}
++			if _, err = runtime.Replay(t.Context(), path, runtime.DefaultLimits()); err != nil {
++				t.Fatal(err)
++			}
++			reopened, err := runtime.Open(t.Context(), path, runtime.DefaultLimits())
++			if err != nil {
++				t.Fatal(err)
++			}
++			reopened.Close()
++		})
++	}
++}
+diff --git a/examples/delegation/request_binding_test.go b/examples/delegation/request_binding_test.go
+new file mode 100644
+index 0000000..1ed0439
+--- /dev/null
++++ b/examples/delegation/request_binding_test.go
+@@ -0,0 +1,67 @@
++package delegation_test
++
++import (
++	"fmt"
++	"path/filepath"
++	"reflect"
++	"testing"
++
++	"github.com/JakeFAU/alan/examples/delegation"
++	"github.com/JakeFAU/alan/runtime"
++)
++
++func TestRequestBindingProvision(t *testing.T) {
++	for _, steps := range []int{0, 1, 3, 8, 32} {
++		t.Run(fmt.Sprint(steps), func(t *testing.T) {
++			o := delegation.RequestBindingOptions{EndpointA: "http://127.0.0.1:1234", EndpointB: "http://127.0.0.1:1235", LocalSteps: steps, TerminalHandshake: true}
++			p, m, err := delegation.RequestBinding(o)
++			if err != nil {
++				t.Fatal(err)
++			}
++			p2, m2, err := delegation.RequestBinding(o)
++			if err != nil || !reflect.DeepEqual(p, p2) || !reflect.DeepEqual(m, m2) {
++				t.Fatal("determinism", err)
++			}
++			if m.ServiceSequence != int64(4+steps) || m.ReplySequence != int64(7+steps) || len(m.ProgramIDs) != 2 {
++				t.Fatal(m)
++			}
++			path := filepath.Join(t.TempDir(), "binding.sqlite")
++			s, err := runtime.Create(t.Context(), path, p, runtime.DefaultLimits())
++			if err != nil {
++				t.Fatal(err)
++			}
++			s.Close()
++			if _, err = runtime.Replay(t.Context(), path, runtime.DefaultLimits()); err != nil {
++				t.Fatal(err)
++			}
++		})
++	}
++	for _, choice := range []bool{false, true} {
++		p, m, err := delegation.RequestBinding(delegation.RequestBindingOptions{EndpointA: "http://127.0.0.1:1234", EndpointB: "http://127.0.0.1:1235", ForwardBranch: &choice})
++		if err != nil || m.ServiceSequence != 7 {
++			t.Fatal(m, err)
++		}
++		s, err := runtime.Create(t.Context(), filepath.Join(t.TempDir(), "branch.sqlite"), p, runtime.DefaultLimits())
++		if err != nil {
++			t.Fatal(err)
++		}
++		s.Close()
++	}
++	for _, n := range []int{-1, 33} {
++		if _, _, err := delegation.RequestBinding(delegation.RequestBindingOptions{LocalSteps: n}); err == nil {
++			t.Fatal("invalid length accepted")
++		}
++	}
++}
++
++func ExampleRequestBinding() {
++	_, m, err := delegation.RequestBinding(delegation.RequestBindingOptions{EndpointA: "http://127.0.0.1:1234/apply", EndpointB: "http://127.0.0.1:1235/apply", LocalSteps: 3})
++	if err != nil {
++		panic(err)
++	}
++	fmt.Println(m.ServiceSequence, m.ReplySequence)
++	fmt.Println(m.Reciprocal.BAService)
++	// Output:
++	// 7 10
++	// ["a",1,7,0]
++}

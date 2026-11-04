@@ -1,0 +1,205 @@
+[
+  {
+    "argv": [
+      "go",
+      "build",
+      "./..."
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:00.717160+00:00",
+    "exit": 0,
+    "output": "frozen-build.log"
+  },
+  {
+    "argv": [
+      "staticcheck",
+      "./..."
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:02.078648+00:00",
+    "exit": 0,
+    "output": "frozen-staticcheck.log"
+  },
+  {
+    "argv": [
+      "staticcheck",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "./internal/durabletest",
+      "./examples/delegation",
+      "./runtime"
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:02.666159+00:00",
+    "exit": 0,
+    "output": "frozen-staticcheck-integration.log"
+  },
+  {
+    "argv": [
+      "go",
+      "vet",
+      "./..."
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:02.809111+00:00",
+    "exit": 0,
+    "output": "frozen-vet.log"
+  },
+  {
+    "argv": [
+      "go",
+      "vet",
+      "-tags",
+      "integration",
+      "./..."
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:03.132935+00:00",
+    "exit": 0,
+    "output": "frozen-vet-integration.log"
+  },
+  {
+    "argv": [
+      "go",
+      "mod",
+      "verify"
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:03.462835+00:00",
+    "exit": 0,
+    "output": "frozen-mod-verify.log"
+  },
+  {
+    "argv": [
+      "go",
+      "mod",
+      "tidy",
+      "-diff"
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:03.523092+00:00",
+    "exit": 0,
+    "output": "frozen-mod-tidy.log"
+  },
+  {
+    "argv": [
+      "gofmt",
+      "-l",
+      "adapters",
+      "author",
+      "cmd",
+      "compose",
+      "effects",
+      "examples",
+      "internal",
+      "runtime",
+      "schema"
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:03.549426+00:00",
+    "exit": 0,
+    "output": "frozen-gofmt.log"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "cwd": "/private/tmp/alan-phase3b3-runtime",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOCACHE": "/tmp/alan-phase3a-go-build",
+      "GOWORK": "off",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+    },
+    "source_commit": "5b68180bc18a5c7ee3f5be40d77b251e054631a9",
+    "source_map_sha256": "c45638fab55f385dfd45aeff59f0a8bce67203f097e297d6aa2ba0da420d5ccb",
+    "start": "2026-11-04T22:59:03.590501+00:00",
+    "exit": 0,
+    "output": "frozen-diff-check.log"
+  }
+]

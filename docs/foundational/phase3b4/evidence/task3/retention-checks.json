@@ -1,0 +1,57 @@
+{
+  "scope": "Evidence retention only; no runtime edits or new runtime/model tests",
+  "research_base": "184111719fe4d3a27c887907a46d973c05cca30d",
+  "manifest_original_entries_verified": 72,
+  "final_command_records_verified": 12,
+  "frozen_source_files_verified": 315,
+  "credential_pattern_candidates": 0,
+  "credential_review_limit": "Pattern scan and content/scope inspection; not a proof that arbitrary secrets cannot exist",
+  "raw_staged_whitespace_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit": 2,
+    "diagnostics": 167,
+    "only_path": "docs/foundational/phase3b4/evidence/task3/runtime-commit.diff",
+    "reason": "All diagnostics are literal unified-diff context prefixes before tab indentation or blank context lines; preserve exact archived bytes"
+  },
+  "non_patch_whitespace_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check",
+      "--",
+      ".",
+      ":(exclude)docs/foundational/phase3b4/evidence/task3/runtime-commit.diff"
+    ],
+    "exit": 0
+  },
+  "patch_parse_checks": [
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--numstat",
+        "docs/foundational/phase3b4/evidence/task3/runtime-commit.diff"
+      ],
+      "exit": 0,
+      "files": 13,
+      "applied": false
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--numstat",
+        "docs/foundational/phase3b4/evidence/task3/example-commit.diff"
+      ],
+      "exit": 0,
+      "files": 4,
+      "applied": false
+    }
+  ]
+}

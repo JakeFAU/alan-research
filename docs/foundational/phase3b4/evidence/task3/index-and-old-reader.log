@@ -1,0 +1,15 @@
+=== RUN   TestRequestBindingDuplicateTransportAndIndex
+    request_binding_test.go:192: SEARCH admissions USING INDEX admissions_observation_id (observation_id=?)
+--- PASS: TestRequestBindingDuplicateTransportAndIndex (0.02s)
+=== RUN   TestRequestBindingConflictAndOldReader
+=== RUN   TestRequestBindingConflictAndOldReader/false
+=== RUN   TestRequestBindingConflictAndOldReader/false/frozen_reader
+=== RUN   TestRequestBindingConflictAndOldReader/true
+=== RUN   TestRequestBindingConflictAndOldReader/true/frozen_reader
+--- PASS: TestRequestBindingConflictAndOldReader (0.11s)
+    --- PASS: TestRequestBindingConflictAndOldReader/false (0.06s)
+        --- PASS: TestRequestBindingConflictAndOldReader/false/frozen_reader (0.03s)
+    --- PASS: TestRequestBindingConflictAndOldReader/true (0.05s)
+        --- PASS: TestRequestBindingConflictAndOldReader/true/frozen_reader (0.01s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/executor	0.273s

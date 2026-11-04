@@ -1,0 +1,6 @@
+--- FAIL: TestRequestBindingNonadjacent (0.04s)
+    --- FAIL: TestRequestBindingNonadjacent/alan/request-authority/v2 (0.01s)
+        request_binding_test.go:49: nonadjacent binding: &{Version:alan/request-authority/v2 Namespace:30c97d4de49b0d60e6592324d9cd165b1e1b4a91479e909dcdbb7259c24b69a8 Use:0x2f2f67088180 RootID:4f7cac6a9e64266c966656c572a34a7fb23b35c9f993237885adb731a70150e5 ServingRootID:dfddb43c732a467f56aa0d89de0d833b083490b5a79e08b6b12469f3cac1f6e4 Allowed:false Reason:authority_request_not_admitted OriginalRequestID:["B",1,1,0] ServiceOperationID:["A",1,3,0] RequestObservationID: RequestConsumedSequence:0 GrantDecisionSequence:1}
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	0.197s
+FAIL

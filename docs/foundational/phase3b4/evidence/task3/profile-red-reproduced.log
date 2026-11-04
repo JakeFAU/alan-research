@@ -1,0 +1,5 @@
+--- FAIL: TestRequestBindingProfile (0.01s)
+    request_binding_test.go:23: unsupported version
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/executor	0.201s
+FAIL

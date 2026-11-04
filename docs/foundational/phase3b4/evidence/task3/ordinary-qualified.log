@@ -1,0 +1,21 @@
+ok  	github.com/JakeFAU/alan/adapters/lookup	0.083s
+ok  	github.com/JakeFAU/alan/adapters/openai	0.075s
+ok  	github.com/JakeFAU/alan/adapters/openmeteo	0.127s
+ok  	github.com/JakeFAU/alan/adapters/receiptquery	0.103s
+ok  	github.com/JakeFAU/alan/author	2.951s
+ok  	github.com/JakeFAU/alan/cmd/alan	0.460s
+ok  	github.com/JakeFAU/alan/compose	1.122s
+ok  	github.com/JakeFAU/alan/effects	0.078s
+ok  	github.com/JakeFAU/alan/examples/delegation	3.040s
+?   	github.com/JakeFAU/alan/examples/inspect-execution	[no test files]
+ok  	github.com/JakeFAU/alan/examples/investigator	31.458s
+?   	github.com/JakeFAU/alan/examples/quickstart	[no test files]
+ok  	github.com/JakeFAU/alan/examples/weather-agent	49.667s
+ok  	github.com/JakeFAU/alan/internal/boundary	0.107s
+ok  	github.com/JakeFAU/alan/internal/durabletest	7.095s
+ok  	github.com/JakeFAU/alan/internal/executor	12.463s
+ok  	github.com/JakeFAU/alan/internal/fixture	0.142s
+?   	github.com/JakeFAU/alan/internal/storetest	[no test files]
+ok  	github.com/JakeFAU/alan/internal/testcmd/alan-resource	0.172s
+ok  	github.com/JakeFAU/alan/runtime	1.560s
+ok  	github.com/JakeFAU/alan/schema	0.087s
