@@ -1,0 +1,26 @@
+{
+  "Version": 2,
+  "FrozenUTC": "2026-11-04T16:38:17.202334+00:00",
+  "RuntimeBase": "af6943a5805a9a6c0e8fe77f804264f4765d07ec",
+  "ResearchBase": "8197683c23a3ca774750fc3c2c389c5a64dd38b8",
+  "ProductionChangesAtFreeze": false,
+  "Inputs": [
+    {
+      "path": "docs/foundational/phase3b3/00-brief.md",
+      "bytes": 19753,
+      "sha256": "a24f6bd6c742d3cecd6aa5c6cd87135959676a92b6fb0870ec58d5f0f999241a"
+    },
+    {
+      "path": "docs/foundational/phase3b3/01-runtime-gap.md",
+      "bytes": 9048,
+      "sha256": "2f1d3304fb467cd1afe6b594e4f47c979458f4edcc2ef9d6aaec07e4b3db32af"
+    },
+    {
+      "path": "docs/foundational/phase3b3/02-contract.md",
+      "bytes": 40474,
+      "sha256": "c96241fa365807c4322756d0513c9fda05edff6650c4bc09f32f8cde1bbcb863"
+    }
+  ],
+  "Supersedes": "50b30e7d contract version1; rejected bytes retained in evidence/rejected-contract-v1",
+  "RuntimeAtFreeze": "8319a9067c16aaf5e3ecccb3d0c62f5c536e6140"
+}
