@@ -1,0 +1,2 @@
+research/mutualobligations/model_test.go:400:4: should replace loop with trace = append(trace, []Event{event(d, Commit, NoValue), event(d, SendRequest, NoValue), event(d, Admit, NoValue), event(d, Apply, value), event(d, SendResult, value), event(d, ReceiveResult, value), event(d, Record, value), event(d, Consume, value)}...) (S1011)
+exit=1

@@ -1,0 +1,1240 @@
+[
+  {
+    "Profile": "serial/serial",
+    "States": 68497,
+    "Edges": 511552,
+    "CyclicStates": 56580,
+    "CyclicComponents": 22384,
+    "LocalSafetyViolations": 0,
+    "LocalTransitionViolations": 0,
+    "CustodyViolations": 0,
+    "AppliedStates": 68272,
+    "ReleasedStates": 45824,
+    "CompleteStates": 16384,
+    "CanComplete": 68353,
+    "CannotComplete": 144,
+    "TrapStates": 144,
+    "TrapMismatch": 0,
+    "ShortestTrap": {
+      "StateID": 6,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": false,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          },
+          {
+            "Committed": true,
+            "Admitted": false,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "commit",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": false
+    },
+    "AdmittedWait": {
+      "StateID": 168,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          },
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "commit",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 0,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": false
+    },
+    "RecoveredWait": {
+      "StateID": 1513,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": true,
+            "Activation": 1
+          },
+          {
+            "Down": false,
+            "Crashed": true,
+            "Activation": 1
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          },
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "commit",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 0,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "crash",
+          "Actor": 0,
+          "Obligation": 2,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 0,
+            "Operation": 0,
+            "Callee": 0,
+            "CalleeGeneration": 0,
+            "Request": "",
+            "Grant": "",
+            "Resource": ""
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "recover",
+          "Actor": 0,
+          "Obligation": 2,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 0,
+            "Operation": 0,
+            "Callee": 0,
+            "CalleeGeneration": 0,
+            "Request": "",
+            "Grant": "",
+            "Resource": ""
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "crash",
+          "Actor": 1,
+          "Obligation": 2,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 0,
+            "Operation": 0,
+            "Callee": 0,
+            "CalleeGeneration": 0,
+            "Request": "",
+            "Grant": "",
+            "Resource": ""
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "recover",
+          "Actor": 1,
+          "Obligation": 2,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 0,
+            "Operation": 0,
+            "Callee": 0,
+            "CalleeGeneration": 0,
+            "Request": "",
+            "Grant": "",
+            "Resource": ""
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": false
+    },
+    "ShortestComplete": {
+      "StateID": 11385,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": true,
+            "Consumed": true,
+            "Volatile": 1,
+            "Recorded": 1,
+            "Retained": 1,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 1
+          },
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": true,
+            "Consumed": true,
+            "Volatile": 1,
+            "Recorded": 1,
+            "Retained": 1,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 1
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "apply",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-result",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "receive-result",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "record",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "consume",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "commit",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 0,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "apply",
+          "Actor": 0,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-result",
+          "Actor": 0,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "receive-result",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "record",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "consume",
+          "Actor": 1,
+          "Obligation": 1,
+          "Binding": {
+            "Caller": 1,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 0,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:B/g1-\u003eA/g1:counter-A",
+            "Resource": "counter-A"
+          },
+          "Result": 1,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": true
+    },
+    "PostApplicationCustody": {
+      "StateID": 35,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": true,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 1,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 1
+          },
+          {
+            "Committed": false,
+            "Admitted": false,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "apply",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": true
+    },
+    "ReleasedCustody": {
+      "StateID": 805,
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": true,
+            "Consumed": false,
+            "Volatile": 1,
+            "Recorded": 1,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 1
+          },
+          {
+            "Committed": false,
+            "Admitted": false,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "Trace": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "apply",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-result",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "receive-result",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "record",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 1,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-ack",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "release",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "CanComplete": true
+    },
+    "UnfairRetry": {
+      "Prefix": [
+        {
+          "Kind": "commit",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "admit",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "Cycle": [
+        {
+          "Kind": "send-request",
+          "Actor": 0,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        },
+        {
+          "Kind": "deduplicate",
+          "Actor": 1,
+          "Obligation": 0,
+          "Binding": {
+            "Caller": 0,
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": 1,
+            "CalleeGeneration": 1,
+            "Request": "increment",
+            "Grant": "grant:A/g1-\u003eB/g1:counter-B",
+            "Resource": "counter-B"
+          },
+          "Result": 0,
+          "Duplicate": false
+        }
+      ],
+      "State": {
+        "Agents": [
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          },
+          {
+            "Down": false,
+            "Crashed": false,
+            "Activation": 0
+          }
+        ],
+        "Obligations": [
+          {
+            "Committed": true,
+            "Admitted": true,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          },
+          {
+            "Committed": false,
+            "Admitted": false,
+            "Applied": false,
+            "Consumed": false,
+            "Volatile": 0,
+            "Recorded": 0,
+            "Retained": 0,
+            "RequestChannel": false,
+            "ResultChannel": 0,
+            "ACKChannel": false,
+            "WorldResult": 0
+          }
+        ]
+      },
+      "CanComplete": true
+    }
+  }
+]

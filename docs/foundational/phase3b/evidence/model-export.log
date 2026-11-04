@@ -1,0 +1,20 @@
+$ go build -o /tmp/alan-phase3b-model-export ./research/mutualobligations/cmd/export
+go: writing stat cache: mkdir /Users/jacob/go/pkg/mod/cache/download/github.com/!jake!f!a!u/alan-research: operation not permitted
+exit=0
+$ /tmp/alan-phase3b-model-export
+exit=0
+$ /tmp/alan-phase3b-model-export
+exit=0
+$ cmp /tmp/alan-phase3b-model-export-1.json /tmp/alan-phase3b-model-export-2.json
+exit=0
+$ /tmp/alan-phase3b-model-export --profile serial/serial --assert-naive-completion
+exit=1
+$ /tmp/alan-phase3b-model-export --profile invalid
+unknown profile
+exit=2
+$ /tmp/alan-phase3b-model-export --profile servicing/serial --assert-naive-completion
+exit=0
+28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533  /tmp/alan-phase3b-model-export-1.json
+28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533  /tmp/alan-phase3b-model-export-2.json
+b8424c2286e02e83993440a1ee7c43d2c02350e844eadc16de07d2fa32b5e8b9  /tmp/alan-phase3b-model-naive.json
+pre-regression all-profile JSON hash unchanged

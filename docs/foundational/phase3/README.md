@@ -31,12 +31,21 @@ decision from resolver completion. Those results remain prior evidence.
 
 ## Progression gates
 
+The [Phase 3B.1 reciprocal-obligation slice](../phase3b/00-charter.md) tests two
+actual agents with shared per-agent availability and durable ACK on both edges.
+It separates custody from the existence of a completion suffix, compares all
+four placements of serial versus servicing policy, and adds a bounded public
+same-Store witness. Its [conditional argument](../phase3b/03-results.md) does not
+close the rest of Phase 3B.
+
 Before calling Phase 3B established, attack stable identity across recovery and
 new invocation, request/result/consumption binding, grant attenuation and shared
 authority conservation, cancellation versus already admitted work, B's own
 effect/receipt crash window, and two outstanding obligations in opposite
-directions. A waiting cycle is not completion; local quiescence is not global
-quiescence. Identify in-flight messages and unpaid obligations explicitly.
+directions. A waiting cycle is not completion; neither local nor global
+quiescence by itself certifies paid application obligations. Identify in-flight
+messages and unpaid obligations explicitly, and define distributed quiescence
+separately before claiming a local-to-global implication.
 
 Before claiming closure for more agents, define the composition operator and
 observable equivalence, show assumptions survive hiding and regrouping, and

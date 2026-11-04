@@ -1,0 +1,329 @@
+{
+  "BaseCommit": "8583527a8bc2d0b71a1e9115ded23eb96c8ac86c",
+  "PackageCount": 53,
+  "PassedTestPackages": 43,
+  "BuiltWithoutTestFiles": 10,
+  "RootSuiteExitStatus": 0,
+  "Scope": "ordinary root-module packages; original suite ran before new packages existed, unchanged original Go/module sources plus separate final new-package tests",
+  "Excluded": "whole-repository integration/race suites and separately declared consumer modules",
+  "Packages": [
+    {
+      "package": "github.com/JakeFAU/alan-research/adapters/lookup",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.302s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/adapters/openai",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.239s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/adapters/receiptquery",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.231s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/author",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "2.188s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/cmd/alan",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.464s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/cmd/alan-compose",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "1.267s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/cmd/alan-evidence",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.172s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/cmd/alan-investigate",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "2.364s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/cmd/alan-resource",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.281s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/compose",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "1.007s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/effects",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.127s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/adaptive",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "1477.571s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/callablejoin",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.191s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/communication",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.227s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/communication/mutual",
+      "status": "passed",
+      "log": "runtime-constructor.log",
+      "detail": "0.162s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/consumingpolicy",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.173s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/effectboundary",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/effectfulcomposition",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.766s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/evidence",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "1.240s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/investigation",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "55.934s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/invocationjoin",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.161s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/join",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.177s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/owningtree",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.482s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/reconciliation",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.260s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/substitution",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.626s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.918s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/substitution/b",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/substitution/protocol",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/examples/worktree",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/internal/boundary",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.114s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/internal/durabletest",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "6.721s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/internal/executor",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "6.216s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/internal/fixture",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.173s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/communication",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.162s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/dispatchauthority",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.118s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/effectfulcomposition",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.197s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/effectprotocol",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.136s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/join",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.867s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/mutualobligations",
+      "status": "passed",
+      "log": "model-normal.log",
+      "detail": "2.036s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/mutualobligations/cmd/export",
+      "status": "passed",
+      "log": "model-normal.log",
+      "detail": "0.254s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/nominal",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.156s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/owningtree",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.810s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/reconciliation",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.123s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/reconciliation/cmd/export",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/semantics",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "6.479s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/substitution",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "12.676s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/twoagent",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.193s"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/runtime",
+      "status": "no test files",
+      "log": "repository-tests.log",
+      "detail": "[no test files]"
+    },
+    {
+      "package": "github.com/JakeFAU/alan-research/schema",
+      "status": "passed",
+      "log": "repository-tests.log",
+      "detail": "0.149s"
+    }
+  ]
+}
