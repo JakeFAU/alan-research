@@ -1,0 +1,24 @@
+--- FAIL: TestRequestAuthorityOrdinaryTwoAgentRun (0.00s)
+panic: httptest: failed to listen on a port: listen tcp6 [::1]:0: bind: operation not permitted [recovered, repanicked]
+
+goroutine 51417 [running]:
+testing.tRunner.func1.2({0x104ee7de0, 0x7633eb58f150})
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/testing/testing.go:2125 +0x1a0
+testing.tRunner.func1()
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/testing/testing.go:2128 +0x2c8
+panic({0x104ee7de0?, 0x7633eb58f150?})
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/runtime/panic.go:859 +0x120
+net/http/httptest.newLocalListener()
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/net/http/httptest/server.go:226 +0xd4
+net/http/httptest.NewUnstartedServer(...)
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/net/http/httptest/server.go:284
+net/http/httptest.NewServer({0x104f5f4b8, 0x7633eb483920})
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/net/http/httptest/server.go:267 +0x28
+github.com/JakeFAU/alan/internal/executor.TestRequestAuthorityOrdinaryTwoAgentRun(0x7633eb27cfc8)
+	/private/tmp/alan-phase3b3-runtime/internal/executor/request_authority_run_test.go:24 +0x18c
+testing.tRunner(0x7633eb27cfc8, 0x104f64698)
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/testing/testing.go:2195 +0xc4
+created by testing.(*T).Run in goroutine 1
+	/opt/homebrew/Cellar/go/1.27.3/libexec/src/testing/testing.go:2260 +0x3b8
+FAIL	github.com/JakeFAU/alan/internal/executor	0.815s
+FAIL

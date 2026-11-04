@@ -1,0 +1,19 @@
+package main
+import (
+ "context"
+ "fmt"
+ "os"
+ "github.com/JakeFAU/alan/runtime"
+ "github.com/JakeFAU/alan/examples/delegation"
+)
+func main() {
+ ctx:=context.Background()
+ var s *runtime.Store
+ var err error
+ if os.Args[1]=="create" {
+ p,_,e:=delegation.RequestBinding(delegation.RequestBindingOptions{EndpointA:"http://127.0.0.1:1234",EndpointB:"http://127.0.0.1:1235"}); if e!=nil {panic(e)}
+ s,err=runtime.Create(ctx,os.Args[2],p,runtime.DefaultLimits())
+ } else {s,err=runtime.Open(ctx,os.Args[2],runtime.DefaultLimits())}
+ fmt.Printf("%s error=%v\n",os.Args[1],err)
+ if s!=nil {if e:=s.Close();e!=nil {panic(e)}}
+}

@@ -1,0 +1,17 @@
+{
+  "origin": "Independent round1 reviewer probe files, retained byte-for-byte without opening any database. See review.md for construction and mutation scope.",
+  "components": {
+    "alan-phase3b4-review-index.sqlite": "1b8aed287b76fca672f86e812f88e33991468f88e30e5083e22db69339d04e9f",
+    "alan-phase3b4-review-index.sqlite.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alan-phase3b4-review-v1-base-copy.sqlite": "27ecc7b403e8331d1664c93a6987891da5d99b89f79fbe58375ddb8f21387c01",
+    "alan-phase3b4-review-v1-base-copy.sqlite-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "alan-phase3b4-review-v1-base-copy.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alan-phase3b4-review-v1-base-copy.sqlite.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alan-phase3b4-review-v1-base.sqlite": "27ecc7b403e8331d1664c93a6987891da5d99b89f79fbe58375ddb8f21387c01",
+    "alan-phase3b4-review-v1-base.sqlite-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "alan-phase3b4-review-v1-base.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alan-phase3b4-review-v1-base.sqlite.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alan-phase3b4-review-v1-head.sqlite": "97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda",
+    "alan-phase3b4-review-v1-head.sqlite.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
