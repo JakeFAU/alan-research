@@ -1,0 +1,779 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"context"
+	"crypto/sha256"
+	"encoding/json"
+	"fmt"
+	"github.com/JakeFAU/alan-research/effects"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"reflect"
+	"testing"
+	"time"
+
+	"github.com/JakeFAU/alan-research/examples/communication/authority"
+	"github.com/JakeFAU/alan-research/internal/boundary"
+	"github.com/JakeFAU/alan-research/internal/executor"
+	resource "github.com/JakeFAU/alan-research/internal/fixture"
+	"github.com/JakeFAU/alan-research/runtime"
+	"github.com/JakeFAU/alan-research/schema"
+	"strings"
+)
+
+// TestPhase3B2ExecutorProcess uses the very same (including race-instrumented)
+// test executable in a fresh OS process. Only public Store operations execute
+// the program; internal boundaries observe and synchronize the interruption.
+func TestPhase3B2ExecutorProcess(t *testing.T) {
+	if os.Getenv("ALAN_PHASE2_CHILD") != "1" {
+		return
+	}
+	db := os.Getenv("ALAN_PHASE2_DB")
+	ctx, err := boundary.FromEnvironment(context.Background(), db)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s, err := runtime.Open(ctx, db, runtime.DefaultLimits())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer s.Close()
+	mode := os.Getenv("ALAN_PHASE3B2_CUT")
+	mark := func(phase string) {
+		r, err := s.Snapshot(ctx, runtime.RunID{Subject: "a", Generation: 1})
+		if err != nil {
+			t.Fatal(err)
+		}
+		err = boundary.Reached(ctx, boundary.Event{Boundary: "phase3b2.manual", Phase: phase, Subject: "a", Generation: 1, Epoch: r.Epoch, Sequence: r.Sequence, Intent: r.Projection.Data["operation"].Text})
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+	if mode == "before-authorization" {
+		mark(mode)
+	}
+	report, err := s.Run(ctx, runtime.RunOptions{Adapters: authority.Registry(os.Getenv("ALAN_PHASE2_ENDPOINT"), os.Getenv("ALAN_PHASE3B2_ENDPOINT_B")), MaxSteps: 256, MaxDispatch: 64, MaxInFlight: 1, ExternalTimeout: 15 * time.Second})
+	if err != nil {
+		t.Fatal(err)
+	}
+	raw, _ := json.Marshal(map[string]any{"PID": os.Getpid(), "Report": report})
+	fmt.Println("PHASE3B2_RESULT " + string(raw))
+	if mode == "after-refusal" || mode == "mutual-wait" {
+		mark(mode)
+	}
+}
+
+func phase3b2Process(t *testing.T, db, a, b, mode string, cut *barrier) *child {
+	t.Helper()
+	c := phaseTestProcess(t, db, a, "success", cut, "TestPhase3B2ExecutorProcess", func(cmd *exec.Cmd) {
+		cmd.Env = append(cmd.Env, "ALAN_PHASE3B2_ENDPOINT_B="+b, "ALAN_PHASE3B2_CUT="+mode)
+	})
+	phaseEmit(t, fmt.Sprintf("phase3b2-config-%d", c.cmd.Process.Pid), map[string]any{"PID": c.cmd.Process.Pid, "database": db, "endpoint_A": a, "endpoint_B": b, "manual_cut": mode, "environment": map[string]string{"ALAN_PHASE2_CHILD": "1", "ALAN_PHASE2_DB": db, "ALAN_PHASE2_ENDPOINT": a, "ALAN_PHASE3B2_ENDPOINT_B": b, "ALAN_PHASE3B2_CUT": mode}})
+	return c
+}
+
+func phase3b2Create(t *testing.T, db string, scenario authority.Scenario) runtime.Provision {
+	t.Helper()
+	p, err := authority.New(scenario)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, program := range p.Programs {
+		if err := os.WriteFile(filepath.Join(phaseEvidenceDir(t), phaseName(t)+"-program-"+program.ID+".json"), program.Bytes, 0600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	s, err := runtime.Create(t.Context(), db, p, runtime.DefaultLimits())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer s.Close()
+	// Commit the two original ordinary sends and admit them before any service.
+	// These public commits are preserved in history and are not database edits.
+	for _, subject := range []string{"a", "b"} {
+		found := false
+		for range 24 {
+			r, err := s.Snapshot(t.Context(), runtime.RunID{Subject: subject, Generation: 1})
+			if err != nil {
+				t.Fatal(err)
+			}
+			if _, err = s.Commit(t.Context(), r.Authority(), ""); err != nil {
+				t.Fatal(err)
+			}
+			snap := inspect(t, db)
+			for _, row := range snap.Tables["intents"] {
+				var in executor.Intent
+				if err = json.Unmarshal([]byte(row["descriptor"].(string)), &in); err != nil {
+					t.Fatal(err)
+				}
+				if in.Run.Subject == subject && in.Kind == "message" {
+					transport := "phase3b2-original-" + subject
+					admission, err := s.DeliverMessage(t.Context(), in.ID, transport)
+					if err != nil || !admission.Accepted {
+						t.Fatal(admission, err)
+					}
+					if err = s.AcknowledgeMessage(t.Context(), in.ID, transport); err != nil {
+						t.Fatal(err)
+					}
+					found = true
+				}
+			}
+			if found {
+				break
+			}
+		}
+		if !found {
+			t.Fatal("original send not reached", subject)
+		}
+	}
+	if scenario != authority.MutualWait && scenario != authority.ResultLaunder {
+		// A consumes the genuine BA request then commits its original effect; no
+		// source disposition or adapter permission reservation has occurred yet.
+		snap := inspect(t, db)
+		selected := ""
+		for _, row := range snap.Tables["observations"] {
+			var o executor.Observation
+			if err = json.Unmarshal([]byte(row["descriptor"].(string)), &o); err != nil {
+				t.Fatal(err)
+			}
+			if o.Run.Subject == "a" {
+				selected = o.ID
+			}
+		}
+		r, err := s.Snapshot(t.Context(), runtime.RunID{Subject: "a", Generation: 1})
+		if err != nil {
+			t.Fatal(err)
+		}
+		r, err = s.Commit(t.Context(), r.Authority(), selected)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for range 16 {
+			if r.Projection.Data["operation"].Text != "" {
+				break
+			}
+			r, err = s.Commit(t.Context(), r.Authority(), "")
+			if err != nil {
+				t.Fatal(err)
+			}
+		}
+		if r.Projection.Data["operation"].Text == "" {
+			t.Fatal("original adapter operation not committed")
+		}
+	}
+	return p
+}
+
+func phase3b2Paid(t *testing.T, s executor.Inspection) int {
+	t.Helper()
+	if err := phase3b2Chain(s); err != nil {
+		t.Fatal(err)
+	}
+	paid, err := phase3b2PaidObservations(s)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return paid
+}
+
+// phase3b2PaidObservations checks the final consumption edges independently of
+// intermediate service edges, so malformed final histories are directly testable.
+func phase3b2PaidObservations(s executor.Inspection) (int, error) {
+	paid := 0
+	for _, row := range s.Tables["observations"] {
+		var o executor.Observation
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &o); err != nil {
+			return 0, err
+		}
+		id, ok := o.Payload["response_id"]
+		if !ok {
+			continue
+		}
+		if o.Kind != "message" || o.Provenance != "ordinary-message" || o.SourceGeneration != 1 || o.Run.Generation != 1 || !id.Equal(schema.Text(o.Run.Subject+"-request")) {
+			return 0, fmt.Errorf("inauthentic original result %q", o.ID)
+		}
+		linked := false
+		for _, admission := range s.Tables["admissions"] {
+			if admission["observation_id"] != o.ID {
+				continue
+			}
+			var a struct{ IntentID string }
+			if err := json.Unmarshal([]byte(admission["descriptor"].(string)), &a); err != nil {
+				return 0, err
+			}
+			for _, intent := range s.Tables["intents"] {
+				var in executor.Intent
+				if err := json.Unmarshal([]byte(intent["descriptor"].(string)), &in); err != nil {
+					return 0, err
+				}
+				if in.ID == a.IntentID && in.Run == (runtime.RunID{Subject: o.Source, Generation: o.SourceGeneration}) && in.Target == o.Run.Subject && in.Generation == o.Run.Generation && in.Obligation == o.Obligation && reflect.DeepEqual(in.Payload, o.Payload) {
+					linked = true
+				}
+			}
+		}
+		if !linked {
+			return 0, fmt.Errorf("result lacks original admitted message %q", o.ID)
+		}
+		if row["consumed_sequence"] != nil {
+			selected := 0
+			for _, h := range s.Tables["history"] {
+				if h["selected_observation"] == o.ID && h["sequence"] == row["consumed_sequence"] && h["subject"] == o.Run.Subject && h["generation"] == o.Run.Generation {
+					selected++
+				}
+			}
+			if selected != 1 {
+				return 0, fmt.Errorf("consumption lacks exact run/history selection %q", o.ID)
+			}
+			paid++
+		}
+	}
+	return paid, nil
+}
+
+func phase3b2AssertRetained(t *testing.T, before, after executor.Inspection) {
+	t.Helper()
+	for _, table := range []string{"programs", "subjects", "permissions"} {
+		if !reflect.DeepEqual(before.Tables[table], after.Tables[table]) {
+			t.Fatal("recovery changed immutable authority/identity", table)
+		}
+	}
+	// Existing source decisions, adapter reservations and results retain exact
+	// descriptors; fresh recovery is allowed only to append new facts.
+	for _, table := range []string{"attempts", "adapter_attempts", "adapter_results", "settlements"} {
+		for _, row := range before.Tables[table] {
+			found := false
+			for _, other := range after.Tables[table] {
+				if reflect.DeepEqual(row, other) {
+					found = true
+				}
+			}
+			if !found {
+				t.Fatal("recovery rewrote retained decision/result", table, row)
+			}
+		}
+	}
+	for _, subject := range []string{"a", "b"} {
+		_, oldEpoch, _ := projection(before, subject, 1)
+		_, newEpoch, _ := projection(after, subject, 1)
+		if newEpoch != oldEpoch+1 {
+			t.Fatal("fresh owner did not renew both physical epochs", subject, oldEpoch, newEpoch)
+		}
+	}
+}
+
+func TestPhase3B2RuntimeCases(t *testing.T) {
+	for _, scenario := range []authority.Scenario{authority.Local, authority.Missing, authority.Claim, authority.ResultLaunder, authority.MutualWait} {
+		t.Run(string(scenario), func(t *testing.T) {
+			dir := t.TempDir()
+			worldA, worldB := filepath.Join(dir, "A.sqlite"), filepath.Join(dir, "B.sqlite")
+			_, a, journalA := phaseResource(t, worldA, "", "", nil)
+			_, b, journalB := phaseResource(t, worldB, "", "", nil)
+			db := filepath.Join(dir, "local.sqlite")
+			p := phase3b2Create(t, db, scenario)
+			c := phase3b2Process(t, db, a, b, "", nil)
+			phase3b2Finish(t, c)
+			after := inspect(t, db)
+			wa, wb := phaseSnapshot(t, worldA), phaseSnapshot(t, worldB)
+			phase3b2EndpointChain(t, after, wa, wb)
+			wantPaid, wantA, wantB := 0, 0, 0
+			if scenario == authority.Local {
+				wantPaid, wantA, wantB = 2, 1, 1
+			}
+			if scenario == authority.ResultLaunder {
+				wantPaid, wantB = 1, 1
+			}
+			if got := phase3b2Paid(t, after); got != wantPaid || len(wa.Applications) != wantA || len(wb.Applications) != wantB || wa.Contacts != int64(wantA) || wb.Contacts != int64(wantB) {
+				t.Fatalf("wrong result/custody %s paid=%d A=%+v B=%+v", scenario, got, wa, wb)
+			}
+			refused := 0
+			for _, row := range after.Tables["adapter_attempts"] {
+				var attempt runtime.AdapterAttempt
+				if err := json.Unmarshal([]byte(row["descriptor"].(string)), &attempt); err != nil {
+					t.Fatal(err)
+				}
+				if attempt.Reason == "grant_denied" {
+					if attempt.Allowed || attempt.Intent.Run.Subject != "a" || attempt.Intent.Target != authority.CounterB {
+						t.Fatal("wrong refusal", attempt)
+					}
+					if scenario == authority.ResultLaunder && !attempt.Prepared.Request.Payload["receipt_mutation"].Equal(schema.Int(1)) {
+						t.Fatal("laundering did not carry authentic consumed result", attempt)
+					}
+					refused++
+				}
+			}
+			wantRefused := 0
+			if scenario == authority.Missing || scenario == authority.Claim || scenario == authority.ResultLaunder {
+				wantRefused = 1
+			}
+			if refused != wantRefused {
+				t.Fatal("missing genuine adapter permission refusal", refused)
+			}
+			phaseReplay(t, db, worldA, "case-A")
+			phaseReplay(t, db, worldB, "case-B")
+			phaseEmit(t, "phase3b2-case", map[string]any{"scenario": scenario, "provision": p, "after": after, "paid_originals": wantPaid, "unpaid_originals": 2 - wantPaid, "endpoint_A": wa, "endpoint_B": wb, "store": phaseRawStore(t, db, "local"), "world_A": phaseRawStore(t, worldA, "A"), "world_B": phaseRawStore(t, worldB, "B"), "ingress_A": phaseJournal(t, journalA, "A"), "ingress_B": phaseJournal(t, journalB, "B"), "delegation_retention": "inapplicable: no request-bound attenuation-chain grant primitive"})
+		})
+	}
+}
+
+func TestPhase3B2CrashCuts(t *testing.T) {
+	cuts := []struct {
+		name, boundary, phase, subject string
+		scenario                       authority.Scenario
+		unknown                        bool
+		paidAtCut                      int
+	}{
+		{"before-authorization", "phase3b2.manual", "before-authorization", "a", authority.Local, false, 0},
+		{"after-source-authorization", "intent.authorized", "authorized", "a", authority.Local, false, 0},
+		{"reserved-before-physical-admission", "dispatch.consider", "pre-admission", "a", authority.Local, true, 0},
+		{"physical-admission-before-call", "adapter.authorized", "pre-transport", "a", authority.Local, true, 0},
+		{"result-before-settlement", "adapter.result-recorded", "pre-settlement", "a", authority.Local, false, 0},
+		{"settled-before-consumption", "adapter.settled", "pre-consumption", "a", authority.Local, false, 0},
+		{"after-refusal", "phase3b2.manual", "after-refusal", "a", authority.Missing, false, 0},
+		{"mutual-wait", "phase3b2.manual", "mutual-wait", "a", authority.MutualWait, false, 0},
+		{"one-paid-one-pending", "intent.authorized", "authorized", "b", authority.Local, false, 1},
+	}
+	for _, cut := range cuts {
+		t.Run(cut.name, func(t *testing.T) {
+			dir := t.TempDir()
+			worldA, worldB := filepath.Join(dir, "A.sqlite"), filepath.Join(dir, "B.sqlite")
+			_, a, journalA := phaseResource(t, worldA, "", "", nil)
+			_, b, journalB := phaseResource(t, worldB, "", "", nil)
+			db := filepath.Join(dir, "local.sqlite")
+			p := phase3b2Create(t, db, cut.scenario)
+			initial := inspect(t, db)
+			mode := ""
+			if cut.boundary == "phase3b2.manual" {
+				mode = cut.phase
+			}
+			filter := barrier{Boundary: cut.boundary, Phase: cut.phase, Subject: cut.subject}
+			c := phase3b2Process(t, db, a, b, mode, &filter)
+			ack := phaseWait(t, c)
+			c.kill(t)
+			stopped := inspect(t, db)
+			wa, wb := phaseSnapshot(t, worldA), phaseSnapshot(t, worldB)
+			if phase3b2Paid(t, stopped) != cut.paidAtCut {
+				t.Fatal("wrong actual consumption at interruption")
+			}
+			if cut.name == "after-source-authorization" && len(stopped.Tables["adapter_attempts"]) != 0 {
+				t.Fatal("source decision conflated with adapter permission reservation")
+			}
+			if cut.unknown {
+				if len(stopped.Tables["adapter_attempts"]) != 1 || len(stopped.Tables["adapter_results"]) != 0 || wa.Contacts != 0 || wb.Contacts != 0 {
+					t.Fatal("unknown zero-contact cut not reached")
+				}
+			}
+			if cut.name == "result-before-settlement" && (len(stopped.Tables["adapter_results"]) != 1 || len(stopped.Tables["settlements"]) != 0) {
+				t.Fatal("wrong result cut")
+			}
+			if cut.name == "settled-before-consumption" && (len(stopped.Tables["adapter_results"]) != 1 || len(stopped.Tables["settlements"]) != 1) {
+				t.Fatal("wrong settlement cut")
+			}
+			if cut.name == "after-refusal" {
+				if len(stopped.Tables["adapter_attempts"]) != 1 {
+					t.Fatal("refusal absent")
+				}
+				var attempt runtime.AdapterAttempt
+				if err := json.Unmarshal([]byte(stopped.Tables["adapter_attempts"][0]["descriptor"].(string)), &attempt); err != nil || attempt.Reason != "grant_denied" || attempt.Allowed {
+					t.Fatal("not genuine permission refusal", attempt, err)
+				}
+			}
+			cutLocal := phaseRawStore(t, db, "cut-local")
+			cutA, cutB := phaseRawStore(t, worldA, "cut-A"), phaseRawStore(t, worldB, "cut-B")
+			phaseReplay(t, db, worldA, "cut-A")
+			phaseReplay(t, db, worldB, "cut-B")
+			fresh := phase3b2Process(t, db, a, b, "", nil)
+			recoveryReport := phase3b2Finish(t, fresh)
+			if fresh.cmd.Process.Pid == c.cmd.Process.Pid {
+				t.Fatal("owner was not a fresh process")
+			}
+			after := inspect(t, db)
+			ea, eb := phaseSnapshot(t, worldA), phaseSnapshot(t, worldB)
+			phase3b2EndpointChain(t, after, ea, eb)
+			phase3b2AssertRetained(t, stopped, after)
+			wantPaid := 2
+			if cut.unknown || cut.scenario == authority.Missing || cut.scenario == authority.MutualWait {
+				wantPaid = 0
+			}
+			if cut.unknown {
+				if len(recoveryReport.UnknownAdapters) != 1 || recoveryReport.UnknownAdapters[0] != ack.Intent || len(after.Tables["adapter_results"]) != 0 || len(after.Tables["settlements"]) != 0 {
+					t.Fatal("unknown outcome was lost or fabricated", recoveryReport)
+				}
+			}
+			if phase3b2Paid(t, after) != wantPaid {
+				t.Fatal("recovery fabricated/lost original consumption")
+			}
+			if cut.unknown || cut.scenario != authority.Local {
+				if !reflect.DeepEqual(wa, ea) || !reflect.DeepEqual(wb, eb) {
+					t.Fatal("uncertain/refused/wait recovery contacted endpoint")
+				}
+			} else {
+				if ea.Contacts != 1 || eb.Contacts != 1 || len(ea.Applications) != 1 || len(eb.Applications) != 1 {
+					t.Fatal("known/local recovery duplicated or lost application")
+				}
+				if len(wa.Applications) == 1 && !reflect.DeepEqual(wa, ea) {
+					t.Fatal("known A result was physically reissued")
+				}
+			}
+			phaseReplay(t, db, worldA, "after-A")
+			phaseReplay(t, db, worldB, "after-B")
+			phaseEmit(t, "phase3b2-crash", map[string]any{"cut": cut.name, "applicable_boundary": ack, "provision": p, "initial": initial, "stopped": stopped, "after": after, "world_A_cut": wa, "world_B_cut": wb, "world_A_after": ea, "world_B_after": eb, "crash_PID": c.cmd.Process.Pid, "recovery_PID": fresh.cmd.Process.Pid, "signal": "SIGKILL", "cut_store": cutLocal, "cut_A": cutA, "cut_B": cutB, "after_store": phaseRawStore(t, db, "after-local"), "after_A": phaseRawStore(t, worldA, "after-A"), "after_B": phaseRawStore(t, worldB, "after-B"), "journal_A": phaseJournal(t, journalA, "A"), "journal_B": phaseJournal(t, journalB, "B"), "paid_originals": wantPaid, "unpaid_originals": 2 - wantPaid, "allowed_without_result_remains_unknown": cut.unknown, "delegation_retention": "inapplicable: static permissions are not S2 rooted grants"})
+		})
+	}
+}
+
+// The positive database is never edited. Each malformed ledger is derived from
+// a coherent backup into a disposable copy and must fail independent replay.
+func TestPhase3B2RejectsRetainedAuthorityMutation(t *testing.T) {
+	dir := t.TempDir()
+	_, a, _ := phaseResource(t, filepath.Join(dir, "A.sqlite"), "", "", nil)
+	_, b, _ := phaseResource(t, filepath.Join(dir, "B.sqlite"), "", "", nil)
+	db := filepath.Join(dir, "local.sqlite")
+	phase3b2Create(t, db, authority.Local)
+	c := phase3b2Process(t, db, a, b, "", nil)
+	phase3b2Finish(t, c)
+	original := inspect(t, db)
+	if phase3b2Paid(t, original) != 2 || len(original.Tables["adapter_results"]) != 2 {
+		t.Fatal("mutation control is vacuous")
+	}
+	for _, mutation := range []string{"unrelated-result", "missing-original-request", "permission-tuple", "all-selected-foreign-generation", "final-consumption-foreign-generation"} {
+		changed := original
+		changed.Tables = map[string][]map[string]any{}
+		for table, rows := range original.Tables {
+			for _, row := range rows {
+				copyRow := map[string]any{}
+				for key, value := range row {
+					copyRow[key] = value
+				}
+				changed.Tables[table] = append(changed.Tables[table], copyRow)
+			}
+		}
+		switch mutation {
+		case "unrelated-result":
+			row := changed.Tables["adapter_results"][0]
+			var result runtime.AdapterResult
+			if err := json.Unmarshal([]byte(row["descriptor"].(string)), &result); err != nil {
+				t.Fatal(err)
+			}
+			result.Values["mutation"] = schema.Int(777)
+			result.Candidate.Payload["mutation"] = schema.Int(777)
+			result.Digest = ""
+			raw, _ := json.Marshal(result)
+			result.Digest = fmt.Sprintf("%x", sha256.Sum256(raw))
+			raw, _ = json.Marshal(result)
+			row["descriptor"] = string(raw)
+		case "missing-original-request":
+			requestID := ""
+			for _, row := range changed.Tables["observations"] {
+				var o executor.Observation
+				if err := json.Unmarshal([]byte(row["descriptor"].(string)), &o); err != nil {
+					t.Fatal(err)
+				}
+				if o.Run.Subject == "a" && o.Payload["request_id"].Text == "b-request" {
+					requestID = o.ID
+				}
+			}
+			for _, row := range changed.Tables["history"] {
+				if row["selected_observation"] == requestID {
+					row["selected_observation"] = "unrelated-request"
+				}
+			}
+		case "all-selected-foreign-generation", "final-consumption-foreign-generation":
+			finalIDs := map[string]bool{}
+			for _, row := range changed.Tables["observations"] {
+				var o executor.Observation
+				if err := json.Unmarshal([]byte(row["descriptor"].(string)), &o); err != nil {
+					t.Fatal(err)
+				}
+				if _, ok := o.Payload["response_id"]; ok {
+					finalIDs[o.ID] = true
+				}
+			}
+			moved := 0
+			for _, row := range changed.Tables["history"] {
+				id, _ := row["selected_observation"].(string)
+				if id != "" && (mutation == "all-selected-foreign-generation" || finalIDs[id]) {
+					if row["generation"] != int64(1) {
+						t.Fatal("non-original mutation input")
+					}
+					row["generation"] = int64(2)
+					moved++
+				}
+			}
+			wantMoved := 6
+			if mutation == "final-consumption-foreign-generation" {
+				wantMoved = 2
+			}
+			if moved != wantMoved {
+				t.Fatalf("foreign generation control moved %d, want %d", moved, wantMoved)
+			}
+		case "permission-tuple":
+			for _, row := range changed.Tables["permissions"] {
+				if row["kind"] == "adapter" && row["source"] == "a" {
+					row["target"] = authority.CounterB
+				}
+			}
+		}
+		// Observation consumption markers and result row count are unchanged. The
+		// independent chain rejects the altered decisive edge nevertheless.
+		if !reflect.DeepEqual(changed.Tables["observations"], original.Tables["observations"]) || len(changed.Tables["adapter_results"]) != 2 {
+			t.Fatal("mutation changed superficial completion")
+		}
+		chainErr := phase3b2Chain(changed)
+		paid, paidErr := phase3b2PaidObservations(changed)
+		if mutation == "final-consumption-foreign-generation" {
+			if chainErr != nil {
+				t.Fatal("final-only mutation unexpectedly broke intermediate chain", chainErr)
+			}
+			if paidErr == nil || paid != 0 {
+				t.Fatal("final paid validator accepted foreign-generation selection", paid, paidErr)
+			}
+		} else if chainErr == nil {
+			t.Fatal("independent oracle accepted unrelated chain", mutation)
+		}
+		if mutation == "all-selected-foreign-generation" && (paidErr == nil || paid != 0) {
+			t.Fatal("final paid validator accepted wholly foreign-generation history", paid, paidErr)
+		}
+		phaseEmit(t, "oracle-"+mutation, map[string]any{"mutation": mutation, "before": original, "after": changed, "chain_error": fmt.Sprint(chainErr), "paid_error": fmt.Sprint(paidErr), "validated_paid": paid, "superficial_paid_observations": 2, "adapter_results": 2})
+	}
+	archive := phaseRawStore(t, db, "uncorrupted")
+	for _, mutation := range []struct{ name, sql string }{
+		{"remove-principal-permission", "DELETE FROM permissions WHERE kind='adapter' AND source='a'"},
+		{"launder-result-as-allow", "UPDATE adapter_attempts SET descriptor=json_set(descriptor,'$.Reason','grant_denied') WHERE json_extract(descriptor,'$.Intent.Run.Subject')='a'"},
+	} {
+		t.Run(mutation.name, func(t *testing.T) {
+			copyPath := filepath.Join(dir, mutation.name+".sqlite")
+			script := `import gzip,sqlite3,sys
+with open(sys.argv[2],'wb') as f: f.write(gzip.open(sys.argv[1],'rb').read())
+c=sqlite3.connect(sys.argv[2]);c.execute(sys.argv[3]);c.commit();c.close()
+`
+			out, err := exec.Command("python3", "-c", script, archive, copyPath, mutation.sql).CombinedOutput()
+			if err != nil {
+				t.Fatalf("copy mutation: %v %s", err, out)
+			}
+			_, err = runtime.Replay(t.Context(), copyPath, runtime.DefaultLimits())
+			if err == nil || !strings.Contains(err.Error(), "corrupt") {
+				t.Fatalf("mutated authority accepted or wrong failure: %v", err)
+			}
+			phaseEmit(t, "rejection", map[string]any{"mutation": mutation.name, "sql": mutation.sql, "replay_error": err.Error(), "mutated_copy": phaseRawStore(t, copyPath, "corrupt"), "positive_source_unchanged": reflect.DeepEqual(original, inspect(t, db))})
+		})
+	}
+	if !reflect.DeepEqual(original, inspect(t, db)) {
+		t.Fatal("negative control mutated positive source")
+	}
+}
+
+func phase3b2Finish(t *testing.T, c *child) runtime.RunReport {
+	t.Helper()
+	phaseFinish(t, c)
+	raw, err := os.ReadFile(c.stderr.Name())
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, line := range strings.Split(string(raw), "\n") {
+		if suffix, ok := strings.CutPrefix(line, "PHASE3B2_RESULT "); ok {
+			var result struct {
+				PID    int
+				Report runtime.RunReport
+			}
+			if err = json.Unmarshal([]byte(suffix), &result); err != nil || result.PID != c.cmd.Process.Pid {
+				t.Fatal("wrong child result identity", result, err)
+			}
+			return result.Report
+		}
+	}
+	t.Fatal("fresh child report missing")
+	return runtime.RunReport{}
+}
+
+// phase3b2Chain is an inspection-only oracle. It does not call the reducer,
+// executor validators or replay. A message pays an original only through its
+// exact service operation, permission, successful result, settlement, consumed
+// adapter observation and previously consumed original request.
+func phase3b2Chain(s executor.Inspection) error {
+	intents := map[string]executor.Intent{}
+	observations := map[string]executor.Observation{}
+	observationRows := map[string]map[string]any{}
+	attempts := map[string]runtime.AdapterAttempt{}
+	results := map[string]runtime.AdapterResult{}
+	for _, row := range s.Tables["intents"] {
+		var v executor.Intent
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &v); err != nil {
+			return err
+		}
+		intents[v.ID] = v
+	}
+	for _, row := range s.Tables["observations"] {
+		var v executor.Observation
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &v); err != nil {
+			return err
+		}
+		observations[v.ID] = v
+		observationRows[v.ID] = row
+	}
+	for _, row := range s.Tables["adapter_attempts"] {
+		var v runtime.AdapterAttempt
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &v); err != nil {
+			return err
+		}
+		attempts[v.Intent.ID] = v
+	}
+	for _, row := range s.Tables["adapter_results"] {
+		var v runtime.AdapterResult
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &v); err != nil {
+			return err
+		}
+		results[row["intent_id"].(string)] = v
+	}
+	linkedMessage := func(o executor.Observation) bool {
+		if o.Kind != "message" || o.Provenance != "ordinary-message" || o.Run.Generation != 1 || o.SourceGeneration != 1 {
+			return false
+		}
+		for _, row := range s.Tables["admissions"] {
+			if row["observation_id"] != o.ID {
+				continue
+			}
+			var d executor.AdmissionDescriptor
+			if json.Unmarshal([]byte(row["descriptor"].(string)), &d) != nil {
+				return false
+			}
+			in, ok := intents[d.IntentID]
+			if ok && d.Kind == "message" && in.Kind == "message" && in.Run.Subject == o.Source && in.Run.Generation == o.SourceGeneration && in.Target == o.Run.Subject && in.Generation == o.Run.Generation && in.Obligation == o.Obligation && reflect.DeepEqual(in.Payload, o.Payload) {
+				return true
+			}
+		}
+		return false
+	}
+	selectedBefore := func(id string, run runtime.RunID, sequence int64) bool {
+		if observations[id].Run != run {
+			return false
+		}
+		selections := 0
+		for _, h := range s.Tables["history"] {
+			if h["selected_observation"] == id && h["subject"] == run.Subject && h["generation"] == run.Generation && h["sequence"].(int64) < sequence && h["sequence"] == observationRows[id]["consumed_sequence"] {
+				selections++
+			}
+		}
+		return selections == 1
+	}
+	for _, reply := range observations {
+		original, ok := reply.Payload["response_id"]
+		if !ok {
+			continue
+		}
+		op := reply.Payload["service_operation"].Text
+		in, exists := intents[op]
+		attempt, hasAttempt := attempts[op]
+		result, hasResult := results[op]
+		if !exists || !hasAttempt || !hasResult || in.Kind != "adapter" || in.Run.Subject != reply.Source || in.Run.Generation != reply.SourceGeneration || !reflect.DeepEqual(attempt.Intent, in) || !attempt.Allowed || attempt.Reason != "authorized" || attempt.Prepared.Request.ID != op || result.Candidate.ID != op || result.Candidate.Key != attempt.Prepared.Request.Key || result.Disposition != "validated" || result.Candidate.Disposition != "validated" || !result.Values["valid"].Equal(schema.Bool(true)) || effects.CheckPrepared(attempt.Prepared) != nil {
+			return fmt.Errorf("reply lacks original allowed service operation %q", op)
+		}
+		digest := result.Digest
+		copyResult := result
+		copyResult.Digest = ""
+		raw, _ := json.Marshal(copyResult)
+		if digest == "" || digest != fmt.Sprintf("%x", sha256.Sum256(raw)) {
+			return fmt.Errorf("service result digest mismatch %q", op)
+		}
+		for _, field := range []string{"mutation", "total"} {
+			if !reply.Payload[field].Equal(result.Values[field]) || !reply.Payload[field].Equal(result.Candidate.Payload[field]) {
+				return fmt.Errorf("reply laundered unrelated result %q", op)
+			}
+		}
+		permission := false
+		for _, p := range s.Tables["permissions"] {
+			if p["kind"] == "adapter" && p["source"] == reply.Source && p["target"] == in.Target && p["operation"] == in.Obligation && p["obligation"] == in.Obligation && p["revision"] == int64(1) {
+				permission = true
+			}
+		}
+		authorization := false
+		for _, row := range s.Tables["attempts"] {
+			if row["id"] != attempt.AuthorizationID {
+				continue
+			}
+			var a executor.Authorization
+			if err := json.Unmarshal([]byte(row["result"].(string)), &a); err != nil {
+				return err
+			}
+			if a.Allowed && a.Reason == "authorized" && a.ID == attempt.AuthorizationID && a.IntentID == op && a.Source.Run == in.Run && a.Source.Revision == 1 {
+				authorization = true
+			}
+		}
+		if !permission || !authorization {
+			return fmt.Errorf("reply has no principal/source authority %q", op)
+		}
+		requestConsumed := false
+		for _, request := range observations {
+			if request.Run == in.Run && request.Source == reply.Run.Subject && request.Payload["request_id"].Equal(original) && linkedMessage(request) && selectedBefore(request.ID, in.Run, in.Sequence) {
+				requestConsumed = true
+			}
+		}
+		replySequence := int64(0)
+		for _, message := range intents {
+			if message.Run == (runtime.RunID{Subject: reply.Source, Generation: reply.SourceGeneration}) && message.Kind == "message" && message.Payload["service_operation"].Equal(schema.Text(op)) && reflect.DeepEqual(message.Payload, reply.Payload) {
+				replySequence = message.Sequence
+			}
+		}
+		settlementConsumed := false
+		for _, row := range s.Tables["settlements"] {
+			if row["intent_id"] != op {
+				continue
+			}
+			var retained runtime.AdapterResult
+			if err := json.Unmarshal([]byte(row["descriptor"].(string)), &retained); err != nil {
+				return err
+			}
+			obs := observations[row["observation_id"].(string)]
+			if reflect.DeepEqual(retained, result) && obs.Operation == op && obs.Run == in.Run && obs.Source == in.Target && obs.Provenance == "runtime-adapter" && reflect.DeepEqual(obs.Payload, result.Values) && selectedBefore(obs.ID, in.Run, replySequence) {
+				settlementConsumed = true
+			}
+		}
+		if !requestConsumed || !settlementConsumed {
+			return fmt.Errorf("service is not linked to consumed original request/result %q", op)
+		}
+	}
+	return nil
+}
+
+// Independent endpoint receipts name the same original key and exact concrete
+// adapter resource/scope. Contacts/applications are not inferred from Run.
+func phase3b2EndpointChain(t *testing.T, s executor.Inspection, a, b resource.Snapshot) {
+	t.Helper()
+	for _, row := range s.Tables["adapter_results"] {
+		var result runtime.AdapterResult
+		if err := json.Unmarshal([]byte(row["descriptor"].(string)), &result); err != nil {
+			t.Fatal(err)
+		}
+		if result.Disposition != "validated" {
+			continue
+		}
+		var attempt runtime.AdapterAttempt
+		for _, candidate := range s.Tables["adapter_attempts"] {
+			var v runtime.AdapterAttempt
+			if err := json.Unmarshal([]byte(candidate["descriptor"].(string)), &v); err != nil {
+				t.Fatal(err)
+			}
+			if v.Intent.ID == result.Candidate.ID {
+				attempt = v
+			}
+		}
+		world, model := a, "counter-A/red"
+		if attempt.Intent.Target == authority.CounterB {
+			world, model = b, "counter-B/blue"
+		}
+		if attempt.Prepared.Model != model {
+			t.Fatal("adapter resource/scope configuration changed", attempt)
+		}
+		matches := 0
+		for _, application := range world.Applications {
+			if application.Key == attempt.Prepared.Request.Key && application.Key == result.Candidate.Key && schema.Int(application.Mutation).Equal(result.Values["mutation"]) && schema.Int(application.Total).Equal(result.Values["total"]) && application.Delta == 1 {
+				matches++
+			}
+		}
+		if matches != 1 {
+			t.Fatal("retained result does not name exact independent application", attempt, result, world)
+		}
+	}
+}
