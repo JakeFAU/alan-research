@@ -1,0 +1,22 @@
+--- FAIL: TestLocalTransitionCheckerRejectsLostFacts (0.00s)
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/commit (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/admission (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/tombstone (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/record (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/consumption (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/world (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/identity (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/grant (0.00s)
+        model_test.go:328: lost committed fact accepted
+    --- FAIL: TestLocalTransitionCheckerRejectsLostFacts/activation (0.00s)
+        model_test.go:328: lost committed fact accepted
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/twoagent	0.108s
+FAIL

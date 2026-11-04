@@ -1,0 +1,33 @@
+--- FAIL: TestExploreCustodyAndRecovery (0.00s)
+    --- FAIL: TestExploreCustodyAndRecovery/delivery-ack (0.00s)
+        model_test.go:13: expected complete graph with retry cycles: {Profile:delivery-ack States:0 Edges:0 CyclicStates:0 LocalSafetyViolations:0 CustodyViolations:0 CanComplete:0 CannotComplete:0 LossWitnesses:[] Indistinguishable:<nil> Nodes:[]}
+    --- FAIL: TestExploreCustodyAndRecovery/durable-ack (0.00s)
+        model_test.go:13: expected complete graph with retry cycles: {Profile:durable-ack States:0 Edges:0 CyclicStates:0 LocalSafetyViolations:0 CustodyViolations:0 CanComplete:0 CannotComplete:0 LossWitnesses:[] Indistinguishable:<nil> Nodes:[]}
+--- FAIL: TestTraceAdversaries (0.00s)
+    --- FAIL: TestTraceAdversaries/fabricated_result (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/early_durable_ack (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/duplicate_application (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/consume_before_record (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/record_without_receipt (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/release_without_ack (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/send_without_retention (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/ack_payload_leak (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/consume_twice (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/changed_correlation (0.00s)
+        model_test.go:50: adversarial trace accepted
+    --- FAIL: TestTraceAdversaries/changed_grant (0.00s)
+        model_test.go:50: adversarial trace accepted
+--- FAIL: TestAsynchronousBAndLateReceipt (0.00s)
+    model_test.go:65: model omits asynchronous event commit from {Delegation:{Caller:A CallerGeneration:1 Operation:1 Callee:B CalleeGeneration:1 Request:increment-counter} Grant:grant:A/g1->B/g1:increment-counter Committed:false ADown:false Crashed:false Activation:0 AVolatile: ARecorded: AConsumed:false BAdmitted:false Applied:false BResult: RequestChannel:false ResultChannel: ACKChannel:false WorldResult:}
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/twoagent	0.179s
+FAIL

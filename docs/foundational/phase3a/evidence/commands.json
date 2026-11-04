@@ -1,0 +1,88 @@
+{
+  "working_directory": "/Users/jacob/dev/personal/alan-research",
+  "common_go_environment": {
+    "GOTOOLCHAIN": "local",
+    "GOCACHE": "/tmp/alan-phase3a-go-build",
+    "GOPROXY": "off",
+    "GOSUMDB": "off"
+  },
+  "commands": [
+    {
+      "command": "go test -v -count=1 ./research/twoagent/...",
+      "exit_code": 0,
+      "log": "model-normal.log"
+    },
+    {
+      "command": "go test -race -count=1 -v ./research/twoagent/...",
+      "exit_code": 0,
+      "log": "model-race.log"
+    },
+    {
+      "command": "staticcheck ./research/twoagent/...",
+      "environment": {
+        "STATICCHECK_CACHE": "/tmp/alan-phase3a-staticcheck"
+      },
+      "exit_code": 0,
+      "log": "model-staticcheck.log"
+    },
+    {
+      "command": "go build -o /tmp/alan-phase3a-model-export ./research/twoagent/cmd/export",
+      "environment": {
+        "GOMODCACHE": "/tmp/alan-phase3a-go-mod"
+      },
+      "exit_code": 0,
+      "log": "model-build.log"
+    },
+    {
+      "command": "/tmp/alan-phase3a-model-export",
+      "exit_code": 0,
+      "stdout": "model.json",
+      "repeat": "second export and parent export byte-identical"
+    },
+    {
+      "command": "/tmp/alan-phase3a-model-export -assert-naive-recovery",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "stdout": "naive-red.json",
+      "stderr": "naive-red.log"
+    },
+    {
+      "command": "tectonic --keep-logs alan-dissertation.tex",
+      "working_directory": "/Users/jacob/dev/personal/alan-research/paper",
+      "exit_code": 0,
+      "log": "tectonic.log"
+    },
+    {
+      "command": "go test -count=1 -timeout=60m ./...",
+      "log": "repository-tests.log",
+      "scope": "Started before the new model package was created; original root packages have unchanged Go sources and module files. Final model packages tested separately.",
+      "exit_code": 0,
+      "coverage": "package-coverage.json; final root package set covered together with model-normal.log"
+    }
+  ],
+  "development_failures": [
+    {
+      "command": "go test ./research/twoagent/...",
+      "exit_code": 1,
+      "log": "development-red.log",
+      "scope": "Initial inert model/checker test apparatus, not final model qualification or the semantic counterexample."
+    },
+    {
+      "command": "go test -run TestLocalTransitionCheckerRejectsLostFacts ./research/twoagent",
+      "exit_code": 1,
+      "log": "transition-checker-red.log",
+      "scope": "Inert transition checker negative control; final checker subsequently passes."
+    }
+  ],
+  "environment_retries": [
+    "Initial ordinary-suite attempt could not write default Go cache; retry used a temporary cache.",
+    "Sandboxed ordinary suite could not bind loopback test servers; full original suite restarted with escalation for local test sockets.",
+    "Model Staticcheck and build use writable temporary caches; final retained logs are clean."
+  ],
+  "final_artifact_audit": {
+    "source_hashes_verified": 19,
+    "local_document_links_checked": 17,
+    "paired_world_equality": "Equal after removing only WorldResult; distinct actual results; both loss traces length 10 and cannot consume",
+    "diff_check_exit_code": 0
+  }
+}

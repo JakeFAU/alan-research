@@ -964,6 +964,22 @@ While single-run replay folds $\delta_v$ over the totally ordered sequence $1, \
 
 ---
 
+### 6.8 Two-Agent Interrupted Delegation: the Phase 3A Custody Boundary
+
+Phase 3 asks whether local guarantees plus an interaction contract establish a system guarantee for two independently progressing durable agents. Phase 3A starts with one fixed delegation $d$ from $A$ to $B$, an immutable request and grant, two possible opaque authentic results, asynchronous one-slot request/result/ACK channels, and at most one interruption of $A$. $B$'s application and result retention are atomic by assumption. This independent finite model does not qualify a distributed implementation or solve the earlier external effect/receipt gap.
+
+**Weak local contracts and counterexample.** $A$ preserves its committed request, any durably recorded result and once-only consumption marker; volatile input may be lost. $B$ applies $d$ at most once, retains the result until delivery ACK, and keeps a deduplication tombstone after release. Consider: $B$ applies and retains $r$; $A$ receives $r$ only in volatile memory and sends ACK; $B$ receives ACK and releases $r$; with no result message in flight, $A$ crashes before recording $r$ and recovers. Both local contracts hold, but useful recovery of the actual result fails. The contracts do not imply continuous durable responsibility for the result.
+
+**Indistinguishability boundary.** Choose $r_1\ne r_2$ and the same loss schedule. Assume the tombstone retains neither result nor distinguishing digest, and no archive, lookup or regeneration channel is available. The two recovered agent/channel states coincide while the inaccessible actual results differ. A recovery procedure restricted to that state cannot guarantee the authentic actual result in both worlds. Withholding is safe but does not meet useful recovery. This is a scoped information-loss argument, not an unrestricted distributed impossibility result.
+
+**Conditional custody lemma.** Let $D_A,D_B$ denote retained copies of the original result, with $A$ retaining $D_A$ after consumption. Suppose application establishes $D_B=r$; only authentic $d$-bound copies populate $D_A$; committed $D_A$ survives interruption and is never deleted; and $B$ releases only on an authentic ACK causally after $A$'s durable record. Then every reachable prefix after application satisfies
+$$D_B=r\ \lor\ D_A=r.$$
+Application establishes the left disjunct. Transmission, delivery and interruption do not remove a durable copy. Recording establishes the right disjunct; consumption preserves it. Before release, the ACK precondition supplies the right disjunct. This local case argument composes preservation guarantees through one edge condition. It proves custody safety under the stated assumptions, not general compositional recovery. Completion reachability in a finite graph is a separate existential check; inevitable progress needs recovery and service of request, application, retransmission, delivery, record and consumption work.
+
+The distinction between delivery acknowledgment and application responsibility follows the established end-to-end argument of Saltzer, Reed and Clark (1984). The experiment makes that distinction explicit in ALAN's interaction obligations; it does not claim the principle is new. The current Store already records accepted observations in the admission transaction and consumption in its commit transaction, so the weak delivery ACK is not a demonstrated Store defect. Independent-owner process correspondence, $B$ crashes, grant attenuation, cancellation, mutual waits and arbitrary-size closure remain open. [Contract and evidence](../docs/foundational/phase3a/03-results.md) · [Primary literature](https://web.mit.edu/6.1800/www/readings/papers/endtoend.pdf)
+
+---
+
 ## 7. Formal Falsification: Adversarial Counterexamples and Bounded Model Verification in ALAN
 
 A distinctive methodological principle of the ALAN project is that **architectural claims are accompanied by executable falsification controls**: deliberately constructed mutant runtimes, faulty ordinary programs, and adversarial environment schedules retained in [`research/semantics/`](file:///Users/jacob/dev/personal/alan/research/semantics/) and [`docs/foundational/`](file:///Users/jacob/dev/personal/alan/docs/foundational/) that prove each semantic guard is non-redundant.
@@ -1034,3 +1050,4 @@ To extend substitution and recovery to arbitrary contexts, a proof must account 
 21. **Belnap, N. D., Jr.** (1977). A Useful Four-Valued Logic. In J. M. Dunn and G. Epstein (eds.), *Modern Uses of Multiple-Valued Logic*, 5–37. D. Reidel. [Publisher](https://doi.org/10.1007/978-94-010-1161-7_2)
 22. **Jones, C. B.** (1983). Tentative Steps Toward a Development Method for Interfering Programs. *ACM Transactions on Programming Languages and Systems*, 5(4), 596–619. [Publisher](https://doi.org/10.1145/69575.69577)
 23. **O’Hearn, P. W.** (2007). Resources, Concurrency, and Local Reasoning. *Theoretical Computer Science*, 375(1–3), 271–307. [Publisher](https://doi.org/10.1016/j.tcs.2006.12.035)
+24. **Saltzer, J. H., Reed, D. P., & Clark, D. D.** (1984). End-to-End Arguments in System Design. *ACM Transactions on Computer Systems*, 2(4), 277–288. [Primary paper](https://web.mit.edu/6.1800/www/readings/papers/endtoend.pdf)

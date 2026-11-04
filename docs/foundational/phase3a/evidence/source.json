@@ -1,0 +1,29 @@
+{
+  "base_commit": "3d937fb51444f2ee00523c75260e9415f4a83bec",
+  "contract": "phase3a-two-agent-custody-v1",
+  "platform": "darwin/arm64",
+  "go_version": "go1.27.3",
+  "staticcheck_version": "2026.2.2 (0.8.2)",
+  "scope": "Exact added model and research/manuscript inputs; existing repository sources are unchanged from base_commit. This is not a new qualification of historical archived phases.",
+  "files": {
+    "README.md": "b7445a19d93a3b0b28df70a69aade03419e564a1de2fff0f44bf029e4126a86d",
+    "docs/foundational/phase3/README.md": "a1dfc14ec1ce98c7f3e40c32e8133f4cf95bbe55012f798ec8feb58e0d7c895e",
+    "docs/foundational/phase3a/00-charter.md": "a5e073436ef9afc2807cc78e0aab4b3ee38bb261f4508a4b342fe84381a7fe9b",
+    "docs/foundational/phase3a/01-contract.md": "07bf9a07ad662000c251bd4bcb67ae689810caaac3cccdf646dabfa417112220",
+    "docs/foundational/phase3a/02-plan.md": "b898ff4cbe26300655827f01c4e26b5a23ff2f033a341a07b12524f3efc9fe53",
+    "docs/foundational/phase3a/03-results.md": "d6b28a281ebb6668b7ad5131cc301c749ed7a8a7e1ad046ed1be744135b13ced",
+    "docs/foundational/phase3a/04-runbook.md": "1d45a403b5fe268a1387ca3d76531b52ea018bda446b4fbcd648622c2874cfaa",
+    "go.mod": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+    "go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+    "paper/alan-dissertation.md": "e0cd3c1aeb1d58254ab99798c172ebc93056558aaa9980183c1e2efadefad101",
+    "paper/alan-dissertation.pdf": "d975f58fc783a12f2c39b565a69967587505bf62ed564d23c69a89b5f0de87e3",
+    "paper/alan-dissertation.tex": "633df6d84841e0e08fe490e8f15968ef0e2f8d010173f5016e2e0fe33318dcad",
+    "paper/references.bib": "737e9ccd839a0949fccfa7ce5f04f56f7231d3f15abd962bd5bf6357efda47af",
+    "research/twoagent/README.md": "fcc97fc3cb500e312bc954d2369dda972d38175e04289f0e02bac74487dc61b9",
+    "research/twoagent/cmd/export/main.go": "26d3091e8f509bb7101191c98156e0e6360f832c8b283ec35c2d70bd0c828d8f",
+    "research/twoagent/explore.go": "9240ed39125dd9a59c4599304800d349c174a104c7eec297ff52f974d4982694",
+    "research/twoagent/model.go": "8d8ce74bd91b27cd4f511bdf2b5a24863a3243f257e92d682f3377b6f04ce3ee",
+    "research/twoagent/model_test.go": "24216cceb26dde756070828468b3b8e78d541186ec2a34bf6c39dc32c7daec11",
+    "research/twoagent/oracle.go": "e0d229e8ed028b5889bb9a4077c6ec5110b1f58d08486be67b3eaead6bb3052a"
+  }
+}
