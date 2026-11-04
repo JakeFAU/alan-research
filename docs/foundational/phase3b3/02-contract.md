@@ -1,6 +1,6 @@
 # Phase 3B.3 frozen request-bound authority contract
 
-Architecture-only source review, 2026-11-04. Runtime inspected: `/private/tmp/alan-phase3b3-runtime`, HEAD `af6943a5805a9a6c0e8fe77f804264f4765d07ec`. Requirements, runtime gap review, and correspondence design were read. The builder review itself made no source edits and ran no tests. Contract version 1 is frozen before production implementation. This is intended behavior to attack and qualify, not a claim of implementation correctness. The user packet and verified gap govern its scope.
+Architecture-only source review, 2026-11-04. Runtime inspected: `/private/tmp/alan-phase3b3-runtime`, HEAD `af6943a5805a9a6c0e8fe77f804264f4765d07ec`. Requirements, runtime gap review, and correspondence design were read. The builder review itself made no source edits and ran no tests. Contract version 2 corrects the rejected version-1 literal-root construction before production implementation; the failed contract, source and RED log are preserved separately. This is intended behavior to attack and qualify, not a claim of implementation correctness. The user packet and verified gap govern its scope.
 
 ## Decision
 
@@ -36,14 +36,14 @@ Names below fix the implementation interface; they are not claims that these pub
 ```go
 type AuthorityRoot struct {
     Run        RunID       // original holder and logical generation
-    RootID     string      // existing composition resource-root identity
+    RootRun    RunID       // exact logical locator: existing ResourceRoot.Run
     Permission Permission  // exact six-field original permissions row
 }
 type DelegationClaim struct {
     Version            string // RequestAuthorityVersion
     Root               AuthorityRoot
     Recipient          RunID
-    RecipientRootID    string
+    RecipientRoot      RunID  // exact existing recipient ResourceRoot.Run locator
     RecipientRevision  int64
     OriginalRequestID  string
     ServiceOperationID string
@@ -60,7 +60,7 @@ type AuthorityUse struct {
 }
 ```
 
-`Permission.Source` must equal `Root.Run.Subject`; Permission.Revision binds that holder revision. Do not confuse this holder provenance with the action tuple after changing recipient. Attenuation is exact equality of the action component `(Kind, Target, Operation, Obligation)` plus the root scope, with a singleton grant subset of that issuer's original relation. No wildcard semantics, separate dimension sets, delegated parents, redelegation flag that can be enabled, or implicit fallback. Every grant is permanently non-redelegable by protocol definition.
+`Root.RootRun` and `RecipientRoot` are nonempty, generation-bound logical locators, not wildcards or hashed IDs. The Store resolves each against the immutable retained composition profile in its own namespace, checks exact holder/recipient membership, and derives the canonical namespace-bound IDs. Holder `Root.Run` and resource-root locator `Root.RootRun` are distinct coordinates, even when this fixture sets them equal. A root locator alone confers no permission. `Permission.Source` must equal `Root.Run.Subject`; Permission.Revision binds that holder revision. Do not confuse this holder provenance with the action tuple after changing recipient. Attenuation is exact equality of the action component `(Kind, Target, Operation, Obligation)` plus the root scope, with a singleton grant subset of that issuer's original relation. No wildcard semantics, separate dimension sets, delegated parents, redelegation flag that can be enabled, or implicit fallback. Every grant is permanently non-redelegable by protocol definition.
 
 For adapter operations the required action is `(adapter, intent.Target, intent.Obligation, intent.Obligation)`, exactly as current adapter permission lookup. The fixture's immutable adapter deployment maps a capability to one fixed physical resource endpoint; the operation/obligation distinguishes actual allowed actions, with trusted adapters checked to implement those distinctions. A claimed resource string in payload does not change that binding.
 
@@ -70,12 +70,13 @@ Add `Authority *AuthorityUse` (`omitempty`) to retained `Effect` and `Intent`, c
 
 Delegate payload is exactly `operation=DelegateAuthority`, `revision=RecipientRevision`, and `claim=<canonical JSON DelegationClaim>`. Intent target/generation equal Recipient, and its obligation identifies its ordinary lifecycle response. Revoke uses `operation=RevokeAuthority`, target/generation equal Root.Run, revision=Root.Permission.Revision, and a canonical RevocationClaim. Canonical JSON round-trip comparison plus strict typed decoding rejects duplicate, unknown, missing required or differently represented fields; bounded claim size uses existing program/output/data limits. A claim cannot supply its own grant identity.
 
-Do **not** require namespace in the program claim: Create generates it randomly, so precompiled literal programs cannot know it. Derive namespace into the retained authority decision from the owning Store. Validate it against metadata at every read; it is not caller input.
+Do **not** require namespace in the program claim: Create generates it randomly, so precompiled literal programs cannot know it. Derive namespace into the retained authority decision from the owning Store. Validate it against metadata at every read; it is not caller input. The same constraint applies indirectly to hashed resource-root IDs: programs name exact logical root locators instead. Decisions retain canonical IDs derived from namespace and those locators, and membership validation separately establishes whether the claimed roots actually exist.
 
 ```go
 type AuthorityDecision struct {
     Version, Namespace string
     Root AuthorityRoot
+    RootID, RecipientRootID string // derived namespace-bound root candidates
     // Existing Request holds the exact original claim bytes and source.
     // Existing lifecycle Accepted/Reason holds the single decision.
 }
@@ -84,6 +85,7 @@ type AuthorityDecision struct {
 type EffectAuthority struct {
     Version, Namespace string
     Use *AuthorityUse // nil only for an absent selector refusal
+    RootID, ServingRootID string // derived namespace-bound root candidates
     Allowed bool
     Reason string
     // For delegated path only, copied from the actual accepted grant:
@@ -94,6 +96,8 @@ type EffectAuthority struct {
 }
 // Add *EffectAuthority Authority, omitempty, to ExternalAttempt/AdapterAttempt.
 ```
+
+For every syntactically valid claim/selector, derive `RootID = compositionRootID(namespace, Root.RootRun)` even if the locator or membership is false; such a candidate ID is not evidence that a root exists. Delegate decisions similarly derive `RecipientRootID`; revoke decisions leave that field empty because there is no recipient claim. Effect witnesses derive `ServingRootID` from the actual serving member's retained root. A missing selector alone has an empty RootID. The typed decision/witness validator recomputes all these fields and checks membership as part of the accepted/refused policy, rather than interpreting any candidate ID as authority. Primary gate outer RootIDs contain only actual retained serving/issuer membership roots, never a nonexistent candidate root.
 
 The existing attempt `Allowed/Reason` is still the combined source/authority/resource decision. The nested witness keeps permission allowance distinct from a subsequent resource refusal. A permission witness is immutable even when reservation is denied. Denial witnesses retain the requested selector and exact failed edge; no fake root or grant is invented when the selector is absent. Use is a pointer as shown: nil means an absent selector and is legal only with the retained `authority_missing` refusal. A non-nil selector never silently changes path.
 
@@ -222,3 +226,9 @@ Actual inspected constraints:
 The independent research checker must interpret the primary gate as recorded runtime evidence and derive its permissibility from prior immutable facts. Hashing the record is an encoding/integrity check, not an independent authorization oracle. It cannot prove an actual physical contact occurred; an extra isolated legal gate inserted into a hostile store may be a policy-consistent fabricated history. A separate table would not solve that: both storage designs are unsigned retained evidence, and neither proves omitted or fabricated external contacts. Bind acknowledged boundary and independent endpoint contact histories to each real execution and state this limit. Likewise, historical activation validation must be honest about reopen intervals with no reduction: existing validateWitnessEpoch bounds epochs between neighboring history rows; it does not alone prove the exact wall-clock location of every empty reopen. The live writer captures actual epoch under owner exclusion, and SIGKILL/owner logs independently test fresh activation behavior.
 
 Comparison: the new table would preserve the old 'every fact mirrors another row' convention, provide a convenient FK and uniqueness key, and leave fact descriptors unchanged. But it duplicates gate representation/order concerns and adds a table solely to hold a primary record that the existing versioned append-only journal can represent. The typed-fact option changes a clearly isolated journal convention, removes the duplicate record and AfterFact join, makes revoke/gate order direct, and stays inside one scheduler/accounting/history protocol. Under the packet's preference for existing mechanisms, **the typed primary fact wins**. No concrete source evidence justifies the extra table for this slice.
+
+## Pre-implementation correction: logical root locators (contract v2)
+
+The first implementation probe falsified v1's literal-root construction before any production edit. `Create` draws a fresh namespace, and `compositionRootID` hashes that namespace with `ResourceRoot.Run`; supplying another Store's exact Root.ID is rejected by ordinary provisioning. Literal Effect.Authority values therefore cannot contain the new Store's hashed root IDs before creation. The original failed test and log are retained in the runtime qualification archive; the rejected contract and implementation report are under `evidence/rejected-contract-v1`. This is a representability defect in the proposed encoding, not an impossibility result for request-bound delegation.
+
+Version 2 replaces program-supplied hashed root IDs with exact `RootRun`/`RecipientRoot` logical locators and retains the derived namespace-bound IDs only in Store-produced decisions/witnesses. Resolution uses the immutable profile and verifies complete permission membership, root membership, generation and revision; empty/wildcard roots do not become valid. No caller-chosen namespace, artifact rewriting, extra table, authority search, or relaxed tuple comparison is introduced. The published protocol string remains v1 because no version-1 protocol implementation or stores have been produced. The contract-document version advances to 2 and preserves its rejected predecessor.
