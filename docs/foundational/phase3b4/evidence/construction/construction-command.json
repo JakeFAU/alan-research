@@ -1,0 +1,24 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-tags",
+    "integration",
+    "./internal/durabletest",
+    "-run",
+    "^TestPhase3B4PublicConstruction$",
+    "-count=1",
+    "-v",
+    "-timeout=2m"
+  ],
+  "exit": 0,
+  "base": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+  "fixture_sha256": "31e3a4ed1695ec28690f384c295ad0f098e807201f166e4bbe027ab190372e4c",
+  "env": {
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOCACHE": "/tmp/alan-phase3a-go-build",
+    "ALAN_PHASE3B3_EVIDENCE": "/tmp/alan-phase3b4-task1/construction"
+  }
+}

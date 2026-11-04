@@ -1,0 +1,23 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-tags",
+    "integration",
+    "./internal/durabletest",
+    "-run",
+    "^TestPhase3B3Reciprocal(Ordinary|Bindings)$/^(s2-handshake|wrong-prior-selection)$",
+    "-count=1",
+    "-v",
+    "-timeout=2m"
+  ],
+  "exit": 0,
+  "source": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+  "env": {
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOCACHE": "/tmp/alan-phase3a-go-build",
+    "ALAN_PHASE3B3_EVIDENCE": "/tmp/alan-phase3b4-task1/baseline-allowed"
+  }
+}

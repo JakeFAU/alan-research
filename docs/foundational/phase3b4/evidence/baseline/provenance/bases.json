@@ -1,0 +1,26 @@
+{
+  "research": {
+    "base": "9ddfe29a2a5fa43a06656514af236401cc07914b",
+    "base_tree": "a566a5eb31335ae68ea9c9073a1f56b5102a4a11",
+    "historical_delivery": "d365c7e8fbc2985b998936cc162f322f6a8f2367",
+    "historical_qualified": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+    "actual_pr_head": "d365c7e8fbc2985b998936cc162f322f6a8f2367",
+    "actual_head_tree": "a566a5eb31335ae68ea9c9073a1f56b5102a4a11",
+    "actual_head_tree_matches_base": true,
+    "historical-delivery_is_ancestor": false,
+    "qualified_is_ancestor": false,
+    "actual-pr-head_is_ancestor": false
+  },
+  "runtime": {
+    "base": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+    "base_tree": "24b1cbaf259fe7e211c5464242daf65ad5dcbb0f",
+    "historical_delivery": "91963d5a81e4ce16f424aae36cc4fb382a56e2cd",
+    "historical_qualified": "759df6e3d2505f27e1287b2cfeb07bc4290afc0a",
+    "actual_pr_head": "9bc02caa114ab1341524849d580dc7ed728e44f0",
+    "actual_head_tree": "24b1cbaf259fe7e211c5464242daf65ad5dcbb0f",
+    "actual_head_tree_matches_base": true,
+    "historical-delivery_is_ancestor": false,
+    "qualified_is_ancestor": false,
+    "actual-pr-head_is_ancestor": false
+  }
+}

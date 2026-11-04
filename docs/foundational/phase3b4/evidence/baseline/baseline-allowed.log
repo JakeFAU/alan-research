@@ -1,0 +1,12 @@
+=== RUN   TestPhase3B3ReciprocalBindings
+=== RUN   TestPhase3B3ReciprocalBindings/wrong-prior-selection
+    phase3b3_controls_test.go:187: raw evidence: /tmp/alan-phase3b4-task1/baseline-allowed/control-wrong-prior-selection-1207259051
+--- PASS: TestPhase3B3ReciprocalBindings (1.84s)
+    --- PASS: TestPhase3B3ReciprocalBindings/wrong-prior-selection (1.84s)
+=== RUN   TestPhase3B3ReciprocalOrdinary
+=== RUN   TestPhase3B3ReciprocalOrdinary/s2-handshake
+    phase3b3_runtime_test.go:217: raw evidence: /tmp/alan-phase3b4-task1/baseline-allowed/ordinary-s2-handshake-975364978
+--- PASS: TestPhase3B3ReciprocalOrdinary (0.21s)
+    --- PASS: TestPhase3B3ReciprocalOrdinary/s2-handshake (0.21s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/durabletest	2.208s

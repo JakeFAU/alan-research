@@ -1,0 +1,5 @@
+# github.com/JakeFAU/alan/internal/durabletest [github.com/JakeFAU/alan/internal/durabletest.test]
+internal/durabletest/phase3b4_construction_test.go:212:191: cannot use ea.Contacts (variable of type int64) as int value in array or slice literal
+internal/durabletest/phase3b4_construction_test.go:212:204: cannot use eb.Contacts (variable of type int64) as int value in array or slice literal
+FAIL	github.com/JakeFAU/alan/internal/durabletest [build failed]
+FAIL

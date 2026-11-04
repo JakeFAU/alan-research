@@ -1,0 +1,22 @@
+=== RUN   TestPhase3B4PublicConstruction
+=== RUN   TestPhase3B4PublicConstruction/adjacent
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-adjacent-448145034
+=== RUN   TestPhase3B4PublicConstruction/request-ready-0
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-request-ready-0-1868644456
+=== RUN   TestPhase3B4PublicConstruction/request-ready-1
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-request-ready-1-3544872962
+=== RUN   TestPhase3B4PublicConstruction/request-ready-3
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-request-ready-3-1437076187
+=== RUN   TestPhase3B4PublicConstruction/forward-true
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-forward-true-919220872
+=== RUN   TestPhase3B4PublicConstruction/forward-false
+    phase3b4_construction_test.go:140: raw evidence: /tmp/alan-phase3b4-task1/construction/construction-forward-false-460983785
+--- PASS: TestPhase3B4PublicConstruction (2.35s)
+    --- PASS: TestPhase3B4PublicConstruction/adjacent (1.95s)
+    --- PASS: TestPhase3B4PublicConstruction/request-ready-0 (0.08s)
+    --- PASS: TestPhase3B4PublicConstruction/request-ready-1 (0.08s)
+    --- PASS: TestPhase3B4PublicConstruction/request-ready-3 (0.08s)
+    --- PASS: TestPhase3B4PublicConstruction/forward-true (0.08s)
+    --- PASS: TestPhase3B4PublicConstruction/forward-false (0.08s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/durabletest	2.599s

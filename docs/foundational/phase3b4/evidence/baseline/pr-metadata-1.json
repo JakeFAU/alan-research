@@ -1,0 +1,50 @@
+{
+  "status": "fulfilled",
+  "value": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Action completed."
+      }
+    ],
+    "structuredContent": {
+      "url": "https://github.com/JakeFAU/alan/pull/10",
+      "number": 10,
+      "state": "closed",
+      "merged": true,
+      "mergeable": false,
+      "draft": false,
+      "body": "## Purpose and result\n\nThe static public API cannot express the specified reciprocal S2 service without granting A broader ambient permission. Add a narrowly scoped ordinary retained one-hop delegation protocol and qualify it with two real authored agents, interruption/reopen schedules and independent endpoint evidence.\n\nCompanion research PR: [JakeFAU/alan-research#44](https://github.com/JakeFAU/alan-research/pull/44). That PR retains the independent checker and the concrete model/runtime selection-order mismatch; these runtime tests do not establish unrestricted model refinement.\n\n## Base, scope and invariant\n\nBase: `af6943a5805a9a6c0e8fe77f804264f4765d07ec`.\nBaseline fixture: `8319a9067c16aaf5e3ecccb3d0c62f5c536e6140`.\nReviewed primitive: `4f6f5f2500a48b2ca01ee7b09a823fa63656b7ab`.\nFinal executable: `759df6e3d2505f27e1287b2cfeb07bc4290afc0a`.\nFinal delivery commit: `91963d5a81e4ce16f424aae36cc4fb382a56e2cd`.\nSubsequent commits retain qualification, reviews and reproduction records. See the [runtime qualification index](https://github.com/JakeFAU/alan/blob/91963d5a81e4ce16f424aae36cc4fb382a56e2cd/docs/qualification/phase3b3/README.md) and [whole-change review](https://github.com/JakeFAU/alan/blob/91963d5a81e4ce16f424aae36cc4fb382a56e2cd/docs/qualification/phase3b3/whole-change-review.md).\n\n- Add opt-in request authority `alan/request-authority/v1`, formats 13/14, ordinary committed `DelegateAuthority`/`RevokeAuthority` operations and an explicit own/delegated effect selector.\n- Bind grants to the legitimate holder/root, full six-field permission row, recipient/root/revision, authentic original request and exact service operation. Use checked logical root locators because namespace-bound hashes do not exist before Create.\n- Retain primary `authority_admission` facts before worker release; reconstruct the original request and revalidate the selected current path on fresh physical admission.\n- Add baseline, reciprocal, physical Cartesian, revocation, custody, malformed-history and acknowledged process-interruption fixtures. Preserve all rejected candidates and original failures.\n- Reuse existing lifecycle/composition journals, scheduling and resource charges. No new authority table, host-only grant API, scheduler, budget ledger or dependencies.\n\nA logical grant survives reopening; a previous physical admission does not transfer to a new owner. Original refusal/debit remains immutable. Revocation blocks future admission without erasing an earlier opportunity or completed result. Result possession supplies no authority, and invalid delegated selection cannot fall back to another path.\n\n## RED evidence and review\n\nRetain genuine old-API S2 completion failure with passing S1 control, rejected literal-root construction, and independent primitive findings for legacy inert-name compatibility, forbidden typed legacy metadata and coherent original-request substitution at the live gate. Sixteen expanded original-request mutation controls reproduce the candidate failure and reject after correction. Independent scoped re-reviews return APPROVE; original REJECT reports remain preserved. The final whole-change specification, quality and overall verdicts are APPROVE within the declared scope; the report is retained with the qualification.\n\n## Verification actually executed\n\nAll eight frozen commands exited zero; exact environments/logs/source hashes are in `docs/qualification/phase3b3/task4-frozen/`.\n\n```sh\ngo test -json -count=1 ./...\ngo test -json -tags=integration -count=1 ./internal/executor ./runtime ./author ./examples/delegation\ngo test -json -tags=integration -count=1 ./internal/durabletest -run '^TestPhase3B3(Reciprocal|CartesianOperations|GenericUnknown|ActualResultLaundering|SerialSerial|AppliedUnknownRevoked|RetainedMutations)'\ngo test -json -race -tags=integration -count=1 ./internal/durabletest -run '^TestPhase3B3(Reciprocal|CartesianOperations|GenericUnknown|ActualResultLaundering|SerialSerial|AppliedUnknownRevoked|RetainedMutations)'\ngo test -json -race -tags=integration -count=1 ./internal/executor ./runtime ./author -run '^TestRequestAuthority'\ngo test -json -tags=integration -count=1 ./internal/durabletest -run '^TestPhase3B3Baseline'\nstaticcheck ./...\nstaticcheck -tags=integration ./...\n```\n\nFull ordinary suite: 1,265 passing test/subtest events across 18 packages plus three without tests. Core integration: 1,597 events; focused authority race: 105. Each reciprocal ordinary/race run has 53 passing events and 48 indexed cases, zero skips. Baseline-on-current has seven events and one explicit opt-in historical-RED skip. All 304 source inputs and 3,784 archive members were checked.\n\nTen requested cut labels produce eleven acknowledged SIGKILL witnesses (06 has two subcases; 04/05 share a hook). Fresh process identity, same Store, Open/post-Open state, actual opaque-result consumption and endpoint ingress/application are retained. The applied-unknown idempotent case has two contacts/one application; generic unknown blocks honestly.\n\nTen old-created formats 3–12 passed 80 primary old/current reader calls and 60 byte-equal paired exports; frozen old reader rejects 13/14. This is finite compatibility evidence.\n\nAfter main advanced to `76031c34c1d0eeff325e1a8e9ca4b6e2fa2b6315`, a clean prospective tree `bdbbae5f89f0c76d48618b3d8891dc40199ca4ed` passed core integration (1,611 events), authority/mode race (119), all 48 reciprocal race cases and integration Staticcheck. Neither branch was merged/rebased. The initial scratch export failed because its archive had no Git identity; that apparatus failure and corrected same-tree run are both retained in `current-main/`.\n\n## Limits and delivery\n\nSingle-host trusted Store/runtime, two initial static generation-one roots and one-hop authority only. Adversarial revocation histories at paused boundaries use named public retained transitions, separately from automatic Run reachability. Physical gate is opportunity, not contact/application. Stable-key idempotency and eventual response qualify positive unknown-result recovery; generic unknown and revoked unknown remain unpaid. Reciprocal process qualification is format 13, not 14. No independent-owner, multihop or arbitrary-agent theorem. Legacy 5/8 fixtures perform no receipt-read and 9–12 have no open run at their cut.\n\nUnrelated changes are absent. This cohesive authority experiment includes its evidence; the research repository carries the corresponding manuscript. Draft only; no merge or release.\n",
+      "title": "Retain request-bound delegation and recheck admission after recovery",
+      "base": "main",
+      "base_sha": "76031c34c1d0eeff325e1a8e9ca4b6e2fa2b6315",
+      "head": "codex/phase3b3-request-delegation",
+      "head_sha": "9bc02caa114ab1341524849d580dc7ed728e44f0",
+      "head_repo_id": 1444267763,
+      "head_repo_full_name": "JakeFAU/alan",
+      "merge_commit_sha": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+      "user": {
+        "login": "JakeFAU",
+        "name": "JakeFAU",
+        "email": null,
+        "avatar_url": "https://avatars.githubusercontent.com/u/83318034?v=4",
+        "id": 83318034
+      },
+      "requested_reviewers": null,
+      "requested_team_reviewers": null,
+      "diff": null,
+      "comments": null,
+      "created_at": "2026-11-04T20:34:46Z",
+      "updated_at": "2026-11-04T21:33:56Z",
+      "closed_at": "2026-11-04T21:26:49Z",
+      "merged_at": "2026-11-04T21:26:49Z",
+      "commits": 12,
+      "changed_files": 135,
+      "additions": 103598,
+      "deletions": 65,
+      "display_url": "https://github.com/JakeFAU/alan/pull/10",
+      "display_title": "Retain request-bound delegation and recheck admission after recovery"
+    },
+    "isError": false
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-tags",
+    "integration",
+    "./internal/durabletest",
+    "-run",
+    "^TestPhase3B3Reciprocal(Ordinary|Bindings)$/^(s2-handshake|wrong-prior-selection)$",
+    "-count=1",
+    "-v",
+    "-timeout=2m"
+  ],
+  "exit": 1,
+  "source": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+  "tree": "24b1cbaf259fe7e211c5464242daf65ad5dcbb0f",
+  "status_before_fixture": "",
+  "toolchain": "go version go1.27.3 darwin/arm64",
+  "old_reader": {
+    "path": "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+    "sha256": "f08fc613f6411adb005adb9bf67409bb456eff69cd39599fa9652957e1a1db36",
+    "build_command": "go test -tags integration -c -o /tmp/alan-phase3b4-task1/compatibility/old-reader.test ./internal/durabletest",
+    "exit": 0
+  },
+  "env": {
+    "GOTOOLCHAIN": "local",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOCACHE": "/tmp/alan-phase3a-go-build",
+    "ALAN_PHASE3B3_EVIDENCE": "/tmp/alan-phase3b4-task1/baseline"
+  }
+}
