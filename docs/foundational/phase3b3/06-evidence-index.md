@@ -42,6 +42,7 @@ All paths below are relative to this directory.
 | [Manuscript interim](evidence/manuscript-interim/review.md) | Earlier scoped manuscript/runtime-reproduction review; not final checker qualification |
 | [Manuscript final](evidence/manuscript-final/manifest.json) | Exact final manuscript/PDF, build logs, local MD/TeX alignment, unchanged BibTeX and inspected pages |
 | [Whole-change review](evidence/final-review/review.md) | Independent specification/quality/overall APPROVE for the bounded slice; exact minor CLI probe, reviewed document hashes and explicit unproved domains |
+| [Delivery record](07-delivery.md), [workflow archive](evidence/workflow/README.md) | Cross-linked draft PRs, cleanup accounting, the complete packet workspace and nine chronological rulings with their costs |
 
 Candidate runs above must not be cited as the final committed-source execution.
 Review approval is distinct from draft delivery, merge status and proof.
