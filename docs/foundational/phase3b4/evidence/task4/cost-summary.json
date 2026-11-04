@@ -1,0 +1,225 @@
+{
+  "measurements": {
+    "normal": {
+      "0": {
+        "Open": {
+          "max_ns": 47767375,
+          "median_ns": 46692041,
+          "min_ns": 46482042
+        },
+        "Replay": {
+          "max_ns": 45014208,
+          "median_ns": 44696375,
+          "min_ns": 44434916
+        },
+        "construction": {
+          "max_ns": 852875,
+          "median_ns": 432375,
+          "min_ns": 390375
+        },
+        "first_decision_window": {
+          "max_ns": 1521125,
+          "median_ns": 1275167,
+          "min_ns": 1141375
+        },
+        "fresh_gate_window": {
+          "max_ns": 4595000,
+          "median_ns": 4273292,
+          "min_ns": 3942875
+        }
+      },
+      "1": {
+        "Open": {
+          "max_ns": 71883459,
+          "median_ns": 49239834,
+          "min_ns": 48627250
+        },
+        "Replay": {
+          "max_ns": 54235750,
+          "median_ns": 48074833,
+          "min_ns": 45916625
+        },
+        "construction": {
+          "max_ns": 536708,
+          "median_ns": 432625,
+          "min_ns": 401334
+        },
+        "first_decision_window": {
+          "max_ns": 2439333,
+          "median_ns": 1417417,
+          "min_ns": 1219208
+        },
+        "fresh_gate_window": {
+          "max_ns": 5869459,
+          "median_ns": 4568250,
+          "min_ns": 4322959
+        }
+      },
+      "8": {
+        "Open": {
+          "max_ns": 62386541,
+          "median_ns": 60977167,
+          "min_ns": 54741625
+        },
+        "Replay": {
+          "max_ns": 60608250,
+          "median_ns": 55833083,
+          "min_ns": 53409250
+        },
+        "construction": {
+          "max_ns": 477542,
+          "median_ns": 446000,
+          "min_ns": 420500
+        },
+        "first_decision_window": {
+          "max_ns": 1974333,
+          "median_ns": 1476750,
+          "min_ns": 1385458
+        },
+        "fresh_gate_window": {
+          "max_ns": 6886166,
+          "median_ns": 6138791,
+          "min_ns": 6023375
+        }
+      },
+      "32": {
+        "Open": {
+          "max_ns": 145360083,
+          "median_ns": 95589875,
+          "min_ns": 86884542
+        },
+        "Replay": {
+          "max_ns": 96283500,
+          "median_ns": 88968125,
+          "min_ns": 85085125
+        },
+        "construction": {
+          "max_ns": 958666,
+          "median_ns": 479541,
+          "min_ns": 403291
+        },
+        "first_decision_window": {
+          "max_ns": 2429500,
+          "median_ns": 2369125,
+          "min_ns": 2289125
+        },
+        "fresh_gate_window": {
+          "max_ns": 10456583,
+          "median_ns": 10152125,
+          "min_ns": 9901125
+        }
+      }
+    },
+    "race": {
+      "0": {
+        "Open": {
+          "max_ns": 806711416,
+          "median_ns": 710225333,
+          "min_ns": 706481833
+        },
+        "Replay": {
+          "max_ns": 745118291,
+          "median_ns": 694459000,
+          "min_ns": 687918542
+        },
+        "construction": {
+          "max_ns": 6802375,
+          "median_ns": 6234209,
+          "min_ns": 6107291
+        },
+        "first_decision_window": {
+          "max_ns": 17202167,
+          "median_ns": 16711708,
+          "min_ns": 16251333
+        },
+        "fresh_gate_window": {
+          "max_ns": 71820875,
+          "median_ns": 66561458,
+          "min_ns": 66353083
+        }
+      },
+      "1": {
+        "Open": {
+          "max_ns": 768951625,
+          "median_ns": 734971917,
+          "min_ns": 729962791
+        },
+        "Replay": {
+          "max_ns": 724073000,
+          "median_ns": 716471375,
+          "min_ns": 712687709
+        },
+        "construction": {
+          "max_ns": 10368583,
+          "median_ns": 6986334,
+          "min_ns": 6168375
+        },
+        "first_decision_window": {
+          "max_ns": 17832084,
+          "median_ns": 17660750,
+          "min_ns": 17221709
+        },
+        "fresh_gate_window": {
+          "max_ns": 79060166,
+          "median_ns": 69526250,
+          "min_ns": 69154417
+        }
+      },
+      "8": {
+        "Open": {
+          "max_ns": 879793667,
+          "median_ns": 874262959,
+          "min_ns": 872546417
+        },
+        "Replay": {
+          "max_ns": 858322750,
+          "median_ns": 857491416,
+          "min_ns": 853069667
+        },
+        "construction": {
+          "max_ns": 6607625,
+          "median_ns": 6371959,
+          "min_ns": 6128833
+        },
+        "first_decision_window": {
+          "max_ns": 21833667,
+          "median_ns": 21323208,
+          "min_ns": 21047458
+        },
+        "fresh_gate_window": {
+          "max_ns": 92882792,
+          "median_ns": 90514875,
+          "min_ns": 89747417
+        }
+      },
+      "32": {
+        "Open": {
+          "max_ns": 1374696916,
+          "median_ns": 1364744792,
+          "min_ns": 1362096208
+        },
+        "Replay": {
+          "max_ns": 1349567625,
+          "median_ns": 1333034750,
+          "min_ns": 1330355833
+        },
+        "construction": {
+          "max_ns": 6730917,
+          "median_ns": 6673333,
+          "min_ns": 6407750
+        },
+        "first_decision_window": {
+          "max_ns": 34478000,
+          "median_ns": 34339917,
+          "min_ns": 33842959
+        },
+        "fresh_gate_window": {
+          "max_ns": 160149792,
+          "median_ns": 158291208,
+          "min_ns": 157941458
+        }
+      }
+    }
+  },
+  "scope": "observed windows with explicit overhead; no allocation, threshold, speedup or total O(1) claim"
+}

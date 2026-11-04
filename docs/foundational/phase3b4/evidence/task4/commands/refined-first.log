@@ -1,0 +1,6 @@
+--- FAIL: TestPhase3B4CampaignAuxiliaryPaidParent (2.14s)
+    phase3b4_auxiliary_test.go:17: raw evidence: /tmp/alan-task4-refined-first/auxiliary-paid-equal-total-4010869809
+    phase3b4_auxiliary_test.go:113: &{["a",1,5,0] {a 1} 5 1 external http://127.0.0.1:54440/apply ba-service settled applied receipt_retained 0x30e249b32580 <nil> <nil> 0x30e2496df7a0 0x30e2496ae3c0 0x30e249ba4b40 {1 <nil>} <nil> [{alan/request-authority/v2 59c38aec3173ad83412f5d28a2e7313c113eb3fc6cc6c09aba070d817f589889 1 {{a 1} 1 5 1} 0619c641a594f4b82d6a9f818a886988bc4bd88798d37f0eeca6a860837f1f20 true authorized}] <nil> known [] [] []} <nil>
+FAIL
+FAIL	github.com/JakeFAU/alan/internal/durabletest	3.665s
+FAIL

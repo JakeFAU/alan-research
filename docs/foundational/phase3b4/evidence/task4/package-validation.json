@@ -1,0 +1,26 @@
+{
+  "across_provision_identity_correspondences": 50,
+  "all_table_open_pairs": 34,
+  "command_source_differences_from_final": {
+    "evidence-fixed-normal": [],
+    "evidence-fixed-race": [],
+    "evidence-fixed-staticcheck": [],
+    "final-campaign-normal": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "final-campaign-race": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ]
+  },
+  "exact_task3_review_copy_verified": true,
+  "raw_archive_members_verified": 11053,
+  "runtime_commit": "2b8f6e19a013d2b918146a7193451843004d2f86",
+  "scope": "mechanical package integrity only; no independent principal qualification",
+  "selected_cases_per_mode": {
+    "normal": 80,
+    "race": 80
+  },
+  "source_archive_verified": true
+}

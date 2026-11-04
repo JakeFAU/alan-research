@@ -1,0 +1,93 @@
+{
+  "scope": "preliminary Task4 JSON-only inspection, not principal raw qualification",
+  "case": "/tmp/alan-task4-cuts-first/C07-261847155",
+  "open_pairs": [
+    {
+      "before": "/tmp/alan-task4-cuts-first/C07-261847155/initial/inspect.json",
+      "after": "/tmp/alan-task4-cuts-first/C07-261847155/owner-01/post-open/inspect.json",
+      "before_sha256": "20e8942b5a4b44603f48b87bb53013c3c9ad57b3fd5a8cbf28b12d9c2b9d5a08",
+      "after_sha256": "5c9e7d4e05bc690edd2c8405507a3eec8e9e7e5f0af348adb7fad31e9f2dc0f3",
+      "changed_tables": [
+        "runs"
+      ],
+      "runs": [
+        {
+          "subject": "a",
+          "changes": {
+            "epoch": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "subject": "b",
+          "changes": {
+            "epoch": [
+              1,
+              2
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "before": "/tmp/alan-task4-cuts-first/C07-261847155/stopped-01/inspect.json",
+      "after": "/tmp/alan-task4-cuts-first/C07-261847155/owner-02/post-open/inspect.json",
+      "before_sha256": "fdf9de84eee94c7f7e2c8298977ecc8c6fe310467ef96ee4eb9f85dd65dd32c0",
+      "after_sha256": "64f40a40917e266050813faa43d65f67f3a3aed831599988614c1d4f4bb32a16",
+      "changed_tables": [
+        "runs"
+      ],
+      "runs": [
+        {
+          "subject": "a",
+          "changes": {
+            "epoch": [
+              2,
+              3
+            ]
+          }
+        },
+        {
+          "subject": "b",
+          "changes": {
+            "epoch": [
+              2,
+              3
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "before": "/tmp/alan-task4-cuts-first/C07-261847155/stopped-02/inspect.json",
+      "after": "/tmp/alan-task4-cuts-first/C07-261847155/final-owner/post-open/inspect.json",
+      "before_sha256": "07aa8d9bef83dd1ef882e65eef0c4b9c9e28495151b965d4c36aa52751c69efc",
+      "after_sha256": "66e3937c0b3edc9a64ef63cefce600bd7bcd758409cb4bdee7fea871af0e55f7",
+      "changed_tables": [
+        "runs"
+      ],
+      "runs": [
+        {
+          "subject": "a",
+          "changes": {
+            "epoch": [
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "subject": "b",
+          "changes": {
+            "epoch": [
+              3,
+              4
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
