@@ -1,0 +1,22 @@
+{
+  "status": "prospective relation and matrix, independent review pending",
+  "research_base": "7ba768042b855aa928afdf1139fd5d5bc2756496",
+  "runtime_read_only_source": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "created_utc": "2026-11-04T22:32:11.311337+00:00",
+  "files": [
+    {
+      "path": "docs/foundational/phase3b4/04-model.md",
+      "sha256": "09f715a6f4aa7f2ac4be3dbfd7444e5495d7947d72867942215698906b659f37",
+      "bytes": 26927
+    },
+    {
+      "path": "docs/foundational/phase3b4/05-matrix.md",
+      "sha256": "32367cd857faedc0410f5e9a03f9b6a10b30407ecd8a903e35281e0567c69a31",
+      "bytes": 21917
+    }
+  ],
+  "before_candidate_confirmation": true,
+  "new_model_enumeration": false,
+  "new_runtime_or_oracle_code": false,
+  "review_gate": "independent relation review before candidate runtime or principal oracle implementation"
+}

@@ -1,6 +1,6 @@
 # Phase 3B.4 charter and construction gate
 
-Status: Task 1 construction demonstrated; candidate contract **review-pending**. No candidate production predicate, principal oracle or model extension has been implemented. This packet is not an approval or a claim that the new semantics works.
+Status: Task 1 construction demonstrated; revision 2 candidate contract **independently APPROVED** (see [exact review and freeze](evidence/reviews/task1-r2/manifest.json)). Task 2 relation remains review-pending. No candidate production predicate or principal oracle has been implemented; candidate runtime behavior remains unqualified.
 
 Question: Can a service retain an exact binding to the authentic request it selected before intervening computation and same-Store recovery, while every authority decision and fresh physical admission still checks the original complete permission tuple, exact service, selected path and current authority?
 

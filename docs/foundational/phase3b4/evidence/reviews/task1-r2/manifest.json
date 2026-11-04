@@ -1,0 +1,14 @@
+{
+  "research_reviewed_commit": "7ba768042b855aa928afdf1139fd5d5bc2756496",
+  "runtime_unchanged_commit": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "reviewed_contract_sha256": "e04fe1e783718cb731204d2cb817a1f5cbe374955852faef7216a67ae9f760a0",
+  "review_sha256": "5ca6dcfda50488be1ee22d95476b3703ef984fa9b39f5bed8d025e0b9a8eb388",
+  "status_only_contract_sha256": "3b3662639f22adf9bfe3c2e5297afc7b5b6f4a389c6e8be4cb6a2f7deca9f3f3",
+  "semantic_change": false,
+  "only_contract_replacement": {
+    "old": "**Status: review-pending, revision 2 (2026-11-04).**",
+    "new": "**Status: independently APPROVED contract, revision 2 (2026-11-04); candidate implementation unqualified.**"
+  },
+  "review_scope": "Task1 corrected contract/construction gate; not relation, implementation or runtime qualification",
+  "prior_rejection": "../task1-r1/manifest.json"
+}

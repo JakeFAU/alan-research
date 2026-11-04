@@ -1,6 +1,6 @@
 # Phase 3B.4 candidate request-binding contract
 
-**Status: review-pending, revision 2 (2026-11-04).** Revision 1 was rejected for conflating Store metadata semantics with supported program semantics; the [exact rejected revision and independent review](evidence/reviews/task1-r1/manifest.json) are retained. This correction requires scoped re-review. This is the exact candidate to attack and independently review before production or principal oracle construction. It is not an implemented guarantee. The user [packet](00-brief.md), [v1 contract](../phase3b3/02-contract.md) and [genuine construction gate](01-charter.md) bound the proposal. Rejected alternatives and preflight reports remain retained.
+**Status: independently APPROVED contract, revision 2 (2026-11-04); candidate implementation unqualified.** Revision 1 was rejected for conflating Store metadata semantics with supported program semantics; the [exact rejected revision and independent review](evidence/reviews/task1-r1/manifest.json) are retained. This correction requires scoped re-review. This is the exact candidate to attack and independently review before production or principal oracle construction. It is not an implemented guarantee. The user [packet](00-brief.md), [v1 contract](../phase3b3/02-contract.md) and [genuine construction gate](01-charter.md) bound the proposal. Rejected alternatives and preflight reports remain retained.
 
 ## 1. Selected representation and domain
 

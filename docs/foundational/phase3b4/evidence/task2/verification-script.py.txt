@@ -1,0 +1,58 @@
+from pathlib import Path
+import subprocess,json,hashlib,gzip,re,datetime
+r=Path('/Users/jacob/.codex/worktrees/phase3b4-research/alan-research');t=Path('/private/tmp/alan-phase3b3-runtime');d=r/'docs/foundational/phase3b4';out=d/'evidence/task2';out.mkdir(exist_ok=True)
+sha=lambda b:hashlib.sha256(b).hexdigest()
+commands=[]
+def run(cwd,argv):
+ p=subprocess.run(argv,cwd=cwd,text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+ commands.append({'cwd':str(cwd),'argv':argv,'exit':p.returncode,'stdout':p.stdout,'stderr':p.stderr})
+ assert p.returncode==0,(argv,p.returncode,p.stderr)
+ return p.stdout
+assert run(r,['git','rev-parse','HEAD']).strip()=='7ba768042b855aa928afdf1139fd5d5bc2756496'
+assert run(t,['git','rev-parse','HEAD']).strip()=='3f8307664b6543331a41c943e91fb5bac8b376ef'
+assert not run(t,['git','status','--short']).strip()
+for file,a,b in [('internal/executor/store.go',515,591),('internal/executor/store.go',595,689),('internal/executor/store.go',770,942),('internal/executor/program.go',297,430),('internal/executor/program.go',440,483),('internal/executor/messages.go',430,520),('examples/delegation/reciprocal.go',100,190),('internal/executor/request_authority.go',380,490),('internal/executor/request_authority.go',255,289),('internal/executor/lifecycle.go',230,285),('internal/executor/lifecycle.go',356,387),('internal/executor/request_authority_admission.go',80,245)]:
+ run(t,['sed','-n',f'{a},{b}p',file])
+run(t,['rg','-n',r'(UPDATE|DELETE FROM|INSERT (OR [A-Z]+ )?INTO) (history|intents|observations|programs|admissions|lifecycle_results)','internal/executor','--glob','*.go','--glob','!**/*_test.go'])
+run(t,['rg','-n','MaxProgramBytes|MaxDataBytes|DefaultLimits','internal/executor/program.go'])
+run(t,['rg','-n','MaxSteps|MaxDispatch|MaxInFlight','internal/executor/runner.go'])
+run(r,['sed','-n','206,252p','research/delegationcorrespondence/files.go'])
+run(r,['sed','-n','378,422p','research/authorityservice/model.go'])
+run(r,['sed','-n','40,60p','research/delegationcorrespondence/progress.go'])
+run(r,['sed','-n','217,300p','research/delegationcorrespondence/custody.go'])
+run(r,['sed','-n','20,81p','research/delegationcorrespondence/custody.go'])
+run(r,['sed','-n','145,225p','research/delegationcorrespondence/project.go'])
+paths_t=['internal/executor/store.go','internal/executor/program.go','internal/executor/messages.go','internal/executor/lifecycle.go','internal/executor/request_authority.go','internal/executor/request_authority_admission.go','internal/executor/runner.go','examples/delegation/reciprocal.go','internal/durabletest/phase3b4_construction_test.go']
+paths_r=['research/authorityservice/model.go','research/delegationcorrespondence/files.go','research/delegationcorrespondence/project.go','research/delegationcorrespondence/custody.go','research/delegationcorrespondence/progress.go']
+record={'research_commit':'7ba768042b855aa928afdf1139fd5d5bc2756496','runtime_commit':'3f8307664b6543331a41c943e91fb5bac8b376ef','source_files':[{'root':str(root),'path':p,'sha256':sha((root/p).read_bytes())} for root,ps in [(r,paths_r),(t,paths_t)] for p in ps],'commands':commands}
+manifest=json.loads((d/'evidence/reviews/task1-r2/manifest.json').read_text());reviewdir=d/'evidence/reviews/task1-r2'
+assert sha((reviewdir/'reviewed-contract.md').read_bytes())==manifest['reviewed_contract_sha256']
+assert sha((reviewdir/'review.md').read_bytes())==manifest['review_sha256']
+assert (reviewdir/'review.md').read_bytes()==Path('/tmp/alan-phase3b4-contract-review-r2.md').read_bytes()
+assert sha((d/'02-contract.md').read_bytes())==manifest['status_only_contract_sha256']
+rep=manifest['only_contract_replacement'];assert (d/'02-contract.md').read_text().replace(rep['new'],rep['old'])==(reviewdir/'reviewed-contract.md').read_text()
+preserved=[]
+for item in json.loads((d/'evidence/baseline/preserved-model-manifest.json').read_text())['preserved']:
+ raw=(r/item['path']).read_bytes();assert sha(raw)==item['sha256'];assert len(raw)==item['bytes']
+ if 'decoded_sha256' in item:
+  dec=gzip.decompress(raw);assert sha(dec)==item['decoded_sha256'];assert len(dec)==item['decoded_bytes']
+ preserved.append(item)
+# Check every preexisting task evidence file against the committed source without opening SQLite.
+files=run(r,['git','ls-tree','-r','--name-only','HEAD','docs/foundational/phase3b4/evidence']).splitlines()
+for p in files:
+ original=subprocess.check_output(['git','show','HEAD:'+p],cwd=r);assert (r/p).read_bytes()==original,p
+linkchecks=[]
+for file in [d/'01-charter.md',d/'02-contract.md',d/'04-model.md',d/'05-matrix.md']:
+ for target in re.findall(r'\]\(([^)]+)\)',file.read_text()):
+  if '://' in target or target.startswith('#'):continue
+  target=target.split('#')[0]
+  assert (file.parent/target).exists(),(file,target)
+  linkchecks.append({'file':str(file.relative_to(r)),'target':target})
+run(r,['git','diff','--check'])
+summary={'checks':'PASS','recorded_source_commands':len(commands),'previous_evidence_files_byte_equal':len(files),'preserved_exports':preserved,'review_freeze_exact':True,'contract_change_status_only':True,'local_links':linkchecks,'new_go_code':False,'candidate_runs':0,'new_enumerations':0,'TDD':'not applicable: documentation only','heavy_suites':'deferred to final frozen-pair Task5 by controller instruction; not run'}
+(out/'source-footprints.json').write_text(json.dumps(record,indent=2)+'\n')
+(out/'verification.json').write_text(json.dumps(summary,indent=2)+'\n')
+freeze={'status':'prospective relation and matrix, independent review pending','research_base':record['research_commit'],'runtime_read_only_source':record['runtime_commit'],'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'files':[{'path':str(p.relative_to(r)),'sha256':sha(p.read_bytes()),'bytes':p.stat().st_size} for p in [d/'04-model.md',d/'05-matrix.md']],'before_candidate_confirmation':True,'new_model_enumeration':False,'new_runtime_or_oracle_code':False,'review_gate':'independent relation review before candidate runtime or principal oracle implementation'}
+(out/'freeze.json').write_text(json.dumps(freeze,indent=2)+'\n')
+print(json.dumps({k:v for k,v in summary.items() if k not in ['local_links','preserved_exports']},indent=2))
+print(json.dumps(freeze,indent=2))
