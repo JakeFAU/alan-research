@@ -1,0 +1,194 @@
+{
+  "cartesian-r1-add-one": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cartesian-r2-add-ten": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cartesian-r1-add-ten": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cartesian-r2-add-one": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "generic-unknown": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-removed-original-tuple": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-issuer-generation": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-issuer-root": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-issuer-revision": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-recipient-generation": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-recipient-root": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-recipient-revision": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-other-request": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-request-generation": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-service-sequence": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-service-generation": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-service-resource": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-result-as-grant": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-invalid-selected-no-own-fallback": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "control-wrong-prior-selection": {
+    "RawValid": true,
+    "Mismatch": "immediate_selection_narrows_model_admission"
+  },
+  "actual-prior-service-result-as-grant": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "serial-serial": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-01-before-grant": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-02-retained-grant": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-03-before-authorization": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-04-complete-decision": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-05-before-admission": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-06a-admitted-no-contact": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-06b-applied-no-receipt": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-07-retained-result": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-08-before-selection": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-09-mutual-wait": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "cut-10-one-complete": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "mutation-base": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "mutation-missing-grant": {
+    "RawValid": false,
+    "Mismatch": ""
+  },
+  "mutation-forged-grant-origin": {
+    "RawValid": false,
+    "Mismatch": ""
+  },
+  "mutation-effect-use-result": {
+    "RawValid": false,
+    "Mismatch": ""
+  },
+  "mutation-gate-attempt-digest": {
+    "RawValid": false,
+    "Mismatch": ""
+  },
+  "mutation-result-link": {
+    "RawValid": false,
+    "Mismatch": ""
+  },
+  "ordinary-s1-own": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "ordinary-s2-handshake": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "ordinary-s3-missing": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "ordinary-s3-claim": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "revoke-before-gate": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "revoke-after-gate": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "revoke-after-result": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "first-refused-then-grant": {
+    "RawValid": true,
+    "Mismatch": ""
+  },
+  "applied-unknown-revoked-before-fresh-gate": {
+    "RawValid": true,
+    "Mismatch": ""
+  }
+}

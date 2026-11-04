@@ -1,0 +1,51 @@
+{
+  "ResearchExecutable": "7894bfae268e6dc0f5418bda3c6022f3a8a55540",
+  "RuntimeExecutable": "759df6e3d2505f27e1287b2cfeb07bc4290afc0a",
+  "Files": [
+    {
+      "Path": "review.md",
+      "SourcePath": "/Users/jacob/dev/personal/alan-research/.superpowers/sdd/03-plan/final-review.md",
+      "Bytes": 18819,
+      "SHA256": "5846de089cd7770021abc49a6e0c7043335ee770b1ef0b3dc17fc1a852a5babe"
+    },
+    {
+      "Path": "reviewed-doc-source.json",
+      "SourcePath": "/Users/jacob/dev/personal/alan-research/.superpowers/sdd/03-plan/final-doc-completion-source.json",
+      "Bytes": 6182,
+      "SHA256": "cee05bfa089b4eb5faed259f37c832c3657f2d729252cd36fd93bc7071277810"
+    },
+    {
+      "Path": "mutation-initial-probe.json",
+      "SourcePath": "/tmp/phase3b3-final-review-mutations-initial.json",
+      "Bytes": 657,
+      "SHA256": "1a0154bb5e32f38e0b9370cdc5aceda0c5494f2682ba0d7c2d64464de7713ed1"
+    },
+    {
+      "Path": "archive-check.json",
+      "SourcePath": "/tmp/phase3b3-final-review-archive-check.json",
+      "Bytes": 1657,
+      "SHA256": "af8c32b197bdd0b01ae39cff62d13df5070ed90bbef9dbc5281e52bbfc430ca3"
+    },
+    {
+      "Path": "normalization.json",
+      "SourcePath": "/tmp/phase3b3-final-review-normalization.json",
+      "Bytes": 1359,
+      "SHA256": "b530005cc624357d7a85aa4d08f4b2715db5001816ddb030edc8c87541a82803"
+    },
+    {
+      "Path": "mutation-initial-input.json",
+      "SourcePath": "/tmp/alan-phase3b3-runtime-frozen/normal/cut-01-before-grant-3895259448/initial/inspect.json",
+      "Bytes": 34286,
+      "SHA256": "8f5f02c3b63f26aea51a231c04b6c6a93d4a16c9cecb363010559ab59e52f6ec"
+    }
+  ],
+  "MutationProbeBinarySHA256": "d8b21e15e98ce04b32179104e4fa81f1cb1ef4094034a1dd61f3d50c3543c2c1",
+  "AllVerdicts": "APPROVE within the declared bounded scope",
+  "OpenFindings": [
+    {
+      "Severity": "Minor",
+      "Status": "Documented and deferred",
+      "Finding": "Mutation CLI indexes absent rows on a raw-valid incomplete parent."
+    }
+  ]
+}

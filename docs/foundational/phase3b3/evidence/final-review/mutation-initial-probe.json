@@ -1,0 +1,9 @@
+{
+  "Command": [
+    "/tmp/alan-phase3b3-research-frozen/correspondence-mutations",
+    "/tmp/alan-phase3b3-runtime-frozen/normal/cut-01-before-grant-3895259448/initial/inspect.json"
+  ],
+  "Exit": 2,
+  "Stdout": "",
+  "Stderr": "panic: runtime error: index out of range [0] with length 0\n\ngoroutine 1 [running]:\ngithub.com/JakeFAU/alan-research/research/delegationcorrespondence.RawMutations({0x1743f27ca000, 0x85ee, 0x85ef})\n\t/Users/jacob/dev/personal/alan-research/research/delegationcorrespondence/mutations.go:48 +0x2018\nmain.main()\n\t/Users/jacob/dev/personal/alan-research/research/delegationcorrespondence/cmd/mutations/main.go:25 +0x134\n"
+}

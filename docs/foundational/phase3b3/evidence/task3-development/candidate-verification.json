@@ -1,0 +1,52 @@
+{
+  "SourceManifestSHA256": "9ca9c230e7ebbe3185474fc5a52db07fda36af0a764f006733032bbe9d5477c6",
+  "SourceFiles": 22,
+  "SourceFilesStable": true,
+  "BinarySHA256": "71ec2d01b3c421550b918dbec06db2e87732010a6eb626cf9649d9465b22e55f",
+  "CommandsMatchExpected": true,
+  "CommandCount": 14,
+  "Tests": [
+    {
+      "Command": "normal-tests-causal-controls",
+      "PassEvents": 41,
+      "SkipEvents": 0
+    },
+    {
+      "Command": "race-tests-causal-controls",
+      "PassEvents": 41,
+      "SkipEvents": 0
+    }
+  ],
+  "Corpora": [
+    {
+      "Root": "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "Cases": 48,
+      "Phases": 117,
+      "FilesVerified": 1761,
+      "RawValid": 43,
+      "Mismatches": [
+        {
+          "Name": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ProjectionErrors": []
+    },
+    {
+      "Root": "/tmp/alan-phase3b3-runtime-frozen/race",
+      "Cases": 48,
+      "Phases": 117,
+      "FilesVerified": 1761,
+      "RawValid": 43,
+      "Mismatches": [
+        {
+          "Name": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ProjectionErrors": []
+    }
+  ],
+  "CheckerMutantsKilled": 4,
+  "NonfatalBuildStderrBytes": 131
+}

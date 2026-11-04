@@ -1,0 +1,77 @@
+{
+  "Status": "Task3 rejected raw-checker candidate; projection/progress independently approved",
+  "CandidateSourceSHA256": "9ca9c230e7ebbe3185474fc5a52db07fda36af0a764f006733032bbe9d5477c6",
+  "CandidateArchive": "../task3-development/candidate.tar.gz",
+  "ArchiveSHA256": "834c8a943d6df54deb0e22d139b831135f53cbc227eda6c91b1ebfb6826d276d",
+  "Files": [
+    {
+      "Path": "changed-permissions-final.json",
+      "Bytes": 168721,
+      "SHA256": "08ee9522d4a77c5f6dfc4b1531decc3d9295759c5191ee4bed8fda88e2409796"
+    },
+    {
+      "Path": "changed-permissions-initial.json",
+      "Bytes": 34286,
+      "SHA256": "c572bbb15343a0ad175d58d87e704bfb1edeac188cb59714f769096b2b45e285"
+    },
+    {
+      "Path": "continuity-result.json",
+      "Bytes": 200,
+      "SHA256": "1042f04ed2f01c9836d72ac8871d2ab86f89e1ded2dc4edc6a3653ba9b092ac4"
+    },
+    {
+      "Path": "continuity.go",
+      "Bytes": 1945,
+      "SHA256": "67b44f3f5e5dfdd96e16591d5910e8fdc2b8639001d494b6bfd5755689288e7c"
+    },
+    {
+      "Path": "epoch-result.json",
+      "Bytes": 960,
+      "SHA256": "8830fab6545e6f7f4df9f086c088996f9615c6114667251e63f3dfda90ae4264"
+    },
+    {
+      "Path": "epoch.go",
+      "Bytes": 1995,
+      "SHA256": "01f947683c448c934a863d464aa28dfaa3e2184f3aa83b4c69f2b2216786f8c5"
+    },
+    {
+      "Path": "manifest.json",
+      "Bytes": 1195,
+      "SHA256": "4f43aff0bcfd8b00ac2c4884f16a29a98da7500a9c73cd1618430c97aa4e3887"
+    },
+    {
+      "Path": "missing-request-route-command.json",
+      "Bytes": 695,
+      "SHA256": "68d48bd8dfc259025161e3d34ad36c828453850e2bea25734b638b36bff5d1f4"
+    },
+    {
+      "Path": "missing-request-route-verdict.json",
+      "Bytes": 68171,
+      "SHA256": "31eabd05c4ae34a7a2a96735c35eb8f18797e627088160a5d550bd9d919ff551"
+    },
+    {
+      "Path": "missing-request-route.json",
+      "Bytes": 167164,
+      "SHA256": "304ad2640f7664a6916fe4126d317e4ab583531ccf72991295ba1fb90984b4c5"
+    },
+    {
+      "Path": "missing-request-route.stderr",
+      "Bytes": 0,
+      "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "Path": "stale-current-epoch-boundaries.jsonl",
+      "Bytes": 12499,
+      "SHA256": "976f7ebbae4a519a9255bf9cd4c4eb1b7704dc7691e6a6815bb9ccf718e73d62"
+    },
+    {
+      "Path": "stale-current-epoch.json",
+      "Bytes": 168431,
+      "SHA256": "974a98006e3c9cfc479e98a19599b9fac2d761a052d10741613d6422d3c5b597"
+    }
+  ],
+  "Reviews": {
+    "task-3-raw-review.md": "709a6ffa520aa867c2d9900352bc3fec20a3dd89db808fbdd9fba4bff008a79b",
+    "task-3-progress-review.md": "7249cd3c7fdf9904bf67acecd7e3d38d31593015d5597fc9acc9121719f2f594"
+  }
+}

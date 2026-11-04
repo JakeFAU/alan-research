@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "duplicate-keys",
+    "File": "wire.go",
+    "OriginalSHA256": "523fa1cd19d89f4e39b029dd833080700bfdce1ff17f675f533e7ab41019f9ff",
+    "MutatedSHA256": "6b2767df9eabff28b7c9d2fed9458f3c91483c81ea3e3907216e33d9ee25558e",
+    "Old": "if !ok || seen[s] {",
+    "New": "if !ok {",
+    "CommandRecord": "checker-mutant-duplicate-keys-command.json"
+  },
+  {
+    "Name": "attempt-binding",
+    "File": "check.go",
+    "OriginalSHA256": "2fb4d070a63c5f050305a99adfaa0e3eadfe403bb067d0e896c3a035132c59b5",
+    "MutatedSHA256": "624935429eb4ba61faa59d91de6ce02e8b8719ef28750d3725bbce1ef6e2eca6",
+    "Old": "need(g.AttemptDigest == digest(\"alan/attempt-row/v1\", a.Raw),",
+    "New": "need(true || g.AttemptDigest == digest(\"alan/attempt-row/v1\", a.Raw),",
+    "CommandRecord": "checker-mutant-attempt-binding-command.json"
+  },
+  {
+    "Name": "fresh-policy",
+    "File": "check.go",
+    "OriginalSHA256": "2fb4d070a63c5f050305a99adfaa0e3eadfe403bb067d0e896c3a035132c59b5",
+    "MutatedSHA256": "db752ced9996e87b45009f61e27b13e02db782dbc363a239a112b6073ff0858e",
+    "Old": "need(g.Allowed == allowed && g.Reason == reason,",
+    "New": "need(true || g.Allowed == allowed && g.Reason == reason,",
+    "CommandRecord": "checker-mutant-fresh-policy-command.json"
+  },
+  {
+    "Name": "causal-prefix",
+    "File": "custody.go",
+    "OriginalSHA256": "25397f838435498b79553d714fdab9fe15106cc21ea30308ca1511f25e3e9ea9",
+    "MutatedSHA256": "4a547d5dc79a534dd2a983f0ceec5f60f3e0537d87f1043cb519cdb10d7bda84",
+    "Old": "c.requireObservationPrefix(o)",
+    "New": "// omitted by mutation control",
+    "CommandRecord": "checker-mutant-causal-prefix-command.json"
+  }
+]

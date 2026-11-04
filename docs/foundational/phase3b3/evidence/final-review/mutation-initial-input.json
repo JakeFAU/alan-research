@@ -1,0 +1,291 @@
+{
+  "Namespace": "3eadfd362e741d727440010e9965370196013688632aa602f30a934d12e0fbe6",
+  "KeyVersion": 2,
+  "Settings": {
+    "JournalMode": "wal",
+    "SQLiteVersion": "3.53.4",
+    "SQLiteSourceID": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "Synchronous": 2,
+    "ForeignKeys": 1,
+    "BusyTimeoutMS": 5000,
+    "QueryOnly": 1
+  },
+  "Tables": {
+    "adapter_attempts": [],
+    "adapter_results": [],
+    "admissions": [],
+    "attempts": [],
+    "composition_admission_decisions": [],
+    "composition_bindings": [],
+    "composition_charges": [],
+    "composition_closures": [],
+    "composition_deployment": [
+      {
+        "descriptor": "{\"Subjects\":[{\"ID\":\"a\",\"Generation\":1,\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},{\"ID\":\"b\",\"Generation\":1,\"Owner\":\"reciprocal:b\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false}],\"Runs\":[{\"ID\":{\"Subject\":\"a\",\"Generation\":1},\"ProgramID\":\"7a59770707c3f97f8f5bfd17b132e23ee7828bf44e2a08816f53083a9310d8c7\",\"Projection\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}},{\"ID\":{\"Subject\":\"b\",\"Generation\":1},\"ProgramID\":\"a083d92b7493276ec54623ffe63ff7698fc12cb37a43c19aa0f4cc376819beda\",\"Projection\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}]}",
+        "singleton": 1
+      }
+    ],
+    "composition_facts": [],
+    "composition_freezes": [],
+    "composition_invocations": [],
+    "composition_members": [],
+    "composition_outcome_deliveries": [],
+    "composition_permissions": [
+      {
+        "descriptor": "[{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56466/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"},{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56464/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"},{\"Kind\":\"message\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ab-request\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ba-request\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"grant-ready\"},{\"Kind\":\"message\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ba-reply\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ab-reply\"},{\"Kind\":\"observation\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"terminal\",\"Revision\":1,\"Obligation\":\"a-complete\"}]",
+        "singleton": 1
+      }
+    ],
+    "composition_profile": [
+      {
+        "descriptor": "{\"RequestAuthority\":\"alan/request-authority/v1\",\"Version\":\"alan/composition/v1\",\"Roots\":[{\"ID\":\"00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Members\":[{\"Subject\":\"b\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}},{\"ID\":\"1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Members\":[{\"Subject\":\"a\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}],\"Templates\":null}",
+        "singleton": 1,
+        "version": "alan/composition/v1"
+      }
+    ],
+    "composition_publications": [],
+    "composition_replies": [],
+    "composition_requests": [],
+    "composition_reservations": [],
+    "composition_results": [],
+    "composition_root_publications": [],
+    "composition_roots": [
+      {
+        "descriptor": "{\"ID\":\"00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Members\":[{\"Subject\":\"b\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}",
+        "id": "00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5"
+      },
+      {
+        "descriptor": "{\"ID\":\"1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Members\":[{\"Subject\":\"a\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}",
+        "id": "1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6"
+      }
+    ],
+    "composition_static_members": [
+      {
+        "descriptor": "{\"RootID\":\"00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5\",\"Run\":{\"Subject\":\"b\",\"Generation\":1}}",
+        "generation": 1,
+        "root_id": "00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5",
+        "subject": "b"
+      },
+      {
+        "descriptor": "{\"RootID\":\"1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6\",\"Run\":{\"Subject\":\"a\",\"Generation\":1}}",
+        "generation": 1,
+        "root_id": "1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6",
+        "subject": "a"
+      }
+    ],
+    "composition_templates": [],
+    "corpus_assets": [],
+    "external_attempts": [],
+    "external_receipts": [],
+    "history": [],
+    "intents": [],
+    "lifecycle_results": [],
+    "message_acknowledgments": [],
+    "metadata": [
+      {
+        "key_version": 2,
+        "namespace": "3eadfd362e741d727440010e9965370196013688632aa602f30a934d12e0fbe6",
+        "schema_version": 13,
+        "semantics": "alan/1d/v1",
+        "singleton": 1
+      }
+    ],
+    "observations": [],
+    "permissions": [
+      {
+        "kind": "external",
+        "obligation": "ba-service",
+        "operation": "apply",
+        "revision": 1,
+        "source": "b",
+        "target": "http://127.0.0.1:56466/apply"
+      },
+      {
+        "kind": "external",
+        "obligation": "ab-service",
+        "operation": "apply",
+        "revision": 1,
+        "source": "b",
+        "target": "http://127.0.0.1:56464/apply"
+      },
+      {
+        "kind": "message",
+        "obligation": "ab-request",
+        "operation": "message",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      },
+      {
+        "kind": "message",
+        "obligation": "ba-request",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "message",
+        "obligation": "grant-ready",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "message",
+        "obligation": "ba-reply",
+        "operation": "message",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      },
+      {
+        "kind": "message",
+        "obligation": "ab-reply",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "observation",
+        "obligation": "a-complete",
+        "operation": "terminal",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      }
+    ],
+    "programs": [
+      {
+        "bytes": "{\"Semantics\":\"alan/1d/v1\",\"Code\":[{\"Op\":\"emit\",\"Dst\":\"ab_request\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-request\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56466/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"grant-ready\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"grant\":\"grant_data\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-request\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"claim\":\"peer_claim\",\"request_id\":\"peer_request\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"service_operation\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56466/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"Kind\":\"external\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56466/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-service\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"delta\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"profile\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56466/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-service\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"service_accepted\",\"disposition\":\"disposition\",\"mutation\":\"mutation\",\"total\":\"total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":6,\"Otherwise\":10,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"reply\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-reply\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"accepted\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"mutation\":{\"Ref\":\"mutation\",\"Literal\":null,\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"Offset\":null},\"service_operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null},\"total\":{\"Ref\":\"total\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-reply\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"accepted\":\"paid\",\"mutation\":\"reply_mutation\",\"request_id\":\"reply_request\",\"service_operation\":\"reply_service\",\"total\":\"reply_total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"paid\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":9,\"Otherwise\":10,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"succeeded\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"failed\"}]}",
+        "id": "7a59770707c3f97f8f5bfd17b132e23ee7828bf44e2a08816f53083a9310d8c7",
+        "semantics": "alan/1d/v1"
+      },
+      {
+        "bytes": "{\"Semantics\":\"alan/1d/v1\",\"Code\":[{\"Op\":\"emit\",\"Dst\":\"ba_request\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-request\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56466/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"grant\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"lifecycle\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegation-result\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56466/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"Offset\":null},\"revision\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"lifecycle\",\"Provenance\":\"runtime-lifecycle\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegation-result\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"grant\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"grant_accepted\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"grant_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":4,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"ready\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"grant-ready\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"grant\":{\"Ref\":\"grant\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-reply\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"accepted\":\"paid\",\"mutation\":\"reply_mutation\",\"request_id\":\"reply_request\",\"service_operation\":\"reply_service\",\"total\":\"reply_total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"paid\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":7,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-request\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"claim\":\"peer_claim\",\"request_id\":\"peer_request\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"service_operation\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56464/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"Kind\":\"external\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56464/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-service\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"delta\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"profile\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56464/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-service\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"service_accepted\",\"disposition\":\"disposition\",\"mutation\":\"mutation\",\"total\":\"total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":11,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"reply\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-reply\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"accepted\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"mutation\":{\"Ref\":\"mutation\",\"Literal\":null,\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"Offset\":null},\"service_operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null},\"total\":{\"Ref\":\"total\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"terminal\",\"Provenance\":\"runtime-terminal\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a-complete\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"outcome\":\"peer_outcome\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"succeeded\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"failed\"}]}",
+        "id": "a083d92b7493276ec54623ffe63ff7698fc12cb37a43c19aa0f4cc376819beda",
+        "semantics": "alan/1d/v1"
+      }
+    ],
+    "run_origins": [
+      {
+        "descriptor": "{\"Subject\":{\"ID\":\"a\",\"Generation\":1,\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},\"ProgramID\":\"7a59770707c3f97f8f5bfd17b132e23ee7828bf44e2a08816f53083a9310d8c7\",\"Initial\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}",
+        "generation": 1,
+        "kind": "root",
+        "operation_id": null,
+        "predecessor_generation": null,
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"Subject\":{\"ID\":\"b\",\"Generation\":1,\"Owner\":\"reciprocal:b\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},\"ProgramID\":\"a083d92b7493276ec54623ffe63ff7698fc12cb37a43c19aa0f4cc376819beda\",\"Initial\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}",
+        "generation": 1,
+        "kind": "root",
+        "operation_id": null,
+        "predecessor_generation": null,
+        "subject": "b"
+      }
+    ],
+    "runs": [
+      {
+        "epoch": 1,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "7a59770707c3f97f8f5bfd17b132e23ee7828bf44e2a08816f53083a9310d8c7",
+        "projection": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 0,
+        "subject": "a"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "a083d92b7493276ec54623ffe63ff7698fc12cb37a43c19aa0f4cc376819beda",
+        "projection": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 0,
+        "subject": "b"
+      }
+    ],
+    "settlements": [],
+    "subjects": [
+      {
+        "generation": 1,
+        "id": "a",
+        "owner": "reciprocal:a",
+        "retired": 0,
+        "retry_cancelled": 0,
+        "revision": 1
+      },
+      {
+        "generation": 1,
+        "id": "b",
+        "owner": "reciprocal:b",
+        "retired": 0,
+        "retry_cancelled": 0,
+        "revision": 1
+      }
+    ],
+    "terminal_obligations": []
+  },
+  "Roots": [
+    {
+      "RootID": "00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5",
+      "Run": {
+        "Subject": "b",
+        "Generation": 1
+      },
+      "LocalStatus": "open",
+      "Limits": {
+        "MaxInvocations": 0,
+        "MaxCreatedRuns": 0,
+        "MaxDepth": 0,
+        "MaxEffects": 1,
+        "MaxInFlight": 1
+      },
+      "Charges": {
+        "RootID": "00c80470b6a67c3225da7a0b53f3d905e08a457db8ee23f5f22f6714a364a6c5",
+        "OperationID": "",
+        "Kind": "",
+        "Invocations": 0,
+        "CreatedRuns": 0,
+        "Effects": 0,
+        "DecisionOrder": 0
+      },
+      "Outcome": null,
+      "Pending": "members",
+      "PendingInvocations": [],
+      "UnresolvedExternal": [],
+      "UnknownExternal": []
+    },
+    {
+      "RootID": "1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6",
+      "Run": {
+        "Subject": "a",
+        "Generation": 1
+      },
+      "LocalStatus": "open",
+      "Limits": {
+        "MaxInvocations": 0,
+        "MaxCreatedRuns": 0,
+        "MaxDepth": 0,
+        "MaxEffects": 1,
+        "MaxInFlight": 1
+      },
+      "Charges": {
+        "RootID": "1ccb3ed82ed815b2bdf6268e1dee7278c9af5ac226462817c854ad60f57a11b6",
+        "OperationID": "",
+        "Kind": "",
+        "Invocations": 0,
+        "CreatedRuns": 0,
+        "Effects": 0,
+        "DecisionOrder": 0
+      },
+      "Outcome": null,
+      "Pending": "members",
+      "PendingInvocations": [],
+      "UnresolvedExternal": [],
+      "UnknownExternal": []
+    }
+  ]
+}

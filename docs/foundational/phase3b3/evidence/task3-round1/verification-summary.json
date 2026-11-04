@@ -1,0 +1,164 @@
+{
+  "SourceManifestSHA256": "036e16e86dd06c63ad98342c98676409a5b0d8316bf4612c0e3794fcd70f00b3",
+  "SourceStable": true,
+  "Files": 23,
+  "BinarySHA256": "8f3f5d19223546a20991f105624a70db60959479a255aeb56e3aa961641a176d",
+  "Commands": 12,
+  "CommandsMatchExpected": true,
+  "Tests": [
+    {
+      "Name": "normal-tests",
+      "PassEvents": 58,
+      "Skips": 0,
+      "Failures": 0
+    },
+    {
+      "Name": "race-tests",
+      "PassEvents": 58,
+      "Skips": 0,
+      "Failures": 0
+    }
+  ],
+  "Corpora": [
+    {
+      "Name": "normal",
+      "Cases": 48,
+      "Phases": 117,
+      "FilesVerified": 1761,
+      "RawValid": 43,
+      "ExternalInvalidForRawValid": [],
+      "ContinuityFailures": [],
+      "Mismatches": [
+        {
+          "Case": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ProjectionErrors": []
+    },
+    {
+      "Name": "race",
+      "Cases": 48,
+      "Phases": 117,
+      "FilesVerified": 1761,
+      "RawValid": 43,
+      "ExternalInvalidForRawValid": [],
+      "ContinuityFailures": [],
+      "Mismatches": [
+        {
+          "Case": "control-wrong-prior-selection",
+          "Mismatch": "immediate_selection_narrows_model_admission"
+        }
+      ],
+      "ProjectionErrors": []
+    }
+  ],
+  "ReviewerProbes": {
+    "review-request-route": {
+      "InputSHA256": "304ad2640f7664a6916fe4126d317e4ab583531ccf72991295ba1fb90984b4c5",
+      "Valid": false,
+      "Failure": {
+        "Edge": "admission_permission",
+        "ID": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\"]",
+        "Detail": "{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ba-request\"}",
+        "Order": 0
+      }
+    },
+    "review-continuity": {
+      "ContinuityFailure": {
+        "Edge": "immutable_source_changed",
+        "ID": "final/inspect.json",
+        "Detail": "permissions",
+        "Order": 0
+      },
+      "FinalFailure": null,
+      "FinalValid": true,
+      "InitialValid": true,
+      "SourceCase": "/tmp/alan-phase3b3-runtime-frozen/normal/cut-06b-applied-no-receipt-3686630247"
+    },
+    "review-epoch": {
+      "Exposures": null,
+      "ExternalFailure": {
+        "Edge": "boundary_owner_epoch",
+        "ID": "fresh-owner/boundaries.jsonl",
+        "Detail": "[\"a\",1,4,0]",
+        "Order": 0
+      },
+      "ExternalValid": false,
+      "OwnerEpochs": {
+        "first-owner": {
+          "a": 2,
+          "b": 2
+        },
+        "fresh-owner": {
+          "a": 3,
+          "b": 3
+        }
+      },
+      "RawFailure": null,
+      "RawValid": true
+    }
+  },
+  "Mutations": {
+    "Count": 15,
+    "Invalid": 15,
+    "HolderRecipient": [
+      {
+        "Name": "altered-holder",
+        "OriginalSHA256": "e371654a8b8b9def3ab6f29edfd067c7bc418f7c9e58a72da23fed2ff8296d18",
+        "MutatedSHA256": "d2443deba2b444d1ad4af30950aaef62f8b4c5414a0e0415274f1b8ef4ecdc12",
+        "SemanticField": "external_attempts.descriptor.Authority.Use.Root.Run.Subject",
+        "OriginalIDs": [
+          "[\"a\",1,4,0]",
+          "[\"b\",1,2,0]",
+          "[\"b\",1,1,0]"
+        ],
+        "MutatedIDs": [
+          "[\"b\",1,2,0]",
+          "[\"b\",1,1,0]",
+          "[\"a\",1,4,0]"
+        ],
+        "FirstFailure": {
+          "Edge": "first_authority_policy",
+          "ID": "[\"a\",1,4,0]",
+          "Detail": "derived authorized retained authorized",
+          "Order": 16
+        },
+        "Changes": 5
+      },
+      {
+        "Name": "altered-recipient",
+        "OriginalSHA256": "e371654a8b8b9def3ab6f29edfd067c7bc418f7c9e58a72da23fed2ff8296d18",
+        "MutatedSHA256": "20f6dd64dcdc993538e421eedccda115ac3508a9aa4cf093654e3152c30d1752",
+        "SemanticField": "lifecycle_results.descriptor.Intent.Payload.claim.Text.Recipient.Subject",
+        "OriginalIDs": [
+          "[\"b\",1,2,0]",
+          "[{\"Subject\":\"a\",\"Generation\":1}]"
+        ],
+        "MutatedIDs": [
+          "[\"b\",1,2,0]",
+          "[{\"Subject\":\"b\",\"Generation\":1}]"
+        ],
+        "FirstFailure": {
+          "Edge": "lifecycle_origin",
+          "ID": "[\"b\",1,2,0]",
+          "Detail": "",
+          "Order": 0
+        },
+        "Changes": 2
+      }
+    ]
+  },
+  "BuildStderrBytes": 0,
+  "PostQualificationDocumentationOnlyChange": "README clarified preserved external receipt rows; all Go/module/test/fixture bytes identical to tested-source.json",
+  "ChangedFiles": [
+    "research/delegationcorrespondence/README.md",
+    "research/delegationcorrespondence/custody.go",
+    "research/delegationcorrespondence/external.go",
+    "research/delegationcorrespondence/files.go",
+    "research/delegationcorrespondence/mutations.go",
+    "research/delegationcorrespondence/review_fixes_test.go"
+  ],
+  "ProjectionProgressGeneratorUnchanged": true,
+  "ModuleAndModelInputsStable": true
+}
