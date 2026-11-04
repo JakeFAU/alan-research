@@ -1,0 +1,1 @@
+[{"Config":{"Policy":"S2","Scenario":"LateGrant"},"Prefixes":111065,"Edges":840616,"UnsafePrefixes":0,"UnsafeEdges":0,"PaidOriginals":[44224,41152]},{"Config":{"Policy":"S2","Scenario":"Revocable"},"Prefixes":220564,"Edges":1740832,"UnsafePrefixes":0,"UnsafeEdges":0,"PaidOriginals":[86144,83840]}]

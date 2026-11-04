@@ -1,0 +1,742 @@
+{
+  "AfterAuthorization": {
+    "Base": {
+      "Agents": [
+        {
+          "Down": false,
+          "Crashed": false,
+          "Activation": 0
+        },
+        {
+          "Down": false,
+          "Crashed": false,
+          "Activation": 0
+        }
+      ],
+      "Obligations": [
+        {
+          "Committed": true,
+          "Admitted": true,
+          "Applied": false,
+          "Consumed": false,
+          "Volatile": 0,
+          "Recorded": 0,
+          "Retained": 0,
+          "RequestChannel": false,
+          "ResultChannel": 0,
+          "ACKChannel": false,
+          "WorldResult": 0
+        },
+        {
+          "Committed": true,
+          "Admitted": true,
+          "Applied": false,
+          "Consumed": false,
+          "Volatile": 0,
+          "Recorded": 0,
+          "Retained": 0,
+          "RequestChannel": false,
+          "ResultChannel": 0,
+          "ACKChannel": false,
+          "WorldResult": 0
+        }
+      ]
+    },
+    "Authority": [
+      {
+        "Decision": 0,
+        "Path": 0,
+        "Refusal": 0,
+        "Permit": false,
+        "PermitActivation": 0,
+        "AdmissionRefused": false
+      },
+      {
+        "Decision": 1,
+        "Path": 2,
+        "Refusal": 0,
+        "Permit": false,
+        "PermitActivation": 0,
+        "AdmissionRefused": false
+      }
+    ],
+    "Grant": 1,
+    "Revoked": false,
+    "Unsafe": 0
+  },
+  "Audit": {
+    "ProtocolValid": true,
+    "AuthoritySafe": true,
+    "Conditions": [],
+    "Paid": [
+      false,
+      false
+    ],
+    "Unpaid": [
+      true,
+      true
+    ],
+    "EventsChecked": 8
+  },
+  "BAAuthorizationCandidates": [
+    {
+      "Kind": "authorize",
+      "Actor": 0,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 2,
+        "Root": "B/g1:b",
+        "Grant": "grant:BA:b",
+        "Principal": 0,
+        "Generation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        },
+        "Revision": 0
+      },
+      "Decision": 1,
+      "Refusal": "",
+      "Violations": 0
+    }
+  ],
+  "BeforeAuthorization": {
+    "Base": {
+      "Agents": [
+        {
+          "Down": false,
+          "Crashed": false,
+          "Activation": 0
+        },
+        {
+          "Down": false,
+          "Crashed": false,
+          "Activation": 0
+        }
+      ],
+      "Obligations": [
+        {
+          "Committed": true,
+          "Admitted": true,
+          "Applied": false,
+          "Consumed": false,
+          "Volatile": 0,
+          "Recorded": 0,
+          "Retained": 0,
+          "RequestChannel": false,
+          "ResultChannel": 0,
+          "ACKChannel": false,
+          "WorldResult": 0
+        },
+        {
+          "Committed": true,
+          "Admitted": true,
+          "Applied": false,
+          "Consumed": false,
+          "Volatile": 0,
+          "Recorded": 0,
+          "Retained": 0,
+          "RequestChannel": false,
+          "ResultChannel": 0,
+          "ACKChannel": false,
+          "WorldResult": 0
+        }
+      ]
+    },
+    "Authority": [
+      {
+        "Decision": 0,
+        "Path": 0,
+        "Refusal": 0,
+        "Permit": false,
+        "PermitActivation": 0,
+        "AdmissionRefused": false
+      },
+      {
+        "Decision": 0,
+        "Path": 0,
+        "Refusal": 0,
+        "Permit": false,
+        "PermitActivation": 0,
+        "AdmissionRefused": false
+      }
+    ],
+    "Grant": 1,
+    "Revoked": false,
+    "Unsafe": 0
+  },
+  "BothOriginalsOutstanding": true,
+  "Config": {
+    "Policy": "S2",
+    "Scenario": "LateGrant"
+  },
+  "Description": "Generated model witness, not actual runtime evidence. Request/ready selections stutter under the proposed coarse projection.",
+  "Events": [
+    {
+      "Kind": "commit",
+      "Actor": 0,
+      "Obligation": 0,
+      "Binding": {
+        "Original": "AB",
+        "Caller": 0,
+        "CallerGeneration": 1,
+        "Callee": 1,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "send-request",
+      "Actor": 0,
+      "Obligation": 0,
+      "Binding": {
+        "Original": "AB",
+        "Caller": 0,
+        "CallerGeneration": 1,
+        "Callee": 1,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "admit",
+      "Actor": 1,
+      "Obligation": 0,
+      "Binding": {
+        "Original": "AB",
+        "Caller": 0,
+        "CallerGeneration": 1,
+        "Callee": 1,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "commit",
+      "Actor": 1,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "send-request",
+      "Actor": 1,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "admit",
+      "Actor": 0,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "retain-grant",
+      "Actor": 1,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": true,
+      "Grant": {
+        "ID": "grant:BA:b",
+        "Parent": "B/g1:b",
+        "Root": "B/g1:b",
+        "Issuer": 1,
+        "IssuerGeneration": 1,
+        "Grantee": 0,
+        "GranteeGeneration": 1,
+        "Permissions": 4,
+        "Binding": {
+          "Original": "BA",
+          "Caller": 1,
+          "CallerGeneration": 1,
+          "Callee": 0,
+          "CalleeGeneration": 1,
+          "Operation": 1,
+          "Permission": {
+            "Operation": "increment",
+            "Resource": "counter-B",
+            "Scope": "blue"
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": true,
+        "Accepted": true
+      },
+      "Authority": {
+        "Path": 0,
+        "Root": "",
+        "Grant": "",
+        "Principal": 0,
+        "Generation": 0,
+        "Permission": {
+          "Operation": "",
+          "Resource": "",
+          "Scope": ""
+        },
+        "Revision": 0
+      },
+      "Decision": 0,
+      "Refusal": "",
+      "Violations": 0
+    },
+    {
+      "Kind": "authorize",
+      "Actor": 0,
+      "Obligation": 1,
+      "Binding": {
+        "Original": "BA",
+        "Caller": 1,
+        "CallerGeneration": 1,
+        "Callee": 0,
+        "CalleeGeneration": 1,
+        "Operation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        }
+      },
+      "Result": 0,
+      "Duplicate": false,
+      "Activation": 0,
+      "Revision": 0,
+      "HasGrant": false,
+      "Grant": {
+        "ID": "",
+        "Parent": "",
+        "Root": "",
+        "Issuer": 0,
+        "IssuerGeneration": 0,
+        "Grantee": 0,
+        "GranteeGeneration": 0,
+        "Permissions": 0,
+        "Binding": {
+          "Original": "",
+          "Caller": 0,
+          "CallerGeneration": 0,
+          "Callee": 0,
+          "CalleeGeneration": 0,
+          "Operation": 0,
+          "Permission": {
+            "Operation": "",
+            "Resource": "",
+            "Scope": ""
+          }
+        },
+        "Revision": 0,
+        "NoRedelegation": false,
+        "Accepted": false
+      },
+      "Authority": {
+        "Path": 2,
+        "Root": "B/g1:b",
+        "Grant": "grant:BA:b",
+        "Principal": 0,
+        "Generation": 1,
+        "Permission": {
+          "Operation": "increment",
+          "Resource": "counter-B",
+          "Scope": "blue"
+        },
+        "Revision": 0
+      },
+      "Decision": 1,
+      "Refusal": "",
+      "Violations": 0
+    }
+  ],
+  "RuntimeFactsInserted": false
+}

@@ -1,0 +1,68 @@
+package main
+
+import (
+ "encoding/json"
+ "fmt"
+ "os"
+ m "github.com/JakeFAU/alan-research/research/authorityservice"
+ b "github.com/JakeFAU/alan-research/research/mutualobligations"
+)
+
+type Node struct { State m.State; Parent int; Event m.Event }
+type Edge struct { From, To int }
+type Output struct {
+ Config string
+ States, Arcs, SafeComplete, SafeCompletable, NoBARefusal, NonCompletableNoBARefusal, RefusedYetCompletable int
+ ViabilityPredicate, PredicateMismatches, CompleteWithSuccessors, IncompleteDeadEnds int
+ RefusedNoGrant, RefusedRetainedGrant, RetainedGrantNotCompletable int
+ FirstNonCompletable, FirstPredicateMismatch []m.Event
+ ConditionalSuffixBound int
+}
+
+func main() {
+ reports:=[]Output{}
+ for _, scenario := range []string{"LateGrant", "Revocable"} {
+  c:=m.Config{Policy:"S2", Scenario:scenario}
+  nodes:=[]Node{{State:m.Initial(c),Parent:-1}}
+  ids:=map[m.State]int{nodes[0].State:0}
+  edges:=[]Edge{}
+  out:=Output{Config:c.Name()}
+  for i:=0;i<len(nodes);i++ {
+   s:=nodes[i].State
+   successors:=m.Successors(c,s)
+   if m.Complete(s) && len(successors)>0 {out.CompleteWithSuccessors++}
+   if !m.Complete(s) && len(successors)==0 {out.IncompleteDeadEnds++}
+   for _,e:=range successors {
+    to,ok:=ids[e.State]
+    if !ok {to=len(nodes);ids[e.State]=to;nodes=append(nodes,Node{State:e.State,Parent:i,Event:e.Event})}
+    edges=append(edges,Edge{i,to})
+   }
+  }
+  incoming:=make([][]int,len(nodes))
+  for _,e:=range edges {incoming[e.To]=append(incoming[e.To],e.From)}
+  reach:=make([]bool,len(nodes));distance:=make([]int,len(nodes));queue:=[]int{}
+  for i,n:=range nodes {if m.Complete(n.State)&&n.State.Unsafe==0 {reach[i]=true;queue=append(queue,i);out.SafeComplete++}}
+  for i:=0;i<len(queue);i++ {to:=queue[i];for _,from:=range incoming[to] {if !reach[from]&&nodes[from].State.Unsafe==0 {reach[from]=true;distance[from]=distance[to]+1;queue=append(queue,from)}}}
+  trace:=func(i int) []m.Event {es:=[]m.Event{};for nodes[i].Parent>=0 {es=append(es,nodes[i].Event);i=nodes[i].Parent};for l,r:=0,len(es)-1;l<r;l,r=l+1,r-1 {es[l],es[r]=es[r],es[l]};return es}
+  for i,n:=range nodes {
+   s:=n.State
+   noBARefusal:=s.Authority[b.BA].Decision!=m.Refused
+   if noBARefusal {out.NoBARefusal++;if !reach[i] {out.NonCompletableNoBARefusal++}}
+   if !noBARefusal&&reach[i] {out.RefusedYetCompletable++}
+   viable:=s.Unsafe==0
+   for d:=b.AB;d<=b.BA;d++ {viable=viable&&s.Authority[d].Decision!=m.Refused&&(!s.Revoked||s.Base.Obligations[d].Applied||s.Authority[d].Permit)}
+   if viable {out.ViabilityPredicate++}
+   if viable!=reach[i] {out.PredicateMismatches++;if out.FirstPredicateMismatch==nil {out.FirstPredicateMismatch=trace(i)}}
+   if !reach[i] {
+    if out.FirstNonCompletable==nil {out.FirstNonCompletable=trace(i)}
+    if s.Grant==m.RetainedGrant {out.RetainedGrantNotCompletable++}
+    if !noBARefusal {if s.Grant==m.NoGrant {out.RefusedNoGrant++};if s.Grant==m.RetainedGrant {out.RefusedRetainedGrant++}}
+   }
+   if noBARefusal&&reach[i]&&distance[i]>out.ConditionalSuffixBound {out.ConditionalSuffixBound=distance[i]}
+  }
+  out.States=len(nodes);out.Arcs=len(edges);out.SafeCompletable=len(queue)
+  reports=append(reports,out)
+ }
+ encoded,e:=json.MarshalIndent(reports,"","  ");if e!=nil {panic(e)};fmt.Println(string(encoded))
+ if len(os.Args)>1 {panic("unexpected args")}
+}
