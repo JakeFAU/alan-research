@@ -1,0 +1,447 @@
+{
+  "pairs": [
+    {
+      "after": "normal/C01-988119662/owner-01/post-open",
+      "before": "normal/C01-988119662/initial",
+      "case": "C01",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C01-988119662/final-owner/post-open",
+      "before": "normal/C01-988119662/stopped-01",
+      "case": "C01",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C02-52022291/owner-01/post-open",
+      "before": "normal/C02-52022291/initial",
+      "case": "C02",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C02-52022291/final-owner/post-open",
+      "before": "normal/C02-52022291/stopped-01",
+      "case": "C02",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C03-1098224101/owner-01/post-open",
+      "before": "normal/C03-1098224101/initial",
+      "case": "C03",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C03-1098224101/final-owner/post-open",
+      "before": "normal/C03-1098224101/stopped-01",
+      "case": "C03",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C04-4001208655/owner-01/post-open",
+      "before": "normal/C04-4001208655/initial",
+      "case": "C04",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C04-4001208655/final-owner/post-open",
+      "before": "normal/C04-4001208655/stopped-01",
+      "case": "C04",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C05-1663032320/owner-01/post-open",
+      "before": "normal/C05-1663032320/initial",
+      "case": "C05",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C05-1663032320/final-owner/post-open",
+      "before": "normal/C05-1663032320/stopped-01",
+      "case": "C05",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C06-440427550/owner-01/post-open",
+      "before": "normal/C06-440427550/initial",
+      "case": "C06",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C06-440427550/final-owner/post-open",
+      "before": "normal/C06-440427550/stopped-01",
+      "case": "C06",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C07-354626756/owner-01/post-open",
+      "before": "normal/C07-354626756/initial",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C07-354626756/owner-02/post-open",
+      "before": "normal/C07-354626756/stopped-01",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C07-354626756/final-owner/post-open",
+      "before": "normal/C07-354626756/stopped-02",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C08-3400828548/owner-01/post-open",
+      "before": "normal/C08-3400828548/initial",
+      "case": "C08",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "normal/C08-3400828548/final-owner/post-open",
+      "before": "normal/C08-3400828548/stopped-01",
+      "case": "C08",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "normal"
+    },
+    {
+      "after": "race/C01-2001103482/owner-01/post-open",
+      "before": "race/C01-2001103482/initial",
+      "case": "C01",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C01-2001103482/final-owner/post-open",
+      "before": "race/C01-2001103482/stopped-01",
+      "case": "C01",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C02-1122418703/owner-01/post-open",
+      "before": "race/C02-1122418703/initial",
+      "case": "C02",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C02-1122418703/final-owner/post-open",
+      "before": "race/C02-1122418703/stopped-01",
+      "case": "C02",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C03-1332184848/owner-01/post-open",
+      "before": "race/C03-1332184848/initial",
+      "case": "C03",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C03-1332184848/final-owner/post-open",
+      "before": "race/C03-1332184848/stopped-01",
+      "case": "C03",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C04-2504673923/owner-01/post-open",
+      "before": "race/C04-2504673923/initial",
+      "case": "C04",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C04-2504673923/final-owner/post-open",
+      "before": "race/C04-2504673923/stopped-01",
+      "case": "C04",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C05-3560964965/owner-01/post-open",
+      "before": "race/C05-3560964965/initial",
+      "case": "C05",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C05-3560964965/final-owner/post-open",
+      "before": "race/C05-3560964965/stopped-01",
+      "case": "C05",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C06-110771944/owner-01/post-open",
+      "before": "race/C06-110771944/initial",
+      "case": "C06",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C06-110771944/final-owner/post-open",
+      "before": "race/C06-110771944/stopped-01",
+      "case": "C06",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C07-2362254845/owner-01/post-open",
+      "before": "race/C07-2362254845/initial",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C07-2362254845/owner-02/post-open",
+      "before": "race/C07-2362254845/stopped-01",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C07-2362254845/final-owner/post-open",
+      "before": "race/C07-2362254845/stopped-02",
+      "case": "C07",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C08-642906865/owner-01/post-open",
+      "before": "race/C08-642906865/initial",
+      "case": "C08",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    },
+    {
+      "after": "race/C08-642906865/final-owner/post-open",
+      "before": "race/C08-642906865/stopped-01",
+      "case": "C08",
+      "changes": {
+        "runs": {
+          "only": "epoch",
+          "rows": 2
+        }
+      },
+      "checked_all_tables": true,
+      "mode": "race"
+    }
+  ],
+  "scope": "mechanical raw-table epoch-only comparison; not an independent principal/authority oracle"
+}

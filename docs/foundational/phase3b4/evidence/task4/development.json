@@ -1,0 +1,25 @@
+{
+  "roots": [
+    "/tmp/alan-task4-promoted-first",
+    "/tmp/alan-task4-refined-first",
+    "/tmp/alan-task4-compat-capacity-first",
+    "/tmp/alan-task4-qualified-race",
+    "/tmp/alan-task4-controlled-first",
+    "/tmp/alan-task4-ancillary-second",
+    "/tmp/alan-task4-positive-green",
+    "/tmp/alan-task4-cost-first",
+    "/tmp/alan-task4-cuts-first",
+    "/tmp/alan-task4-old-readers",
+    "/tmp/alan-task4-controlled-green",
+    "/tmp/alan-task4-negative-second",
+    "/tmp/alan-task4-qualification",
+    "/tmp/alan-task4-qualified-promoted-normal",
+    "/tmp/alan-task4-qualified-normal",
+    "/tmp/alan-task4-negative-third",
+    "/tmp/alan-task4-refined-second",
+    "/tmp/alan-task4-capacity-release",
+    "/tmp/alan-task4-apparatus-v1"
+  ],
+  "scope": "superseded successful runs and apparatus failures; not final qualified corpus",
+  "sha256": "18a23423863384eb16a47a6d83c055dad6994c2bc1f64c487a4fd96e9dd93b2c"
+}

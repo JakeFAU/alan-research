@@ -1,0 +1,4762 @@
+[
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 46567416,
+      "Replay": 44696375,
+      "construction": 401041,
+      "first_decision_window": 1361000,
+      "fresh_gate_window": 3942875
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "971440965ff474c6ccc754dccb3a296248c632d976ac7c2ae3cbb39f99d0c846"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "c68de852766c6ce1b4b76f1a007f34ce48df6d144f244a35a79891bcdb00d882",
+            "InvocationID": "root:971440965ff474c6ccc754dccb3a296248c632d976ac7c2ae3cbb39f99d0c846",
+            "OperationID": "root:971440965ff474c6ccc754dccb3a296248c632d976ac7c2ae3cbb39f99d0c846",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "971440965ff474c6ccc754dccb3a296248c632d976ac7c2ae3cbb39f99d0c846",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "eeaad11fc3a7d9beef52478c43af4c03445a89a969ac11f472f7cd772bdb5a76"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "571a90f02503b34a7c2a81835cc0d6eb8a2fc75d0aa7e7b23a62e304a9dcfac0",
+            "InvocationID": "root:eeaad11fc3a7d9beef52478c43af4c03445a89a969ac11f472f7cd772bdb5a76",
+            "OperationID": "root:eeaad11fc3a7d9beef52478c43af4c03445a89a969ac11f472f7cd772bdb5a76",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "eeaad11fc3a7d9beef52478c43af4c03445a89a969ac11f472f7cd772bdb5a76",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n00-observation01-1153901737",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 46801250,
+      "Replay": 44773000,
+      "construction": 390375,
+      "first_decision_window": 1141375,
+      "fresh_gate_window": 4279708
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "32e2870292f6ffb6d3d96bcf25b1001b9063d0c3759be88b86bb9d4b57b6ae18"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "fa5fc8deb695ee527162679df2c1cb84e9486be594bb3d392eaad225c3b5ff1e",
+            "InvocationID": "root:32e2870292f6ffb6d3d96bcf25b1001b9063d0c3759be88b86bb9d4b57b6ae18",
+            "OperationID": "root:32e2870292f6ffb6d3d96bcf25b1001b9063d0c3759be88b86bb9d4b57b6ae18",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "32e2870292f6ffb6d3d96bcf25b1001b9063d0c3759be88b86bb9d4b57b6ae18",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f9358359d8d14bd82385d402edd79121ccaff205a98f7427150b1833f3ae7071"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "323169f038c7c33e39be984a074e34cfd5f8aba0538ead1f0cef066b2dd8d185",
+            "InvocationID": "root:f9358359d8d14bd82385d402edd79121ccaff205a98f7427150b1833f3ae7071",
+            "OperationID": "root:f9358359d8d14bd82385d402edd79121ccaff205a98f7427150b1833f3ae7071",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f9358359d8d14bd82385d402edd79121ccaff205a98f7427150b1833f3ae7071",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n00-observation02-140058669",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 46482042,
+      "Replay": 44434916,
+      "construction": 852875,
+      "first_decision_window": 1275167,
+      "fresh_gate_window": 4056875
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "420b10eae11747482b38f941f95b8b61629829fc2cd2c1359e2b23e7f47892fa"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "90fa422d211e877fd533c4a9298175e24c437873fe42c7dc615acd2e863e08c0",
+            "InvocationID": "root:420b10eae11747482b38f941f95b8b61629829fc2cd2c1359e2b23e7f47892fa",
+            "OperationID": "root:420b10eae11747482b38f941f95b8b61629829fc2cd2c1359e2b23e7f47892fa",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "420b10eae11747482b38f941f95b8b61629829fc2cd2c1359e2b23e7f47892fa",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "877b5ba49cced155991510ece0bccd233c0b8685ff5cdb02371d7eaf97c2a5d2"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "bbd3cdf9035c6dd36a4794b35f9ec499951f28407144496e684df3e490d58e82",
+            "InvocationID": "root:877b5ba49cced155991510ece0bccd233c0b8685ff5cdb02371d7eaf97c2a5d2",
+            "OperationID": "root:877b5ba49cced155991510ece0bccd233c0b8685ff5cdb02371d7eaf97c2a5d2",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "877b5ba49cced155991510ece0bccd233c0b8685ff5cdb02371d7eaf97c2a5d2",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n00-observation03-1507196528",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 47767375,
+      "Replay": 44665083,
+      "construction": 432375,
+      "first_decision_window": 1155625,
+      "fresh_gate_window": 4595000
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "ac7418d7021ea5fbf921986e8613dbf7013f5770d5dd057a3550da55b73c90e5"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "5178cfe299f691506fe1837199f286e2184e57136930dee8d92ad37062bec2dc",
+            "InvocationID": "root:ac7418d7021ea5fbf921986e8613dbf7013f5770d5dd057a3550da55b73c90e5",
+            "OperationID": "root:ac7418d7021ea5fbf921986e8613dbf7013f5770d5dd057a3550da55b73c90e5",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "ac7418d7021ea5fbf921986e8613dbf7013f5770d5dd057a3550da55b73c90e5",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f3ddf4f5c9d0aa9aa2c2c26d476d57d21903f172acdbfd6453f776f8feef2ee7"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "b2986814c729b036949455f14cf27aabad3a933851f37eaa72882ad1c80bf7cd",
+            "InvocationID": "root:f3ddf4f5c9d0aa9aa2c2c26d476d57d21903f172acdbfd6453f776f8feef2ee7",
+            "OperationID": "root:f3ddf4f5c9d0aa9aa2c2c26d476d57d21903f172acdbfd6453f776f8feef2ee7",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f3ddf4f5c9d0aa9aa2c2c26d476d57d21903f172acdbfd6453f776f8feef2ee7",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n00-observation04-1970377542",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 46692041,
+      "Replay": 45014208,
+      "construction": 435333,
+      "first_decision_window": 1521125,
+      "fresh_gate_window": 4273292
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "11f66970c7741adad58e85d3bb848d6e407b07aa77104fca9166027e2f33792a"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "ca7077f54aafe42510e5fc9b4113312e10085c89f8bdd186f4efbe7180b73962",
+            "InvocationID": "root:11f66970c7741adad58e85d3bb848d6e407b07aa77104fca9166027e2f33792a",
+            "OperationID": "root:11f66970c7741adad58e85d3bb848d6e407b07aa77104fca9166027e2f33792a",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "11f66970c7741adad58e85d3bb848d6e407b07aa77104fca9166027e2f33792a",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "2043f7edf16588d47aba13d3577721f3420998c83bf5e355b959006556c292b3"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "4cb50431c53e371256e16d04778f3283edb3a52227360d6d606ed94f6b37791d",
+            "InvocationID": "root:2043f7edf16588d47aba13d3577721f3420998c83bf5e355b959006556c292b3",
+            "OperationID": "root:2043f7edf16588d47aba13d3577721f3420998c83bf5e355b959006556c292b3",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "2043f7edf16588d47aba13d3577721f3420998c83bf5e355b959006556c292b3",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n00-observation05-3839464577",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 48639333,
+      "Replay": 45916625,
+      "construction": 432625,
+      "first_decision_window": 1417417,
+      "fresh_gate_window": 4568250
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "32627fabe5ea90f475c22881fc26878a4a7592492a37dcdfb6df7f460dfb7215"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "b380dd54690910980e0a06f67701ee9e7636ca1a18dc6765669f8f910880f470",
+            "InvocationID": "root:32627fabe5ea90f475c22881fc26878a4a7592492a37dcdfb6df7f460dfb7215",
+            "OperationID": "root:32627fabe5ea90f475c22881fc26878a4a7592492a37dcdfb6df7f460dfb7215",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "32627fabe5ea90f475c22881fc26878a4a7592492a37dcdfb6df7f460dfb7215",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f0eb97fb346ed9879c8596b4e75a4df61d2865cb1d700f24fc4fbdbb6c17b825"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "0b8e6152a7c7e4c8211f452f86d325261ed098496a3d37e34676ed312b47b9b8",
+            "InvocationID": "root:f0eb97fb346ed9879c8596b4e75a4df61d2865cb1d700f24fc4fbdbb6c17b825",
+            "OperationID": "root:f0eb97fb346ed9879c8596b4e75a4df61d2865cb1d700f24fc4fbdbb6c17b825",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f0eb97fb346ed9879c8596b4e75a4df61d2865cb1d700f24fc4fbdbb6c17b825",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n01-observation01-3457435221",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 49239834,
+      "Replay": 48074833,
+      "construction": 408750,
+      "first_decision_window": 1492042,
+      "fresh_gate_window": 4322959
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "0cc5d629d2ac3c0cc0b1481826b73eadc8666fa5ced4f11a69ed949527517d1e"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "fa240b08d3029dc5cb14110edad02abb8122e4015dc89411f24ec2d5c0bad6fe",
+            "InvocationID": "root:0cc5d629d2ac3c0cc0b1481826b73eadc8666fa5ced4f11a69ed949527517d1e",
+            "OperationID": "root:0cc5d629d2ac3c0cc0b1481826b73eadc8666fa5ced4f11a69ed949527517d1e",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "0cc5d629d2ac3c0cc0b1481826b73eadc8666fa5ced4f11a69ed949527517d1e",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "9106b8e5f5f33026afc3279678793bb6be2323f6e649afc4bc6dc7df601f1730"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "c56eefe5ba621befc2e67ada3f36a999fb666c2b715c8def121e255d596eabe2",
+            "InvocationID": "root:9106b8e5f5f33026afc3279678793bb6be2323f6e649afc4bc6dc7df601f1730",
+            "OperationID": "root:9106b8e5f5f33026afc3279678793bb6be2323f6e649afc4bc6dc7df601f1730",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "9106b8e5f5f33026afc3279678793bb6be2323f6e649afc4bc6dc7df601f1730",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n01-observation02-2311707603",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 48627250,
+      "Replay": 46477875,
+      "construction": 401334,
+      "first_decision_window": 1245583,
+      "fresh_gate_window": 4475792
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "ed97ef7cd12f0f00f5044ce0f066c949a2c0d9ee6dbff40ea1569c30a52edbf3"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "5ad80bbf0251f0f2786f3687a608885ce9f82fa72857195147c9b083e48e99f9",
+            "InvocationID": "root:ed97ef7cd12f0f00f5044ce0f066c949a2c0d9ee6dbff40ea1569c30a52edbf3",
+            "OperationID": "root:ed97ef7cd12f0f00f5044ce0f066c949a2c0d9ee6dbff40ea1569c30a52edbf3",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "ed97ef7cd12f0f00f5044ce0f066c949a2c0d9ee6dbff40ea1569c30a52edbf3",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f750a727bea307248dc36cb3cf49b8439291e44ccd496eaa8ed0b80230aa68b5"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "5feda32799bdb81c7c586d2ee9ea97caa55ad8dec0299b6a0b2cf424bee01883",
+            "InvocationID": "root:f750a727bea307248dc36cb3cf49b8439291e44ccd496eaa8ed0b80230aa68b5",
+            "OperationID": "root:f750a727bea307248dc36cb3cf49b8439291e44ccd496eaa8ed0b80230aa68b5",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f750a727bea307248dc36cb3cf49b8439291e44ccd496eaa8ed0b80230aa68b5",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n01-observation03-3101070137",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 58654209,
+      "Replay": 49856167,
+      "construction": 456334,
+      "first_decision_window": 1219208,
+      "fresh_gate_window": 4695083
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "73d347b0e5c39b0c3a9a558d899a583d45d5c8b137344e402f4e0355d45f9243"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "2bddd867bb5ead94176ee3b70964bad00729506d38941551647e47592d6dece7",
+            "InvocationID": "root:73d347b0e5c39b0c3a9a558d899a583d45d5c8b137344e402f4e0355d45f9243",
+            "OperationID": "root:73d347b0e5c39b0c3a9a558d899a583d45d5c8b137344e402f4e0355d45f9243",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "73d347b0e5c39b0c3a9a558d899a583d45d5c8b137344e402f4e0355d45f9243",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "ba473fe96420d036ff047dda74af29fe5f80a96d568227242805c1e26207c70d"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "c96d16b59cca0b438e8adf3f36eb7924d59b16d7c1e97b6176c38003e400a61e",
+            "InvocationID": "root:ba473fe96420d036ff047dda74af29fe5f80a96d568227242805c1e26207c70d",
+            "OperationID": "root:ba473fe96420d036ff047dda74af29fe5f80a96d568227242805c1e26207c70d",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "ba473fe96420d036ff047dda74af29fe5f80a96d568227242805c1e26207c70d",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n01-observation04-16773164",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 71883459,
+      "Replay": 54235750,
+      "construction": 536708,
+      "first_decision_window": 2439333,
+      "fresh_gate_window": 5869459
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "02084a4ae943bb902c7b011da8564a231c1c8f821bc734b86f0beb82c3f8fd2e"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "2c66f4e8fba266fd3e40e3007a03489ae923a77de28f374e5af020e191d2b5cc",
+            "InvocationID": "root:02084a4ae943bb902c7b011da8564a231c1c8f821bc734b86f0beb82c3f8fd2e",
+            "OperationID": "root:02084a4ae943bb902c7b011da8564a231c1c8f821bc734b86f0beb82c3f8fd2e",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "02084a4ae943bb902c7b011da8564a231c1c8f821bc734b86f0beb82c3f8fd2e",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "356e4875973649824d28c483901f0d67c18244c393a722beb5a3b5211664e3ba"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "de34c80d8605d8ee06b9d5ea7d306c57dade11320d965417955a992bddf0f05f",
+            "InvocationID": "root:356e4875973649824d28c483901f0d67c18244c393a722beb5a3b5211664e3ba",
+            "OperationID": "root:356e4875973649824d28c483901f0d67c18244c393a722beb5a3b5211664e3ba",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "356e4875973649824d28c483901f0d67c18244c393a722beb5a3b5211664e3ba",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n01-observation05-215772302",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 62386541,
+      "Replay": 55833083,
+      "construction": 477542,
+      "first_decision_window": 1675708,
+      "fresh_gate_window": 6418917
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "197880f28b932a021b46ec1ccf86ea5eb9129f3917e4824e63b8c6b6c8ce25d1"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "b0355c40312c241bb833a9670abbdf59995a776b04fd4f6a7a1a1a161b8a2b91",
+            "InvocationID": "root:197880f28b932a021b46ec1ccf86ea5eb9129f3917e4824e63b8c6b6c8ce25d1",
+            "OperationID": "root:197880f28b932a021b46ec1ccf86ea5eb9129f3917e4824e63b8c6b6c8ce25d1",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "197880f28b932a021b46ec1ccf86ea5eb9129f3917e4824e63b8c6b6c8ce25d1",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f3ce8a5c11923fa1272f219dc60c64e5648f35b09e4f97dbcb1025263cf6632b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "4a07e150d1f5a61e6ad1ac513de42530c59ad7247a20360cfa34ca55d9550d09",
+            "InvocationID": "root:f3ce8a5c11923fa1272f219dc60c64e5648f35b09e4f97dbcb1025263cf6632b",
+            "OperationID": "root:f3ce8a5c11923fa1272f219dc60c64e5648f35b09e4f97dbcb1025263cf6632b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f3ce8a5c11923fa1272f219dc60c64e5648f35b09e4f97dbcb1025263cf6632b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n08-observation01-2964987087",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 61358042,
+      "Replay": 56606125,
+      "construction": 446000,
+      "first_decision_window": 1445292,
+      "fresh_gate_window": 6111167
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "15fe189abb5f1a0e521fb5ad9fc1b1461bdbc8bd01ea80f25fce1d83dfdd86ea"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "ce1bf81486d9d7d9827919da29ecc83f1ebaebb11d4f6e5286aa3b3889efb406",
+            "InvocationID": "root:15fe189abb5f1a0e521fb5ad9fc1b1461bdbc8bd01ea80f25fce1d83dfdd86ea",
+            "OperationID": "root:15fe189abb5f1a0e521fb5ad9fc1b1461bdbc8bd01ea80f25fce1d83dfdd86ea",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "15fe189abb5f1a0e521fb5ad9fc1b1461bdbc8bd01ea80f25fce1d83dfdd86ea",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "a931740e31ce14ec850171e78d6b97b580849d0a575524d69618ead8020b941f"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "35009d36f6d62488633e9fe718c0992f3fc3846c673c5fd61025ad24951a9b02",
+            "InvocationID": "root:a931740e31ce14ec850171e78d6b97b580849d0a575524d69618ead8020b941f",
+            "OperationID": "root:a931740e31ce14ec850171e78d6b97b580849d0a575524d69618ead8020b941f",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "a931740e31ce14ec850171e78d6b97b580849d0a575524d69618ead8020b941f",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n08-observation02-845617715",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 59647708,
+      "Replay": 60608250,
+      "construction": 421458,
+      "first_decision_window": 1385458,
+      "fresh_gate_window": 6138791
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "12d2d03d379c72c99f0301480a5b051f3209935379e26604efb7fc9a64712ae9"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "0625dfda7f6ee817dd0fd6bc6a07d6cfd05bb3d142b2b05846b389752c2e15d9",
+            "InvocationID": "root:12d2d03d379c72c99f0301480a5b051f3209935379e26604efb7fc9a64712ae9",
+            "OperationID": "root:12d2d03d379c72c99f0301480a5b051f3209935379e26604efb7fc9a64712ae9",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "12d2d03d379c72c99f0301480a5b051f3209935379e26604efb7fc9a64712ae9",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "660665e92bd4fa4723b14bdebe87bad5e02ac8e067f9148bdd927e3040e5a126"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "55ca5e4200940c5b6b983bb360e95df45c35ec7e1564066102d58c6ca98cc57b",
+            "InvocationID": "root:660665e92bd4fa4723b14bdebe87bad5e02ac8e067f9148bdd927e3040e5a126",
+            "OperationID": "root:660665e92bd4fa4723b14bdebe87bad5e02ac8e067f9148bdd927e3040e5a126",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "660665e92bd4fa4723b14bdebe87bad5e02ac8e067f9148bdd927e3040e5a126",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n08-observation03-1930445772",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 54741625,
+      "Replay": 53888750,
+      "construction": 463167,
+      "first_decision_window": 1974333,
+      "fresh_gate_window": 6886166
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "690b16f57b8e3b8bfb5481f849cf09a826ab6e0c9d1db801fb3bcea269e6ecf6"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "7172b54b9c3a91907bc513c19bf907b38c808de3c777499a8c868d77ed828a3f",
+            "InvocationID": "root:690b16f57b8e3b8bfb5481f849cf09a826ab6e0c9d1db801fb3bcea269e6ecf6",
+            "OperationID": "root:690b16f57b8e3b8bfb5481f849cf09a826ab6e0c9d1db801fb3bcea269e6ecf6",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "690b16f57b8e3b8bfb5481f849cf09a826ab6e0c9d1db801fb3bcea269e6ecf6",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "fce1fc1b967d4849d929aee576bb4ed901b1fdba81655daa9268de4ff5494c2a"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "ced501c49b0d25d4a672358c2af4f92d6156bb29b264c8bf195ae1ecf8ceb135",
+            "InvocationID": "root:fce1fc1b967d4849d929aee576bb4ed901b1fdba81655daa9268de4ff5494c2a",
+            "OperationID": "root:fce1fc1b967d4849d929aee576bb4ed901b1fdba81655daa9268de4ff5494c2a",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "fce1fc1b967d4849d929aee576bb4ed901b1fdba81655daa9268de4ff5494c2a",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n08-observation04-3738761970",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 60977167,
+      "Replay": 53409250,
+      "construction": 420500,
+      "first_decision_window": 1476750,
+      "fresh_gate_window": 6023375
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "755c381a4896f15efe01d123e8d5b2f4261e92abc5ff2a4499512db964005791"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "88f40d36c516c4ddc5aed632cc248f75a950918a6fdb972db5a5fd44deaa4e3e",
+            "InvocationID": "root:755c381a4896f15efe01d123e8d5b2f4261e92abc5ff2a4499512db964005791",
+            "OperationID": "root:755c381a4896f15efe01d123e8d5b2f4261e92abc5ff2a4499512db964005791",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "755c381a4896f15efe01d123e8d5b2f4261e92abc5ff2a4499512db964005791",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "aad71ff7dc2e2ec692505b7a59bf229660d99ba09534dece76b059ae3d82e7f5"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "0190a3017ab0b1a0191a6ef0d1d775ccc2d03d0e3e41b433e12ab287095f31f9",
+            "InvocationID": "root:aad71ff7dc2e2ec692505b7a59bf229660d99ba09534dece76b059ae3d82e7f5",
+            "OperationID": "root:aad71ff7dc2e2ec692505b7a59bf229660d99ba09534dece76b059ae3d82e7f5",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "aad71ff7dc2e2ec692505b7a59bf229660d99ba09534dece76b059ae3d82e7f5",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n08-observation05-1827776459",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 145360083,
+      "Replay": 87273458,
+      "construction": 958666,
+      "first_decision_window": 2369125,
+      "fresh_gate_window": 9901125
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "1a97109aae4ba3e104aaadc3db11dab8360784f0da904ca125d5f2c010032741"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "b8d6777e18262475dc358338aab97d964cea801b9355a921c7b317c98f4bceb6",
+            "InvocationID": "root:1a97109aae4ba3e104aaadc3db11dab8360784f0da904ca125d5f2c010032741",
+            "OperationID": "root:1a97109aae4ba3e104aaadc3db11dab8360784f0da904ca125d5f2c010032741",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "1a97109aae4ba3e104aaadc3db11dab8360784f0da904ca125d5f2c010032741",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "dffb954998c0b36c8b191aa843a1e34ad2aefe93bacc54dabbe2c86abcd40598"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "efbd8fd410f8e3eef45a107a2c420af060b6d84312289fba6fcbe03c3adf82f8",
+            "InvocationID": "root:dffb954998c0b36c8b191aa843a1e34ad2aefe93bacc54dabbe2c86abcd40598",
+            "OperationID": "root:dffb954998c0b36c8b191aa843a1e34ad2aefe93bacc54dabbe2c86abcd40598",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "dffb954998c0b36c8b191aa843a1e34ad2aefe93bacc54dabbe2c86abcd40598",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n32-observation01-1117525156",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 86884542,
+      "Replay": 85085125,
+      "construction": 457042,
+      "first_decision_window": 2289125,
+      "fresh_gate_window": 10456583
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "485b85d5868d5c7f71e017faa6a2dfb79050cd46db6ecf27ba24a1b4f9e201b8"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "e38ab9680f4d0de026e83f8bef87bb55dacad4eaa34e1e308035ed2173f53e37",
+            "InvocationID": "root:485b85d5868d5c7f71e017faa6a2dfb79050cd46db6ecf27ba24a1b4f9e201b8",
+            "OperationID": "root:485b85d5868d5c7f71e017faa6a2dfb79050cd46db6ecf27ba24a1b4f9e201b8",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "485b85d5868d5c7f71e017faa6a2dfb79050cd46db6ecf27ba24a1b4f9e201b8",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "b2c0dcd42c492b52babc3f1bd6907a9193f853caf9afc414d7fe0a4f502707e7"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "087128a2c7b2679d24cd307743886a60645d395312fb21c60df5245e3d45d3d1",
+            "InvocationID": "root:b2c0dcd42c492b52babc3f1bd6907a9193f853caf9afc414d7fe0a4f502707e7",
+            "OperationID": "root:b2c0dcd42c492b52babc3f1bd6907a9193f853caf9afc414d7fe0a4f502707e7",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "b2c0dcd42c492b52babc3f1bd6907a9193f853caf9afc414d7fe0a4f502707e7",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n32-observation02-1614109538",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 98773042,
+      "Replay": 96283500,
+      "construction": 934458,
+      "first_decision_window": 2429500,
+      "fresh_gate_window": 10207292
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "525c0956b110926b1b591c0376f95d279c462987de92240f9dba5c73e99273e1"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "34952a4b3a4605739cc49559b14f66502c4f0613d299b88f508a54cda55456f2",
+            "InvocationID": "root:525c0956b110926b1b591c0376f95d279c462987de92240f9dba5c73e99273e1",
+            "OperationID": "root:525c0956b110926b1b591c0376f95d279c462987de92240f9dba5c73e99273e1",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "525c0956b110926b1b591c0376f95d279c462987de92240f9dba5c73e99273e1",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f791fe7bdd772148a6c69d3d294f68e99b5133201b3babac3aa298cedf973b7d"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "75496dfd58009264c815b1a42a5400deaca7d88b97769629966b002ad1724fbd",
+            "InvocationID": "root:f791fe7bdd772148a6c69d3d294f68e99b5133201b3babac3aa298cedf973b7d",
+            "OperationID": "root:f791fe7bdd772148a6c69d3d294f68e99b5133201b3babac3aa298cedf973b7d",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f791fe7bdd772148a6c69d3d294f68e99b5133201b3babac3aa298cedf973b7d",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n32-observation03-1440447311",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 95589875,
+      "Replay": 89936500,
+      "construction": 479541,
+      "first_decision_window": 2388667,
+      "fresh_gate_window": 10152125
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "4d8d74f5a6f55849582c257281fd4b6865e8cb2f58f88d942daf06dcebac2db3"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "2bc616ed7650aad5fc3ba85a1e4b785d697ac2b40c17ead41a54d4d3529063ba",
+            "InvocationID": "root:4d8d74f5a6f55849582c257281fd4b6865e8cb2f58f88d942daf06dcebac2db3",
+            "OperationID": "root:4d8d74f5a6f55849582c257281fd4b6865e8cb2f58f88d942daf06dcebac2db3",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "4d8d74f5a6f55849582c257281fd4b6865e8cb2f58f88d942daf06dcebac2db3",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "fe8b1300ea378a0c8f9c66b275948f9c3ba560df2983c6153316c4b2efe6d2fc"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "828cc55f7b645a3181123ef6981513d0e50dabfe22fbdaaa250edac5703833fc",
+            "InvocationID": "root:fe8b1300ea378a0c8f9c66b275948f9c3ba560df2983c6153316c4b2efe6d2fc",
+            "OperationID": "root:fe8b1300ea378a0c8f9c66b275948f9c3ba560df2983c6153316c4b2efe6d2fc",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "fe8b1300ea378a0c8f9c66b275948f9c3ba560df2983c6153316c4b2efe6d2fc",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n32-observation04-2102298598",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 88036625,
+      "Replay": 88968125,
+      "construction": 403291,
+      "first_decision_window": 2364750,
+      "fresh_gate_window": 9940667
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "854dc5fa7af55a1cb4227e033bc9ce5172102fdfce3e4f623d27f11d8078fe6a"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "26e366e473fd86a842abf7bc393d18ff174b7d10e6216d903b463db32d28046f",
+            "InvocationID": "root:854dc5fa7af55a1cb4227e033bc9ce5172102fdfce3e4f623d27f11d8078fe6a",
+            "OperationID": "root:854dc5fa7af55a1cb4227e033bc9ce5172102fdfce3e4f623d27f11d8078fe6a",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "854dc5fa7af55a1cb4227e033bc9ce5172102fdfce3e4f623d27f11d8078fe6a",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f2525ef9b63e3a54a22cd2f591039e82f2982fb3df640297e7dd005a4c96b997"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "3306ff20ecb1b9f4ef4a3dfa526547f39190ceda7e85bc2214a073718d1b49e0",
+            "InvocationID": "root:f2525ef9b63e3a54a22cd2f591039e82f2982fb3df640297e7dd005a4c96b997",
+            "OperationID": "root:f2525ef9b63e3a54a22cd2f591039e82f2982fb3df640297e7dd005a4c96b997",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f2525ef9b63e3a54a22cd2f591039e82f2982fb3df640297e7dd005a4c96b997",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "normal/cost-n32-observation05-792326209",
+    "mode": "normal"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 709937167,
+      "Replay": 687918542,
+      "construction": 6161375,
+      "first_decision_window": 16711708,
+      "fresh_gate_window": 66443083
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "ce2960d59968a9055d9ba95e068f8b1b1a5dd1f333f482eac55d22cae4477487"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "716631aa2f8fab54fa70ecb9987cf79052d685862328805abcedebd937120584",
+            "InvocationID": "root:ce2960d59968a9055d9ba95e068f8b1b1a5dd1f333f482eac55d22cae4477487",
+            "OperationID": "root:ce2960d59968a9055d9ba95e068f8b1b1a5dd1f333f482eac55d22cae4477487",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "ce2960d59968a9055d9ba95e068f8b1b1a5dd1f333f482eac55d22cae4477487",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "e99988a0b2aedb03ee0b384907e54a08a4b7d79479983308a163c1e5503ae73d"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "f8d3e1253f3456bf8750042b38d9c95477342474df25f75112a27135a5e6b7a7",
+            "InvocationID": "root:e99988a0b2aedb03ee0b384907e54a08a4b7d79479983308a163c1e5503ae73d",
+            "OperationID": "root:e99988a0b2aedb03ee0b384907e54a08a4b7d79479983308a163c1e5503ae73d",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "e99988a0b2aedb03ee0b384907e54a08a4b7d79479983308a163c1e5503ae73d",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n00-observation01-276184815",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 806711416,
+      "Replay": 705717250,
+      "construction": 6107291,
+      "first_decision_window": 16750084,
+      "fresh_gate_window": 67324292
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "d1962ddadb6af6e9e2dbd674cb99f197a47b938f9c465a6adab09880df4faeb5"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "5b2eaa4f8b993360d4e911171baad71f6976571724a71e58ec3a13de86963411",
+            "InvocationID": "root:d1962ddadb6af6e9e2dbd674cb99f197a47b938f9c465a6adab09880df4faeb5",
+            "OperationID": "root:d1962ddadb6af6e9e2dbd674cb99f197a47b938f9c465a6adab09880df4faeb5",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "d1962ddadb6af6e9e2dbd674cb99f197a47b938f9c465a6adab09880df4faeb5",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "db36535e70522913795d8542ec142e0bd7c1b0b4a7764a463caaa67cc069261b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "eaaa897d582c2ac1d94af988d0cd6ac758d408e2143374976e6f1a7d8e96c101",
+            "InvocationID": "root:db36535e70522913795d8542ec142e0bd7c1b0b4a7764a463caaa67cc069261b",
+            "OperationID": "root:db36535e70522913795d8542ec142e0bd7c1b0b4a7764a463caaa67cc069261b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "db36535e70522913795d8542ec142e0bd7c1b0b4a7764a463caaa67cc069261b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n00-observation02-624813761",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 763867792,
+      "Replay": 745118291,
+      "construction": 6802375,
+      "first_decision_window": 17202167,
+      "fresh_gate_window": 71820875
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "8e0cfec5b18edbfb65cd2ce2009b31883902ff0a6f5af53f59bf4a19d91aee7b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "abd54a3dc10d7a40dc01af4ac727659e8066fa2de4d965d702c159f9778cb261",
+            "InvocationID": "root:8e0cfec5b18edbfb65cd2ce2009b31883902ff0a6f5af53f59bf4a19d91aee7b",
+            "OperationID": "root:8e0cfec5b18edbfb65cd2ce2009b31883902ff0a6f5af53f59bf4a19d91aee7b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "8e0cfec5b18edbfb65cd2ce2009b31883902ff0a6f5af53f59bf4a19d91aee7b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "d895495f19bd1df7bc87199e860f81fdb9bf5c1277ab834e8cb94da4166cbd4e"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "dd6244b554cf065697f1172b0f49466572c119950663264274e0533e697ed22e",
+            "InvocationID": "root:d895495f19bd1df7bc87199e860f81fdb9bf5c1277ab834e8cb94da4166cbd4e",
+            "OperationID": "root:d895495f19bd1df7bc87199e860f81fdb9bf5c1277ab834e8cb94da4166cbd4e",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "d895495f19bd1df7bc87199e860f81fdb9bf5c1277ab834e8cb94da4166cbd4e",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n00-observation03-3736939485",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 706481833,
+      "Replay": 688745792,
+      "construction": 6234209,
+      "first_decision_window": 16251333,
+      "fresh_gate_window": 66353083
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "0b8d8e23e74988991875b73d180dbc9e7de6b8ae46a199c388bb8824dac52c74"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "fe0fcdafcd88ac24ae74a4b7722da4d2af822a02072c03391948bf177e4a1b04",
+            "InvocationID": "root:0b8d8e23e74988991875b73d180dbc9e7de6b8ae46a199c388bb8824dac52c74",
+            "OperationID": "root:0b8d8e23e74988991875b73d180dbc9e7de6b8ae46a199c388bb8824dac52c74",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "0b8d8e23e74988991875b73d180dbc9e7de6b8ae46a199c388bb8824dac52c74",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "eb03a18f270b160a856a7ad3dd39a412ede5014c631c4b14dc231df0f70aecda"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "ef405dd7570b4a42c34c653accd6027c288c31d4bc5a8bada7ce95e062cad515",
+            "InvocationID": "root:eb03a18f270b160a856a7ad3dd39a412ede5014c631c4b14dc231df0f70aecda",
+            "OperationID": "root:eb03a18f270b160a856a7ad3dd39a412ede5014c631c4b14dc231df0f70aecda",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "eb03a18f270b160a856a7ad3dd39a412ede5014c631c4b14dc231df0f70aecda",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n00-observation04-3509532608",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 0,
+    "Nanoseconds": {
+      "Open": 710225333,
+      "Replay": 694459000,
+      "construction": 6253167,
+      "first_decision_window": 16617250,
+      "fresh_gate_window": 66561458
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "7617fa8bf14beb378c03c402fb6db456601d5e8b3d1f102c2e27f34a0213d41d"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 43,
+            "ID": "a38d329e61a9364082bb192ec6aa561b3bcee64d7e0f843b44afb6c3d10478a4",
+            "InvocationID": "root:7617fa8bf14beb378c03c402fb6db456601d5e8b3d1f102c2e27f34a0213d41d",
+            "OperationID": "root:7617fa8bf14beb378c03c402fb6db456601d5e8b3d1f102c2e27f34a0213d41d",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "7617fa8bf14beb378c03c402fb6db456601d5e8b3d1f102c2e27f34a0213d41d",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "e68bbb442bcc197cbb5f87343f26dd54019d9e32d3a5a2791482d8fd33b6f17e"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 39,
+            "ID": "42b3fdfe9f97263d656406a2a350c8144aad7e85e649689d49ec325a0cbb0ccf",
+            "InvocationID": "root:e68bbb442bcc197cbb5f87343f26dd54019d9e32d3a5a2791482d8fd33b6f17e",
+            "OperationID": "root:e68bbb442bcc197cbb5f87343f26dd54019d9e32d3a5a2791482d8fd33b6f17e",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "e68bbb442bcc197cbb5f87343f26dd54019d9e32d3a5a2791482d8fd33b6f17e",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n00-observation05-1239092850",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 731532750,
+      "Replay": 724073000,
+      "construction": 6986334,
+      "first_decision_window": 17242084,
+      "fresh_gate_window": 69522750
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "75c88534db5cc078aab0d2ab1827d8575b7d76fede7d69d11c2dd8b1e471a4e9"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "c3226a236c4b2bace6146834672bfcba9227bc72c4fbd0be3210a99e18928a0c",
+            "InvocationID": "root:75c88534db5cc078aab0d2ab1827d8575b7d76fede7d69d11c2dd8b1e471a4e9",
+            "OperationID": "root:75c88534db5cc078aab0d2ab1827d8575b7d76fede7d69d11c2dd8b1e471a4e9",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "75c88534db5cc078aab0d2ab1827d8575b7d76fede7d69d11c2dd8b1e471a4e9",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "7973811c48345cf124c9a6c01b9fb7e4a4fb79cbd596be995180cffe8d5754eb"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "1d7a637f789bb2f46f25e8f8754399cc29113434f130d9f840a58731a6bda320",
+            "InvocationID": "root:7973811c48345cf124c9a6c01b9fb7e4a4fb79cbd596be995180cffe8d5754eb",
+            "OperationID": "root:7973811c48345cf124c9a6c01b9fb7e4a4fb79cbd596be995180cffe8d5754eb",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "7973811c48345cf124c9a6c01b9fb7e4a4fb79cbd596be995180cffe8d5754eb",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n01-observation01-4186174739",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 752008500,
+      "Replay": 723160084,
+      "construction": 10368583,
+      "first_decision_window": 17832084,
+      "fresh_gate_window": 79060166
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "26b049b9e9e84ae2252e0161a4133c43af71777eb8bc5ff16d0453a97d787fff"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "587e09530e8842b28f260153a610c1178f77563909cb0b73fd283c8d70b344b6",
+            "InvocationID": "root:26b049b9e9e84ae2252e0161a4133c43af71777eb8bc5ff16d0453a97d787fff",
+            "OperationID": "root:26b049b9e9e84ae2252e0161a4133c43af71777eb8bc5ff16d0453a97d787fff",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "26b049b9e9e84ae2252e0161a4133c43af71777eb8bc5ff16d0453a97d787fff",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "de45cb252492b677b204a7a577fbc79d1e60b490f35f5208901477d779e0006c"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "979f373f887ee6756dd7a4e0d003ed479731994856c0de5af55c605a1b88a817",
+            "InvocationID": "root:de45cb252492b677b204a7a577fbc79d1e60b490f35f5208901477d779e0006c",
+            "OperationID": "root:de45cb252492b677b204a7a577fbc79d1e60b490f35f5208901477d779e0006c",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "de45cb252492b677b204a7a577fbc79d1e60b490f35f5208901477d779e0006c",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n01-observation02-1684846326",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 768951625,
+      "Replay": 714147250,
+      "construction": 6996958,
+      "first_decision_window": 17660750,
+      "fresh_gate_window": 70613959
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "1c9a2c17fe206a8b13a9e9277253b0487d440de80d33d13be54e75969b95decf"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "dbd371ab864aabce9e8b3e66c94d162c3bb735c6b982a18a7f7c648529dc8e1e",
+            "InvocationID": "root:1c9a2c17fe206a8b13a9e9277253b0487d440de80d33d13be54e75969b95decf",
+            "OperationID": "root:1c9a2c17fe206a8b13a9e9277253b0487d440de80d33d13be54e75969b95decf",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "1c9a2c17fe206a8b13a9e9277253b0487d440de80d33d13be54e75969b95decf",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "e536ffb115120731f624980a43407656487bec98d8766b56f40d1c0a2b028f51"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "d87e283c25d7690c1d2fa122c8f2b4570028e04f07e4201b6936e6f2533d7318",
+            "InvocationID": "root:e536ffb115120731f624980a43407656487bec98d8766b56f40d1c0a2b028f51",
+            "OperationID": "root:e536ffb115120731f624980a43407656487bec98d8766b56f40d1c0a2b028f51",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "e536ffb115120731f624980a43407656487bec98d8766b56f40d1c0a2b028f51",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n01-observation03-3077349783",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 734971917,
+      "Replay": 716471375,
+      "construction": 6252208,
+      "first_decision_window": 17678208,
+      "fresh_gate_window": 69526250
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "25aaa2a48cedb6b2c24ea9a8f4be5131b956a6a2812b89efef130387dc49bddc"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "804aa9fffc98fa4ae64cbc517739e922d03e49e93b5f85ed98701ed6ab0e5652",
+            "InvocationID": "root:25aaa2a48cedb6b2c24ea9a8f4be5131b956a6a2812b89efef130387dc49bddc",
+            "OperationID": "root:25aaa2a48cedb6b2c24ea9a8f4be5131b956a6a2812b89efef130387dc49bddc",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "25aaa2a48cedb6b2c24ea9a8f4be5131b956a6a2812b89efef130387dc49bddc",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "e8ddf4887d4177bb05c0de91f1b68fac1960ffb166e5ce764144ebb24133f43f"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "59ba3d332e51660b2a199302d4ba3e76c24928b2cb4da596597aa7014ba3f831",
+            "InvocationID": "root:e8ddf4887d4177bb05c0de91f1b68fac1960ffb166e5ce764144ebb24133f43f",
+            "OperationID": "root:e8ddf4887d4177bb05c0de91f1b68fac1960ffb166e5ce764144ebb24133f43f",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "e8ddf4887d4177bb05c0de91f1b68fac1960ffb166e5ce764144ebb24133f43f",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n01-observation04-2565305711",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 1,
+    "Nanoseconds": {
+      "Open": 729962791,
+      "Replay": 712687709,
+      "construction": 6168375,
+      "first_decision_window": 17221709,
+      "fresh_gate_window": 69154417
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "385ad587efff50ed71f87d83ed9c54db9b291853afdc1250c4ccd63fb73895c6"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 44,
+            "ID": "96436045fdb793f9ca1562347cc0ed4fcd70e760bf51fd00eb8195db0e3d4e72",
+            "InvocationID": "root:385ad587efff50ed71f87d83ed9c54db9b291853afdc1250c4ccd63fb73895c6",
+            "OperationID": "root:385ad587efff50ed71f87d83ed9c54db9b291853afdc1250c4ccd63fb73895c6",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "385ad587efff50ed71f87d83ed9c54db9b291853afdc1250c4ccd63fb73895c6",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "73d1f74297e4f7dca71b6e2b7ef330b91125f55227f800c6bbbd52880925ef27"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 40,
+            "ID": "475843aa6c0e08b88901fdb95da8beef9f83f46d624e4cae437333842b9ea8df",
+            "InvocationID": "root:73d1f74297e4f7dca71b6e2b7ef330b91125f55227f800c6bbbd52880925ef27",
+            "OperationID": "root:73d1f74297e4f7dca71b6e2b7ef330b91125f55227f800c6bbbd52880925ef27",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "73d1f74297e4f7dca71b6e2b7ef330b91125f55227f800c6bbbd52880925ef27",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n01-observation05-3434922152",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 872546417,
+      "Replay": 857491416,
+      "construction": 6128833,
+      "first_decision_window": 21047458,
+      "fresh_gate_window": 90341417
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "6eeca77b8aa607cbb8791c3a2295d94e7c4ae6c663cd70e041e2f603a00570b3"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "1d17a61c18fd70f250dff0b6aa53615a091d3a446b6d18499708bd271e2dd626",
+            "InvocationID": "root:6eeca77b8aa607cbb8791c3a2295d94e7c4ae6c663cd70e041e2f603a00570b3",
+            "OperationID": "root:6eeca77b8aa607cbb8791c3a2295d94e7c4ae6c663cd70e041e2f603a00570b3",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "6eeca77b8aa607cbb8791c3a2295d94e7c4ae6c663cd70e041e2f603a00570b3",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "750c527c31caad606b8c3ce6d18add3106f3a9cdbd245307b78fc81185c7009f"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "3c0d5ebf2e5ff2d505e1e31ab9423deaaa5ca5b30d48e74d992542af688beefa",
+            "InvocationID": "root:750c527c31caad606b8c3ce6d18add3106f3a9cdbd245307b78fc81185c7009f",
+            "OperationID": "root:750c527c31caad606b8c3ce6d18add3106f3a9cdbd245307b78fc81185c7009f",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "750c527c31caad606b8c3ce6d18add3106f3a9cdbd245307b78fc81185c7009f",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n08-observation01-254677766",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 879793667,
+      "Replay": 858322750,
+      "construction": 6305958,
+      "first_decision_window": 21371167,
+      "fresh_gate_window": 89747417
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "7d44ab5cf5aef10d1b892987458cf3cd024b1ea460ce4816c0a787e7f5d2d729"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "4fed08bc0459ad0c0ce64a42e16d08f2c5bde1f5bf4dac2bbbb594957dda37f3",
+            "InvocationID": "root:7d44ab5cf5aef10d1b892987458cf3cd024b1ea460ce4816c0a787e7f5d2d729",
+            "OperationID": "root:7d44ab5cf5aef10d1b892987458cf3cd024b1ea460ce4816c0a787e7f5d2d729",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "7d44ab5cf5aef10d1b892987458cf3cd024b1ea460ce4816c0a787e7f5d2d729",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "ae43e7a4dd8bb728516c6822d7ce03f71eae0f43f61ffad94e5de3c7b99b176b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "b4908c33c5d3a0160c83352ad8526381b0fa81e2dbbde2139833848b5eb15166",
+            "InvocationID": "root:ae43e7a4dd8bb728516c6822d7ce03f71eae0f43f61ffad94e5de3c7b99b176b",
+            "OperationID": "root:ae43e7a4dd8bb728516c6822d7ce03f71eae0f43f61ffad94e5de3c7b99b176b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "ae43e7a4dd8bb728516c6822d7ce03f71eae0f43f61ffad94e5de3c7b99b176b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n08-observation02-3214567919",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 874262959,
+      "Replay": 857634958,
+      "construction": 6483667,
+      "first_decision_window": 21833667,
+      "fresh_gate_window": 92882792
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "868c6905891e3361626c6c281fc7814b64c0d8fbaa24d3bcc98908c33edb47bc"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "9d466ea97992b3a84868801f6ee01506dc114ed32b8574f17ba89c3951c5d113",
+            "InvocationID": "root:868c6905891e3361626c6c281fc7814b64c0d8fbaa24d3bcc98908c33edb47bc",
+            "OperationID": "root:868c6905891e3361626c6c281fc7814b64c0d8fbaa24d3bcc98908c33edb47bc",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "868c6905891e3361626c6c281fc7814b64c0d8fbaa24d3bcc98908c33edb47bc",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "cfc99f344ba56b0404c98b6b2e07758626d76f79db5e9e46fdb9f9bb56de7eb5"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "fc1416c1c7586eef90076beaaa6d0861a497533b5775638dc6d69643fc1faf11",
+            "InvocationID": "root:cfc99f344ba56b0404c98b6b2e07758626d76f79db5e9e46fdb9f9bb56de7eb5",
+            "OperationID": "root:cfc99f344ba56b0404c98b6b2e07758626d76f79db5e9e46fdb9f9bb56de7eb5",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "cfc99f344ba56b0404c98b6b2e07758626d76f79db5e9e46fdb9f9bb56de7eb5",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n08-observation03-2638556867",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 875454041,
+      "Replay": 853362792,
+      "construction": 6607625,
+      "first_decision_window": 21323208,
+      "fresh_gate_window": 91116709
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "d3f3f16ec57acfdabbd7035eab1dd439943a77d849a001b651483bbeb9c111df"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "6d5a1a57df042248858649dff764256932b8aa2ddaedfd3d7af2cd1b06a5d7ca",
+            "InvocationID": "root:d3f3f16ec57acfdabbd7035eab1dd439943a77d849a001b651483bbeb9c111df",
+            "OperationID": "root:d3f3f16ec57acfdabbd7035eab1dd439943a77d849a001b651483bbeb9c111df",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "d3f3f16ec57acfdabbd7035eab1dd439943a77d849a001b651483bbeb9c111df",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "f71894c0a76d7e52bbdb9d70589f8743446ca49d5df92124798bd4e540ef51a4"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "7518c6d13275e673aa8e44a090284bb4755c57e5f29e945beb44e1f214e1eaeb",
+            "InvocationID": "root:f71894c0a76d7e52bbdb9d70589f8743446ca49d5df92124798bd4e540ef51a4",
+            "OperationID": "root:f71894c0a76d7e52bbdb9d70589f8743446ca49d5df92124798bd4e540ef51a4",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "f71894c0a76d7e52bbdb9d70589f8743446ca49d5df92124798bd4e540ef51a4",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n08-observation04-3070830606",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 8,
+    "Nanoseconds": {
+      "Open": 872611375,
+      "Replay": 853069667,
+      "construction": 6371959,
+      "first_decision_window": 21320375,
+      "fresh_gate_window": 90514875
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "60e47563ff77e20d8d886870db838b379f5a634a1feec2e66e5fbc431967a8fd"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 47,
+            "ID": "0ffab544dff60270680b0b8e0c882aba056513c54e1f2b095641aee4230b9eb3",
+            "InvocationID": "root:60e47563ff77e20d8d886870db838b379f5a634a1feec2e66e5fbc431967a8fd",
+            "OperationID": "root:60e47563ff77e20d8d886870db838b379f5a634a1feec2e66e5fbc431967a8fd",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "60e47563ff77e20d8d886870db838b379f5a634a1feec2e66e5fbc431967a8fd",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "8e2db115ca7f45d9a740fcf30000fe11f6762372e56c63a815ff85e99cd5fe94"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 51,
+            "ID": "0e314b2e6f0bdc4295524b6cbd0e92044a17b1bdaa3819cbb9fa12d21447e250",
+            "InvocationID": "root:8e2db115ca7f45d9a740fcf30000fe11f6762372e56c63a815ff85e99cd5fe94",
+            "OperationID": "root:8e2db115ca7f45d9a740fcf30000fe11f6762372e56c63a815ff85e99cd5fe94",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "8e2db115ca7f45d9a740fcf30000fe11f6762372e56c63a815ff85e99cd5fe94",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n08-observation05-1650095086",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 1364744792,
+      "Replay": 1330355833,
+      "construction": 6407750,
+      "first_decision_window": 33842959,
+      "fresh_gate_window": 157941458
+    },
+    "Observation": 1,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "3871db65e56e33131b7431387019cf54ea8a791735cdbcbf57b66da5e41b0847"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "85e41bee3e0be08b4b7049c2af826772b1b0d526ec685a2292871ac0b74bf34b",
+            "InvocationID": "root:3871db65e56e33131b7431387019cf54ea8a791735cdbcbf57b66da5e41b0847",
+            "OperationID": "root:3871db65e56e33131b7431387019cf54ea8a791735cdbcbf57b66da5e41b0847",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "3871db65e56e33131b7431387019cf54ea8a791735cdbcbf57b66da5e41b0847",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "c00ac193a6171548617966f714e8bf84b53de2977fc86d0773cd4a1a8a22352f"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "c7ec0a1b21cfc022c52c29835c5e30490f0dc7178fa89d2b2d944037984e0d03",
+            "InvocationID": "root:c00ac193a6171548617966f714e8bf84b53de2977fc86d0773cd4a1a8a22352f",
+            "OperationID": "root:c00ac193a6171548617966f714e8bf84b53de2977fc86d0773cd4a1a8a22352f",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "c00ac193a6171548617966f714e8bf84b53de2977fc86d0773cd4a1a8a22352f",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n32-observation01-1135959609",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 1362096208,
+      "Replay": 1330824041,
+      "construction": 6673333,
+      "first_decision_window": 34420709,
+      "fresh_gate_window": 159700459
+    },
+    "Observation": 2,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "60ae07e568e809d9ace88189a6bb8752970de4b169f2fc58fb19a07adb44385b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "930d5bc657d139caae346059195fce598c39226ef8e2bb45d028d502011e4968",
+            "InvocationID": "root:60ae07e568e809d9ace88189a6bb8752970de4b169f2fc58fb19a07adb44385b",
+            "OperationID": "root:60ae07e568e809d9ace88189a6bb8752970de4b169f2fc58fb19a07adb44385b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "60ae07e568e809d9ace88189a6bb8752970de4b169f2fc58fb19a07adb44385b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "7942ce5e9447bd44e157979e3cfd6aaf954abb6ed470fd704657f39dfa0a21ec"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "daea2ea03c0c34d9ba5ca288dadd79f2530b2eed811eb0a3251cfe3badfb4a9f",
+            "InvocationID": "root:7942ce5e9447bd44e157979e3cfd6aaf954abb6ed470fd704657f39dfa0a21ec",
+            "OperationID": "root:7942ce5e9447bd44e157979e3cfd6aaf954abb6ed470fd704657f39dfa0a21ec",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "7942ce5e9447bd44e157979e3cfd6aaf954abb6ed470fd704657f39dfa0a21ec",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n32-observation02-3310709723",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 1362650542,
+      "Replay": 1333034750,
+      "construction": 6503792,
+      "first_decision_window": 34339917,
+      "fresh_gate_window": 160149792
+    },
+    "Observation": 3,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "be853329181715c413684693ed8016349b0f49ae42bc339826c829601ae9745a"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "c047cf95d7ee48545cbb1f48f26123d779dbf1d7c41bc440469638fb953196b7",
+            "InvocationID": "root:be853329181715c413684693ed8016349b0f49ae42bc339826c829601ae9745a",
+            "OperationID": "root:be853329181715c413684693ed8016349b0f49ae42bc339826c829601ae9745a",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "be853329181715c413684693ed8016349b0f49ae42bc339826c829601ae9745a",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "e3b2f91cd22cc07b520ddbf67f97524963f621c248671073ec7970aeedb8831d"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "08d2ed2d8cfccabff5e460f58078d8f3fd18c148217ad573243c0104bad648e4",
+            "InvocationID": "root:e3b2f91cd22cc07b520ddbf67f97524963f621c248671073ec7970aeedb8831d",
+            "OperationID": "root:e3b2f91cd22cc07b520ddbf67f97524963f621c248671073ec7970aeedb8831d",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "e3b2f91cd22cc07b520ddbf67f97524963f621c248671073ec7970aeedb8831d",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n32-observation03-726232983",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 1374696916,
+      "Replay": 1349567625,
+      "construction": 6730917,
+      "first_decision_window": 34028542,
+      "fresh_gate_window": 158291208
+    },
+    "Observation": 4,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "90b0ff095c5a001e29614375c6598deaef85585cd7593639ae99b137efda3a93"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "042b238891b332553d3d7e97710365e93b72ed9b8648d7d0293b5689e91e7942",
+            "InvocationID": "root:90b0ff095c5a001e29614375c6598deaef85585cd7593639ae99b137efda3a93",
+            "OperationID": "root:90b0ff095c5a001e29614375c6598deaef85585cd7593639ae99b137efda3a93",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "90b0ff095c5a001e29614375c6598deaef85585cd7593639ae99b137efda3a93",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "d1b875a7324111d099ebac6bd8cc64c50c200592dc02991d5eeb4a669f819d5b"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "ecb69e21bbb6b7feddf96b6a154ba22913331ab783c8696b59a48feca15065b2",
+            "InvocationID": "root:d1b875a7324111d099ebac6bd8cc64c50c200592dc02991d5eeb4a669f819d5b",
+            "OperationID": "root:d1b875a7324111d099ebac6bd8cc64c50c200592dc02991d5eeb4a669f819d5b",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "d1b875a7324111d099ebac6bd8cc64c50c200592dc02991d5eeb4a669f819d5b",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n32-observation04-412918270",
+    "mode": "race"
+  },
+  {
+    "Allocations": "not measured",
+    "N": 32,
+    "Nanoseconds": {
+      "Open": 1369921375,
+      "Replay": 1347594666,
+      "construction": 6678875,
+      "first_decision_window": 34478000,
+      "fresh_gate_window": 158119667
+    },
+    "Observation": 5,
+    "Run": {
+      "Dispatches": 5,
+      "OpenRuns": [],
+      "PendingDeliveries": [],
+      "Quiescent": true,
+      "RejectedAdmissions": 0,
+      "Roots": [
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "3ed09a048d97ec62a2ea8c51fcd6d2fc10821e77e4aa7238b977d42acb1fd8cc"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "DecisionOrder": 71,
+            "ID": "a33719d70462a53b3cdeaf0d7790e95b6575242afc02dcbca326ed03cf8cac24",
+            "InvocationID": "root:3ed09a048d97ec62a2ea8c51fcd6d2fc10821e77e4aa7238b977d42acb1fd8cc",
+            "OperationID": "root:3ed09a048d97ec62a2ea8c51fcd6d2fc10821e77e4aa7238b977d42acb1fd8cc",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "3ed09a048d97ec62a2ea8c51fcd6d2fc10821e77e4aa7238b977d42acb1fd8cc",
+          "Run": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        },
+        {
+          "Charges": {
+            "CreatedRuns": 0,
+            "DecisionOrder": 0,
+            "Effects": 1,
+            "Invocations": 0,
+            "Kind": "",
+            "OperationID": "",
+            "RootID": "74f4499cafe2073011ac3177a448611fe44ddc7c6a5750b51a33e299bab569db"
+          },
+          "Limits": {
+            "MaxCreatedRuns": 0,
+            "MaxDepth": 0,
+            "MaxEffects": 1,
+            "MaxInFlight": 1,
+            "MaxInvocations": 0
+          },
+          "LocalStatus": "succeeded",
+          "Outcome": {
+            "Caller": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "DecisionOrder": 75,
+            "ID": "6a1497269aa9d8a21ec26ec7cfbb704a904aa45027aa64bd1eaf6cbaddbe00be",
+            "InvocationID": "root:74f4499cafe2073011ac3177a448611fe44ddc7c6a5750b51a33e299bab569db",
+            "OperationID": "root:74f4499cafe2073011ac3177a448611fe44ddc7c6a5750b51a33e299bab569db",
+            "Reason": "member_succeeded",
+            "Response": null,
+            "ResponsePresent": false,
+            "Status": "succeeded",
+            "TemplateID": ""
+          },
+          "Pending": "",
+          "PendingInvocations": [],
+          "RootID": "74f4499cafe2073011ac3177a448611fe44ddc7c6a5750b51a33e299bab569db",
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "UnknownExternal": [],
+          "UnresolvedExternal": []
+        }
+      ],
+      "Steps": 15,
+      "UnknownAdapters": [],
+      "UnknownExternal": [],
+      "UnresolvedIntents": []
+    },
+    "TimingDefinitions": {
+      "construction": "public RequestBinding constructor only",
+      "first_decision_window": "intent.authorized callback to dispatch.consider callback; includes authority/reservation and runner setup",
+      "fresh_gate_window": "dispatch.consider callback to authority.admission callback; includes current-gate writer and boundary overhead"
+    },
+    "TotalConstantTimeClaim": false,
+    "case": "race/cost-n32-observation05-2227888033",
+    "mode": "race"
+  }
+]

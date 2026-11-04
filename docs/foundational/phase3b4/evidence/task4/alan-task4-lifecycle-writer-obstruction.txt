@@ -1,0 +1,12 @@
+internal/executor/store.go:699:func (s *Store) Close() error {
+internal/executor/store.go:747:func (s *Store) Snapshot(ctx context.Context, id RunID) (RunState, error) {
+internal/executor/store.go:812:func (s *Store) Commit(ctx context.Context, a Authority, selected string) (RunState, error) {
+internal/executor/store.go:978:func (s *Store) Namespace() string { return s.namespace }
+internal/executor/lifecycle.go:79:	case "Retry", "CancelRun", "AbandonRun", "RetireSubject":
+internal/executor/lifecycle.go:95:func (s *Store) LoadLifecycleRequest(ctx context.Context, id string) (LifecycleRequest, error) {
+internal/executor/lifecycle.go:199:		case "Retry":
+internal/executor/lifecycle.go:242:func (s *Store) DecideLifecycle(ctx context.Context, request LifecycleRequest) (LifecycleResult, error) {
+internal/executor/lifecycle.go:319:			result.Reason = "invocation_retry_unsupported"
+internal/executor/lifecycle.go:339:			if _, err = tx.ExecContext(ctx, "UPDATE subjects SET generation=? WHERE id=?", result.Successor, subject.ID); err != nil {
+internal/executor/lifecycle.go:344:				if _, err = tx.ExecContext(ctx, "UPDATE subjects SET retired=? WHERE id=?", result.After.Retired, subject.ID); err != nil {
+internal/executor/lifecycle.go:411:func (s *Store) SettleLifecycle(ctx context.Context, id, transport string) (AdmissionResult, error) {
