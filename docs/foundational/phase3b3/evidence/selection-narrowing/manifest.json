@@ -1,0 +1,13 @@
+{
+  "Status": "independent targeted development-witness audit; no general checker certification",
+  "RuntimeInput": "/tmp/alan-phase3b3-runtime-development/controls/control-wrong-prior-selection-1914204028/final/inspect.json",
+  "RuntimeInputSHA256": "60897acf3d7cc14ab351e23314ddb656e1b68801bbeaa772521623bb79dc0327",
+  "Files": {
+    "review.md": "79487fdd5c3c5ce9acca47a128c88de3e121ff1fd018a1a69c653b11b3e30917",
+    "raw.py": "335cb8953c4bad5462caf32660ca4d4481aca5b0efad624fe5341a19c5bdb694",
+    "raw-check.json": "15ddcdb7f3124497f9d3efdf275b7650cd810e1dc2775edc2f4701db254bc7ba",
+    "model.go.txt": "85d2435b10a46f1a7e7ff2dc9cdb4dfce2755591b8e15873f5f0d835779a49ad",
+    "model.json": "833586b3a3568c1684b7726bcb4b54b4973be025955f65fb9d3d2e640108d8aa",
+    "observed-sha256.txt": "534ed032cbd76eee1ba265992c729245f7f74ede5f522848dbb95776f8b7174e"
+  }
+}

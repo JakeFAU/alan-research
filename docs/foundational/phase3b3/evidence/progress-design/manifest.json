@@ -1,0 +1,11 @@
+{
+  "Status": "independent query-design audit, not full runtime correspondence qualification",
+  "ResearchHEAD": "360cae66f5ffdd6e7a95a568552df5522122da21",
+  "Files": {
+    "ledger.go.txt": "008248e51ad7d2c6f45c769b1e1420306bb8aa5ea150b258680f5c0f9e96c35d",
+    "probe.go.txt": "978219f8e96dc9fab405ff235996a2e1da9fb55a84beab0e23775ba62098f505",
+    "probe.json": "b7b6e99c0c76a91151890742c1c5e539730640dd93d3ca41317adb1db3ecb5fd",
+    "review.md": "8752cad6c7c1313527f4b48dae97a48fb6bba67d43790e68df2d7d5099e4f689",
+    "ledger.json": "a05fa65be585b01b76c30a0a5771922e0106adb6abb3dcfbfc98219b32af61cb"
+  }
+}

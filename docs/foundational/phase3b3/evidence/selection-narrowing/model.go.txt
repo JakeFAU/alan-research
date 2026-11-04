@@ -1,0 +1,33 @@
+package main
+
+import (
+ "encoding/json"
+ "fmt"
+ "os"
+ m "github.com/JakeFAU/alan-research/research/authorityservice"
+ b "github.com/JakeFAU/alan-research/research/mutualobligations"
+)
+func main() {
+ c:=m.Config{Policy:"S2",Scenario:"LateGrant"}
+ s:=m.Initial(c);events:=[]m.Event{}
+ actions:=[]struct{Kind string; Obligation b.Obligation}{
+  {"commit",b.AB},{"send-request",b.AB},{"admit",b.AB},
+  {"commit",b.BA},{"send-request",b.BA},{"admit",b.BA},
+  {"retain-grant",b.BA},
+ }
+ for _,a:=range actions {
+  matches:=0
+  var chosen m.Transition
+  for _,e:=range m.Successors(c,s) {if e.Event.Kind==a.Kind&&e.Event.Obligation==a.Obligation&&!e.Event.Duplicate {matches++;chosen=e}}
+  if matches!=1 {panic(fmt.Sprintf("ambiguous/missing %v: %d",a,matches))}
+  events=append(events,chosen.Event);s=chosen.State
+ }
+ before:=s
+ if !s.Base.Obligations[b.AB].Committed||!s.Base.Obligations[b.BA].Committed||s.Base.Obligations[b.AB].Consumed||s.Base.Obligations[b.BA].Consumed {panic("originals not outstanding")}
+ candidates:=[]m.Event{};found:=0
+ for _,e:=range m.Successors(c,s) {if e.Event.Kind=="authorize"&&e.Event.Obligation==b.BA {candidates=append(candidates,e.Event);if e.Event.Decision!=m.Allowed||e.Event.Authority.Path!=m.Delegated {panic("unexpected BA decision")};events=append(events,e.Event);s=e.State;found++}}
+ if found!=1 {panic("expected unique allowed BA decision")}
+ audit,err:=m.AuditTrace(c,events);if err!=nil||!audit.ProtocolValid||!audit.AuthoritySafe {panic(fmt.Sprintf("audit: %+v %v",audit,err))}
+ out:=map[string]any{"Config":c,"Description":"Generated model witness, not actual runtime evidence. Request/ready selections stutter under the proposed coarse projection.","Events":events,"BeforeAuthorization":before,"AfterAuthorization":s,"BAAuthorizationCandidates":candidates,"Audit":audit,"BothOriginalsOutstanding":true,"RuntimeFactsInserted":false}
+ enc:=json.NewEncoder(os.Stdout);enc.SetIndent("","  ");if err:=enc.Encode(out);err!=nil {panic(err)}
+}

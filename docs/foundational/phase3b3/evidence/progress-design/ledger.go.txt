@@ -1,0 +1,13 @@
+package main
+import (
+ "encoding/json"
+ "os"
+ m "github.com/JakeFAU/alan-research/research/authorityservice"
+)
+func main() {
+ out:=[]m.GraphAudit{}
+ for _,s:=range []string{"LateGrant","Revocable"} {
+  a,e:=m.AuditGraph(m.Config{Policy:"S2",Scenario:s});if e!=nil {panic(e)};out=append(out,a)
+ }
+ e:=json.NewEncoder(os.Stdout).Encode(out);if e!=nil {panic(e)}
+}
