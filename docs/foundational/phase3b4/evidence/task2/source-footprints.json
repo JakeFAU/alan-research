@@ -1,0 +1,392 @@
+{
+  "research_commit": "7ba768042b855aa928afdf1139fd5d5bc2756496",
+  "runtime_commit": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "source_files": [
+    {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "path": "research/authorityservice/model.go",
+      "sha256": "11ec7401ade2c4b5b942b70929cc5df8a8f47da4d072a0b5d980b86e19034dbe"
+    },
+    {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "path": "research/delegationcorrespondence/files.go",
+      "sha256": "43cb2bcbad65be38ad0343f91e643fd2a1c80b1954f3ded9d2b6d5bef19c33df"
+    },
+    {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "path": "research/delegationcorrespondence/project.go",
+      "sha256": "55e8fe287bb8f322444cdb2e3297c0e5b77ef29b431e72809a8a7e297fccaa64"
+    },
+    {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "path": "research/delegationcorrespondence/custody.go",
+      "sha256": "25397f838435498b79553d714fdab9fe15106cc21ea30308ca1511f25e3e9ea9"
+    },
+    {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "path": "research/delegationcorrespondence/progress.go",
+      "sha256": "bb09efd0e96ab7862b981c3baab040962bc3a5a2cb1532d9bd25f2add2469c19"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/store.go",
+      "sha256": "74bc66ad4e3f76b743c36ec4a30dea32bc12984aaf5a772c18e0fd566c32e138"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/program.go",
+      "sha256": "5760d84b899ed7bff06aab8df9a12601f4ca5f190bfee59b1d244d3db0d531ee"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/messages.go",
+      "sha256": "cb318dce8758e8c79963b6076595836ecde19d9bcb6e7c938903224b405a2a29"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/lifecycle.go",
+      "sha256": "8bb8be1ba1f46a419c6d7402c2df1afcbeab65155997107db237ba6a349d0e8c"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/request_authority.go",
+      "sha256": "0428f5fe32453d08e2d6388f723dda76f8edf42cd8c276489938b05bbb6aec38"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/request_authority_admission.go",
+      "sha256": "9a3b06b1d01a28790090cebb737c5c0046ca730d8c6a9afcf61a49807a95783f"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/executor/runner.go",
+      "sha256": "1f33e072ef00f37321f5f8d136546c7bedb4e2bb1bce6d6cc1857eb017351d93"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "examples/delegation/reciprocal.go",
+      "sha256": "c23032d29b2d3c39972bc158781ec183fc0940b4401b1c29f13c4b1f8d3c2387"
+    },
+    {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "path": "internal/durabletest/phase3b4_construction_test.go",
+      "sha256": "f456c9cd405740ed8cfd61ecddd5250950707a3003097a622b1ce6ace4d2aac8"
+    }
+  ],
+  "commands": [
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "7ba768042b855aa928afdf1139fd5d5bc2756496\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "3f8307664b6543331a41c943e91fb5bac8b376ef\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "git",
+        "status",
+        "--short"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "515,591p",
+        "internal/executor/store.go"
+      ],
+      "exit": 0,
+      "stdout": "\ts.lock = lock\n\treturn s, nil\n}\n\nfunc insertArtifact(ctx context.Context, tx *sql.Tx, a Artifact, l Limits) error {\n\tif !supportedSemantics(a.Semantics) {\n\t\treturn ErrVersion\n\t}\n\tif a.ID != programHash(a.Bytes) {\n\t\treturn fmt.Errorf(\"artifact hash: %w\", ErrCorrupt)\n\t}\n\tif len(a.Bytes) > l.MaxProgramBytes || l.MaxProgramBytes <= 0 {\n\t\treturn ErrLimit\n\t}\n\tvar p Program\n\tif err := decode(a.Bytes, &p); err != nil {\n\t\treturn err\n\t}\n\tif p.Semantics != a.Semantics {\n\t\treturn ErrVersion\n\t}\n\tif err := validateProgram(p); err != nil {\n\t\treturn err\n\t}\n\tenabled, e := requestAuthorityEnabled(ctx, tx)\n\tif e != nil {\n\t\treturn e\n\t}\n\tif e = validateRequestAuthorityProgram(p, enabled); e != nil {\n\t\treturn e\n\t}\n\tvar sem string\n\tvar existing []byte\n\terr := tx.QueryRowContext(ctx, \"SELECT semantics,bytes FROM programs WHERE id=?\", a.ID).Scan(&sem, &existing)\n\tif err == nil {\n\t\tif sem != a.Semantics || !bytes.Equal(existing, a.Bytes) {\n\t\t\treturn ErrConflict\n\t\t}\n\t\treturn nil\n\t}\n\tif !errors.Is(err, sql.ErrNoRows) {\n\t\treturn err\n\t}\n\t_, err = tx.ExecContext(ctx, \"INSERT INTO programs VALUES(?,?,?)\", a.ID, a.Semantics, a.Bytes)\n\treturn err\n}\nfunc loadProgram(ctx context.Context, q queryer, id string, l Limits) (Program, error) {\n\tvar a Artifact\n\ta.ID = id\n\tif err := q.QueryRowContext(ctx, \"SELECT semantics,bytes FROM programs WHERE id=?\", id).Scan(&a.Semantics, &a.Bytes); err != nil {\n\t\treturn Program{}, err\n\t}\n\tif !supportedSemantics(a.Semantics) {\n\t\treturn Program{}, ErrVersion\n\t}\n\tif a.ID != programHash(a.Bytes) {\n\t\treturn Program{}, fmt.Errorf(\"artifact hash: %w\", ErrCorrupt)\n\t}\n\tif len(a.Bytes) > l.MaxProgramBytes || l.MaxProgramBytes <= 0 {\n\t\treturn Program{}, ErrLimit\n\t}\n\tvar p Program\n\tif err := decode(a.Bytes, &p); err != nil {\n\t\treturn Program{}, err\n\t}\n\tif p.Semantics != a.Semantics {\n\t\treturn Program{}, ErrVersion\n\t}\n\tenabled, e := requestAuthorityEnabled(ctx, q)\n\tif e != nil {\n\t\treturn p, e\n\t}\n\tif e = validateRequestAuthorityProgram(p, enabled); e != nil {\n\t\treturn p, e\n\t}\n\treturn p, validateProgram(p)\n}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "595,689p",
+        "internal/executor/store.go"
+      ],
+      "exit": 0,
+      "stdout": "func Open(ctx context.Context, path string, limits Limits) (*Store, error) {\n\treturn openStore(ctx, path, limits, false)\n}\n\nfunc openStore(ctx context.Context, path string, limits Limits, composition bool) (store *Store, err error) {\n\treal, err := canonicalPath(path, false)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tlock, err := acquire(real)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer func() {\n\t\tif store == nil {\n\t\t\terr = errors.Join(err, lock.Close())\n\t\t}\n\t}()\n\t// Check the retained journal mode before the writer can change it. Keep\n\t// the reader alive across a failed writer close: otherwise SQLite can\n\t// checkpoint a killed owner's committed WAL even after a rollback.\n\treader, err := connect(ctx, real, true)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer reader.Close()\n\ts, err := connect(ctx, real, false)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer func() {\n\t\tif store == nil {\n\t\t\terr = errors.Join(err, s.Close())\n\t\t}\n\t}()\n\ts.limits = limits\n\t// SQLite only applies its spill policy outside a transaction. Use a\n\t// separate writer for validation and activation so a failed large renewal\n\t// cannot leave uncommitted WAL frames, and normal execution keeps its\n\t// original pager settings. Both connections are under the same owner lock.\n\trenewal, err := connect(ctx, real, false)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer renewal.Close()\n\tif _, err = renewal.conn.ExecContext(ctx, \"PRAGMA cache_spill=OFF\"); err != nil {\n\t\treturn nil, err\n\t}\n\ttx, err := renewal.conn.BeginTx(ctx, nil)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer tx.Rollback()\n\tvar report ReplayReport\n\tif composition {\n\t\treport, err = validateCompositionStore(ctx, tx, limits)\n\t\tif err == nil {\n\t\t\ts.composition, err = readCompositionProfile(ctx, tx, limits)\n\t\t}\n\t} else {\n\t\treport, err = validateLedger(ctx, tx, limits)\n\t\tif err == nil {\n\t\t\tn, e := schemaNumber(ctx, tx)\n\t\t\tif e != nil {\n\t\t\t\treturn nil, e\n\t\t\t}\n\t\t\tif isCompositionSchema(n) {\n\t\t\t\ts.composition, err = readCompositionProfile(ctx, tx, limits)\n\t\t\t}\n\t\t}\n\t}\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tstored, err := storedSchemaNumber(ctx, tx)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\ts.reconciliation = protocolSchemaNumber(stored) == reconciliationSchemaVersion\n\ts.dispatchAdmissions = hasDispatchAdmissionSchema(stored)\n\ts.namespace = report.Namespace\n\tfor _, r := range report.Runs {\n\t\tif r.Projection.Status != \"open\" {\n\t\t\tcontinue\n\t\t}\n\t\tif r.Epoch == math.MaxInt64 {\n\t\t\treturn nil, ErrLimit\n\t\t}\n\t\tif _, err = tx.ExecContext(ctx, \"UPDATE runs SET epoch=epoch+1 WHERE subject=? AND generation=?\", r.ID.Subject, r.ID.Generation); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t}\n\tif err = tx.Commit(); err != nil {\n\t\treturn nil, err\n\t}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "770,942p",
+        "internal/executor/store.go"
+      ],
+      "exit": 0,
+      "stdout": "func insertObservation(ctx context.Context, tx *sql.Tx, o Observation, limits Limits) error {\n\tif o.ID == \"\" || o.Run.Subject == \"\" || o.Run.Generation <= 0 || o.Kind == \"\" || o.Provenance == \"\" || o.Source == \"\" || o.SourceGeneration <= 0 || o.Payload == nil {\n\t\treturn fmt.Errorf(\"invalid observation\")\n\t}\n\tfor k, v := range o.Payload {\n\t\tif k == \"\" || !validValue(v) {\n\t\t\treturn fmt.Errorf(\"invalid observation payload\")\n\t\t}\n\t}\n\tif err := checkSize(o, limits.MaxObservationBytes); err != nil {\n\t\treturn err\n\t}\n\tb, err := json.Marshal(o)\n\tif err != nil {\n\t\treturn err\n\t}\n\tvar old []byte\n\terr = tx.QueryRowContext(ctx, \"SELECT descriptor FROM observations WHERE id=?\", o.ID).Scan(&old)\n\tif err == nil {\n\t\tif !bytes.Equal(old, b) {\n\t\t\treturn ErrConflict\n\t\t}\n\t\treturn nil\n\t}\n\tif !errors.Is(err, sql.ErrNoRows) {\n\t\treturn err\n\t}\n\tif _, err = tx.ExecContext(ctx, \"INSERT INTO observations(id,subject,generation,descriptor) VALUES(?,?,?,?)\", o.ID, o.Run.Subject, o.Run.Generation, b); err != nil {\n\t\treturn err\n\t}\n\treturn nil\n}\n\n// Commit selects at most one retained observation and evaluates inside the same\n// transaction as consumption, history, successor, intents and terminal retention.\n// No speculative result can dispatch through this API.\nfunc (s *Store) Commit(ctx context.Context, a Authority, selected string) (RunState, error) {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\tif s.closed {\n\t\treturn RunState{}, sql.ErrConnDone\n\t}\n\ttx, err := beginOwnedTx(ctx, s.conn)\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tdefer tx.Rollback()\n\tr, err := loadRun(ctx, tx, a.Run)\n\tif errors.Is(err, sql.ErrNoRows) {\n\t\treturn RunState{}, ErrStale\n\t}\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tvar generation int64\n\tvar retired bool\n\tif err = tx.QueryRowContext(ctx, \"SELECT generation,retired FROM subjects WHERE id=?\", a.Run.Subject).Scan(&generation, &retired); err != nil {\n\t\treturn RunState{}, err\n\t}\n\tif a != r.Authority() || generation != a.Run.Generation || retired {\n\t\treturn RunState{}, ErrStale\n\t}\n\tif r.Projection.Status != \"open\" {\n\t\treturn RunState{}, ErrClosed\n\t}\n\tif r.Sequence == math.MaxInt64 {\n\t\treturn RunState{}, ErrLimit\n\t}\n\tp, err := loadProgram(ctx, tx, r.ProgramID, s.limits)\n\tif err == nil && s.invocationEnabled() {\n\t\tp, err = boundCompositionProgram(ctx, tx, p, r.ID, s.limits)\n\t}\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tvar observation *Observation\n\tif selected != \"\" {\n\t\tvar b []byte\n\t\tvar consumed sql.NullInt64\n\t\tvar subject string\n\t\tvar gen int64\n\t\tif err = tx.QueryRowContext(ctx, \"SELECT subject,generation,descriptor,consumed_sequence FROM observations WHERE id=?\", selected).Scan(&subject, &gen, &b, &consumed); errors.Is(err, sql.ErrNoRows) {\n\t\t\treturn RunState{}, ErrIneligible\n\t\t}\n\t\tif err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t\tif consumed.Valid || subject != a.Run.Subject || gen != a.Run.Generation {\n\t\t\treturn RunState{}, ErrIneligible\n\t\t}\n\t\tobservation = &Observation{}\n\t\tif err = decode(b, observation); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t\tif observation.ID != selected || observation.Run != a.Run {\n\t\t\treturn RunState{}, ErrCorrupt\n\t\t}\n\t}\n\treduction, err := Reduce(p, r.Projection, observation, r.ID, r.Sequence+1, s.limits)\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tif slot, guarded := s.continuationSlot(r.ID); guarded {\n\t\tif err = checkContinuationIntents(ctx, tx, slot, r, reduction.Intents); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t}\n\tr.Sequence++\n\tr.Projection = reduction.Projection\n\tsuccessor, err := json.Marshal(r.Projection)\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tintents, err := json.Marshal(reduction.Intents)\n\tif err != nil {\n\t\treturn RunState{}, err\n\t}\n\tvar selectedArg any\n\tif selected != \"\" {\n\t\tselectedArg = selected\n\t}\n\tif selected != \"\" {\n\t\tif _, err = tx.ExecContext(ctx, \"UPDATE observations SET consumed_sequence=? WHERE id=?\", r.Sequence, selected); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t}\n\tif _, err = tx.ExecContext(ctx, \"INSERT INTO history VALUES(?,?,?,?,?,?,?,?)\", r.ID.Subject, r.ID.Generation, r.Sequence, r.Epoch, r.Revision, selectedArg, successor, intents); err != nil {\n\t\treturn RunState{}, err\n\t}\n\tfor _, intent := range reduction.Intents {\n\t\tif err = validateRequestAuthorityIntent(ctx, tx, intent, r.Revision); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t\tb, e := json.Marshal(intent)\n\t\tif e != nil {\n\t\t\treturn RunState{}, e\n\t\t}\n\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO intents VALUES(?,?,?,?,?,?,?)\", intent.ID, r.ID.Subject, r.ID.Generation, r.Sequence, intent.Ordinal, r.Revision, b); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t}\n\tif _, err = tx.ExecContext(ctx, \"UPDATE runs SET sequence=?,projection=? WHERE subject=? AND generation=?\", r.Sequence, successor, r.ID.Subject, r.ID.Generation); err != nil {\n\t\treturn RunState{}, err\n\t}\n\tif r.Projection.Status != \"open\" {\n\t\tdestinations, e := terminalDestinations(ctx, tx, r.ID.Subject, r.Revision)\n\t\tif e != nil {\n\t\t\treturn RunState{}, e\n\t\t}\n\t\tb, e := json.Marshal(destinations)\n\t\tif e != nil {\n\t\t\treturn RunState{}, e\n\t\t}\n\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO terminal_obligations VALUES(?,?,?,?,?,?,NULL,?)\", r.ID.Subject, r.ID.Generation, r.Sequence, successor, b, []byte(\"{}\"), r.Revision); err != nil {\n\t\t\treturn RunState{}, err\n\t\t}\n\t}\n\tif err = s.recordCompositionExecution(ctx, tx, r.ID, r.Sequence); err != nil {\n\t\treturn RunState{}, err\n\t}\n\tevent := boundary.Event{Boundary: \"execution.staged\", Phase: \"pre-commit\", Subject: r.ID.Subject, Generation: r.ID.Generation, Epoch: r.Epoch, Sequence: r.Sequence}\n\tif len(reduction.Intents) > 0 {\n\t\tevent.Intent = reduction.Intents[0].ID\n\t}\n\tif r.Projection.Status != \"open\" {\n\t\tevent.Phase = \"terminal\"\n\t}\n\tif err = boundary.Reached(ctx, event); err != nil {\n\t\treturn RunState{}, err\n\t}\n\tif err = s.commitOwnedTx(ctx, tx); err != nil {\n\t\treturn RunState{}, err\n\t}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "297,430p",
+        "internal/executor/program.go"
+      ],
+      "exit": 0,
+      "stdout": "// Reduce is pure and performs exactly one finite instruction. Effects are descriptors,\n// never callbacks; all loops yield to a subsequent durable execution commit.\nfunc Reduce(p Program, s Projection, o *Observation, id RunID, seq int64, l Limits) (Reduction, error) {\n\tif err := validateProgram(p); err != nil {\n\t\treturn Reduction{}, err\n\t}\n\tif err := checkSize(p, l.MaxProgramBytes); err != nil {\n\t\treturn Reduction{}, err\n\t}\n\tif err := validateProjection(s, p, l); err != nil {\n\t\treturn Reduction{}, err\n\t}\n\tif s.Status != \"open\" {\n\t\treturn Reduction{}, ErrClosed\n\t}\n\tif id.Subject == \"\" || id.Generation <= 0 || seq <= 0 {\n\t\treturn Reduction{}, fmt.Errorf(\"invalid execution identity\")\n\t}\n\tin := p.Code[s.PC]\n\tif in.Op != \"receive\" && o != nil {\n\t\treturn Reduction{}, ErrIneligible\n\t}\n\tnext := Projection{PC: s.PC + 1, Status: s.Status, Data: make(map[string]Value, len(s.Data))}\n\tfor k, v := range s.Data {\n\t\tnext.Data[k] = v.Clone()\n\t}\n\tnext.Cursors = cloneCursors(s.Cursors)\n\tresult := Reduction{Projection: next, Intents: []Intent{}}\n\tswitch in.Op {\n\tcase \"foreach\", \"next\", \"loop\", \"append\":\n\t\tif err := reduceCollection(p, in, s, &next); err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\tcase \"set\":\n\t\tv, err := eval(in.A, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tif in.Collection != nil {\n\t\t\tif err := in.Collection.Validate(v); err != nil {\n\t\t\t\treturn Reduction{}, err\n\t\t\t}\n\t\t}\n\t\tnext.Data[in.Dst] = v\n\tcase \"add\":\n\t\ta, err := intOperand(in.A, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tb, err := intOperand(in.B, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tif b > 0 && a > math.MaxInt64-b || b < 0 && a < math.MinInt64-b {\n\t\t\treturn Reduction{}, fmt.Errorf(\"integer overflow: %w\", ErrLimit)\n\t\t}\n\t\tnext.Data[in.Dst] = Int(a + b)\n\tcase \"branch\":\n\t\ta, err := eval(in.A, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tb, err := eval(in.B, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tnext.PC = in.Otherwise\n\t\tif a.Kind != \"list\" && b.Kind != \"list\" && a == b || a.Kind == \"list\" && a.Equal(b) {\n\t\t\tnext.PC = in.Target\n\t\t}\n\tcase \"jump\":\n\t\tnext.PC = in.Target\n\tcase \"receive\":\n\t\tif o == nil || o.Run != id {\n\t\t\treturn Reduction{}, ErrIneligible\n\t\t}\n\t\tif err := checkSize(o, l.MaxObservationBytes); err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tm := in.Match\n\t\tsource, err := stringOperand(m.Source, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tgen, err := intOperand(m.Generation, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tob, err := stringOperand(m.Obligation, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\top, err := stringOperand(m.Operation, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tif o.Kind != m.Kind || o.Provenance != m.Provenance || o.Source != source || o.SourceGeneration != gen || o.Obligation != ob || o.Operation != op {\n\t\t\treturn Reduction{}, ErrIneligible\n\t\t}\n\t\tif p.Author != nil {\n\t\t\tif record, ok := p.Author.Receives[s.PC]; ok {\n\t\t\t\tvar err error\n\t\t\t\tif in.Match.Kind == \"invocation\" && in.Match.Obligation.Literal != nil {\n\t\t\t\t\tdeclaration, ok := p.Author.Invocations[in.Match.Obligation.Literal.Text]\n\t\t\t\t\tif !ok {\n\t\t\t\t\t\treturn Reduction{}, ErrCorrupt\n\t\t\t\t\t}\n\t\t\t\t\terr = validateInvocationPayload(declaration.Output.Record, o.Payload)\n\t\t\t\t} else if in.Match.Kind == \"adapter\" && in.Match.Obligation.Literal != nil {\n\t\t\t\t\teffect, ok := p.Author.Effects[in.Match.Obligation.Literal.Text]\n\t\t\t\t\tif !ok {\n\t\t\t\t\t\treturn Reduction{}, fmt.Errorf(\"unknown adapter declaration\")\n\t\t\t\t\t}\n\t\t\t\t\terr = recordschema.ValidateResult(effect.Output.Record, o.Payload)\n\t\t\t\t} else {\n\t\t\t\t\terr = record.Record.Validate(o.Payload)\n\t\t\t\t}\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn Reduction{}, fmt.Errorf(\"receive schema: %w\", err)\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor field, dst := range in.Bind {\n\t\t\tif in.Match.Kind == \"invocation\" && strings.HasPrefix(field, \"response.\") && !o.Payload[\"response_present\"].Flag {\n\t\t\t\tdelete(next.Data, dst)\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tv, ok := o.Payload[field]\n\t\t\tif !ok || dst == \"\" || !validValue(v) {\n\t\t\t\treturn Reduction{}, fmt.Errorf(\"invalid receive binding %q\", field)\n\t\t\t}\n\t\t\tnext.Data[dst] = v.Clone()\n\t\t}\n\tcase \"emit\":\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "440,483p",
+        "internal/executor/program.go"
+      ],
+      "exit": 0,
+      "stdout": "\t\tob, err := stringOperand(e.Obligation, s.Data)\n\t\tif err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tkey, _ := json.Marshal([]any{id.Subject, id.Generation, seq, 0})\n\t\tintent := Intent{ID: string(key), Run: id, Sequence: seq, Ordinal: 0, Kind: e.Kind, Target: target, Generation: gen, Obligation: ob, Payload: map[string]Value{}, Authority: e.Authority}\n\t\tif e.Authority != nil {\n\t\t\tu := *e.Authority\n\t\t\tintent.Authority = &u\n\t\t}\n\t\tfor k, v := range e.Payload {\n\t\t\tx, err := eval(v, s.Data)\n\t\t\tif err != nil {\n\t\t\t\treturn Reduction{}, err\n\t\t\t}\n\t\t\tintent.Payload[k] = x\n\t\t}\n\t\tif err := validateAuthorIntent(p, intent); err != nil {\n\t\t\treturn Reduction{}, err\n\t\t}\n\t\tfor k, v := range in.Updates {\n\t\t\tif k == \"\" || k == in.Dst {\n\t\t\t\treturn Reduction{}, fmt.Errorf(\"invalid update destination\")\n\t\t\t}\n\t\t\tx, err := eval(v, s.Data)\n\t\t\tif err != nil {\n\t\t\t\treturn Reduction{}, err\n\t\t\t}\n\t\t\tif p.Author != nil {\n\t\t\t\tif col, ok := p.Author.Collections[k]; ok {\n\t\t\t\t\tif err := col.Validate(x); err != nil {\n\t\t\t\t\t\treturn Reduction{}, err\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tnext.Data[k] = x\n\t\t}\n\t\tif in.Dst != \"\" {\n\t\t\tnext.Data[in.Dst] = Text(intent.ID)\n\t\t}\n\t\tresult.Intents = append(result.Intents, intent)\n\tcase \"end\":\n\t\tif in.Outcome == \"succeeded\" {\n\t\t\tif err := validateAuthorOutput(p, s.Data); err != nil {\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "430,520p",
+        "internal/executor/messages.go"
+      ],
+      "exit": 0,
+      "stdout": "\t}\n\tencoded, err := json.Marshal(d)\n\tif err != nil {\n\t\treturn result, err\n\t}\n\tvar existing []byte\n\terr = tx.QueryRowContext(ctx, \"SELECT descriptor FROM admissions WHERE id=?\", key).Scan(&existing)\n\tif err == nil {\n\t\tif !bytes.Equal(existing, encoded) {\n\t\t\treturn result, ErrConflict\n\t\t}\n\t\t_, result, err = loadAdmission(ctx, tx, d.Kind, d.TransportID)\n\t\treturn result, err\n\t}\n\tif !errors.Is(err, sql.ErrNoRows) {\n\t\treturn result, err\n\t}\n\tvar generation int64\n\tvar retired bool\n\terr = tx.QueryRowContext(ctx, \"SELECT generation,retired FROM subjects WHERE id=?\", d.Target).Scan(&generation, &retired)\n\tswitch {\n\tcase errors.Is(err, sql.ErrNoRows):\n\t\tresult.Reason = \"target_missing\"\n\tcase err != nil:\n\t\treturn result, err\n\tdefault:\n\t\tresult.Bound = &RunID{d.Target, generation}\n\t\tswitch {\n\t\tcase sourceDenial != \"\":\n\t\t\tresult.Reason = sourceDenial\n\t\tcase retired:\n\t\t\tresult.Reason = \"target_retired\"\n\t\tcase d.Generation != 0 && d.Generation != generation:\n\t\t\tresult.Reason = \"target_generation_changed\"\n\t\tdefault:\n\t\t\ttarget, e := loadRun(ctx, tx, *result.Bound)\n\t\t\tif e != nil {\n\t\t\t\treturn result, e\n\t\t\t}\n\t\t\tif target.Projection.Status != \"open\" {\n\t\t\t\tresult.Reason = \"target_closed\"\n\t\t\t} else {\n\t\t\t\tpermitted, e := admissionPermitted(ctx, tx, d)\n\t\t\t\tif e != nil {\n\t\t\t\t\treturn result, e\n\t\t\t\t}\n\t\t\t\tif !permitted {\n\t\t\t\t\tresult.Reason = \"route_denied\"\n\t\t\t\t} else {\n\t\t\t\t\tprogram, e := loadProgram(ctx, tx, target.ProgramID, limits)\n\t\t\t\t\tif e != nil {\n\t\t\t\t\t\treturn result, e\n\t\t\t\t\t}\n\t\t\t\t\tprogram, e = boundCompositionProgram(ctx, tx, program, target.ID, limits)\n\t\t\t\t\tif e != nil {\n\t\t\t\t\t\treturn result, e\n\t\t\t\t\t}\n\t\t\t\t\tif !authorAdmissionValid(program, d) {\n\t\t\t\t\t\tresult.Reason = \"schema_invalid\"\n\t\t\t\t\t} else {\n\t\t\t\t\t\tresult.Accepted = true\n\t\t\t\t\t\tresult.Reason = \"accepted\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tif sourceDenial != \"\" {\n\t\tresult.Accepted = false\n\t\tresult.Reason = sourceDenial\n\t}\n\tif result.Accepted {\n\t\tobservation := observationFor(d, *result.Bound)\n\t\tif err = insertObservation(ctx, tx, observation, limits); err != nil {\n\t\t\treturn result, err\n\t\t}\n\t\tresult.ObservationID = observation.ID\n\t}\n\traw, err := json.Marshal(result)\n\tif err != nil {\n\t\treturn result, err\n\t}\n\tvar observationID any\n\tif result.ObservationID != \"\" {\n\t\tobservationID = result.ObservationID\n\t}\n\tif _, err = tx.ExecContext(ctx, \"INSERT INTO admissions VALUES(?,?,?,?,?,?)\", key, d.Kind, d.TransportID, encoded, raw, observationID); err != nil {\n\t\treturn result, err\n\t}\n\treturn result, nil\n}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "100,190p",
+        "examples/delegation/reciprocal.go"
+      ],
+      "exit": 0,
+      "stdout": "// S3 variants retain the S2 grant but omit or falsify A's selected authority.\nfunc Reciprocal(o Options) (runtime.Provision, Manifest, error) {\n\tp := runtime.Provision{}\n\tm := Manifest{Version: \"alan/reciprocal-fixture/v1\", Options: o, A: runtime.RunID{Subject: \"a\", Generation: 1}, B: runtime.RunID{Subject: \"b\", Generation: 1}, ABRequest: locator(\"a\", 1), BARequest: locator(\"b\", 1), Grant: locator(\"b\", 2), Ready: locator(\"b\", 5), BAService: locator(\"a\", 4), BAReply: locator(\"a\", 7), ABService: locator(\"b\", 9), ABReply: locator(\"b\", 12)}\n\tif !endpointValid(o.EndpointA) || !endpointValid(o.EndpointB) || o.EndpointA == o.EndpointB {\n\t\treturn p, m, fmt.Errorf(\"two distinct literal loopback HTTP endpoints required\")\n\t}\n\tswitch o.Scenario {\n\tcase S1Own, S2Handshake, S3Missing, S3Claim:\n\tdefault:\n\t\treturn p, m, fmt.Errorf(\"unknown reciprocal scenario %q\", o.Scenario)\n\t}\n\troot := func(run runtime.RunID, target, obligation string) runtime.AuthorityRoot {\n\t\treturn runtime.AuthorityRoot{Run: run, RootRun: run, Permission: runtime.Permission{Kind: \"external\", Source: run.Subject, Target: target, Operation: \"apply\", Revision: 1, Obligation: obligation}}\n\t}\n\tdelegated := root(m.B, o.EndpointB, \"ba-service\")\n\tm.BAServiceRoot = delegated\n\tm.ABServiceRoot = root(m.B, o.EndpointA, \"ab-service\")\n\tm.Claim = runtime.DelegationClaim{Version: runtime.RequestAuthorityVersion, Root: delegated, Recipient: m.A, RecipientRoot: m.A, RecipientRevision: 1, OriginalRequestID: m.BARequest, ServiceOperationID: m.BAService}\n\tclaim, err := json.Marshal(m.Claim)\n\tif err != nil {\n\t\treturn p, m, err\n\t}\n\tuse := &runtime.AuthorityUse{Version: runtime.RequestAuthorityVersion, Path: \"delegated\", Root: delegated, GrantID: m.Grant}\n\tp.Permissions = []runtime.Permission{delegated.Permission, m.ABServiceRoot.Permission}\n\tif o.Scenario == S1Own {\n\t\tm.BAServiceRoot = root(m.A, o.EndpointB, \"ba-service\")\n\t\tuse = &runtime.AuthorityUse{Version: runtime.RequestAuthorityVersion, Path: \"own\", Root: m.BAServiceRoot}\n\t\tp.Permissions = append(p.Permissions, m.BAServiceRoot.Permission)\n\t}\n\tif o.Scenario == S3Missing {\n\t\tuse = nil\n\t}\n\tif o.Scenario == S3Claim {\n\t\tuse.GrantID = m.BARequest\n\t}\n\tservice := func(target, obligation string, use *runtime.AuthorityUse) instruction {\n\t\tin := send(\"external\", target, obligation, \"service_operation\", map[string]operand{\"profile\": str(\"idempotent\"), \"delta\": lit(schema.Int(1))})\n\t\tin.Effect.Authority = use\n\t\treturn in\n\t}\n\tresult := func(endpoint, obligation string) instruction {\n\t\treturn receive(\"receipt\", \"resource-receipt\", endpoint, obligation, ref(\"service_operation\"), map[string]string{\"accepted\": \"service_accepted\", \"disposition\": \"disposition\", \"mutation\": \"mutation\", \"total\": \"total\"})\n\t}\n\treply := func(target, obligation, request string) instruction {\n\t\treturn send(\"message\", target, obligation, \"reply\", map[string]operand{\"accepted\": ref(\"service_accepted\"), \"request_id\": str(request), \"service_operation\": ref(\"service_operation\"), \"mutation\": ref(\"mutation\"), \"total\": ref(\"total\")})\n\t}\n\treplyReceive := func(source, obligation string) instruction {\n\t\treturn receive(\"message\", \"ordinary-message\", source, obligation, str(\"\"), map[string]string{\"accepted\": \"paid\", \"request_id\": \"reply_request\", \"service_operation\": \"reply_service\", \"mutation\": \"reply_mutation\", \"total\": \"reply_total\"})\n\t}\n\ta := []instruction{\n\t\tsend(\"message\", \"b\", \"ab-request\", \"ab_request\", map[string]operand{\"request_id\": str(m.ABRequest), \"claim\": str(string(claim))}),\n\t\treceive(\"message\", \"ordinary-message\", \"b\", \"grant-ready\", str(\"\"), map[string]string{\"grant\": \"grant_data\"}),\n\t\treceive(\"message\", \"ordinary-message\", \"b\", \"ba-request\", str(\"\"), map[string]string{\"request_id\": \"peer_request\", \"claim\": \"peer_claim\"}),\n\t\tservice(o.EndpointB, \"ba-service\", use), result(o.EndpointB, \"ba-service\"), branch(\"service_accepted\", 6, 10), reply(\"b\", \"ba-reply\", m.BARequest), replyReceive(\"b\", \"ab-reply\"), branch(\"paid\", 9, 10), {Op: \"end\", Outcome: \"succeeded\"}, {Op: \"end\", Outcome: \"failed\"},\n\t}\n\tb := []instruction{\n\t\tsend(\"message\", \"a\", \"ba-request\", \"ba_request\", map[string]operand{\"request_id\": str(m.BARequest), \"claim\": str(string(claim))}),\n\t\tsend(\"lifecycle\", \"a\", \"delegation-result\", \"grant\", map[string]operand{\"operation\": str(\"DelegateAuthority\"), \"revision\": lit(schema.Int(1)), \"claim\": str(string(claim))}),\n\t\treceive(\"lifecycle\", \"runtime-lifecycle\", \"a\", \"delegation-result\", ref(\"grant\"), map[string]string{\"accepted\": \"grant_accepted\"}), branch(\"grant_accepted\", 4, 14), send(\"message\", \"a\", \"grant-ready\", \"ready\", map[string]operand{\"grant\": ref(\"grant\")}), replyReceive(\"a\", \"ba-reply\"), branch(\"paid\", 7, 14), receive(\"message\", \"ordinary-message\", \"a\", \"ab-request\", str(\"\"), map[string]string{\"request_id\": \"peer_request\", \"claim\": \"peer_claim\"}), service(o.EndpointA, \"ab-service\", &runtime.AuthorityUse{Version: runtime.RequestAuthorityVersion, Path: \"own\", Root: m.ABServiceRoot}), result(o.EndpointA, \"ab-service\"), branch(\"service_accepted\", 11, 14), reply(\"a\", \"ab-reply\", m.ABRequest), receive(\"terminal\", \"runtime-terminal\", \"a\", \"a-complete\", str(\"\"), map[string]string{\"outcome\": \"peer_outcome\"}), {Op: \"end\", Outcome: \"succeeded\"}, {Op: \"end\", Outcome: \"failed\"},\n\t}\n\tif o.Scenario == S1Own {\n\t\tm.Grant = \"\"\n\t\tb[1] = instruction{Op: \"set\", Dst: \"grant\", A: str(\"\")}\n\t\tb[2] = instruction{Op: \"set\", Dst: \"grant_accepted\", A: lit(schema.Bool(true))}\n\t}\n\tif !o.TerminalHandshake {\n\t\tb[12] = instruction{Op: \"end\", Outcome: \"succeeded\"}\n\t}\n\tfor _, r := range []struct {\n\t\tsubject string\n\t\tcode    []instruction\n\t}{{\"a\", a}, {\"b\", b}} {\n\t\tbytes, err := json.Marshal(program{Semantics: \"alan/1d/v1\", Code: r.code})\n\t\tif err != nil {\n\t\t\treturn p, m, err\n\t\t}\n\t\thash := sha256.Sum256(bytes)\n\t\tid := hex.EncodeToString(hash[:])\n\t\tp.Programs = append(p.Programs, runtime.Artifact{ID: id, Semantics: \"alan/1d/v1\", Bytes: bytes})\n\t\tp.Subjects = append(p.Subjects, runtime.Subject{ID: r.subject, Generation: 1, Owner: \"reciprocal:\" + r.subject, Revision: 1})\n\t\tdata := map[string]schema.Value{\"paid\": schema.Bool(false), \"service_accepted\": schema.Bool(false), \"grant_accepted\": schema.Bool(false)}\n\t\tp.Runs = append(p.Runs, runtime.InitialRun{ID: runtime.RunID{Subject: r.subject, Generation: 1}, ProgramID: id, Projection: runtime.Projection{Status: \"open\", Data: data}})\n\t}\n\tfor _, v := range [][3]string{{\"a\", \"b\", \"ab-request\"}, {\"b\", \"a\", \"ba-request\"}, {\"b\", \"a\", \"grant-ready\"}, {\"a\", \"b\", \"ba-reply\"}, {\"b\", \"a\", \"ab-reply\"}} {\n\t\tp.Permissions = append(p.Permissions, runtime.Permission{Kind: \"message\", Source: v[0], Target: v[1], Operation: \"message\", Revision: 1, Obligation: v[2]})\n\t}\n\tif o.TerminalHandshake {\n\t\tp.Permissions = append(p.Permissions, runtime.Permission{Kind: \"observation\", Source: \"a\", Target: \"b\", Operation: \"terminal\", Revision: 1, Obligation: \"a-complete\"})\n\t}\n\tp.Composition = &runtime.CompositionProvision{RequestAuthority: runtime.RequestAuthorityVersion, Roots: []runtime.ResourceRoot{{Run: m.A, Members: []runtime.RunID{m.A}, Limits: runtime.ResourceLimits{MaxEffects: 1, MaxInFlight: 1}}, {Run: m.B, Members: []runtime.RunID{m.B}, Limits: runtime.ResourceLimits{MaxEffects: 1, MaxInFlight: 1}}}}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "380,490p",
+        "internal/executor/request_authority.go"
+      ],
+      "exit": 0,
+      "stdout": "func evaluateEffectAuthority(ctx context.Context, q queryer, i retainedIntent, prefix int64) (*EffectAuthority, error) {\n\tx, err := readAuthorityPrefix(ctx, q, prefix)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tw := &EffectAuthority{Version: RequestAuthorityVersion, Namespace: x.namespace, Use: i.Authority, ServingRootID: x.memberRoot(i.Run)}\n\tif w.ServingRootID == \"\" {\n\t\treturn nil, ErrCorrupt\n\t}\n\tdeny := func(reason string) (*EffectAuthority, error) { w.Reason = reason; return w, nil }\n\tif i.Authority == nil {\n\t\treturn deny(\"authority_missing\")\n\t}\n\tu := i.Authority\n\tif err = validateAuthorityUse(u); err != nil {\n\t\treturn nil, err\n\t}\n\tw.RootID = compositionRootID(x.namespace, u.Root.RootRun)\n\tif !x.committed(i.Intent) {\n\t\treturn nil, corrupt(\"effect before original commit\")\n\t}\n\treason, err := x.rootReason(ctx, q, u.Root, false)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif reason != \"\" {\n\t\treturn deny(reason)\n\t}\n\tp := u.Root.Permission\n\top := \"apply\"\n\tif i.Kind == \"adapter\" {\n\t\top = i.Obligation\n\t}\n\tif p.Kind != i.Kind || p.Target != i.Target || p.Operation != op || p.Obligation != i.Obligation {\n\t\treturn deny(\"authority_action_mismatch\")\n\t}\n\tif u.Path == \"own\" {\n\t\tif u.Root.Run != i.Run || p.Revision != i.revision {\n\t\t\treturn deny(\"authority_owner_mismatch\")\n\t\t}\n\t} else {\n\t\tif !x.has(compositionLifecycleFact, u.GrantID) {\n\t\t\treturn deny(\"authority_grant_missing\")\n\t\t}\n\t\tgrant, e := loadLifecycleResult(ctx, q, u.GrantID)\n\t\tif e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif grant.Request.Operation != \"DelegateAuthority\" || !grant.Accepted || grant.Authority == nil {\n\t\t\treturn deny(\"authority_grant_refused\")\n\t\t}\n\t\td, _, e := parseAuthorityClaim(grant.Request)\n\t\tif e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif d.Root != u.Root || d.Recipient != i.Run || d.RecipientRevision != i.revision || !x.rootMember(i.Run, d.RecipientRoot) || d.ServiceOperationID != i.ID || i.Ordinal != 0 {\n\t\t\treturn deny(\"authority_service_mismatch\")\n\t\t}\n\t\tw.OriginalRequestID = d.OriginalRequestID\n\t\tw.ServiceOperationID = d.ServiceOperationID\n\t\tw.GrantDecisionSequence = grant.DecisionSequence\n\t\tif i.Sequence <= 1 {\n\t\t\treturn deny(\"authority_request_not_selected\")\n\t\t}\n\t\tvar selected sql.NullString\n\t\tif e = q.QueryRowContext(ctx, \"SELECT selected_observation FROM history WHERE subject=? AND generation=? AND sequence=?\", i.Run.Subject, i.Run.Generation, i.Sequence-1).Scan(&selected); e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif !selected.Valid {\n\t\t\treturn deny(\"authority_request_not_selected\")\n\t\t}\n\t\tvar raw []byte\n\t\tvar consumed sql.NullInt64\n\t\tvar observation Observation\n\t\tvar observedRun RunID\n\t\tif e = q.QueryRowContext(ctx, \"SELECT subject,generation,descriptor,consumed_sequence FROM observations WHERE id=?\", selected.String).Scan(&observedRun.Subject, &observedRun.Generation, &raw, &consumed); e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif e = decode(raw, &observation); e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif observedRun != i.Run || !sameJSON(raw, observation) || observation.ID != selected.String || observation.Run != i.Run || observation.Provenance != \"ordinary-message\" || observation.Source != d.Root.Run.Subject || observation.SourceGeneration != d.Root.Run.Generation || !consumed.Valid || consumed.Int64 != i.Sequence-1 {\n\t\t\treturn deny(\"authority_request_not_selected\")\n\t\t}\n\t\tids, e := stringList(ctx, q, \"SELECT id FROM admissions\")\n\t\tif e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tadmitted := false\n\t\tfor _, id := range ids {\n\t\t\tdesc, a, e := loadAdmissionKey(ctx, q, id)\n\t\t\tif e != nil {\n\t\t\t\treturn nil, e\n\t\t\t}\n\t\t\tif a.Accepted && a.Bound != nil && *a.Bound == i.Run && desc.Kind == \"message\" && desc.IntentID == d.OriginalRequestID && a.ObservationID == selected.String && reflect.DeepEqual(observationFor(desc, i.Run), observation) {\n\t\t\t\tadmitted = true\n\t\t\t}\n\t\t}\n\t\tif !admitted || !x.has(compositionAuthorizationFact, d.OriginalRequestID) {\n\t\t\treturn deny(\"authority_request_not_admitted\")\n\t\t}\n\t\tauth, e := loadAuthorization(ctx, q, d.OriginalRequestID)\n\t\tif e != nil {\n\t\t\treturn nil, e\n\t\t}\n\t\tif !auth.Allowed {\n\t\t\treturn deny(\"authority_request_not_admitted\")\n\t\t}\n\t\tw.RequestObservationID = selected.String\n\t\tw.RequestConsumedSequence = consumed.Int64\n\t}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "255,289p",
+        "internal/executor/request_authority.go"
+      ],
+      "exit": 0,
+      "stdout": "func (x *authorityPrefix) rootReason(ctx context.Context, q queryer, r AuthorityRoot, allowRevoked bool) (string, error) {\n\tif r.Permission.Source != r.Run.Subject {\n\t\treturn \"authority_holder_mismatch\", nil\n\t}\n\tif !x.rootMember(r.Run, r.RootRun) {\n\t\treturn \"authority_root_mismatch\", nil\n\t}\n\tst, ok := x.states[r.Run]\n\tif !ok || st.Run != r.Run || r.Run.Generation != 1 {\n\t\treturn \"authority_generation_changed\", nil\n\t}\n\tif st.Revision != r.Permission.Revision {\n\t\treturn \"authority_revision_changed\", nil\n\t}\n\tif st.Retired {\n\t\treturn \"authority_retired\", nil\n\t}\n\tvar raw []byte\n\tvar permissions []Permission\n\tif err := q.QueryRowContext(ctx, \"SELECT descriptor FROM composition_permissions WHERE singleton=1\").Scan(&raw); err != nil {\n\t\treturn \"\", err\n\t}\n\tif err := decode(raw, &permissions); err != nil {\n\t\treturn \"\", err\n\t}\n\tif !slices.Contains(permissions, r.Permission) {\n\t\treturn \"authority_permission_missing\", nil\n\t}\n\tif !allowRevoked && x.revoked[r] {\n\t\treturn \"authority_revoked\", nil\n\t}\n\treturn \"\", nil\n}\nfunc authorityFactOrder(ctx context.Context, q queryer, kind compositionFactKind, id string) (int64, error) {\n\tfacts, err := readCompositionFacts(ctx, q)\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "230,285p",
+        "internal/executor/lifecycle.go"
+      ],
+      "exit": 0,
+      "stdout": "\t\t\t\t\tafter.Projection.Status = \"abandoned\"\n\t\t\t\t}\n\t\t\t\tif request.Operation != \"RetireSubject\" {\n\t\t\t\t\tresult.Reason = \"closed\"\n\t\t\t\t}\n\t\t\t}\n\t\tdefault:\n\t\t\treturn result, fmt.Errorf(\"unknown lifecycle operation\")\n\t\t}\n\t}\n\treturn result, nil\n}\nfunc (s *Store) DecideLifecycle(ctx context.Context, request LifecycleRequest) (LifecycleResult, error) {\n\ts.mu.Lock()\n\tdefer s.mu.Unlock()\n\tif s.closed {\n\t\treturn LifecycleResult{}, sql.ErrConnDone\n\t}\n\ttx, err := beginOwnedTx(ctx, s.conn)\n\tif err != nil {\n\t\treturn LifecycleResult{}, err\n\t}\n\tdefer tx.Rollback()\n\texisting, err := loadLifecycleResult(ctx, tx, request.Intent.ID)\n\tif err == nil {\n\t\tif !reflect.DeepEqual(existing.Request, request) {\n\t\t\treturn existing, ErrConflict\n\t\t}\n\t\treturn existing, s.lifecycleBoundary(ctx, tx, existing)\n\t}\n\tif !errors.Is(err, sql.ErrNoRows) {\n\t\treturn existing, err\n\t}\n\tcommitted, err := loadLifecycleRequest(ctx, tx, request.Intent.ID)\n\tif err != nil {\n\t\treturn LifecycleResult{}, err\n\t}\n\tif !reflect.DeepEqual(committed, request) {\n\t\treturn LifecycleResult{}, ErrConflict\n\t}\n\tauth, err := loadAuthorization(ctx, tx, request.Intent.ID)\n\tif err != nil {\n\t\treturn LifecycleResult{}, err\n\t}\n\tif !auth.Allowed {\n\t\treturn LifecycleResult{}, ErrSourceDenied\n\t}\n\tvar order int64\n\tif err = tx.QueryRowContext(ctx, \"SELECT coalesce(max(decision_sequence),0) FROM lifecycle_results\").Scan(&order); err != nil {\n\t\treturn LifecycleResult{}, err\n\t}\n\tif order == math.MaxInt64 {\n\t\treturn LifecycleResult{}, ErrLimit\n\t}\n\torder++\n\tsubject, err := loadSubject(ctx, tx, request.Intent.Target)\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "356,387p",
+        "internal/executor/lifecycle.go"
+      ],
+      "exit": 0,
+      "stdout": "\t\t\t\tdestinations, e := terminalDestinations(ctx, tx, subject.ID, subject.Revision)\n\t\t\t\tif e != nil {\n\t\t\t\t\treturn result, e\n\t\t\t\t}\n\t\t\t\troutes, e := json.Marshal(destinations)\n\t\t\t\tif e != nil {\n\t\t\t\t\treturn result, e\n\t\t\t\t}\n\t\t\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO terminal_obligations VALUES(?,?,?,?,?,?,?,?)\", subject.ID, before.Run.Generation, before.Sequence, projection, routes, []byte(\"{}\"), request.Intent.ID, subject.Revision); err != nil {\n\t\t\t\t\treturn result, err\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tdescriptor, err := json.Marshal(request)\n\tif err != nil {\n\t\treturn result, err\n\t}\n\traw, err := json.Marshal(result)\n\tif err != nil {\n\t\treturn result, err\n\t}\n\tif _, err = tx.ExecContext(ctx, \"INSERT INTO lifecycle_results VALUES(?,?,?,?)\", request.Intent.ID, order, descriptor, raw); err != nil {\n\t\treturn result, err\n\t}\n\tif err = s.recordCompositionLifecycle(ctx, tx, result); err != nil {\n\t\treturn result, err\n\t}\n\treturn result, s.lifecycleBoundary(ctx, tx, result)\n}\nfunc lifecycleOutcome(ctx context.Context, q queryer, id string) (LifecycleOutcome, error) {\n\trequest, err := loadLifecycleRequest(ctx, q, id)\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "sed",
+        "-n",
+        "80,245p",
+        "internal/executor/request_authority_admission.go"
+      ],
+      "exit": 0,
+      "stdout": "\t}\n\tauth, err := loadAuthorization(ctx, q, id)\n\tif err != nil {\n\t\treturn compositionFact{}, err\n\t}\n\tif !auth.Allowed || !x.has(compositionAuthorizationFact, id) {\n\t\treturn compositionFact{}, corrupt(\"gate without original source allowance\")\n\t}\n\tif _, err = retainedEffectAuthority(ctx, q, i, w); err != nil {\n\t\treturn compositionFact{}, err\n\t}\n\tst, ok := x.states[i.Run]\n\tif !ok || source.Run != i.Run || source.Sequence != st.Sequence || source.Revision != st.Revision {\n\t\treturn compositionFact{}, corrupt(\"gate source prefix mismatch\")\n\t}\n\trun, err := loadRun(ctx, q, i.Run)\n\tif err != nil {\n\t\treturn compositionFact{}, err\n\t}\n\tif err = validateWitnessEpoch(ctx, q, run, source.Sequence, source.Epoch); err != nil {\n\t\treturn compositionFact{}, err\n\t}\n\tordinal := int64(1)\n\tfor _, f := range x.facts {\n\t\tif f.Kind == compositionAuthorityAdmissionFact && f.OperationID == id {\n\t\t\tif f.AuthorityAdmission == nil || f.AuthorityAdmission.Ordinal != ordinal {\n\t\t\t\treturn compositionFact{}, ErrCorrupt\n\t\t\t}\n\t\t\tordinal++\n\t\t}\n\t}\n\td := &AuthorityAdmission{Version: RequestAuthorityVersion, Namespace: x.namespace, Ordinal: ordinal, Source: source, AttemptDigest: compositionIdentity(\"alan/attempt-row/v1\", a), Allowed: true, Reason: \"authorized\"}\n\tswitch {\n\tcase source.Revision != i.revision:\n\t\td.Allowed = false\n\t\td.Reason = \"source_revision_changed\"\n\tcase st.Retired:\n\t\td.Allowed = false\n\t\td.Reason = \"source_retired\"\n\tcase st.Projection.Status != \"open\":\n\t\td.Allowed = false\n\t\td.Reason = \"source_closed\"\n\tdefault:\n\t\tfor _, r := range x.profile.Roots {\n\t\t\tif r.ID == w.ServingRootID && x.states[r.Run].Projection.Status != \"open\" {\n\t\t\t\td.Allowed = false\n\t\t\t\td.Reason = \"scope_closed\"\n\t\t\t}\n\t\t}\n\t\tfor _, f := range x.facts {\n\t\t\tif f.Kind == compositionFreezeFact && f.OperationID == \"root:\"+w.ServingRootID {\n\t\t\t\tvar raw []byte\n\t\t\t\tvar freeze compositionFreeze\n\t\t\t\tif err = q.QueryRowContext(ctx, \"SELECT descriptor FROM composition_freezes WHERE scope_id=?\", f.OperationID).Scan(&raw); err != nil {\n\t\t\t\t\treturn compositionFact{}, err\n\t\t\t\t}\n\t\t\t\tif err = decode(raw, &freeze); err != nil {\n\t\t\t\t\treturn compositionFact{}, err\n\t\t\t\t}\n\t\t\t\tif freeze.Status != \"succeeded\" {\n\t\t\t\t\td.Allowed = false\n\t\t\t\t\td.Reason = \"scope_closed\"\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tvar closures int\n\t\tif err = q.QueryRowContext(ctx, \"SELECT count(*) FROM composition_closures WHERE scope_id=? AND decision_order<?\", \"root:\"+w.ServingRootID, prefix).Scan(&closures); err != nil {\n\t\t\treturn compositionFact{}, err\n\t\t}\n\t\tif closures > 0 {\n\t\t\td.Allowed = false\n\t\t\td.Reason = \"scope_closed\"\n\t\t}\n\t}\n\tif d.Allowed {\n\t\tcurrent, e := evaluateEffectAuthority(ctx, q, i, prefix)\n\t\tif e != nil {\n\t\t\treturn compositionFact{}, e\n\t\t}\n\t\td.Allowed = current.Allowed\n\t\td.Reason = current.Reason\n\t}\n\troots := []string{w.ServingRootID}\n\tif w.Use.Path == \"delegated\" {\n\t\tissuer := x.memberRoot(w.Use.Root.Run)\n\t\tif issuer == \"\" || issuer != w.RootID {\n\t\t\treturn compositionFact{}, ErrCorrupt\n\t\t}\n\t\tif !slices.Contains(roots, issuer) {\n\t\t\troots = append(roots, issuer)\n\t\t}\n\t}\n\tslices.Sort(roots)\n\treturn compositionFact{Version: compositionFactVersion, Kind: compositionAuthorityAdmissionFact, Run: source.Run, Sequence: source.Sequence, OperationID: id, RootIDs: roots, ID: compositionIdentity(\"alan/fact/authority-admission/v1\", []any{x.namespace, id, ordinal}), RecordDigest: compositionIdentity(\"alan/authority-admission/v1\", d), AuthorityAdmission: d}, nil\n}\nfunc validateAuthorityAdmission(ctx context.Context, q queryer, f compositionFact) error {\n\tif f.Kind != compositionAuthorityAdmissionFact || f.AuthorityAdmission == nil {\n\t\treturn ErrVersion\n\t}\n\twant, err := expectedAuthorityAdmission(ctx, q, f.OperationID, f.AuthorityAdmission.Source, f.Order)\n\tif err != nil {\n\t\treturn err\n\t}\n\twant.Order = f.Order\n\tif !reflect.DeepEqual(want, f) {\n\t\treturn corrupt(\"authority admission differs from historical policy\")\n\t}\n\treturn nil\n}\n\n// Caller holds both Store locks. This is the sole primary-fact writer; it derives\n// the decision itself and commits before a volatile opportunity is released.\nfunc (s *Store) recordAuthorityAdmission(ctx context.Context, id string) (*AuthorityAdmission, error) {\n\ttx, err := beginOwnedTx(ctx, s.conn)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tdefer tx.Rollback()\n\ti, err := loadIntent(ctx, tx, id)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\trun, err := loadRun(ctx, tx, i.Run)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\t// Agreement between the attempt and its reservation digest is insufficient:\n\t// reconstruct the checkable request from the immutable original before a\n\t// fresh opportunity can escape. Adapter Wire remains trusted ABI output.\n\tswitch i.Kind {\n\tcase \"external\":\n\t\ta, err := loadExternalAttempt(ctx, tx, id)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif err = validateExternalAttempt(ctx, tx, a, s.namespace); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\tcase \"adapter\":\n\t\ta, err := loadAdapterAttempt(ctx, tx, id)\n\t\tif err != nil {\n\t\t\treturn nil, err\n\t\t}\n\t\tif err = validateAdapterAttempt(ctx, tx, a, s.namespace, s.limits); err != nil {\n\t\t\treturn nil, err\n\t\t}\n\tdefault:\n\t\treturn nil, ErrVersion\n\t}\n\tf, err := expectedAuthorityAdmission(ctx, tx, id, run.Authority(), authorityCurrentPrefix)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif err = tx.QueryRowContext(ctx, \"SELECT coalesce(max(decision_order),0)+1 FROM composition_facts\").Scan(&f.Order); err != nil {\n\t\treturn nil, err\n\t}\n\tif f.Order <= 0 {\n\t\treturn nil, ErrLimit\n\t}\n\traw, err := json.Marshal(f)\n\tif err != nil {\n\t\treturn nil, err\n\t}\n\tif _, err = tx.ExecContext(ctx, \"INSERT INTO composition_facts VALUES(?,?,?,?)\", f.Order, f.ID, f.Kind, raw); err != nil {\n\t\treturn nil, err\n\t}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "rg",
+        "-n",
+        "(UPDATE|DELETE FROM|INSERT (OR [A-Z]+ )?INTO) (history|intents|observations|programs|admissions|lifecycle_results)",
+        "internal/executor",
+        "--glob",
+        "*.go",
+        "--glob",
+        "!**/*_test.go"
+      ],
+      "exit": 0,
+      "stdout": "internal/executor/messages.go:516:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO admissions VALUES(?,?,?,?,?,?)\", key, d.Kind, d.TransportID, encoded, raw, observationID); err != nil {\ninternal/executor/external.go:487:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO admissions VALUES(?,?,?,?,?,?)\", admissionKey(\"receipt\", d.TransportID), \"receipt\", d.TransportID, raw, rr, observation.ID); err != nil {\ninternal/executor/lifecycle.go:378:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO lifecycle_results VALUES(?,?,?,?)\", request.Intent.ID, order, descriptor, raw); err != nil {\ninternal/executor/lifecycle.go:457:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO admissions VALUES(?,?,?,?,?,?)\", admissionKey(\"lifecycle\", transport), \"lifecycle\", transport, raw, resultRaw, observation.ID); err != nil {\ninternal/executor/store.go:558:\t_, err = tx.ExecContext(ctx, \"INSERT INTO programs VALUES(?,?,?)\", a.ID, a.Semantics, a.Bytes)\ninternal/executor/store.go:797:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO observations(id,subject,generation,descriptor) VALUES(?,?,?,?)\", o.ID, o.Run.Subject, o.Run.Generation, b); err != nil {\ninternal/executor/store.go:892:\t\tif _, err = tx.ExecContext(ctx, \"UPDATE observations SET consumed_sequence=? WHERE id=?\", r.Sequence, selected); err != nil {\ninternal/executor/store.go:896:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO history VALUES(?,?,?,?,?,?,?,?)\", r.ID.Subject, r.ID.Generation, r.Sequence, r.Epoch, r.Revision, selectedArg, successor, intents); err != nil {\ninternal/executor/store.go:907:\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO intents VALUES(?,?,?,?,?,?,?)\", intent.ID, r.ID.Subject, r.ID.Generation, r.Sequence, intent.Ordinal, r.Revision, b); err != nil {\ninternal/executor/invocation_outcome.go:209:\t\t\"INSERT INTO admissions VALUES(?,'message',?,?,?,NULL)\",\ninternal/executor/adapters.go:505:\tif _, e = tx.ExecContext(ctx, \"INSERT INTO admissions VALUES(?,?,?,?,?,?)\", admissionKey(\"adapter\", d.TransportID), \"adapter\", d.TransportID, raw, rr, o.ID); e != nil {\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "rg",
+        "-n",
+        "MaxProgramBytes|MaxDataBytes|DefaultLimits",
+        "internal/executor/program.go"
+      ],
+      "exit": 0,
+      "stdout": "99:type Limits struct{ MaxProgramBytes, MaxDataBytes, MaxObservationBytes, MaxOutputBytes int }\n101:func DefaultLimits() Limits {\n102:\treturn Limits{MaxProgramBytes: 1 << 20, MaxDataBytes: 1 << 20, MaxObservationBytes: 1 << 20, MaxOutputBytes: 1 << 20}\n294:\treturn checkSize(s, l.MaxDataBytes)\n303:\tif err := checkSize(p, l.MaxProgramBytes); err != nil {\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "argv": [
+        "rg",
+        "-n",
+        "MaxSteps|MaxDispatch|MaxInFlight",
+        "internal/executor/runner.go"
+      ],
+      "exit": 0,
+      "stdout": "15:const DefaultMaxInFlight = 2\n23:\tMaxSteps, MaxDispatch int\n24:\tMaxInFlight           int\n52:\tif options.MaxInFlight == 0 {\n53:\t\toptions.MaxInFlight = DefaultMaxInFlight\n58:\tif options.MaxSteps <= 0 || options.MaxDispatch <= 0 || options.MaxInFlight < 0 || options.ExternalTimeout < 0 {\n77:\tcompletions := make(chan externalCompletion, options.MaxInFlight)\n153:\t\t\tif report.Dispatches >= options.MaxDispatch {\n162:\t\tif external != nil && active < options.MaxInFlight {\n173:\t\tif external != nil && active < options.MaxInFlight {\n174:\t\t\tif report.Dispatches >= options.MaxDispatch {\n250:\t\t\tif report.Steps >= options.MaxSteps {\n681:\treturn id, root.Limits.MaxInFlight, err\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "206,252p",
+        "research/delegationcorrespondence/files.go"
+      ],
+      "exit": 0,
+      "stdout": "func projectSummary(v RawVerdict) ProjectionReport {\n\tp := ProjectionReport{Scope: \"retained logical service subsequence; no process availability correspondence\", Stutters: []string{\"lifecycle outcome selection\", \"grant-ready transport and selection\", \"terminal protocol after both original results consumed\"}, Abstractions: []string{\"explicit original-ID alpha renaming\", \"whole-action many-to-one B tuples for nonrevoking reciprocal trace\", \"equality-preserving per-case result atoms\"}}\n\tif !v.Valid {\n\t\tp.Reasons = append(p.Reasons, \"invalid_raw_history\")\n\t\treturn p\n\t}\n\tif len(v.RejectedAuthorityOperations) > 0 {\n\t\tp.Reasons = append(p.Reasons, \"rejected_authority_control_not_in_lategrant_issuance\")\n\t}\n\tfor _, e := range v.Effects {\n\t\tif e.Source.Subject == \"b\" && e.Allowed && !v.Custody.BSerialGuard {\n\t\t\tp.Reasons = append(p.Reasons, \"program_service_order_outside_A_servicing_B_serial\")\n\t\t}\n\t}\n\tif v.Revocations > 0 {\n\t\tp.Reasons = append(p.Reasons, \"separate_grant_with_revocation_not_in_frozen_configuration\")\n\t}\n\tif len(v.Custody.Originals) != 2 {\n\t\tp.Reasons = append(p.Reasons, \"not_two_original_reciprocal_history\")\n\t}\n\tfor _, e := range v.Effects {\n\t\tif len(e.Gates) > 1 {\n\t\t\tp.Reasons = append(p.Reasons, \"repeated_physical_exposure_not_atomic_model_apply\")\n\t\t}\n\t\tif e.Allowed && !e.Result && len(e.Gates) > 0 {\n\t\t\tp.Reasons = append(p.Reasons, \"unknown_or_uncalled_prefix_requires_external_evidence\")\n\t\t}\n\t\tgrantAlreadyPresent := false\n\t\tfor _, grant := range v.Grants {\n\t\t\tfor _, fact := range v.OrderedFacts {\n\t\t\t\tif fact.Kind == \"lifecycle\" && fact.OperationID == grant && fact.Order < e.Order {\n\t\t\t\t\tgrantAlreadyPresent = true\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tif !e.Allowed && (e.Reason != \"authority_grant_missing\" || grantAlreadyPresent) {\n\t\t\tp.Reasons = append(p.Reasons, \"explicit_selector_policy_narrows_implicit_model_choice\")\n\t\t}\n\t}\n\tif len(v.Discrepancies) > 0 {\n\t\tp.Mismatch = v.Discrepancies[0]\n\t\tp.Reasons = append(p.Reasons, p.Mismatch)\n\t}\n\tp.Supported = len(p.Reasons) == 0\n\treturn p\n}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "378,422p",
+        "research/authorityservice/model.go"
+      ],
+      "exit": 0,
+      "stdout": "\tfor d := base.AB; d <= base.BA; d++ {\n\t\tserver := base.Agent(1 - d)\n\t\ta := s.Authority[d]\n\t\tif s.Base.Agents[server].Down || !s.Base.Obligations[d].Admitted {\n\t\t\tcontinue\n\t\t}\n\t\tif a.Decision == Undecided {\n\t\t\tn := s\n\t\t\tp := choose(c, s, d)\n\t\t\tn.Authority[d].Path = p\n\t\t\tn.Authority[d].Decision = Allowed\n\t\t\tif p == NoPath {\n\t\t\t\tn.Authority[d].Decision = Refused\n\t\t\t\tn.Authority[d].Refusal = 1\n\t\t\t}\n\t\t\tadd(Event{Kind: \"authorize\", Actor: server, Obligation: d}, n)\n\t\t}\n\t\tif a.Decision == Allowed && !a.Permit && !s.Base.Obligations[d].Applied {\n\t\t\tif pathCurrent(c, s, d, a.Path) {\n\t\t\t\tn := s\n\t\t\t\tn.Authority[d].Permit = true\n\t\t\t\tn.Authority[d].PermitActivation = s.Base.Agents[server].Activation\n\t\t\t\tadd(Event{Kind: \"dispatch-admit\", Actor: server, Obligation: d}, n)\n\t\t\t} else if !a.AdmissionRefused {\n\t\t\t\tn := s\n\t\t\t\tn.Authority[d].AdmissionRefused = true\n\t\t\t\tadd(Event{Kind: \"dispatch-refuse\", Actor: server, Obligation: d}, n)\n\t\t\t}\n\t\t}\n\t}\n\tif c.Scenario == \"LateGrant\" && s.Base.Obligations[base.BA].Committed &&\n\t\ts.Grant == NoGrant && !s.Base.Agents[base.B].Down {\n\t\tn := s\n\t\tn.Grant = RetainedGrant\n\t\tadd(Event{Kind: \"retain-grant\", Actor: base.B, Obligation: base.BA}, n)\n\t}\n\tif c.Scenario == \"Revocable\" && !s.Revoked && !s.Base.Agents[base.B].Down {\n\t\tn := s\n\t\tn.Revoked = true\n\t\tadd(Event{Kind: \"revoke\", Actor: base.B, Obligation: base.NoObligation}, n)\n\t}\n\treturn out\n}\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "40,60p",
+        "research/delegationcorrespondence/progress.go"
+      ],
+      "exit": 0,
+      "stdout": "\tstate  m.State\n\tparent int\n\tevent  m.Event\n}\ntype progressArc struct {\n\tFrom, To, Successor int\n}\n\nfunc QueryProgress(config m.Config) (ProgressReport, error) {\n\tout := ProgressReport{Config: config, Limits: []string{\"Existential safe suffix in unchanged finite graph; no inevitable scheduling claim\", \"No all-runtime-state completion claim; handshake, budgets and unknown external outcomes remain additional obligations\"}}\n\tif config.Policy != \"S2\" || (config.Scenario != \"LateGrant\" && config.Scenario != \"Revocable\") {\n\t\treturn out, fmt.Errorf(\"unsupported progress query %s\", config.Name())\n\t}\n\tout.Predicate = \"Unsafe==0 and BA first Decision!=Refused\"\n\tif config.Scenario == \"Revocable\" {\n\t\tout.Predicate = \"Unsafe==0 and for each AB,BA: Decision!=Refused and (!Revoked or Applied or Permit)\"\n\t}\n\tnodes := []progressNode{{state: m.Initial(config), parent: -1}}\n\tids := map[m.State]int{nodes[0].state: 0}\n\tarcs := []progressArc{}\n\tfor from := 0; from < len(nodes); from++ {\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "217,300p",
+        "research/delegationcorrespondence/custody.go"
+      ],
+      "exit": 0,
+      "stdout": "func (c *checker) custody() {\n\tids := []string{}\n\tfor id, i := range c.intents {\n\t\tif i.Kind == \"message\" && (i.Obligation == \"ab-request\" || i.Obligation == \"ba-request\") {\n\t\t\tids = append(ids, id)\n\t\t}\n\t}\n\tsort.Strings(ids)\n\tfor _, id := range ids {\n\t\ti := c.intents[id]\n\t\to := Original{ID: id, Caller: i.Run, Callee: RunID{i.Target, i.Generation}, Committed: true, State: \"committed-unpaid\"}\n\t\tfor key, a := range c.admissions {\n\t\t\tr := c.admitResults[key]\n\t\t\tif a.Kind == \"message\" && a.IntentID == id && r.Accepted {\n\t\t\t\tv := c.observations[r.ObservationID]\n\t\t\t\to.Admitted = true\n\t\t\t\to.Selected = v.Consumed > 0\n\t\t\t\to.RequestSelection = v.Consumed\n\t\t\t}\n\t\t}\n\t\tfor eid, e := range c.effects {\n\t\t\tif e.Intent.Run != o.Callee {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif e.Witness.OriginalRequestID == id || e.Intent.Obligation == serviceDirection(i.Obligation)+\"-service\" {\n\t\t\t\to.EffectID = eid\n\t\t\t\tif !e.Allowed {\n\t\t\t\t\to.State = \"first-refused\"\n\t\t\t\t} else if c.receipts[eid].Key == \"\" && c.adapterResults[eid].Digest == \"\" {\n\t\t\t\t\to.State = \"unknown-or-not-contacted\"\n\t\t\t\t} else {\n\t\t\t\t\to.State = \"retained-result\"\n\t\t\t\t}\n\t\t\t\tfor oid, v := range c.observations {\n\t\t\t\t\tif v.Operation == eid && (v.Kind == \"receipt\" || v.Kind == \"adapter\") {\n\t\t\t\t\t\to.ResultObservation = oid\n\t\t\t\t\t\to.ResultSelected = v.Consumed > 0\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor rid, r := range c.intents {\n\t\t\tif r.Kind != \"message\" || r.Obligation != serviceDirection(i.Obligation)+\"-reply\" {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tneed(r.Run == o.Callee && r.Target == o.Caller.Subject && r.Generation == o.Caller.Generation && r.Payload[\"request_id\"] == stringValue(id), \"reply_original\", rid, \"\")\n\t\t\teid := r.Payload[\"service_operation\"].Text\n\t\t\te, ok := c.effects[eid]\n\t\t\tneed(ok && eid == o.EffectID && e.Allowed && o.ResultSelected && c.observations[o.ResultObservation].Consumed < r.Sequence, \"reply_result_custody\", rid, \"\")\n\t\t\tv := c.receipts[eid]\n\t\t\tneed(v.Key != \"\" && r.Payload[\"accepted\"] == boolValue(true) && r.Payload[\"mutation\"] == intValue(v.Mutation) && r.Payload[\"total\"] == intValue(v.Total), \"reply_result_values\", rid, \"\")\n\t\t\to.ReplyID = rid\n\t\t\tfor aid, a := range c.admissions {\n\t\t\t\tres := c.admitResults[aid]\n\t\t\t\tif a.IntentID == rid && res.Accepted {\n\t\t\t\t\tob := c.observations[res.ObservationID]\n\t\t\t\t\tneed(ob.Run == o.Caller, \"caller_generation\", rid, \"\")\n\t\t\t\t\to.ReplySelected = ob.Consumed > 0\n\t\t\t\t\to.ReplySelection = ob.Consumed\n\t\t\t\t\tif o.ReplySelected {\n\t\t\t\t\t\to.State = \"consumed\"\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tc.out.Custody.Originals = append(c.out.Custody.Originals, o)\n\t}\n\tc.out.Custody.Complete = len(ids) == 2\n\tfor _, o := range c.out.Custody.Originals {\n\t\tc.out.Custody.Complete = c.out.Custody.Complete && o.ReplySelected\n\t}\n\tif len(ids) == 2 && len(c.out.Effects) > 0 {\n\t\tfirst := c.out.Effects[0].Order\n\t\tall := true\n\t\tfor _, id := range ids {\n\t\t\ti := c.intents[id]\n\t\t\tf := c.expected[digest(\"alan/fact/execution/v1\", []any{i.Run, i.Sequence})]\n\t\t\torder := int64(0)\n\t\t\tfor _, v := range c.out.OrderedFacts {\n\t\t\t\tif v.ID == f.ID {\n\t\t\t\t\torder = v.Order\n\t\t\t\t}\n\t\t\t}\n\t\t\tall = all && order > 0 && order < first\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "20,81p",
+        "research/delegationcorrespondence/custody.go"
+      ],
+      "exit": 0,
+      "stdout": "\n// This deliberately small independent transition interpreter covers precisely\n// the five instruction kinds present in exported fixtures, not general ALAN.\nfunc (c *checker) checkInstruction(h history) {\n\tp := c.programs[c.runs[h.Run].ProgramID]\n\tprev := c.states[h.Run]\n\tneed(prev.Status == \"open\" && prev.PC >= 0 && prev.PC < len(p.Code), \"instruction_prefix\", h.Run.Subject, \"\")\n\tin := p.Code[prev.PC]\n\tnext := ProjectionState{PC: prev.PC + 1, Status: \"open\", Data: map[string]Value{}}\n\tfor k, v := range prev.Data {\n\t\tnext.Data[k] = v\n\t}\n\temitted := []Intent{}\n\tswitch in.Op {\n\tcase \"emit\":\n\t\tneed(in.Effect != nil && h.Selected == \"\", \"emit_shape\", h.Run.Subject, \"\")\n\t\te := in.Effect\n\t\ti := Intent{Authority: e.Authority, ID: identity(h.Run.Subject, h.Run.Generation, h.Sequence, 0), Run: h.Run, Sequence: h.Sequence, Ordinal: 0, Kind: e.Kind, Target: expr(e.Target, prev.Data).Text, Generation: expr(e.Generation, prev.Data).Number, Obligation: expr(e.Obligation, prev.Data).Text, Payload: map[string]Value{}}\n\t\tfor k, v := range e.Payload {\n\t\t\ti.Payload[k] = expr(v, prev.Data)\n\t\t}\n\t\temitted = append(emitted, i)\n\t\tif in.Dst != \"\" {\n\t\t\tnext.Data[in.Dst] = stringValue(i.ID)\n\t\t}\n\tcase \"receive\":\n\t\tneed(in.Match != nil && h.Selected != \"\", \"receive_shape\", h.Run.Subject, \"\")\n\t\to := c.observations[h.Selected]\n\t\tf := in.Match\n\t\tneed(o.Run == h.Run && o.Consumed == h.Sequence, \"receive_original\", o.ID, \"\")\n\t\tc.requireObservationPrefix(o)\n\t\tsource := expr(f.Source, prev.Data).Text\n\t\tgen := expr(f.Generation, prev.Data).Number\n\t\tobligation := expr(f.Obligation, prev.Data).Text\n\t\toperation := expr(f.Operation, prev.Data).Text\n\t\tneed((f.Kind == \"\" || f.Kind == o.Kind) && (f.Provenance == \"\" || f.Provenance == o.Provenance) && (source == \"\" || source == o.Source) && (gen == 0 || gen == o.SourceGeneration) && (obligation == \"\" || obligation == o.Obligation) && (operation == \"\" || operation == o.Operation), \"receive_filter\", o.ID, \"\")\n\t\tfor k, dst := range in.Bind {\n\t\t\tv, ok := o.Payload[k]\n\t\t\tneed(ok, \"receive_payload\", o.ID, k)\n\t\t\tnext.Data[dst] = v\n\t\t}\n\tcase \"branch\":\n\t\tneed(h.Selected == \"\", \"branch_selection\", h.Run.Subject, \"\")\n\t\tnext.PC = in.Otherwise\n\t\tif equal(expr(in.A, prev.Data), expr(in.B, prev.Data)) {\n\t\t\tnext.PC = in.Target\n\t\t}\n\tcase \"set\":\n\t\tneed(h.Selected == \"\", \"set_selection\", h.Run.Subject, \"\")\n\t\tnext.Data[in.Dst] = expr(in.A, prev.Data)\n\tcase \"end\":\n\t\tneed(h.Selected == \"\", \"end_selection\", h.Run.Subject, \"\")\n\t\tnext.PC = prev.PC\n\t\tnext.Status = in.Outcome\n\tdefault:\n\t\tfail(\"instruction_domain\", h.Run.Subject, in.Op)\n\t}\n\tfor k, e := range in.Updates {\n\t\tnext.Data[k] = expr(e, prev.Data)\n\t}\n\tneed(equal(emitted, h.Intents), \"program_emitted_intent\", historyKey(h.Run, h.Sequence), \"\")\n\tneed(equal(next, h.Next), \"program_successor\", historyKey(h.Run, h.Sequence), in.Op)\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "sed",
+        "-n",
+        "145,225p",
+        "research/delegationcorrespondence/project.go"
+      ],
+      "exit": 0,
+      "stdout": "\tfor _, f := range v.OrderedFacts {\n\t\tif stopped {\n\t\t\tbreak\n\t\t}\n\t\tswitch f.Kind {\n\t\tcase \"execution\":\n\t\t\th := hist[historyKey(f.Run, f.Sequence)]\n\t\t\tfor _, i := range h.Intents {\n\t\t\t\tif d, ok := requestTo[i.ID]; ok {\n\t\t\t\t\temit(\"commit\", d, b.NoValue, f, i.ID, \"original request commitment\")\n\t\t\t\t}\n\t\t\t\tif d, ok := replyTo[i.ID]; ok {\n\t\t\t\t\temit(\"send-result\", d, b.NoValue, f, i.ID, \"authentic result-bearing reply emission\")\n\t\t\t\t}\n\t\t\t}\n\t\t\tif d, ok := replyObservation[h.Selected]; ok {\n\t\t\t\temit(\"consume\", d, b.NoValue, f, h.Selected, \"actual caller history selection\")\n\t\t\t}\n\t\tcase \"authorization\":\n\t\t\tid := f.OperationID\n\t\t\tif !admitted[id] {\n\t\t\t\tcontinue\n\t\t\t}\n\t\t\tif d, ok := requestTo[id]; ok {\n\t\t\t\temit(\"send-request\", d, b.NoValue, f, id, \"accepted transport proves send; earliest causal placement\")\n\t\t\t\temit(\"admit\", d, b.NoValue, f, id, \"authenticated accepted original admission\")\n\t\t\t}\n\t\t\tif d, ok := replyTo[id]; ok {\n\t\t\t\temit(\"receive-result\", d, b.NoValue, f, id, \"accepted reply admission expansion 1/2\")\n\t\t\t\temit(\"record\", d, b.NoValue, f, id, \"durable reply observation expansion 2/2\")\n\t\t\t}\n\t\tcase \"lifecycle\":\n\t\t\tl := life[f.OperationID]\n\t\t\tif l.Accepted && l.Request.Operation == \"DelegateAuthority\" {\n\t\t\t\temit(\"retain-grant\", b.BA, b.NoValue, f, f.OperationID, \"accepted retained lifecycle decision\")\n\t\t\t}\n\t\tcase \"reservation\":\n\t\t\td, ok := effectTo[f.OperationID]\n\t\t\tif !ok {\n\t\t\t\tout.Supported = false\n\t\t\t\tout.Error = \"effect lacks original mapping\"\n\t\t\t\tstopped = true\n\t\t\t\tbreak\n\t\t\t}\n\t\t\temit(\"authorize\", d, b.NoValue, f, f.OperationID, \"immutable nested permission decision; resource checked separately\")\n\t\t\tif !stopped {\n\t\t\t\tactual := false\n\t\t\t\tfor _, e := range v.Effects {\n\t\t\t\t\tif e.ID == f.OperationID {\n\t\t\t\t\t\tactual = e.Witness.Allowed\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tif (out.Events[len(out.Events)-1].Event.Decision == m.Allowed) != actual {\n\t\t\t\t\tout.Mismatch = \"raw_model_authorization_disagreement\"\n\t\t\t\t\tif len(v.Discrepancies) > 0 {\n\t\t\t\t\t\tout.Mismatch = v.Discrepancies[0]\n\t\t\t\t\t}\n\t\t\t\t\tout.Supported = false\n\t\t\t\t\tstopped = true\n\t\t\t\t}\n\t\t\t}\n\t\tcase \"authority_admission\":\n\t\t\td, ok := effectTo[f.OperationID]\n\t\t\tif ok {\n\t\t\t\tkind := \"dispatch-admit\"\n\t\t\t\tif !f.AuthorityAdmission.Allowed {\n\t\t\t\t\tkind = \"dispatch-refuse\"\n\t\t\t\t}\n\t\t\t\temit(kind, d, b.NoValue, f, f.OperationID, \"actual original physical gate\")\n\t\t\t}\n\t\tcase \"external_result\":\n\t\t\td, ok := effectTo[f.OperationID]\n\t\t\tif ok {\n\t\t\t\temit(\"apply\", d, out.Results[f.OperationID], f, f.OperationID, \"atomic result abstraction only for known result with prior allowed gate\")\n\t\t\t}\n\t\t}\n\t}\n\taudit, e := m.AuditTrace(out.Config, events)\n\tout.Audit = &audit\n\tif e != nil {\n\t\tout.Error = e.Error()\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "--name-only",
+        "HEAD",
+        "docs/foundational/phase3b4/evidence"
+      ],
+      "exit": 0,
+      "stdout": "docs/foundational/phase3b4/evidence/baseline/README.md\ndocs/foundational/phase3b4/evidence/baseline/archive-check.json\ndocs/foundational/phase3b4/evidence/baseline/archive-manifest.json\ndocs/foundational/phase3b4/evidence/baseline/assert-baseline.py\ndocs/foundational/phase3b4/evidence/baseline/baseline-allowed-command.json\ndocs/foundational/phase3b4/evidence/baseline/baseline-allowed.log\ndocs/foundational/phase3b4/evidence/baseline/baseline-assertions.json\ndocs/foundational/phase3b4/evidence/baseline/baseline-command.json\ndocs/foundational/phase3b4/evidence/baseline/baseline-output.json\ndocs/foundational/phase3b4/evidence/baseline/evidence.tar.gz\ndocs/foundational/phase3b4/evidence/baseline/pr-metadata-0.json\ndocs/foundational/phase3b4/evidence/baseline/pr-metadata-1.json\ndocs/foundational/phase3b4/evidence/baseline/preservation-recheck.json\ndocs/foundational/phase3b4/evidence/baseline/preserved-model-manifest.json\ndocs/foundational/phase3b4/evidence/baseline/provenance/bases.json\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-actual-pr-head-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-actual-pr-head-stat.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-historical-delivery-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-historical-delivery-stat.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-qualified-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/research-qualified-stat.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-actual-pr-head-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-actual-pr-head-stat.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-delivery-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-delivery-stat.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-production.json\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-qualified-names.txt\ndocs/foundational/phase3b4/evidence/baseline/provenance/runtime-qualified-stat.txt\ndocs/foundational/phase3b4/evidence/construction/README.md\ndocs/foundational/phase3b4/evidence/construction/archive-check.json\ndocs/foundational/phase3b4/evidence/construction/archive-manifest.json\ndocs/foundational/phase3b4/evidence/construction/construction-build.log\ndocs/foundational/phase3b4/evidence/construction/construction-command.json\ndocs/foundational/phase3b4/evidence/construction/construction-final.log\ndocs/foundational/phase3b4/evidence/construction/construction-race.log\ndocs/foundational/phase3b4/evidence/construction/construction.log\ndocs/foundational/phase3b4/evidence/construction/diff-check.log\ndocs/foundational/phase3b4/evidence/construction/evidence.tar.gz\ndocs/foundational/phase3b4/evidence/construction/format.log\ndocs/foundational/phase3b4/evidence/construction/phase3b4_construction_test.go.txt\ndocs/foundational/phase3b4/evidence/construction/source.json\ndocs/foundational/phase3b4/evidence/construction/staticcheck.log\ndocs/foundational/phase3b4/evidence/construction/verification.json\ndocs/foundational/phase3b4/evidence/package.py\ndocs/foundational/phase3b4/evidence/preflight/authority-recon.md\ndocs/foundational/phase3b4/evidence/preflight/evidence-recon.md\ndocs/foundational/phase3b4/evidence/preflight/relation-recon.md\ndocs/foundational/phase3b4/evidence/reviews/task1-r1/checks.json\ndocs/foundational/phase3b4/evidence/reviews/task1-r1/manifest.json\ndocs/foundational/phase3b4/evidence/reviews/task1-r1/rejected-contract.md\ndocs/foundational/phase3b4/evidence/reviews/task1-r1/review.md\ndocs/foundational/phase3b4/evidence/task1-commands.json\n",
+      "stderr": ""
+    },
+    {
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
