@@ -1,0 +1,7 @@
+# Baseline evidence
+
+`baseline-allowed/` inside `evidence.tar.gz` holds the two successful baseline test exports at the unchanged selected runtime base. `baseline/` holds partial exports from the initial sandbox loopback failure. Do not classify the latter as policy RED. `baseline-command.json` contains the old-reader build provenance and failed sandbox test exit; `baseline-allowed-command.json` is the successful rerun. `baseline-assertions.json` is the output of the narrowly scoped assertion script, exit 0. PR metadata is the controller's actual GitHub tool output; local tree/ancestry comparisons live in `provenance/`.
+
+Extract archives only into fresh temporary storage. Never open the retained archive SQLite bytes in place; clone DB/WAL/SHM to another disposable directory for any SQLite operation. All archive members were hashed as bytes, without SQLite, in `archive-check.json`. The Python assertion reads JSON only. To repeat it after extraction, place the extracted folders under `/tmp/alan-phase3b4-task1` or change its explicit root.
+
+The old-reader executable remains at the exact path/hash in `baseline-command.json`. Rebuild from the recorded unchanged base, not the later fixture tree. It is a test executable and is intentionally not a Git artifact. The frozen old model manifest and recheck cover the exact listed compressed/decoded exports, not every historical evidence file.

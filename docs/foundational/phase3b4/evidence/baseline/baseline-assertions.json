@@ -1,0 +1,442 @@
+{
+  "targeted_assertions": "passed",
+  "cases": [
+    {
+      "case": "ordinary-s2-handshake",
+      "directory": "ordinary-s2-handshake-975364978",
+      "namespace": "21538cc04de658b331dc1315b9dc67e4172548a42d9fdd6f7e10f80ed29cfbd4",
+      "service": "[\"a\",1,4,0]",
+      "service_sequence": 4,
+      "request": "[\"b\",1,1,0]",
+      "observation": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "selection": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Sequence": 3
+      },
+      "ready_selection": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Sequence": 2
+      },
+      "grant": "[\"b\",1,2,0]",
+      "claim": {
+        "Version": "alan/request-authority/v1",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:57921/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "Recipient": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "RecipientRoot": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "RecipientRevision": 1,
+        "OriginalRequestID": "[\"b\",1,1,0]",
+        "ServiceOperationID": "[\"a\",1,4,0]"
+      },
+      "authority": {
+        "Version": "alan/request-authority/v1",
+        "Namespace": "21538cc04de658b331dc1315b9dc67e4172548a42d9fdd6f7e10f80ed29cfbd4",
+        "Use": {
+          "Version": "alan/request-authority/v1",
+          "Path": "delegated",
+          "Root": {
+            "Run": {
+              "Subject": "b",
+              "Generation": 1
+            },
+            "RootRun": {
+              "Subject": "b",
+              "Generation": 1
+            },
+            "Permission": {
+              "Kind": "external",
+              "Source": "b",
+              "Target": "http://127.0.0.1:57921/apply",
+              "Operation": "apply",
+              "Revision": 1,
+              "Obligation": "ba-service"
+            }
+          },
+          "GrantID": "[\"b\",1,2,0]"
+        },
+        "RootID": "e3f0f032934437882412306e5f37e4b144ce3261beb97195d0de27fbe5804ab2",
+        "ServingRootID": "6647c2a470596d6c34be4ae6021026dc52ca2dcc6a51700017de4ab5ab17a837",
+        "Allowed": true,
+        "Reason": "authorized",
+        "OriginalRequestID": "[\"b\",1,1,0]",
+        "ServiceOperationID": "[\"a\",1,4,0]",
+        "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+        "RequestConsumedSequence": 3,
+        "GrantDecisionSequence": 1
+      },
+      "unpaid": [
+        false,
+        false
+      ],
+      "contacts": {
+        "a": 1,
+        "b": 1
+      },
+      "pending": null,
+      "run": {
+        "Error": "<nil>",
+        "Report": {
+          "Steps": 24,
+          "Dispatches": 9,
+          "Quiescent": true,
+          "OpenRuns": [],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "6647c2a470596d6c34be4ae6021026dc52ca2dcc6a51700017de4ab5ab17a837",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "succeeded",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "6647c2a470596d6c34be4ae6021026dc52ca2dcc6a51700017de4ab5ab17a837",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 1,
+                "DecisionOrder": 0
+              },
+              "Outcome": {
+                "ID": "ef4d2ade0c4cddbadde8b65ecb93ef369e0e5d0b81b2303183267c396c036bef",
+                "InvocationID": "root:6647c2a470596d6c34be4ae6021026dc52ca2dcc6a51700017de4ab5ab17a837",
+                "OperationID": "root:6647c2a470596d6c34be4ae6021026dc52ca2dcc6a51700017de4ab5ab17a837",
+                "TemplateID": "",
+                "Caller": {
+                  "Subject": "a",
+                  "Generation": 1
+                },
+                "Status": "succeeded",
+                "Reason": "member_succeeded",
+                "ResponsePresent": false,
+                "Response": null,
+                "DecisionOrder": 39
+              },
+              "Pending": "",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "e3f0f032934437882412306e5f37e4b144ce3261beb97195d0de27fbe5804ab2",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "succeeded",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "e3f0f032934437882412306e5f37e4b144ce3261beb97195d0de27fbe5804ab2",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 1,
+                "DecisionOrder": 0
+              },
+              "Outcome": {
+                "ID": "3d4dcba65c5bada7cd17d367db41df5b9dae33593c18d905678c63f35ddf36eb",
+                "InvocationID": "root:e3f0f032934437882412306e5f37e4b144ce3261beb97195d0de27fbe5804ab2",
+                "OperationID": "root:e3f0f032934437882412306e5f37e4b144ce3261beb97195d0de27fbe5804ab2",
+                "TemplateID": "",
+                "Caller": {
+                  "Subject": "b",
+                  "Generation": 1
+                },
+                "Status": "succeeded",
+                "Reason": "member_succeeded",
+                "ResponsePresent": false,
+                "Response": null,
+                "DecisionOrder": 43
+              },
+              "Pending": "",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    },
+    {
+      "case": "control-wrong-prior-selection",
+      "directory": "control-wrong-prior-selection-1207259051",
+      "namespace": "14ddb7d5b273d3b8c456ee1deab2074b5ea002e2204f950deea339b0bf729d76",
+      "service": "[\"a\",1,4,0]",
+      "service_sequence": 4,
+      "request": "[\"b\",1,1,0]",
+      "observation": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "selection": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Sequence": 2
+      },
+      "ready_selection": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Sequence": 3
+      },
+      "grant": "[\"b\",1,2,0]",
+      "claim": {
+        "Version": "alan/request-authority/v1",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:57919/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "Recipient": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "RecipientRoot": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "RecipientRevision": 1,
+        "OriginalRequestID": "[\"b\",1,1,0]",
+        "ServiceOperationID": "[\"a\",1,4,0]"
+      },
+      "authority": {
+        "Version": "alan/request-authority/v1",
+        "Namespace": "14ddb7d5b273d3b8c456ee1deab2074b5ea002e2204f950deea339b0bf729d76",
+        "Use": {
+          "Version": "alan/request-authority/v1",
+          "Path": "delegated",
+          "Root": {
+            "Run": {
+              "Subject": "b",
+              "Generation": 1
+            },
+            "RootRun": {
+              "Subject": "b",
+              "Generation": 1
+            },
+            "Permission": {
+              "Kind": "external",
+              "Source": "b",
+              "Target": "http://127.0.0.1:57919/apply",
+              "Operation": "apply",
+              "Revision": 1,
+              "Obligation": "ba-service"
+            }
+          },
+          "GrantID": "[\"b\",1,2,0]"
+        },
+        "RootID": "3ae95d02086731dc2d03ab25b55ca5232fba7f1ee6544a3e60c68b8ebb213086",
+        "ServingRootID": "3f4bc2327a71b4cbb1dc26db359461c642c66bdea9693ebbb1b592f4097a809a",
+        "Allowed": false,
+        "Reason": "authority_request_not_admitted",
+        "OriginalRequestID": "[\"b\",1,1,0]",
+        "ServiceOperationID": "[\"a\",1,4,0]",
+        "RequestObservationID": "",
+        "RequestConsumedSequence": 0,
+        "GrantDecisionSequence": 1
+      },
+      "unpaid": [
+        true,
+        true
+      ],
+      "contacts": {
+        "a": 0,
+        "b": 0
+      },
+      "pending": [
+        {
+          "Kind": "root_awaiting_publication",
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "OperationID": "",
+          "ObservationID": "",
+          "DependsOn": "3ae95d02086731dc2d03ab25b55ca5232fba7f1ee6544a3e60c68b8ebb213086",
+          "DependsOnRun": null,
+          "AdmissionIDs": null
+        },
+        {
+          "Kind": "root_member",
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "OperationID": "",
+          "ObservationID": "",
+          "DependsOn": "",
+          "DependsOnRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "AdmissionIDs": null
+        },
+        {
+          "Kind": "waiting_message",
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "OperationID": "",
+          "ObservationID": "",
+          "DependsOn": "",
+          "DependsOnRun": null,
+          "AdmissionIDs": null
+        }
+      ],
+      "run": {
+        "Error": "<nil>",
+        "Report": {
+          "Steps": 12,
+          "Dispatches": 6,
+          "Quiescent": true,
+          "OpenRuns": [
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "3ae95d02086731dc2d03ab25b55ca5232fba7f1ee6544a3e60c68b8ebb213086",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "3ae95d02086731dc2d03ab25b55ca5232fba7f1ee6544a3e60c68b8ebb213086",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "3f4bc2327a71b4cbb1dc26db359461c642c66bdea9693ebbb1b592f4097a809a",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "failed",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "3f4bc2327a71b4cbb1dc26db359461c642c66bdea9693ebbb1b592f4097a809a",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": {
+                "ID": "cbf81883ecb06e8185c313f9516a1b5500212abe1c587f23f61a5e8ce3da6013",
+                "InvocationID": "root:3f4bc2327a71b4cbb1dc26db359461c642c66bdea9693ebbb1b592f4097a809a",
+                "OperationID": "root:3f4bc2327a71b4cbb1dc26db359461c642c66bdea9693ebbb1b592f4097a809a",
+                "TemplateID": "",
+                "Caller": {
+                  "Subject": "a",
+                  "Generation": 1
+                },
+                "Status": "failed",
+                "Reason": "member_failed",
+                "ResponsePresent": false,
+                "Response": null,
+                "DecisionOrder": 21
+              },
+              "Pending": "",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    }
+  ]
+}

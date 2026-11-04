@@ -1,0 +1,61 @@
+{
+  "task": "Phase 3B.4 Task 1",
+  "status": "construction demonstrated; contract review-pending",
+  "runtime_base": "1fdd4c9e1720bf60b344914bcbc3d0938ba8d678",
+  "runtime_fixture_commit": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "fixture_sha256": "f456c9cd405740ed8cfd61ecddd5250950707a3003097a622b1ce6ace4d2aac8",
+  "go": "go1.27.3 darwin/arm64",
+  "staticcheck": "2026.2.2 (0.8.2)",
+  "additional_commands": [
+    {
+      "command": "git fetch origin refs/pull/10/head:refs/phase3b4/pr10-final-head",
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0
+    },
+    {
+      "command": "python3 /tmp/alan-phase3b4-task1/assert-baseline.py",
+      "exit": 0
+    },
+    {
+      "command": "python3 /tmp/alan-phase3b4-task1/package.py",
+      "exit": 0,
+      "result": "68 baseline members and 543 construction members verified; no SQLite opens; 4 old model export hashes rechecked"
+    },
+    {
+      "command": "git diff --no-index /dev/null internal/durabletest/phase3b4_construction_test.go",
+      "exit": 1,
+      "meaning": "expected diff exists, complete fixture diff inspected"
+    },
+    {
+      "command": "git diff --check",
+      "exit": 0
+    },
+    {
+      "command": "git diff --cached --check after evidence encoding",
+      "exit": 0
+    }
+  ],
+  "failures": [
+    {
+      "command": "baseline sandbox test (baseline-command.json)",
+      "exit": 1,
+      "classification": "environment loopback bind forbidden; authorized rerun passed"
+    },
+    {
+      "command": "initial construction compile (construction-build.log)",
+      "exit": 1,
+      "classification": "fixture int64 contact slice type mismatch; corrected before first construction execution"
+    },
+    {
+      "command": "initial research git diff --cached --check",
+      "exit": 2,
+      "classification": "raw historical Git diff context whitespace triggered check; original bytes preserved losslessly in JSON string instead"
+    },
+    {
+      "command": "research staged diff check including raw sandbox output",
+      "exit": 2,
+      "classification": "original test stderr has whitespace-only lines; preserve exact output in JSON to keep diff checks clean"
+    }
+  ],
+  "scope": "Task 1 only; full suites, candidate implementation/oracle/model, process cuts, cost guard and independent reviews deferred to assigned later tasks"
+}

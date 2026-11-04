@@ -1,0 +1,58 @@
+ docs/foundational/phase3b3/03-plan.md              |   46 +-
+ docs/foundational/phase3b3/04-results.md           |  328 +-
+ docs/foundational/phase3b3/05-runbook.md           |  222 +
+ docs/foundational/phase3b3/06-evidence-index.md    |   84 +
+ docs/foundational/phase3b3/07-delivery.md          |   47 +
+ .../evidence/final-review/archive-check.json       |   57 +
+ .../phase3b3/evidence/final-review/manifest.json   |   51 +
+ .../final-review/mutation-initial-input.json       |  291 +
+ .../final-review/mutation-initial-probe.json       |    9 +
+ .../evidence/final-review/normalization.json       |   32 +
+ .../phase3b3/evidence/final-review/review.md       |  102 +
+ .../evidence/final-review/reviewed-doc-source.json |   47 +
+ .../phase3b3/evidence/manuscript-check.py          |   51 +
+ .../evidence/manuscript-final/evidence.tar.gz      |  Bin 0 -> 2734912 bytes
+ .../evidence/manuscript-final/manifest.json        |  165 +
+ .../evidence/manuscript-final/normalization.json   |   32 +
+ .../evidence/manuscript-interim/evidence.tar.gz    |  Bin 0 -> 2282122 bytes
+ .../evidence/manuscript-interim/manifest.json      |  101 +
+ .../phase3b3/evidence/manuscript-interim/review.md |   52 +
+ .../phase3b3/evidence/research-frozen/README.md    |   33 +
+ .../evidence/research-frozen/checker-mutants.json  |   38 +
+ .../evidence/research-frozen/commands.json         | 1542 +++++
+ .../evidence/research-frozen/completion.json       |    6 +
+ .../evidence/research-frozen/evidence.tar.gz       |  Bin 0 -> 11541907 bytes
+ .../evidence/research-frozen/expectations.json     |  194 +
+ .../phase3b3/evidence/research-frozen/freeze.py    |  162 +
+ .../evidence/research-frozen/manifest.json         | 6934 ++++++++++++++++++++
+ .../research-frozen/preflight-source-guard.json    |   12 +
+ .../research-frozen/prior-model-comparison.json    |   26 +
+ .../phase3b3/evidence/research-frozen/source.json  |  602 ++
+ .../research-frozen/verification-summary.json      |  245 +
+ .../task3-development/candidate-source.json        |  152 +
+ .../task3-development/candidate-verification.json  |   52 +
+ .../evidence/task3-development/candidate.tar.gz    |  Bin 0 -> 123420 bytes
+ .../evidence/task3-development/evidence.tar.gz     |  Bin 0 -> 40907285 bytes
+ .../evidence/task3-development/expectations.json   |  194 +
+ .../evidence/task3-development/manifest.json       | 1887 ++++++
+ .../evidence/task3-rejected-review/manifest.json   |   77 +
+ .../evidence/task3-rejected-review/probes.tar.gz   |  Bin 0 -> 61776 bytes
+ .../task-3-progress-review.md                      |   88 +
+ .../task3-rejected-review/task-3-raw-review.md     |   96 +
+ .../evidence/task3-round1/candidate.tar.gz         |  Bin 0 -> 86364 bytes
+ .../phase3b3/evidence/task3-round1/commands.json   |  248 +
+ .../evidence/task3-round1/evidence-manifest.json   |  427 ++
+ .../phase3b3/evidence/task3-round1/evidence.tar.gz |  Bin 0 -> 12100877 bytes
+ .../evidence/task3-round1/expectations.json        |  194 +
+ .../phase3b3/evidence/task3-round1/manifest.json   |  446 ++
+ .../phase3b3/evidence/task3-round1/review.md       |   55 +
+ .../phase3b3/evidence/task3-round1/source.json     |  158 +
+ .../task3-round1/verification-summary.json         |  164 +
+ .../phase3b3/evidence/workflow/README.md           |    7 +
+ .../phase3b3/evidence/workflow/manifest.json       |  346 +
+ .../phase3b3/evidence/workflow/rulings.md          |   21 +
+ .../phase3b3/evidence/workflow/workspace.tar.gz    |  Bin 0 -> 2182742 bytes
+ paper/alan-dissertation.md                         |   30 +-
+ paper/alan-dissertation.pdf                        |  Bin 316947 -> 326648 bytes
+ paper/alan-dissertation.tex                        |   30 +-
+ 57 files changed, 16125 insertions(+), 58 deletions(-)

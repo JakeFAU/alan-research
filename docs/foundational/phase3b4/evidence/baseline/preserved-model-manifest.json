@@ -1,0 +1,29 @@
+{
+  "source": "9ddfe29a2a5fa43a06656514af236401cc07914b",
+  "preserved": [
+    {
+      "path": "docs/foundational/phase3a/evidence/model.json",
+      "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+      "bytes": 26995
+    },
+    {
+      "path": "docs/foundational/phase3b/evidence/model.json",
+      "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+      "bytes": 129116
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/model.json.gz",
+      "sha256": "9811655bbe78da6755690e24fadfecc31ea6ecf8815f1380da49efa261715c55",
+      "bytes": 50491,
+      "decoded_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+      "decoded_bytes": 3049166
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/audit.json.gz",
+      "sha256": "7ccfd68e90f21cc142a53f44b4b9b0b7fb3b61ef8d49d8e040201ab1316c1985",
+      "bytes": 17766,
+      "decoded_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+      "decoded_bytes": 1079758
+    }
+  ]
+}
