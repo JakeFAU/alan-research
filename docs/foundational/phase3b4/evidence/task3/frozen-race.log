@@ -1,0 +1,3 @@
+ok  	github.com/JakeFAU/alan/internal/executor	36.232s
+ok  	github.com/JakeFAU/alan/internal/durabletest	10.020s
+ok  	github.com/JakeFAU/alan/examples/delegation	22.081s

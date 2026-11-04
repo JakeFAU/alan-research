@@ -1,0 +1,15 @@
+{
+  "research_base": "7ba768042b855aa928afdf1139fd5d5bc2756496",
+  "research_reviewed_head": "184111719fe4d3a27c887907a46d973c05cca30d",
+  "runtime_inspected_source": "3f8307664b6543331a41c943e91fb5bac8b376ef",
+  "review_sha256": "d212e81f72ec888a3a2ea83e4c714f4d92d9f49fb21c73f05f49e644786440e0",
+  "reviewed_documents_sha256": {
+    "04-model.md": "09f715a6f4aa7f2ac4be3dbfd7444e5495d7947d72867942215698906b659f37",
+    "05-matrix.md": "32367cd857faedc0410f5e9a03f9b6a10b30407ecd8a903e35281e0567c69a31"
+  },
+  "verdict": "APPROVE",
+  "scope": "Task2 relation/matrix gate only: conditional source sketch and prospective matrix; not runtime implementation, oracle, qualification, or production delivery",
+  "source_review_path": "/tmp/alan-phase3b4-relation-review-r1.md",
+  "review_bytes_changed": false,
+  "reviewed_document_bytes_changed": false
+}

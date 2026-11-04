@@ -1,0 +1,6 @@
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/3a/3abc83fbcbc3e4cde0d10078d9d947d909af84ded8a1632b726ddf5d89613608-d: operation not permitted (compile)
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/3b/3bff8eb4da2f1a35c106a64a45717f1b5c16d674236cc6642138900cf978ec46-d: operation not permitted (compile)
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/7b/7b34ef358929df50fdfd61f34d5c71f078d864ca2730bb5feb90437668eca69f-d: operation not permitted (compile)
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/97/9778044d2381646ab5ec0ee32d2771652e26bf37b240c36b27fc6590b04ebc6b-d: operation not permitted (compile)
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/ac/ac1abf03e4dfe28b54cdc3cffd661db809d4e1b0432e2e50287797bd0117de23-d: operation not permitted (compile)
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/c8/c804ec79e894437e0aadc09ceb6241f5901ef9787be65624597794c9650337f9-d: operation not permitted (compile)

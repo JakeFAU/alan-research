@@ -1,0 +1,5 @@
+# github.com/JakeFAU/alan/internal/executor [github.com/JakeFAU/alan/internal/executor.test]
+internal/executor/request_binding_policy_test.go:199:12: undefined: filepath
+ok  	github.com/JakeFAU/alan/internal/durabletest	2.294s
+FAIL	github.com/JakeFAU/alan/internal/executor [build failed]
+FAIL
