@@ -1,6 +1,6 @@
 # Task4 raw evidence handoff
 
-This is preliminary runtime evidence for the frozen Phase3B.4 matrix. The independent principal/raw-history oracle and final frozen-pair qualification belong to Task5. Detailed dispositions, obstructions, commands, failures and boundaries are in [the Task4 report](../../../../../.superpowers/sdd/03-plan/task-4-report.md).
+This is preliminary runtime evidence for the frozen Phase3B.4 matrix. The independent principal/raw-history oracle and final frozen-pair qualification belong to Task5. Detailed dispositions, obstructions, commands, failures and boundaries are in [the Task4 report](report.md).
 
 Start with `case-index.json`: each mode selects the actual final case descriptor, including supplemental metadata-correction reruns. Extract the named archives into one fresh directory so that `normal/<case>`, `supplemental-normal/<case>` and the other archive labels remain intact. Ordered capture directories are relative to their own case. Original raw path fields preserve provenance and need not exist on the new host. Never open archived SQLite in place.
 
