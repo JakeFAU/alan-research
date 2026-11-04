@@ -73,7 +73,7 @@ unchanged. No research production executor changes.
 Authority control uses committed lifecycle operations `DelegateAuthority` and
 `RevokeAuthority`, never a host-only grant method. Primary gate facts use kind
 `authority_admission`, the existing composition order and exact identities in
-section4. Formats13/14 are opt-in; no new table. Expose typed accepted/refused
+section4. Contract v2 uses exact `AuthorityRoot.RootRun` and `DelegationClaim.RecipientRoot` logical locators, with namespace-bound IDs derived into retained decisions and witnesses; rejected v1 and its RED remain archived. Formats13/14 are opt-in; no new table. Expose typed accepted/refused
 control and gate evidence through public inspection. Internal helper names may
 follow existing package conventions; their policy must implement the frozen
 checks, not redefine the contract.
