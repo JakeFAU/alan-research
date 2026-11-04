@@ -1,0 +1,172 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "10,12p",
+        "internal/executor/author_metadata.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "const AuthorSemanticVersion = \"alan/1e/v1\"\nconst AuthorCompilerVersion = \"alan/author/v1\"\nconst CollectionSemanticVersion = \"alan/1g/v1\"\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "44,55p",
+        "internal/executor/author_metadata.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "func supportedSemantics(s string) bool {\n\treturn s == SemanticVersion || s == AuthorSemanticVersion || s == CollectionSemanticVersion\n}\nfunc validateMetadata(p Program) error {\n\tif p.Semantics == SemanticVersion {\n\t\tif p.Author != nil {\n\t\t\treturn ErrVersion\n\t\t}\n\t\treturn nil\n\t}\n\tm := p.Author\n\tif m == nil || p.Semantics == AuthorSemanticVersion && m.Compiler != AuthorCompilerVersion || p.Semantics == CollectionSemanticVersion && m.Compiler != CollectionCompilerVersion {\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "519,544p",
+        "internal/executor/store.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "func insertArtifact(ctx context.Context, tx *sql.Tx, a Artifact, l Limits) error {\n\tif !supportedSemantics(a.Semantics) {\n\t\treturn ErrVersion\n\t}\n\tif a.ID != programHash(a.Bytes) {\n\t\treturn fmt.Errorf(\"artifact hash: %w\", ErrCorrupt)\n\t}\n\tif len(a.Bytes) > l.MaxProgramBytes || l.MaxProgramBytes <= 0 {\n\t\treturn ErrLimit\n\t}\n\tvar p Program\n\tif err := decode(a.Bytes, &p); err != nil {\n\t\treturn err\n\t}\n\tif p.Semantics != a.Semantics {\n\t\treturn ErrVersion\n\t}\n\tif err := validateProgram(p); err != nil {\n\t\treturn err\n\t}\n\tenabled, e := requestAuthorityEnabled(ctx, tx)\n\tif e != nil {\n\t\treturn e\n\t}\n\tif e = validateRequestAuthorityProgram(p, enabled); e != nil {\n\t\treturn e\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "561,580p",
+        "internal/executor/store.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "func loadProgram(ctx context.Context, q queryer, id string, l Limits) (Program, error) {\n\tvar a Artifact\n\ta.ID = id\n\tif err := q.QueryRowContext(ctx, \"SELECT semantics,bytes FROM programs WHERE id=?\", id).Scan(&a.Semantics, &a.Bytes); err != nil {\n\t\treturn Program{}, err\n\t}\n\tif !supportedSemantics(a.Semantics) {\n\t\treturn Program{}, ErrVersion\n\t}\n\tif a.ID != programHash(a.Bytes) {\n\t\treturn Program{}, fmt.Errorf(\"artifact hash: %w\", ErrCorrupt)\n\t}\n\tif len(a.Bytes) > l.MaxProgramBytes || l.MaxProgramBytes <= 0 {\n\t\treturn Program{}, ErrLimit\n\t}\n\tvar p Program\n\tif err := decode(a.Bytes, &p); err != nil {\n\t\treturn Program{}, err\n\t}\n\tif p.Semantics != a.Semantics {\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "133,162p",
+        "internal/executor/program.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "\tif !supportedSemantics(p.Semantics) {\n\t\treturn ErrVersion\n\t}\n\tif err := validateMetadata(p); err != nil {\n\t\treturn err\n\t}\n\tif len(p.Code) == 0 {\n\t\treturn fmt.Errorf(\"empty program\")\n\t}\n\tfor i, in := range p.Code {\n\t\tif in.Effect != nil {\n\t\t\tif err := validateAuthorityUse(in.Effect.Authority); err != nil {\n\t\t\t\treturn err\n\t\t\t}\n\t\t}\n\t\tinvocationEffect := in.Effect != nil && in.Effect.Kind == \"invocation\"\n\t\tinvocationReceive := in.Match != nil && in.Match.Kind == \"invocation\"\n\t\tif invocationEffect || invocationReceive {\n\t\t\tif p.Semantics != CollectionSemanticVersion || p.Author == nil || len(p.Author.Invocations) == 0 {\n\t\t\t\treturn ErrVersion\n\t\t\t}\n\t\t}\n\t\tswitch in.Op {\n\t\tcase \"foreach\", \"next\", \"loop\", \"append\":\n\t\t\tif p.Semantics != CollectionSemanticVersion {\n\t\t\t\treturn ErrVersion\n\t\t\t}\n\t\tcase \"set\", \"add\":\n\t\t\tif in.Dst == \"\" {\n\t\t\t\treturn fmt.Errorf(\"instruction %d: empty destination\", i)\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "99,118p",
+        "internal/durabletest/phase3b3_adapter_test.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "\tartifact, err := author.Compile(author.Definition{Name: \"request-bound-fixed-operation\", Inputs: schema.Record{}, Effects: map[string]author.Effect{operation: {Capability: capability, Input: schema.Record{\"delta\": {Kind: \"int\"}}, Output: schema.Record{\"mutation\": {Kind: \"int\"}, \"total\": {Kind: \"int\"}}}}, Ports: map[string]author.Port{\"ready\": {Peer: \"b\", Obligation: \"grant-ready\", Receive: schema.Record{\"grant\": {Kind: \"string\", MaxBytes: 256}}}, \"request\": {Peer: \"b\", Obligation: \"ba-request\", Receive: record}}, Steps: []author.Step{author.Receive(\"ready\", map[string]string{\"grant\": \"grant_data\"}), author.Receive(\"request\", map[string]string{\"request_id\": \"peer_request\", \"claim\": \"peer_claim\"}), author.Request(\"service_operation\", operation, map[string]author.Expr{\"delta\": author.Integer(999)}, nil), author.Await(operation, \"service_operation\", map[string]string{\"valid\": \"accepted\", \"disposition\": \"disposition\", \"mutation\": \"mutation\", \"total\": \"total\"}), author.IfEqual(author.Var(\"accepted\"), author.Boolean(true), []author.Step{author.Success()}, []author.Step{author.Failure()})}})\n\tif err != nil {\n\t\tt.Fatal(err)\n\t}\n\tp.Programs[0] = runtime.Artifact{ID: artifact.ID(), Semantics: author.SemanticVersion, Bytes: artifact.Bytes()}\n\tp.Runs[0].ProgramID = artifact.ID()\n\tp.Runs[0].Projection.Data = map[string]schema.Value{}\n\troot := runtime.AuthorityRoot{Run: m.B, RootRun: m.B, Permission: runtime.Permission{Kind: \"adapter\", Source: \"b\", Target: capability, Operation: operation, Revision: 1, Obligation: operation}}\n\tm.BAServiceRoot = root\n\tm.BAService = `[\"a\",1,3,0]`\n\tm.ABRequest = \"\"\n\tm.ABService = \"\"\n\tm.ABReply = \"\"\n\tm.BAReply = \"\"\n\tm.Claim.Root = root\n\tm.Claim.ServiceOperationID = m.BAService\n\treciprocalClaim(t, &p, func(c *runtime.DelegationClaim) { *c = m.Claim })\n\treciprocalEdit(t, &p, \"a\", func(program map[string]any) {\n\t\teffect := reciprocalInstruction(program, 2)[\"Effect\"].(map[string]any)\n\t\teffect[\"Authority\"] = runtime.AuthorityUse{Version: runtime.RequestAuthorityVersion, Path: \"delegated\", Root: root, GrantID: m.Grant}\n"
+    },
+    {
+      "argv": [
+        "sed",
+        "-n",
+        "129,138p",
+        "internal/durabletest/phase3b3_adapter_test.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "func TestPhase3B3CartesianOperations(t *testing.T) {\n\tfor _, tc := range []struct {\n\t\tname, capability, operation string\n\t\tallowed                     bool\n\t\tdelta                       int64\n\t}{{\"r1-add-one\", reciprocalR1, \"add-one\", true, 1}, {\"r2-add-ten\", reciprocalR2, \"add-ten\", true, 10}, {\"r1-add-ten\", reciprocalR1, \"add-ten\", false, 0}, {\"r2-add-one\", reciprocalR2, \"add-one\", false, 0}} {\n\t\tt.Run(tc.name, func(t *testing.T) {\n\t\t\tdir := reciprocalDirectory(t, \"cartesian-\"+tc.name)\n\t\t\tca, ua, pa := reciprocalEndpoint(t, dir, \"a\", nil)\n\t\t\tcb, ub, pb := reciprocalEndpoint(t, dir, \"b\", nil)\n"
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "INSERT INTO metadata|semantics != SemanticVersion",
+        "internal/executor/store.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "387:\tif _, err = tx.ExecContext(ctx, \"INSERT INTO metadata VALUES(1,?,?,?,?)\", version, SemanticVersion, ExternalKeyVersion, s.namespace); err != nil {\n993:\tif (protocol != SchemaVersion && !isCompositionSchema(protocol)) || userVersion != schemaVersion || semantics != SemanticVersion {\n"
+    },
+    {
+      "argv": [
+        "rg",
+        "-n",
+        "const SemanticVersion",
+        "internal/executor/program.go",
+        "author/author.go"
+      ],
+      "cwd": "/private/tmp/alan-phase3b3-runtime",
+      "exit": 0,
+      "output": "author/author.go:12:const SemanticVersion = executor.AuthorSemanticVersion\ninternal/executor/program.go:16:const SemanticVersion = \"alan/1d/v1\"\n"
+    }
+  ],
+  "source_assertions": "passed: three existing supported semantics and actual authored v1 adapter case verified",
+  "runtime_tests": "not rerun: documentation-only correction; runtime unchanged",
+  "local_markdown_links": [
+    "evidence/reviews/task1-r1/manifest.json",
+    "00-brief.md",
+    "../phase3b3/02-contract.md",
+    "01-charter.md"
+  ],
+  "links_exist": true,
+  "old_evidence_sha256_unchanged": {
+    "docs/foundational/phase3b4/evidence/baseline/README.md": "d0f509513805b8a113a128b844c9076b69bfce5e61d5f199ee169f8951c4f284",
+    "docs/foundational/phase3b4/evidence/baseline/archive-check.json": "497802c42ca9d2ba3b2e0fe41b252a6b8fa33db961a48e9e8732fe150758ed00",
+    "docs/foundational/phase3b4/evidence/baseline/archive-manifest.json": "3b34377878cb2153ab9397d52f46fc390c8b9935df870a260e7fcb11d2ef8635",
+    "docs/foundational/phase3b4/evidence/baseline/assert-baseline.py": "c58f3728db6be740f01e960eca960e1233d17970eb905bbab7e9636b0e676a8a",
+    "docs/foundational/phase3b4/evidence/baseline/baseline-allowed-command.json": "03ebb1f5959be37093ebafc9351a46c3502e07d73947ea0a510fe157955b7708",
+    "docs/foundational/phase3b4/evidence/baseline/baseline-allowed.log": "02f42fcc77801d0a847a4ff522c40a086741bb5fd4d7ac272308372b2f7d9392",
+    "docs/foundational/phase3b4/evidence/baseline/baseline-assertions.json": "3e7392b8f584a28a2c000176753797d70f83f3b8e13bf806363ea83039051755",
+    "docs/foundational/phase3b4/evidence/baseline/baseline-command.json": "bee05bd56bb0a2885ecba0b820f5589b0f5da54246418402dcfc009662b3205a",
+    "docs/foundational/phase3b4/evidence/baseline/baseline-output.json": "292f499354d1a76de804961f941bbf64a4efb9c0e009989dcb11bbce7557f4c0",
+    "docs/foundational/phase3b4/evidence/baseline/evidence.tar.gz": "663a7bc20bf0e74b3bc106866705e012aa26c54889e63ca3815899cad819fc85",
+    "docs/foundational/phase3b4/evidence/baseline/pr-metadata-0.json": "d597a39f19f0436ddeb175e206d6a8bb0a652a02d3e71c7663fd00f868b005ea",
+    "docs/foundational/phase3b4/evidence/baseline/pr-metadata-1.json": "3080f51efe44d4d91b7c96b9293bd95196956c69f746736ff015db6befb9b8b6",
+    "docs/foundational/phase3b4/evidence/baseline/preservation-recheck.json": "d9423ac6221055c39a6e61c2bac1da84eafe86c67db44e4b2cd460f717cf126b",
+    "docs/foundational/phase3b4/evidence/baseline/preserved-model-manifest.json": "903546aa95b1ddbaa4cba84e6774cfb26b20d21b9d0ecdcddb5c996cf8a4358f",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/bases.json": "1ac9b8c91a1649c918b4885253679dd17d6902b76ba1c6f70dde84b00e075265",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-actual-pr-head-names.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-actual-pr-head-stat.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-historical-delivery-names.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-historical-delivery-stat.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-qualified-names.txt": "4e644681920ec0a84212b1d2e8d1fc5967435c5daf74fd7b70b0e02b2e2fa6bf",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/research-qualified-stat.txt": "925e7161403ae279faf12fb02437d90c23f1c817c82352bc408ff56977acac9c",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-actual-pr-head-names.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-actual-pr-head-stat.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-delivery-names.txt": "47f95663316316b255b1a817654202da78e2eeef475985c84270d69de42c38dc",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-delivery-stat.txt": "abf374f64b3bea7b605de4f7bf5001b1c1bf03bc687ebed6173dc018ce3c29c3",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-historical-production.json": "754b387ac0e7e1653b9f8cc0a1a83604410742234b95278990be91bfb5e81fc3",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-qualified-names.txt": "edd3c003b278d0f0b2c3e02bcce55acc0e2aed7020c5d05ee23f67538ab31df2",
+    "docs/foundational/phase3b4/evidence/baseline/provenance/runtime-qualified-stat.txt": "ccdcf681b3c70c6fd69c31597519b9b8a29f8a05c97841cee1bf982682b79482",
+    "docs/foundational/phase3b4/evidence/construction/README.md": "6a1c935640e46864d065b6bf93d45cc218897546c6cfc2a746a218f0174f58f5",
+    "docs/foundational/phase3b4/evidence/construction/archive-check.json": "96244f4a443176404700504aaf5496ca42f485bdd9e7ff75431fff78e42fed43",
+    "docs/foundational/phase3b4/evidence/construction/archive-manifest.json": "26190d7c696f069f5f4c20bc45e2716f903b198f47260b2dbe6bf9c57c4322fd",
+    "docs/foundational/phase3b4/evidence/construction/construction-build.log": "33c9df550bf312a213d6e2586dc81d2b2bd655eb35a25a0a26b2e8ba2cb3527a",
+    "docs/foundational/phase3b4/evidence/construction/construction-command.json": "ffdd0a485aa133265a86dce3bb8d11f8353e12961110e1cc9d88baf88329e973",
+    "docs/foundational/phase3b4/evidence/construction/construction-final.log": "c36a5cdf0b0d6c90b626a979cf20201712b7598375be2167e37dd55d31c88484",
+    "docs/foundational/phase3b4/evidence/construction/construction-race.log": "10f9909f0a06d2b1b2af7a7caa06fdea5fe6f4c1ffda56f6480b9e7dfe79cf73",
+    "docs/foundational/phase3b4/evidence/construction/construction.log": "6603365727ba1a6f959371a21475cc40bf7bc8c28e9258dbd10331140b95cf15",
+    "docs/foundational/phase3b4/evidence/construction/diff-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/construction/evidence.tar.gz": "e83864c8b050ce0239919f2bdf9fcb57cc7de3bac23f79be5dd56a25191d98c5",
+    "docs/foundational/phase3b4/evidence/construction/format.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/construction/phase3b4_construction_test.go.txt": "f456c9cd405740ed8cfd61ecddd5250950707a3003097a622b1ce6ace4d2aac8",
+    "docs/foundational/phase3b4/evidence/construction/source.json": "4f5ddf5f939cc4cf32bc309e56eb3f416996d56cabe9841af38e2da2e5ebc914",
+    "docs/foundational/phase3b4/evidence/construction/staticcheck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3b4/evidence/construction/verification.json": "389fe84acad68639269b1377b5faddfccc6dc8d9ecd3b845da2bfa102f37bfa3",
+    "docs/foundational/phase3b4/evidence/package.py": "3cbd727f01a72f1a6197b163a32675ebdff1d49d86265b58c160e8bce532b829",
+    "docs/foundational/phase3b4/evidence/preflight/authority-recon.md": "24da5acc9588ec0b36e81a154db25668f2e8e1bb00016eced96d6b79e00eed2e",
+    "docs/foundational/phase3b4/evidence/preflight/evidence-recon.md": "400d9aac56b947a322e95e92df44ba18e1ed09a745cc471ca055e976e11cd1ad",
+    "docs/foundational/phase3b4/evidence/preflight/relation-recon.md": "f3f8601a00ffbe88162777a3ca3e957cf642a5549eca58c25447c9f3753ebe2e",
+    "docs/foundational/phase3b4/evidence/task1-commands.json": "b1bbf37d56c8d8ff9f4a4ef4143412ca4b5ea939bfb9bb16c49bf74d8ca83b96"
+  },
+  "fix_verification": {
+    "exact_review_and_rejected_bytes": "match",
+    "current_contract_sha256": "matches manifest",
+    "48_old_evidence_file_hashes": "unchanged",
+    "current_contract_local_links": "all exist",
+    "runtime_status": "clean, unchanged commit 3f8307664b6543331a41c943e91fb5bac8b376ef",
+    "staged_scope": "five documentation/review-evidence files only",
+    "git_diff_cached_check_exit": 0
+  }
+}
