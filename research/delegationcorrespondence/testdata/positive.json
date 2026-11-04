@@ -1,0 +1,1214 @@
+{
+  "Namespace": "2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335",
+  "KeyVersion": 2,
+  "Settings": {
+    "JournalMode": "wal",
+    "SQLiteVersion": "3.53.4",
+    "SQLiteSourceID": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "Synchronous": 2,
+    "ForeignKeys": 1,
+    "BusyTimeoutMS": 5000,
+    "QueryOnly": 1
+  },
+  "Tables": {
+    "adapter_attempts": [],
+    "adapter_results": [],
+    "admissions": [
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\",\"Kind\":\"message\",\"LogicalID\":\"[\\\"a\\\",1,1,0]\",\"Source\":{\"Subject\":\"a\",\"Generation\":1},\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ab-request\",\"Operation\":\"\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false}},\"IntentID\":\"[\\\"a\\\",1,1,0]\",\"TerminalSequence\":0}",
+        "domain": "message",
+        "id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"message\",\"[\\\"a\\\",1,1,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"b\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\"}",
+        "transport_id": "[\"message-delivery\",\"[\\\"a\\\",1,1,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"Kind\":\"message\",\"LogicalID\":\"[\\\"b\\\",1,1,0]\",\"Source\":{\"Subject\":\"b\",\"Generation\":1},\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ba-request\",\"Operation\":\"\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false}},\"IntentID\":\"[\\\"b\\\",1,1,0]\",\"TerminalSequence\":0}",
+        "domain": "message",
+        "id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"a\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\"}",
+        "transport_id": "[\"message-delivery\",\"[\\\"b\\\",1,1,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"lifecycle-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\",\"Kind\":\"lifecycle\",\"LogicalID\":\"[\\\"b\\\",1,2,0]\",\"Source\":{\"Subject\":\"a\",\"Generation\":1},\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Operation\":\"[\\\"b\\\",1,2,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"target_decision\",\"Flag\":false},\"reason\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegated\",\"Flag\":false},\"successor\":{\"Kind\":\"int\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"IntentID\":\"[\\\"b\\\",1,2,0]\",\"TerminalSequence\":0}",
+        "domain": "lifecycle",
+        "id": "[\"admission\",\"lifecycle\",\"[\\\"lifecycle-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"lifecycle\",\"[\\\"b\\\",1,2,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"lifecycle-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\",\"Accepted\":true,\"Reason\":\"settled\",\"Bound\":{\"Subject\":\"b\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"lifecycle\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\"}",
+        "transport_id": "[\"lifecycle-delivery\",\"[\\\"b\\\",1,2,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\",\"Kind\":\"message\",\"LogicalID\":\"[\\\"b\\\",1,5,0]\",\"Source\":{\"Subject\":\"b\",\"Generation\":1},\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"grant-ready\",\"Operation\":\"\",\"Payload\":{\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false}},\"IntentID\":\"[\\\"b\\\",1,5,0]\",\"TerminalSequence\":0}",
+        "domain": "message",
+        "id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"message\",\"[\\\"b\\\",1,5,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"a\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\"}",
+        "transport_id": "[\"message-delivery\",\"[\\\"b\\\",1,5,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Kind\":\"receipt\",\"LogicalID\":\"[\\\"a\\\",1,4,0]\",\"Source\":{\"Subject\":\"http://127.0.0.1:56650/apply\",\"Generation\":1},\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Operation\":\"[\\\"a\\\",1,4,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"IntentID\":\"[\\\"a\\\",1,4,0]\",\"TerminalSequence\":0}",
+        "domain": "receipt",
+        "id": "[\"admission\",\"receipt\",\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"receipt\",\"[\\\"a\\\",1,4,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Accepted\":true,\"Reason\":\"settled\",\"Bound\":{\"Subject\":\"a\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"receipt\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\"}",
+        "transport_id": "[\"receipt-delivery\",\"[\\\"a\\\",1,4,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\",\"Kind\":\"message\",\"LogicalID\":\"[\\\"a\\\",1,7,0]\",\"Source\":{\"Subject\":\"a\",\"Generation\":1},\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ba-reply\",\"Operation\":\"\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"IntentID\":\"[\\\"a\\\",1,7,0]\",\"TerminalSequence\":0}",
+        "domain": "message",
+        "id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"message\",\"[\\\"a\\\",1,7,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"b\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\"}",
+        "transport_id": "[\"message-delivery\",\"[\\\"a\\\",1,7,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Kind\":\"receipt\",\"LogicalID\":\"[\\\"b\\\",1,9,0]\",\"Source\":{\"Subject\":\"http://127.0.0.1:56649/apply\",\"Generation\":1},\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Operation\":\"[\\\"b\\\",1,9,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"IntentID\":\"[\\\"b\\\",1,9,0]\",\"TerminalSequence\":0}",
+        "domain": "receipt",
+        "id": "[\"admission\",\"receipt\",\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"receipt\",\"[\\\"b\\\",1,9,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"receipt-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Accepted\":true,\"Reason\":\"settled\",\"Bound\":{\"Subject\":\"b\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"receipt\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\"}",
+        "transport_id": "[\"receipt-delivery\",\"[\\\"b\\\",1,9,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\",\"Kind\":\"message\",\"LogicalID\":\"[\\\"b\\\",1,12,0]\",\"Source\":{\"Subject\":\"b\",\"Generation\":1},\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ab-reply\",\"Operation\":\"\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"IntentID\":\"[\\\"b\\\",1,12,0]\",\"TerminalSequence\":0}",
+        "domain": "message",
+        "id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\"]",
+        "observation_id": "[\"observation\",\"message\",\"[\\\"b\\\",1,12,0]\"]",
+        "result": "{\"TransportID\":\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"a\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\"}",
+        "transport_id": "[\"message-delivery\",\"[\\\"b\\\",1,12,0]\"]"
+      },
+      {
+        "descriptor": "{\"TransportID\":\"[\\\"terminal-delivery\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\",\"Kind\":\"terminal\",\"LogicalID\":\"[\\\"terminal\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\",\"Source\":{\"Subject\":\"a\",\"Generation\":1},\"Target\":\"b\",\"Generation\":0,\"Obligation\":\"a-complete\",\"Operation\":\"\",\"Payload\":{\"outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false}},\"IntentID\":\"\",\"TerminalSequence\":10}",
+        "domain": "terminal",
+        "id": "[\"admission\",\"terminal\",\"[\\\"terminal-delivery\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\"]",
+        "observation_id": "[\"observation\",\"terminal\",\"[\\\"terminal\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\"]",
+        "result": "{\"TransportID\":\"[\\\"terminal-delivery\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\",\"Accepted\":true,\"Reason\":\"accepted\",\"Bound\":{\"Subject\":\"b\",\"Generation\":1},\"ObservationID\":\"[\\\"observation\\\",\\\"terminal\\\",\\\"[\\\\\\\"terminal\\\\\\\",\\\\\\\"a\\\\\\\",1,10,\\\\\\\"b\\\\\\\",\\\\\\\"a-complete\\\\\\\"]\\\"]\"}",
+        "transport_id": "[\"terminal-delivery\",\"a\",1,10,\"b\",\"a-complete\"]"
+      }
+    ],
+    "attempts": [
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"a\\\",1,1,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ab-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"a\\\",1,1,0]\"]",
+        "intent_id": "[\"a\",1,1,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\",\"IntentID\":\"[\\\"a\\\",1,1,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Epoch\":1,\"Sequence\":1,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"b\\\",1,1,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ba-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"b\\\",1,1,0]\"]",
+        "intent_id": "[\"b\",1,1,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"IntentID\":\"[\\\"b\\\",1,1,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":1,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"b\\\",1,2,0]\"]",
+        "intent_id": "[\"b\",1,2,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\",\"IntentID\":\"[\\\"b\\\",1,2,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":2,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"b\\\",1,5,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":5,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"grant-ready\",\"Payload\":{\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"b\\\",1,5,0]\"]",
+        "intent_id": "[\"b\",1,5,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\",\"IntentID\":\"[\\\"b\\\",1,5,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":5,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"ID\":\"[\\\"a\\\",1,4,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+        "intent_id": "[\"a\",1,4,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"IntentID\":\"[\\\"a\\\",1,4,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Epoch\":1,\"Sequence\":4,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"a\\\",1,7,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":7,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ba-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"a\\\",1,7,0]\"]",
+        "intent_id": "[\"a\",1,7,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\",\"IntentID\":\"[\\\"a\\\",1,7,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Epoch\":1,\"Sequence\":7,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"ID\":\"[\\\"b\\\",1,9,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"b\\\",1,9,0]\"]",
+        "intent_id": "[\"b\",1,9,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"IntentID\":\"[\\\"b\\\",1,9,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":9,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      },
+      {
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"b\\\",1,12,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":12,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ab-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"Revision\":1}",
+        "id": "[\"authorization\",\"[\\\"b\\\",1,12,0]\"]",
+        "intent_id": "[\"b\",1,12,0]",
+        "result": "{\"ID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\",\"IntentID\":\"[\\\"b\\\",1,12,0]\",\"Allowed\":true,\"Reason\":\"authorized\",\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":12,\"Revision\":1},\"ClosureOperation\":\"\"}"
+      }
+    ],
+    "composition_admission_decisions": [],
+    "composition_bindings": [],
+    "composition_charges": [
+      {
+        "decision_order": 16,
+        "descriptor": "{\"RootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"Kind\":\"effect\",\"Invocations\":0,\"CreatedRuns\":0,\"Effects\":1,\"DecisionOrder\":16}",
+        "kind": "effect",
+        "operation_id": "[\"a\",1,4,0]",
+        "root_id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db"
+      },
+      {
+        "decision_order": 28,
+        "descriptor": "{\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"Kind\":\"effect\",\"Invocations\":0,\"CreatedRuns\":0,\"Effects\":1,\"DecisionOrder\":28}",
+        "kind": "effect",
+        "operation_id": "[\"b\",1,9,0]",
+        "root_id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d"
+      }
+    ],
+    "composition_closures": [],
+    "composition_deployment": [
+      {
+        "descriptor": "{\"Subjects\":[{\"ID\":\"a\",\"Generation\":1,\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},{\"ID\":\"b\",\"Generation\":1,\"Owner\":\"reciprocal:b\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false}],\"Runs\":[{\"ID\":{\"Subject\":\"a\",\"Generation\":1},\"ProgramID\":\"d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632\",\"Projection\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}},{\"ID\":{\"Subject\":\"b\",\"Generation\":1},\"ProgramID\":\"9f4bdebd9708976e12d0020ed9147356bdb722cc8a3340b9037bdd4a5823a027\",\"Projection\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}]}",
+        "singleton": 1
+      }
+    ],
+    "composition_facts": [
+      {
+        "decision_order": 1,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"4176d35249b5093ac72931d91ba4d79044b478e5ba5d6e3a47b2c931aef0d383\",\"Kind\":\"execution\",\"Order\":1,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"OperationID\":\"\",\"RecordDigest\":\"b3fd1cd1969171caea7e55ef71359438201accb97123cea26ea8502e6466d3df\"}",
+        "id": "4176d35249b5093ac72931d91ba4d79044b478e5ba5d6e3a47b2c931aef0d383",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 2,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"6026560a2206f2d011880ca56cc96946b88b859653b32f32f772457b92990974\",\"Kind\":\"authorization\",\"Order\":2,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"OperationID\":\"[\\\"a\\\",1,1,0]\",\"RecordDigest\":\"f30921e9e75711e98946b70fc33bfe3721d1a6c86e206edf5191f51dfc95bdf0\"}",
+        "id": "6026560a2206f2d011880ca56cc96946b88b859653b32f32f772457b92990974",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 3,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"b9cdd32231a9dba7272d6568208b2f10fac3cf43ff1eda0654a3fd700099fdec\",\"Kind\":\"execution\",\"Order\":3,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":1,\"OperationID\":\"\",\"RecordDigest\":\"735e4fbfa318be38321401f1d4ea2ad9106686e3d32e8c6c252401677b2693f4\"}",
+        "id": "b9cdd32231a9dba7272d6568208b2f10fac3cf43ff1eda0654a3fd700099fdec",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 4,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"b74a6cc77efc7d29877d6edda427dd0186fead27b4d9a86096e5293df4ab468c\",\"Kind\":\"authorization\",\"Order\":4,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":1,\"OperationID\":\"[\\\"b\\\",1,1,0]\",\"RecordDigest\":\"34f841821c048782c9090921f53d5fe500be248f9e8f33e8e76933b14fbbe8d2\"}",
+        "id": "b74a6cc77efc7d29877d6edda427dd0186fead27b4d9a86096e5293df4ab468c",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 5,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"7bd5f2e3ec4b79bfbd50c61220734617afaf4ce7a70e5d632f83df7c56187f03\",\"Kind\":\"execution\",\"Order\":5,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"OperationID\":\"\",\"RecordDigest\":\"e36d06306fd88c677bfb786c60ae7ac61da94d37f34e12e01f705d888a25bba7\"}",
+        "id": "7bd5f2e3ec4b79bfbd50c61220734617afaf4ce7a70e5d632f83df7c56187f03",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 6,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"76b0390a0f282d01a9fccb7f0d048048208dd00706de5aae1b4162484c428c2e\",\"Kind\":\"authorization\",\"Order\":6,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"OperationID\":\"[\\\"b\\\",1,2,0]\",\"RecordDigest\":\"7733cf86ec3ce5b3da0937e6c95903a472853924a0d09399afd85bd0c8f66b1a\"}",
+        "id": "76b0390a0f282d01a9fccb7f0d048048208dd00706de5aae1b4162484c428c2e",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 7,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"11cab716f5ac42131356da43bb41e49f198013c933a594946effc284ff2a0800\",\"Kind\":\"lifecycle\",\"Order\":7,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"OperationID\":\"[\\\"b\\\",1,2,0]\",\"RecordDigest\":\"e1e5321eb1ad1bb6b2f306f1c1eaab3f1c1e7e0a0301103d03ccd2b4b808a2fd\"}",
+        "id": "11cab716f5ac42131356da43bb41e49f198013c933a594946effc284ff2a0800",
+        "kind": "lifecycle"
+      },
+      {
+        "decision_order": 8,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"4b4a23d9a54c9798f18099b7fa53ede4a99fb50bbade11f0583b0e4798c9bcf2\",\"Kind\":\"execution\",\"Order\":8,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":3,\"OperationID\":\"\",\"RecordDigest\":\"5e92bd01ba790a9a4044b3205049ee215d33076b5d1e3dc140850d92165f0dc5\"}",
+        "id": "4b4a23d9a54c9798f18099b7fa53ede4a99fb50bbade11f0583b0e4798c9bcf2",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 9,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"bb297fbdf4657918c69283d37d4e7ae00d4f209c76a7aa3c13bad58fae66679f\",\"Kind\":\"execution\",\"Order\":9,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"\",\"RecordDigest\":\"92105b71f08862f8f8b6845ee82549c15ed5b7cc45c07a1d2430dc564266b672\"}",
+        "id": "bb297fbdf4657918c69283d37d4e7ae00d4f209c76a7aa3c13bad58fae66679f",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 10,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"1ee66548379a6c56db09bba4d50fc87fb9befe4d870d04a7ffbaa628713cb82d\",\"Kind\":\"execution\",\"Order\":10,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":5,\"OperationID\":\"\",\"RecordDigest\":\"6c8f29938fd1682bb379716fbeb11d07606ef95e64aa92bc33b4723653533426\"}",
+        "id": "1ee66548379a6c56db09bba4d50fc87fb9befe4d870d04a7ffbaa628713cb82d",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 11,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"0db03e3d4fc46b097fd571be1af4313f5124a6ab5c75584512c670f1f6dd7ff8\",\"Kind\":\"authorization\",\"Order\":11,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":5,\"OperationID\":\"[\\\"b\\\",1,5,0]\",\"RecordDigest\":\"990e70a9f38a9d416860abd6423fb01f5f45f1ae8d3d9e482c14419d7168be4e\"}",
+        "id": "0db03e3d4fc46b097fd571be1af4313f5124a6ab5c75584512c670f1f6dd7ff8",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 12,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"81106a70b9b6382ec3360c9d237293c8c78528f80250f9671195d52c8f86bc91\",\"Kind\":\"execution\",\"Order\":12,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":2,\"OperationID\":\"\",\"RecordDigest\":\"9081843c4a98b539002b74e486c44fda3c98e21a1e0928ed26ffe368d4b9ddec\"}",
+        "id": "81106a70b9b6382ec3360c9d237293c8c78528f80250f9671195d52c8f86bc91",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 13,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"1aebfca1f637c37f3e09aecaa183915b96297f7ec58df21176c4f7b68a56676b\",\"Kind\":\"execution\",\"Order\":13,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":3,\"OperationID\":\"\",\"RecordDigest\":\"fd76f4e6bd42fdc94c33f1ac3aef7f71c3b7441f6a6e2c0572862265c8ae5438\"}",
+        "id": "1aebfca1f637c37f3e09aecaa183915b96297f7ec58df21176c4f7b68a56676b",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 14,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"fe7b6711dcfad9e054ef1304d89aa175815c2c829e946e8c777252e59ab13b3f\",\"Kind\":\"execution\",\"Order\":14,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"\",\"RecordDigest\":\"29c1cb147307710e3a8a236ed71046153f0191d2f1ea84717e794a9bf3a9483e\"}",
+        "id": "fe7b6711dcfad9e054ef1304d89aa175815c2c829e946e8c777252e59ab13b3f",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 15,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"0c630d7362149008040120a03c9c178d41e5b9021411559ba1873962337e9916\",\"Kind\":\"authorization\",\"Order\":15,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"RecordDigest\":\"3a24926c0ef7c6b0e3a20b33316d250667a076e223afb30b76c60a28319d9de2\"}",
+        "id": "0c630d7362149008040120a03c9c178d41e5b9021411559ba1873962337e9916",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 16,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"e0a013d4176309e58cb4dc93ab8d3b8b77436cca986ba7c531ea7e78fce9bfe3\",\"Kind\":\"reservation\",\"Order\":16,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"RecordDigest\":\"502b6dac18053f18f3c5f3d0bac1178464bc21cd24399741bbc4b5d89a0009ff\"}",
+        "id": "e0a013d4176309e58cb4dc93ab8d3b8b77436cca986ba7c531ea7e78fce9bfe3",
+        "kind": "reservation"
+      },
+      {
+        "decision_order": 17,
+        "descriptor": "{\"AuthorityAdmission\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Ordinal\":1,\"Source\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Epoch\":1,\"Sequence\":4,\"Revision\":1},\"AttemptDigest\":\"74b9b950409b7d0a1eab5b54bb4f4c99a03935f0d2a45eaa22af7bdea4fa279a\",\"Allowed\":true,\"Reason\":\"authorized\"},\"Version\":\"alan/composition-fact/v1\",\"ID\":\"8b22c9319ad5cc612f8b0a8405a48a6aacd3d4ae12f8ad46c2b6078d747afcb0\",\"Kind\":\"authority_admission\",\"Order\":17,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"RecordDigest\":\"c0d378d08067abefa96eafb734de1e75536e986873bc015278471a75aba2824c\"}",
+        "id": "8b22c9319ad5cc612f8b0a8405a48a6aacd3d4ae12f8ad46c2b6078d747afcb0",
+        "kind": "authority_admission"
+      },
+      {
+        "decision_order": 18,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"1ce5282232f46d216ccc72bee008c6afd960f1a064fa6a8d3a7e490853a9bc9a\",\"Kind\":\"external_result\",\"Order\":18,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"RecordDigest\":\"83d24ab752f7fdc526b6f7b9280a119c08055a5529e566d0587f76885bb39182\"}",
+        "id": "1ce5282232f46d216ccc72bee008c6afd960f1a064fa6a8d3a7e490853a9bc9a",
+        "kind": "external_result"
+      },
+      {
+        "decision_order": 19,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"4b009a38befb9cb61a986964c2d7428d3f0b66f04e8f65a1717b3f1d8cf3aa4f\",\"Kind\":\"execution\",\"Order\":19,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":5,\"OperationID\":\"\",\"RecordDigest\":\"9c860737dc57839e820b5a319ac393df678d2d5d263fac641c98e136d27a8434\"}",
+        "id": "4b009a38befb9cb61a986964c2d7428d3f0b66f04e8f65a1717b3f1d8cf3aa4f",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 20,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"f2303157249ab6e625b190f644d176ee4b27533b19e07d8a72dfe1d5db620af8\",\"Kind\":\"execution\",\"Order\":20,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":6,\"OperationID\":\"\",\"RecordDigest\":\"1996ab9f1d64f99e251eeaa39a983181cf9cd7a73f89cdbc1bca7d4263389cc2\"}",
+        "id": "f2303157249ab6e625b190f644d176ee4b27533b19e07d8a72dfe1d5db620af8",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 21,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"6a78893e85a2205f2ce71bb309a9e3171172220a5bbd914ff9149fa2c2bef009\",\"Kind\":\"execution\",\"Order\":21,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":7,\"OperationID\":\"\",\"RecordDigest\":\"1052312f790a0b10fcd9a8150383d4f5518efdabda548bb4b0dfb7d5424316f4\"}",
+        "id": "6a78893e85a2205f2ce71bb309a9e3171172220a5bbd914ff9149fa2c2bef009",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 22,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"58900a1f3281b4f7a71b225e30a999bf1121eef65f774a0e77f2f6212c3712ad\",\"Kind\":\"authorization\",\"Order\":22,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":7,\"OperationID\":\"[\\\"a\\\",1,7,0]\",\"RecordDigest\":\"0717b212dae9fbc94fbe2dc89eef68809cd58e87f5ced705f66214a4aa557cec\"}",
+        "id": "58900a1f3281b4f7a71b225e30a999bf1121eef65f774a0e77f2f6212c3712ad",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 23,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"5d3093cf99014a11569fd20e613611f2765201c1dd77262059c916cc6a9042d6\",\"Kind\":\"execution\",\"Order\":23,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":6,\"OperationID\":\"\",\"RecordDigest\":\"17bcf6bedd020690cb167269509759af9047f918d2cc18028ce2b4ac70701030\"}",
+        "id": "5d3093cf99014a11569fd20e613611f2765201c1dd77262059c916cc6a9042d6",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 24,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"c5ab96effa33f81b3977c9cc82fd03c19cd586ee67267d388afe3b1783f0b4a9\",\"Kind\":\"execution\",\"Order\":24,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":7,\"OperationID\":\"\",\"RecordDigest\":\"f7d3d354259a509b42bbf145f8762c0d5b5619d986e003bbd18b37fd4ad46acb\"}",
+        "id": "c5ab96effa33f81b3977c9cc82fd03c19cd586ee67267d388afe3b1783f0b4a9",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 25,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"8459ed6952ab24c3aae563952a27002130db236936697c2d4feb262b11f5ea62\",\"Kind\":\"execution\",\"Order\":25,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":8,\"OperationID\":\"\",\"RecordDigest\":\"ec4933a03a9d6ab976595eb653ff8dc87abc08a5d6ee014ab467d88cd5c2bffe\"}",
+        "id": "8459ed6952ab24c3aae563952a27002130db236936697c2d4feb262b11f5ea62",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 26,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"77d8acb384e3fd7252987669629d1fdedfc4e716bfa71225e7c8557db0352ffb\",\"Kind\":\"execution\",\"Order\":26,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"\",\"RecordDigest\":\"7d9d5a8d203fb556a563cf5971b255d9ddd903c971f97c7c3a2129b4fff09afd\"}",
+        "id": "77d8acb384e3fd7252987669629d1fdedfc4e716bfa71225e7c8557db0352ffb",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 27,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"49d9e33f4a0d0058657300d7373ff520272e8f0cfe4a8e4c343f97f6cc4e9178\",\"Kind\":\"authorization\",\"Order\":27,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"RecordDigest\":\"04b3bad9f9f8c333b84d1bc750fb6cb54f7b765b0a349be44bb37cccbbe080d3\"}",
+        "id": "49d9e33f4a0d0058657300d7373ff520272e8f0cfe4a8e4c343f97f6cc4e9178",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 28,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"7a80f0c39a2c7de0d37ec848c8894e51046ec9380aedd4e2208925476cdfaa78\",\"Kind\":\"reservation\",\"Order\":28,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"RecordDigest\":\"4cacf3f501ccaa311667fe4c433b486e684477eb1630500f785c25aceaf738e4\"}",
+        "id": "7a80f0c39a2c7de0d37ec848c8894e51046ec9380aedd4e2208925476cdfaa78",
+        "kind": "reservation"
+      },
+      {
+        "decision_order": 29,
+        "descriptor": "{\"AuthorityAdmission\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Ordinal\":1,\"Source\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Epoch\":1,\"Sequence\":9,\"Revision\":1},\"AttemptDigest\":\"09152c15dd14a6056cbc3faf82e297c23015046d8a1f5d09fe1620ec1569af41\",\"Allowed\":true,\"Reason\":\"authorized\"},\"Version\":\"alan/composition-fact/v1\",\"ID\":\"d293b6cc0c4c9d81ee4c51668262ed9e2a2f6fd40d226353dafdecc4f3fcd898\",\"Kind\":\"authority_admission\",\"Order\":29,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"RecordDigest\":\"2402dacb2ad9e9debcb2c81951532c80a16e31b27adaf5bdf389477deab8141e\"}",
+        "id": "d293b6cc0c4c9d81ee4c51668262ed9e2a2f6fd40d226353dafdecc4f3fcd898",
+        "kind": "authority_admission"
+      },
+      {
+        "decision_order": 30,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"371b7afac1627f17ab3a96ee597e1c8a2a31be7f6090605550eaf94041d542b9\",\"Kind\":\"external_result\",\"Order\":30,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"RecordDigest\":\"43128067bb3b1b1e875f0cade2bdcc7ee50ad647b5f17e46a5fba21fdfebdc05\"}",
+        "id": "371b7afac1627f17ab3a96ee597e1c8a2a31be7f6090605550eaf94041d542b9",
+        "kind": "external_result"
+      },
+      {
+        "decision_order": 31,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"ba7819d50f922910c2b582cf887028244fb412ab6746599573f30f54bf0c5453\",\"Kind\":\"execution\",\"Order\":31,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":10,\"OperationID\":\"\",\"RecordDigest\":\"1fff49006d4f5f2642b73ac3427b19f44b7eb509a7b8579bdb23b95ea5411636\"}",
+        "id": "ba7819d50f922910c2b582cf887028244fb412ab6746599573f30f54bf0c5453",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 32,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"8296cd56b13a5c23f92700a55df36c6037096226750dab01168b88e00834ab81\",\"Kind\":\"execution\",\"Order\":32,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":11,\"OperationID\":\"\",\"RecordDigest\":\"2a816e80b7ad735d0e026dc49082f1bd5a892c83c9165ff1131dbd9b03e80155\"}",
+        "id": "8296cd56b13a5c23f92700a55df36c6037096226750dab01168b88e00834ab81",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 33,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"66b9140b5a9375fce823be14c51ea55fd2fb2e5c853b31360565d6d76b975c4c\",\"Kind\":\"execution\",\"Order\":33,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":12,\"OperationID\":\"\",\"RecordDigest\":\"55e2d67c87fd69d1993dae17f7db598bfc24ea6c6c74ccd2655520317e8a7baf\"}",
+        "id": "66b9140b5a9375fce823be14c51ea55fd2fb2e5c853b31360565d6d76b975c4c",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 34,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"bd0c7094776bf2ffe6565c6e1315105b2a8cfaa015bcd34d3065acc221cc808f\",\"Kind\":\"authorization\",\"Order\":34,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":12,\"OperationID\":\"[\\\"b\\\",1,12,0]\",\"RecordDigest\":\"008e74cb1917c5bf91d9293d57e72cd8c16b8d807497377fa3344364183ef787\"}",
+        "id": "bd0c7094776bf2ffe6565c6e1315105b2a8cfaa015bcd34d3065acc221cc808f",
+        "kind": "authorization"
+      },
+      {
+        "decision_order": 35,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"a413843dd84012223d5ab0824be5f78ed9e91b27dbb73b3fb06bb2dbb3b12098\",\"Kind\":\"execution\",\"Order\":35,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":8,\"OperationID\":\"\",\"RecordDigest\":\"73ec74c7e7fc915e1b02ceab56fc806f1a9107c876c24a2552d07a9ac9f515e1\"}",
+        "id": "a413843dd84012223d5ab0824be5f78ed9e91b27dbb73b3fb06bb2dbb3b12098",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 36,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"9b0c23068a5914df195dc496bb43afacc2bdfe78beeaf7d5dfe86c4680aed10c\",\"Kind\":\"execution\",\"Order\":36,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":9,\"OperationID\":\"\",\"RecordDigest\":\"528eb88899bc2fd9fcafaed3765f2c3638eb2103160dda42b6be787fc433dee8\"}",
+        "id": "9b0c23068a5914df195dc496bb43afacc2bdfe78beeaf7d5dfe86c4680aed10c",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 37,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"6ffd6b6c8f8b36a476e6dc720f301348a95f35657b7477cd8c6709988f9b79f1\",\"Kind\":\"execution\",\"Order\":37,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":10,\"OperationID\":\"\",\"RecordDigest\":\"0d780815e296e201f152ee4501249a6ae62ea6e6b9a9f726c3e75a8f40754489\"}",
+        "id": "6ffd6b6c8f8b36a476e6dc720f301348a95f35657b7477cd8c6709988f9b79f1",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 38,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"fafb106ac08e59a0f5166e6b3b508b0b7d924c40460c4ba54f21d476a4e5b43b\",\"Kind\":\"freeze\",\"Order\":38,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":10,\"OperationID\":\"root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"RecordDigest\":\"2dc76477eecf6f145fe9d1af0dc7cbc2c3c0f951cdc8e1e5e66e62369464000a\"}",
+        "id": "fafb106ac08e59a0f5166e6b3b508b0b7d924c40460c4ba54f21d476a4e5b43b",
+        "kind": "freeze"
+      },
+      {
+        "decision_order": 39,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"e2a2c9a52006a31a5f9933d4ca9d5d7099dda522e882cb7547a54f1e5e3df25c\",\"Kind\":\"outcome\",\"Order\":39,\"RootIDs\":[\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"],\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":0,\"OperationID\":\"root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"RecordDigest\":\"e3a1db82d58bc3e67418998f10afc1c4fc47a53cadff8f65fbb5fbe524840913\"}",
+        "id": "e2a2c9a52006a31a5f9933d4ca9d5d7099dda522e882cb7547a54f1e5e3df25c",
+        "kind": "outcome"
+      },
+      {
+        "decision_order": 40,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"5ff502637d6ff25dfab55da40dc2a50bc8479134e3c2f3a5ad85f7463227c116\",\"Kind\":\"execution\",\"Order\":40,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":13,\"OperationID\":\"\",\"RecordDigest\":\"f8d8067e017e88f5afffb78d2724798b293b99aee3acba03e6c2e6dbc235fa89\"}",
+        "id": "5ff502637d6ff25dfab55da40dc2a50bc8479134e3c2f3a5ad85f7463227c116",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 41,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"914a241a796cdcf46eb4c0c8442b011b6d9015d09d2a0ae093c07bbac28a446b\",\"Kind\":\"execution\",\"Order\":41,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":14,\"OperationID\":\"\",\"RecordDigest\":\"9bffd783d889aacd37b84a3d4973a2b1e441227733fe73fc5f0e914128e8d0c8\"}",
+        "id": "914a241a796cdcf46eb4c0c8442b011b6d9015d09d2a0ae093c07bbac28a446b",
+        "kind": "execution"
+      },
+      {
+        "decision_order": 42,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"c474331642a377d31d527a162cdc4113f96b4cd403344a8e8d282d9681c80569\",\"Kind\":\"freeze\",\"Order\":42,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":14,\"OperationID\":\"root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"RecordDigest\":\"9525c85a1e6a4fb7b27fc3e35daf0b2ce035b4da5a6b547708a262df4e68bb18\"}",
+        "id": "c474331642a377d31d527a162cdc4113f96b4cd403344a8e8d282d9681c80569",
+        "kind": "freeze"
+      },
+      {
+        "decision_order": 43,
+        "descriptor": "{\"Version\":\"alan/composition-fact/v1\",\"ID\":\"dce218ba29b7bc5cd67638a0cb002d13c3af57076a0d2354765662199bf35eb3\",\"Kind\":\"outcome\",\"Order\":43,\"RootIDs\":[\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\"],\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":0,\"OperationID\":\"root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"RecordDigest\":\"b7bbdcc833786a5428e2c54a02b831e1e23a46d28c611786bebfd311dcabe995\"}",
+        "id": "dce218ba29b7bc5cd67638a0cb002d13c3af57076a0d2354765662199bf35eb3",
+        "kind": "outcome"
+      }
+    ],
+    "composition_freezes": [
+      {
+        "descriptor": "{\"InvocationID\":\"root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Trigger\":\"6ffd6b6c8f8b36a476e6dc720f301348a95f35657b7477cd8c6709988f9b79f1\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":10,\"DecisionOrder\":38,\"Status\":\"succeeded\",\"ReplyIntents\":[],\"InvocationIntents\":[],\"ExternalIntents\":[\"[\\\"a\\\",1,4,0]\"]}",
+        "root_id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "scope_id": "root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db"
+      },
+      {
+        "descriptor": "{\"InvocationID\":\"root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Trigger\":\"914a241a796cdcf46eb4c0c8442b011b6d9015d09d2a0ae093c07bbac28a446b\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":14,\"DecisionOrder\":42,\"Status\":\"succeeded\",\"ReplyIntents\":[],\"InvocationIntents\":[],\"ExternalIntents\":[\"[\\\"b\\\",1,9,0]\"]}",
+        "root_id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "scope_id": "root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d"
+      }
+    ],
+    "composition_invocations": [],
+    "composition_members": [],
+    "composition_outcome_deliveries": [],
+    "composition_permissions": [
+      {
+        "descriptor": "[{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"},{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"},{\"Kind\":\"message\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ab-request\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ba-request\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"grant-ready\"},{\"Kind\":\"message\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ba-reply\"},{\"Kind\":\"message\",\"Source\":\"b\",\"Target\":\"a\",\"Operation\":\"message\",\"Revision\":1,\"Obligation\":\"ab-reply\"},{\"Kind\":\"observation\",\"Source\":\"a\",\"Target\":\"b\",\"Operation\":\"terminal\",\"Revision\":1,\"Obligation\":\"a-complete\"}]",
+        "singleton": 1
+      }
+    ],
+    "composition_profile": [
+      {
+        "descriptor": "{\"RequestAuthority\":\"alan/request-authority/v1\",\"Version\":\"alan/composition/v1\",\"Roots\":[{\"ID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Members\":[{\"Subject\":\"a\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}},{\"ID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Members\":[{\"Subject\":\"b\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}],\"Templates\":null}",
+        "singleton": 1,
+        "version": "alan/composition/v1"
+      }
+    ],
+    "composition_publications": [],
+    "composition_replies": [],
+    "composition_requests": [],
+    "composition_reservations": [
+      {
+        "descriptor": "{\"OperationID\":\"[\\\"a\\\",1,4,0]\",\"RootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Kind\":\"external\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Allowed\":true,\"Reason\":\"authorized\",\"AttemptDigest\":\"74b9b950409b7d0a1eab5b54bb4f4c99a03935f0d2a45eaa22af7bdea4fa279a\"}",
+        "operation_id": "[\"a\",1,4,0]",
+        "root_id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db"
+      },
+      {
+        "descriptor": "{\"OperationID\":\"[\\\"b\\\",1,9,0]\",\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Kind\":\"external\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Allowed\":true,\"Reason\":\"authorized\",\"AttemptDigest\":\"09152c15dd14a6056cbc3faf82e297c23015046d8a1f5d09fe1620ec1569af41\"}",
+        "operation_id": "[\"b\",1,9,0]",
+        "root_id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d"
+      }
+    ],
+    "composition_results": [],
+    "composition_root_publications": [
+      {
+        "decision_order": 39,
+        "descriptor": "{\"ID\":\"f0540d2994840f09fb6c54fab174d757c458f0ff5bb151329788bc5ddcd79c3c\",\"InvocationID\":\"root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"OperationID\":\"root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"TemplateID\":\"\",\"Caller\":{\"Subject\":\"a\",\"Generation\":1},\"Status\":\"succeeded\",\"Reason\":\"member_succeeded\",\"ResponsePresent\":false,\"Response\":null,\"DecisionOrder\":39}",
+        "root_id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "scope_id": "root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db"
+      },
+      {
+        "decision_order": 43,
+        "descriptor": "{\"ID\":\"520ae88bba712b83239513c30171b0fbd11d7deb4a42604325886a7c584ed8d0\",\"InvocationID\":\"root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"OperationID\":\"root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"TemplateID\":\"\",\"Caller\":{\"Subject\":\"b\",\"Generation\":1},\"Status\":\"succeeded\",\"Reason\":\"member_succeeded\",\"ResponsePresent\":false,\"Response\":null,\"DecisionOrder\":43}",
+        "root_id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "scope_id": "root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d"
+      }
+    ],
+    "composition_roots": [
+      {
+        "descriptor": "{\"ID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Members\":[{\"Subject\":\"a\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}",
+        "id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db"
+      },
+      {
+        "descriptor": "{\"ID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Version\":\"alan/resource-profile/v1\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Members\":[{\"Subject\":\"b\",\"Generation\":1}],\"Templates\":null,\"Capabilities\":null,\"Limits\":{\"MaxInvocations\":0,\"MaxCreatedRuns\":0,\"MaxDepth\":0,\"MaxEffects\":1,\"MaxInFlight\":1}}",
+        "id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d"
+      }
+    ],
+    "composition_static_members": [
+      {
+        "descriptor": "{\"RootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Run\":{\"Subject\":\"a\",\"Generation\":1}}",
+        "generation": 1,
+        "root_id": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Run\":{\"Subject\":\"b\",\"Generation\":1}}",
+        "generation": 1,
+        "root_id": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "subject": "b"
+      }
+    ],
+    "composition_templates": [],
+    "corpus_assets": [],
+    "external_attempts": [
+      {
+        "descriptor": "{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Use\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"ServingRootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Allowed\":true,\"Reason\":\"authorized\",\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\",\"RequestObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"RequestConsumedSequence\":3,\"GrantDecisionSequence\":1},\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"ID\":\"[\\\"a\\\",1,4,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"AuthorizationID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Request\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Profile\":\"idempotent\",\"Subject\":\"a\",\"Authorization\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Generation\":1,\"Epoch\":1,\"Sequence\":4,\"Delta\":1},\"Allowed\":true,\"Reason\":\"authorized\"}",
+        "intent_id": "[\"a\",1,4,0]"
+      },
+      {
+        "descriptor": "{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Use\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"ServingRootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Allowed\":true,\"Reason\":\"authorized\",\"OriginalRequestID\":\"\",\"ServiceOperationID\":\"\",\"RequestObservationID\":\"\",\"RequestConsumedSequence\":0,\"GrantDecisionSequence\":0},\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"ID\":\"[\\\"b\\\",1,9,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"AuthorizationID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Request\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Profile\":\"idempotent\",\"Subject\":\"b\",\"Authorization\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Generation\":1,\"Epoch\":1,\"Sequence\":9,\"Delta\":1},\"Allowed\":true,\"Reason\":\"authorized\"}",
+        "intent_id": "[\"b\",1,9,0]"
+      }
+    ],
+    "external_receipts": [
+      {
+        "descriptor": "{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Profile\":\"idempotent\",\"Delta\":1,\"Mutation\":1,\"Total\":1,\"Process\":\"reciprocal-b-1793817058740478000\",\"PID\":39957}",
+        "intent_id": "[\"a\",1,4,0]"
+      },
+      {
+        "descriptor": "{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Profile\":\"idempotent\",\"Delta\":1,\"Mutation\":1,\"Total\":1,\"Process\":\"reciprocal-a-1793817058729458000\",\"PID\":39955}",
+        "intent_id": "[\"b\",1,9,0]"
+      }
+    ],
+    "history": [
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"a\\\",1,1,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ab-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 1,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":1,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"b\\\",1,1,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ba-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 1,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":1,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 2,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":2,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"lifecycle\",\"[\\\"b\\\",1,2,0]\"]",
+        "sequence": 3,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":3,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 4,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":4,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"b\\\",1,5,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":5,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"grant-ready\",\"Payload\":{\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 5,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":5,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"message\",\"[\\\"b\\\",1,5,0]\"]",
+        "sequence": 2,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":2,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+        "sequence": 3,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":3,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"ID\":\"[\\\"a\\\",1,4,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 4,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":4,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"receipt\",\"[\\\"a\\\",1,4,0]\"]",
+        "sequence": 5,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":5,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 6,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":6,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"a\\\",1,7,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":7,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ba-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 7,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":7,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"message\",\"[\\\"a\\\",1,7,0]\"]",
+        "sequence": 6,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":6,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 7,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":7,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"message\",\"[\\\"a\\\",1,1,0]\"]",
+        "sequence": 8,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":8,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"ID\":\"[\\\"b\\\",1,9,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 9,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":9,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"receipt\",\"[\\\"b\\\",1,9,0]\"]",
+        "sequence": 10,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":10,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 11,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":11,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[{\"ID\":\"[\\\"b\\\",1,12,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":12,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ab-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}]",
+        "selected_observation": null,
+        "sequence": 12,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":12,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,12,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"message\",\"[\\\"b\\\",1,12,0]\"]",
+        "sequence": 8,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":8,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 9,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":9,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 10,
+        "source_revision": 1,
+        "subject": "a",
+        "successor": "{\"PC\":9,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": "[\"observation\",\"terminal\",\"[\\\"terminal\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\"]",
+        "sequence": 13,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":13,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,12,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "intents": "[]",
+        "selected_observation": null,
+        "sequence": 14,
+        "source_revision": 1,
+        "subject": "b",
+        "successor": "{\"PC\":13,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,12,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}"
+      }
+    ],
+    "intents": [
+      {
+        "descriptor": "{\"ID\":\"[\\\"a\\\",1,1,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ab-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"a\",1,1,0]",
+        "ordinal": 0,
+        "sequence": 1,
+        "source_revision": 1,
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"ID\":\"[\\\"b\\\",1,1,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":1,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ba-request\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"b\",1,1,0]",
+        "ordinal": 0,
+        "sequence": 1,
+        "source_revision": 1,
+        "subject": "b"
+      },
+      {
+        "descriptor": "{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"b\",1,2,0]",
+        "ordinal": 0,
+        "sequence": 2,
+        "source_revision": 1,
+        "subject": "b"
+      },
+      {
+        "descriptor": "{\"ID\":\"[\\\"b\\\",1,5,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":5,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"grant-ready\",\"Payload\":{\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"b\",1,5,0]",
+        "ordinal": 0,
+        "sequence": 5,
+        "source_revision": 1,
+        "subject": "b"
+      },
+      {
+        "descriptor": "{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"ID\":\"[\\\"a\\\",1,4,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"a\",1,4,0]",
+        "ordinal": 0,
+        "sequence": 4,
+        "source_revision": 1,
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"ID\":\"[\\\"a\\\",1,7,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":7,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"b\",\"Generation\":1,\"Obligation\":\"ba-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"a\",1,7,0]",
+        "ordinal": 0,
+        "sequence": 7,
+        "source_revision": 1,
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"ID\":\"[\\\"b\\\",1,9,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"b\",1,9,0]",
+        "ordinal": 0,
+        "sequence": 9,
+        "source_revision": 1,
+        "subject": "b"
+      },
+      {
+        "descriptor": "{\"ID\":\"[\\\"b\\\",1,12,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":12,\"Ordinal\":0,\"Kind\":\"message\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"ab-reply\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"b\",1,12,0]",
+        "ordinal": 0,
+        "sequence": 12,
+        "source_revision": 1,
+        "subject": "b"
+      }
+    ],
+    "lifecycle_results": [
+      {
+        "decision_sequence": 1,
+        "descriptor": "{\"Intent\":{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"SourceRevision\":1,\"Operation\":\"DelegateAuthority\",\"ExpectedRevision\":1}",
+        "id": "[\"b\",1,2,0]",
+        "result": "{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"RecipientRootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\"},\"Request\":{\"Intent\":{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"SourceRevision\":1,\"Operation\":\"DelegateAuthority\",\"ExpectedRevision\":1},\"DecisionSequence\":1,\"Accepted\":true,\"Reason\":\"delegated\",\"Successor\":0,\"Before\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"ProgramID\":\"d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632\",\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Epoch\":1,\"Sequence\":1,\"Retired\":false,\"RetryCancelled\":false,\"Projection\":{\"PC\":1,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}},\"After\":{\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"ProgramID\":\"d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632\",\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Epoch\":1,\"Sequence\":1,\"Retired\":false,\"RetryCancelled\":false,\"Projection\":{\"PC\":1,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}}"
+      }
+    ],
+    "message_acknowledgments": [
+      {
+        "admission_id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\"]",
+        "intent_id": "[\"a\",1,1,0]"
+      },
+      {
+        "admission_id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\"]",
+        "intent_id": "[\"b\",1,1,0]"
+      },
+      {
+        "admission_id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\"]",
+        "intent_id": "[\"b\",1,5,0]"
+      },
+      {
+        "admission_id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\"]",
+        "intent_id": "[\"a\",1,7,0]"
+      },
+      {
+        "admission_id": "[\"admission\",\"message\",\"[\\\"message-delivery\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\"]",
+        "intent_id": "[\"b\",1,12,0]"
+      }
+    ],
+    "metadata": [
+      {
+        "key_version": 2,
+        "namespace": "2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335",
+        "schema_version": 13,
+        "semantics": "alan/1d/v1",
+        "singleton": 1
+      }
+    ],
+    "observations": [
+      {
+        "consumed_sequence": 8,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"a\\\\\\\",1,1,0]\\\"]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":\"a\",\"SourceGeneration\":1,\"Obligation\":\"ab-request\",\"Operation\":\"\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"message\",\"[\\\"a\\\",1,1,0]\"]",
+        "subject": "b"
+      },
+      {
+        "consumed_sequence": 3,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":\"b\",\"SourceGeneration\":1,\"Obligation\":\"ba-request\",\"Operation\":\"\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+        "subject": "a"
+      },
+      {
+        "consumed_sequence": 3,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"lifecycle\\\",\\\"[\\\\\\\"b\\\\\\\",1,2,0]\\\"]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Kind\":\"lifecycle\",\"Provenance\":\"runtime-lifecycle\",\"Source\":\"a\",\"SourceGeneration\":1,\"Obligation\":\"delegation-result\",\"Operation\":\"[\\\"b\\\",1,2,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"target_decision\",\"Flag\":false},\"reason\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegated\",\"Flag\":false},\"successor\":{\"Kind\":\"int\",\"Number\":0,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"lifecycle\",\"[\\\"b\\\",1,2,0]\"]",
+        "subject": "b"
+      },
+      {
+        "consumed_sequence": 2,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,5,0]\\\"]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":\"b\",\"SourceGeneration\":1,\"Obligation\":\"grant-ready\",\"Operation\":\"\",\"Payload\":{\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"message\",\"[\\\"b\\\",1,5,0]\"]",
+        "subject": "a"
+      },
+      {
+        "consumed_sequence": 5,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"receipt\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":\"http://127.0.0.1:56650/apply\",\"SourceGeneration\":1,\"Obligation\":\"ba-service\",\"Operation\":\"[\\\"a\\\",1,4,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"receipt\",\"[\\\"a\\\",1,4,0]\"]",
+        "subject": "a"
+      },
+      {
+        "consumed_sequence": 6,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"a\\\\\\\",1,7,0]\\\"]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":\"a\",\"SourceGeneration\":1,\"Obligation\":\"ba-reply\",\"Operation\":\"\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"message\",\"[\\\"a\\\",1,7,0]\"]",
+        "subject": "b"
+      },
+      {
+        "consumed_sequence": 10,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"receipt\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":\"http://127.0.0.1:56649/apply\",\"SourceGeneration\":1,\"Obligation\":\"ab-service\",\"Operation\":\"[\\\"b\\\",1,9,0]\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"receipt\",\"[\\\"b\\\",1,9,0]\"]",
+        "subject": "b"
+      },
+      {
+        "consumed_sequence": 8,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,12,0]\\\"]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":\"b\",\"SourceGeneration\":1,\"Obligation\":\"ab-reply\",\"Operation\":\"\",\"Payload\":{\"accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"request_id\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"message\",\"[\\\"b\\\",1,12,0]\"]",
+        "subject": "a"
+      },
+      {
+        "consumed_sequence": 13,
+        "descriptor": "{\"ID\":\"[\\\"observation\\\",\\\"terminal\\\",\\\"[\\\\\\\"terminal\\\\\\\",\\\\\\\"a\\\\\\\",1,10,\\\\\\\"b\\\\\\\",\\\\\\\"a-complete\\\\\\\"]\\\"]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Kind\":\"terminal\",\"Provenance\":\"runtime-terminal\",\"Source\":\"a\",\"SourceGeneration\":1,\"Obligation\":\"a-complete\",\"Operation\":\"\",\"Payload\":{\"outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false}}}",
+        "generation": 1,
+        "id": "[\"observation\",\"terminal\",\"[\\\"terminal\\\",\\\"a\\\",1,10,\\\"b\\\",\\\"a-complete\\\"]\"]",
+        "subject": "b"
+      }
+    ],
+    "permissions": [
+      {
+        "kind": "external",
+        "obligation": "ba-service",
+        "operation": "apply",
+        "revision": 1,
+        "source": "b",
+        "target": "http://127.0.0.1:56650/apply"
+      },
+      {
+        "kind": "external",
+        "obligation": "ab-service",
+        "operation": "apply",
+        "revision": 1,
+        "source": "b",
+        "target": "http://127.0.0.1:56649/apply"
+      },
+      {
+        "kind": "message",
+        "obligation": "ab-request",
+        "operation": "message",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      },
+      {
+        "kind": "message",
+        "obligation": "ba-request",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "message",
+        "obligation": "grant-ready",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "message",
+        "obligation": "ba-reply",
+        "operation": "message",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      },
+      {
+        "kind": "message",
+        "obligation": "ab-reply",
+        "operation": "message",
+        "revision": 1,
+        "source": "b",
+        "target": "a"
+      },
+      {
+        "kind": "observation",
+        "obligation": "a-complete",
+        "operation": "terminal",
+        "revision": 1,
+        "source": "a",
+        "target": "b"
+      }
+    ],
+    "programs": [
+      {
+        "bytes": "{\"Semantics\":\"alan/1d/v1\",\"Code\":[{\"Op\":\"emit\",\"Dst\":\"ab_request\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-request\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"grant-ready\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"grant\":\"grant_data\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-request\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"claim\":\"peer_claim\",\"request_id\":\"peer_request\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"service_operation\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"Kind\":\"external\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56650/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-service\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"delta\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"profile\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56650/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-service\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"service_accepted\",\"disposition\":\"disposition\",\"mutation\":\"mutation\",\"total\":\"total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":6,\"Otherwise\":10,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"reply\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-reply\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"accepted\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"mutation\":{\"Ref\":\"mutation\",\"Literal\":null,\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"Offset\":null},\"service_operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null},\"total\":{\"Ref\":\"total\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"b\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-reply\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"accepted\":\"paid\",\"mutation\":\"reply_mutation\",\"request_id\":\"reply_request\",\"service_operation\":\"reply_service\",\"total\":\"reply_total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"paid\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":9,\"Otherwise\":10,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"succeeded\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"failed\"}]}",
+        "id": "d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632",
+        "semantics": "alan/1d/v1"
+      },
+      {
+        "bytes": "{\"Semantics\":\"alan/1d/v1\",\"Code\":[{\"Op\":\"emit\",\"Dst\":\"ba_request\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-request\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"grant\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"lifecycle\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegation-result\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"claim\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"Offset\":null},\"operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"Offset\":null},\"revision\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"lifecycle\",\"Provenance\":\"runtime-lifecycle\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"delegation-result\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"grant\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"grant_accepted\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"grant_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":4,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"ready\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"grant-ready\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"grant\":{\"Ref\":\"grant\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ba-reply\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"accepted\":\"paid\",\"mutation\":\"reply_mutation\",\"request_id\":\"reply_request\",\"service_operation\":\"reply_service\",\"total\":\"reply_total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"paid\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":7,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"message\",\"Provenance\":\"ordinary-message\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-request\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"claim\":\"peer_claim\",\"request_id\":\"peer_request\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"service_operation\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"Kind\":\"external\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56649/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-service\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"delta\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"profile\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false},\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"receipt\",\"Provenance\":\"resource-receipt\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"http://127.0.0.1:56649/apply\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-service\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null}},\"Bind\":{\"accepted\":\"service_accepted\",\"disposition\":\"disposition\",\"mutation\":\"mutation\",\"total\":\"total\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"branch\",\"Dst\":\"\",\"A\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"Offset\":null},\"Target\":11,\"Otherwise\":14,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"emit\",\"Dst\":\"reply\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":{\"Kind\":\"message\",\"Target\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"ab-reply\",\"Flag\":false},\"Offset\":null},\"Payload\":{\"accepted\":{\"Ref\":\"service_accepted\",\"Literal\":null,\"Offset\":null},\"mutation\":{\"Ref\":\"mutation\",\"Literal\":null,\"Offset\":null},\"request_id\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"Offset\":null},\"service_operation\":{\"Ref\":\"service_operation\",\"Literal\":null,\"Offset\":null},\"total\":{\"Ref\":\"total\",\"Literal\":null,\"Offset\":null}}},\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"receive\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":{\"Kind\":\"terminal\",\"Provenance\":\"runtime-terminal\",\"Source\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a\",\"Flag\":false},\"Offset\":null},\"Generation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"Offset\":null},\"Obligation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"a-complete\",\"Flag\":false},\"Offset\":null},\"Operation\":{\"Ref\":\"\",\"Literal\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"Offset\":null}},\"Bind\":{\"outcome\":\"peer_outcome\"},\"Effect\":null,\"Updates\":null,\"Outcome\":\"\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"succeeded\"},{\"Op\":\"end\",\"Dst\":\"\",\"A\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"B\":{\"Ref\":\"\",\"Literal\":null,\"Offset\":null},\"Target\":0,\"Otherwise\":0,\"Match\":null,\"Bind\":null,\"Effect\":null,\"Updates\":null,\"Outcome\":\"failed\"}]}",
+        "id": "9f4bdebd9708976e12d0020ed9147356bdb722cc8a3340b9037bdd4a5823a027",
+        "semantics": "alan/1d/v1"
+      }
+    ],
+    "run_origins": [
+      {
+        "descriptor": "{\"Subject\":{\"ID\":\"a\",\"Generation\":1,\"Owner\":\"reciprocal:a\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},\"ProgramID\":\"d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632\",\"Initial\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}",
+        "generation": 1,
+        "kind": "root",
+        "operation_id": null,
+        "predecessor_generation": null,
+        "subject": "a"
+      },
+      {
+        "descriptor": "{\"Subject\":{\"ID\":\"b\",\"Generation\":1,\"Owner\":\"reciprocal:b\",\"Revision\":1,\"Retired\":false,\"RetryCancelled\":false},\"ProgramID\":\"9f4bdebd9708976e12d0020ed9147356bdb722cc8a3340b9037bdd4a5823a027\",\"Initial\":{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}}",
+        "generation": 1,
+        "kind": "root",
+        "operation_id": null,
+        "predecessor_generation": null,
+        "subject": "b"
+      }
+    ],
+    "runs": [
+      {
+        "epoch": 1,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "d3cbec59382872eb8122833294a2a879410335d47354ca39179b9b43f5ec7632",
+        "projection": "{\"PC\":9,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}",
+        "sequence": 10,
+        "subject": "a"
+      },
+      {
+        "epoch": 1,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "9f4bdebd9708976e12d0020ed9147356bdb722cc8a3340b9037bdd4a5823a027",
+        "projection": "{\"PC\":13,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,12,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}",
+        "sequence": 14,
+        "subject": "b"
+      }
+    ],
+    "settlements": [
+      {
+        "descriptor": "{\"Request\":{\"Intent\":{\"ID\":\"[\\\"b\\\",1,2,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":2,\"Ordinal\":0,\"Kind\":\"lifecycle\",\"Target\":\"a\",\"Generation\":1,\"Obligation\":\"delegation-result\",\"Payload\":{\"claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"DelegateAuthority\",\"Flag\":false},\"revision\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}}},\"SourceRevision\":1,\"Operation\":\"DelegateAuthority\",\"ExpectedRevision\":1},\"Disposition\":\"target_decision\",\"Accepted\":true,\"Reason\":\"delegated\",\"Successor\":0}",
+        "id": "[\"lifecycle-outcome\",\"[\\\"b\\\",1,2,0]\"]",
+        "intent_id": "[\"b\",1,2,0]",
+        "observation_id": "[\"observation\",\"lifecycle\",\"[\\\"b\\\",1,2,0]\"]"
+      },
+      {
+        "descriptor": "{\"Attempt\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Use\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"ServingRootID\":\"18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db\",\"Allowed\":true,\"Reason\":\"authorized\",\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\",\"RequestObservationID\":\"[\\\"observation\\\",\\\"message\\\",\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\"]\",\"RequestConsumedSequence\":3,\"GrantDecisionSequence\":1},\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"delegated\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"GrantID\":\"[\\\"b\\\",1,2,0]\"},\"ID\":\"[\\\"a\\\",1,4,0]\",\"Run\":{\"Subject\":\"a\",\"Generation\":1},\"Sequence\":4,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56650/apply\",\"Generation\":1,\"Obligation\":\"ba-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"AuthorizationID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Request\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Profile\":\"idempotent\",\"Subject\":\"a\",\"Authorization\":\"[\\\"authorization\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Generation\":1,\"Epoch\":1,\"Sequence\":4,\"Delta\":1},\"Allowed\":true,\"Reason\":\"authorized\"},\"Disposition\":\"applied\",\"Receipt\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"]\",\"Profile\":\"idempotent\",\"Delta\":1,\"Mutation\":1,\"Total\":1,\"Process\":\"reciprocal-b-1793817058740478000\",\"PID\":39957}}",
+        "id": "[\"external-outcome\",\"[\\\"a\\\",1,4,0]\"]",
+        "intent_id": "[\"a\",1,4,0]",
+        "observation_id": "[\"observation\",\"receipt\",\"[\\\"a\\\",1,4,0]\"]"
+      },
+      {
+        "descriptor": "{\"Attempt\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Namespace\":\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\",\"Use\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"RootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"ServingRootID\":\"1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d\",\"Allowed\":true,\"Reason\":\"authorized\",\"OriginalRequestID\":\"\",\"ServiceOperationID\":\"\",\"RequestObservationID\":\"\",\"RequestConsumedSequence\":0,\"GrantDecisionSequence\":0},\"Intent\":{\"Authority\":{\"Version\":\"alan/request-authority/v1\",\"Path\":\"own\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ab-service\"}},\"GrantID\":\"\"},\"ID\":\"[\\\"b\\\",1,9,0]\",\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"Sequence\":9,\"Ordinal\":0,\"Kind\":\"external\",\"Target\":\"http://127.0.0.1:56649/apply\",\"Generation\":1,\"Obligation\":\"ab-service\",\"Payload\":{\"delta\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"profile\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"idempotent\",\"Flag\":false}}},\"AuthorizationID\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Request\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Profile\":\"idempotent\",\"Subject\":\"b\",\"Authorization\":\"[\\\"authorization\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Generation\":1,\"Epoch\":1,\"Sequence\":9,\"Delta\":1},\"Allowed\":true,\"Reason\":\"authorized\"},\"Disposition\":\"applied\",\"Receipt\":{\"Key\":\"[2,\\\"2f2c82366ba9caa3d0c198a935b76ba5277cfac25ab880c0b51d0a1bbcdc8335\\\",\\\"[\\\\\\\"b\\\\\\\",1,9,0]\\\"]\",\"Profile\":\"idempotent\",\"Delta\":1,\"Mutation\":1,\"Total\":1,\"Process\":\"reciprocal-a-1793817058729458000\",\"PID\":39955}}",
+        "id": "[\"external-outcome\",\"[\\\"b\\\",1,9,0]\"]",
+        "intent_id": "[\"b\",1,9,0]",
+        "observation_id": "[\"observation\",\"receipt\",\"[\\\"b\\\",1,9,0]\"]"
+      }
+    ],
+    "subjects": [
+      {
+        "generation": 1,
+        "id": "a",
+        "owner": "reciprocal:a",
+        "retired": 0,
+        "retry_cancelled": 0,
+        "revision": 1
+      },
+      {
+        "generation": 1,
+        "id": "b",
+        "owner": "reciprocal:b",
+        "retired": 0,
+        "retry_cancelled": 0,
+        "revision": 1
+      }
+    ],
+    "terminal_obligations": [
+      {
+        "delivery_status": "{\"[\\\"route\\\",\\\"b\\\",\\\"a-complete\\\"]\":true}",
+        "destinations": "[{\"Target\":\"b\",\"Obligation\":\"a-complete\"}]",
+        "generation": 1,
+        "operation_id": null,
+        "outcome": "{\"PC\":9,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,7,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}",
+        "sequence": 10,
+        "source_revision": 1,
+        "subject": "a"
+      },
+      {
+        "delivery_status": "{}",
+        "destinations": "[]",
+        "generation": 1,
+        "operation_id": null,
+        "outcome": "{\"PC\":13,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"disposition\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"applied\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v1\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:56650/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_outcome\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"succeeded\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"reply\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,12,0]\",\"Flag\":false},\"reply_mutation\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"reply_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"reply_service\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false},\"reply_total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,9,0]\",\"Flag\":false},\"total\":{\"Kind\":\"int\",\"Number\":1,\"Text\":\"\",\"Flag\":false}},\"Status\":\"succeeded\"}",
+        "sequence": 14,
+        "source_revision": 1,
+        "subject": "b"
+      }
+    ]
+  },
+  "Roots": [
+    {
+      "RootID": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+      "Run": {
+        "Subject": "a",
+        "Generation": 1
+      },
+      "LocalStatus": "succeeded",
+      "Limits": {
+        "MaxInvocations": 0,
+        "MaxCreatedRuns": 0,
+        "MaxDepth": 0,
+        "MaxEffects": 1,
+        "MaxInFlight": 1
+      },
+      "Charges": {
+        "RootID": "18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "OperationID": "",
+        "Kind": "",
+        "Invocations": 0,
+        "CreatedRuns": 0,
+        "Effects": 1,
+        "DecisionOrder": 0
+      },
+      "Outcome": {
+        "ID": "f0540d2994840f09fb6c54fab174d757c458f0ff5bb151329788bc5ddcd79c3c",
+        "InvocationID": "root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "OperationID": "root:18fbfa8ea8feabf0ad10714c30ff86af1a1a04073b4b1cb1cbec012cd8e7f6db",
+        "TemplateID": "",
+        "Caller": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Status": "succeeded",
+        "Reason": "member_succeeded",
+        "ResponsePresent": false,
+        "Response": null,
+        "DecisionOrder": 39
+      },
+      "Pending": "",
+      "PendingInvocations": [],
+      "UnresolvedExternal": [],
+      "UnknownExternal": []
+    },
+    {
+      "RootID": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+      "Run": {
+        "Subject": "b",
+        "Generation": 1
+      },
+      "LocalStatus": "succeeded",
+      "Limits": {
+        "MaxInvocations": 0,
+        "MaxCreatedRuns": 0,
+        "MaxDepth": 0,
+        "MaxEffects": 1,
+        "MaxInFlight": 1
+      },
+      "Charges": {
+        "RootID": "1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "OperationID": "",
+        "Kind": "",
+        "Invocations": 0,
+        "CreatedRuns": 0,
+        "Effects": 1,
+        "DecisionOrder": 0
+      },
+      "Outcome": {
+        "ID": "520ae88bba712b83239513c30171b0fbd11d7deb4a42604325886a7c584ed8d0",
+        "InvocationID": "root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "OperationID": "root:1cacaf56c1f241b722f02b2825aa00365225dc60a622cc4bc91267c4fd26043d",
+        "TemplateID": "",
+        "Caller": {
+          "Subject": "b",
+          "Generation": 1
+        },
+        "Status": "succeeded",
+        "Reason": "member_succeeded",
+        "ResponsePresent": false,
+        "Response": null,
+        "DecisionOrder": 43
+      },
+      "Pending": "",
+      "PendingInvocations": [],
+      "UnresolvedExternal": [],
+      "UnknownExternal": []
+    }
+  ]
+}
