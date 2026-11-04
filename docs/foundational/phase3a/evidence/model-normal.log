@@ -1,0 +1,101 @@
+=== RUN   TestExploreCustodyAndRecovery
+=== RUN   TestExploreCustodyAndRecovery/delivery-ack
+=== RUN   TestExploreCustodyAndRecovery/durable-ack
+--- PASS: TestExploreCustodyAndRecovery (0.00s)
+    --- PASS: TestExploreCustodyAndRecovery/delivery-ack (0.00s)
+    --- PASS: TestExploreCustodyAndRecovery/durable-ack (0.00s)
+=== RUN   TestTraceAdversaries
+=== RUN   TestTraceAdversaries/fabricated_result
+=== RUN   TestTraceAdversaries/early_durable_ack
+=== RUN   TestTraceAdversaries/duplicate_application
+=== RUN   TestTraceAdversaries/consume_before_record
+=== RUN   TestTraceAdversaries/record_without_receipt
+=== RUN   TestTraceAdversaries/release_without_ack
+=== RUN   TestTraceAdversaries/send_without_retention
+=== RUN   TestTraceAdversaries/resend_after_release
+=== RUN   TestTraceAdversaries/wrong_record_binding
+=== RUN   TestTraceAdversaries/wrong_consumption_binding
+=== RUN   TestTraceAdversaries/ack_payload_leak
+=== RUN   TestTraceAdversaries/consume_twice
+=== RUN   TestTraceAdversaries/changed_correlation
+=== RUN   TestTraceAdversaries/changed_grant
+--- PASS: TestTraceAdversaries (0.00s)
+    --- PASS: TestTraceAdversaries/fabricated_result (0.00s)
+    --- PASS: TestTraceAdversaries/early_durable_ack (0.00s)
+    --- PASS: TestTraceAdversaries/duplicate_application (0.00s)
+    --- PASS: TestTraceAdversaries/consume_before_record (0.00s)
+    --- PASS: TestTraceAdversaries/record_without_receipt (0.00s)
+    --- PASS: TestTraceAdversaries/release_without_ack (0.00s)
+    --- PASS: TestTraceAdversaries/send_without_retention (0.00s)
+    --- PASS: TestTraceAdversaries/resend_after_release (0.00s)
+    --- PASS: TestTraceAdversaries/wrong_record_binding (0.00s)
+    --- PASS: TestTraceAdversaries/wrong_consumption_binding (0.00s)
+    --- PASS: TestTraceAdversaries/ack_payload_leak (0.00s)
+    --- PASS: TestTraceAdversaries/consume_twice (0.00s)
+    --- PASS: TestTraceAdversaries/changed_correlation (0.00s)
+    --- PASS: TestTraceAdversaries/changed_grant (0.00s)
+=== RUN   TestAsynchronousBAndLateReceipt
+--- PASS: TestAsynchronousBAndLateReceipt (0.00s)
+=== RUN   TestEveryReachableEdgeHasIndependentTrace
+=== RUN   TestEveryReachableEdgeHasIndependentTrace/delivery-ack
+=== RUN   TestEveryReachableEdgeHasIndependentTrace/durable-ack
+--- PASS: TestEveryReachableEdgeHasIndependentTrace (0.01s)
+    --- PASS: TestEveryReachableEdgeHasIndependentTrace/delivery-ack (0.00s)
+    --- PASS: TestEveryReachableEdgeHasIndependentTrace/durable-ack (0.00s)
+=== RUN   TestDeterministicEvidence
+--- PASS: TestDeterministicEvidence (0.00s)
+=== RUN   TestOracleFactCannotEnableOrSupplySteps
+=== RUN   TestOracleFactCannotEnableOrSupplySteps/delivery-ack
+=== RUN   TestOracleFactCannotEnableOrSupplySteps/durable-ack
+--- PASS: TestOracleFactCannotEnableOrSupplySteps (0.00s)
+    --- PASS: TestOracleFactCannotEnableOrSupplySteps/delivery-ack (0.00s)
+    --- PASS: TestOracleFactCannotEnableOrSupplySteps/durable-ack (0.00s)
+=== RUN   TestBDoesNotInspectAPrivateState
+=== RUN   TestBDoesNotInspectAPrivateState/delivery-ack
+=== RUN   TestBDoesNotInspectAPrivateState/durable-ack
+--- PASS: TestBDoesNotInspectAPrivateState (0.00s)
+    --- PASS: TestBDoesNotInspectAPrivateState/delivery-ack (0.00s)
+    --- PASS: TestBDoesNotInspectAPrivateState/durable-ack (0.00s)
+=== RUN   TestCommittedFactsSurviveEveryEdge
+=== RUN   TestCommittedFactsSurviveEveryEdge/delivery-ack
+=== RUN   TestCommittedFactsSurviveEveryEdge/durable-ack
+--- PASS: TestCommittedFactsSurviveEveryEdge (0.00s)
+    --- PASS: TestCommittedFactsSurviveEveryEdge/delivery-ack (0.00s)
+    --- PASS: TestCommittedFactsSurviveEveryEdge/durable-ack (0.00s)
+=== RUN   TestShortestWitnessAndGraphClosure
+=== RUN   TestShortestWitnessAndGraphClosure/delivery-ack
+=== RUN   TestShortestWitnessAndGraphClosure/durable-ack
+--- PASS: TestShortestWitnessAndGraphClosure (0.01s)
+    --- PASS: TestShortestWitnessAndGraphClosure/delivery-ack (0.00s)
+    --- PASS: TestShortestWitnessAndGraphClosure/durable-ack (0.00s)
+=== RUN   TestCanonicalLossAndDurableCrashBoundaries
+=== RUN   TestCanonicalLossAndDurableCrashBoundaries/r1
+=== RUN   TestCanonicalLossAndDurableCrashBoundaries/r2
+--- PASS: TestCanonicalLossAndDurableCrashBoundaries (0.00s)
+    --- PASS: TestCanonicalLossAndDurableCrashBoundaries/r1 (0.00s)
+    --- PASS: TestCanonicalLossAndDurableCrashBoundaries/r2 (0.00s)
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/commit
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/admission
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/tombstone
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/record
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/consumption
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/world
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/identity
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/grant
+=== RUN   TestLocalTransitionCheckerRejectsLostFacts/activation
+--- PASS: TestLocalTransitionCheckerRejectsLostFacts (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/commit (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/admission (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/tombstone (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/record (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/consumption (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/world (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/identity (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/grant (0.00s)
+    --- PASS: TestLocalTransitionCheckerRejectsLostFacts/activation (0.00s)
+=== RUN   TestExistentialCompletionAllowsUnfairRetryCycle
+--- PASS: TestExistentialCompletionAllowsUnfairRetryCycle (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/twoagent	0.122s
+?   	github.com/JakeFAU/alan-research/research/twoagent/cmd/export	[no test files]

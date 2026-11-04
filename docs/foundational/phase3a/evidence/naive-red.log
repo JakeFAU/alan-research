@@ -1,0 +1,1 @@
+FALSIFIED: local safety plus original-request deduplication does not imply useful recovery; see independently checked recovered-loss witnesses

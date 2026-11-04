@@ -1,0 +1,864 @@
+{
+  "Contract": "phase3a-two-agent-custody-v1",
+  "Reports": [
+    {
+      "Profile": "delivery-ack",
+      "States": 407,
+      "Edges": 1848,
+      "CyclicStates": 361,
+      "CyclicComponents": 155,
+      "LocalSafetyViolations": 0,
+      "LocalTransitionViolations": 0,
+      "CustodyViolations": 64,
+      "CanComplete": 391,
+      "CannotComplete": 16,
+      "ShortestCustodyViolation": {
+        "StateID": 66,
+        "State": {
+          "Delegation": {
+            "Caller": "A",
+            "CallerGeneration": 1,
+            "Operation": 1,
+            "Callee": "B",
+            "CalleeGeneration": 1,
+            "Request": "increment-counter"
+          },
+          "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+          "Committed": true,
+          "ADown": false,
+          "Crashed": false,
+          "Activation": 0,
+          "AVolatile": "r1",
+          "ARecorded": "",
+          "AConsumed": false,
+          "BAdmitted": true,
+          "Applied": true,
+          "BResult": "",
+          "RequestChannel": false,
+          "ResultChannel": "",
+          "ACKChannel": false,
+          "WorldResult": "r1"
+        },
+        "Trace": [
+          {
+            "Kind": "commit",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "",
+            "Duplicate": false
+          },
+          {
+            "Kind": "send-request",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "",
+            "Duplicate": false
+          },
+          {
+            "Kind": "admit",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "",
+            "Duplicate": false
+          },
+          {
+            "Kind": "apply",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "r1",
+            "Duplicate": false
+          },
+          {
+            "Kind": "send-result",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "r1",
+            "Duplicate": false
+          },
+          {
+            "Kind": "receive-result",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "r1",
+            "Duplicate": false
+          },
+          {
+            "Kind": "send-ack",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "",
+            "Duplicate": false
+          },
+          {
+            "Kind": "release",
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Result": "",
+            "Duplicate": false
+          }
+        ],
+        "CanComplete": true
+      },
+      "LossWitnesses": [
+        {
+          "StateID": 214,
+          "State": {
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Committed": true,
+            "ADown": false,
+            "Crashed": true,
+            "Activation": 1,
+            "AVolatile": "",
+            "ARecorded": "",
+            "AConsumed": false,
+            "BAdmitted": true,
+            "Applied": true,
+            "BResult": "",
+            "RequestChannel": false,
+            "ResultChannel": "",
+            "ACKChannel": false,
+            "WorldResult": "r1"
+          },
+          "Trace": [
+            {
+              "Kind": "commit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-request",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "admit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "apply",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "receive-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-ack",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "release",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "crash",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "recover",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            }
+          ],
+          "CanComplete": false
+        },
+        {
+          "StateID": 240,
+          "State": {
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Committed": true,
+            "ADown": false,
+            "Crashed": true,
+            "Activation": 1,
+            "AVolatile": "",
+            "ARecorded": "",
+            "AConsumed": false,
+            "BAdmitted": true,
+            "Applied": true,
+            "BResult": "",
+            "RequestChannel": false,
+            "ResultChannel": "",
+            "ACKChannel": false,
+            "WorldResult": "r2"
+          },
+          "Trace": [
+            {
+              "Kind": "commit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-request",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "admit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "apply",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "receive-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-ack",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "release",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "crash",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "recover",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            }
+          ],
+          "CanComplete": false
+        }
+      ],
+      "Indistinguishable": {
+        "Left": {
+          "StateID": 214,
+          "State": {
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Committed": true,
+            "ADown": false,
+            "Crashed": true,
+            "Activation": 1,
+            "AVolatile": "",
+            "ARecorded": "",
+            "AConsumed": false,
+            "BAdmitted": true,
+            "Applied": true,
+            "BResult": "",
+            "RequestChannel": false,
+            "ResultChannel": "",
+            "ACKChannel": false,
+            "WorldResult": "r1"
+          },
+          "Trace": [
+            {
+              "Kind": "commit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-request",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "admit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "apply",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "receive-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r1",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-ack",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "release",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "crash",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "recover",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            }
+          ],
+          "CanComplete": false
+        },
+        "Right": {
+          "StateID": 240,
+          "State": {
+            "Delegation": {
+              "Caller": "A",
+              "CallerGeneration": 1,
+              "Operation": 1,
+              "Callee": "B",
+              "CalleeGeneration": 1,
+              "Request": "increment-counter"
+            },
+            "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+            "Committed": true,
+            "ADown": false,
+            "Crashed": true,
+            "Activation": 1,
+            "AVolatile": "",
+            "ARecorded": "",
+            "AConsumed": false,
+            "BAdmitted": true,
+            "Applied": true,
+            "BResult": "",
+            "RequestChannel": false,
+            "ResultChannel": "",
+            "ACKChannel": false,
+            "WorldResult": "r2"
+          },
+          "Trace": [
+            {
+              "Kind": "commit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-request",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "admit",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "apply",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "receive-result",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "r2",
+              "Duplicate": false
+            },
+            {
+              "Kind": "send-ack",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "release",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "crash",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            },
+            {
+              "Kind": "recover",
+              "Delegation": {
+                "Caller": "A",
+                "CallerGeneration": 1,
+                "Operation": 1,
+                "Callee": "B",
+                "CalleeGeneration": 1,
+                "Request": "increment-counter"
+              },
+              "Grant": "grant:A/g1-\u003eB/g1:increment-counter",
+              "Result": "",
+              "Duplicate": false
+            }
+          ],
+          "CanComplete": false
+        },
+        "RecoverableEqual": true
+      }
+    },
+    {
+      "Profile": "durable-ack",
+      "States": 311,
+      "Edges": 1372,
+      "CyclicStates": 273,
+      "CyclicComponents": 115,
+      "LocalSafetyViolations": 0,
+      "LocalTransitionViolations": 0,
+      "CustodyViolations": 0,
+      "CanComplete": 311,
+      "CannotComplete": 0,
+      "ShortestCustodyViolation": null,
+      "LossWitnesses": [],
+      "Indistinguishable": null
+    }
+  ]
+}
