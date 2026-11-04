@@ -1,0 +1,425 @@
+{
+  "BaseCommit": "1d41d1e20b579443c98a6caa53e51036e55f2d82",
+  "ExecutableGoSourceCommit": "f75e26984c84fe649f26d5e4eaf4ed70e7506e46",
+  "Status": "Qualification and all six scoped plus whole-change reviews complete; draft publication pending.",
+  "Scope": "Go/model/runtime-test qualification is pinned to f75e2698 and frozen-source.json. Post-run archive inspection utility and manuscript/evidence inputs are separately hashed here. No self-containing delivery-commit hash is asserted; final PR identifies delivery head.",
+  "Sources": [
+    {
+      "path": "README.md",
+      "sha256": "1df9d680e9676f1c3ea9870dd7293010fca8b305163e9864d1c9556c9554e616",
+      "bytes": 24948
+    },
+    {
+      "path": "docs/foundational/phase3/README.md",
+      "sha256": "291ef0a4d57f472ac521acb80e7af84b1d374ddcc297bf247551ae2123a0a0ad",
+      "bytes": 3848
+    },
+    {
+      "path": "docs/foundational/phase3b2/00-brief.md",
+      "sha256": "5a78c2bf821af8d9820bfdc47d180b69196b67147efbdbc591c90813b385f2fe",
+      "bytes": 18209
+    },
+    {
+      "path": "docs/foundational/phase3b2/01-contract.md",
+      "sha256": "be7987bd4d7b0d9453d7995148a2a8464acd1fc5ea42aef6b1eb286515e21772",
+      "bytes": 11984
+    },
+    {
+      "path": "docs/foundational/phase3b2/02-plan.md",
+      "sha256": "bc21f1517197a06131553d5e2a04e811bbd57ae5a95372d0563e0dfe0c14b886",
+      "bytes": 9906
+    },
+    {
+      "path": "docs/foundational/phase3b2/03-results.md",
+      "sha256": "a1439487b01a46a3fb1c3ce36779e5623d19d7160f62fcf9aeb4fb75afd89efb",
+      "bytes": 19840
+    },
+    {
+      "path": "docs/foundational/phase3b2/04-runbook.md",
+      "sha256": "5e6781f343936229e2df7ad1d71abf242a6869dc1d7eb04fe17dea90047dcfad",
+      "bytes": 8398
+    },
+    {
+      "path": "examples/communication/authority/README.md",
+      "sha256": "a1d66cf49093ef64be89c5dff5b73742118922c4f64e3085b51b4904532ec92b",
+      "bytes": 3808
+    },
+    {
+      "path": "examples/communication/authority/adapter.go",
+      "sha256": "a32c2b955edc94e18d655aae3412526eae6adbb86aae20ced6bd7f1f1b0ea27b",
+      "bytes": 1301
+    },
+    {
+      "path": "examples/communication/authority/deployment.go",
+      "sha256": "1018b6d798f028a62e2b5b6cdb3c4601ce51fe051ed0153f69f68fa41d4c2257",
+      "bytes": 5792
+    },
+    {
+      "path": "examples/communication/authority/deployment_test.go",
+      "sha256": "7988eb5d35804e9f3ed81ddf770e9dd9f1aa8183e262bb3199691752da8eab42",
+      "bytes": 2448
+    },
+    {
+      "path": "internal/durabletest/phase3b2_runtime_test.go",
+      "sha256": "ab041fb061de1958ec24341ee5f3621d542c0a24eff2c28af47d89fec0c976da",
+      "bytes": 31875
+    },
+    {
+      "path": "paper/alan-dissertation.md",
+      "sha256": "fb2a094eec0dfd30da4609fbadd5cedfc204e3e6706e567f2563ce685a3fad06",
+      "bytes": 248964
+    },
+    {
+      "path": "paper/alan-dissertation.pdf",
+      "sha256": "b355847b31806a4f01b34f87b723cddc32c7970b26c9262b50815989e10f852e",
+      "bytes": 316947
+    },
+    {
+      "path": "paper/alan-dissertation.tex",
+      "sha256": "2c491f9f36159786acd1715fc690a7e88a28ad80474707ddae3796b706eb0a0d",
+      "bytes": 150658
+    },
+    {
+      "path": "paper/references.bib",
+      "sha256": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9",
+      "bytes": 8562
+    },
+    {
+      "path": "research/authorityservice/README.md",
+      "sha256": "4be5dbb3435d6526f151db4276c8b65186d79087df211ebc86284935111e8aa0",
+      "bytes": 7719
+    },
+    {
+      "path": "research/authorityservice/cmd/audit/main.go",
+      "sha256": "6a2d8e73765ca8574ec136107467ade84b48c53857a0b6ae007803bfd7d08e64",
+      "bytes": 1325
+    },
+    {
+      "path": "research/authorityservice/cmd/audit/main_test.go",
+      "sha256": "1e5c0a486304170928b79f42cf616ed5bb14a69dc8e479ac5eb83e336b9bcc38",
+      "bytes": 987
+    },
+    {
+      "path": "research/authorityservice/cmd/export/main.go",
+      "sha256": "595018d61d05369ad961ea2f6b17cd08192f453b36b5a5af1d5c6394db6112c2",
+      "bytes": 1746
+    },
+    {
+      "path": "research/authorityservice/cmd/export/main_test.go",
+      "sha256": "05c4266adca83f908fb4d909e77ce77715fbb1ff3d93e195b61306d052901db7",
+      "bytes": 1777
+    },
+    {
+      "path": "research/authorityservice/explore.go",
+      "sha256": "3916f87834709dcd7c0d55b2470daf6317fb9ab2ac637a01bcc0723a7eb0e26e",
+      "bytes": 12435
+    },
+    {
+      "path": "research/authorityservice/model.go",
+      "sha256": "11ec7401ade2c4b5b942b70929cc5df8a8f47da4d072a0b5d980b86e19034dbe",
+      "bytes": 10909
+    },
+    {
+      "path": "research/authorityservice/model_test.go",
+      "sha256": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb",
+      "bytes": 8245
+    },
+    {
+      "path": "research/authorityservice/oracle.go",
+      "sha256": "06bbe53e48084a61b3b16fec8a1f096a4e35e3bb607fc58a678ea2f33f6b01dd",
+      "bytes": 18437
+    },
+    {
+      "path": "research/authorityservice/oracle_corpus.go",
+      "sha256": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d",
+      "bytes": 11356
+    },
+    {
+      "path": "research/authorityservice/oracle_test.go",
+      "sha256": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73",
+      "bytes": 5477
+    }
+  ],
+  "Evidence": [
+    {
+      "path": "docs/foundational/phase3b2/evidence/audit.json.gz",
+      "sha256": "7ccfd68e90f21cc142a53f44b4b9b0b7fb3b61ef8d49d8e040201ab1316c1985",
+      "bytes": 17766
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/build-independent-audit.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/build-model-export.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/commands.json",
+      "sha256": "557db87ee2467e50cef96f107994f098c4189b10ee0ceabc91b2fdf3084abefd",
+      "bytes": 24313
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-Cartesian-ScopeMix.log.gz",
+      "sha256": "5f1b4bf7cdbf69ff5f809c15181ac10387cc36b7fdd71b8b1f7927e20a680057",
+      "bytes": 4496
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-S2-LateGrant.log.gz",
+      "sha256": "ca4f5c5c1009e0ca338b2a599d0c698676e66e5ae06d8d323bee43de42ae7118",
+      "bytes": 4991
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-S2-Missing.log.gz",
+      "sha256": "bc14d5e037f0b4f32d271055f6a00013ecfd13d43df3824217ffc2e7dc26b482",
+      "bytes": 2670
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-S2-Revocable.log.gz",
+      "sha256": "0b3c9502e59442558000934a319e44ccb0edc0619f405ef26435b6ab2f35ce8d",
+      "bytes": 5778
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-S3-Missing.log.gz",
+      "sha256": "7ac5795323434b12d0a92285907eccab59ee2c7e55f52d65db549cb55f8f42de",
+      "bytes": 4139
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-invalid.log",
+      "sha256": "8e85c9935ea839157073e8eda724720e0bbd6c48a31fa24927f09bd29483a770",
+      "bytes": 22
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/control-positive.log.gz",
+      "sha256": "50ade9a774eb720754aac05129a460d62f12b9d9bec87beef5e6443ebb34258d",
+      "bytes": 4338
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/frozen-source.json",
+      "sha256": "4ce0fc189c98671fb540211c62b32136a10da27214a85e38ba58528d00564ad5",
+      "bytes": 99735
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/kill-records-normal.json",
+      "sha256": "7f1b0aa69ffd9b302c495794482a81950f59316a92d2608f4cb12cfa4b300770",
+      "bytes": 8157
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/kill-records-race.json",
+      "sha256": "d59948576c1265cfb9e9d013f7caacf535bb66f72aa795d44b3a72b5443e9fdb",
+      "bytes": 8140
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/manuscript-normalization.json",
+      "sha256": "670937f8b398e296ebc3cbae77e44dc0ca89e851a21864755178c7ebecedbc62",
+      "bytes": 244
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/model-race.log.gz",
+      "sha256": "94cd7bace95663bbc49aa8d576c86c3c70d7f6cce6e9f0a399e08c9a06b34be8",
+      "bytes": 4945
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/model-red.log",
+      "sha256": "0d13a1a50f4dcd15da72cdf4f9232baf149984c6d3b1788ff4b562d476460f39",
+      "bytes": 245
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/model-summary.json",
+      "sha256": "26330f77bb44d2ba6b7d7008a9144d4b29e201bf4aed4053642f6c569acc61be",
+      "bytes": 20447
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/model.json.gz",
+      "sha256": "9811655bbe78da6755690e24fadfecc31ea6ecf8815f1380da49efa261715c55",
+      "bytes": 50491
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/package-coverage.json",
+      "sha256": "93494f60eff702b086d291f4d38a68cdfae5d4b500d0f0735fa88833c246ad82",
+      "bytes": 4646
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/pdf-bibtex.log",
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0",
+      "bytes": 204
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/pdf-build.log",
+      "sha256": "bedaa6e33a90d7edceea81155c2bc1aa4f5436095fc3659858b4e2839c265ed2",
+      "bytes": 2032
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/pdf-engine.log.gz",
+      "sha256": "d4610a62675bbd3f38dc5ce1dac3dc6df37b9f8262e1307f34fec36eaf031008",
+      "bytes": 5486
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/pdf-inspection.json",
+      "sha256": "5320e809bbe4de9a6d510e785ac5ca025fe40115043b021b65d3485c5d22067b",
+      "bytes": 846
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/prior-runtime-normal.log",
+      "sha256": "90765a90bf4804c6ef14cd4bc1a4c41a440cfb0318e4b1f5e15fe2c791857cb8",
+      "bytes": 2618
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/prior-runtime-race.log",
+      "sha256": "6d668e681168e20c1d4650ade09c32a350d904618fd5f88c9bfb81890f4d65a5",
+      "bytes": 2618
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/repository-tests-summary.json",
+      "sha256": "29b85f13814a6974125a37b53b4d4922ea09fc5c8182dbb73d226a45d2c3af97",
+      "bytes": 11311
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/repository-tests.jsonl.gz",
+      "sha256": "f1a1762ce03dee7d1f6ce064eeb7aff57437ff09fd9e75a77df661030bc6a323",
+      "bytes": 588169
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-1-authority.md",
+      "sha256": "ed783c752018cc2516708f7850994eced3555bd3f1a621485e17ecf8c9083d7a",
+      "bytes": 10536
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-2-model.md",
+      "sha256": "22139d7565b4c665ceb8dadd162557be3da11f9051317d5c5d724b93204860b6",
+      "bytes": 14362
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-3-progress.md",
+      "sha256": "359ca0e16515b79fadaec8948523bd8a69f948d5b80565bbaa799207613e57f5",
+      "bytes": 13543
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-4-retained.md",
+      "sha256": "b26983d4be8950b06a3e2bc545f535ceccf85d79057c6983cfab979d03607ff5",
+      "bytes": 10293
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-5-runtime.md",
+      "sha256": "b836efecdfa62dcca433095e5ce1592c3a9e8fdb50ad842c6dad0b26ad744aa7",
+      "bytes": 8610
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review-6-manuscript.md",
+      "sha256": "f659c56f362bddc067b14db2e91f5e77f35d6b3b619493e0826b0d7e676f63ac",
+      "bytes": 14225
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/README.md",
+      "sha256": "887726b9ca65a7afa70084547be7c97e6eaa21c65c30a7487605822a93ba75cd",
+      "bytes": 1781
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/after.json.gz",
+      "sha256": "260c5da32d3846b800da816f0280eb88e98d2467fca55102bffc19d7fddf2173",
+      "bytes": 6837
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/before.json.gz",
+      "sha256": "c658a36846c51e8c1da48578eb88732e89dc57ef7e54219cf0eeb047d4f08dee",
+      "bytes": 6835
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/manifest.json",
+      "sha256": "dfacde06fcdafcb7c6392f27b2a9d0cb5f15e6e50e81157267eaf632c9a156c9",
+      "bytes": 1652
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/model-probe.go.txt",
+      "sha256": "44ca6eb99cce2185eda865f1ab86bb5e095e8b40a7e0e30936bb9e6909173e89",
+      "bytes": 423
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/pre-fix-runtime-test.go.txt",
+      "sha256": "2d1ea47e0a340bd44901c2fce6206349c23bc5195a5b99f9a500065b54a3ed76",
+      "bytes": 29503
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/runtime-probe.go.txt",
+      "sha256": "7da90ea4ce012f6c956d4d0754840ef1f528dfbe4be9b5e0898bcf5b8c9d598d",
+      "bytes": 1046
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/review4-counterexample/runtime-probe.log",
+      "sha256": "3c226d57d6132a6a138ccfeda2e35c60e5d43bb3fc1c2bf6c322b37cec121e0e",
+      "bytes": 3066
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-audit.json",
+      "sha256": "f92c8e7ea60f04934df42ec6370609eb140ece7c83cc1c843ae8c363f4b3015f",
+      "bytes": 10100
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-audit.py",
+      "sha256": "1bd2650abee631047945aeeae0d67c73a47776009e313110fef0868e739e8465",
+      "bytes": 23952
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-index.json",
+      "sha256": "6200a8f7ad0c1547213f8279f4369e23d2f93f4d64060b1ce4b5e7a90f1177ce",
+      "bytes": 244986
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-normal.log.gz",
+      "sha256": "18a7c996a62f908f76e491581c76c4248a5986a8cc86e9c17ebc11bf1b650d52",
+      "bytes": 11237
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-normal.tar.gz",
+      "sha256": "52f06ae42f14658386f6880b662fffabf71dd6a55f8b11fd305ec6268c896f54",
+      "bytes": 2037557
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-race.log.gz",
+      "sha256": "34e5951a85109e02ae8a12acb7a195605d27a9f7da0727ee5ab6afd7f50682e9",
+      "bytes": 11239
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-race.tar.gz",
+      "sha256": "8524ed33d718823f1edd294f826c6fc8f0a742e24a74b73767de34a4079e0dd6",
+      "bytes": 2034089
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/runtime-red.log",
+      "sha256": "6971eeb85e566cd6384dbca0f272d53d1fe4f51f4e1d5de32bcbf38f96e4fb0a",
+      "bytes": 255
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/staticcheck-model-fixtures.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/staticcheck-runtime-baseline.log",
+      "sha256": "187866255489030de5d2691aa7ec605208b242aef54f22d9d5703f95d897114d",
+      "bytes": 818
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/staticcheck-runtime-integration.log",
+      "sha256": "187866255489030de5d2691aa7ec605208b242aef54f22d9d5703f95d897114d",
+      "bytes": 818
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/staticcheck-runtime-normal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/verification-summary.json",
+      "sha256": "22c0c819cd9b94ed9399f33075f79a6963715757132262f5be613fad28f8f874",
+      "bytes": 2220
+    },
+    {
+      "path": "docs/foundational/phase3b2/evidence/whole-change-review.md",
+      "sha256": "4f23287f1b3e552e9f3a132a9d84b338151178498a9d5235d0d0436bee3e48e7",
+      "bytes": 11284
+    }
+  ]
+}

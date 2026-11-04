@@ -1,0 +1,46 @@
+=== RUN   TestNew
+=== RUN   TestNew/serial_serial
+=== RUN   TestNew/service_a
+=== RUN   TestNew/service_b
+=== RUN   TestNew/service_both
+--- PASS: TestNew (0.00s)
+    --- PASS: TestNew/serial_serial (0.00s)
+    --- PASS: TestNew/service_a (0.00s)
+    --- PASS: TestNew/service_b (0.00s)
+    --- PASS: TestNew/service_both (0.00s)
+=== RUN   TestReciprocalRuntime
+=== RUN   TestReciprocalRuntime/serial_serial/send_a/deliver_a
+=== RUN   TestReciprocalRuntime/serial_serial/send_a/deliver_b
+=== RUN   TestReciprocalRuntime/serial_serial/send_b/deliver_a
+=== RUN   TestReciprocalRuntime/serial_serial/send_b/deliver_b
+=== RUN   TestReciprocalRuntime/service_a/send_a/deliver_a
+=== RUN   TestReciprocalRuntime/service_a/send_a/deliver_b
+=== RUN   TestReciprocalRuntime/service_a/send_b/deliver_a
+=== RUN   TestReciprocalRuntime/service_a/send_b/deliver_b
+=== RUN   TestReciprocalRuntime/service_b/send_a/deliver_a
+=== RUN   TestReciprocalRuntime/service_b/send_a/deliver_b
+=== RUN   TestReciprocalRuntime/service_b/send_b/deliver_a
+=== RUN   TestReciprocalRuntime/service_b/send_b/deliver_b
+=== RUN   TestReciprocalRuntime/service_both/send_a/deliver_a
+=== RUN   TestReciprocalRuntime/service_both/send_a/deliver_b
+=== RUN   TestReciprocalRuntime/service_both/send_b/deliver_a
+=== RUN   TestReciprocalRuntime/service_both/send_b/deliver_b
+--- PASS: TestReciprocalRuntime (0.39s)
+    --- PASS: TestReciprocalRuntime/serial_serial/send_a/deliver_a (0.02s)
+    --- PASS: TestReciprocalRuntime/serial_serial/send_a/deliver_b (0.02s)
+    --- PASS: TestReciprocalRuntime/serial_serial/send_b/deliver_a (0.02s)
+    --- PASS: TestReciprocalRuntime/serial_serial/send_b/deliver_b (0.02s)
+    --- PASS: TestReciprocalRuntime/service_a/send_a/deliver_a (0.03s)
+    --- PASS: TestReciprocalRuntime/service_a/send_a/deliver_b (0.03s)
+    --- PASS: TestReciprocalRuntime/service_a/send_b/deliver_a (0.03s)
+    --- PASS: TestReciprocalRuntime/service_a/send_b/deliver_b (0.03s)
+    --- PASS: TestReciprocalRuntime/service_b/send_a/deliver_a (0.03s)
+    --- PASS: TestReciprocalRuntime/service_b/send_a/deliver_b (0.03s)
+    --- PASS: TestReciprocalRuntime/service_b/send_b/deliver_a (0.03s)
+    --- PASS: TestReciprocalRuntime/service_b/send_b/deliver_b (0.03s)
+    --- PASS: TestReciprocalRuntime/service_both/send_a/deliver_a (0.03s)
+    --- PASS: TestReciprocalRuntime/service_both/send_a/deliver_b (0.02s)
+    --- PASS: TestReciprocalRuntime/service_both/send_b/deliver_a (0.02s)
+    --- PASS: TestReciprocalRuntime/service_both/send_b/deliver_b (0.02s)
+PASS
+ok  	github.com/JakeFAU/alan-research/examples/communication/mutual	0.558s

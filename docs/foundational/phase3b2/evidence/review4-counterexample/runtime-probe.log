@@ -1,0 +1,15 @@
+=== RUN   TestReview4HistoryGeneration
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-phase2-endpoint-1793801363337399000.json sha256=b71630b13ae1ae3dba8cc7e9b7b0fc6bcae707701364a1d94b9873ee68345766
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-sources-397c1b5852f0b54607f7004a619ed0fc45e2fddf1367d100e21e5a663b58efae.json sha256=d6e1957f70a6f2342809e424a73c28ac0f198c390f5cb62d800e0cccb93ec3d4
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-phase2-endpoint-1793801363337399000-provenance.json sha256=cb1e4b76c4354013c0682c2e9536f16bbc899aa86b427f6a0c7b75dd4d920d95
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-phase2-endpoint-1793801365226890000.json sha256=6b5d623737af4c0677544b7d147696f8c5f8141905226a7762caf2b574a33797
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-sources-397c1b5852f0b54607f7004a619ed0fc45e2fddf1367d100e21e5a663b58efae.json sha256=d6e1957f70a6f2342809e424a73c28ac0f198c390f5cb62d800e0cccb93ec3d4
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-phase2-endpoint-1793801365226890000-provenance.json sha256=699cdd7e564730b95291ee206cc0d9aaf63fd034593879a753a06231d4636a41
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-sources-397c1b5852f0b54607f7004a619ed0fc45e2fddf1367d100e21e5a663b58efae.json sha256=d6e1957f70a6f2342809e424a73c28ac0f198c390f5cb62d800e0cccb93ec3d4
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-process-start-54400.json sha256=8b1f955324db3400a6bbe4e6515a291daa753b60beb34e07bc1126ab1e9185e9
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-phase3b2-config-54400.json sha256=7043bac02be9ce134a95ef1138c94213658138225b0d767e29c5dd1956e1b99b
+    review4_probe_test.go:5: PHASE2_EVIDENCE /var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-task4-evidence-3528470933/phase2/TestReview4HistoryGeneration-process-54400.json sha256=a8424dd508d0d273568cf1a76fe71eab7c0d6a952834843c04ee8452462ca675
+    review4_probe_test.go:5: changed 6 history generations, retained paid=2 chain=<nil>
+--- PASS: TestReview4HistoryGeneration (2.01s)
+PASS
+ok  	github.com/JakeFAU/alan-research/internal/durabletest	2.173s

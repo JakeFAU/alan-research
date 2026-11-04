@@ -1,0 +1,5 @@
+--- FAIL: TestApplyRequiresFreshAuthorityAdmission (0.00s)
+    model_test.go:19: unpermitted BA service applies before any authority decision or physical admission
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/authorityservice	0.329s
+FAIL

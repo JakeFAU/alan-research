@@ -1,0 +1,6 @@
+internal/durabletest/phase2_crash_test.go:262:2: this value of journal is never used (SA4006)
+internal/durabletest/phase2d_adversarial_world_test.go:95:29: should use constant http.StatusBadGateway instead of numeric literal 502 (ST1013)
+internal/durabletest/phase2d_adversarial_world_test.go:100:29: should use constant http.StatusBadGateway instead of numeric literal 502 (ST1013)
+internal/durabletest/phase2d_adversarial_world_test.go:106:29: should use constant http.StatusBadGateway instead of numeric literal 502 (ST1013)
+internal/durabletest/phase2d_adversarial_world_test.go:112:30: should use constant http.StatusBadGateway instead of numeric literal 502 (ST1013)
+internal/durabletest/phase2d_adversarial_world_test.go:123:31: should use constant http.StatusBadGateway instead of numeric literal 502 (ST1013)

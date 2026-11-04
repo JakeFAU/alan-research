@@ -38,6 +38,8 @@ four placements of serial versus servicing policy, and adds a bounded public
 same-Store witness. Its [conditional argument](../phase3b/03-results.md) does not
 close the rest of Phase 3B.
 
+The [Phase 3B.2 authority slice](../phase3b2/03-results.md) adds asymmetric complete-tuple permissions, rooted original-bound delegation, immutable decisions and fresh-admission validity. It separates consent violations from permission invention, and authority safety from completion reachability. Its runtime witnesses qualify static permissions and retained refusals; a general request-bound delegation primitive remains absent.
+
 Before calling Phase 3B established, attack stable identity across recovery and
 new invocation, request/result/consumption binding, grant attenuation and shared
 authority conservation, cancellation versus already admitted work, B's own

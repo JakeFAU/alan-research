@@ -1,0 +1,245 @@
+[
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "phase3b2.manual",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "before-authorization",
+      "Scenario": "TestPhase3B2CrashCuts/before-authorization",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsbefore-authorization715068960/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801980675664000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58211,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "intent.authorized",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "authorized",
+      "Scenario": "TestPhase3B2CrashCuts/after-source-authorization",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsafter-source-authorization1894441055/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801981627283000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58237,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "dispatch.consider",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "pre-admission",
+      "Scenario": "TestPhase3B2CrashCuts/reserved-before-physical-admission",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsreserved-before-physical-admission561576169/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801982571976000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58263,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "adapter.authorized",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "pre-transport",
+      "Scenario": "TestPhase3B2CrashCuts/physical-admission-before-call",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsphysical-admission-before-call3097801454/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801983460902000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58289,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "adapter.result-recorded",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "pre-settlement",
+      "Scenario": "TestPhase3B2CrashCuts/result-before-settlement",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsresult-before-settlement685047855/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801984352148000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58315,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "adapter.settled",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "pre-consumption",
+      "Scenario": "TestPhase3B2CrashCuts/settled-before-consumption",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutssettled-before-consumption740325312/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801985294876000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58341,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "phase3b2.manual",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "after-refusal",
+      "Scenario": "TestPhase3B2CrashCuts/after-refusal",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsafter-refusal2765454052/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801986244852000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58367,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "phase3b2.manual",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "mutual-wait",
+      "Scenario": "TestPhase3B2CrashCuts/mutual-wait",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsmutual-wait4047206806/001/local.sqlite",
+      "Subject": "a",
+      "Token": "phase2-runner-1793801987151611000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58395,
+    "race_children": false,
+    "type": "process"
+  },
+  {
+    "barrier_config": {
+      "Attempt": "",
+      "Boundary": "intent.authorized",
+      "Epoch": 0,
+      "Generation": 0,
+      "InFlight": null,
+      "Intent": "",
+      "PID": 0,
+      "Phase": "authorized",
+      "Scenario": "TestPhase3B2CrashCuts/one-paid-one-pending",
+      "Sequence": 0,
+      "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B2CrashCutsone-paid-one-pending2937102140/001/local.sqlite",
+      "Subject": "b",
+      "Token": "phase2-runner-1793801988036778000"
+    },
+    "binary_sha256": "9e997b0d5e54636b95434b60ecef679282503460c359d47d10210161ce3f8629",
+    "command": [
+      "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/go-build1671007078/b001/durabletest.test",
+      "-test.run=^TestPhase3B2ExecutorProcess$",
+      "-test.v"
+    ],
+    "exit_signal": "killed",
+    "pid": 58421,
+    "race_children": false,
+    "type": "process"
+  }
+]

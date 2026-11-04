@@ -1,0 +1,6 @@
+//go:build integration
+package durabletest
+import("encoding/json";"os";"testing";"path/filepath";"github.com/JakeFAU/alan-research/examples/communication/authority")
+func TestReview4HistoryGeneration(t *testing.T){
+dir:=t.TempDir();_,a,_:=phaseResource(t,filepath.Join(dir,"A.sqlite"),"","",nil);_,b,_:=phaseResource(t,filepath.Join(dir,"B.sqlite"),"","",nil);db:=filepath.Join(dir,"local.sqlite");phase3b2Create(t,db,authority.Local);phase3b2Finish(t,phase3b2Process(t,db,a,b,"",nil));s:=inspect(t,db);if phase3b2Paid(t,s)!=2{t.Fatal("baseline")};before,_:=json.MarshalIndent(s,"","  ");os.WriteFile("/tmp/alan-phase3b2-review4-before.json",before,0600);n:=0;for _,h:=range s.Tables["history"]{if h["selected_observation"]!="" && h["selected_observation"]!=nil{h["generation"]=int64(2);n++}};if n==0{t.Fatal("no selected histories")};after,_:=json.MarshalIndent(s,"","  ");os.WriteFile("/tmp/alan-phase3b2-review4-after.json",after,0600);t.Logf("changed %d history generations, retained paid=%d chain=%v",n,phase3b2Paid(t,s),phase3b2Chain(s))
+}

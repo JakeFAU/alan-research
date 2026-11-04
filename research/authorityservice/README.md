@@ -72,13 +72,14 @@ count is claimed.
 | S2/LateGrant | 111,065 | 840,616 | 107,213 | 107,213 |
 | S2/Revocable | 220,564 | 1,740,832 | 193,681 | 193,681 |
 
-These provisional development counts total 1,198,963 states and 9,155,940 arcs.
+The frozen-source qualification counts total 1,198,963 states and 9,155,940 arcs.
 Each unsafe configuration has 98,546 unsafe states and 5,776 locally violating
 transitions. SafeStates and SafeTransitions require an entirely safe prefix;
 ViolatingTransitions counts the individual unsafe authorization/admission/apply
 steps even if their source already has an unsafe prefix. All operational
-invariant and custody checks were zero. Final qualification must identify the
-committed source revision, not treat this working-tree run as the final freeze.
+invariant and custody checks were zero. Qualification uses Go source commit `f75e26984c84fe649f26d5e4eaf4ed70e7506e46`;
+see the Phase 3B.2 results and evidence manifests for exact command scope and
+the explicitly non-green pre-existing integration Staticcheck diagnostics.
 
 The decisive shortest BA prefix is Commit → SendRequest → Admit → Authorize:
 S1/Explicit and S2/Missing refuse; S2/Explicit allows the explicit grant;
@@ -120,7 +121,6 @@ clearing and re-admission, sticky late refusal, rejected inline issuance without
 suppressed commitment, shared-root independence, and released custody surviving
 both physical crashes before both originals consume their results.
 
-No production package or Phase 3A/3B.1 source is modified. Independent ledger
-validation, manuscript reconciliation, final source freeze and runtime
-qualification are separate milestone work; model success does not establish
-that the public runtime has a request-bound grant primitive.
+No production package or Phase 3A/3B.1 source is modified. The independent ledger, runtime qualification and manuscript are documented in
+the Phase 3B.2 results. Model success does not establish that the public runtime
+has a request-bound grant primitive.

@@ -51,3 +51,8 @@ Set `ALAN_PHASE2_EVIDENCE` to a fresh temporary directory to export the reused
 process helpers' JSON records, coherent SQLite backups, endpoint ingress journals,
 raw program JSON, and explicit Phase 3B.2 endpoint/config environment records.
 The latter supplement the historical helper's Phase 2 environment whitelist.
+
+Archive the verbose `-v` run log too: the existing kill helper writes its checked
+signal/PID record as `DURABLE` JSON in that log. It does not implement an
+`ALAN_EVIDENCE` switch. The Phase 3B.2 runbook preserves those records alongside
+the raw phase artifacts.
