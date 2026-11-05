@@ -1,0 +1,799 @@
+926a899 Record bounded convergence qualification and evidence custody
+3418f65 Document frozen convergence qualification procedure
+8c4fb12 Control adopter accounting before injecting settlement failure
+02c91c7 Document measured marginal execution costs and qualification
+eb0c41d Package reproducible P2 evidence extraction
+8cbb14d Qualify exact retained HTTP execution comparisons
+f626415 Reuse membership lookups within each root report
+c42c3ed Freeze call-local membership reuse invariant
+32cc4eb Record baseline marginal execution cost attribution
+8c1350b Validate and summarize retained execution measurements
+5918d41 Add scoped SQL and execution attribution probes
+67bbe25 Add controlled marginal execution measurement tools
+7d3a49d Freeze P2 marginal execution attribution contract
+b80e1bc Publish frozen P2 reconstruction metadata and convergence contract
+
+ README.md                                          |   2 +
+ docs/evidence/p2-research-convergence/README.md    |  83 +++
+ .../alan-p2-evidence-index.zip                     | Bin 0 -> 714182 bytes
+ docs/evidence/p2-research-convergence/contract.md  |  78 +++
+ docs/evidence/p2-research-convergence/plan.md      |  61 ++
+ .../publication/index-download-initial.json        |  15 +
+ .../publication/index-download-recheck.json        |  15 +
+ .../publication/index-download-replacement.json    |  15 +
+ .../publication/provenance.json                    |  66 +++
+ .../publication/raw-downloads-001-010.json         | 117 ++++
+ .../publication/raw-downloads-011-020.json         | 117 ++++
+ .../publication/raw-volume-links-001-010.json      |  42 ++
+ .../publication/raw-volume-links-011-020.json      |  42 ++
+ .../p2-research-convergence/qualification.md       |  63 ++
+ docs/evidence/p2-research-convergence/results.md   | 111 ++++
+ docs/evidence/p2-research-convergence/run_gate.py  |  86 +++
+ docs/evidence/performance-p2/analyze_pairs.py      | 154 +++++
+ .../performance-p2/baseline-attribution.md         | 344 +++++++++++
+ docs/evidence/performance-p2/baseline-data.json    |   1 +
+ .../evidence/performance-p2/baseline-marginals.csv | 506 ++++++++++++++++
+ .../evidence/performance-p2/campaign_validation.py | 352 +++++++++++
+ .../performance-p2/candidate-marginals.csv         | 506 ++++++++++++++++
+ docs/evidence/performance-p2/contract.md           | 178 ++++++
+ .../evidence/performance-p2/differential/README.md | 182 ++++++
+ docs/evidence/performance-p2/differential/build.sh |  22 +
+ .../performance-p2/differential/campaign.py        |  87 +++
+ .../performance-p2/differential/clone_seed.py      |  54 ++
+ .../performance-p2/differential/compare.py         | 204 +++++++
+ .../differential/finite_validation.py              | 295 ++++++++++
+ .../differential/fixtures/go-http-contact.json     |  60 ++
+ docs/evidence/performance-p2/differential/go.mod   |   7 +
+ docs/evidence/performance-p2/differential/go.sum   |   2 +
+ docs/evidence/performance-p2/differential/main.go  | 299 ++++++++++
+ .../performance-p2/differential/prefix_proof.go    | 195 +++++++
+ docs/evidence/performance-p2/differential/proof.go |  99 ++++
+ .../differential/prove_comparison.py               | 156 +++++
+ .../differential/test_finite_validation.py         |  32 +
+ .../performance-p2/differential/transport.go       | 328 +++++++++++
+ .../performance-p2/differential/verify_tools.py    | 123 ++++
+ docs/evidence/performance-p2/driver/README.md      | 209 +++++++
+ docs/evidence/performance-p2/driver/build.sh       |  22 +
+ docs/evidence/performance-p2/driver/go.mod         |   7 +
+ docs/evidence/performance-p2/driver/go.sum         |   2 +
+ docs/evidence/performance-p2/driver/main.go        | 606 +++++++++++++++++++
+ docs/evidence/performance-p2/driver/main_test.go   | 126 ++++
+ docs/evidence/performance-p2/driver/p2_test.go     | 301 ++++++++++
+ .../evidence/performance-p2/driver/prefix_proof.go | 215 +++++++
+ docs/evidence/performance-p2/driver/resources.go   | 245 ++++++++
+ docs/evidence/performance-p2/driver/transport.go   | 328 +++++++++++
+ docs/evidence/performance-p2/extract_baseline.py   | 211 +++++++
+ docs/evidence/performance-p2/extract_results.py    | 233 ++++++++
+ docs/evidence/performance-p2/instrument/README.md  | 209 +++++++
+ .../performance-p2/instrument/attribution.py       |  35 ++
+ docs/evidence/performance-p2/instrument/build.sh   |  20 +
+ .../evidence/performance-p2/instrument/generate.py | 232 ++++++++
+ .../performance-p2/instrument/proof_test.go.txt    | 644 +++++++++++++++++++++
+ .../instrument/sqlite_metrics.go.txt               | 195 +++++++
+ .../performance-p2/instrument/test_generator.py    |  51 ++
+ docs/evidence/performance-p2/instrument/timing.py  | 179 ++++++
+ docs/evidence/performance-p2/instrument/verify.py  |  49 ++
+ docs/evidence/performance-p2/invariants.md         | 172 ++++++
+ docs/evidence/performance-p2/make_schedule.py      |  54 ++
+ docs/evidence/performance-p2/plan.md               |  83 +++
+ docs/evidence/performance-p2/reproduce.md          | 294 ++++++++++
+ docs/evidence/performance-p2/results-data.json     |   1 +
+ docs/evidence/performance-p2/results.md            | 349 +++++++++++
+ docs/evidence/performance-p2/run_schedule.py       | 107 ++++
+ .../performance-p2/summarize_diagnostics.py        | 614 ++++++++++++++++++++
+ .../performance-p2/test_campaign_tooling.py        | 450 ++++++++++++++
+ .../performance-p2/test_diagnostic_summary.py      | 254 ++++++++
+ internal/durabletest/competing_debt_test.go        |  49 +-
+ internal/executor/composition_inspect.go           |  17 +-
+ internal/executor/composition_inspect_test.go      | 505 ++++++++++++++++
+ 73 files changed, 12162 insertions(+), 5 deletions(-)
+
+diff --git a/internal/durabletest/competing_debt_test.go b/internal/durabletest/competing_debt_test.go
+index feb550a..ed4bd32 100644
+--- a/internal/durabletest/competing_debt_test.go
++++ b/internal/durabletest/competing_debt_test.go
+@@ -1,18 +1,20 @@
+ //go:build integration
+ 
+ package durabletest
+ 
+ import (
+ 	"context"
+ 	"database/sql"
++	"fmt"
+ 	"strings"
++	"sync"
+ 	"testing"
+ 
+ 	"github.com/JakeFAU/alan/internal/boundary"
+ 	rt "github.com/JakeFAU/alan/runtime"
+ 	"github.com/JakeFAU/alan/schema"
+ )
+ 
+ // Both resolvers have received a genuine response to the same missing original.
+ // An abort during the winner's accounting leaves the duplicate free to settle
+ // its own query. Only the adopter may repay the original on recovery.
+@@ -22,63 +24,106 @@ func TestCompetingReadCannotSettleAdopterDebt(t *testing.T) {
+ 			h := newHistory2c(t)
+ 			endpoint, ready := h.endpoint("", nil)
+ 			h.apply = ready.URL
+ 			hostileSeed(t, h, true)
+ 			h.originalCut(cut2c("adapter.response", "pre-record", ""), nil, false)
+ 			s := liveSuccessor(t, h)
+ 			startRead(t, s, "resolver", map[string]rt.Value{})
+ 			startRead(t, s, "twin", map[string]rt.Value{"target": schema.Text(h.original)})
+ 			returned := make(chan boundary.Event, 2)
+ 			release := make(chan struct{})
++			adopterIntent := make(chan string, 1)
++			received := make(chan boundary.Event, 1)
++			account := make(chan struct{})
++			releaseTransport := sync.OnceFunc(func() { close(release) })
++			releaseAccounting := sync.OnceFunc(func() { close(account) })
+ 			done := runReaders(t, s, ready, 2, func(ctx context.Context, e boundary.Event) error {
++				if e.Boundary == "runner.received" && e.Phase == "pre-account" &&
++					e.Subject == resolver2c.Subject && e.Generation == resolver2c.Generation {
++					var expected string
++					select {
++					case expected = <-adopterIntent:
++					case <-ctx.Done():
++						return ctx.Err()
++					}
++					if e.Intent != expected {
++						return fmt.Errorf("wrong adopter at pre-account: got %q, want %q", e.Intent, expected)
++					}
++					select {
++					case received <- e:
++					case <-ctx.Done():
++						return ctx.Err()
++					}
++					select {
++					case <-account:
++					case <-ctx.Done():
++					}
++					return nil
++				}
+ 				if e.Boundary != "adapter.response" {
+ 					return nil
+ 				}
+-				returned <- e
++				select {
++				case returned <- e:
++				case <-ctx.Done():
++					return ctx.Err()
++				}
+ 				if e.Subject == resolver2c.Subject {
+ 					select {
+ 					case <-release:
+ 					case <-ctx.Done():
+ 					}
+ 				} else {
+ 					<-ctx.Done()
+ 				}
+ 				return nil
+ 			})
++			// Release both adopter pauses before runReaders cancels and joins Run.
++			t.Cleanup(releaseAccounting)
++			t.Cleanup(releaseTransport)
+ 			reads := map[string]string{}
+ 			for range 2 {
+ 				e := recvReadBoundary(t, returned, done)
+ 				reads[e.Subject] = e.Intent
+ 			}
+ 			adopter, duplicate := reads[resolver2c.Subject], reads["twin"]
+ 			if adopter == "" || duplicate == "" || adopter == duplicate {
+ 				t.Fatal("expected two distinct admitted reads", reads)
+ 			}
+ 			h.expectWorld(1, 1, 2)
+ 			admitControl(t, s, "operator", resolver2c.Subject)
+ 			if state := untilTerminal(t, s, resolver2c); state.Projection.Status != "cancelled" {
+ 				t.Fatal("adopter was not revoked", state)
+ 			}
+ 			blocked, originalSettlements := h.original, 0
+ 			if fault == "adopter query" {
+ 				blocked, originalSettlements = adopter, 1
+ 			}
++			adopterIntent <- adopter
++			releaseTransport()
++			// Park the exact adopter on the coordinator before its detached cleanup
++			// budget starts. The duplicate remains at its genuine response boundary.
++			cut := recvReadBoundary(t, received, done)
++			if cut.Intent != adopter || cut.Subject != resolver2c.Subject || cut.Generation != resolver2c.Generation ||
++				cut.Boundary != "runner.received" || cut.Phase != "pre-account" {
++				t.Fatal("wrong adopter accounting acknowledgment", cut)
++			}
+ 			db, err := sql.Open("sqlite3", h.db+"?_busy_timeout=5000")
+ 			if err != nil {
+ 				t.Fatal(err)
+ 			}
+ 			defer db.Close()
+ 			quoted := h.data(h.db, "SELECT quote(?)", blocked)
+ 			if _, err = db.ExecContext(t.Context(), "CREATE TRIGGER abort_adopter BEFORE INSERT ON settlements WHEN NEW.intent_id="+quoted+" BEGIN SELECT RAISE(ABORT,'adopter settlement aborted'); END"); err != nil {
+ 				t.Fatal(err)
+ 			}
+-			close(release)
++			releaseAccounting()
+ 			if err = <-done; err == nil || !strings.Contains(err.Error(), "adopter settlement aborted") {
+ 				t.Fatalf("Run did not report the accounting failure: %v", err)
+ 			}
+ 			decision := func(id string) string {
+ 				return h.data(h.db, "SELECT json_extract(descriptor,'$.Read.Adoption') FROM adapter_results WHERE intent_id=?", id)
+ 			}
+ 			settlements := func(id string) int {
+ 				return h.count(h.db, "SELECT count(*) FROM settlements WHERE intent_id=?", id)
+ 			}
+ 			if decision(adopter) != "adopted" || decision(duplicate) != "duplicate" ||
+diff --git a/internal/executor/composition_inspect.go b/internal/executor/composition_inspect.go
+index 8d17806..63a9c56 100644
+--- a/internal/executor/composition_inspect.go
++++ b/internal/executor/composition_inspect.go
+@@ -29,20 +29,23 @@ func readRootCompletions(ctx context.Context, q queryer) ([]RootCompletion, erro
+ 		return nil, err
+ 	}
+ 	roots, err := stringList(ctx, q, "SELECT id FROM composition_roots ORDER BY id")
+ 	if err != nil {
+ 		return nil, err
+ 	}
+ 	intents, err := readIntents(ctx, q)
+ 	if err != nil {
+ 		return nil, err
+ 	}
++	// Callers provide a stable ownership/transaction cut. Reuse membership,
++	// including successful absence, only within this call.
++	var membershipRoots map[RunID]string
+ 	out := []RootCompletion{}
+ 	for _, id := range roots {
+ 		var raw []byte
+ 		var root ResourceRoot
+ 		if err = q.QueryRowContext(ctx, "SELECT descriptor FROM composition_roots WHERE id=?", id).Scan(&raw); err != nil {
+ 			return nil, err
+ 		}
+ 		if err = decode(raw, &root); err != nil {
+ 			return nil, err
+ 		}
+@@ -59,23 +62,31 @@ func readRootCompletions(ctx context.Context, q queryer) ([]RootCompletion, erro
+ 		if err != nil {
+ 			return nil, err
+ 		}
+ 		r.Pending = prepared.Pending
+ 		if prepared.Outcome.ID != "" {
+ 			o := prepared.Outcome
+ 			r.Outcome = &o
+ 		}
+ 		for _, operation := range sortedKeys(intents) {
+ 			i := intents[operation]
+-			memberRoot, e := compositionMembershipRoot(ctx, q, i.Run)
+-			if e != nil {
+-				return nil, e
++			memberRoot, cached := membershipRoots[i.Run]
++			var e error
++			if !cached {
++				memberRoot, e = compositionMembershipRoot(ctx, q, i.Run)
++				if e != nil {
++					return nil, e
++				}
++				if membershipRoots == nil {
++					membershipRoots = make(map[RunID]string)
++				}
++				membershipRoots[i.Run] = memberRoot
+ 			}
+ 			if memberRoot != id {
+ 				continue
+ 			}
+ 			switch i.Kind {
+ 			case "invocation":
+ 				var n int
+ 				if e = q.QueryRowContext(ctx, "SELECT count(*) FROM composition_publications WHERE operation_id=?", operation).Scan(&n); e != nil {
+ 					return nil, e
+ 				}
+diff --git a/internal/executor/composition_inspect_test.go b/internal/executor/composition_inspect_test.go
+new file mode 100644
+index 0000000..d0d9acd
+--- /dev/null
++++ b/internal/executor/composition_inspect_test.go
+@@ -0,0 +1,505 @@
++//go:build integration
++
++package executor
++
++import (
++	"context"
++	"database/sql"
++	"encoding/json"
++	"errors"
++	"reflect"
++	"slices"
++	"strings"
++	"testing"
++)
++
++const rootReportMembershipSQL = "SELECT root_id FROM composition_static_members WHERE subject=? AND generation=? UNION ALL SELECT root_id FROM composition_members WHERE subject=? AND generation=?"
++
++// This wrapper counts the original SQL predicate, without adding a production
++// hook. Overrides below are explicitly synthetic helper tests, never execution
++// histories or evidence for supported writes during a report.
++type rootReportQueryer struct {
++	queryer
++	lookups []RunID
++	row     func(context.Context, string, ...any) *sql.Row
++	rows    func(context.Context, string, ...any) (*sql.Rows, error)
++}
++
++func (q *rootReportQueryer) QueryRowContext(ctx context.Context, query string, args ...any) *sql.Row {
++	if query == rootReportMembershipSQL {
++		q.lookups = append(q.lookups, RunID{args[0].(string), args[1].(int64)})
++	}
++	if q.row != nil {
++		return q.row(ctx, query, args...)
++	}
++	return q.queryer.QueryRowContext(ctx, query, args...)
++}
++
++func (q *rootReportQueryer) QueryContext(ctx context.Context, query string, args ...any) (*sql.Rows, error) {
++	if q.rows != nil {
++		return q.rows(ctx, query, args...)
++	}
++	return q.queryer.QueryContext(ctx, query, args...)
++}
++
++// Both roots and the unscoped source are genuinely provisioned. Only ordinary
++// Commit/prepare/receipt/settlement methods create their retained histories.
++// There is no transport here: an allowed, paid attempt has unknown application.
++func rootReportStore(t *testing.T) (*Store, string, map[string]ResourceRoot) {
++	t.Helper()
++	p := Provision{}
++	const target = "http://127.0.0.1:1"
++	for _, name := range []string{"a", "b", "unscoped"} {
++		emit := Instruction{Op: "emit", Dst: "pending", Effect: &Effect{Kind: "external", Target: Lit(Text(target)), Generation: Lit(Int(1)), Obligation: Lit(Text("receipt")), Payload: map[string]Operand{"profile": Lit(Text("idempotent")), "delta": Lit(Int(5))}}}
++		addProgram(t, &p, name, []Instruction{emit, emit, {Op: "receive", Match: &Match{Kind: "receipt", Provenance: "resource-receipt", Source: Lit(Text(target)), Generation: Lit(Int(1)), Obligation: Lit(Text("receipt")), Operation: Ref("pending")}}, {Op: "end", Outcome: "succeeded"}}, map[string]Value{})
++		p.Permissions = append(p.Permissions, Permission{Kind: "external", Source: name, Target: target, Operation: "apply", Revision: 1})
++	}
++	c := compositionProvision{Version: compositionProtocolVersion}
++	for _, name := range []string{"a", "b"} {
++		c.Roots = append(c.Roots, compositionRoot{Run: RunID{name, 1}, Members: []RunID{{name, 1}}, Limits: compositionLimits{MaxInvocations: 4, MaxCreatedRuns: 8, MaxDepth: 3, MaxEffects: 8, MaxInFlight: 1}})
++	}
++	path := t.TempDir() + "/root-report.sqlite"
++	s, err := createInvocationStore(t.Context(), path, p, c, DefaultLimits())
++	if err != nil {
++		t.Fatal(err)
++	}
++	t.Cleanup(func() {
++		if err := s.Close(); err != nil {
++			t.Error(err)
++		}
++	})
++	roots := map[string]ResourceRoot{}
++	for _, name := range []string{"a", "b"} {
++		r, err := compositionRootFor(t.Context(), s.conn, RunID{name, 1})
++		if err != nil {
++			t.Fatal(err)
++		}
++		roots[name] = r
++	}
++	return s, path, roots
++}
++
++func rootReportCommit(t *testing.T, s *Store, subject string) string {
++	t.Helper()
++	r, err := s.Commit(t.Context(), current(t, s, subject).Authority(), "")
++	if err != nil {
++		t.Fatal(err)
++	}
++	return r.Projection.Data["pending"].Text
++}
++
++func rootReportWant(roots map[string]ResourceRoot, unresolved, unknown map[string][]string, charges map[string]int64) []RootCompletion {
++	want := []RootCompletion{}
++	for _, name := range []string{"a", "b"} {
++		r := roots[name]
++		want = append(want, RootCompletion{RootID: r.ID, Run: r.Run, LocalStatus: "open", Limits: r.Limits,
++			Charges: compositionCharge{RootID: r.ID, Effects: charges[name]}, Pending: "members", PendingInvocations: []string{},
++			UnresolvedExternal: append([]string{}, unresolved[name]...), UnknownExternal: append([]string{}, unknown[name]...)})
++	}
++	slices.SortFunc(want, func(a, b RootCompletion) int { return strings.Compare(a.RootID, b.RootID) })
++	return want
++}
++
++func rootReportTables(t *testing.T, s *Store) map[string][]map[string]any {
++	t.Helper()
++	tables, err := stringList(t.Context(), s.conn, "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' ORDER BY name")
++	if err != nil {
++		t.Fatal(err)
++	}
++	out := map[string][]map[string]any{}
++	for _, table := range tables {
++		out[table], err = inspectTable(t.Context(), s.conn, table)
++		if err != nil {
++			t.Fatal(err)
++		}
++	}
++	return out
++}
++
++func rootReportRead(t *testing.T, s *Store, q queryer) []RootCompletion {
++	t.Helper()
++	// Match finishRun's owner exclusion; no fixture writes occur in this cut.
++	s.mu.Lock()
++	defer s.mu.Unlock()
++	reports, err := readRootCompletions(t.Context(), q)
++	if err != nil {
++		t.Fatal(err)
++	}
++	return reports
++}
++
++func TestRootCompletionsOrdinaryMembershipSemantics(t *testing.T) {
++	s, _, roots := rootReportStore(t)
++	a1 := rootReportCommit(t, s, "a")
++	attempt, fresh, err := s.prepareExternal(t.Context(), a1)
++	if err != nil || !fresh || !attempt.Allowed {
++		t.Fatal(attempt, fresh, err)
++	}
++	a2 := rootReportCommit(t, s, "a")
++	b1 := rootReportCommit(t, s, "b")
++	if b, fresh, err := s.prepareExternal(t.Context(), b1); err != nil || !fresh || !b.Allowed {
++		t.Fatal(b, fresh, err)
++	}
++	u1 := rootReportCommit(t, s, "unscoped")
++	if a1 != identity("a", 1, 1, 0) || a2 != identity("a", 1, 2, 0) || b1 != identity("b", 1, 1, 0) || u1 != identity("unscoped", 1, 1, 0) {
++		t.Fatal("original operation identities changed", a1, a2, b1, u1)
++	}
++	before := rootReportTables(t, s)
++	q := &rootReportQueryer{queryer: s.conn}
++	got := rootReportRead(t, s, q)
++	want := rootReportWant(roots, map[string][]string{"a": {a1, a2}, "b": {b1}}, map[string][]string{"a": {a1}, "b": {b1}}, map[string]int64{"a": 1, "b": 1})
++	if !reflect.DeepEqual(got, want) {
++		t.Fatalf("complete report:\n got %#v\nwant %#v", got, want)
++	}
++	if after := rootReportTables(t, s); !reflect.DeepEqual(before, after) {
++		t.Fatal("report changed durable rows")
++	}
++	if len(q.lookups) == 0 {
++		t.Fatal("did not observe the original membership SQL")
++	}
++}
++
++// This is the intended performance RED: semantic expectations are independent
++// and already hold on baseline. Four genuine intents have three unique sources,
++// one absent from membership; two roots previously repeat all four lookups.
++func TestRootCompletionsMembershipQueriesOncePerRun(t *testing.T) {
++	s, _, roots := rootReportStore(t)
++	unresolved := map[string][]string{}
++	unique := map[RunID]bool{}
++	for step, subject := range []string{"a", "a", "b", "unscoped"} {
++		operation := rootReportCommit(t, s, subject)
++		if subject != "unscoped" {
++			unresolved[subject] = append(unresolved[subject], operation)
++		}
++		unique[RunID{subject, 1}] = true
++		before := rootReportTables(t, s)
++		q := &rootReportQueryer{queryer: s.conn}
++		got := rootReportRead(t, s, q)
++		want := rootReportWant(roots, unresolved, nil, nil)
++		if !reflect.DeepEqual(got, want) {
++			t.Fatalf("prefix %d full report: got %#v, want %#v", step+1, got, want)
++		}
++		if after := rootReportTables(t, s); !reflect.DeepEqual(before, after) {
++			t.Fatal("report changed durable rows")
++		}
++		seen := map[RunID]int{}
++		for _, run := range q.lookups {
++			seen[run]++
++		}
++		if len(q.lookups) != len(unique) {
++			t.Errorf("prefix %d: membership queries=%d (%v), want one per full RunID=%d", step+1, len(q.lookups), seen, len(unique))
++		}
++		for run := range unique {
++			if seen[run] != 1 {
++				t.Errorf("prefix %d: source %+v queried %d times, want 1", step+1, run, seen[run])
++			}
++		}
++	}
++}
++
++func TestRootCompletionsIndependentCallsAndStores(t *testing.T) {
++	first, _, roots1 := rootReportStore(t)
++	second, _, roots2 := rootReportStore(t)
++	operation1 := rootReportCommit(t, first, "a")
++	operation2 := rootReportCommit(t, second, "a")
++	if first.Namespace() == second.Namespace() || roots1["a"].ID == roots2["a"].ID || operation1 != operation2 {
++		t.Fatal("fixture requires coincident RunIDs/operations but distinct stores/root IDs")
++	}
++	for _, cut := range []struct {
++		name  string
++		store *Store
++		roots map[string]ResourceRoot
++	}{{"first", first, roots1}, {"second", second, roots2}, {"first_again", first, roots1}} {
++		t.Run(cut.name, func(t *testing.T) {
++			q := &rootReportQueryer{queryer: cut.store.conn}
++			got := rootReportRead(t, cut.store, q)
++			want := rootReportWant(cut.roots, map[string][]string{"a": {operation1}}, nil, nil)
++			if !reflect.DeepEqual(got, want) || !slices.Contains(q.lookups, (RunID{"a", 1})) {
++				t.Fatalf("fresh store/call reconstruction: got %#v, want %#v, lookups %v", got, want, q.lookups)
++			}
++		})
++	}
++}
++
++// Synthetic helper-only descriptors permit generation two without claiming that
++// a public generation-one scoped deployment can be reparented or retried.
++func rootReportSyntheticIntents(t *testing.T, s *Store, intents []Intent) func(context.Context, string, ...any) (*sql.Rows, error) {
++	t.Helper()
++	return func(ctx context.Context, query string, args ...any) (*sql.Rows, error) {
++		if !strings.HasPrefix(query, "SELECT id,subject,generation,sequence,ordinal,source_revision,descriptor FROM intents") {
++			return s.conn.QueryContext(ctx, query, args...)
++		}
++		parts := make([]string, len(intents))
++		values := []any{}
++		for n, intent := range intents {
++			raw, err := json.Marshal(intent)
++			if err != nil {
++				t.Fatal(err)
++			}
++			parts[n] = "SELECT ?,?,?,?,?,?,?"
++			values = append(values, intent.ID, intent.Run.Subject, intent.Run.Generation, intent.Sequence, intent.Ordinal, int64(1), raw)
++		}
++		return s.conn.QueryContext(ctx, strings.Join(parts, " UNION ALL "), values...)
++	}
++}
++
++func TestRootCompletionsSyntheticFullGenerationKey(t *testing.T) {
++	s, _, roots := rootReportStore(t)
++	intents := []Intent{{ID: "generation-one", Run: RunID{"same-subject", 1}, Kind: "invocation"}, {ID: "generation-two", Run: RunID{"same-subject", 2}, Kind: "invocation"}}
++	q := &rootReportQueryer{queryer: s.conn, rows: rootReportSyntheticIntents(t, s, intents)}
++	q.row = func(ctx context.Context, query string, args ...any) *sql.Row {
++		if query == rootReportMembershipSQL {
++			root := roots["a"].ID
++			if args[1].(int64) == 2 {
++				root = roots["b"].ID
++			}
++			return s.conn.QueryRowContext(ctx, "SELECT ?", root)
++		}
++		return s.conn.QueryRowContext(ctx, query, args...)
++	}
++	got := rootReportRead(t, s, q)
++	want := rootReportWant(roots, nil, nil, nil)
++	for n := range want {
++		if want[n].RootID == roots["a"].ID {
++			want[n].PendingInvocations = []string{"generation-one"}
++		} else {
++			want[n].PendingInvocations = []string{"generation-two"}
++		}
++	}
++	if !reflect.DeepEqual(got, want) {
++		t.Fatalf("full-generation membership: got %#v, want %#v", got, want)
++	}
++}
++
++func TestRootCompletionsSyntheticAbsentThenPresentNextCall(t *testing.T) {
++	s, _, roots := rootReportStore(t)
++	intent := Intent{ID: "synthetic-unscoped", Run: RunID{"same-key", 1}, Kind: "invocation"}
++	q := &rootReportQueryer{queryer: s.conn, rows: rootReportSyntheticIntents(t, s, []Intent{intent})}
++	present := false
++	q.row = func(ctx context.Context, query string, args ...any) *sql.Row {
++		if query == rootReportMembershipSQL {
++			if !present {
++				return s.conn.QueryRowContext(ctx, "SELECT '' WHERE 0")
++			}
++			return s.conn.QueryRowContext(ctx, "SELECT ?", roots["a"].ID)
++		}
++		return s.conn.QueryRowContext(ctx, query, args...)
++	}
++	for _, next := range []bool{false, true} {
++		present = next // Only between calls; this is not lawful unscoped reparenting.
++		q.lookups = nil
++		got := rootReportRead(t, s, q)
++		want := rootReportWant(roots, nil, nil, nil)
++		if present {
++			for n := range want {
++				if want[n].RootID == roots["a"].ID {
++					want[n].PendingInvocations = []string{intent.ID}
++				}
++			}
++		}
++		if !reflect.DeepEqual(got, want) || len(q.lookups) == 0 {
++			t.Fatalf("fresh lifetime present=%v: got %#v, want %#v, lookups %v", present, got, want, q.lookups)
++		}
++	}
++}
++
++func TestRootCompletionsErrorsAtRetainedBoundaries(t *testing.T) {
++	for _, name := range []string{"entry_cancellation", "first_membership_cancellation", "first_membership_sql", "next_root_sql", "first_descriptor_decode"} {
++		t.Run(name, func(t *testing.T) {
++			s, _, roots := rootReportStore(t)
++			rootReportCommit(t, s, "a")
++			before := rootReportTables(t, s)
++			q := &rootReportQueryer{queryer: s.conn}
++			ctx, cancel := context.WithCancel(t.Context())
++			defer cancel()
++			if name == "entry_cancellation" {
++				cancel()
++			}
++			ids := []string{roots["a"].ID, roots["b"].ID}
++			slices.Sort(ids)
++			injected := false
++			q.row = func(callCtx context.Context, query string, args ...any) *sql.Row {
++				if callCtx != ctx {
++					t.Error("report replaced caller context")
++				}
++				if query == rootReportMembershipSQL && (name == "first_membership_cancellation" || name == "first_membership_sql") {
++					injected = true
++					if name == "first_membership_cancellation" {
++						cancel()
++					} else {
++						return s.conn.QueryRowContext(callCtx, "SELECT * FROM alan_missing_root_report_test_table")
++					}
++				}
++				if query == "SELECT descriptor FROM composition_roots WHERE id=?" && name == "next_root_sql" && args[0] == ids[1] {
++					injected = true
++					return s.conn.QueryRowContext(callCtx, "SELECT * FROM alan_missing_root_report_test_table")
++				}
++				if query == "SELECT descriptor FROM composition_roots WHERE id=?" && name == "first_descriptor_decode" {
++					injected = true
++					return s.conn.QueryRowContext(callCtx, "SELECT '{'")
++				}
++				return s.conn.QueryRowContext(callCtx, query, args...)
++			}
++			s.mu.Lock()
++			got, err := readRootCompletions(ctx, q)
++			s.mu.Unlock()
++			if err == nil || got != nil {
++				t.Fatalf("error became successful/partial report: %#v, %v", got, err)
++			}
++			if strings.Contains(name, "cancellation") {
++				if !errors.Is(err, context.Canceled) {
++					t.Fatalf("context error changed: %v", err)
++				}
++			} else if name == "first_descriptor_decode" {
++				if len(q.lookups) != 0 {
++					t.Fatal("membership prefetched before descriptor decode")
++				}
++			} else {
++				var ignored any
++				original := s.conn.QueryRowContext(t.Context(), "SELECT * FROM alan_missing_root_report_test_table").Scan(&ignored)
++				if original == nil || err.Error() != original.Error() {
++					t.Fatalf("SQL error changed: got %v, original %v", err, original)
++				}
++			}
++			if name == "entry_cancellation" {
++				if len(q.lookups) != 0 {
++					t.Fatal("membership accessed before failed protocol gate")
++				}
++			} else if !injected {
++				t.Fatal("did not reach intended retained boundary")
++			}
++			if (name == "first_membership_sql" || name == "first_membership_cancellation") && len(q.lookups) != 1 {
++				t.Fatalf("first membership failure continued traversal: %v", q.lookups)
++			}
++			if name == "next_root_sql" && len(q.lookups) == 0 {
++				t.Fatal("later retained SQL did not follow a membership lookup")
++			}
++			if after := rootReportTables(t, s); !reflect.DeepEqual(before, after) {
++				t.Fatal("failed report changed durable rows")
++			}
++		})
++	}
++}
++
++func TestRootCompletionsNonCompositionGate(t *testing.T) {
++	s, _ := newStore(t, false)
++	q := &rootReportQueryer{queryer: s.conn}
++	got, err := readRootCompletions(t.Context(), q)
++	if err != nil || got != nil || len(q.lookups) != 0 {
++		t.Fatal(got, err, q.lookups)
++	}
++}
++
++func TestRootCompletionsFreshDynamicMembership(t *testing.T) {
++	s := invocationStore(t, "succeeded", 1, nil)
++	if got := rootReportRead(t, s, s.conn); len(got) != 1 || got[0].Charges.Invocations != 0 || got[0].Pending != "members" {
++		t.Fatal(got)
++	}
++	admission := invokeOnce(t, s)
++	if !admission.Accepted || len(admission.Members) != 2 {
++		t.Fatal(admission)
++	}
++	beforeRun := rootReportRead(t, s, s.conn)
++	if len(beforeRun) != 1 || beforeRun[0].Charges.Invocations != 1 || beforeRun[0].Charges.CreatedRuns != 2 || !reflect.DeepEqual(beforeRun[0].PendingInvocations, []string{admission.Invocation.OperationID}) {
++		t.Fatal(beforeRun)
++	}
++	for _, member := range admission.Members {
++		root, err := compositionMembershipRoot(t.Context(), s.conn, member)
++		if err != nil || root != beforeRun[0].RootID {
++			t.Fatal("genuinely admitted child membership", member, root, err)
++		}
++	}
++	run, err := s.Run(t.Context(), RunOptions{MaxSteps: 100, MaxDispatch: 100, MaxInFlight: 1})
++	if err != nil {
++		t.Fatal(err)
++	}
++	q := &rootReportQueryer{queryer: s.conn}
++	after := rootReportRead(t, s, q)
++	if !reflect.DeepEqual(after, run.Roots) || len(after) != 1 || after[0].Outcome == nil || after[0].Outcome.Status != "succeeded" || after[0].LocalStatus != "succeeded" || after[0].Charges.Invocations != 2 || after[0].Charges.CreatedRuns != 4 || len(after[0].PendingInvocations) != 0 || len(after[0].UnresolvedExternal) != 0 || len(after[0].UnknownExternal) != 0 {
++		t.Fatal(after, run.Roots)
++	}
++	intents, err := readIntents(t.Context(), s.conn)
++	if err != nil {
++		t.Fatal(err)
++	}
++	childSource := false
++	for _, intent := range intents {
++		if slices.Contains(admission.Members, intent.Run) {
++			childSource = true
++			if !slices.Contains(q.lookups, intent.Run) {
++				t.Fatal("later report missed newly admitted child's source", intent.Run)
++			}
++		}
++	}
++	if !childSource {
++		t.Fatal("ordinary child execution emitted no retained intent")
++	}
++}
++
++func TestRootCompletionsFreshLateReceiptSettlementAndConflict(t *testing.T) {
++	s, path, roots := rootReportStore(t)
++	id := rootReportCommit(t, s, "a")
++	attempt, fresh, err := s.prepareExternal(t.Context(), id)
++	if err != nil || !fresh || !attempt.Allowed {
++		t.Fatal(attempt, fresh, err)
++	}
++	charges := map[string]int64{"a": 1}
++	unknown := rootReportWant(roots, map[string][]string{"a": {id}}, map[string][]string{"a": {id}}, charges)
++	if got := rootReportRead(t, s, s.conn); !reflect.DeepEqual(got, unknown) {
++		t.Fatal(got, unknown)
++	}
++	view := func() *ExecutionEffect {
++		t.Helper()
++		snapshot, err := InspectExecution(t.Context(), path, DefaultLimits())
++		if err != nil {
++			t.Fatal(err)
++		}
++		effect, ok := snapshot.Effect(id)
++		if !ok {
++			t.Fatal("missing original effect")
++		}
++		return effect
++	}
++	if e := view(); e.State != "reserved_unknown" || e.Consequence != "unresolved" {
++		t.Fatal(e)
++	}
++	receipt := receiptFor(attempt.Request)
++	if err := s.recordExternalReceipt(t.Context(), attempt, receipt); err != nil {
++		t.Fatal(err)
++	}
++	known := rootReportWant(roots, nil, nil, charges)
++	if got := rootReportRead(t, s, s.conn); !reflect.DeepEqual(got, known) {
++		t.Fatal("late result invisible", got, known)
++	}
++	if e := view(); e.State != "result_unsettled" || e.Settlement != nil {
++		t.Fatal(e)
++	}
++	outcome, err := s.externalOutcome(t.Context(), id)
++	if err != nil || outcome.Receipt == nil || !reflect.DeepEqual(*outcome.Receipt, receipt) {
++		t.Fatal(outcome, err)
++	}
++	if err := s.settleExternal(t.Context(), outcome); err != nil {
++		t.Fatal(err)
++	}
++	if got := rootReportRead(t, s, s.conn); !reflect.DeepEqual(got, known) {
++		t.Fatal("settlement changed membership or debit", got, known)
++	}
++	if e := view(); e.State != "settled" || e.Settlement == nil {
++		t.Fatal(e)
++	}
++	loser := receipt
++	loser.Total++
++	if err := s.recordExternalReceipt(t.Context(), attempt, loser); !errors.Is(err, ErrConflict) {
++		t.Fatal(err)
++	}
++	if got := rootReportRead(t, s, s.conn); !reflect.DeepEqual(got, known) {
++		t.Fatal("root known-result meaning changed after conflict", got, known)
++	}
++	if e := view(); e.Consequence != "conflicting_receipts" || e.ReceiptEvidenceState != "conflict" || len(e.AdditionalReceipts) != 1 || e.Settlement == nil {
++		t.Fatal(e)
++	}
++	retained, err := s.externalOutcome(t.Context(), id)
++	if err != nil || !reflect.DeepEqual(retained, outcome) || count(t, s, "settlements") != 1 || count(t, s, "receipt_conflicts") != 1 {
++		t.Fatal("first result/debit/settlement replaced", retained, outcome, err)
++	}
++}
+

@@ -1,0 +1,256 @@
+{
+  "status": "Prospective qualification of conflict-free combined tree; original scientific pair remains unchanged.",
+  "source_gate": "Wait for exact committed runtime/research executable pair and source/input hash map; evidence-only docs excluded from source map.",
+  "common_environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b4-qualification-modcache",
+    "GOCACHE": "/tmp/alan-phase3a-go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b4-staticcheck"
+  },
+  "runtime_environment": {
+    "ALAN_PHASE3B3_OLD_READER": "/tmp/alan-phase3b4-pre-v1-reader/alan",
+    "ALAN_PHASE3B4_OLD_READER": "/tmp/alan-phase3b4-task1/compatibility/old-reader.test"
+  },
+  "runtime_promoted": "After public final K01/K02 parents exist, focused TestPhase3B4PromotedPublicParents normal/race into separate fresh promoted roots. Initial full-suite optional skips are reported and satisfied by these explicit runs.",
+  "lint": "Research global Staticcheck expected inherited 13 ordinary/31 integration diagnostics; actual exact comparison required, not any nonzero exit. Changed checker scope must be clean.",
+  "scope": "Full ordinary both; full runtime integration/race; affected research integration/race and old actual regression scopes. Export/mutant/checker-specific qualification owned by worker. No unnecessary duplicate campaign in final output roots.",
+  "identity": {
+    "main": "926a899b651fccc48be52a054612a92afcf1ddfd",
+    "phase3b4_head": "9dbcf3b9ee3047ab280ac150b05a184d44832007",
+    "prospective_tree": "44af03133ac7ba75fb6f6f8dc36629ed4cf52d98",
+    "synthetic_detached_commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+    "worktree": "/private/tmp/alan-phase3b4-prospective-runtime",
+    "input_files": 351,
+    "source_manifest_sha256": "d0c75f7f5cf46eb6d491b2991a13f3febe6a56770f31231e6eb56a68d72df4d3",
+    "scope": "Unreferenced synthetic commit/detached qualification only; neither source branch nor main changed",
+    "created_unix": 1793844678.350236
+  },
+  "jobs": [
+    {
+      "name": "runtime-ordinary",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-integration",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "-tags=integration",
+        "./..."
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_EVIDENCE": "/tmp/alan-phase3b4-prospective-normal",
+        "ALAN_PHASE3B3_EVIDENCE": "/tmp/alan-phase3b4-prospective-v1-normal"
+      },
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-integration-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "-race",
+        "-tags=integration",
+        "./..."
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_EVIDENCE": "/tmp/alan-phase3b4-prospective-race",
+        "ALAN_PHASE3B3_EVIDENCE": "/tmp/alan-phase3b4-prospective-v1-race"
+      },
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-mod-verify",
+      "argv": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-mod-tidy",
+      "argv": [
+        "go",
+        "mod",
+        "tidy",
+        "-diff"
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-build",
+      "argv": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-vet",
+      "argv": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-vet-integration",
+      "argv": [
+        "go",
+        "vet",
+        "-tags=integration",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-staticcheck",
+      "argv": [
+        "staticcheck",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-staticcheck-integration",
+      "argv": [
+        "staticcheck",
+        "-tags=integration",
+        "./..."
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-format",
+      "argv": [
+        "gofmt",
+        "-l",
+        "adapters",
+        "author",
+        "cmd",
+        "compose",
+        "effects",
+        "examples",
+        "internal",
+        "runtime",
+        "schema"
+      ],
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime"
+    },
+    {
+      "name": "runtime-promoted-normal",
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=10m",
+        "-tags=integration",
+        "./internal/executor",
+        "-run",
+        "^TestPhase3B4PromotedPublicParents$"
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_PUBLIC_PARENTS": "/tmp/alan-phase3b4-prospective-normal",
+        "ALAN_PHASE3B4_PROMOTED_OUTPUT": "/tmp/alan-phase3b4-prospective-promoted-normal"
+      }
+    },
+    {
+      "name": "runtime-promoted-race",
+      "repo": "/private/tmp/alan-phase3b4-prospective-runtime",
+      "kind": "runtime",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=10m",
+        "-tags=integration",
+        "-race",
+        "./internal/executor",
+        "-run",
+        "^TestPhase3B4PromotedPublicParents$"
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_PUBLIC_PARENTS": "/tmp/alan-phase3b4-prospective-race",
+        "ALAN_PHASE3B4_PROMOTED_OUTPUT": "/tmp/alan-phase3b4-prospective-promoted-race"
+      }
+    },
+    {
+      "name": "research-oracle-normal",
+      "repo": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "kind": "research",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=5m",
+        "./research/delegationcorrespondence",
+        "-run",
+        "^TestBinding"
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b4-prospective-normal",
+        "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b4-prospective-promoted-normal",
+        "ALAN_PHASE3B4_CHECK_OUTPUT": "/tmp/alan-phase3b4-prospective-verdicts-normal",
+        "ALAN_PHASE3B4_ATTACK_OUTPUT": "/tmp/alan-phase3b4-prospective-attacks-normal"
+      }
+    },
+    {
+      "name": "research-oracle-race",
+      "repo": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "kind": "research",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=5m",
+        "-race",
+        "./research/delegationcorrespondence",
+        "-run",
+        "^TestBinding"
+      ],
+      "environment": {
+        "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b4-prospective-race",
+        "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b4-prospective-promoted-race",
+        "ALAN_PHASE3B4_CHECK_OUTPUT": "/tmp/alan-phase3b4-prospective-verdicts-race",
+        "ALAN_PHASE3B4_ATTACK_OUTPUT": "/tmp/alan-phase3b4-prospective-attacks-race"
+      }
+    }
+  ]
+}

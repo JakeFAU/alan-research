@@ -1,0 +1,11 @@
+{
+  "main": "926a899b651fccc48be52a054612a92afcf1ddfd",
+  "phase3b4_head": "9dbcf3b9ee3047ab280ac150b05a184d44832007",
+  "prospective_tree": "44af03133ac7ba75fb6f6f8dc36629ed4cf52d98",
+  "synthetic_detached_commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+  "worktree": "/private/tmp/alan-phase3b4-prospective-runtime",
+  "input_files": 351,
+  "source_manifest_sha256": "d0c75f7f5cf46eb6d491b2991a13f3febe6a56770f31231e6eb56a68d72df4d3",
+  "scope": "Unreferenced synthetic commit/detached qualification only; neither source branch nor main changed",
+  "created_unix": 1793844678.350236
+}
