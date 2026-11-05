@@ -301,6 +301,18 @@ func CheckContinuity(phases []PhaseReport, files map[string][]byte) (failure *Fa
 		}
 		return 5
 	}
+	var binding BindingCase
+	if json.Unmarshal(files["case.json"], &binding) == nil && binding.Version == "alan/phase3b4-case/v1" {
+		orders := map[string]int{}
+		prior := ""
+		for j, capture := range binding.Captures {
+			need(capture.Ordinal == j+1 && capture.Predecessor == prior, "capture_order", capture.Directory, "")
+			need(capture.Directory != "" && orders[capture.Directory+"/inspect.json"] == 0, "capture_identity", capture.Directory, "")
+			orders[capture.Directory+"/inspect.json"] = j + 1
+			prior = capture.Directory
+		}
+		rank = func(path string) int { n := orders[path]; need(n > 0, "undeclared_capture", path, ""); return n }
+	}
 	ps := append([]PhaseReport{}, phases...)
 	sort.Slice(ps, func(i, j int) bool { return rank(ps[i].Path) < rank(ps[j].Path) })
 	var before *RawSnapshot
@@ -313,7 +325,7 @@ func CheckContinuity(phases []PhaseReport, files map[string][]byte) (failure *Fa
 		if before != nil {
 			need(now.Namespace == before.Namespace, "phase_namespace", p.Path, "")
 			checkImmutableSource(*before, now, p.Path)
-			for _, table := range []string{"intents", "attempts", "lifecycle_results", "external_attempts", "adapter_attempts", "composition_reservations", "composition_charges", "composition_facts", "external_receipts", "adapter_results", "history"} {
+			for _, table := range []string{"intents", "attempts", "lifecycle_results", "external_attempts", "adapter_attempts", "composition_reservations", "composition_charges", "composition_facts", "external_receipts", "adapter_results", "history", "admissions", "settlements", "message_acknowledgments"} {
 				set := map[string]bool{}
 				for _, r := range now.Tables[table] {
 					set[string(bytesJSON(r))] = true
@@ -322,6 +334,20 @@ func CheckContinuity(phases []PhaseReport, files map[string][]byte) (failure *Fa
 					need(set[string(bytesJSON(r))], "immutable_prefix_changed", p.Path, table)
 				}
 			}
+		}
+		if before != nil {
+			old := map[string]Row{}
+			for _, r := range before.Tables["observations"] {
+				old[textCell(r, "id")] = r
+			}
+			for _, r := range now.Tables["observations"] {
+				id := textCell(r, "id")
+				if prev, ok := old[id]; ok {
+					need(equal(prev["descriptor"], r["descriptor"]) && (string(prev["consumed_sequence"]) == "null" || equal(prev["consumed_sequence"], r["consumed_sequence"])), "immutable_selection_changed", p.Path, id)
+					delete(old, id)
+				}
+			}
+			need(len(old) == 0, "observation_disappeared", p.Path, "")
 		}
 		before = &now
 	}
@@ -332,7 +358,7 @@ func CheckContinuity(phases []PhaseReport, files map[string][]byte) (failure *Fa
 // Dynamic run epochs/projections and observation consumption are not compared
 // as immutable rows; their narrower transitions are checked separately.
 func checkImmutableSource(before, now RawSnapshot, path string) {
-	for _, table := range []string{"metadata", "programs", "subjects", "permissions", "run_origins", "composition_profile", "composition_deployment", "composition_permissions", "composition_roots", "composition_static_members"} {
+	for _, table := range []string{"metadata", "programs", "permissions", "run_origins", "composition_profile", "composition_deployment", "composition_permissions", "composition_roots", "composition_static_members"} {
 		set := map[string]bool{}
 		for _, r := range before.Tables[table] {
 			set[string(bytesJSON(r))] = true
@@ -371,6 +397,12 @@ func ownerSnapshot(files map[string][]byte, path string) RawSnapshot {
 func checkOwnerRenewal(before, after RawSnapshot, path string) {
 	need(before.Namespace == after.Namespace, "owner_namespace", path, "")
 	checkImmutableSource(before, after, path)
+	for table, rows := range before.Tables {
+		if table == "runs" {
+			continue
+		}
+		need(equal(rows, after.Tables[table]), "owner_renewal_changed_rows", path, table)
+	}
 	old := map[string]Row{}
 	for _, r := range before.Tables["runs"] {
 		old[rowKey("runs", r)] = r
@@ -388,10 +420,50 @@ func checkOwnerRenewal(before, after RawSnapshot, path string) {
 
 func checkOwnerEvidence(raw RawSnapshot, files map[string][]byte, out *ExternalReport) {
 	out.Owners = map[string]OwnerEvidence{}
-	for _, prefix := range []string{"first-owner", "fresh-owner"} {
+	prefixes := []string{"first-owner", "fresh-owner"}
+	capturePIDs := map[string]int{}
+	priors := map[string]string{"first-owner": "initial/inspect.json", "fresh-owner": "stopped/inspect.json"}
+	var binding BindingCase
+	if json.Unmarshal(files["case.json"], &binding) == nil && binding.Version == "alan/phase3b4-case/v1" {
+		prefixes = nil
+		checkBindingLosses(binding, files, out)
+		for _, capture := range binding.Captures {
+			if capture.Directory != "post-open" && !strings.HasSuffix(capture.Directory, "/post-open") {
+				continue
+			}
+			prefix := strings.TrimSuffix(capture.Directory, "/post-open")
+			if prefix == "post-open" {
+				prefix = ""
+			}
+			prior := ""
+			if capture.Predecessor != "" {
+				prior = capture.Predecessor + "/inspect.json"
+			}
+			priors[prefix] = prior
+			capturePIDs[prefix] = capture.OwnerPID
+			prefixes = append(prefixes, prefix)
+		}
+	}
+	for _, prefix := range prefixes {
 		key := prefix + "/open.json"
+		if prefix == "" {
+			key = "open.json"
+		}
 		data, exists := files[key]
 		if !exists {
+			if binding.Version == "alan/phase3b4-case/v1" {
+				post := "post-open/inspect.json"
+				if prefix != "" {
+					post = prefix + "/post-open/inspect.json"
+				}
+				prior := priors[prefix]
+				if _, ok := files[prior]; ok {
+					checkOwnerRenewal(ownerSnapshot(files, prior), ownerSnapshot(files, post), post)
+					out.Owners[prefix] = OwnerEvidence{PostOpenPath: post, PostOpenSHA256: sha(files[post]), PriorPath: prior, PriorSHA256: sha(files[prior]), RenewalChecked: true}
+				} else {
+					out.Limitations = append(out.Limitations, post+": RenewalUnchecked: missing pre-Open capture")
+				}
+			}
 			continue
 		}
 		var opened struct {
@@ -401,15 +473,12 @@ func checkOwnerEvidence(raw RawSnapshot, files map[string][]byte, out *ExternalR
 		}
 		need(strictJSON(data, &opened) == nil, "owner_encoding", key, "")
 		need(opened.Namespace == raw.Namespace, "owner_namespace", key, "")
-		need(opened.Error == "<nil>" && opened.PID > 0, "owner_open", key, opened.Error)
-		priorPath := "initial/inspect.json"
-		if prefix == "fresh-owner" {
-			priorPath = "stopped/inspect.json"
-		}
+		need(opened.Error == "<nil>" && opened.PID > 0 && (capturePIDs[prefix] == 0 || capturePIDs[prefix] == opened.PID), "owner_open", key, opened.Error)
+		priorPath := priors[prefix]
 		postPath := prefix + "/post-open/inspect.json"
 		post := ownerSnapshot(files, postPath)
 		_, hasPrior := files[priorPath]
-		if hasPrior || prefix == "fresh-owner" {
+		if hasPrior {
 			checkOwnerRenewal(ownerSnapshot(files, priorPath), post, key)
 		} else {
 			priorPath = ""

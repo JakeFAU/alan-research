@@ -36,6 +36,8 @@ type Original struct {
 }
 type CustodyReport struct {
 	Originals                     []Original
+	Auxiliary                     []Original
+	Declared                      bool
 	Complete                      bool
 	BothOutstandingAtFirstService bool
 	BSerialGuard                  bool
@@ -85,6 +87,7 @@ type runRecord struct {
 }
 type checker struct {
 	raw            RawSnapshot
+	version        string
 	out            *RawVerdict
 	order          int64
 	members        map[RunID]string
@@ -117,7 +120,12 @@ type checker struct {
 	gateCount      map[string]int64
 }
 
-func CheckRaw(data []byte) (out RawVerdict) {
+func CheckRaw(data []byte) RawVerdict { return checkRaw(data, nil) }
+
+// CheckBindingRaw pins principal and auxiliary identities independently of
+// payload equality and obligation spelling. Declarations supply no authority.
+func CheckBindingRaw(data []byte, spec BindingSpec) RawVerdict { return checkRaw(data, &spec) }
+func checkRaw(data []byte, spec *BindingSpec) (out RawVerdict) {
 	out.InputSHA256 = sha(data)
 	out.Limits = []string{"Independent finite instruction slice; no general reducer/compiler proof", "Unsigned retained rows do not prove contact completeness or exact empty-reopen timing", "Opaque adapter preparation is a trusted deployment boundary; external evidence checked separately"}
 	c := &checker{out: &out}
@@ -139,9 +147,16 @@ func CheckRaw(data []byte) (out RawVerdict) {
 	c.initialize()
 	c.index()
 	c.validateAdmissions()
-	c.checkTerminals()
 	c.walk()
-	c.custody()
+	c.checkTerminals()
+	c.checkCurrentSubjects()
+	if spec != nil {
+		c.bindingCustody(*spec)
+	} else if c.version == authorityVersion {
+		c.custody()
+	} else {
+		out.Limits = append(out.Limits, "Principal custody unchecked: no explicit original/service declaration supplied")
+	}
 	out.Valid = true
 	return
 }
@@ -156,7 +171,12 @@ func (c *checker) initialize() {
 	need(textCell(m, "semantics") == "alan/1d/v1", "store_semantics", "metadata", "")
 	n := textCell(m, "namespace")
 	need(n != "" && (c.raw.Namespace == "" || c.raw.Namespace == n), "namespace", "metadata", "")
-	need(intCell(m, "schema_version") == 13, "schema", "metadata", "this corpus requires profile13; conflict14 is separately qualified")
+	schema := intCell(m, "schema_version")
+	need(schema == 13 || schema == 15, "schema", "metadata", "supported principal raw formats are 13/15; conflict14/16 separately qualified")
+	c.version = authorityVersion
+	if schema == 15 {
+		c.version = bindingVersion
+	}
 	need(intCell(m, "key_version") == 2 && (c.raw.KeyVersion == 0 || c.raw.KeyVersion == 2), "key_version", "metadata", "")
 	c.raw.Namespace = n
 	c.out.Namespace = n
@@ -211,7 +231,7 @@ func (c *checker) initialize() {
 		return a.Table+"/"+a.Key+"/"+a.Column < b.Table+"/"+b.Key+"/"+b.Column
 	})
 	p := decodeCell[Profile](c.singleton("composition_profile"), "descriptor")
-	need(p.Version == "alan/composition/v1" && p.RequestAuthority == authorityVersion && len(p.Roots) == 2 && len(p.Templates) == 0, "profile", "composition_profile", "")
+	need(p.Version == "alan/composition/v1" && p.RequestAuthority == c.version && len(p.Roots) == 2 && len(p.Templates) == 0, "profile", "composition_profile", "")
 	for _, r := range p.Roots {
 		need(r.ID == rootID(n, r.Run) && r.Version == "alan/resource-profile/v1" && r.Run.Generation == 1 && len(r.Members) == 1 && r.Members[0] == r.Run && len(r.Templates) == 0, "root_membership", r.ID, "")
 		need(c.roots[r.ID].ID == "", "duplicate_root", r.ID, "")
@@ -227,7 +247,7 @@ func (c *checker) initialize() {
 		d := decodeCell[StaticMember](r, "descriptor")
 		need(d.Run == (RunID{textCell(r, "subject"), intCell(r, "generation")}) && d.RootID == textCell(r, "root_id") && c.members[d.Run] == d.RootID, "member_row", d.RootID, "")
 	}
-	for _, t := range []string{"composition_templates", "composition_members", "composition_invocations", "composition_admission_decisions", "composition_bindings", "composition_closures", "composition_requests", "composition_results", "composition_replies", "composition_outcome_deliveries", "composition_publications", "corpus_assets"} {
+	for _, t := range []string{"composition_templates", "composition_members", "composition_invocations", "composition_admission_decisions", "composition_bindings", "composition_requests", "composition_results", "composition_replies", "composition_outcome_deliveries", "composition_publications", "corpus_assets"} {
 		need(len(c.raw.Tables[t]) == 0, "outside_static_domain", t, "")
 	}
 	c.deployment = decodeCell[Deployment](c.singleton("composition_deployment"), "descriptor")
@@ -281,7 +301,7 @@ func (c *checker) initialize() {
 	for _, r := range c.raw.Tables["subjects"] {
 		id := RunID{textCell(r, "id"), intCell(r, "generation")}
 		s := c.subjects[id]
-		need(s.ID != "" && s.Owner == textCell(r, "owner") && s.Revision == intCell(r, "revision") && intCell(r, "retired") == 0 && intCell(r, "retry_cancelled") == 0, "subject_mutation", id.Subject, "outside fixed generation-one authority operations")
+		need(s.ID != "" && s.Owner == textCell(r, "owner") && s.Revision == intCell(r, "revision") && intCell(r, "retry_cancelled") == 0, "subject_mutation", id.Subject, "outside fixed generation-one authority operations")
 	}
 }
 func historyKey(r RunID, q int64) string { return identity(r, q) }
@@ -299,7 +319,7 @@ func (c *checker) index() {
 		need(i.ID == textCell(r, "id") && i.Run == run && i.Sequence == q && i.Ordinal == o && run == (RunID{textCell(r, "subject"), intCell(r, "generation")}) && q == intCell(r, "sequence") && int64(o) == intCell(r, "ordinal"), "intent_index", i.ID, "")
 		need(c.intents[i.ID].ID == "", "duplicate_intent", i.ID, "")
 		validateValues(i.Payload)
-		validateUse(i.Authority)
+		validateUse(i.Authority, c.version)
 		c.intents[i.ID] = i
 		c.revisions[i.ID] = intCell(r, "source_revision")
 	}
@@ -355,7 +375,7 @@ func (c *checker) index() {
 		a := decodeCell[LifecycleResult](r, "result")
 		id := textCell(r, "id")
 		need(equal(c.intents[id], q.Intent) && q.SourceRevision == c.revisions[id] && equal(q, a.Request) && a.DecisionSequence == intCell(r, "decision_sequence") && c.life[id].Request.Intent.ID == "", "lifecycle_origin", id, "")
-		need(q.Operation == q.Intent.Payload["operation"].Text && q.ExpectedRevision == q.Intent.Payload["revision"].Number && len(q.Intent.Payload) == 3, "lifecycle_payload", id, "")
+		need(q.Operation == q.Intent.Payload["operation"].Text && q.ExpectedRevision == q.Intent.Payload["revision"].Number && (len(q.Intent.Payload) == 3 && (q.Operation == "DelegateAuthority" || q.Operation == "RevokeAuthority") || len(q.Intent.Payload) == 2 && (q.Operation == "CancelRun" || q.Operation == "AbandonRun" || q.Operation == "RetireSubject" || q.Operation == "Retry")), "lifecycle_payload", id, "")
 		c.life[id] = a
 		roots := []string{c.members[q.Intent.Run]}
 		run := RunID{q.Intent.Target, q.Intent.Generation}
@@ -458,12 +478,12 @@ func validateRoot(r AuthorityRoot) {
 	p := r.Permission
 	need(r.Run.Subject != "" && r.Run.Generation > 0 && r.RootRun.Subject != "" && r.RootRun.Generation > 0 && p.Source != "" && p.Target != "" && p.Operation != "" && p.Obligation != "" && p.Revision > 0 && (p.Kind == "external" || p.Kind == "adapter"), "root_encoding", r.Run.Subject, "")
 }
-func validateUse(u *Use) {
+func validateUse(u *Use, version string) {
 	if u == nil {
 		return
 	}
 	validateRoot(u.Root)
-	need(u.Version == authorityVersion && (u.Path == "own" && u.GrantID == "" || u.Path == "delegated" && u.GrantID != ""), "selector_encoding", u.GrantID, "")
+	need(u.Version == version && (u.Path == "own" && u.GrantID == "" || u.Path == "delegated" && u.GrantID != ""), "selector_encoding", u.GrantID, "")
 }
 func (c *checker) validateAttemptWire(id string, a effectAttempt) {
 	key := identity(2, c.raw.Namespace, id)
@@ -516,7 +536,7 @@ func (c *checker) walk() {
 				i := c.intents[f.OperationID]
 				need(c.committed(i) && a.Source.Run == i.Run && a.Source.Sequence == c.seq[i.Run] && a.Source.Revision == c.subjects[i.Run].Revision, "source_prefix", i.ID, "")
 				c.epoch(a.Source)
-				need(a.Allowed && a.Reason == "authorized" && a.ClosureOperation == "", "source_policy", i.ID, "fixture source authorizations are open generation-one originals")
+				c.checkSourcePolicy(a)
 			case "lifecycle":
 				lifecycleSequence++
 				a := c.life[f.OperationID]
@@ -601,22 +621,26 @@ func (c *checker) checkLifecycle(a LifecycleResult) {
 	q := a.Request
 	i := q.Intent
 	need(c.committed(i) && c.has("authorization", i.ID) && c.auth[i.ID].Allowed, "lifecycle_before_source", i.ID, "")
+	if q.Operation != "DelegateAuthority" && q.Operation != "RevokeAuthority" {
+		c.checkOrdinaryLifecycle(a)
+		return
+	}
 	need(equal(a.Before, a.After) && a.Successor == 0, "authority_lifecycle_mutated_state", i.ID, "")
 	var claim Claim
 	var rev Revoke
 	root := AuthorityRoot{}
 	delegates := q.Operation == "DelegateAuthority"
 	if delegates {
-		need(canonical([]byte(i.Payload["claim"].Text), &claim) == nil && claim.Version == authorityVersion, "claim_encoding", i.ID, "")
+		need(canonical([]byte(i.Payload["claim"].Text), &claim) == nil && claim.Version == c.version, "claim_encoding", i.ID, "")
 		root = claim.Root
 		_, _, o := locator(claim.ServiceOperationID)
 		need(o == 0, "service_locator", i.ID, "")
 	} else {
-		need(q.Operation == "RevokeAuthority" && canonical([]byte(i.Payload["claim"].Text), &rev) == nil && rev.Version == authorityVersion, "revoke_encoding", i.ID, "")
+		need(q.Operation == "RevokeAuthority" && canonical([]byte(i.Payload["claim"].Text), &rev) == nil && rev.Version == c.version, "revoke_encoding", i.ID, "")
 		root = rev.Root
 	}
 	validateRoot(root)
-	d := &Decision{Version: authorityVersion, Namespace: c.raw.Namespace, Root: root, RootID: rootID(c.raw.Namespace, root.RootRun)}
+	d := &Decision{Version: c.version, Namespace: c.raw.Namespace, Root: root, RootID: rootID(c.raw.Namespace, root.RootRun)}
 	if delegates {
 		d.RecipientRootID = rootID(c.raw.Namespace, claim.RecipientRoot)
 	}
@@ -628,7 +652,7 @@ func (c *checker) checkLifecycle(a LifecycleResult) {
 		need(a.Before == nil, "missing_target_state", i.ID, "")
 		reason = "target_missing"
 	} else {
-		need(a.Before != nil && a.Before.Run == target && a.Before.ProgramID == c.runs[target].ProgramID && a.Before.Owner == c.subjects[target].Owner && a.Before.Revision == c.subjects[target].Revision && a.Before.Sequence == c.seq[target] && !a.Before.Retired && !a.Before.RetryCancelled && equal(a.Before.Projection, c.states[target]), "lifecycle_target_prefix", i.ID, "")
+		need(a.Before != nil && a.Before.Run == target && a.Before.ProgramID == c.runs[target].ProgramID && a.Before.Owner == c.subjects[target].Owner && a.Before.Revision == c.subjects[target].Revision && a.Before.Sequence == c.seq[target] && a.Before.Retired == c.subjects[target].Retired && a.Before.RetryCancelled == c.subjects[target].RetryCancelled && equal(a.Before.Projection, c.states[target]), "lifecycle_target_prefix", i.ID, "")
 		c.epoch(Source{target, a.Before.Epoch, a.Before.Sequence, a.Before.Revision})
 	}
 	if reason == "" && (i.Run != root.Run || q.SourceRevision != root.Permission.Revision) {
@@ -690,7 +714,7 @@ func (c *checker) checkLifecycle(a LifecycleResult) {
 	}
 }
 func (c *checker) deriveWitness(i Intent) *Witness {
-	w := &Witness{Version: authorityVersion, Namespace: c.raw.Namespace, Use: i.Authority, ServingRootID: c.members[i.Run]}
+	w := &Witness{Version: c.version, Namespace: c.raw.Namespace, Use: i.Authority, ServingRootID: c.members[i.Run]}
 	deny := func(s string) *Witness { w.Reason = s; return w }
 	u := i.Authority
 	if u == nil {
@@ -728,26 +752,32 @@ func (c *checker) deriveWitness(i Intent) *Witness {
 		w.OriginalRequestID = d.OriginalRequestID
 		w.ServiceOperationID = d.ServiceOperationID
 		w.GrantDecisionSequence = grant.DecisionSequence
-		h := c.history[historyKey(i.Run, i.Sequence-1)]
-		if i.Sequence <= 1 || h.Selected == "" {
-			return deny("authority_request_not_selected")
-		}
-		o := c.observations[h.Selected]
-		if o.Run != i.Run || o.Provenance != "ordinary-message" || o.Source != d.Root.Run.Subject || o.SourceGeneration != d.Root.Run.Generation || o.Consumed != i.Sequence-1 {
-			return deny("authority_request_not_selected")
-		}
-		admitted := false
-		for id, a := range c.admissions {
-			r := c.admitResults[id]
-			if a.Kind == "message" && a.IntentID == d.OriginalRequestID && r.Accepted && r.Bound != nil && *r.Bound == i.Run && r.ObservationID == h.Selected {
-				admitted = true
+		if c.version == bindingVersion {
+			if !c.bindOriginal(i, d, w) {
+				return deny("authority_request_not_selected")
 			}
+		} else {
+			h := c.history[historyKey(i.Run, i.Sequence-1)]
+			if i.Sequence <= 1 || h.Selected == "" {
+				return deny("authority_request_not_selected")
+			}
+			o := c.observations[h.Selected]
+			if o.Run != i.Run || o.Provenance != "ordinary-message" || o.Source != d.Root.Run.Subject || o.SourceGeneration != d.Root.Run.Generation || o.Consumed != i.Sequence-1 {
+				return deny("authority_request_not_selected")
+			}
+			admitted := false
+			for id, a := range c.admissions {
+				r := c.admitResults[id]
+				if a.Kind == "message" && a.IntentID == d.OriginalRequestID && r.Accepted && r.Bound != nil && *r.Bound == i.Run && r.ObservationID == h.Selected {
+					admitted = true
+				}
+			}
+			if !admitted || !c.has("authorization", d.OriginalRequestID) || !c.auth[d.OriginalRequestID].Allowed {
+				return deny("authority_request_not_admitted")
+			}
+			w.RequestObservationID = h.Selected
+			w.RequestConsumedSequence = o.Consumed
 		}
-		if !admitted || !c.has("authorization", d.OriginalRequestID) || !c.auth[d.OriginalRequestID].Allowed {
-			return deny("authority_request_not_admitted")
-		}
-		w.RequestObservationID = h.Selected
-		w.RequestConsumedSequence = o.Consumed
 	}
 	w.Allowed = true
 	w.Reason = "authorized"
@@ -758,9 +788,19 @@ func (c *checker) checkReservation(f Fact) {
 	a := c.effects[id]
 	need(c.committed(a.Intent) && c.has("authorization", id), "effect_before_source", id, "")
 	w := c.deriveWitness(a.Intent)
-	need(equal(w, a.Witness), "first_authority_policy", id, fmt.Sprintf("derived %s retained %s", w.Reason, a.Witness.Reason))
+	edge := "first_authority_policy"
+	if !w.Allowed && w.Reason == "authority_request_not_selected" && c.version == bindingVersion {
+		o := c.observations[identity("observation", "message", w.OriginalRequestID)]
+		if o.Consumed > 0 && o.Consumed >= a.Intent.Sequence {
+			edge = "selection_before_service"
+		}
+	}
+	need(equal(w, a.Witness), edge, id, fmt.Sprintf("derived %s retained %s", w.Reason, a.Witness.Reason))
 	allowed := w.Allowed && c.auth[id].Allowed
 	reason := w.Reason
+	if !c.auth[id].Allowed {
+		reason = c.auth[id].Reason
+	}
 	// The fixture has one serving-root effect limit. Count historical charges,
 	// preserving permission allowance separately from reservation refusal.
 	used := int64(0)
@@ -795,12 +835,15 @@ func (c *checker) checkGate(f Fact) {
 	id := f.OperationID
 	a, ok := c.effects[id]
 	need(ok && g != nil && a.Allowed && c.has("reservation", id), "gate_before_reservation", id, "")
-	need(g.Version == authorityVersion && g.Namespace == c.raw.Namespace && g.Ordinal == c.gateCount[id]+1 && g.Source.Run == a.Intent.Run && g.Source.Sequence == c.seq[a.Intent.Run] && g.Source.Revision == c.subjects[a.Intent.Run].Revision, "gate_identity", id, "")
+	need(g.Version == c.version && g.Namespace == c.raw.Namespace && g.Ordinal == c.gateCount[id]+1 && g.Source.Run == a.Intent.Run && g.Source.Sequence == c.seq[a.Intent.Run] && g.Source.Revision == c.subjects[a.Intent.Run].Revision, "gate_identity", id, "")
 	c.epoch(g.Source)
 	need(g.AttemptDigest == digest("alan/attempt-row/v1", a.Raw), "gate_attempt_digest", id, "")
 	w := c.deriveWitness(a.Intent)
 	allowed, reason := w.Allowed, w.Reason
-	if c.states[a.Intent.Run].Status != "open" {
+	if c.subjects[a.Intent.Run].Retired {
+		allowed = false
+		reason = "source_retired"
+	} else if c.states[a.Intent.Run].Status != "open" {
 		allowed = false
 		reason = "source_closed"
 	}

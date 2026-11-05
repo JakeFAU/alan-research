@@ -48,6 +48,7 @@ type ExternalReport struct {
 	Valid, Present         bool
 	Failure                *Failure
 	Contacts, Applications int
+	AcknowledgedLosses     int
 	Limitations            []string
 	Exposures              []Exposure
 	References             []RowRef

@@ -1,0 +1,74 @@
+[
+  {
+    "name": "M03",
+    "original_directory": "/tmp/alan-task4-m03-final-normal/M03-auxiliary-target-generation-two-1165515867",
+    "snapshot_sha256": "edb67df9041f3e174284b8f3c35ee490b819e739ec68297ac0b8a415773c8502",
+    "fixture_sha256": "40ce1d299219d223cbc62f84d962b81a6360acd135145d4497ca09fb49e231cf",
+    "case_sha256": "62e3e9f602551984e3d7e630b1a851399a0c1d3a457f4ffd4d78a0b2c0b4e1ad",
+    "producer_source_capture_sha256": "7af68047bed9a5d06d51fe99ca08f31ae2f6f95562d28e6cb029977bebb8ac77",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "N01",
+    "original_directory": "/tmp/alan-task4-final-normal/N01-3163873583",
+    "snapshot_sha256": "38a2aade03103e681792f0a30154b99fe607a28dfe834ef662823a97f02527f0",
+    "fixture_sha256": "c88efa511c90dd7ebed39e4dab5794fdaf982d50a4f3c235553246801f44d095",
+    "case_sha256": "be2547fb4afc1981f40621a0280f96b4d0a057735c93457cd1aedd54c7b6ab83",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "N02",
+    "original_directory": "/tmp/alan-task4-final-normal/N02-3987713810",
+    "snapshot_sha256": "0fcbfd777578f3dddcc4fcff4ed10a324ba01ef159fb8a7155f7fc1fa340f7a3",
+    "fixture_sha256": "7970a0ea2b80010cf501ffd5bb96f7d7f11472ca2b139364ec7fdfee191e4470",
+    "case_sha256": "37c830480dfadeb859cf3f4b4600db500ebfd2bca6b5e94d75963b53a04b3099",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "N03",
+    "original_directory": "/tmp/alan-task4-final-normal/N03-2233855178",
+    "snapshot_sha256": "d380f087f08015af775ee1a9ec91bfe7ae3cf598483d41a2851053ef63cd0df2",
+    "fixture_sha256": "0212a2106a6b73418071931566ad75837db34f00c85a12986861a9ad7b34b1f4",
+    "case_sha256": "c0a1ae4cb51600c3a3eba46db095c526309b61d7778e179972b13899e842dac9",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "N06",
+    "original_directory": "/tmp/alan-task4-final-normal/N06-1101137264",
+    "snapshot_sha256": "8b07ec89b25458a2625748fb859e0523dfd8515adf68fb5f6009433b39bdc569",
+    "fixture_sha256": "e37fcc6738ced22e4c74e23c503efda0c6a8f41a2a7da354f7009730f9883dcc",
+    "case_sha256": "4d575dd753a6b56d693a558d117587767bc2738a078d8fd670b8bf9a110acc79",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "P02-v2",
+    "original_directory": "/tmp/alan-task4-final-normal/P02-v2-2085529256",
+    "snapshot_sha256": "ace79a87a766aa5b166d0a9d1e7af72d0bf64b136eb9915423b4ec0f22702d41",
+    "fixture_sha256": "1b15e136cdcd4b95c51d4952a980b49b63d5ee18c0e813c0f0d2d74bf083986d",
+    "case_sha256": "0f4e546004dea8c16285f92cf655b20c636dea9a5af1a4b0ec9e1cae9b9c379f",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "P10",
+    "original_directory": "/tmp/alan-task4-final-normal/P10-3612234686",
+    "snapshot_sha256": "3c7d4920900f12d4c3d4015a9f3f426c9e59251fe25439f647133daa56b56cce",
+    "fixture_sha256": "2c6443d50be9907bbc707027b91d8bdef2b1e331a5e6a63ad5127c89cf37e477",
+    "case_sha256": "0a7716a5e043e74e8167b9d69eed143563a6d270d5231b0688d505684d7cd5db",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  },
+  {
+    "name": "auxiliary-serviced-equal-total",
+    "original_directory": "/tmp/alan-task4-final-normal/auxiliary-serviced-equal-total-2020771393",
+    "snapshot_sha256": "87265e212795cd6955d51e3aa3a0c7c60d73327f488af671ce2cee21148c3ccb",
+    "fixture_sha256": "96500838a2c031ee8e96d065726721bb438bf83b57a8822c529150fb21a41677",
+    "case_sha256": "5450880868e7f5c4125e6fe476b4d16d3e59be31ab8b730a0c0d4e2253e8a19b",
+    "producer_source_capture_sha256": "22e3763b39589e843c42361ce5a1062a251fa9eb3374cc64992baefd24cb3615",
+    "status": "genuine preliminary Task4 parent; final qualification overrides fixtures with ALAN_PHASE3B4_CHECK_ROOT"
+  }
+]
