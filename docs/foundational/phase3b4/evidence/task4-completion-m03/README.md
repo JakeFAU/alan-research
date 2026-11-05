@@ -1,0 +1,7 @@
+# Task4 completion: M03 producer parent
+
+This separate addition supplies a genuine source-authorized auxiliary B1 message targeting A generation 2, with its actual rejected admission while only A1/B1 exist. It is an incomplete prefix outside C. [The completion report](report.md) records scope, commands, source identities and the preserved apparatus failure. The bounded original campaign remains independently APPROVED; the scoped addition review and Task5 hostile mutation/oracle work remain pending.
+
+Extract `normal.tar.gz` and `race.tar.gz` into one fresh directory. `case-index.json` selects the actual case descriptor in each archive; ordered capture paths are case-relative. Raw paths preserve original execution provenance. Never open archived SQLite in place. `archives.json` hashes every member; `manifest.json` hashes this package. `runtime-source.json` identifies the separate completion commit and full source. `approved-package-before-completion.json` preserves all original Task4 hashes before the report/link clarification. The original 80-case/source archives remain intact.
+
+`apparatus-red.tar.gz` preserves the initial root-normalization assertion failure. Its exact new source file and command source map are retained. It is not a runtime policy rejection. The genuine message-generation parent, actual refusal and unchanged run/root set are checked by the two passing focused commands, with matching final source maps. No Task5 checker or mutant result is inferred.

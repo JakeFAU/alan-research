@@ -1,0 +1,1453 @@
+[
+  {
+    "mode": "normal",
+    "case": "C01",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "ed331e08c99b2ba29b06431a1a2eb6ab021fb06bedbfb691c9f2a4416c3e151a"
+  },
+  {
+    "mode": "normal",
+    "case": "C02",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "c67a4556f43cfb7506e2d68394ee3f7489231fadc4f9918b3407de6302d3c2e3"
+  },
+  {
+    "mode": "normal",
+    "case": "C03",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "6ccfeab8c1cfcc03a00c551c07c93c71603a3df9746186fc2f0c611fdc615684"
+  },
+  {
+    "mode": "normal",
+    "case": "C04",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "6b1fcb9abc5dfd6ae3a85818c8632d68f610d735aa7e746af20dff92232d9714"
+  },
+  {
+    "mode": "normal",
+    "case": "C05",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "99b97c87a228d0a8126380005b23a48be4041e3dafdb454c769156811fcd5ed3"
+  },
+  {
+    "mode": "normal",
+    "case": "C06",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "5830995acc176f37bf6505f21694ed91ec1cccbf4593217316679013cf09afea"
+  },
+  {
+    "mode": "normal",
+    "case": "C07",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "7c977fa64ea715488fd040cffa8371bbfc6d4d618ad8053d67112a6954d64a95"
+  },
+  {
+    "mode": "normal",
+    "case": "C08",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "9b63145b1328562a76a752ff858d165b81d909cc99de67578573d45eaa5f0a40"
+  },
+  {
+    "mode": "normal",
+    "case": "auxiliary-serviced-equal-total",
+    "second_authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "a99b67fee6cab49a1586a3f76c48d8d1375a67d1f1f9efc2128c826319adbf0a",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:54574/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,7,0]"
+      },
+      "RootID": "600fcfb7acd6e731ad063ab914ff937da0561c0d25231e885317e63061b8dd8f",
+      "ServingRootID": "e90046ba11ab87ffd448db1ce51eb1a59d250939322a6623eda5bb8f5532ec2b",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,6,0]",
+      "ServiceOperationID": "[\"a\",1,13,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,6,0]\"]",
+      "RequestConsumedSequence": 4,
+      "GrantDecisionSequence": 2
+    },
+    "result_selected": 14,
+    "principal_reply_selected": 11,
+    "auxiliary_reply_selected": null
+  },
+  {
+    "mode": "normal",
+    "case": "generic-unknown",
+    "gates": [
+      [
+        true,
+        2
+      ]
+    ],
+    "contacts": {
+      "a": 1,
+      "b": 0
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "gates": [
+      [
+        true,
+        2
+      ],
+      [
+        false,
+        3
+      ]
+    ],
+    "contacts": {
+      "a": 0,
+      "b": 1
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "N10e-holder",
+    "actual_retry": {
+      "Request": {
+        "Intent": {
+          "ID": "[\"a\",1,6,0]",
+          "Run": {
+            "Subject": "a",
+            "Generation": 1
+          },
+          "Sequence": 6,
+          "Ordinal": 0,
+          "Kind": "lifecycle",
+          "Target": "b",
+          "Generation": 1,
+          "Obligation": "lifecycle-control",
+          "Payload": {
+            "operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "Retry",
+              "Flag": false
+            },
+            "revision": {
+              "Kind": "int",
+              "Number": 1,
+              "Text": "",
+              "Flag": false
+            }
+          }
+        },
+        "SourceRevision": 1,
+        "Operation": "Retry",
+        "ExpectedRevision": 1
+      },
+      "DecisionSequence": 3,
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "Before": {
+        "Run": {
+          "Subject": "b",
+          "Generation": 1
+        },
+        "ProgramID": "fa4cc6142b4323d191f2a24b3a90937d8444f2714fb537ce217ca6c8a6d82612",
+        "Owner": "reciprocal:b",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 5,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 5,
+          "Data": {
+            "ba_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "grant": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": true
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "ready": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,5,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      },
+      "After": {
+        "Run": {
+          "Subject": "b",
+          "Generation": 1
+        },
+        "ProgramID": "fa4cc6142b4323d191f2a24b3a90937d8444f2714fb537ce217ca6c8a6d82612",
+        "Owner": "reciprocal:b",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 5,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 5,
+          "Data": {
+            "ba_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "grant": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": true
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "ready": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,5,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      }
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "N10e-recipient",
+    "actual_retry": {
+      "Request": {
+        "Intent": {
+          "ID": "[\"b\",1,7,0]",
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Sequence": 7,
+          "Ordinal": 0,
+          "Kind": "lifecycle",
+          "Target": "a",
+          "Generation": 1,
+          "Obligation": "lifecycle-control",
+          "Payload": {
+            "operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "Retry",
+              "Flag": false
+            },
+            "revision": {
+              "Kind": "int",
+              "Number": 1,
+              "Text": "",
+              "Flag": false
+            }
+          }
+        },
+        "SourceRevision": 1,
+        "Operation": "Retry",
+        "ExpectedRevision": 1
+      },
+      "DecisionSequence": 3,
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "Before": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "ProgramID": "5bb57166d26dd0803d3cf70de176a9526d2ba7078ee2ada0fd452058e0956261",
+        "Owner": "reciprocal:a",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 4,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 4,
+          "Data": {
+            "ab_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,1,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "grant_data": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "peer_claim": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55303/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+              "Flag": false
+            },
+            "peer_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "service_operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,4,0]",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      },
+      "After": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "ProgramID": "5bb57166d26dd0803d3cf70de176a9526d2ba7078ee2ada0fd452058e0956261",
+        "Owner": "reciprocal:a",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 4,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 4,
+          "Data": {
+            "ab_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,1,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "grant_data": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "peer_claim": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55303/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+              "Flag": false
+            },
+            "peer_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "service_operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,4,0]",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      }
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "K01",
+    "public_dir": "normal/K01-3742032500",
+    "parent_sha256": {
+      "": "dd09bfdf0a14bbbca3d71721a29421714fd5bc1adb55318609f1f3109d083e86"
+    },
+    "public_format": 13,
+    "promoted_dir": "promoted-normal/K01-promoted-118906417",
+    "promoted_format": 14,
+    "wire_tuple": {
+      "ID": "[\"a\",1,3,0]",
+      "Key": "[2,\"4dfd39d833c0f0f2d0b39486e35a75224e53fbbaa5003f7bbb4d0e69af799b7c\",\"[\\\"a\\\",1,3,0]\"]",
+      "Capability": "phase3b3.resource-one",
+      "Effect": "add-one",
+      "Input": {
+        "ID": "3867a437fec79a5ff163eedb2413f1313b0197f7d30d5a504e854e61a910c191",
+        "Record": {
+          "delta": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Output": {
+        "ID": "f5c8b4f5ada61871444aaea121f28b494f8e98d9d6f95c874b01e5f6f1e54567",
+        "Record": {
+          "mutation": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          },
+          "total": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Payload": {
+        "delta": {
+          "Kind": "int",
+          "Number": 999,
+          "Text": "",
+          "Flag": false
+        }
+      },
+      "Assets": []
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "K02",
+    "public_dir": "normal/K02-3747323149",
+    "parent_sha256": {
+      "": "64750e4706e8307da26f5f95ecf33bd2eaac684fdec864fff03df1a131a52fc6"
+    },
+    "public_format": 15,
+    "promoted_dir": "promoted-normal/K02-promoted-343306181",
+    "promoted_format": 16,
+    "wire_tuple": {
+      "ID": "[\"a\",1,3,0]",
+      "Key": "[2,\"1b1a15879f5044afc9e5fe5f80c6020012892414f51a7dc52f6ffb8129864f99\",\"[\\\"a\\\",1,3,0]\"]",
+      "Capability": "phase3b3.resource-one",
+      "Effect": "add-one",
+      "Input": {
+        "ID": "3867a437fec79a5ff163eedb2413f1313b0197f7d30d5a504e854e61a910c191",
+        "Record": {
+          "delta": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Output": {
+        "ID": "f5c8b4f5ada61871444aaea121f28b494f8e98d9d6f95c874b01e5f6f1e54567",
+        "Record": {
+          "mutation": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          },
+          "total": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Payload": {
+        "delta": {
+          "Kind": "int",
+          "Number": 999,
+          "Text": "",
+          "Flag": false
+        }
+      },
+      "Assets": []
+    }
+  },
+  {
+    "mode": "race",
+    "case": "C01",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "647e22e0822d54d66c257c8faa1cd204b3997721e440ba8ff7807ec5d1ade9ca"
+  },
+  {
+    "mode": "race",
+    "case": "C02",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "a3452078ce799ddc45ea9bed34a23d66d806d7a5715040b6d3f0585c31db3a69"
+  },
+  {
+    "mode": "race",
+    "case": "C03",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "89589aca9b4e04c79e257d5c72247ed943fe6b9e2ec545c5f4b544d28184955b"
+  },
+  {
+    "mode": "race",
+    "case": "C04",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "674c418d76df2e3956a6154293cadda3d8b791b7f61f8505051edd87fb78b0e6"
+  },
+  {
+    "mode": "race",
+    "case": "C05",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "5b62dd2670e0085616fcacd4daf5d159a9e66bae3d417d84f8639641a0b66542"
+  },
+  {
+    "mode": "race",
+    "case": "C06",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "b420cb361514c5d57f617c809b357a7af146487649b2b44c2be4102ae29f8c6a"
+  },
+  {
+    "mode": "race",
+    "case": "C07",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "30d698639fea01e4cc6c6554821b6cc62815e742493a08235bf0dff2073b70c2"
+  },
+  {
+    "mode": "race",
+    "case": "C08",
+    "cut_preconditions": "checked",
+    "inspect_sha256": "d3897d4b87d5af5b30643c19d98875a018d02eb85c7a283e65768ed7b148aff3"
+  },
+  {
+    "mode": "race",
+    "case": "auxiliary-serviced-equal-total",
+    "second_authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "09cffd6eda17e73152f7cfbcb8f477e2eb32c1694c5844be8a7e0cb91d5a4694",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:54845/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,7,0]"
+      },
+      "RootID": "faf94e25a4f97078628fa5a96b8ce739258cd2bf5634cb37a0ecdb16fca7f491",
+      "ServingRootID": "275092dd9928933bc0b6803f7f9ce448a703fe2309c4923eaa4bfdf614960be1",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,6,0]",
+      "ServiceOperationID": "[\"a\",1,13,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,6,0]\"]",
+      "RequestConsumedSequence": 4,
+      "GrantDecisionSequence": 2
+    },
+    "result_selected": 14,
+    "principal_reply_selected": 11,
+    "auxiliary_reply_selected": null
+  },
+  {
+    "mode": "race",
+    "case": "generic-unknown",
+    "gates": [
+      [
+        true,
+        2
+      ]
+    ],
+    "contacts": {
+      "a": 1,
+      "b": 0
+    }
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "gates": [
+      [
+        true,
+        2
+      ],
+      [
+        false,
+        3
+      ]
+    ],
+    "contacts": {
+      "a": 0,
+      "b": 1
+    }
+  },
+  {
+    "mode": "race",
+    "case": "N10e-holder",
+    "actual_retry": {
+      "Request": {
+        "Intent": {
+          "ID": "[\"a\",1,6,0]",
+          "Run": {
+            "Subject": "a",
+            "Generation": 1
+          },
+          "Sequence": 6,
+          "Ordinal": 0,
+          "Kind": "lifecycle",
+          "Target": "b",
+          "Generation": 1,
+          "Obligation": "lifecycle-control",
+          "Payload": {
+            "operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "Retry",
+              "Flag": false
+            },
+            "revision": {
+              "Kind": "int",
+              "Number": 1,
+              "Text": "",
+              "Flag": false
+            }
+          }
+        },
+        "SourceRevision": 1,
+        "Operation": "Retry",
+        "ExpectedRevision": 1
+      },
+      "DecisionSequence": 3,
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "Before": {
+        "Run": {
+          "Subject": "b",
+          "Generation": 1
+        },
+        "ProgramID": "a4fbc1a2057c9b09346628ab3d9bca6cb4ccd73824b04dc45498c75c07470af6",
+        "Owner": "reciprocal:b",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 5,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 5,
+          "Data": {
+            "ba_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "grant": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": true
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "ready": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,5,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      },
+      "After": {
+        "Run": {
+          "Subject": "b",
+          "Generation": 1
+        },
+        "ProgramID": "a4fbc1a2057c9b09346628ab3d9bca6cb4ccd73824b04dc45498c75c07470af6",
+        "Owner": "reciprocal:b",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 5,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 5,
+          "Data": {
+            "ba_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "grant": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": true
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "ready": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,5,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      }
+    }
+  },
+  {
+    "mode": "race",
+    "case": "N10e-recipient",
+    "actual_retry": {
+      "Request": {
+        "Intent": {
+          "ID": "[\"b\",1,7,0]",
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Sequence": 7,
+          "Ordinal": 0,
+          "Kind": "lifecycle",
+          "Target": "a",
+          "Generation": 1,
+          "Obligation": "lifecycle-control",
+          "Payload": {
+            "operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "Retry",
+              "Flag": false
+            },
+            "revision": {
+              "Kind": "int",
+              "Number": 1,
+              "Text": "",
+              "Flag": false
+            }
+          }
+        },
+        "SourceRevision": 1,
+        "Operation": "Retry",
+        "ExpectedRevision": 1
+      },
+      "DecisionSequence": 3,
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "Before": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "ProgramID": "63e9629e84a8d57794636db5c8bf3a973cc7a3fff0dbbf491bfa39b6531aedd4",
+        "Owner": "reciprocal:a",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 4,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 4,
+          "Data": {
+            "ab_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,1,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "grant_data": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "peer_claim": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55367/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+              "Flag": false
+            },
+            "peer_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "service_operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,4,0]",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      },
+      "After": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "ProgramID": "63e9629e84a8d57794636db5c8bf3a973cc7a3fff0dbbf491bfa39b6531aedd4",
+        "Owner": "reciprocal:a",
+        "Revision": 1,
+        "Epoch": 1,
+        "Sequence": 4,
+        "Retired": false,
+        "RetryCancelled": false,
+        "Projection": {
+          "PC": 4,
+          "Data": {
+            "ab_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,1,0]",
+              "Flag": false
+            },
+            "grant_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "grant_data": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,2,0]",
+              "Flag": false
+            },
+            "paid": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "peer_claim": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55367/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+              "Flag": false
+            },
+            "peer_request": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"b\",1,1,0]",
+              "Flag": false
+            },
+            "service_accepted": {
+              "Kind": "bool",
+              "Number": 0,
+              "Text": "",
+              "Flag": false
+            },
+            "service_operation": {
+              "Kind": "string",
+              "Number": 0,
+              "Text": "[\"a\",1,4,0]",
+              "Flag": false
+            }
+          },
+          "Status": "cancelled"
+        }
+      }
+    }
+  },
+  {
+    "mode": "race",
+    "case": "K01",
+    "public_dir": "race/K01-2213032557",
+    "parent_sha256": {
+      "": "889240caef32e83f49a232eddddeb98d906445711b241f1bbdc0ce67157195bb"
+    },
+    "public_format": 13,
+    "promoted_dir": "promoted-race/K01-promoted-38157449",
+    "promoted_format": 14,
+    "wire_tuple": {
+      "ID": "[\"a\",1,3,0]",
+      "Key": "[2,\"99c4059ab7581f66d30fe0fb901a8b93957c9e5a9d92853807e9263e5b5b1425\",\"[\\\"a\\\",1,3,0]\"]",
+      "Capability": "phase3b3.resource-one",
+      "Effect": "add-one",
+      "Input": {
+        "ID": "3867a437fec79a5ff163eedb2413f1313b0197f7d30d5a504e854e61a910c191",
+        "Record": {
+          "delta": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Output": {
+        "ID": "f5c8b4f5ada61871444aaea121f28b494f8e98d9d6f95c874b01e5f6f1e54567",
+        "Record": {
+          "mutation": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          },
+          "total": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Payload": {
+        "delta": {
+          "Kind": "int",
+          "Number": 999,
+          "Text": "",
+          "Flag": false
+        }
+      },
+      "Assets": []
+    }
+  },
+  {
+    "mode": "race",
+    "case": "K02",
+    "public_dir": "race/K02-1490487888",
+    "parent_sha256": {
+      "": "5f6bcce8370eb78f901a1807c88432c7be411e29ecddfd8b4d5e9d7ac1352d31"
+    },
+    "public_format": 15,
+    "promoted_dir": "promoted-race/K02-promoted-958714584",
+    "promoted_format": 16,
+    "wire_tuple": {
+      "ID": "[\"a\",1,3,0]",
+      "Key": "[2,\"750c84f362cd3aa4be84b6a4173ad36c84781b892eb0be74c34d69afed4a24f0\",\"[\\\"a\\\",1,3,0]\"]",
+      "Capability": "phase3b3.resource-one",
+      "Effect": "add-one",
+      "Input": {
+        "ID": "3867a437fec79a5ff163eedb2413f1313b0197f7d30d5a504e854e61a910c191",
+        "Record": {
+          "delta": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Output": {
+        "ID": "f5c8b4f5ada61871444aaea121f28b494f8e98d9d6f95c874b01e5f6f1e54567",
+        "Record": {
+          "mutation": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          },
+          "total": {
+            "Kind": "int",
+            "MaxBytes": 0,
+            "Enum": null
+          }
+        }
+      },
+      "Payload": {
+        "delta": {
+          "Kind": "int",
+          "Number": 999,
+          "Text": "",
+          "Flag": false
+        }
+      },
+      "Assets": []
+    }
+  },
+  {
+    "cost_observations": 40,
+    "identity_maps": 50,
+    "status": "all checked"
+  },
+  {
+    "old_reader": {
+      "binary": "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+      "binary_sha256": "f08fc613f6411adb005adb9bf67409bb456eff69cd39599fa9652957e1a1db36",
+      "records": [
+        {
+          "format": "13",
+          "parent": "/tmp/alan-task4-final-normal/K01-3742032500/final/runtime.sqlite",
+          "parent_sha256": "dd09bfdf0a14bbbca3d71721a29421714fd5bc1adb55318609f1f3109d083e86",
+          "argv": [
+            "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+            "-test.run=^TestPhase3B3Owner$",
+            "-test.v",
+            "-test.timeout=2m"
+          ],
+          "environment": {
+            "ALAN_PHASE3B3_CHILD": "1",
+            "ALAN_PHASE2_DB": "/tmp/alan-task4-final-old-readers/old-format13-bfp5fpyn/copy.sqlite",
+            "ALAN_PHASE3B3_OUTPUT": "/tmp/alan-task4-final-old-readers/old-format13-bfp5fpyn/output"
+          },
+          "exit": 0,
+          "open": {
+            "Error": "<nil>",
+            "Namespace": "4dfd39d833c0f0f2d0b39486e35a75224e53fbbaa5003f7bbb4d0e69af799b7c",
+            "PID": 47478,
+            "Runs": {
+              "a": {
+                "ID": {
+                  "Subject": "a",
+                  "Generation": 1
+                },
+                "ProgramID": "dadbda94622c2d773abab4bcc1da1ad113d3005428e4ca23234646282bca4d6c",
+                "Epoch": 1,
+                "Sequence": 6,
+                "Revision": 1,
+                "Projection": {
+                  "PC": 5,
+                  "Data": {
+                    "accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": true
+                    },
+                    "disposition": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "validated",
+                      "Flag": false
+                    },
+                    "grant_data": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,2,0]",
+                      "Flag": false
+                    },
+                    "mutation": {
+                      "Kind": "int",
+                      "Number": 1,
+                      "Text": "",
+                      "Flag": false
+                    },
+                    "peer_claim": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "{\"Version\":\"alan/request-authority/v1\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:54622/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+                      "Flag": false
+                    },
+                    "peer_request": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,1,0]",
+                      "Flag": false
+                    },
+                    "service_operation": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"a\",1,3,0]",
+                      "Flag": false
+                    },
+                    "total": {
+                      "Kind": "int",
+                      "Number": 1,
+                      "Text": "",
+                      "Flag": false
+                    }
+                  },
+                  "Status": "succeeded"
+                }
+              },
+              "b": {
+                "ID": {
+                  "Subject": "b",
+                  "Generation": 1
+                },
+                "ProgramID": "d619d660777c9e6090bccf954210ce9cc456991824df31494713009df76b4477",
+                "Epoch": 2,
+                "Sequence": 5,
+                "Revision": 1,
+                "Projection": {
+                  "PC": 5,
+                  "Data": {
+                    "ba_request": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,1,0]",
+                      "Flag": false
+                    },
+                    "grant": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,2,0]",
+                      "Flag": false
+                    },
+                    "grant_accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": true
+                    },
+                    "paid": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": false
+                    },
+                    "ready": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,5,0]",
+                      "Flag": false
+                    },
+                    "service_accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": false
+                    }
+                  },
+                  "Status": "open"
+                }
+              }
+            }
+          },
+          "copy_before_sha256": "dd09bfdf0a14bbbca3d71721a29421714fd5bc1adb55318609f1f3109d083e86",
+          "copy_after_sha256": "af095924a7b99b066e936a1310e7a7afd2e065c5a95113627bfee17941cbbf1f",
+          "expected_accept": true
+        },
+        {
+          "format": "15",
+          "parent": "/tmp/alan-task4-final-normal/K02-3747323149/final/runtime.sqlite",
+          "parent_sha256": "64750e4706e8307da26f5f95ecf33bd2eaac684fdec864fff03df1a131a52fc6",
+          "argv": [
+            "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+            "-test.run=^TestPhase3B3Owner$",
+            "-test.v",
+            "-test.timeout=2m"
+          ],
+          "environment": {
+            "ALAN_PHASE3B3_CHILD": "1",
+            "ALAN_PHASE2_DB": "/tmp/alan-task4-final-old-readers/old-format15-l4qt9_ks/copy.sqlite",
+            "ALAN_PHASE3B3_OUTPUT": "/tmp/alan-task4-final-old-readers/old-format15-l4qt9_ks/output"
+          },
+          "exit": 1,
+          "open": {
+            "Error": "unsupported version"
+          },
+          "copy_before_sha256": "64750e4706e8307da26f5f95ecf33bd2eaac684fdec864fff03df1a131a52fc6",
+          "copy_after_sha256": "64750e4706e8307da26f5f95ecf33bd2eaac684fdec864fff03df1a131a52fc6",
+          "expected_accept": false
+        },
+        {
+          "format": "14",
+          "parent": "/tmp/alan-task4-final-promoted-normal/K01-promoted-118906417/runtime.sqlite",
+          "parent_sha256": "42c83b15f673a09e93a711c18f20694d99ae0680f931a48033d7074b13eb3671",
+          "argv": [
+            "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+            "-test.run=^TestPhase3B3Owner$",
+            "-test.v",
+            "-test.timeout=2m"
+          ],
+          "environment": {
+            "ALAN_PHASE3B3_CHILD": "1",
+            "ALAN_PHASE2_DB": "/tmp/alan-task4-final-old-readers/old-format14-f_hq4rqj/copy.sqlite",
+            "ALAN_PHASE3B3_OUTPUT": "/tmp/alan-task4-final-old-readers/old-format14-f_hq4rqj/output"
+          },
+          "exit": 0,
+          "open": {
+            "Error": "<nil>",
+            "Namespace": "4dfd39d833c0f0f2d0b39486e35a75224e53fbbaa5003f7bbb4d0e69af799b7c",
+            "PID": 47480,
+            "Runs": {
+              "a": {
+                "ID": {
+                  "Subject": "a",
+                  "Generation": 1
+                },
+                "ProgramID": "dadbda94622c2d773abab4bcc1da1ad113d3005428e4ca23234646282bca4d6c",
+                "Epoch": 1,
+                "Sequence": 6,
+                "Revision": 1,
+                "Projection": {
+                  "PC": 5,
+                  "Data": {
+                    "accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": true
+                    },
+                    "disposition": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "validated",
+                      "Flag": false
+                    },
+                    "grant_data": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,2,0]",
+                      "Flag": false
+                    },
+                    "mutation": {
+                      "Kind": "int",
+                      "Number": 1,
+                      "Text": "",
+                      "Flag": false
+                    },
+                    "peer_claim": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "{\"Version\":\"alan/request-authority/v1\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:54622/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,4,0]\"}",
+                      "Flag": false
+                    },
+                    "peer_request": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,1,0]",
+                      "Flag": false
+                    },
+                    "service_operation": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"a\",1,3,0]",
+                      "Flag": false
+                    },
+                    "total": {
+                      "Kind": "int",
+                      "Number": 1,
+                      "Text": "",
+                      "Flag": false
+                    }
+                  },
+                  "Status": "succeeded"
+                }
+              },
+              "b": {
+                "ID": {
+                  "Subject": "b",
+                  "Generation": 1
+                },
+                "ProgramID": "d619d660777c9e6090bccf954210ce9cc456991824df31494713009df76b4477",
+                "Epoch": 3,
+                "Sequence": 5,
+                "Revision": 1,
+                "Projection": {
+                  "PC": 5,
+                  "Data": {
+                    "ba_request": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,1,0]",
+                      "Flag": false
+                    },
+                    "grant": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,2,0]",
+                      "Flag": false
+                    },
+                    "grant_accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": true
+                    },
+                    "paid": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": false
+                    },
+                    "ready": {
+                      "Kind": "string",
+                      "Number": 0,
+                      "Text": "[\"b\",1,5,0]",
+                      "Flag": false
+                    },
+                    "service_accepted": {
+                      "Kind": "bool",
+                      "Number": 0,
+                      "Text": "",
+                      "Flag": false
+                    }
+                  },
+                  "Status": "open"
+                }
+              }
+            }
+          },
+          "copy_before_sha256": "42c83b15f673a09e93a711c18f20694d99ae0680f931a48033d7074b13eb3671",
+          "copy_after_sha256": "d80d012cdb8a9682b123b1d3f96dec3a2e3846fda9665ba5bbaba963bdea84ff",
+          "expected_accept": true
+        },
+        {
+          "format": "16",
+          "parent": "/tmp/alan-task4-final-promoted-normal/K02-promoted-343306181/runtime.sqlite",
+          "parent_sha256": "1f8607ecb217b2cdc7dd48f17d8cb51ad3b98886e19c78c2c1a7552d04170bed",
+          "argv": [
+            "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+            "-test.run=^TestPhase3B3Owner$",
+            "-test.v",
+            "-test.timeout=2m"
+          ],
+          "environment": {
+            "ALAN_PHASE3B3_CHILD": "1",
+            "ALAN_PHASE2_DB": "/tmp/alan-task4-final-old-readers/old-format16-ofnq_uhi/copy.sqlite",
+            "ALAN_PHASE3B3_OUTPUT": "/tmp/alan-task4-final-old-readers/old-format16-ofnq_uhi/output"
+          },
+          "exit": 1,
+          "open": {
+            "Error": "unsupported version"
+          },
+          "copy_before_sha256": "1f8607ecb217b2cdc7dd48f17d8cb51ad3b98886e19c78c2c1a7552d04170bed",
+          "copy_after_sha256": "1f8607ecb217b2cdc7dd48f17d8cb51ad3b98886e19c78c2c1a7552d04170bed",
+          "expected_accept": false
+        }
+      ]
+    }
+  }
+]

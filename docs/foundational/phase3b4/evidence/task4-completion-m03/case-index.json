@@ -1,0 +1,306 @@
+{
+  "normal": {
+    "case": {
+      "AuxiliaryRequests": [
+        "[\"b\",1,6,0]"
+      ],
+      "Captures": [
+        {
+          "AcknowledgedSIGKILL": false,
+          "Directory": "emitted-before-authorization",
+          "Label": "emitted-before-authorization",
+          "Ordinal": 1,
+          "OwnerPID": 51376,
+          "Predecessor": ""
+        },
+        {
+          "AcknowledgedSIGKILL": false,
+          "Directory": "final",
+          "Label": "final",
+          "Ordinal": 2,
+          "OwnerPID": 51376,
+          "Predecessor": "emitted-before-authorization"
+        }
+      ],
+      "Classification": "source-authorized-target-generation-refusal-outside-C",
+      "Manifest": {
+        "InsertedReductions": 0,
+        "Options": {
+          "EndpointA": "http://127.0.0.1:55954/apply",
+          "EndpointB": "http://127.0.0.1:55955/apply",
+          "ForwardBranch": null,
+          "LocalSteps": 0,
+          "ReadyFirst": false,
+          "TerminalHandshake": true
+        },
+        "PrincipalRequests": [
+          "[\"a\",1,1,0]",
+          "[\"b\",1,1,0]"
+        ],
+        "ProgramIDs": {
+          "a": "3edb0c0b8c7ab72cfcf6909202a8abe9ecf625bec5eada122494f378825769a6",
+          "b": "acf00f44fc150619cc4d4a40407ff2ee7cafbb24bf81bcb0571b439349c82f76"
+        },
+        "Reciprocal": {
+          "A": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "ABReply": "[\"b\",1,13,0]",
+          "ABRequest": "[\"a\",1,1,0]",
+          "ABService": "[\"b\",1,10,0]",
+          "ABServiceRoot": {
+            "Permission": {
+              "Kind": "external",
+              "Obligation": "ab-service",
+              "Operation": "apply",
+              "Revision": 1,
+              "Source": "b",
+              "Target": "http://127.0.0.1:55954/apply"
+            },
+            "RootRun": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "Run": {
+              "Generation": 1,
+              "Subject": "b"
+            }
+          },
+          "B": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "BAReply": "[\"a\",1,8,0]",
+          "BARequest": "[\"b\",1,1,0]",
+          "BAService": "[\"a\",1,5,0]",
+          "BAServiceRoot": {
+            "Permission": {
+              "Kind": "external",
+              "Obligation": "ba-service",
+              "Operation": "apply",
+              "Revision": 1,
+              "Source": "b",
+              "Target": "http://127.0.0.1:55955/apply"
+            },
+            "RootRun": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "Run": {
+              "Generation": 1,
+              "Subject": "b"
+            }
+          },
+          "Claim": {
+            "OriginalRequestID": "[\"b\",1,1,0]",
+            "Recipient": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "RecipientRevision": 1,
+            "RecipientRoot": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "Root": {
+              "Permission": {
+                "Kind": "external",
+                "Obligation": "ba-service",
+                "Operation": "apply",
+                "Revision": 1,
+                "Source": "b",
+                "Target": "http://127.0.0.1:55955/apply"
+              },
+              "RootRun": {
+                "Generation": 1,
+                "Subject": "b"
+              },
+              "Run": {
+                "Generation": 1,
+                "Subject": "b"
+              }
+            },
+            "ServiceOperationID": "[\"a\",1,5,0]",
+            "Version": "alan/request-authority/v2"
+          },
+          "Grant": "[\"b\",1,2,0]",
+          "Options": {
+            "EndpointA": "http://127.0.0.1:55954/apply",
+            "EndpointB": "http://127.0.0.1:55955/apply",
+            "Scenario": "s2-handshake",
+            "TerminalHandshake": true
+          },
+          "Ready": "[\"b\",1,5,0]",
+          "Version": "alan/reciprocal-fixture/v1"
+        },
+        "ReplySequence": 8,
+        "ServiceSequence": 5,
+        "Version": "alan/request-binding-fixture/v1"
+      },
+      "Name": "M03-auxiliary-target-generation-two",
+      "PrincipalRequests": [
+        "[\"a\",1,1,0]",
+        "[\"b\",1,1,0]"
+      ],
+      "Profile": "alan/request-authority/v2",
+      "Schedule": "controlled-public-commit-authorize-deliver-prefix",
+      "Version": "alan/phase3b4-case/v1"
+    },
+    "case_sha256": "62e3e9f602551984e3d7e630b1a851399a0c1d3a457f4ffd4d78a0b2c0b4e1ad",
+    "directory": "normal/M03-auxiliary-target-generation-two-1165515867",
+    "original_directory": "/tmp/alan-task4-m03-final-normal/M03-auxiliary-target-generation-two-1165515867"
+  },
+  "race": {
+    "case": {
+      "AuxiliaryRequests": [
+        "[\"b\",1,6,0]"
+      ],
+      "Captures": [
+        {
+          "AcknowledgedSIGKILL": false,
+          "Directory": "emitted-before-authorization",
+          "Label": "emitted-before-authorization",
+          "Ordinal": 1,
+          "OwnerPID": 51443,
+          "Predecessor": ""
+        },
+        {
+          "AcknowledgedSIGKILL": false,
+          "Directory": "final",
+          "Label": "final",
+          "Ordinal": 2,
+          "OwnerPID": 51443,
+          "Predecessor": "emitted-before-authorization"
+        }
+      ],
+      "Classification": "source-authorized-target-generation-refusal-outside-C",
+      "Manifest": {
+        "InsertedReductions": 0,
+        "Options": {
+          "EndpointA": "http://127.0.0.1:55956/apply",
+          "EndpointB": "http://127.0.0.1:55957/apply",
+          "ForwardBranch": null,
+          "LocalSteps": 0,
+          "ReadyFirst": false,
+          "TerminalHandshake": true
+        },
+        "PrincipalRequests": [
+          "[\"a\",1,1,0]",
+          "[\"b\",1,1,0]"
+        ],
+        "ProgramIDs": {
+          "a": "3c352a4f7d41487ceebb537e184de491e968646f6e995d56359fbfe14aabdfd7",
+          "b": "f71692f745c2d880e0aa0d3499841136db6a5aff8672f8d310b71adc4374c3ed"
+        },
+        "Reciprocal": {
+          "A": {
+            "Generation": 1,
+            "Subject": "a"
+          },
+          "ABReply": "[\"b\",1,13,0]",
+          "ABRequest": "[\"a\",1,1,0]",
+          "ABService": "[\"b\",1,10,0]",
+          "ABServiceRoot": {
+            "Permission": {
+              "Kind": "external",
+              "Obligation": "ab-service",
+              "Operation": "apply",
+              "Revision": 1,
+              "Source": "b",
+              "Target": "http://127.0.0.1:55956/apply"
+            },
+            "RootRun": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "Run": {
+              "Generation": 1,
+              "Subject": "b"
+            }
+          },
+          "B": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "BAReply": "[\"a\",1,8,0]",
+          "BARequest": "[\"b\",1,1,0]",
+          "BAService": "[\"a\",1,5,0]",
+          "BAServiceRoot": {
+            "Permission": {
+              "Kind": "external",
+              "Obligation": "ba-service",
+              "Operation": "apply",
+              "Revision": 1,
+              "Source": "b",
+              "Target": "http://127.0.0.1:55957/apply"
+            },
+            "RootRun": {
+              "Generation": 1,
+              "Subject": "b"
+            },
+            "Run": {
+              "Generation": 1,
+              "Subject": "b"
+            }
+          },
+          "Claim": {
+            "OriginalRequestID": "[\"b\",1,1,0]",
+            "Recipient": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "RecipientRevision": 1,
+            "RecipientRoot": {
+              "Generation": 1,
+              "Subject": "a"
+            },
+            "Root": {
+              "Permission": {
+                "Kind": "external",
+                "Obligation": "ba-service",
+                "Operation": "apply",
+                "Revision": 1,
+                "Source": "b",
+                "Target": "http://127.0.0.1:55957/apply"
+              },
+              "RootRun": {
+                "Generation": 1,
+                "Subject": "b"
+              },
+              "Run": {
+                "Generation": 1,
+                "Subject": "b"
+              }
+            },
+            "ServiceOperationID": "[\"a\",1,5,0]",
+            "Version": "alan/request-authority/v2"
+          },
+          "Grant": "[\"b\",1,2,0]",
+          "Options": {
+            "EndpointA": "http://127.0.0.1:55956/apply",
+            "EndpointB": "http://127.0.0.1:55957/apply",
+            "Scenario": "s2-handshake",
+            "TerminalHandshake": true
+          },
+          "Ready": "[\"b\",1,5,0]",
+          "Version": "alan/reciprocal-fixture/v1"
+        },
+        "ReplySequence": 8,
+        "ServiceSequence": 5,
+        "Version": "alan/request-binding-fixture/v1"
+      },
+      "Name": "M03-auxiliary-target-generation-two",
+      "PrincipalRequests": [
+        "[\"a\",1,1,0]",
+        "[\"b\",1,1,0]"
+      ],
+      "Profile": "alan/request-authority/v2",
+      "Schedule": "controlled-public-commit-authorize-deliver-prefix",
+      "Version": "alan/phase3b4-case/v1"
+    },
+    "case_sha256": "0dca65ce497732d5eb35f7af206c1ed1ebecd93037b7983000e376714a5281e4",
+    "directory": "race/M03-auxiliary-target-generation-two-341226844",
+    "original_directory": "/tmp/alan-task4-m03-final-race/M03-auxiliary-target-generation-two-341226844"
+  }
+}
