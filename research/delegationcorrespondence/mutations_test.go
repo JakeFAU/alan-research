@@ -29,3 +29,17 @@ func TestRawMutationsIncompletePrefix(t *testing.T) {
 		}
 	}
 }
+
+func TestRawMutationNonGrantLifecyclePrefix(t *testing.T) {
+	q := LifecycleRequest{Operation: "CancelRun", Intent: Intent{Payload: map[string]Value{"operation": stringValue("CancelRun")}}}
+	raw := RawSnapshot{Tables: map[string][]Row{"lifecycle_results": {{"id": bytesJSON("ordinary-control"), "descriptor": bytesJSON(string(bytesJSON(q))), "result": bytesJSON(string(bytesJSON(LifecycleResult{Request: q})))}}}}
+	mutations := RawMutations(bytesJSON(raw))
+	if len(mutations) != 15 {
+		t.Fatalf("lost applicability diagnostic: got %d, want15", len(mutations))
+	}
+	for _, m := range mutations {
+		if m.Name == "altered-recipient" && (m.Applicable || m.Diagnostic == "") {
+			t.Fatalf("missing grant treated as applicable: %+v", m)
+		}
+	}
+}
