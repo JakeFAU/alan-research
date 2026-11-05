@@ -1,0 +1,23 @@
+{
+  "sources": {
+    "research": {
+      "root": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "commit": "0c303c3d43d6582fed0a9caac24f50e71d844a19",
+      "files": 562,
+      "manifest_sha256": "a43d20c6b495a1cc120be61fc9aacb43f17a8568b1e2693be00689bf15c91058",
+      "archive_sha256": "bac232c039228b203dba241ebe5cb3be1f7116822471e9d1617e0a5ec76910cc",
+      "status": ""
+    },
+    "runtime": {
+      "root": "/private/tmp/alan-phase3b3-runtime",
+      "commit": "fc60391f48b46a8c8635afc46882db8338b6c93b",
+      "files": 350,
+      "manifest_sha256": "a44b40f20a4956e7069c9138fcc8999f381774f045547281e1a6e2d00bed7d16",
+      "archive_sha256": "3e89eae1cb553bad4de35d17e5f37c83b9c35ae3d8a6c429745e0099bb7575f6",
+      "status": ""
+    }
+  },
+  "platform": "macOS-27.2-arm64-arm-64bit-Mach-O",
+  "architecture": "arm64",
+  "scope": "Git-tracked Go/module, Python/shell qualification scripts and testdata outside docs/paper; no SQLite opened"
+}

@@ -1,0 +1,51 @@
+{
+  "group": "research-small",
+  "scope": "Driver expected-status accounting is not a claim that inherited non-green gates passed",
+  "jobs": [
+    {
+      "name": "research-mod-verify",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-mod-tidy",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-build",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-vet",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-vet-integration",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-staticcheck",
+      "recorder_exit": 1,
+      "expected_command_exit": 1
+    },
+    {
+      "name": "research-staticcheck-integration",
+      "recorder_exit": 1,
+      "expected_command_exit": 1
+    },
+    {
+      "name": "research-format",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-staticcheck-changed",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    }
+  ]
+}

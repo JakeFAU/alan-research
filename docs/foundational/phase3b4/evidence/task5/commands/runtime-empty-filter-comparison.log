@@ -1,0 +1,11 @@
+=== RUN   TestPhase3B4IndependentEmptyOperationFilter
+=== RUN   TestPhase3B4IndependentEmptyOperationFilter/genuine
+    phase3b4_independent_filter_test.go:20: sequence=5 operation="[\"a\",1,4,0]" error=<nil>
+=== RUN   TestPhase3B4IndependentEmptyOperationFilter/empty-operation
+    phase3b4_independent_filter_test.go:20: sequence=5 operation="[\"a\",1,4,0]" error=ineligible observation
+--- PASS: TestPhase3B4IndependentEmptyOperationFilter (0.00s)
+    --- PASS: TestPhase3B4IndependentEmptyOperationFilter/genuine (0.00s)
+    --- PASS: TestPhase3B4IndependentEmptyOperationFilter/empty-operation (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan/internal/executor	0.166s
+

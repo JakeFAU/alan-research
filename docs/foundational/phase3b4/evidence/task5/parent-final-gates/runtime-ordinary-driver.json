@@ -1,0 +1,11 @@
+{
+  "group": "runtime-ordinary",
+  "scope": "Driver expected-status accounting is not a claim that inherited non-green gates passed",
+  "jobs": [
+    {
+      "name": "runtime-ordinary",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+audit audit-build 0
+mutual mutual-build 0
+authority authority-build 0
+twoagent twoagent-build 0
+twoagent twoagent-1 0
+twoagent twoagent-2 0
+mutual mutual-1 0
+mutual mutual-2 0
+authority authority-1 0
+audit audit-1 0
+authority authority-2 0
+audit audit-2 0

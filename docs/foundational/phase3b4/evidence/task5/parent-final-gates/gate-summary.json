@@ -1,0 +1,849 @@
+{
+  "records": [
+    {
+      "name": "research-build",
+      "argv": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 3.1046059131622314,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "aea6a01bc5eabf660906499ab04c893d49edf781f1fd9743324f622d320b8988",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "research-format",
+      "argv": [
+        "gofmt",
+        "-l",
+        "research/delegationcorrespondence"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.053795814514160156,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "db26c5e2d81d6c8ca8b191ccca666a18b1fd8273a5765f636d37b92fbe803392",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "research-mod-tidy",
+      "argv": [
+        "go",
+        "mod",
+        "tidy",
+        "-diff"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.11916303634643555,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "e6ce90bced7eed485adc24a894e550a018b48985be4055f870eb9e6d3b17d5ee",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "research-mod-verify",
+      "argv": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.18824100494384766,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "a38adac302ff255abf0863bdd5f7210b6d2bb8bbe1ff3096be008094043b4605",
+      "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+    },
+    {
+      "name": "research-model-checker-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-race",
+        "-count=1",
+        "-timeout=60m",
+        "./research/twoagent/...",
+        "./research/mutualobligations/...",
+        "./research/authorityservice/...",
+        "./research/delegationcorrespondence/..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 184.95106768608093,
+      "test_pass_events": 449,
+      "package_passes": 7,
+      "named_skips": [],
+      "no_test_packages": [
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        }
+      ],
+      "failure_events": [],
+      "record_sha256": "abeda4cc6f096e0a84da67be5cfa92ecb92a78e1d3eb54d72db139817a752bd7",
+      "log_sha256": "65f2e87f46adfa7da913fd8736a8fac9f7618a78130d81a24edeb66abaffb7e4"
+    },
+    {
+      "name": "research-ordinary",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 1517.3825709819794,
+      "test_pass_events": 2528,
+      "package_passes": 48,
+      "named_skips": [
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/communication",
+          "Test": "TestCommunicationArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/join",
+          "Test": "TestJoinArtifactExport",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+          "Test": "TestCandidateAExport",
+          "Elapsed": 0
+        }
+      ],
+      "no_test_packages": [
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/effectboundary",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/b",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/substitution/protocol",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/examples/worktree",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/reconciliation/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan-research/runtime",
+          "Elapsed": 0
+        }
+      ],
+      "failure_events": [],
+      "record_sha256": "c90db113708a85d5908ff4f553e2e2f8ee199b164941302a49f9764762d47fc0",
+      "log_sha256": "4586244ab2921822fcddee2e8c08a0bac0aaabe026d2c8bfca6e2395ec4629f6"
+    },
+    {
+      "name": "research-prior-authority-normal",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-tags=integration",
+        "-count=1",
+        "-timeout=10m",
+        "./internal/durabletest",
+        "-run",
+        "^TestPhase3B2"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 12.911550998687744,
+      "test_pass_events": 20,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "a1d5629df984dc31a0ef8731c2f616681b7141d7b4a7c79d88b0417cd5b23f0e",
+      "log_sha256": "5dec072b981783cd4a71b0bc2ad5fcba93075a6b9444b60042bf4eaf6aa5e3fc"
+    },
+    {
+      "name": "research-prior-authority-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-race",
+        "-tags=integration",
+        "-count=1",
+        "-timeout=10m",
+        "./internal/durabletest",
+        "-run",
+        "^TestPhase3B2"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 48.791447162628174,
+      "test_pass_events": 20,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "b1b2379bb4c8538bdf9328fcbabf9ed1f1b8b74a507356a26b2ca0352f55fe2c",
+      "log_sha256": "95dc289ffc3de7c957ed1075ea4250cc1cdb33677e0f4d29d00304454a4107c3"
+    },
+    {
+      "name": "research-prior-reciprocal-normal",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-tags=integration",
+        "-count=1",
+        "-timeout=10m",
+        "./examples/communication/mutual"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 1.8572707176208496,
+      "test_pass_events": 22,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "7abb4c60d266eaeba3d7e3efbc7e9870160af4b4c83bd3e3b4f5fe51e5c9d34f",
+      "log_sha256": "7bd011025cc021d9697cbc9d1ffc814b28e1999fd83807708f5121fd24014106"
+    },
+    {
+      "name": "research-prior-reciprocal-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-race",
+        "-tags=integration",
+        "-count=1",
+        "-timeout=10m",
+        "./examples/communication/mutual"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 7.981600999832153,
+      "test_pass_events": 22,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "45fbcd29b992e5043e7236eb6bc736af500ed088434ceed80eba00c1ad7abe53",
+      "log_sha256": "029348f2905314f96e7e0d3e11710cc2fd8d3a9308ee9e2b6a48fb51001e43f0"
+    },
+    {
+      "name": "research-staticcheck-changed",
+      "argv": [
+        "staticcheck",
+        "-tags=integration",
+        "./research/delegationcorrespondence/..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.14884686470031738,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "15a61efd0e97b01d5b39cddd664ed2500c194749c8f222e810de1bfd88c8253f",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "research-staticcheck-integration",
+      "argv": [
+        "staticcheck",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "disposition": "inherited_non_green_compare_exact_baseline",
+      "source_unchanged": true,
+      "elapsed_seconds": 1.7179131507873535,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "599e39a9c7c96a3d53265b86a19cc3d6b8bdb4207d5df239af19aa1865fdc707",
+      "log_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b"
+    },
+    {
+      "name": "research-staticcheck",
+      "argv": [
+        "staticcheck",
+        "./..."
+      ],
+      "exit": 1,
+      "expected_exit": 1,
+      "disposition": "inherited_non_green_compare_exact_baseline",
+      "source_unchanged": true,
+      "elapsed_seconds": 2.4212422370910645,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "aa8e521b039cdf7b150ed7f8c35862622e3a79aea82312d9f5f309af6c9c9c7d",
+      "log_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1"
+    },
+    {
+      "name": "research-vet-integration",
+      "argv": [
+        "go",
+        "vet",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 2.1130356788635254,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "8763d01ce6a823e6890c7a2883f13001d9560d54834745ba19b815449478fc76",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "research-vet",
+      "argv": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 2.1817688941955566,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "5b3c7760f0298cc6ba12a998444ba177e285b783e9831f96f3665ae1155cecdd",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-build",
+      "argv": [
+        "go",
+        "build",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 3.1979172229766846,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "dd1e678ef27d5425e1d46f3785a97b8fb2eea92a667bb62003afa1d71f82c884",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-format",
+      "argv": [
+        "gofmt",
+        "-l",
+        "adapters",
+        "author",
+        "cmd",
+        "compose",
+        "effects",
+        "examples",
+        "internal",
+        "runtime",
+        "schema"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.14324569702148438,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "c1829e9904a6f495c07796980d49b8508bb96a1a197ee3e45ec10aa1ede66807",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-integration-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "-race",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 566.1700558662415,
+      "test_pass_events": 2495,
+      "package_passes": 18,
+      "named_skips": [
+        {
+          "Package": "github.com/JakeFAU/alan/internal/executor",
+          "Test": "TestPhase3B4PromotedPublicParents",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/internal/durabletest",
+          "Test": "TestPhase3B3BaselineS2CompletionExpectedFailure",
+          "Elapsed": 0
+        }
+      ],
+      "no_test_packages": [
+        {
+          "Package": "github.com/JakeFAU/alan/examples/inspect-execution",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/examples/quickstart",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/internal/storetest",
+          "Elapsed": 0
+        }
+      ],
+      "failure_events": [],
+      "record_sha256": "f03ed2ef2a6148c9bceb1ccacec79ea0d4ca6a73a4f7a3ad279d3eff2e271115",
+      "log_sha256": "ea00f6b0468c66b7468827d886b123ddf9b3fcf22c3b70aedbeb25e618ba6c69"
+    },
+    {
+      "name": "runtime-integration",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 53.688186168670654,
+      "test_pass_events": 2495,
+      "package_passes": 18,
+      "named_skips": [
+        {
+          "Package": "github.com/JakeFAU/alan/internal/executor",
+          "Test": "TestPhase3B4PromotedPublicParents",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/internal/durabletest",
+          "Test": "TestPhase3B3BaselineS2CompletionExpectedFailure",
+          "Elapsed": 0
+        }
+      ],
+      "no_test_packages": [
+        {
+          "Package": "github.com/JakeFAU/alan/examples/inspect-execution",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/examples/quickstart",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/internal/storetest",
+          "Elapsed": 0
+        }
+      ],
+      "failure_events": [],
+      "record_sha256": "3211bc64a73d2f5a9c59113091742e2717006c0dce75c3318c9957aebed87e7c",
+      "log_sha256": "5ad901ae1efd6a515bde4d5325661b429143cb879de7fbde21cfa4619550ce1a"
+    },
+    {
+      "name": "runtime-mod-tidy",
+      "argv": [
+        "go",
+        "mod",
+        "tidy",
+        "-diff"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.08640575408935547,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "705a1a4822ad31fa282cf2dbdc60409ef28912c71256cd168d5ea4b0e7bfbace",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-mod-verify",
+      "argv": [
+        "go",
+        "mod",
+        "verify"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.11699986457824707,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "c3ef5a1890185cb30d9a1ead0b1222c7ced5ac7a7968032d5085e35f7bd61b91",
+      "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+    },
+    {
+      "name": "runtime-ordinary",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=60m",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 62.05866861343384,
+      "test_pass_events": 1365,
+      "package_passes": 18,
+      "named_skips": [],
+      "no_test_packages": [
+        {
+          "Package": "github.com/JakeFAU/alan/examples/inspect-execution",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/examples/quickstart",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/JakeFAU/alan/internal/storetest",
+          "Elapsed": 0
+        }
+      ],
+      "failure_events": [],
+      "record_sha256": "75165c816a2709ba0c68553ea4fe0bfa879c0745ba117eba7e9479c7e8b326e8",
+      "log_sha256": "beb67df1d59728c0d98c1f74a46bca47d8a947bb4b693491bcc00240fc985470"
+    },
+    {
+      "name": "runtime-promoted-normal",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=10m",
+        "-tags=integration",
+        "./internal/executor",
+        "-run",
+        "^TestPhase3B4PromotedPublicParents$"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.9699809551239014,
+      "test_pass_events": 3,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "cf430358a6b9ab9a462ec7675e4b433434e06497cd2c941b8f48dfc591e87acd",
+      "log_sha256": "171331dc308ca3986af41ec54fe089fe6010368895a2aa35868b394e909bac03"
+    },
+    {
+      "name": "runtime-promoted-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-timeout=10m",
+        "-tags=integration",
+        "-race",
+        "./internal/executor",
+        "-run",
+        "^TestPhase3B4PromotedPublicParents$"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 6.862587928771973,
+      "test_pass_events": 3,
+      "package_passes": 1,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "77a5d40ccf980250ab7c3912634d257310b4c453faca0a5e4d543f145c18bbc7",
+      "log_sha256": "54800431280e710f7041229f955c651eb526136d0299b8da1c8d56b82d9469bf"
+    },
+    {
+      "name": "runtime-staticcheck-integration",
+      "argv": [
+        "staticcheck",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 1.8308911323547363,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "c4ea2c5d7b451ca9a037a5ca1f03eb910a87a148c1e523f79effee4664c160cb",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-staticcheck",
+      "argv": [
+        "staticcheck",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 2.1939969062805176,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "24c5f07e4c47ff96d9b392dfb5fadbbf3d0c37efde27a3fc6d01bbd428cee1ee",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-vet-integration",
+      "argv": [
+        "go",
+        "vet",
+        "-tags=integration",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 2.200911045074463,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "856918e526c14eec425b7c5755f1827916612349e979de540e36d2ec4a3080e2",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "runtime-vet",
+      "argv": [
+        "go",
+        "vet",
+        "./..."
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "disposition": "passed",
+      "source_unchanged": true,
+      "elapsed_seconds": 0.7199959754943848,
+      "test_pass_events": 0,
+      "package_passes": 0,
+      "named_skips": [],
+      "no_test_packages": [],
+      "failure_events": [],
+      "record_sha256": "444df4ca4f5c229860bb7bfd36022e9653ba2aaba83a2303c85358733613aa3e",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "required": [
+    "runtime-ordinary",
+    "runtime-integration",
+    "runtime-integration-race",
+    "runtime-promoted-normal",
+    "runtime-promoted-race",
+    "research-ordinary",
+    "research-model-checker-race",
+    "research-prior-reciprocal-normal",
+    "research-prior-reciprocal-race",
+    "research-prior-authority-normal",
+    "research-prior-authority-race",
+    "runtime-mod-verify",
+    "runtime-mod-tidy",
+    "runtime-build",
+    "runtime-vet",
+    "runtime-vet-integration",
+    "runtime-staticcheck",
+    "runtime-staticcheck-integration",
+    "runtime-format",
+    "research-mod-verify",
+    "research-mod-tidy",
+    "research-build",
+    "research-vet",
+    "research-vet-integration",
+    "research-staticcheck",
+    "research-staticcheck-integration",
+    "research-format",
+    "research-staticcheck-changed"
+  ],
+  "missing": [],
+  "lint_comparison": {
+    "ordinary": {
+      "baseline_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+      "final_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+      "byte_equal": true,
+      "baseline_lines": 13,
+      "final_lines": 13,
+      "diagnostic_set_equal": true
+    },
+    "integration": {
+      "baseline_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+      "final_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+      "byte_equal": true,
+      "baseline_lines": 31,
+      "final_lines": 31,
+      "diagnostic_set_equal": true
+    },
+    "empty_output_gates": {
+      "runtime-build": true,
+      "research-build": true,
+      "runtime-format": true,
+      "research-format": true,
+      "research-staticcheck-changed": true,
+      "runtime-vet": true,
+      "runtime-vet-integration": true,
+      "research-vet": true,
+      "research-vet-integration": true
+    }
+  },
+  "complete": true,
+  "expected_statuses_observed": true,
+  "scope": "Counts are test events, not independent experiments. Inherited lint exit1 is not a passing gate. Named skips are separate from packages with no tests."
+}

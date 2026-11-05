@@ -1,0 +1,58 @@
+{
+  "normal": {
+    "Cases": 81,
+    "RawEvaluated": 80,
+    "RawValidFinal": 80,
+    "Captures": 163,
+    "AllCapturesRawValid": true,
+    "PrincipalComplete": 40,
+    "SupportedModelProjection": 33,
+    "Contacts": 89,
+    "Applications": 89,
+    "AcknowledgedLosses": 11,
+    "AllEvaluatedExternalValid": true,
+    "AllContinuityValid": true,
+    "UnsupportedReasons": {
+      "rejected_authority_control_not_in_lategrant_issuance": 11,
+      "explicit_selector_policy_narrows_implicit_model_choice": 16,
+      "immediate_selection_narrows_model_admission": 1,
+      "whole_store_crash_paired_expansion_not_established": 10,
+      "separate_grant_with_revocation_not_in_frozen_configuration": 5,
+      "unknown_or_uncalled_prefix_requires_external_evidence": 4,
+      "ordinary_lifecycle_outside_restricted_correspondence": 4,
+      "not_two_original_reciprocal_history": 5,
+      "auxiliary_originals_outside_restricted_correspondence": 4,
+      "no_store_created_input_validation_obstruction": 1,
+      "program_service_order_outside_A_servicing_B_serial": 1,
+      "repeated_physical_exposure_not_atomic_model_apply": 1
+    }
+  },
+  "race": {
+    "Cases": 81,
+    "RawEvaluated": 80,
+    "RawValidFinal": 80,
+    "Captures": 163,
+    "AllCapturesRawValid": true,
+    "PrincipalComplete": 40,
+    "SupportedModelProjection": 33,
+    "Contacts": 89,
+    "Applications": 89,
+    "AcknowledgedLosses": 11,
+    "AllEvaluatedExternalValid": true,
+    "AllContinuityValid": true,
+    "UnsupportedReasons": {
+      "rejected_authority_control_not_in_lategrant_issuance": 11,
+      "explicit_selector_policy_narrows_implicit_model_choice": 16,
+      "immediate_selection_narrows_model_admission": 1,
+      "whole_store_crash_paired_expansion_not_established": 10,
+      "separate_grant_with_revocation_not_in_frozen_configuration": 5,
+      "unknown_or_uncalled_prefix_requires_external_evidence": 4,
+      "ordinary_lifecycle_outside_restricted_correspondence": 4,
+      "not_two_original_reciprocal_history": 5,
+      "auxiliary_originals_outside_restricted_correspondence": 4,
+      "no_store_created_input_validation_obstruction": 1,
+      "program_service_order_outside_A_servicing_B_serial": 1,
+      "repeated_physical_exposure_not_atomic_model_apply": 1
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "archive_members": {
+    "apparatus-red": 22,
+    "normal": 36,
+    "race": 36
+  },
+  "cases": {
+    "normal": {
+      "A_program": "3edb0c0b8c7ab72cfcf6909202a8abe9ecf625bec5eada122494f378825769a6",
+      "B_program": "acf00f44fc150619cc4d4a40407ff2ee7cafbb24bf81bcb0571b439349c82f76",
+      "admission_descriptor": {
+        "Generation": 2,
+        "IntentID": "[\"b\",1,6,0]",
+        "Kind": "message",
+        "LogicalID": "[\"b\",1,6,0]",
+        "Obligation": "ba-request",
+        "Operation": "",
+        "Payload": {
+          "claim": {
+            "Flag": false,
+            "Kind": "string",
+            "Number": 0,
+            "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55955/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,5,0]\"}"
+          },
+          "request_id": {
+            "Flag": false,
+            "Kind": "string",
+            "Number": 0,
+            "Text": "[\"b\",1,1,0]"
+          }
+        },
+        "Source": {
+          "Generation": 1,
+          "Subject": "b"
+        },
+        "Target": "a",
+        "TerminalSequence": 0,
+        "TransportID": "M03 auxiliary target generation two"
+      },
+      "admission_result": {
+        "Accepted": false,
+        "Bound": {
+          "Generation": 1,
+          "Subject": "a"
+        },
+        "ObservationID": "",
+        "Reason": "target_generation_changed",
+        "TransportID": "M03 auxiliary target generation two"
+      },
+      "case_sha256": "62e3e9f602551984e3d7e630b1a851399a0c1d3a457f4ffd4d78a0b2c0b4e1ad",
+      "history_steps": 7,
+      "namespace": "8a779d2ae382c51dc8992f74e5ac64ea63964a22696ad28275c8d7d350fb034f",
+      "q2": "[\"b\",1,6,0]",
+      "raw_table_changes": [
+        "admissions",
+        "attempts",
+        "composition_facts"
+      ],
+      "raw_tables_checked": 41,
+      "roots": 2,
+      "runs": 2,
+      "source_authorization": {
+        "Allowed": true,
+        "ClosureOperation": "",
+        "ID": "[\"authorization\",\"[\\\"b\\\",1,6,0]\"]",
+        "IntentID": "[\"b\",1,6,0]",
+        "Reason": "authorized",
+        "Source": {
+          "Epoch": 1,
+          "Revision": 1,
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "Sequence": 6
+        }
+      }
+    },
+    "race": {
+      "A_program": "3c352a4f7d41487ceebb537e184de491e968646f6e995d56359fbfe14aabdfd7",
+      "B_program": "f71692f745c2d880e0aa0d3499841136db6a5aff8672f8d310b71adc4374c3ed",
+      "admission_descriptor": {
+        "Generation": 2,
+        "IntentID": "[\"b\",1,6,0]",
+        "Kind": "message",
+        "LogicalID": "[\"b\",1,6,0]",
+        "Obligation": "ba-request",
+        "Operation": "",
+        "Payload": {
+          "claim": {
+            "Flag": false,
+            "Kind": "string",
+            "Number": 0,
+            "Text": "{\"Version\":\"alan/request-authority/v2\",\"Root\":{\"Run\":{\"Subject\":\"b\",\"Generation\":1},\"RootRun\":{\"Subject\":\"b\",\"Generation\":1},\"Permission\":{\"Kind\":\"external\",\"Source\":\"b\",\"Target\":\"http://127.0.0.1:55957/apply\",\"Operation\":\"apply\",\"Revision\":1,\"Obligation\":\"ba-service\"}},\"Recipient\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRoot\":{\"Subject\":\"a\",\"Generation\":1},\"RecipientRevision\":1,\"OriginalRequestID\":\"[\\\"b\\\",1,1,0]\",\"ServiceOperationID\":\"[\\\"a\\\",1,5,0]\"}"
+          },
+          "request_id": {
+            "Flag": false,
+            "Kind": "string",
+            "Number": 0,
+            "Text": "[\"b\",1,1,0]"
+          }
+        },
+        "Source": {
+          "Generation": 1,
+          "Subject": "b"
+        },
+        "Target": "a",
+        "TerminalSequence": 0,
+        "TransportID": "M03 auxiliary target generation two"
+      },
+      "admission_result": {
+        "Accepted": false,
+        "Bound": {
+          "Generation": 1,
+          "Subject": "a"
+        },
+        "ObservationID": "",
+        "Reason": "target_generation_changed",
+        "TransportID": "M03 auxiliary target generation two"
+      },
+      "case_sha256": "0dca65ce497732d5eb35f7af206c1ed1ebecd93037b7983000e376714a5281e4",
+      "history_steps": 7,
+      "namespace": "205428d39443e86b1a8d2f3febc3ce20dd751f233bf11a6d1f77fefa1e54fd6a",
+      "q2": "[\"b\",1,6,0]",
+      "raw_table_changes": [
+        "admissions",
+        "attempts",
+        "composition_facts"
+      ],
+      "raw_tables_checked": 41,
+      "roots": 2,
+      "runs": 2,
+      "source_authorization": {
+        "Allowed": true,
+        "ClosureOperation": "",
+        "ID": "[\"authorization\",\"[\\\"b\\\",1,6,0]\"]",
+        "IntentID": "[\"b\",1,6,0]",
+        "Reason": "authorized",
+        "Source": {
+          "Epoch": 1,
+          "Revision": 1,
+          "Run": {
+            "Generation": 1,
+            "Subject": "b"
+          },
+          "Sequence": 6
+        }
+      }
+    }
+  },
+  "changed_files": {
+    "research": 31,
+    "runtime": 1
+  },
+  "commands": {
+    "failed_apparatus_source_maps": 1,
+    "passing_final_source_maps": 3
+  },
+  "intentional_narrative_manifest_changes": [
+    "README.md",
+    "manifest.json",
+    "report.md"
+  ],
+  "manifest_files": 27,
+  "original_evidence_files": 67,
+  "original_evidence_unchanged": 64,
+  "original_review_artifacts_preserved": 5,
+  "source_files": 328,
+  "sqlite_captures_verified": 4,
+  "unchanged_original_source_files": 327
+}

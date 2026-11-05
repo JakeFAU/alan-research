@@ -1,0 +1,68 @@
+{
+  "final-normal": {
+    "Files": 3168,
+    "AllBytesEqualSource": true
+  },
+  "final-promoted-normal": {
+    "Files": 16,
+    "AllBytesEqualSource": true
+  },
+  "final-v1-normal": {
+    "Files": 2133,
+    "AllBytesEqualSource": true
+  },
+  "independent-normal": {
+    "Files": 83,
+    "AllBytesEqualSource": true
+  },
+  "attacks-normal": {
+    "Files": 78,
+    "AllBytesEqualSource": true
+  },
+  "prior-authority-normal": {
+    "Files": 519,
+    "AllBytesEqualSource": true
+  },
+  "prior-reciprocal-normal": {
+    "Files": 64,
+    "AllBytesEqualSource": true
+  },
+  "final-race": {
+    "Files": 3168,
+    "AllBytesEqualSource": true
+  },
+  "final-promoted-race": {
+    "Files": 16,
+    "AllBytesEqualSource": true
+  },
+  "final-v1-race": {
+    "Files": 2133,
+    "AllBytesEqualSource": true
+  },
+  "independent-race": {
+    "Files": 83,
+    "AllBytesEqualSource": true
+  },
+  "attacks-race": {
+    "Files": 78,
+    "AllBytesEqualSource": true
+  },
+  "prior-authority-race": {
+    "Files": 519,
+    "AllBytesEqualSource": true
+  },
+  "prior-reciprocal-race": {
+    "Files": 64,
+    "AllBytesEqualSource": true
+  },
+  "checker-mutants": {
+    "Files": 2802,
+    "Blobs": 562,
+    "AllMappedBlobsHashExact": true
+  },
+  "preliminary-apparatus": {
+    "Files": 14092,
+    "Blobs": 802,
+    "AllMappedBlobsHashExact": true
+  }
+}

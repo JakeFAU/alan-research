@@ -1,0 +1,11 @@
+{
+  "root": "/private/tmp/alan-phase3b3-runtime-frozen",
+  "archive": "/private/tmp/alan-phase3b3-runtime/docs/qualification/phase3b3/task4-frozen/evidence.tar.gz",
+  "archive_sha256": "0c8c48f2c9c2c064ed03e210ddec7d0ec8179162d5203692326e99e9254a58d4",
+  "archive_matches": true,
+  "checked": 3784,
+  "missing": [],
+  "changed": [],
+  "SQLiteOpened": false,
+  "Scope": "Read-only hash preflight of old48-case normal/race regression inputs, not new checker qualification"
+}

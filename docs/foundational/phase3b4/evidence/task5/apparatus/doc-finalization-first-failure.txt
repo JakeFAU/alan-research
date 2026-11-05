@@ -1,0 +1,3 @@
+Documentation apparatus guard, observed 2026-11-04: first finalize-docs.py invocation exited1 before writing final qualification/report because the just-closed full ordinary record contained three additional named opt-in export skips. The asserted tuple was:
+AssertionError: ('research-ordinary', {'package': 'github.com/JakeFAU/alan-research/examples/communication', 'test': 'TestCommunicationArtifactExport', 'last_output': '--- SKIP: TestCommunicationArtifactExport (0.00s)\n'})
+The closed raw test log was inspected; Join and CandidateA export skips were also identified. Documentation now lists all three exact names/reasons; no test/source/runtime failure occurred and no executable change was made.
