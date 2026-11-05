@@ -16,7 +16,7 @@ var rawShapes = map[string]tableShape{
 	"composition_admission_decisions": {"", ""},
 	"composition_bindings":            {"", ""},
 	"composition_charges":             {"decision_order,descriptor,kind,operation_id,root_id", "operation_id,kind"},
-	"composition_closures":            {"", ""},
+	"composition_closures":            {"decision_order,descriptor,root_id,scope_id", "scope_id"},
 	"composition_deployment":          {"descriptor,singleton", "singleton"},
 	"composition_facts":               {"decision_order,descriptor,id,kind", "id"},
 	"composition_freezes":             {"descriptor,root_id,scope_id", "scope_id"},
@@ -102,7 +102,12 @@ func (c *checker) checkTerminals() {
 		seq := intCell(row, "sequence")
 		h, ok := c.history[historyKey(run, seq)]
 		p := decodeCell[ProjectionState](row, "outcome")
-		need(ok && h.Next.Status != "open" && equal(h.Next, p) && intCell(row, "source_revision") == h.Revision && nullableText(row, "operation_id") == "", "terminal_original", run.Subject, "")
+		if op := nullableText(row, "operation_id"); op != "" {
+			a := c.life[op]
+			need(a.Accepted && a.After != nil && a.After.Run == run && a.After.Sequence == seq, "terminal_lifecycle", op, "")
+			h.Next = a.After.Projection
+		}
+		need(ok && h.Next.Status != "open" && equal(h.Next, p) && intCell(row, "source_revision") == h.Revision, "terminal_original", run.Subject, "")
 		seen[run] = true
 		var destinations []struct{ Target, Obligation string }
 		need(canonical(rawCell(row, "destinations"), &destinations) == nil, "terminal_destinations", run.Subject, "")

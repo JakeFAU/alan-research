@@ -14,6 +14,7 @@ import (
 )
 
 const authorityVersion = "alan/request-authority/v1"
+const bindingVersion = "alan/request-authority/v2"
 
 type RunID struct {
 	Subject    string

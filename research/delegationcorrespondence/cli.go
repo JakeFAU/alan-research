@@ -21,16 +21,46 @@ func RunCheck(args []string, stdout, stderr io.Writer) int {
 	root := fs.String("root", "", "extracted raw corpus root")
 	prefix := fs.String("original-prefix", "", "original absolute corpus prefix; default root")
 	input := fs.String("input", "", "single raw JSON snapshot")
+	binding := fs.String("binding-case", "", "single explicit binding case directory")
 	expect := fs.String("expect", "", "explicit JSON map of case name to {RawValid,Mismatch}")
 	if e := fs.Parse(args); e != nil {
 		return 2
 	}
-	if fs.NArg() != 0 || (*root == "") == (*input == "") {
-		fmt.Fprintln(stderr, "supply exactly one of -root or -input")
+	modes := 0
+	for _, value := range []string{*root, *input, *binding} {
+		if value != "" {
+			modes++
+		}
+	}
+	if fs.NArg() != 0 || modes != 1 {
+		fmt.Fprintln(stderr, "supply exactly one of -root, -input or -binding-case")
 		return 2
 	}
 	enc := json.NewEncoder(stdout)
 	enc.SetIndent("", "  ")
+	if *binding != "" {
+		report, err := CheckBindingDirectory(*binding)
+		if err != nil {
+			fmt.Fprintln(stderr, err)
+			return 2
+		}
+		if err = enc.Encode(report); err != nil {
+			fmt.Fprintln(stderr, err)
+			return 2
+		}
+		if report.ContinuityFailure != nil {
+			return 1
+		}
+		for _, phase := range report.Phases {
+			if !phase.Verdict.Valid {
+				return 1
+			}
+		}
+		if len(report.Phases) > 0 && !report.External.Valid {
+			return 1
+		}
+		return 0
+	}
 	if *input != "" {
 		data, e := os.ReadFile(*input)
 		if e != nil {

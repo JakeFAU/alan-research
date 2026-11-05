@@ -52,7 +52,7 @@ func (c *checker) checkInstruction(h history) {
 		gen := expr(f.Generation, prev.Data).Number
 		obligation := expr(f.Obligation, prev.Data).Text
 		operation := expr(f.Operation, prev.Data).Text
-		need((f.Kind == "" || f.Kind == o.Kind) && (f.Provenance == "" || f.Provenance == o.Provenance) && (source == "" || source == o.Source) && (gen == 0 || gen == o.SourceGeneration) && (obligation == "" || obligation == o.Obligation) && (operation == "" || operation == o.Operation), "receive_filter", o.ID, "")
+		need(f.Kind == o.Kind && f.Provenance == o.Provenance && source == o.Source && gen == o.SourceGeneration && obligation == o.Obligation && operation == o.Operation, "receive_filter", o.ID, "")
 		for k, dst := range in.Bind {
 			v, ok := o.Payload[k]
 			need(ok, "receive_payload", o.ID, k)
@@ -124,7 +124,7 @@ func (c *checker) validateAdmissions() {
 		c.admitResults[id] = v
 		if a.Kind == "message" {
 			i, ok := c.intents[a.IntentID]
-			need(ok && i.Kind == "message" && i.Run == a.Source && i.Target == a.Target && i.Generation == a.Generation && i.Obligation == a.Obligation && equal(i.Payload, a.Payload) && a.LogicalID == i.ID && a.TransportID == identity("message-delivery", i.ID) && a.Operation == "" && a.TerminalSequence == 0 && c.auth[i.ID].Allowed, "message_origin", a.IntentID, "")
+			need(ok && i.Kind == "message" && i.Run == a.Source && i.Target == a.Target && i.Generation == a.Generation && i.Obligation == a.Obligation && equal(i.Payload, a.Payload) && a.LogicalID == i.ID && a.TransportID != "" && a.Operation == "" && a.TerminalSequence == 0 && c.auth[i.ID].Allowed, "message_origin", a.IntentID, "")
 		}
 		if v.Accepted {
 			if a.Kind == "message" || a.Kind == "input" {
@@ -151,7 +151,10 @@ func (c *checker) validateAdmissions() {
 				need(h.Next.Status != "" && h.Next.Status != "open" && a.Payload["outcome"] == stringValue(h.Next.Status), "terminal_origin", id, "")
 			}
 		} else {
-			need(v.Bound == nil || c.members[*v.Bound] != "", "refused_admission_binding", id, "")
+			need(v.ObservationID == "" && (v.Bound == nil || c.members[*v.Bound] != ""), "refused_admission_binding", id, "")
+			if c.version == bindingVersion && v.Reason == "target_generation_changed" {
+				need(v.Bound != nil && v.Bound.Subject == a.Target && a.Generation != 0 && v.Bound.Generation != a.Generation, "refused_target_generation", id, "")
+			}
 		}
 	}
 	for _, r := range c.raw.Tables["message_acknowledgments"] {
@@ -197,7 +200,11 @@ func (c *checker) validateAdmissions() {
 				want["mutation"] = intValue(v.Mutation)
 				want["total"] = intValue(v.Total)
 			} else {
-				need(s.Receipt == nil && s.Disposition == "grant_denied", "external_refusal_settlement", id, "")
+				wantDisposition := "grant_denied"
+				if a.Reason == "effect_limit" || !c.auth[id].Allowed {
+					wantDisposition = "source_denied"
+				}
+				need(s.Receipt == nil && s.Disposition == wantDisposition, "external_refusal_settlement", id, "")
 			}
 			need(o.Kind == "receipt" && o.Provenance == "resource-receipt" && equal(o.Payload, want), "receipt_observation", id, "")
 		case "adapter":
