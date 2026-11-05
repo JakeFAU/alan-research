@@ -1,6 +1,6 @@
 # Phase 3B.4 — review chronology and evidence index
 
-Task 5's final independent specification and code-quality verdict is **APPROVE**, zero Critical/Important/Minor findings. It covers the exact executable pair and evidence heads in [results](08-results.md). Review agreement is a qualification gate, not a universal proof or permission to merge. Task 6 substantive/whole-change review, reviewed matching PDF and draft delivery remain controller responsibilities at this revision.
+Task 5's final independent specification and code-quality verdict is **APPROVE**, zero Critical/Important/Minor findings. It covers the exact executable pair and evidence heads in [results](08-results.md). Review agreement is a qualification gate, not a universal proof or permission to merge. Task 6 text/PDF specification and quality review is also APPROVE after the locator correction and installed-artifact check. Final whole-branch review and draft delivery remain separate controller responsibilities at this revision.
 
 ## Preserved independent reviews
 
@@ -15,12 +15,14 @@ Task 5's final independent specification and code-quality verdict is **APPROVE**
 | Task 4 M03 completion | [APPROVE](evidence/task5/reviews/alan-phase3b4-campaign-m03-review-r1.md) | Genuine public target-2 producer, actual refused admission and focused normal/race evidence checked before oracle construction. |
 | Task 5 provisional | [original hold](evidence/reviews/task5-r1/alan-phase3b4-oracle-review-r1-provisional.md) | No findings, final approval withheld pending ordinary research suite and exact evidence-only deltas. Preserved unchanged. |
 | Task 5 final | [APPROVE](evidence/reviews/task5-r1/alan-phase3b4-oracle-review-r1.md) | Final ordinary gate and both deltas checked; full specification/quality approval at research b940f0d2 and runtime 7c6d092a, executable pair 0c303c3d/fc60391f. |
+| Task 6 substantive text | [pre-PDF APPROVE](evidence/reviews/task6-r1/alan-phase3b4-manuscript-review-r1-pre-pdf.md) | Exact affected text and evidence claims approved before build; no premature PDF approval. |
+| Task 6 locator and PDF closure | [APPROVE](evidence/reviews/task6-r1/alan-phase3b4-manuscript-review-r1.md) | Locator finding addressed; installed PDF, 24 archived build/render members and ten actual viewed pages verified. No outstanding findings. |
 
 The [Task 5 review manifest](evidence/reviews/task5-r1/manifest.json) hashes both reports and the exact evidence-check, secondary-check and final-delta-check scripts/logs. They were copied as bytes, not rewritten. Original absolute paths inside historical reports describe their execution environment. Earlier review manifests and exact reviewed contract/source footprints remain untouched. The Task 3 build-cache warning was deferred to the required final build; both Task 5 build logs are empty, closing that warning without an unrelated source change.
 
 ## Manuscript delivery locators
 
-The new binding text is Markdown §6.12 / LaTeX/PDF §6.7 (“Explicit Request Binding Across Intervening Computation”), with the rendered candidate’s contents entry on page 2 and body on pages 37–39. The historical Phase 3B.3 text is Markdown §6.11 / LaTeX/PDF §6.6, and Conclusion is Markdown §8 / LaTeX/PDF §7. Prior Task 6 validation’s “§6.12” names the Markdown location; its parity check compares affected text after markup conversion, not section numbers. Existing subsection counts and the Markdown-only §7 “Formal Falsification” explain the preserved representation differences. No counter jump, manuscript source change or PDF rebuild is part of this explanatory fix. See [locator validation](evidence/task6-manuscript/fix-r1-validation.json); final PDF/whole-change review closure remains a separate controller gate.
+The new binding text is Markdown §6.12 / LaTeX/PDF §6.7 (“Explicit Request Binding Across Intervening Computation”), with the rendered candidate’s contents entry on page 2 and body on pages 37–39. The historical Phase 3B.3 text is Markdown §6.11 / LaTeX/PDF §6.6, and Conclusion is Markdown §8 / LaTeX/PDF §7. Prior Task 6 validation’s “§6.12” names the Markdown location; its parity check compares affected text after markup conversion, not section numbers. Existing subsection counts and the Markdown-only §7 “Formal Falsification” explain the preserved representation differences. No counter jump, manuscript source change or PDF rebuild is part of this explanatory fix. See [locator validation](evidence/task6-manuscript/fix-r1-validation.json); the installed PDF and scoped artifact review have closed, while whole-branch review remains a separate controller gate.
 
 ## Decisions affecting interpretation
 
@@ -44,3 +46,7 @@ Task 5 read-only review overlapped the last unchanged ordinary research suite, b
 | Current six answers and one next question | [results](08-results.md) |
 
 Sealed Task 5 files still say review/manuscript work was pending when they were authored. This index supplies the later approval without editing their bytes or `artifacts.json`. Raw DB/WAL/SHM companions remain sealed; copying/reviewing file bytes or exported JSON is distinct from opening SQLite. Task 6's complete workflow archive and final review/PDF records are added by the controller after those gates close, not prematurely represented here.
+
+## Task 6 text/PDF closure
+
+The [exact review manifest](evidence/reviews/task6-r1/manifest.json) retains the initial substantive approval, final scoped closure, and independent check script/log. [PDF evidence](evidence/task6-pdf/README.md) identifies the installed artifact and source hashes. The initial text review was APPROVE; the later locator correction arose during artifact inspection, not an earlier rejected substantive review. It changes no mathematical source. Five unique box warnings in unchanged earlier passages are retained and inspected; the build is not described as warning-free. All executable inputs remain the Task 5 frozen pair. Final whole-branch review and the complete workflow archive follow this scoped gate.
