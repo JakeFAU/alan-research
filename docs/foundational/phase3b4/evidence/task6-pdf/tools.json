@@ -1,0 +1,34 @@
+[
+  {
+    "argv": [
+      "/opt/homebrew/bin/tectonic",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "Tectonic 0.17.0\n"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/bin/pdftoppm",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "pdftoppm version 26.10.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/bin/pdfinfo",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "pdfinfo version 26.10.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n"
+  },
+  {
+    "argv": [
+      "/opt/homebrew/bin/pdftotext",
+      "-v"
+    ],
+    "exit": 0,
+    "output": "pdftotext version 26.10.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n"
+  }
+]

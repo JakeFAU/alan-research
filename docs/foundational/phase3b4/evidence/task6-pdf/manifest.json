@@ -1,0 +1,44 @@
+{
+  "reviewed_source_head": "5db0ff147ea4f16b037976a1a6ff968202b2d0fb",
+  "install_parent": "2d63cc6dadda6a1a2d1caa397fda6bb30f9206e9",
+  "source_sha256": {
+    "alan-dissertation.md": "e371eb4b3c1f52a9282da9a9610b46363fbce49bd712fce8b91f113e895f5d21",
+    "alan-dissertation.tex": "8ae62679d16568a3d668ceda7fcb02b3173c79271ea9d137f7c8a88b8fad2117",
+    "references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+  },
+  "installed_pdf": "paper/alan-dissertation.pdf",
+  "installed_pdf_sha256": "c79be8583f18baf3832c7059b4035fd509f9e4d26a8860f1b8eb544c1a0fe4ae",
+  "archive_sha256": "beeb80d72266b6b746d4a6bf1e7c9cd5cc4755ea79b70e209b9d554ad66aec0a",
+  "members": {
+    "alan-dissertation.blg": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0",
+    "alan-dissertation.log": "e4f95947c36de4597feeacbde3723273ad3135af0e6743a88d95c894dbba31b6",
+    "alan-dissertation.md": "e371eb4b3c1f52a9282da9a9610b46363fbce49bd712fce8b91f113e895f5d21",
+    "alan-dissertation.tex": "8ae62679d16568a3d668ceda7fcb02b3173c79271ea9d137f7c8a88b8fad2117",
+    "build-pdf.py": "e83c49341caa5ebc275a5edccc7cfc7c0ee31060e665ad5fa48034a28922782e",
+    "build-record.json": "a8fd4cf47f45c91d02dc07a02173f2feaa114af0396d5660832d054f71b227bb",
+    "build.stdout.log": "f107ae48b9ede3bf0845e1ae2680e980a63cc7e32c406a3b6bd40cca36dc6634",
+    "manuscript.txt": "0e9a06e04bcffb118d14b303f30310302bba97638da1e52cabc97352e84894b3",
+    "page-1.png": "0ad9802d38723b29f52716ae08e0498de1a329dae829734cf0fed9ae36f639ce",
+    "page-2.png": "5bdb90e9aa2c077afdc437580fb2655d2770dc315026233806c40ad7e8eae4be",
+    "page-28.png": "136441ce1383c024a3bc7b9580700379c4182d89ba9f27eaa0f813ec01845ba8",
+    "page-29.png": "a531ebbf0a0915a2968b7a746598cbb01dfc9b79fad8fbb9ad6af1b96fc3c8da",
+    "page-37.png": "24e0660ad3bede0870f3f6b5abef4c970bab100f4dc13baca1e34deec1fd9f42",
+    "page-38.png": "809925f5dc3290ec02823b021b674cf34d8cff25895d2030d8ca985f1886f996",
+    "page-39.png": "c592e909afb7a5bc8df18021b936b222e79a36cfc6dbc0c326541fe388257c48",
+    "page-40.png": "23c71e0f9c8df362def247995c7a46dd594f7f0ec9eb6ef9da34195ffe85e54d",
+    "page-41.png": "e63adf0a92e888ecf1f2a7f8aa91da1849d436c5a72797f85822adb26ae30524",
+    "page-9.png": "986abcb470418198ea8169e6bc73d086b473a2e5b8595daa91d220448480f109",
+    "pdfinfo.txt": "3bb6c1a75bc2242648a4bfd52e757d82a5ad996f7142370db6205ff6906d1989",
+    "references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9",
+    "render-records.json": "da5580a81a5b1ccd1ea0521ecbf81a4195961f21cab23fc57a9c84a4bc5aeaec",
+    "tools.json": "9d46d59becfc0b4c57f937603e91c19c838cbfcaa450f1641444d80456b26519",
+    "visual-review.md": "62d3b6fdbd8100c2867610a8cf5f499c402ce49cf85e8637619972b4821e9a5d",
+    "warning-source-comparison.json": "b8cebb779da7e22f70e5e2835f328a246eb842e2e5f38aa029c808870a2b33c5"
+  },
+  "loose_files": {
+    "tools.json": "9d46d59becfc0b4c57f937603e91c19c838cbfcaa450f1641444d80456b26519",
+    "visual-review.md": "62d3b6fdbd8100c2867610a8cf5f499c402ce49cf85e8637619972b4821e9a5d",
+    "build-record.json": "a8fd4cf47f45c91d02dc07a02173f2feaa114af0396d5660832d054f71b227bb",
+    "README.md": "89364c046193de79daae57915e00d37a57b31df105b6e8395d84eca835ad07dd"
+  }
+}
