@@ -1,0 +1,9 @@
+DELTA_EVIDENCE_ONLY b940f0d2a30f3d0362cc24ea2d7c0bbfdf4d74cc 150 clean
+ARTIFACT_MANIFEST 147 complete exact
+CURRENT_EXECUTABLE_MAP research 562 exact
+CURRENT_EXECUTABLE_MAP runtime 350 exact
+SUMMARY_KEYS ['records', 'required', 'missing', 'lint_comparison', 'complete', 'expected_statuses_observed', 'scope']
+ORDINARY 0 48 2528 1517.3825709819794 ['TestCommunicationArtifactExport', 'TestJoinArtifactExport', 'TestCandidateAExport']
+PARENT_RECORDS 28 all hashes, exit statuses, frozen maps and no fail events exact
+MUTANT_POST_MAP [{'Mutant': 'M01', 'Files': 557, 'BeforeAfterSourceEqual': True, 'OnlyChangedFromFrozen': ['research/delegationcorrespondence/binding.go']}, {'Mutant': 'M02', 'Files': 557, 'BeforeAfterSourceEqual': True, 'OnlyChangedFromFrozen': ['research/delegationcorrespondence/binding.go']}, {'Mutant': 'M03', 'Files': 557, 'BeforeAfterSourceEqual': True, 'OnlyChangedFromFrozen': ['research/delegationcorrespondence/custody.go']}, {'Mutant': 'M04', 'Files': 557, 'BeforeAfterSourceEqual': True, 'OnlyChangedFromFrozen': ['research/delegationcorrespondence/check.go']}, {'Mutant': 'A02-filter-pre-fix', 'Files': 557, 'BeforeAfterSourceEqual': True, 'OnlyChangedFromFrozen': ['research/delegationcorrespondence/custody.go']}]
+FINAL_DELTA_OK

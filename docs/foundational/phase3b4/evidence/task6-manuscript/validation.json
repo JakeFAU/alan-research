@@ -1,0 +1,35 @@
+{
+  "scope": "Task6 documentation-only verification; no suites rerun; no SQLite opened",
+  "checks": {
+    "research_frozen_inputs": 562,
+    "runtime_frozen_inputs": 350,
+    "sealed_task5_artifacts": 147,
+    "exact_review_files": 8,
+    "bibliography_pdf_frozen_contract_relation_matrix": "byte-identical to Task6 base",
+    "preexisting_discrepancy": "Markdown \u00a77 Formal Falsification absent from base TeX; unchanged and disclosed",
+    "edited_md_tex_semantics": "Abstract, \u00a76.12 and Conclusion exactly aligned after markup conversion; \u00a76.11 byte-preserved",
+    "new_local_links": 47,
+    "normal_counts": {
+      "Cases": 81,
+      "RawEvaluated": 80,
+      "Captures": 163,
+      "PrincipalComplete": 40,
+      "SupportedModelProjection": 33,
+      "Contacts": 89,
+      "Applications": 89,
+      "AcknowledgedLosses": 11
+    },
+    "race_counts": {
+      "Cases": 81,
+      "RawEvaluated": 80,
+      "Captures": 163,
+      "PrincipalComplete": 40,
+      "SupportedModelProjection": 33,
+      "Contacts": 89,
+      "Applications": 89,
+      "AcknowledgedLosses": 11
+    },
+    "actual_P02_final_evidence": "both modes, v2 valid/complete/two contacts and applications; v1 valid/incomplete/zero contact",
+    "tracked_diff_check": "pass both repositories"
+  }
+}

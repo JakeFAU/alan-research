@@ -1,0 +1,154 @@
+COMMAND_MAPS_EQUAL_FREEZE 6
+MUTANT_ONLY_CHANGED A02-filter-pre-fix ['research/delegationcorrespondence/custody.go']
+MUTANT_ONLY_CHANGED M01 ['research/delegationcorrespondence/binding.go']
+MUTANT_ONLY_CHANGED M02 ['research/delegationcorrespondence/binding.go']
+MUTANT_ONLY_CHANGED M03 ['research/delegationcorrespondence/custody.go']
+MUTANT_ONLY_CHANGED M04 ['research/delegationcorrespondence/check.go']
+OLD_EXPORT authority-comparison.json {'name': 'authority', 'commands': [{'argv': ['go', 'build', '-buildvcs=false', '-o', '/tmp/alan-task5/final-exports/authority', './research/authorityservice/cmd/export'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.21415470801002812, 'output': '/tmp/alan-task5/final-exports/authority-build.log', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, {'argv': ['/tmp/alan-task5/final-exports/authority'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 3.6452825420128647, 'output': '/tmp/alan-task5/final-exports/authority-1.log', 'sha256': '180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e'}, {'argv': ['/tmp/alan-task5/final-exports/authority'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 3.4570262920024106, 'output': '/tmp/alan-task5/final-exports/authority-2.log', 'sha256': '180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e'}], 'archived_path': 'docs/foundational/phase3b2/evidence/model.json.gz', 'archived_sha256': '9811655bbe78da6755690e24fadfecc31ea6ecf8815f1380da49efa261715c55', 'decoded_sha256': '180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e', 'twice_byte_equal_to_archive': True}
+OLD_EXPORT audit-comparison.json {'name': 'audit', 'commands': [{'argv': ['go', 'build', '-buildvcs=false', '-o', '/tmp/alan-task5/final-exports/audit', './research/authorityservice/cmd/audit'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.21231041698774789, 'output': '/tmp/alan-task5/final-exports/audit-build.log', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, {'argv': ['/tmp/alan-task5/final-exports/audit'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 5.110823832990718, 'output': '/tmp/alan-task5/final-exports/audit-1.log', 'sha256': 'a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1'}, {'argv': ['/tmp/alan-task5/final-exports/audit'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 4.581806707996293, 'output': '/tmp/alan-task5/final-exports/audit-2.log', 'sha256': 'a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1'}], 'archived_path': 'docs/foundational/phase3b2/evidence/audit.json.gz', 'archived_sha256': '7ccfd68e90f21cc142a53f44b4b9b0b7fb3b61ef8d49d8e040201ab1316c1985', 'decoded_sha256': 'a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1', 'twice_byte_equal_to_archive': True}
+OLD_EXPORT twoagent-comparison.json {'name': 'twoagent', 'commands': [{'argv': ['go', 'build', '-buildvcs=false', '-o', '/tmp/alan-task5/final-exports/twoagent', './research/twoagent/cmd/export'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.2188842079922324, 'output': '/tmp/alan-task5/final-exports/twoagent-build.log', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, {'argv': ['/tmp/alan-task5/final-exports/twoagent'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.18334645799768623, 'output': '/tmp/alan-task5/final-exports/twoagent-1.log', 'sha256': 'b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385'}, {'argv': ['/tmp/alan-task5/final-exports/twoagent'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.009368875005748123, 'output': '/tmp/alan-task5/final-exports/twoagent-2.log', 'sha256': 'b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385'}], 'archived_path': 'docs/foundational/phase3a/evidence/model.json', 'archived_sha256': 'b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385', 'decoded_sha256': 'b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385', 'twice_byte_equal_to_archive': True}
+OLD_EXPORT mutual-comparison.json {'name': 'mutual', 'commands': [{'argv': ['go', 'build', '-buildvcs=false', '-o', '/tmp/alan-task5/final-exports/mutual', './research/mutualobligations/cmd/export'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.21653704201162327, 'output': '/tmp/alan-task5/final-exports/mutual-build.log', 'sha256': 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'}, {'argv': ['/tmp/alan-task5/final-exports/mutual'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.5295109590078937, 'output': '/tmp/alan-task5/final-exports/mutual-1.log', 'sha256': '28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533'}, {'argv': ['/tmp/alan-task5/final-exports/mutual'], 'cwd': '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research', 'exit': 0, 'elapsed_seconds': 0.3360494579974329, 'output': '/tmp/alan-task5/final-exports/mutual-2.log', 'sha256': '28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533'}], 'archived_path': 'docs/foundational/phase3b/evidence/model.json', 'archived_sha256': '28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533', 'decoded_sha256': '28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533', 'twice_byte_equal_to_archive': True}
+EXPORT_COMMANDS [
+  {
+    "name": "twoagent",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/tmp/alan-task5/final-exports/twoagent",
+          "./research/twoagent/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.2188842079922324,
+        "output": "/tmp/alan-task5/final-exports/twoagent-build.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/tmp/alan-task5/final-exports/twoagent"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.18334645799768623,
+        "output": "/tmp/alan-task5/final-exports/twoagent-1.log",
+        "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385"
+      },
+      {
+        "argv": [
+          "/tmp/alan-task5/final-exports/twoagent"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.009368875005748123,
+        "output": "/tmp/alan-task5/final-exports/twoagent-2.log",
+        "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385"
+      }
+    ],
+    "archived_path": "docs/foundational/phase3a/evidence/model.json",
+    "archived_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "decoded_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "twice_byte_equal_to_archive": true
+  },
+  {
+    "name": "mutual",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/tmp/alan-task5/final-exports/mutual",
+          "./research/mutualobligations/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.21653704201162327,
+        "output": "/tmp/alan-task5/final-exports/mutual-build.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/tmp/alan-task5/final-exports/mutual"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.5295109590078937,
+        "output": "/tmp/alan-task5/final-exports/mutual-1.log",
+        "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533"
+      },
+      {
+        "argv": [
+          "/tmp/alan-task5/final-exports/mutual"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.3360494579974329,
+        "output": "/tmp/alan-task5/final-exports/mutual-2.log",
+        "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533"
+      }
+    ],
+    "archived_path": "docs/foundational/phase3b/evidence/model.json",
+    "archived_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "decoded_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "twice_byte_equal_to_archive": true
+  },
+  {
+    "name": "authority",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/tmp/alan-task5/final-exports/authority",
+          "./research/authorityservice/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "elapsed_seconds": 0.21415470801002812,
+        "output": "/tmp/alan-task5/final-exports/authority-build.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/tmp/alan-task5/final-exports/authority"
+        ],
+        "cwd":
+PROMOTION K01 only metadata/additional receipt_conflicts changed 1
+PROMOTION K02 only metadata/additional receipt_conflicts changed 1
+M03_ADMISSION parent 2 {'TransportID': 'M03 auxiliary target generation two', 'Accepted': False, 'Reason': 'target_generation_changed', 'Bound': {'Subject': 'a', 'Generation': 1}, 'ObservationID': ''}
+M03_ADMISSION attack 2 {'TransportID': 'M03 auxiliary target generation two', 'Accepted': True, 'Reason': 'accepted', 'Bound': {'Subject': 'a', 'Generation': 1}, 'ObservationID': '["observation","message","[\\"b\\",1,6,0]"]'}
+LIFECYCLE N10c
+FACT 2 authorization ["a",1,1,0] None
+FACT 4 authorization ["b",1,1,0] None
+FACT 6 authorization ["b",1,2,0] None
+FACT 7 lifecycle ["b",1,2,0] None
+FACT 12 authorization ["b",1,5,0] None
+FACT 16 authorization ["b",1,6,0] None
+FACT 17 lifecycle ["b",1,6,0] None
+FACT 19 authorization ["a",1,4,0] None
+FACT 20 reservation ["a",1,4,0] None
+LIFE DelegateAuthority True delegated
+LIFE CancelRun True closed
+LIFECYCLE N10d
+FACT 2 authorization ["a",1,1,0] None
+FACT 4 authorization ["b",1,1,0] None
+FACT 6 authorization ["b",1,2,0] None
+FACT 7 lifecycle ["b",1,2,0] None
+FACT 12 authorization ["b",1,5,0] None
+FACT 16 authorization ["b",1,6,0] None
+FACT 17 lifecycle ["b",1,6,0] None
+FACT 18 authorization ["a",1,4,0] None
+FACT 19 reservation ["a",1,4,0] None
+LIFE DelegateAuthority True delegated
+LIFE RetireSubject True retired
+EQUAL_TOTAL parent receipts [('["a",1,5,0]', 1, 1), ('["a",1,13,0]', 2, 1), ('["b",1,14,0]', 1, 1)]
+REPLY parent {'accepted': {'Kind': 'bool', 'Number': 0, 'Text': '', 'Flag': True}, 'mutation': {'Kind': 'int', 'Number': 1, 'Text': '', 'Flag': False}, 'request_id': {'Kind': 'string', 'Number': 0, 'Text': '["b",1,1,0]', 'Flag': False}, 'service_operation': {'Kind': 'string', 'Number': 0, 'Text': '["a",1,5,0]', 'Flag': False}, 'total': {'Kind': 'int', 'Number': 1, 'Text': '', 'Flag': False}}
+EQUAL_TOTAL attack receipts [('["a",1,5,0]', 1, 1), ('["a",1,13,0]', 2, 1), ('["b",1,14,0]', 1, 1)]
+REPLY attack {'accepted': {'Kind': 'bool', 'Number': 0, 'Text': '', 'Flag': True}, 'mutation': {'Kind': 'int', 'Number': 2, 'Text': '', 'Flag': False}, 'request_id': {'Kind': 'string', 'Number': 0, 'Text': '["b",1,1,0]', 'Flag': False}, 'service_operation': {'Kind': 'string', 'Number': 0, 'Text': '["a",1,13,0]', 'Flag': False}, 'total': {'Kind': 'int', 'Number': 1, 'Text': '', 'Flag': False}}
