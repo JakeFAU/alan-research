@@ -1,0 +1,37 @@
+{
+  "scope": "Exact Task5 independent final/provisional review and reviewer checks; no historical Task5 archive modified",
+  "files": {
+    "alan-phase3b4-oracle-review-r1.md": {
+      "source": "/tmp/alan-phase3b4-oracle-review-r1.md",
+      "sha256": "8cdcb78a18b6e06e3233a4689fb719bbf7141153b46ed63647594d706ef359c4"
+    },
+    "alan-phase3b4-oracle-review-r1-provisional.md": {
+      "source": "/tmp/alan-phase3b4-oracle-review-r1-provisional.md",
+      "sha256": "d7268d842cd824bfc3ce79a2a170ebc1f17a3ab2ec637e7337904759516ba097"
+    },
+    "alan-phase3b4-oracle-evidence-check.py": {
+      "source": "/tmp/alan-phase3b4-oracle-evidence-check.py",
+      "sha256": "34ca4c695931ba0485afc693c22f28919724cbb863421ba90b3c93d5b5a1a67f"
+    },
+    "alan-phase3b4-oracle-evidence-check.log": {
+      "source": "/tmp/alan-phase3b4-oracle-evidence-check.log",
+      "sha256": "0e39d50d82edd22e4819be9f4ad670e7ed3f4491a2e2449c7edb346a57d901ee"
+    },
+    "alan-phase3b4-oracle-secondary-check.py": {
+      "source": "/tmp/alan-phase3b4-oracle-secondary-check.py",
+      "sha256": "88c58147ee940fe6f5869356e9b4ec6d69b130474f57fec5b95da798afae5268"
+    },
+    "alan-phase3b4-oracle-secondary-check.log": {
+      "source": "/tmp/alan-phase3b4-oracle-secondary-check.log",
+      "sha256": "faaf29076d5ed1b47944b102734f4e7813a9503f64a18e196fa8521b265872e9"
+    },
+    "alan-phase3b4-oracle-final-delta-check.py": {
+      "source": "/tmp/alan-phase3b4-oracle-final-delta-check.py",
+      "sha256": "97ca2687fd88bda8015f7df8d2ec858c6f5b496011a8ef22d86f369661d91e7a"
+    },
+    "alan-phase3b4-oracle-final-delta-check.log": {
+      "source": "/tmp/alan-phase3b4-oracle-final-delta-check.log",
+      "sha256": "5513e7d609465bfd0cf33ce0a2a306a952f3d5fccc590aab617b4eaddf9d721f"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+from pathlib import Path
+import hashlib,json,re,subprocess,tarfile
+R=Path('/Users/jacob/.codex/worktrees/phase3b4-research/alan-research');U=Path('/private/tmp/alan-phase3b3-runtime');P=R/'docs/foundational/phase3b4';E=P/'evidence/task5'
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+out={'scope':'Task6 documentation-only verification; no suites rerun; no SQLite opened','checks':{}}
+def old(root,path,base):return subprocess.check_output(['git','show',base+':'+path],cwd=root).decode()
+for name,root in [('research',R),('runtime',U)]:
+ m=json.loads((E/'freeze'/f'{name}-source.json').read_text())
+ for f,h in m.items():assert sha(root/f)==h,(name,f)
+ out['checks'][name+'_frozen_inputs']=len(m)
+for f,h in json.loads((E/'artifacts.json').read_text()).items():assert sha(E/f)==h,f
+out['checks']['sealed_task5_artifacts']=len(json.loads((E/'artifacts.json').read_text()))
+review=P/'evidence/reviews/task5-r1';manifest=json.loads((review/'manifest.json').read_text())['files']
+for name,d in manifest.items():assert sha(review/name)==sha(Path(d['source']))==d['sha256'],name
+out['checks']['exact_review_files']=len(manifest)
+base='b940f0d2a30f3d0362cc24ea2d7c0bbfdf4d74cc'
+for f in ['paper/references.bib','paper/alan-dissertation.pdf','docs/foundational/phase3b4/02-contract.md','docs/foundational/phase3b4/04-model.md','docs/foundational/phase3b4/05-matrix.md']:
+ b=subprocess.check_output(['git','show',base+':'+f],cwd=R);assert (R/f).read_bytes()==b,f
+out['checks']['bibliography_pdf_frozen_contract_relation_matrix']='byte-identical to Task6 base'
+assert '## 7. Formal Falsification:' in old(R,'paper/alan-dissertation.md',base)
+assert 'Formal Falsification' not in old(R,'paper/alan-dissertation.tex',base)
+out['checks']['preexisting_discrepancy']='Markdown §7 Formal Falsification absent from base TeX; unchanged and disclosed'
+m=(R/'paper/alan-dissertation.md').read_text();t=(R/'paper/alan-dissertation.tex').read_text()
+ms=m.split('### 6.12 Explicit Request Binding Across Intervening Computation\n\n',1)[1].split('\n## 7.',1)[0].strip()
+ts=t.split('\\subsection{Explicit Request Binding Across Intervening Computation}\n\n',1)[1].split('\\section{Conclusion}',1)[0].strip()
+mt=re.sub(r'`([^`]+)`',lambda x:r'\path{'+x[1]+'}',ms).replace('[Phase 3B.4 results](../docs/foundational/phase3b4/08-results.md)',r'\path{docs/foundational/phase3b4/08-results.md}')
+assert mt==ts,'section semantic/text parity'
+ma=m.split('**Abstract.** ',1)[1].split('\n---',1)[0].strip();ta=t.split('\\begin{abstract}\n',1)[1].split('\\end{abstract}',1)[0].strip();assert ma==ta,'abstract parity'
+mc=m.split('## 8. Conclusion: ALAN\'s Contributions and Open Mathematical Problems\n',1)[1].split('\n---',1)[0].strip();tc=t.split('\\section{Conclusion}\n',1)[1].split('\\bibliographystyle',1)[0].strip();assert mc==tc,'conclusion parity'
+for ext,start,end in [('md','### 6.11','\n---'),('tex','\\subsection{Request-Bound Delegation:','\\section{Conclusion}')]:
+ cur=m if ext=='md' else t;before=old(R,f'paper/alan-dissertation.{ext}',base)
+ pre=before.split(start,1)[1].split(end,1)[0].strip()
+ endnow=end if ext=='md' else '\\subsection{Explicit Request Binding'
+ post=cur.split(start,1)[1].split(endnow,1)[0].strip();assert pre==post,ext+' v1 history'
+out['checks']['edited_md_tex_semantics']='Abstract, §6.12 and Conclusion exactly aligned after markup conversion; §6.11 byte-preserved'
+links=[]
+for f in [P/'08-results.md',P/'09-reviews.md',U/'docs/qualification/phase3b4/README.md',U/'examples/delegation/README.md']:
+ for target in re.findall(r'\]\(([^)]+)\)',f.read_text()):
+  if '://' in target or target.startswith('#'):continue
+  path=target.split('#')[0];assert (f.parent/path).exists(),(f,target);links.append([str(f),target])
+assert (R/'paper'/ '../docs/foundational/phase3b4/08-results.md').exists()
+out['checks']['new_local_links']=len(links)+1
+summary=json.loads((E/'verdict-summary.json').read_text())
+for mode in ['normal','race']:
+ d=summary[mode];expected={'Cases':81,'RawEvaluated':80,'Captures':163,'PrincipalComplete':40,'SupportedModelProjection':33,'Contacts':89,'Applications':89,'AcknowledgedLosses':11}
+ assert all(d[k]==v for k,v in expected.items());out['checks'][mode+'_counts']=expected
+ with tarfile.open(E/f'independent-{mode}.tar.gz') as archive:
+  p2=json.load(archive.extractfile('P02-v2.json'));p1=json.load(archive.extractfile('P02-v1.json'))
+  assert p2['Final']['Valid'] and p2['Final']['Custody']['Complete'];assert p2['External']['Contacts']==p2['External']['Applications']==2
+  assert p1['Final']['Valid'] and not p1['Final']['Custody']['Complete'];assert p1['External']['Contacts']==0
+out['checks']['actual_P02_final_evidence']='both modes, v2 valid/complete/two contacts and applications; v1 valid/incomplete/zero contact'
+for root in [R,U]:
+ c=subprocess.run(['git','diff','--check'],cwd=root,capture_output=True,text=True);assert c.returncode==0,c.stdout+c.stderr
+out['checks']['tracked_diff_check']='pass both repositories'
+Path('/tmp/alan-task6-validation.json').write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
