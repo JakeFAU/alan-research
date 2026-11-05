@@ -1,0 +1,46 @@
+gate runtime-ordinary verified
+gate runtime-integration verified
+gate runtime-integration-race verified
+gate runtime-mod-verify verified
+gate runtime-mod-tidy verified
+gate runtime-build verified
+gate runtime-vet verified
+gate runtime-vet-integration verified
+gate runtime-staticcheck verified
+gate runtime-staticcheck-integration verified
+gate runtime-format verified
+gate runtime-promoted-normal verified
+gate runtime-promoted-race verified
+gate research-oracle-normal verified
+gate research-oracle-race verified
+normal {'cases': 81, 'stores': 80, 'captures': 163, 'principal_complete': 40, 'supported_C': 33, 'contacts': 89, 'applications': 89, 'acknowledged_losses': 11}
+normal P02-v1 c 2 e ["a",1,4,0] first False authority_request_not_admitted gate []
+normal P02-v2 c 2 e ["a",1,4,0] first True authorized gate [(True, 'authorized')]
+normal P02 exact causal orders [3, 4, 5, 14, 16, 17, 18]
+normal endpoint a 9 1
+normal endpoint b 4 1
+normal P10 c 2 e ["a",1,5,0] first True authorized gate [(True, 'authorized')]
+normal N02 c 3 e ["a",1,2,0] first False authority_request_not_selected gate []
+normal N06 c 2 e ["a",1,4,0] first True authorized gate [(False, 'authority_revoked')]
+normal C07 c 2 e ["a",1,7,0] first True authorized gate [(True, 'authorized')]
+normal C07 acknowledged losses [(88618, 'stopped-01'), (88622, 'stopped-02')]
+normal C07 renewal owner-01/post-open [(1, 2), (1, 2)]
+normal C07 renewal owner-02/post-open [(2, 3), (2, 3)]
+normal C07 renewal final-owner/post-open [(3, 4), (3, 4)]
+normal promotions [('K02-promoted-1897141200-promotion.json', True), ('K01-promoted-2551345226-promotion.json', True)]
+race {'cases': 81, 'stores': 80, 'captures': 163, 'principal_complete': 40, 'supported_C': 33, 'contacts': 89, 'applications': 89, 'acknowledged_losses': 11}
+race P02-v1 c 2 e ["a",1,4,0] first False authority_request_not_admitted gate []
+race P02-v2 c 2 e ["a",1,4,0] first True authorized gate [(True, 'authorized')]
+race P02 exact causal orders [3, 4, 5, 14, 16, 17, 18]
+race endpoint a 9 1
+race endpoint b 4 1
+race P10 c 2 e ["a",1,5,0] first True authorized gate [(True, 'authorized')]
+race N02 c 3 e ["a",1,2,0] first False authority_request_not_selected gate []
+race N06 c 2 e ["a",1,4,0] first True authorized gate [(False, 'authority_revoked')]
+race C07 c 2 e ["a",1,7,0] first True authorized gate [(True, 'authorized')]
+race C07 acknowledged losses [(93391, 'stopped-01'), (93392, 'stopped-02')]
+race C07 renewal owner-01/post-open [(1, 2), (1, 2)]
+race C07 renewal owner-02/post-open [(2, 3), (2, 3)]
+race C07 renewal final-owner/post-open [(3, 4), (3, 4)]
+race promotions [('K01-promoted-2941469369-promotion.json', True), ('K02-promoted-1480695737-promotion.json', True)]
+All scoped evidence assertions passed; no suite rerun or SQLite open.

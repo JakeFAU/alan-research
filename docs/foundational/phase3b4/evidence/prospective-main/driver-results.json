@@ -1,0 +1,62 @@
+[
+  {
+    "name": "runtime-ordinary",
+    "exit": 0
+  },
+  {
+    "name": "runtime-integration",
+    "exit": 0
+  },
+  {
+    "name": "runtime-integration-race",
+    "exit": 0
+  },
+  {
+    "name": "runtime-mod-verify",
+    "exit": 0
+  },
+  {
+    "name": "runtime-mod-tidy",
+    "exit": 0
+  },
+  {
+    "name": "runtime-build",
+    "exit": 0
+  },
+  {
+    "name": "runtime-vet",
+    "exit": 0
+  },
+  {
+    "name": "runtime-vet-integration",
+    "exit": 0
+  },
+  {
+    "name": "runtime-staticcheck",
+    "exit": 0
+  },
+  {
+    "name": "runtime-staticcheck-integration",
+    "exit": 0
+  },
+  {
+    "name": "runtime-format",
+    "exit": 0
+  },
+  {
+    "name": "runtime-promoted-normal",
+    "exit": 0
+  },
+  {
+    "name": "runtime-promoted-race",
+    "exit": 0
+  },
+  {
+    "name": "research-oracle-normal",
+    "exit": 0
+  },
+  {
+    "name": "research-oracle-race",
+    "exit": 0
+  }
+]

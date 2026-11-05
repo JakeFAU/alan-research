@@ -1,0 +1,56 @@
+{
+  "tools": {
+    "go": {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit": 0,
+      "output": "go version go1.27.3 darwin/arm64\n"
+    },
+    "staticcheck": {
+      "argv": [
+        "staticcheck",
+        "-version"
+      ],
+      "exit": 0,
+      "output": "staticcheck 2026.2.2 (0.8.2)\n"
+    },
+    "git": {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "git version 2.54.0 (Apple Git-157)\n"
+    },
+    "python": {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "Python 3.9.6\n"
+    },
+    "platform": {
+      "argv": [
+        "uname",
+        "-a"
+      ],
+      "exit": 0,
+      "output": "Darwin Jacobs-Mac-mini.local 27.2.0 Darwin Kernel Version 27.2.0: Wed Oct 14 23:47:07 PDT 2026; root:xnu-13432.41.4~25/RELEASE_ARM64_T8132 arm64\n"
+    }
+  },
+  "old_readers": {
+    "pre-v1": {
+      "path": "/tmp/alan-phase3b4-pre-v1-reader/alan",
+      "sha256": "19f1dc237dcd137369b951b6dbc7c596a63367c2b21447d4611b8309b6822111",
+      "matches_original": true
+    },
+    "v1": {
+      "path": "/tmp/alan-phase3b4-task1/compatibility/old-reader.test",
+      "sha256": "f08fc613f6411adb005adb9bf67409bb456eff69cd39599fa9652957e1a1db36",
+      "matches_original": true
+    }
+  }
+}
