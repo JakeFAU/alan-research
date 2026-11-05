@@ -55,13 +55,13 @@ func RawMutations(original []byte) []RawMutation {
 			}
 			raw.Tables["lifecycle_results"] = []Row{}
 		case "forged-grant-origin":
-			r := raw.Tables["lifecycle_results"][0]
+			r, _ := mutationGrant(raw)
 			q := decodeCell[LifecycleRequest](r, "descriptor")
 			m.OriginalIDs = append(m.OriginalIDs, q.Intent.ID)
 			q.Intent.Run.Subject = "a"
 			update("lifecycle_results", r, "descriptor", q)
 		case "altered-recipient":
-			r := raw.Tables["lifecycle_results"][0]
+			r, _ := mutationGrant(raw)
 			q := decodeCell[LifecycleRequest](r, "descriptor")
 			var claim Claim
 			if strictJSON([]byte(q.Intent.Payload["claim"].Text), &claim) != nil {
@@ -208,8 +208,9 @@ func RawMutations(original []byte) []RawMutation {
 func mutationPrerequisite(name string, raw RawSnapshot) string {
 	switch name {
 	case "missing-grant", "forged-grant-origin", "altered-recipient":
-		if len(raw.Tables["lifecycle_results"]) == 0 {
-			return "missing lifecycle result"
+		_, diagnostic := mutationGrant(raw)
+		if diagnostic != "" {
+			return diagnostic
 		}
 	case "equal-payload-result-substitution":
 		if len(raw.Tables["external_receipts"]) < 2 {
@@ -238,4 +239,26 @@ func mutationPrerequisite(name string, raw RawSnapshot) string {
 		return "missing delegated external attempt"
 	}
 	return ""
+}
+
+func mutationGrant(raw RawSnapshot) (Row, string) {
+	for _, r := range raw.Tables["lifecycle_results"] {
+		var text string
+		if strictJSON(r["descriptor"], &text) != nil {
+			return nil, "malformed lifecycle descriptor cell"
+		}
+		var q LifecycleRequest
+		if canonical([]byte(text), &q) != nil {
+			return nil, "malformed lifecycle request"
+		}
+		if q.Operation != "DelegateAuthority" {
+			continue
+		}
+		var claim Claim
+		if canonical([]byte(q.Intent.Payload["claim"].Text), &claim) != nil {
+			return nil, "malformed delegation claim"
+		}
+		return r, ""
+	}
+	return nil, "missing applicable delegation claim"
 }
