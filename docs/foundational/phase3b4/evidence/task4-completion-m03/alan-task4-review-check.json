@@ -1,0 +1,2969 @@
+[
+  {
+    "archive_files": 11053,
+    "archive_hashes": "verified all"
+  },
+  {
+    "runtime_source_files": 327,
+    "head": "2b8f6e19a013d2b918146a7193451843004d2f86"
+  },
+  {
+    "command": "final-campaign-normal",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B4Campaign"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t23.495s"
+  },
+  {
+    "command": "final-campaign-race",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=15m",
+      "-race",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B4Campaign"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t232.860s"
+  },
+  {
+    "command": "evidence-fixed-normal",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=5m",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B4Campaign(Controlled|Lifecycle|ActualResultLaundering|GenericUnknown|AppliedUnknownRevoked)$"
+    ],
+    "source_differences": [],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t4.881s"
+  },
+  {
+    "command": "evidence-fixed-race",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "-race",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B4Campaign(Controlled|Lifecycle|ActualResultLaundering|GenericUnknown|AppliedUnknownRevoked)$"
+    ],
+    "source_differences": [],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t32.524s"
+  },
+  {
+    "command": "final-promoted-normal",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=5m",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "-run",
+      "^TestPhase3B4PromotedPublicParents$"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/executor\t0.461s"
+  },
+  {
+    "command": "final-promoted-race",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=5m",
+      "-race",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "-run",
+      "^TestPhase3B4PromotedPublicParents$"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/executor\t5.597s"
+  },
+  {
+    "command": "focused-runtime-race",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=10m",
+      "-race",
+      "-tags",
+      "integration",
+      "./internal/executor",
+      "./examples/delegation",
+      "./runtime",
+      "-run",
+      "^(TestRequestBinding|TestRequestAuthority|TestPhase3B4Authored|Test.*Receipt|Test.*Custody|Test.*Recover)"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_auxiliary_test.go",
+      "internal/durabletest/phase3b4_campaign_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go",
+      "internal/durabletest/phase3b4_cuts_test.go",
+      "internal/durabletest/phase3b4_evidence_test.go",
+      "internal/durabletest/phase3b4_negative_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/executor\t173.325s\nok  \tgithub.com/JakeFAU/alan/examples/delegation\t19.638s\nok  \tgithub.com/JakeFAU/alan/runtime\t7.840s"
+  },
+  {
+    "command": "prior-integration",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=15m",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B3(Reciprocal|Cartesian|GenericUnknown|AppliedUnknownRevoked|ActualResultLaundering|SerialSerial)"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_auxiliary_test.go",
+      "internal/durabletest/phase3b4_campaign_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go",
+      "internal/durabletest/phase3b4_cuts_test.go",
+      "internal/durabletest/phase3b4_evidence_test.go",
+      "internal/durabletest/phase3b4_negative_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t15.586s"
+  },
+  {
+    "command": "prior-race",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-timeout=15m",
+      "-race",
+      "-tags",
+      "integration",
+      "./internal/durabletest",
+      "-run",
+      "^TestPhase3B3(Reciprocal|Cartesian|GenericUnknown|AppliedUnknownRevoked|ActualResultLaundering|SerialSerial)"
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_auxiliary_test.go",
+      "internal/durabletest/phase3b4_campaign_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go",
+      "internal/durabletest/phase3b4_cuts_test.go",
+      "internal/durabletest/phase3b4_evidence_test.go",
+      "internal/durabletest/phase3b4_negative_test.go"
+    ],
+    "log": "ok  \tgithub.com/JakeFAU/alan/internal/durabletest\t128.503s"
+  },
+  {
+    "command": "evidence-fixed-staticcheck",
+    "argv": [
+      "staticcheck",
+      "-tags",
+      "integration",
+      "./internal/durabletest/...",
+      "./internal/executor/...",
+      "./examples/delegation/..."
+    ],
+    "source_differences": [],
+    "log": ""
+  },
+  {
+    "command": "final-vet",
+    "argv": [
+      "go",
+      "vet",
+      "-tags",
+      "integration",
+      "./internal/durabletest/...",
+      "./internal/executor/...",
+      "./examples/delegation/..."
+    ],
+    "source_differences": [
+      "internal/durabletest/phase3b4_ancillary_test.go",
+      "internal/durabletest/phase3b4_controlled_test.go"
+    ],
+    "log": ""
+  },
+  {
+    "mode": "normal",
+    "case": "P01-v1",
+    "directory": "normal/P01-v1-2974762232",
+    "case_hash": "dc509984de79ab1405190dd6ae0d55c444a5ea4abc93bf016299195dc175050a",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        3,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P01-v2",
+    "directory": "normal/P01-v2-2144602055",
+    "case_hash": "1a6815bb7036888fd80402b6dd8a2b89bc513d3945246fe5c5aa3976a7ac117f",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        3,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P02-v2",
+    "directory": "normal/P02-v2-2085529256",
+    "case_hash": "0f4e546004dea8c16285f92cf655b20c636dea9a5af1a4b0ec9e1cae9b9c379f",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P04",
+    "directory": "normal/P04-43097959",
+    "case_hash": "f87d939c801f3132fe3e639d3c9d58abccee8fbe5f196ff36f1124a8467dd2dd",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P05",
+    "directory": "normal/P05-1771727614",
+    "case_hash": "16c7637f710c8966c0612996be24e93ce391bae87d73f3c836964d51bc783f2d",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P06",
+    "directory": "normal/P06-569789317",
+    "case_hash": "d681307fbab6ef1573e3f6950744adad0f01bba03284084d8b33c17d2f878a1d",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P07",
+    "directory": "normal/P07-3479035655",
+    "case_hash": "344b5026391b3d43981a3bcb4d32b129a228915b60ceaed74c3fb5b630c77a2e",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P08",
+    "directory": "supplemental-normal/P08-1424539039",
+    "case_hash": "e72fb819f4eb4e9dd29441656e5580e9af54f5b976ae0498f7d6e41de2676643",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P09",
+    "directory": "supplemental-normal/P09-2182430704",
+    "case_hash": "3ee62d8a55a71aeb918472c7ea10830a3b297e4803af2a8ae63e65bd7d289bb1",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P10",
+    "directory": "normal/P10-3612234686",
+    "case_hash": "0a7716a5e043e74e8167b9d69eed143563a6d270d5231b0688d505684d7cd5db",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        7
+      ],
+      [
+        "[\"a\",1,1,0]",
+        9,
+        "[\"b\",1,10,0]",
+        11,
+        "[\"b\",1,13,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P11",
+    "directory": "normal/P11-2497080574",
+    "case_hash": "72bf1b2c92afbda4bffc4d705cb52a21a73fd9f0dd3de04f85c94aa308a06d01",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "auxiliary-serviced-equal-total",
+    "directory": "normal/auxiliary-serviced-equal-total-2020771393",
+    "case_hash": "5450880868e7f5c4125e6fe476b4d16d3e59be31ab8b730a0c0d4e2253e8a19b",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,16,0]",
+        11
+      ],
+      [
+        "[\"a\",1,1,0]",
+        13,
+        "[\"b\",1,14,0]",
+        15,
+        "[\"b\",1,17,0]",
+        18
+      ]
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P10",
+    "q_consumed": 2,
+    "witness": {
+      "Allowed": true,
+      "Reason": "authorized",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2
+    },
+    "q2_consumed": 4
+  },
+  {
+    "mode": "normal",
+    "case": "N01",
+    "q_consumed": null,
+    "witness": {
+      "Allowed": false,
+      "Reason": "authority_request_not_selected",
+      "RequestObservationID": "",
+      "RequestConsumedSequence": 0
+    },
+    "q2_consumed": 3
+  },
+  {
+    "mode": "normal",
+    "case": "N02",
+    "q_consumed": 3,
+    "witness": {
+      "Allowed": false,
+      "Reason": "authority_request_not_selected",
+      "RequestObservationID": "",
+      "RequestConsumedSequence": 0
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "N03",
+    "immutable_attempt": "authority_grant_missing",
+    "decision_outputs": [
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 1,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "050492ce174f85f98b3838d64fc20379095583e05dcdada2419198345f14abca",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "050492ce174f85f98b3838d64fc20379095583e05dcdada2419198345f14abca",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "52a8f376f17a7a23b3d9ccd270b5a5d37d471a1ec15baa0c5841994b856304f3",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "52a8f376f17a7a23b3d9ccd270b5a5d37d471a1ec15baa0c5841994b856304f3",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "050492ce174f85f98b3838d64fc20379095583e05dcdada2419198345f14abca",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "050492ce174f85f98b3838d64fc20379095583e05dcdada2419198345f14abca",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "52a8f376f17a7a23b3d9ccd270b5a5d37d471a1ec15baa0c5841994b856304f3",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "52a8f376f17a7a23b3d9ccd270b5a5d37d471a1ec15baa0c5841994b856304f3",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N04",
+    "immutable_attempt": "authority_request_not_selected",
+    "decision_outputs": [
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 2,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "05806e313c444a7a24f0894bc14b832cb7535b27477abf49bf196018dcba80c3",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "05806e313c444a7a24f0894bc14b832cb7535b27477abf49bf196018dcba80c3",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "92ec381df6acb8514170af1d35ee7e67ea70d6ef402a9e1df2521f972431926d",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "92ec381df6acb8514170af1d35ee7e67ea70d6ef402a9e1df2521f972431926d",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "05806e313c444a7a24f0894bc14b832cb7535b27477abf49bf196018dcba80c3",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "05806e313c444a7a24f0894bc14b832cb7535b27477abf49bf196018dcba80c3",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "92ec381df6acb8514170af1d35ee7e67ea70d6ef402a9e1df2521f972431926d",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "92ec381df6acb8514170af1d35ee7e67ea70d6ef402a9e1df2521f972431926d",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N06",
+    "authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "db757f3c4cf413191cf5c4a8b11ac044b9b3c5ec81b52f06efa3f24307312dba",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:54650/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,2,0]"
+      },
+      "RootID": "b55969a565057750e4576a5da37312dd16d8624ba768fd109d0bb8ab108e178e",
+      "ServingRootID": "af1b5cd701da017fa3ae16ff62346f2071dc037d930f3169b5dfbb3481cb66ff",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,1,0]",
+      "ServiceOperationID": "[\"a\",1,4,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2,
+      "GrantDecisionSequence": 1
+    },
+    "gate": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "db757f3c4cf413191cf5c4a8b11ac044b9b3c5ec81b52f06efa3f24307312dba",
+      "Ordinal": 1,
+      "Source": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Epoch": 1,
+        "Sequence": 4,
+        "Revision": 1
+      },
+      "AttemptDigest": "0347cc41fc2ad4e913660d8be80eadeb0995e66220de0e00b8e59158e42a1b5e",
+      "Allowed": false,
+      "Reason": "authority_revoked"
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "C08",
+    "authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "83f0e796211158063cd2dd90befe057257257c627f55e720a337a56e201dd251",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:54789/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,2,0]"
+      },
+      "RootID": "6055bca5f008e9338c12fd7bc0044b5641650b646aed8c8c4224272b2f2bf4f3",
+      "ServingRootID": "c100c946d7133aebb79e4a2bde9f74c27f17ba34337bf0bda6778d2c32e68a33",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,1,0]",
+      "ServiceOperationID": "[\"a\",1,4,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2,
+      "GrantDecisionSequence": 1
+    },
+    "gate": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "83f0e796211158063cd2dd90befe057257257c627f55e720a337a56e201dd251",
+      "Ordinal": 1,
+      "Source": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Epoch": 3,
+        "Sequence": 4,
+        "Revision": 1
+      },
+      "AttemptDigest": "bd68f046f9e908f81485be1349658440f087823ad1af22c6636abc918d8ae623",
+      "Allowed": false,
+      "Reason": "authority_revoked"
+    }
+  },
+  {
+    "mode": "normal",
+    "case": "C01",
+    "directory": "normal/C01-988119662",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46639,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C01",
+          "Token": "phase2-runner-1793835761498338000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC014031066201/003/runtime.sqlite",
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "a",
+          "PID": 46639,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            1
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C02",
+    "directory": "normal/C02-52022291",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46644,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C02",
+          "Token": "phase2-runner-1793835762104904000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC023604901610/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 46644,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C03",
+    "directory": "normal/C03-1098224101",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46654,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C03",
+          "Token": "phase2-runner-1793835762754360000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC031093928599/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 46654,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 6,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            6
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C04",
+    "directory": "normal/C04-4001208655",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46659,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C04",
+          "Token": "phase2-runner-1793835763499197000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC041091698195/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 46659,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C05",
+    "directory": "normal/C05-1663032320",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46665,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C05",
+          "Token": "phase2-runner-1793835764132957000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC051279600333/003/runtime.sqlite",
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "a",
+          "PID": 46665,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C06",
+    "directory": "normal/C06-440427550",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46670,
+        "ack": {
+          "AuthorityAdmissionOrdinal": 1,
+          "Scenario": "TestPhase3B4CampaignCuts/C06",
+          "Token": "phase2-runner-1793835764784156000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC062663559560/003/runtime.sqlite",
+          "Boundary": "external.settled",
+          "Phase": "post-record",
+          "Subject": "a",
+          "PID": 46670,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C07",
+    "directory": "normal/C07-354626756",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "owner-02/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ],
+      [
+        "stopped-02",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            4
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46675,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C07",
+          "Token": "phase2-runner-1793835765506289000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC071566292247/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 46675,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      },
+      {
+        "pid": 46676,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C07",
+          "Token": "phase2-runner-1793835765576199000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC071566292247/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 46676,
+          "Generation": 1,
+          "Epoch": 3,
+          "Sequence": 6,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            6
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "C08",
+    "directory": "normal/C08-3400828548",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 46681,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C08",
+          "Token": "phase2-runner-1793835766215782000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC081803539203/003/runtime.sqlite",
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "a",
+          "PID": 46681,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            8
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P01-v1",
+    "directory": "race/P01-v1-2742456215",
+    "case_hash": "354c1a9a68de0839fcfe0b6549893313b5d5a41eeea8849c3f1bf6fb3154b16a",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        3,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P01-v2",
+    "directory": "race/P01-v2-33633411",
+    "case_hash": "6e94ab12f4188313feff24cdfd018c594150bd38ce818a6b6e64884371d8f3f2",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        3,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P02-v2",
+    "directory": "race/P02-v2-104187925",
+    "case_hash": "c611b04e698224a480913577a06a0a29c4ef1eb3630fc9fa886d1ebe7c8307b2",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P04",
+    "directory": "race/P04-3196923053",
+    "case_hash": "f2774e281b8e00c2abf355e760bbdc76c873d96327fc50209f37be114a2efe86",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P05",
+    "directory": "race/P05-2280727982",
+    "case_hash": "d15641b567fc25b1ed17e0bbd704d12d8f647ca8c1ad819ec44b91c0685346c7",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P06",
+    "directory": "race/P06-3944511733",
+    "case_hash": "0ff107dfaca4a88d66207731f641781b944e47ac4ab36a8dd2f2f9e36dc4d0df",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P07",
+    "directory": "race/P07-635663461",
+    "case_hash": "df2a2f5235b302cefdf3d96ef1fb70084158ca2f7ff6728c658a21d0850e6fb0",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,7,0]",
+        8,
+        "[\"a\",1,10,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        11
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P08",
+    "directory": "supplemental-race/P08-2765635529",
+    "case_hash": "f937fb156f8e0b918d4b45ca84e4f7c3048af08510feacdac8927af4a854c381",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P09",
+    "directory": "supplemental-race/P09-3584416241",
+    "case_hash": "ebb329624034e6ed54797f179bca1c2d864c0600ae84fc146751560ec349e876",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,4,0]",
+        5,
+        "[\"a\",1,7,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        8
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P10",
+    "directory": "race/P10-968696046",
+    "case_hash": "31a8fa37502a30f300c18bea0d4047892c59529d9031917b92441e405f512ab1",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        7
+      ],
+      [
+        "[\"a\",1,1,0]",
+        9,
+        "[\"b\",1,10,0]",
+        11,
+        "[\"b\",1,13,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P11",
+    "directory": "race/P11-2674579630",
+    "case_hash": "0d3088557abe57399a39206b644d39c4559e3d86a063d86f9641d962f6ef4116",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,8,0]",
+        6
+      ],
+      [
+        "[\"a\",1,1,0]",
+        8,
+        "[\"b\",1,9,0]",
+        10,
+        "[\"b\",1,12,0]",
+        9
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "auxiliary-serviced-equal-total",
+    "directory": "race/auxiliary-serviced-equal-total-3743323109",
+    "case_hash": "20a1dbd09a9495cc6ff33eb96843894b1525e3783b81defb25258acf99370114",
+    "chains": [
+      [
+        "[\"b\",1,1,0]",
+        2,
+        "[\"a\",1,5,0]",
+        6,
+        "[\"a\",1,16,0]",
+        11
+      ],
+      [
+        "[\"a\",1,1,0]",
+        13,
+        "[\"b\",1,14,0]",
+        15,
+        "[\"b\",1,17,0]",
+        18
+      ]
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P10",
+    "q_consumed": 2,
+    "witness": {
+      "Allowed": true,
+      "Reason": "authorized",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2
+    },
+    "q2_consumed": 4
+  },
+  {
+    "mode": "race",
+    "case": "N01",
+    "q_consumed": null,
+    "witness": {
+      "Allowed": false,
+      "Reason": "authority_request_not_selected",
+      "RequestObservationID": "",
+      "RequestConsumedSequence": 0
+    },
+    "q2_consumed": 3
+  },
+  {
+    "mode": "race",
+    "case": "N02",
+    "q_consumed": 3,
+    "witness": {
+      "Allowed": false,
+      "Reason": "authority_request_not_selected",
+      "RequestObservationID": "",
+      "RequestConsumedSequence": 0
+    }
+  },
+  {
+    "mode": "race",
+    "case": "N03",
+    "immutable_attempt": "authority_grant_missing",
+    "decision_outputs": [
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 1,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "900cb32d8d234b7acc51ccf0d8072ee47a36cc4fb6d8c0441a5fd1012b183491",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "900cb32d8d234b7acc51ccf0d8072ee47a36cc4fb6d8c0441a5fd1012b183491",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "db5a8a649f715c76eb3d2df1b91a5deb8add1e197d548e5f0714950fa1510768",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "db5a8a649f715c76eb3d2df1b91a5deb8add1e197d548e5f0714950fa1510768",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "900cb32d8d234b7acc51ccf0d8072ee47a36cc4fb6d8c0441a5fd1012b183491",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "900cb32d8d234b7acc51ccf0d8072ee47a36cc4fb6d8c0441a5fd1012b183491",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "db5a8a649f715c76eb3d2df1b91a5deb8add1e197d548e5f0714950fa1510768",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "db5a8a649f715c76eb3d2df1b91a5deb8add1e197d548e5f0714950fa1510768",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N04",
+    "immutable_attempt": "authority_request_not_selected",
+    "decision_outputs": [
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 2,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "166b186c8083f1d33f597693e7c7b5fc741bed48daa7e2230ec7bfff637f65d1",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "166b186c8083f1d33f597693e7c7b5fc741bed48daa7e2230ec7bfff637f65d1",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "64adeaffd02ef3e8adcf06cfc8d929737c79ae3987052f98b95ef36d5c218a55",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "64adeaffd02ef3e8adcf06cfc8d929737c79ae3987052f98b95ef36d5c218a55",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      {
+        "ControlledStop": true,
+        "Error": "controlled boundary before next ordinary commit",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 0,
+          "Quiescent": false,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [],
+          "PendingDeliveries": [],
+          "UnknownExternal": [],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "166b186c8083f1d33f597693e7c7b5fc741bed48daa7e2230ec7bfff637f65d1",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "166b186c8083f1d33f597693e7c7b5fc741bed48daa7e2230ec7bfff637f65d1",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "64adeaffd02ef3e8adcf06cfc8d929737c79ae3987052f98b95ef36d5c218a55",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "64adeaffd02ef3e8adcf06cfc8d929737c79ae3987052f98b95ef36d5c218a55",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N06",
+    "authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "5a2906fa549c6fb80c4320d55c3a0b3607850e3813adf90d0d179abaa235bcc6",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:54969/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,2,0]"
+      },
+      "RootID": "ca1dff0111ed2a5415371a36fffacbbdf8308134775788d1e821f8244e203602",
+      "ServingRootID": "e400c949fffb2d8a2b7cabd5acdb6528ee95c78017ea88fed6469ed3d8cc5b39",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,1,0]",
+      "ServiceOperationID": "[\"a\",1,4,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2,
+      "GrantDecisionSequence": 1
+    },
+    "gate": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "5a2906fa549c6fb80c4320d55c3a0b3607850e3813adf90d0d179abaa235bcc6",
+      "Ordinal": 1,
+      "Source": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Epoch": 1,
+        "Sequence": 4,
+        "Revision": 1
+      },
+      "AttemptDigest": "8e2c7848a3d58fe420ad2bbc2fed79dfb227eee09485e46f90e200d0f2e8fc07",
+      "Allowed": false,
+      "Reason": "authority_revoked"
+    }
+  },
+  {
+    "mode": "race",
+    "case": "C08",
+    "authority": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "1c15e542893adea9049d8530630b0ff7f712de772ee240ffd6884fa977057fb3",
+      "Use": {
+        "Version": "alan/request-authority/v2",
+        "Path": "delegated",
+        "Root": {
+          "Run": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "RootRun": {
+            "Subject": "b",
+            "Generation": 1
+          },
+          "Permission": {
+            "Kind": "external",
+            "Source": "b",
+            "Target": "http://127.0.0.1:55198/apply",
+            "Operation": "apply",
+            "Revision": 1,
+            "Obligation": "ba-service"
+          }
+        },
+        "GrantID": "[\"b\",1,2,0]"
+      },
+      "RootID": "a5af0234f54d162627c8ac979c5dbd9b15e58fd5c7817e63acd8aafb23c6e5f6",
+      "ServingRootID": "489d4371affda70dd16d88ee04ca27954826386e79f6776b3bd4238e7565e03d",
+      "Allowed": true,
+      "Reason": "authorized",
+      "OriginalRequestID": "[\"b\",1,1,0]",
+      "ServiceOperationID": "[\"a\",1,4,0]",
+      "RequestObservationID": "[\"observation\",\"message\",\"[\\\"b\\\",1,1,0]\"]",
+      "RequestConsumedSequence": 2,
+      "GrantDecisionSequence": 1
+    },
+    "gate": {
+      "Version": "alan/request-authority/v2",
+      "Namespace": "1c15e542893adea9049d8530630b0ff7f712de772ee240ffd6884fa977057fb3",
+      "Ordinal": 1,
+      "Source": {
+        "Run": {
+          "Subject": "a",
+          "Generation": 1
+        },
+        "Epoch": 3,
+        "Sequence": 4,
+        "Revision": 1
+      },
+      "AttemptDigest": "2cbd685a35209ba9fb2b999f204572641af7e3cc14cd257a3b2503cd07b4e2d7",
+      "Allowed": false,
+      "Reason": "authority_revoked"
+    }
+  },
+  {
+    "mode": "race",
+    "case": "C01",
+    "directory": "race/C01-2001103482",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47426,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C01",
+          "Token": "phase2-runner-1793835937133328000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC013695807650/003/runtime.sqlite",
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "a",
+          "PID": 47426,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            1
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C02",
+    "directory": "race/C02-1122418703",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47432,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C02",
+          "Token": "phase2-runner-1793835941580113000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC02414958163/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 47432,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C03",
+    "directory": "race/C03-1332184848",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47437,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C03",
+          "Token": "phase2-runner-1793835946042376000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC033998705593/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 47437,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 6,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            6
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C04",
+    "directory": "race/C04-2504673923",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47444,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C04",
+          "Token": "phase2-runner-1793835951110362000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC04778184804/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 47444,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C05",
+    "directory": "race/C05-3560964965",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47461,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C05",
+          "Token": "phase2-runner-1793835955919830000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC051913626238/003/runtime.sqlite",
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "a",
+          "PID": 47461,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C06",
+    "directory": "race/C06-110771944",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47466,
+        "ack": {
+          "AuthorityAdmissionOrdinal": 1,
+          "Scenario": "TestPhase3B4CampaignCuts/C06",
+          "Token": "phase2-runner-1793835961298713000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC06228567042/003/runtime.sqlite",
+          "Boundary": "external.settled",
+          "Phase": "post-record",
+          "Subject": "a",
+          "PID": 47466,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C07",
+    "directory": "race/C07-2362254845",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "owner-02/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ],
+      [
+        "stopped-02",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            4
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47491,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C07",
+          "Token": "phase2-runner-1793835967630663000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC07323212816/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 47491,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 2,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            1
+          ]
+        ],
+        "grant_exists": false,
+        "service_exists": false
+      },
+      {
+        "pid": 47492,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C07",
+          "Token": "phase2-runner-1793835967989347000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC07323212816/003/runtime.sqlite",
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "a",
+          "PID": 47492,
+          "Generation": 1,
+          "Epoch": 3,
+          "Sequence": 6,
+          "Intent": "",
+          "Attempt": "",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            6
+          ],
+          [
+            "b",
+            5
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": false
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "C08",
+    "directory": "race/C08-642906865",
+    "pairs": [
+      [
+        "initial",
+        "owner-01/post-open",
+        [
+          [
+            "a",
+            2
+          ],
+          [
+            "b",
+            2
+          ]
+        ]
+      ],
+      [
+        "stopped-01",
+        "final-owner/post-open",
+        [
+          [
+            "a",
+            3
+          ],
+          [
+            "b",
+            3
+          ]
+        ]
+      ]
+    ],
+    "kills": [
+      {
+        "pid": 47500,
+        "ack": {
+          "Scenario": "TestPhase3B4CampaignCuts/C08",
+          "Token": "phase2-runner-1793835973125261000",
+          "Store": "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/TestPhase3B4CampaignCutsC081713165355/003/runtime.sqlite",
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "a",
+          "PID": 47500,
+          "Generation": 1,
+          "Epoch": 2,
+          "Sequence": 4,
+          "Intent": "[\"a\",1,4,0]",
+          "Attempt": "[\"authorization\",\"[\\\"a\\\",1,4,0]\"]",
+          "InFlight": null
+        },
+        "sequences": [
+          [
+            "a",
+            4
+          ],
+          [
+            "b",
+            8
+          ]
+        ],
+        "grant_exists": true,
+        "service_exists": true
+      }
+    ]
+  },
+  {
+    "selected_cases": {
+      "normal": 80,
+      "race": 80
+    }
+  }
+]

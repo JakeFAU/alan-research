@@ -1,0 +1,13 @@
+{
+  "archived_members_verified": 94,
+  "completion_source_files": 328,
+  "old_package_changed_only": [
+    "README.md",
+    "manifest.json",
+    "report.md"
+  ],
+  "original_source_files_unchanged": 327,
+  "red_source_reconstruction_matches": true,
+  "scope": "mechanical archive/source preservation only, not independent oracle",
+  "scratch_report_untracked": true
+}
