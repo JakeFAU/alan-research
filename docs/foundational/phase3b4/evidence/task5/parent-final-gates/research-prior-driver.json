@@ -1,0 +1,26 @@
+{
+  "group": "research-prior",
+  "scope": "Driver expected-status accounting is not a claim that inherited non-green gates passed",
+  "jobs": [
+    {
+      "name": "research-prior-reciprocal-normal",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-prior-reciprocal-race",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-prior-authority-normal",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    },
+    {
+      "name": "research-prior-authority-race",
+      "recorder_exit": 0,
+      "expected_command_exit": 0
+    }
+  ]
+}

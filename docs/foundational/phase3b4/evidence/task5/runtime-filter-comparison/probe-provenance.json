@@ -1,0 +1,7 @@
+{
+  "runtime_commit": "fc60391f48b46a8c8635afc46882db8338b6c93b",
+  "all_frozen_runtime_files_match": true,
+  "probe": "internal/executor/phase3b4_independent_filter_test.go",
+  "probe_sha256": "2aac78f47faff142eb09e3d93fe65a5c1cef4ccfd9051c1ed4bb80f03cbb94b3",
+  "scope": "supplemental direct reducer comparison in isolated source copy; independent oracle has no runtime imports"
+}

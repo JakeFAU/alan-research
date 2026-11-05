@@ -1,0 +1,42 @@
+[
+  {
+    "Mutant": "M01",
+    "Files": 557,
+    "BeforeAfterSourceEqual": true,
+    "OnlyChangedFromFrozen": [
+      "research/delegationcorrespondence/binding.go"
+    ]
+  },
+  {
+    "Mutant": "M02",
+    "Files": 557,
+    "BeforeAfterSourceEqual": true,
+    "OnlyChangedFromFrozen": [
+      "research/delegationcorrespondence/binding.go"
+    ]
+  },
+  {
+    "Mutant": "M03",
+    "Files": 557,
+    "BeforeAfterSourceEqual": true,
+    "OnlyChangedFromFrozen": [
+      "research/delegationcorrespondence/custody.go"
+    ]
+  },
+  {
+    "Mutant": "M04",
+    "Files": 557,
+    "BeforeAfterSourceEqual": true,
+    "OnlyChangedFromFrozen": [
+      "research/delegationcorrespondence/check.go"
+    ]
+  },
+  {
+    "Mutant": "A02-filter-pre-fix",
+    "Files": 557,
+    "BeforeAfterSourceEqual": true,
+    "OnlyChangedFromFrozen": [
+      "research/delegationcorrespondence/custody.go"
+    ]
+  }
+]

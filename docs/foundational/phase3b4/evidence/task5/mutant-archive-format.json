@@ -1,0 +1,5 @@
+{
+  "files": 2802,
+  "unique_blobs": 562,
+  "reconstruct": "files.json maps each original relative path to sha256/<digest>; copy bytes verbatim"
+}

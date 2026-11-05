@@ -1,0 +1,29 @@
+{
+  "ordinary": {
+    "baseline_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+    "final_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+    "byte_equal": true,
+    "baseline_lines": 13,
+    "final_lines": 13,
+    "diagnostic_set_equal": true
+  },
+  "integration": {
+    "baseline_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+    "final_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+    "byte_equal": true,
+    "baseline_lines": 31,
+    "final_lines": 31,
+    "diagnostic_set_equal": true
+  },
+  "empty_output_gates": {
+    "runtime-build": true,
+    "research-build": true,
+    "runtime-format": true,
+    "research-format": true,
+    "research-staticcheck-changed": true,
+    "runtime-vet": true,
+    "runtime-vet-integration": true,
+    "research-vet": true,
+    "research-vet-integration": true
+  }
+}

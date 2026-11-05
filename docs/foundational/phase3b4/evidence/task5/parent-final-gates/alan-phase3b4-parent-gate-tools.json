@@ -1,0 +1,63 @@
+{
+  "recorded_unix": 1793839653.907824,
+  "platform": "macOS-27.2-arm64-arm-64bit",
+  "machine": "arm64",
+  "cpu_count": 10,
+  "commands": [
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit": 0,
+      "output": "go version go1.27.3 darwin/arm64\n"
+    },
+    {
+      "argv": [
+        "go",
+        "env",
+        "-json",
+        "GOOS",
+        "GOARCH",
+        "CGO_ENABLED",
+        "GOVERSION",
+        "GOFLAGS"
+      ],
+      "exit": 0,
+      "output": "{\n\t\"CGO_ENABLED\": \"1\",\n\t\"GOARCH\": \"arm64\",\n\t\"GOFLAGS\": \"\",\n\t\"GOOS\": \"darwin\",\n\t\"GOVERSION\": \"go1.27.3\"\n}\n"
+    },
+    {
+      "argv": [
+        "staticcheck",
+        "-version"
+      ],
+      "exit": 0,
+      "output": "staticcheck 2026.2.2 (0.8.2)\n"
+    },
+    {
+      "argv": [
+        "cc",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "Apple clang version 21.0.0 (clang-2100.4.1.1)\nTarget: arm64-apple-darwin27.2.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+    },
+    {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "Python 3.9.6\n"
+    },
+    {
+      "argv": [
+        "git",
+        "--version"
+      ],
+      "exit": 0,
+      "output": "git version 2.54.0 (Apple Git-157)\n"
+    }
+  ],
+  "scope": "Toolchain preparation; no candidate test claim"
+}

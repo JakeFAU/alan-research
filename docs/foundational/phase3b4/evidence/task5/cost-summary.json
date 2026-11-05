@@ -1,0 +1,302 @@
+{
+  "normal": {
+    "0": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 46842084,
+          "median": 47458916,
+          "max": 48308333
+        },
+        "Replay": {
+          "min": 44817416,
+          "median": 45268125,
+          "max": 45623458
+        },
+        "construction": {
+          "min": 410708,
+          "median": 418750,
+          "max": 430792
+        },
+        "first_decision_window": {
+          "min": 1143125,
+          "median": 1469125,
+          "max": 1581166
+        },
+        "fresh_gate_window": {
+          "min": 4472125,
+          "median": 4525958,
+          "max": 4610792
+        }
+      },
+      "CommittedReductions": [
+        24
+      ],
+      "MaxProgramBytes": 10054,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "1": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 48478208,
+          "median": 48951375,
+          "max": 49031291
+        },
+        "Replay": {
+          "min": 46310875,
+          "median": 46633291,
+          "max": 47237625
+        },
+        "construction": {
+          "min": 419167,
+          "median": 427833,
+          "max": 809959
+        },
+        "first_decision_window": {
+          "min": 1191000,
+          "median": 1477833,
+          "max": 1601167
+        },
+        "fresh_gate_window": {
+          "min": 4699167,
+          "median": 4868834,
+          "max": 5048125
+        }
+      },
+      "CommittedReductions": [
+        25
+      ],
+      "MaxProgramBytes": 10054,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "8": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 56853875,
+          "median": 58109834,
+          "max": 58979208
+        },
+        "Replay": {
+          "min": 55266917,
+          "median": 56042209,
+          "max": 56931458
+        },
+        "construction": {
+          "min": 415250,
+          "median": 424750,
+          "max": 802041
+        },
+        "first_decision_window": {
+          "min": 1381500,
+          "median": 1705667,
+          "max": 1809125
+        },
+        "fresh_gate_window": {
+          "min": 5951958,
+          "median": 6132666,
+          "max": 6210209
+        }
+      },
+      "CommittedReductions": [
+        32
+      ],
+      "MaxProgramBytes": 10056,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "32": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 89888583,
+          "median": 90125042,
+          "max": 91123125
+        },
+        "Replay": {
+          "min": 87833500,
+          "median": 88066250,
+          "max": 89325416
+        },
+        "construction": {
+          "min": 440833,
+          "median": 448334,
+          "max": 878375
+        },
+        "first_decision_window": {
+          "min": 2472834,
+          "median": 2721208,
+          "max": 2826000
+        },
+        "fresh_gate_window": {
+          "min": 10307833,
+          "median": 10565708,
+          "max": 11102375
+        }
+      },
+      "CommittedReductions": [
+        56
+      ],
+      "MaxProgramBytes": 14693,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    }
+  },
+  "race": {
+    "0": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 754045292,
+          "median": 755353375,
+          "max": 767265333
+        },
+        "Replay": {
+          "min": 729409667,
+          "median": 730580958,
+          "max": 749550417
+        },
+        "construction": {
+          "min": 6453250,
+          "median": 6469666,
+          "max": 7146084
+        },
+        "first_decision_window": {
+          "min": 16626708,
+          "median": 16788375,
+          "max": 17055209
+        },
+        "fresh_gate_window": {
+          "min": 69793000,
+          "median": 70115500,
+          "max": 71501959
+        }
+      },
+      "CommittedReductions": [
+        24
+      ],
+      "MaxProgramBytes": 10054,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "1": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 775314041,
+          "median": 775940167,
+          "max": 789367875
+        },
+        "Replay": {
+          "min": 756121625,
+          "median": 757145834,
+          "max": 761395042
+        },
+        "construction": {
+          "min": 6505084,
+          "median": 6592167,
+          "max": 7246375
+        },
+        "first_decision_window": {
+          "min": 17384292,
+          "median": 17882666,
+          "max": 17885500
+        },
+        "fresh_gate_window": {
+          "min": 73458208,
+          "median": 73860000,
+          "max": 75461916
+        }
+      },
+      "CommittedReductions": [
+        25
+      ],
+      "MaxProgramBytes": 10054,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "8": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 922893750,
+          "median": 927077791,
+          "max": 947265416
+        },
+        "Replay": {
+          "min": 900830542,
+          "median": 903889458,
+          "max": 909090500
+        },
+        "construction": {
+          "min": 6548542,
+          "median": 6620625,
+          "max": 6744250
+        },
+        "first_decision_window": {
+          "min": 21303500,
+          "median": 21697708,
+          "max": 21847375
+        },
+        "fresh_gate_window": {
+          "min": 94878041,
+          "median": 96032667,
+          "max": 97360250
+        }
+      },
+      "CommittedReductions": [
+        32
+      ],
+      "MaxProgramBytes": 10056,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    },
+    "32": {
+      "Observations": 5,
+      "Nanoseconds": {
+        "Open": {
+          "min": 1438720250,
+          "median": 1445252792,
+          "max": 1463411833
+        },
+        "Replay": {
+          "min": 1408534167,
+          "median": 1416660208,
+          "max": 1436600458
+        },
+        "construction": {
+          "min": 6914125,
+          "median": 6920750,
+          "max": 7286834
+        },
+        "first_decision_window": {
+          "min": 35178042,
+          "median": 35317959,
+          "max": 35652209
+        },
+        "fresh_gate_window": {
+          "min": 166876875,
+          "median": 167672792,
+          "max": 168416000
+        }
+      },
+      "CommittedReductions": [
+        56
+      ],
+      "MaxProgramBytes": 14693,
+      "AllExactIndexLookup": true,
+      "Allocations": "not measured",
+      "TotalConstantTimeClaim": false
+    }
+  }
+}

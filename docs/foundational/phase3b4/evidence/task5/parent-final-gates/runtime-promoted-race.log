@@ -1,0 +1,16 @@
+{"Time":"2026-11-04T20:01:09.213866-05:00","Action":"start","Package":"github.com/JakeFAU/alan/internal/executor"}
+{"Time":"2026-11-04T20:01:09.403122-05:00","Action":"run","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents"}
+{"Time":"2026-11-04T20:01:09.403193-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents","Output":"=== RUN   TestPhase3B4PromotedPublicParents\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:09.403227-05:00","Action":"run","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K01"}
+{"Time":"2026-11-04T20:01:09.403233-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K01","Output":"=== RUN   TestPhase3B4PromotedPublicParents/K01\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:11.442666-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K01","Output":"--- PASS: TestPhase3B4PromotedPublicParents/K01 (2.04s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:11.442722-05:00","Action":"pass","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K01","Elapsed":2.04}
+{"Time":"2026-11-04T20:01:11.442747-05:00","Action":"run","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K02"}
+{"Time":"2026-11-04T20:01:11.442754-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K02","Output":"=== RUN   TestPhase3B4PromotedPublicParents/K02\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:13.871235-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K02","Output":"--- PASS: TestPhase3B4PromotedPublicParents/K02 (2.43s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:13.871266-05:00","Action":"pass","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents/K02","Elapsed":2.43}
+{"Time":"2026-11-04T20:01:13.871274-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents","Output":"--- PASS: TestPhase3B4PromotedPublicParents (4.47s)\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:13.871279-05:00","Action":"pass","Package":"github.com/JakeFAU/alan/internal/executor","Test":"TestPhase3B4PromotedPublicParents","Elapsed":4.47}
+{"Time":"2026-11-04T20:01:13.871417-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-04T20:01:14.873676-05:00","Action":"output","Package":"github.com/JakeFAU/alan/internal/executor","Output":"ok  \tgithub.com/JakeFAU/alan/internal/executor\t5.660s\n"}
+{"Time":"2026-11-04T20:01:14.873712-05:00","Action":"pass","Package":"github.com/JakeFAU/alan/internal/executor","Elapsed":5.66}

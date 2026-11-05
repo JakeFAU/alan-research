@@ -1,0 +1,24 @@
+{
+  "cwd": "/tmp/alan-task5/runtime-filter-probe",
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-count=1",
+    "-timeout=3m",
+    "./internal/executor",
+    "-run",
+    "^TestPhase3B4IndependentEmptyOperationFilter$"
+  ],
+  "exit": 0,
+  "elapsed_seconds": 2.491594666003948,
+  "environment": {
+    "ALAN_FILTER_PARENT": "/tmp/alan-task5/final-normal-attacks/A02-filter-parent.json",
+    "ALAN_FILTER_ATTACK": "/tmp/alan-task5/final-normal-attacks/A02-filter.json"
+  },
+  "inputs": {
+    "ALAN_FILTER_PARENT": "793b862842f45ff750d528ece89dc22a59ca991c6f932ec32c02c8dbb3220f0f",
+    "ALAN_FILTER_ATTACK": "6fc776d14f506ac6c2023759e6d14076e3c007ddcc13844eb6b1118d05c09dbd"
+  },
+  "log_sha256": "f00e46386b8888fcb4d9416ade901e610a743b2edd818342b09bfa07a82051dc"
+}
