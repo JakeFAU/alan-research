@@ -1,0 +1,34 @@
+from pathlib import Path
+import hashlib,json,re,subprocess
+R=Path('/Users/jacob/.codex/worktrees/phase3b4-research/alan-research');P=R/'docs/foundational/phase3b4';D=Path('/tmp/alan-phase3b4-pdf-final')
+base='5db0ff147ea4f16b037976a1a6ff968202b2d0fb';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+before=json.loads((P/'evidence/task6-manuscript/fix-r1-validation.json').read_text())['before_sha256']
+after={p:sha(Path(p)) for p in before};assert before==after
+for name in ['alan-dissertation.md','alan-dissertation.tex','references.bib','alan-dissertation.pdf']:
+ assert (R/'paper'/name).read_bytes()==subprocess.check_output(['git','show',base+':paper/'+name],cwd=R)
+for name in ['alan-dissertation.md','alan-dissertation.tex','references.bib']:
+ assert (R/'paper'/name).read_bytes()==(D/name).read_bytes()
+m=(R/'paper/alan-dissertation.md').read_text();t=(R/'paper/alan-dissertation.tex').read_text()
+ms=m.split('### 6.12 Explicit Request Binding Across Intervening Computation\n\n',1)[1].split('\n## 7.',1)[0].strip()
+ts=t.split('\\subsection{Explicit Request Binding Across Intervening Computation}\n\n',1)[1].split('\\section{Conclusion}',1)[0].strip()
+assert re.sub(r'`([^`]+)`',lambda x:r'\path{'+x[1]+'}',ms).replace('[Phase 3B.4 results](../docs/foundational/phase3b4/08-results.md)',r'\path{docs/foundational/phase3b4/08-results.md}')==ts
+assert m.split('**Abstract.** ',1)[1].split('\n---',1)[0].strip()==t.split('\\begin{abstract}\n',1)[1].split('\\end{abstract}',1)[0].strip()
+assert m.split("## 8. Conclusion: ALAN's Contributions and Open Mathematical Problems\n",1)[1].split('\n---',1)[0].strip()==t.split('\\section{Conclusion}\n',1)[1].split('\\bibliographystyle',1)[0].strip()
+prior=t.split('\\section{Pillar V:',1)[1].split('\\subsection{Explicit Request Binding',1)[0]
+assert prior.count('\\subsection{')==6
+assert len(re.findall(r'^### 6\.(?:[1-9]|10|11) ',m,re.M))==11
+pages=(D/'manuscript.txt').read_text().split('\f');title='Explicit Request Binding Across Intervening Computation'
+assert re.search(r'6\.7\s+'+title+r'.*37',pages[1])
+assert re.search(r'^6\.7\s+'+title,pages[36],re.M)
+assert re.search(r'^7\s+Conclusion',pages[38],re.M)
+assert 'The qualified executable pair is research' in pages[38]
+out={'scope':'Task6 fix round1: explanatory locators only; affected text parity, not whole-manuscript or section-number parity','fix_base':base,'runtime_unchanged':'15633c5859c567b0829eb866580e12d4fc9a2784','mapping':{'binding':{'markdown':'6.12','latex_pdf':'6.7','contents_page':2,'body_pages':[37,38,39]},'historical_phase3b3':{'markdown':'6.11','latex_pdf':'6.6'},'conclusion':{'markdown':'8','latex_pdf':'7'},'prior_section6_subsections':{'markdown':11,'latex':6}},'affected_text_parity':'Abstract, binding section and Conclusion agree after markup conversion','before_sha256':before,'after_sha256':after,'source_and_pdf_unchanged':True,'candidate_sources_equal_repository_sources':True,'no_go_tests_or_pdf_build':True}
+output=P/'evidence/task6-manuscript/fix-r1-validation.json';output.write_text(json.dumps(out,indent=2)+'\n')
+count=0
+for f in [P/'08-results.md',P/'09-reviews.md']:
+ for target in re.findall(r'\]\(([^)]+)\)',f.read_text()):
+  if '://' in target or target.startswith('#'):continue
+  assert (f.parent/target.split('#')[0]).exists(),(f,target);count+=1
+out['resolved_local_links']=count
+check=subprocess.run(['git','diff','--check'],cwd=R,capture_output=True,text=True);assert check.returncode==0,check.stdout+check.stderr
+out['diff_check']='pass';output.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps(out,indent=2))
