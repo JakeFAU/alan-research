@@ -1,0 +1,24 @@
+Task5 artifact hashes verified: 147
+normal {'cases': 81, 'stores': 80, 'captures': 163, 'complete': 40, 'C': 33, 'contacts': 89, 'applications': 89, 'losses': 11}
+race {'cases': 81, 'stores': 80, 'captures': 163, 'complete': 40, 'C': 33, 'contacts': 89, 'applications': 89, 'losses': 11}
+P02-v1 q ["b",1,1,0] c 2 e ["a",1,4,0] first (False, 'authority_request_not_admitted') gates []
+P02-v2 q ["b",1,1,0] c 2 e ["a",1,4,0] first (True, 'authorized') gates [(17, True, 'authorized')]
+P02 exact q/admission/o/c/g/e/decision/gate/result causal orders [3, 4, 5, 14, 16, 17, 18]
+endpoint a [{'Body': '{"Key":"[2,\\"80bcb8274bcc2b813cea028dc0bb15fa684dee2ba5ca1a00c445d4f51ec1519e\\",\\"[\\\\\\"b\\\\\\",1,9,0]\\"]","Profile":"idempotent","Subject":"b","Authorization":"[\\"authorization\\",\\"[\\\\\\"b\\\\\\",1,9,0]\\"]","Generation":1,"Epoch":1,"Sequence":9,"Delta":1}', 'Contact': 1, 'Event': 'ingress', 'Method': 'POST', 'PID': 61664, 'Path': '/apply', 'Process': 'reciprocal-a-1793839762351338000'}, {'Contact': 1, 'Event': 'committed', 'PID': 61664, 'Process': 'reciprocal-a-1793839762351338000', 'Receipt': {'Key': '[2,"80bcb8274bcc2b813cea028dc0bb15fa684dee2ba5ca1a00c445d4f51ec1519e","[\\"b\\",1,9,0]"]', 'Profile': 'idempotent', 'Delta': 1, 'Mutation': 1, 'Total': 1, 'Process': 'reciprocal-a-1793839762351338000', 'PID': 61664}}]
+endpoint b [{'Body': '{"Key":"[2,\\"80bcb8274bcc2b813cea028dc0bb15fa684dee2ba5ca1a00c445d4f51ec1519e\\",\\"[\\\\\\"a\\\\\\",1,4,0]\\"]","Profile":"idempotent","Subject":"a","Authorization":"[\\"authorization\\",\\"[\\\\\\"a\\\\\\",1,4,0]\\"]","Generation":1,"Epoch":1,"Sequence":4,"Delta":1}', 'Contact': 1, 'Event': 'ingress', 'Method': 'POST', 'PID': 61665, 'Path': '/apply', 'Process': 'reciprocal-b-1793839762357504000'}, {'Contact': 1, 'Event': 'committed', 'PID': 61665, 'Process': 'reciprocal-b-1793839762357504000', 'Receipt': {'Key': '[2,"80bcb8274bcc2b813cea028dc0bb15fa684dee2ba5ca1a00c445d4f51ec1519e","[\\"a\\",1,4,0]"]', 'Profile': 'idempotent', 'Delta': 1, 'Mutation': 1, 'Total': 1, 'Process': 'reciprocal-b-1793839762357504000', 'PID': 61665}}]
+P10 q ["b",1,1,0] c 2 e ["a",1,5,0] first (True, 'authorized') gates [(20, True, 'authorized')]
+N02 q ["b",1,1,0] c 3 e ["a",1,2,0] first (False, 'authority_request_not_selected') gates []
+N06 q ["b",1,1,0] c 2 e ["a",1,4,0] first (True, 'authorized') gates [(22, False, 'authority_revoked')]
+C07 q ["b",1,1,0] c 2 e ["a",1,7,0] first (True, 'authorized') gates [(20, True, 'authorized')]
+C07 actual Open owner-01/post-open [('a', 1, 2), ('b', 1, 2)]
+C07 actual Open owner-02/post-open [('a', 2, 3), ('b', 2, 3)]
+C07 actual Open final-owner/post-open [('a', 3, 4), ('b', 3, 4)]
+M03 q ["b",1,1,0] c None e ["a",1,5,0] first None gates []
+M03 target2 refused genuine originals ['["b",1,6,0]']
+mutant mapping shape dict
+compiled mutant A02-filter-pre-fix [(0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'), (1, '0fa2ac289753e2c55aadedf1a6b67a0a0105f8bd743103082ac36b8b3f370786')]
+compiled mutant M01 [(0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'), (1, '41eaf5b89c45902b563236116f663377b757df52af75c1c5a40f2abeceed1ac3')]
+compiled mutant M02 [(0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'), (1, 'f2558d875ee757111d4a00951ca2667a26e54a575c03b149b35ea5c6de32c6e5'), (1, 'a77905e5274fec8d2b7fc37ae9877c6463f00bd31179c648bf5d3facbdc93016')]
+compiled mutant M03 [(0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'), (1, '71c2af4855dd4c2b1f5291b3c526c71a21daac1f18a2d0695535a9a942264356')]
+compiled mutant M04 [(0, 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'), (1, '3bdd10f01564d336dd5049f0e619f2b35256ba48c68380ffa65d9ffcecc84d1c')]
+Installed PDF c79be8583f18baf3832c7059b4035fd509f9e4d26a8860f1b8eb544c1a0fe4ae
