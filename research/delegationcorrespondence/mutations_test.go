@@ -13,3 +13,19 @@ func TestRawMutationCorpus(t *testing.T) {
 		}
 	}
 }
+
+func TestRawMutationsIncompletePrefix(t *testing.T) {
+	raw := RawSnapshot{Tables: map[string][]Row{}}
+	mutations := RawMutations(bytesJSON(raw))
+	if len(mutations) != 15 {
+		t.Fatalf("got %d diagnostics, want 15", len(mutations))
+	}
+	for _, m := range mutations {
+		if m.Applicable || m.Diagnostic == "" || m.Verdict.Failure != nil || m.Verdict.Valid {
+			t.Fatalf("%s did not report inapplicability: %+v", m.Name, m)
+		}
+		if m.OriginalSHA256 != m.MutatedSHA256 {
+			t.Fatalf("%s invented evidence", m.Name)
+		}
+	}
+}

@@ -3,6 +3,8 @@ package delegationcorrespondence
 import "encoding/json"
 
 type RawMutation struct {
+	Applicable                          bool
+	Diagnostic                          string
 	Name, OriginalSHA256, MutatedSHA256 string
 	SemanticField                       string
 	OriginalIDs, MutatedIDs             []string
@@ -29,6 +31,14 @@ func RawMutations(original []byte) []RawMutation {
 			return nil
 		}
 		m := RawMutation{Name: name, OriginalSHA256: sha(original)}
+		m.Diagnostic = mutationPrerequisite(name, raw)
+		if m.Diagnostic != "" {
+			m.Input = append(json.RawMessage(nil), original...)
+			m.MutatedSHA256 = m.OriginalSHA256
+			out = append(out, m)
+			continue
+		}
+		m.Applicable = true
 		update := func(t string, r Row, col string, v any) {
 			before := rawCell(r, col)
 			after := bytesJSON(v)
@@ -120,7 +130,7 @@ func RawMutations(original []byte) []RawMutation {
 		default:
 			for _, r := range raw.Tables["external_attempts"] {
 				a := decodeCell[ExternalAttempt](r, "descriptor")
-				if a.Authority.Use == nil || a.Authority.Use.Path != "delegated" {
+				if a.Authority == nil || a.Authority.Use == nil || a.Authority.Use.Path != "delegated" {
 					continue
 				}
 				m.OriginalIDs = []string{a.Intent.ID, a.Authority.Use.GrantID, a.Authority.OriginalRequestID}
@@ -191,4 +201,41 @@ func RawMutations(original []byte) []RawMutation {
 		out = append(out, m)
 	}
 	return out
+}
+
+// mutationPrerequisite reports absent evidence without treating an unattempted
+// mutation as a policy rejection. It does not manufacture a completed prefix.
+func mutationPrerequisite(name string, raw RawSnapshot) string {
+	switch name {
+	case "missing-grant", "forged-grant-origin", "altered-recipient":
+		if len(raw.Tables["lifecycle_results"]) == 0 {
+			return "missing lifecycle result"
+		}
+	case "equal-payload-result-substitution":
+		if len(raw.Tables["external_receipts"]) < 2 {
+			return "requires two external receipts"
+		}
+	case "gate-before-reservation", "stale-activation", "forged-gate-attempt":
+		gate, reservation := false, false
+		for _, r := range raw.Tables["composition_facts"] {
+			f := decodeCell[Fact](r, "descriptor")
+			gate = gate || f.Kind == "authority_admission"
+			reservation = reservation || f.Kind == "reservation"
+		}
+		if !gate {
+			return "missing authority admission"
+		}
+		if name == "gate-before-reservation" && !reservation {
+			return "missing reservation"
+		}
+	default:
+		for _, r := range raw.Tables["external_attempts"] {
+			a := decodeCell[ExternalAttempt](r, "descriptor")
+			if a.Authority != nil && a.Authority.Use != nil && a.Authority.Use.Path == "delegated" {
+				return ""
+			}
+		}
+		return "missing delegated external attempt"
+	}
+	return ""
 }
