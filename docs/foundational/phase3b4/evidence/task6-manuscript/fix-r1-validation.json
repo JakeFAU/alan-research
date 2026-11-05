@@ -1,0 +1,51 @@
+{
+  "scope": "Task6 fix round1: explanatory locators only; affected text parity, not whole-manuscript or section-number parity",
+  "fix_base": "5db0ff147ea4f16b037976a1a6ff968202b2d0fb",
+  "runtime_unchanged": "15633c5859c567b0829eb866580e12d4fc9a2784",
+  "mapping": {
+    "binding": {
+      "markdown": "6.12",
+      "latex_pdf": "6.7",
+      "contents_page": 2,
+      "body_pages": [
+        37,
+        38,
+        39
+      ]
+    },
+    "historical_phase3b3": {
+      "markdown": "6.11",
+      "latex_pdf": "6.6"
+    },
+    "conclusion": {
+      "markdown": "8",
+      "latex_pdf": "7"
+    },
+    "prior_section6_subsections": {
+      "markdown": 11,
+      "latex": 6
+    }
+  },
+  "affected_text_parity": "Abstract, binding section and Conclusion agree after markup conversion",
+  "before_sha256": {
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.md": "e371eb4b3c1f52a9282da9a9610b46363fbce49bd712fce8b91f113e895f5d21",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.tex": "8ae62679d16568a3d668ceda7fcb02b3173c79271ea9d137f7c8a88b8fad2117",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.pdf": "a85407e18f221dfed46a24c7389c2c83898d5513862815e56d0feaf6adfee925",
+    "/tmp/alan-phase3b4-pdf-final/alan-dissertation.pdf": "c79be8583f18baf3832c7059b4035fd509f9e4d26a8860f1b8eb544c1a0fe4ae",
+    "/tmp/alan-phase3b4-pdf-final/manuscript.txt": "0e9a06e04bcffb118d14b303f30310302bba97638da1e52cabc97352e84894b3"
+  },
+  "after_sha256": {
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.md": "e371eb4b3c1f52a9282da9a9610b46363fbce49bd712fce8b91f113e895f5d21",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.tex": "8ae62679d16568a3d668ceda7fcb02b3173c79271ea9d137f7c8a88b8fad2117",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/paper/alan-dissertation.pdf": "a85407e18f221dfed46a24c7389c2c83898d5513862815e56d0feaf6adfee925",
+    "/tmp/alan-phase3b4-pdf-final/alan-dissertation.pdf": "c79be8583f18baf3832c7059b4035fd509f9e4d26a8860f1b8eb544c1a0fe4ae",
+    "/tmp/alan-phase3b4-pdf-final/manuscript.txt": "0e9a06e04bcffb118d14b303f30310302bba97638da1e52cabc97352e84894b3"
+  },
+  "source_and_pdf_unchanged": true,
+  "candidate_sources_equal_repository_sources": true,
+  "no_go_tests_or_pdf_build": true,
+  "resolved_local_links": 43,
+  "diff_check": "pass"
+}

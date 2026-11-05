@@ -18,6 +18,10 @@ Task 5's final independent specification and code-quality verdict is **APPROVE**
 
 The [Task 5 review manifest](evidence/reviews/task5-r1/manifest.json) hashes both reports and the exact evidence-check, secondary-check and final-delta-check scripts/logs. They were copied as bytes, not rewritten. Original absolute paths inside historical reports describe their execution environment. Earlier review manifests and exact reviewed contract/source footprints remain untouched. The Task 3 build-cache warning was deferred to the required final build; both Task 5 build logs are empty, closing that warning without an unrelated source change.
 
+## Manuscript delivery locators
+
+The new binding text is Markdown §6.12 / LaTeX/PDF §6.7 (“Explicit Request Binding Across Intervening Computation”), with the rendered candidate’s contents entry on page 2 and body on pages 37–39. The historical Phase 3B.3 text is Markdown §6.11 / LaTeX/PDF §6.6, and Conclusion is Markdown §8 / LaTeX/PDF §7. Prior Task 6 validation’s “§6.12” names the Markdown location; its parity check compares affected text after markup conversion, not section numbers. Existing subsection counts and the Markdown-only §7 “Formal Falsification” explain the preserved representation differences. No counter jump, manuscript source change or PDF rebuild is part of this explanatory fix. See [locator validation](evidence/task6-manuscript/fix-r1-validation.json); final PDF/whole-change review closure remains a separate controller gate.
+
 ## Decisions affecting interpretation
 
 The controller reused the clean task-owned runtime checkout after native setup twice hung and inventories showed no new checkout. Task 2 omitted the optional auxiliary model in favor of explicit source-footprint sketches and independent raw falsifiers. Ancillary14/16 conflict evidence uses disclosed internal writer appends on completed copies of genuine public 13/15 parents; no public positive bootstrap or public conflict-production schedule is claimed. The actual missing M03 public producer was supplied by the original fixture worker and independently reviewed before the oracle campaign.
