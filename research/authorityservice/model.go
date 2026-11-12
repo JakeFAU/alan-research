@@ -4,7 +4,7 @@ package authorityservice
 
 import base "github.com/JakeFAU/alan-research/research/mutualobligations"
 
-// Config selects one of the sixteen frozen experiments.
+// Config selects a finite experiment.
 type Config struct {
 	Policy   string
 	Scenario string
@@ -22,8 +22,17 @@ func Configurations() []Config {
 	}
 	return append(out, Config{Policy: "Cartesian", Scenario: "ScopeMix"})
 }
+
+// GrantRevocationConfig selects the opt-in separate grant and exact-root revocation experiment.
+func GrantRevocationConfig() Config {
+	return Config{Policy: "S2", Scenario: "SeparateGrantRevocation"}
+}
+
 func (c Config) Name() string { return c.Policy + "/" + c.Scenario }
 func valid(c Config) bool {
+	if c == GrantRevocationConfig() {
+		return true
+	}
 	for _, v := range Configurations() {
 		if v == c {
 			return true
@@ -45,6 +54,7 @@ const (
 	BPermission
 	SharedPermission
 	InventedPermission
+	ABOwnPermission
 )
 
 func (t Tuple) Permission() Permission {
@@ -57,6 +67,8 @@ func (t Tuple) Permission() Permission {
 		return Permission{Operation: "read", Resource: "status", Scope: "shared"}
 	case InventedPermission:
 		return Permission{Operation: "increment", Resource: "counter-A", Scope: "blue"}
+	case ABOwnPermission:
+		return Permission{Operation: "increment", Resource: "counter-AB", Scope: "blue"}
 	default:
 		return Permission{}
 	}
@@ -98,6 +110,9 @@ func Binding(c Config, d base.Obligation) ServiceBinding {
 	if c.Scenario == "Shared" {
 		t = SharedPermission
 	}
+	if c == GrantRevocationConfig() && d == base.AB {
+		t = ABOwnPermission
+	}
 	name := "AB"
 	if d == base.BA {
 		name = "BA"
@@ -109,7 +124,7 @@ func Binding(c Config, d base.Obligation) ServiceBinding {
 	}
 }
 func tuple(p Permission) Tuple {
-	for _, t := range []Tuple{APermission, BPermission, SharedPermission, InventedPermission} {
+	for _, t := range []Tuple{APermission, BPermission, SharedPermission, InventedPermission, ABOwnPermission} {
 		if p == t.Permission() {
 			return t
 		}
@@ -238,6 +253,9 @@ func root(a base.Agent, t Tuple) string {
 		if t == SharedPermission {
 			return "B/g1:r"
 		}
+		if t == ABOwnPermission {
+			return "B/g1:c"
+		}
 	}
 	return ""
 }
@@ -342,6 +360,7 @@ func Successors(c Config, s State) []Transition {
 	if !valid(c) {
 		panic("invalid authority configuration")
 	}
+	separateRevocation := c == GrantRevocationConfig()
 	out := []Transition{}
 	add := func(e Event, n State) {
 		e = describe(c, s, e)
@@ -405,13 +424,16 @@ func Successors(c Config, s State) []Transition {
 			}
 		}
 	}
-	if c.Scenario == "LateGrant" && s.Base.Obligations[base.BA].Committed &&
+	if (c.Scenario == "LateGrant" || separateRevocation) && s.Base.Obligations[base.BA].Committed &&
 		s.Grant == NoGrant && !s.Base.Agents[base.B].Down {
 		n := s
 		n.Grant = RetainedGrant
+		if separateRevocation && s.Revoked {
+			n.Grant = RejectedGrant
+		}
 		add(Event{Kind: "retain-grant", Actor: base.B, Obligation: base.BA}, n)
 	}
-	if c.Scenario == "Revocable" && !s.Revoked && !s.Base.Agents[base.B].Down {
+	if (c.Scenario == "Revocable" || separateRevocation) && !s.Revoked && !s.Base.Agents[base.B].Down {
 		n := s
 		n.Revoked = true
 		add(Event{Kind: "revoke", Actor: base.B, Obligation: base.NoObligation}, n)

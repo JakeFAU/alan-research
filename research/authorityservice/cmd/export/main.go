@@ -14,7 +14,7 @@ func main() { os.Exit(run(os.Args[1:], os.Stdout, os.Stderr)) }
 func run(args []string, out, errOut io.Writer) int {
 	flags := flag.NewFlagSet("export", flag.ContinueOnError)
 	flags.SetOutput(errOut)
-	selected := flags.String("config", "all", "all or a frozen Policy/Scenario name")
+	selected := flags.String("config", "all", "all frozen configurations or an exact Policy/Scenario name")
 	safety := flags.Bool("assert-authority-safe", false, "exit 1 when a reachable authority violation falsifies safety")
 	completion := flags.Bool("assert-universal-completion", false, "exit 1 when a reachable state cannot safely complete")
 	if err := flags.Parse(args); err != nil {
@@ -26,7 +26,11 @@ func run(args []string, out, errOut io.Writer) int {
 	}
 	reports := []model.Report{}
 	counterexample := false
-	for _, c := range model.Configurations() {
+	configs := model.Configurations()
+	if optIn := model.GrantRevocationConfig(); *selected == optIn.Name() {
+		configs = []model.Config{optIn}
+	}
+	for _, c := range configs {
 		if *selected != "all" && *selected != c.Name() {
 			continue
 		}

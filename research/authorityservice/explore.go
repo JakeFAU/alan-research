@@ -122,6 +122,7 @@ type Report struct {
 func Explore(c Config) Report { r, _ := explore(c); return r }
 func explore(c Config) (Report, *graph) {
 	initial := Initial(c)
+	separateRevocation := c == GrantRevocationConfig()
 	g := &graph{config: c, nodes: []node{{state: initial, parent: -1}}, arcs: []arc{}}
 	ids := map[State]uint32{initial: 0}
 	type cut struct {
@@ -214,7 +215,11 @@ func explore(c Config) (Report, *graph) {
 			if e.Kind == "apply" {
 				remember("application-retained")
 				if s.Revoked {
-					remember("application-after-revocation")
+					if !separateRevocation {
+						remember("application-after-revocation")
+					} else if e.Obligation == base.BA {
+						remember("ba-application-after-revocation")
+					}
 				}
 			}
 			if e.Kind == "release" {
@@ -231,6 +236,9 @@ func explore(c Config) (Report, *graph) {
 				}
 				if s.Authority[base.Obligation(1-e.Actor)].Permit {
 					remember("admitted-then-server-crashed")
+					if separateRevocation && s.Revoked && e.Actor == base.A {
+						remember("revoked-ba-opportunity-crashed")
+					}
 				}
 			}
 			if e.Kind == "dispatch-admit" && e.Activation == 1 {
