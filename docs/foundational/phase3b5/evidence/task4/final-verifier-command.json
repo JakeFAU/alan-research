@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "/tmp/alan-phase3b5/finalize-qualification.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "exit": 0,
+  "verification_sha256": "7cad00a36acb3fd08983b30011fb988a074cc5d68c6c11ac2bc9739378854806",
+  "scope": "Controller observed direct verifier exit0 after all ten commands closed; archived helper is finalize-qualification.py.txt."
+}

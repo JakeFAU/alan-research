@@ -1,0 +1,9 @@
+**I1 verdict — Addressed at `4ad1f9ef37c57375d4a39eafc9a5fcd91bc0425d`.**
+
+- `RevocationCapture.Unresolved` now emits an array of explicit `AB` or `BA` labels using the existing binding names. Empty lists serialize as `[]`, including excluded capture locators. The permit-without-application predicate and both model packages are unchanged. See `research/delegationcorrespondence/revocation.go:41`, `:172`, `:304`, `:537` and `research/authorityservice/model.go:116`.
+- The serialized CLI regression checks the three N07 capture paths in order and requires `["BA"]`, `["BA"]`, and `[]`. The retained RED log reaches the original base64 decoding failure, and the retained green log records the passing CLI and sealed-mode tests. The comparator requires those exact arrays in both modes and empty arrays in all other selected captures. I independently checked all ten archived verdict rows. See `research/delegationcorrespondence/cmd/revocation/main_test.go:54`, `docs/foundational/phase3b5/evidence/task3/compare_reports.py:46`, and `docs/foundational/phase3b5/evidence/task3/verdicts.json:118` and `:355`.
+- The retained pre/post comparison records equality for every decoded field outside `Unresolved` across all ten dossiers. I independently verified the current source manifest and the historical archive hashes. The archived comparator, verdicts, and source manifest also match the base commit byte for byte. The historical artifact still records four BA entries per affected cut, and the provenance records the original `"AQ=="` observations. See `docs/foundational/phase3b5/evidence/task3/review-i1/delta-verification.json:95`, `docs/foundational/phase3b5/evidence/task3/review-i1/verdicts.json:123`, and `docs/foundational/phase3b5/evidence/task3/review-i1/provenance.json:2`.
+
+**New breakage** — None found.
+**Out-of-scope observations** — None.
+**Round verdict** — Pass. This scoped review used the retained test runs and read-only artifact checks.

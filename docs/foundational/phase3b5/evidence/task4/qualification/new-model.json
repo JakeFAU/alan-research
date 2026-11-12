@@ -1,0 +1,32 @@
+{
+  "name": "new-model",
+  "argv": [
+    "go",
+    "run",
+    "-buildvcs=false",
+    "./research/authorityservice/cmd/export",
+    "-config",
+    "S2/SeparateGrantRevocation",
+    "-assert-authority-safe"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b5/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b5/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b5/python-cache"
+  },
+  "timeout_seconds": 300,
+  "expected_exit": 0,
+  "exit": 0,
+  "elapsed_seconds": 1.6142552499999994,
+  "log_sha256": "bb2b3fa469b82a5526691375b474c6e2984d2f532e02fda4e76bb069da4a2f26",
+  "log_bytes": 344951,
+  "archive_sha256": "b89caa77c51028db8ea08fa8941ea9745bd98ae6671a66198e1f5493e543a7b3",
+  "source_unchanged": true,
+  "matched": true
+}

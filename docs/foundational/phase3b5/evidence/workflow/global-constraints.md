@@ -1,0 +1,10 @@
+- Deliver an independently reviewed draft research PR; do not merge or release.
+- Preserve the old sixteen configurations, State/Event JSON shapes, enum values and all four historical deterministic exports byte-for-byte. New behavior is opt-in.
+- Revocation targets one complete authority root, not a GrantID or composition budget root. BA uses b; the new configuration's AB service uses distinct B-owned c.
+- First decisions and issuance outcomes are historical. Fresh admission checks present authority; old opportunities survive revocation but not server crash. Authentic retained results remain consumable.
+- No new dependencies, runtime production changes, additional agents/owners, multihop, regrant, non-atomic model effects or unrelated refactors.
+- Independent ledger/checker must not import runtime authorization, reducer or Replay or call operational authority helpers. No invented facts, endpoint contacts or principal consumptions.
+- Raw validity, external evidence, continuity and model support are separate verdicts. Legacy projection remains unchanged. Unknown outcomes and whole-Store loss stay outside the new relation.
+- Work only in `/Users/jacob/.codex/worktrees/phase3b4-research/alan-research` on `codex/phase3b5-grant-revocation`, base `4fea6c31eb8f438c0dea414aa5f8d7d0ecb5e8a4`. Do not touch other checkouts or `.envrc`, and never open archived SQLite in place.
+- Use explicit workdirs and offline Go environment: `GOTOOLCHAIN=local GOWORK=off GOPROXY=off GOSUMDB=off GOMODCACHE=/tmp/alan-phase3b5/modcache GOCACHE=/tmp/alan-phase3b5/go-build`.
+- One implementation agent at a time; each task commits, self-reviews and receives independent spec/quality review. Report actual commands/exits and preserve failed attempts. No worker spawns subagents.

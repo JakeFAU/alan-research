@@ -1,0 +1,78 @@
+from pathlib import Path
+import gzip
+import hashlib
+import json
+import re
+import subprocess
+
+root = Path("docs/foundational/phase3b5")
+scratch = Path("/tmp/alan-phase3b5")
+freeze = json.loads((scratch / "freeze.json").read_text())
+frozen_manifest = (scratch / "frozen-source.json").read_bytes()
+assert hashlib.sha256(frozen_manifest).hexdigest() == freeze["source_manifest_sha256"]
+manifest = json.loads(frozen_manifest)
+for path, digest in manifest.items():
+    assert hashlib.sha256(Path(path).read_bytes()).hexdigest() == digest, path
+assert len(manifest) == freeze["source_file_count"] == 582
+print("582 frozen executable inputs match")
+
+sources = {}
+for suffix in ("md", "tex"):
+    path = Path(f"paper/alan-dissertation.{suffix}")
+    source = path.read_text()
+    base = subprocess.check_output(["git", "show", f'{freeze["executable_commit"]}:{path}'], text=True)
+    if suffix == "md":
+        abstract = source.split("**Abstract.** ", 1)[1].split("\n---", 1)[0].strip()
+        section = source.split("### 6.13 Separate Grants and Exact-Root Revocation\n\n", 1)[1].split("\n## 7.", 1)[0]
+        before = base.split("## 7. Formal Falsification", 1)[1].split("\n## 8.", 1)[0]
+        after = source.split("## 7. Formal Falsification", 1)[1].split("\n## 8.", 1)[0]
+        assert before == after
+    else:
+        abstract = source.split(r"\begin{abstract}", 1)[1].split(r"\end{abstract}", 1)[0].strip()
+        section = source.split("\\subsection{Separate Grants and Exact-Root Revocation}\n\n", 1)[1].split(r"\section{Conclusion}", 1)[0]
+    section = re.sub(r"\\path\{(.*?)\}", r"\1", section)
+    section = section.replace(chr(96), "").replace(r"\[", "$$").replace(r"\]", "$$")
+    section = section.replace(
+        "The [Phase 3B.5 results](../docs/foundational/phase3b5/07-results.md)",
+        "The Phase 3B.5 results in docs/foundational/phase3b5/07-results.md",
+    ).strip()
+    assert not re.search(r"[\x00-\x09\x0b-\x1f]", section)
+    assert section.count("$$") == 2
+    assert r"\neg U(s) \land D_{\mathrm{BA}}(s) \ne \mathsf{Refused}" in section
+    assert r"\land \bigl(\neg R_b(s) \lor X_{\mathrm{BA}}(s) \lor P_{\mathrm{BA}}(s)\bigr)" in section
+    conclusion = source.split("In the bounded separate-grant model, ", 1)[1].split("\n\n", 1)[0]
+    assert "Separate accepted grant plus revocation remained outside the configurations used for Phase 3B.4" in source
+    assert section.count("The next bounded question") == 1
+    sources[suffix] = abstract, section, conclusion
+assert sources["md"] == sources["tex"]
+print("Abstract, Phase 3B.5 mathematical text and conclusion addition synchronize across both sources")
+
+verdicts = json.loads((root / "evidence/task3/verdicts.json").read_text())
+assert len(verdicts) == 10 and {v["mode"] for v in verdicts} == {"normal", "race"}
+for mode in ("normal", "race"):
+    rows = {v["case"]: v for v in verdicts if v["mode"] == mode}
+    assert sum(v["supported"] for v in rows.values()) == 4
+    assert sum(c["supported"] for v in rows.values() for c in v["captures"]) == 10
+    for case in ("N05", "N06", "N07", "P02-v2"):
+        assert rows[case]["raw_valid"] and rows[case]["physical_valid"]
+    assert rows["N06"]["contacts"] == rows["N06"]["applications"] == 0
+    assert rows["N07"]["contacts"] == rows["N07"]["applications"] == 2
+    assert [c["unresolved"] for c in rows["N07"]["captures"]] == [["BA"], ["BA"], []]
+    assert [c["event_count"] for c in rows["N07"]["captures"]] == [9, 10, 22]
+    excluded, = (row for row in rows.values() if not row["supported"])
+    assert excluded["acknowledged_losses"] == excluded["contacts"] == excluded["applications"] == 1
+    assert all(c["event_count"] == 0 and c["unresolved"] == [] for c in excluded["captures"])
+print("10 sealed dossiers, 8 supported final cases and 20 supported captures; exact N07 opportunities and unknown exclusions")
+
+for path in (scratch / "qualification-final").glob("*.json"):
+    record = json.loads(path.read_text())
+    if "matched" not in record:
+        continue
+    assert record["matched"] and record["source_unchanged"], path
+    log = path.with_suffix(".log.gz")
+    archive = log.read_bytes()
+    assert hashlib.sha256(archive).hexdigest() == record["archive_sha256"], log
+    raw = gzip.decompress(archive)
+    assert hashlib.sha256(raw).hexdigest() == record["log_sha256"], log
+    assert len(raw) == record["log_bytes"], log
+    print(f"{path.stem}: direct exit {record['exit']}, verified log bytes")

@@ -1,0 +1,449 @@
+{
+  "name": "research-ordinary",
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-timeout=60m",
+    "./..."
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b5/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b5/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b5/python-cache",
+    "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+    "ALAN_TASK3_PROGRESS": "1",
+    "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-normal",
+    "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-normal",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "timeout_seconds": 4200,
+  "expected_exit": 0,
+  "exit": 0,
+  "elapsed_seconds": 1505.540366375,
+  "log_sha256": "adcad13addc1afbe8f5ebc54b4aa6af3dfe023ef949087592463086d2f5286fe",
+  "log_bytes": 10435667,
+  "archive_sha256": "42cf94f27c0809387b5052a44aac5196d78ee8c4b8e26d3bc57235750ecd059d",
+  "source_unchanged": true,
+  "test_summary": {
+    "pass_events": 2633,
+    "package_results": [
+      {
+        "Time": "2026-11-12T16:32:04.60481-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/adapters/lookup",
+        "Elapsed": 0.159
+      },
+      {
+        "Time": "2026-11-12T16:32:09.163245-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/adapters/openai",
+        "Elapsed": 0.111
+      },
+      {
+        "Time": "2026-11-12T16:32:09.27018-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/adapters/receiptquery",
+        "Elapsed": 0.147
+      },
+      {
+        "Time": "2026-11-12T16:32:27.523574-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/cmd/alan",
+        "Elapsed": 0.292
+      },
+      {
+        "Time": "2026-11-12T16:32:27.667135-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/cmd/alan-evidence",
+        "Elapsed": 0.142
+      },
+      {
+        "Time": "2026-11-12T16:32:27.768855-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/cmd/alan-resource",
+        "Elapsed": 0.177
+      },
+      {
+        "Time": "2026-11-12T16:32:27.788207-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/effects",
+        "Elapsed": 0.108
+      },
+      {
+        "Time": "2026-11-12T16:32:27.919649-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/callablejoin",
+        "Elapsed": 0.15
+      },
+      {
+        "Time": "2026-11-12T16:32:27.999317-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/communication/authority",
+        "Elapsed": 0.123
+      },
+      {
+        "Time": "2026-11-12T16:32:28.00081-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/communication",
+        "Elapsed": 0.209
+      },
+      {
+        "Time": "2026-11-12T16:32:28.002599-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/effectboundary",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:28.044968-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/communication/mutual",
+        "Elapsed": 0.125
+      },
+      {
+        "Time": "2026-11-12T16:32:28.148029-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/consumingpolicy",
+        "Elapsed": 0.148
+      },
+      {
+        "Time": "2026-11-12T16:32:28.261498-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/invocationjoin",
+        "Elapsed": 0.109
+      },
+      {
+        "Time": "2026-11-12T16:32:28.391645-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/join",
+        "Elapsed": 0.129
+      },
+      {
+        "Time": "2026-11-12T16:32:28.861154-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/owningtree",
+        "Elapsed": 0.469
+      },
+      {
+        "Time": "2026-11-12T16:32:29.107279-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/effectfulcomposition",
+        "Elapsed": 1.105
+      },
+      {
+        "Time": "2026-11-12T16:32:29.327046-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/compose",
+        "Elapsed": 1.659
+      },
+      {
+        "Time": "2026-11-12T16:32:29.523958-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/cmd/alan-compose",
+        "Elapsed": 2.276
+      },
+      {
+        "Time": "2026-11-12T16:32:29.629689-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/evidence",
+        "Elapsed": 1.583
+      },
+      {
+        "Time": "2026-11-12T16:32:29.915375-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/reconciliation",
+        "Elapsed": 0.239
+      },
+      {
+        "Time": "2026-11-12T16:32:30.43629-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/substitution/b",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:30.436311-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/substitution/protocol",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:30.436324-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/worktree",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:30.530526-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/internal/boundary",
+        "Elapsed": 0.094
+      },
+      {
+        "Time": "2026-11-12T16:32:30.947183-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/substitution",
+        "Elapsed": 1.101
+      },
+      {
+        "Time": "2026-11-12T16:32:31.019951-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/author",
+        "Elapsed": 3.811
+      },
+      {
+        "Time": "2026-11-12T16:32:31.071394-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/cmd/alan-investigate",
+        "Elapsed": 3.543
+      },
+      {
+        "Time": "2026-11-12T16:32:31.184706-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/internal/fixture",
+        "Elapsed": 0.156
+      },
+      {
+        "Time": "2026-11-12T16:32:31.711195-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/communication",
+        "Elapsed": 0.153
+      },
+      {
+        "Time": "2026-11-12T16:32:31.752137-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+        "Elapsed": 1.45
+      },
+      {
+        "Time": "2026-11-12T16:32:31.753507-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:31.753528-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:31.75355-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:39.911517-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/export",
+        "Elapsed": 8.781
+      },
+      {
+        "Time": "2026-11-12T16:32:40.838088-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/revocation",
+        "Elapsed": 9.653
+      },
+      {
+        "Time": "2026-11-12T16:32:40.940745-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/internal/executor",
+        "Elapsed": 9.912
+      },
+      {
+        "Time": "2026-11-12T16:32:40.94171-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/dispatchauthority/cmd/export",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:40.943156-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/dispatchauthority",
+        "Elapsed": 0.104
+      },
+      {
+        "Time": "2026-11-12T16:32:40.943775-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/effectfulcomposition/cmd/export",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:41.042975-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectprotocol",
+        "Elapsed": 0.099
+      },
+      {
+        "Time": "2026-11-12T16:32:41.044049-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/effectprotocol/cmd/export",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:41.048755-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/revocation",
+        "Elapsed": 1.1360000000000001
+      },
+      {
+        "Time": "2026-11-12T16:32:41.123392-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectfulcomposition",
+        "Elapsed": 0.182
+      },
+      {
+        "Time": "2026-11-12T16:32:41.486834-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/mutualobligations/cmd/export",
+        "Elapsed": 0.363
+      },
+      {
+        "Time": "2026-11-12T16:32:41.628499-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/nominal",
+        "Elapsed": 0.141
+      },
+      {
+        "Time": "2026-11-12T16:32:42.351231-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/join",
+        "Elapsed": 1.307
+      },
+      {
+        "Time": "2026-11-12T16:32:42.468105-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/reconciliation",
+        "Elapsed": 0.116
+      },
+      {
+        "Time": "2026-11-12T16:32:42.469135-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/reconciliation/cmd/export",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:43.091647-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/owningtree",
+        "Elapsed": 1.462
+      },
+      {
+        "Time": "2026-11-12T16:32:44.570269-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/internal/durabletest",
+        "Elapsed": 14.021
+      },
+      {
+        "Time": "2026-11-12T16:32:44.660933-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+        "Elapsed": 12.907
+      },
+      {
+        "Time": "2026-11-12T16:32:44.66224-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/twoagent/cmd/export",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:44.662262-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/runtime",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:44.711081-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/twoagent",
+        "Elapsed": 0.14
+      },
+      {
+        "Time": "2026-11-12T16:32:44.775382-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/schema",
+        "Elapsed": 0.113
+      },
+      {
+        "Time": "2026-11-12T16:32:48.039989-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/mutualobligations",
+        "Elapsed": 6.99
+      },
+      {
+        "Time": "2026-11-12T16:32:50.71936-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/audit",
+        "Elapsed": 19.647
+      },
+      {
+        "Time": "2026-11-12T16:32:55.298578-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/semantics",
+        "Elapsed": 12.318
+      },
+      {
+        "Time": "2026-11-12T16:33:00.186223-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+        "Elapsed": 29.132
+      },
+      {
+        "Time": "2026-11-12T16:33:09.529284-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/substitution",
+        "Elapsed": 26.436
+      },
+      {
+        "Time": "2026-11-12T16:33:11.052908-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+        "Elapsed": 39.341
+      },
+      {
+        "Time": "2026-11-12T16:33:58.006601-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/investigation",
+        "Elapsed": 89.857
+      },
+      {
+        "Time": "2026-11-12T16:57:08.858116-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/examples/adaptive",
+        "Elapsed": 1481.101
+      }
+    ],
+    "named_skips": [
+      {
+        "Time": "2026-11-12T16:32:28.000052-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/communication",
+        "Test": "TestCommunicationArtifactExport",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:28.370505-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/join",
+        "Test": "TestJoinArtifactExport",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-12T16:32:31.745909-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+        "Test": "TestCandidateAExport",
+        "Elapsed": 0
+      }
+    ],
+    "failures": []
+  },
+  "matched": true
+}

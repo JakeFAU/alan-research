@@ -1,0 +1,28 @@
+{
+  "name": "module-verify",
+  "argv": [
+    "go",
+    "mod",
+    "verify"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b5/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b5/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b5/python-cache"
+  },
+  "timeout_seconds": 300,
+  "expected_exit": 0,
+  "exit": 0,
+  "elapsed_seconds": 0.09301687499999645,
+  "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+  "log_bytes": 21,
+  "archive_sha256": "4699dce40a065353f016ef7eb2c309ee9dee73281263a6b29287016349618a1b",
+  "source_unchanged": true,
+  "matched": true
+}

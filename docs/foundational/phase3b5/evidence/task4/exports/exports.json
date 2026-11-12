@@ -1,0 +1,262 @@
+[
+  {
+    "name": "twoagent",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/twoagent",
+          "./research/twoagent/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/twoagent"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/twoagent"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 26995,
+    "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "archive": "docs/foundational/phase3a/evidence/model.json",
+    "archived_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "decoded_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+    "exact_archived_bytes": true
+  },
+  {
+    "name": "mutual",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/mutual",
+          "./research/mutualobligations/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/mutual"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/mutual"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 129116,
+    "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "archive": "docs/foundational/phase3b/evidence/model.json",
+    "archived_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "decoded_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+    "exact_archived_bytes": true
+  },
+  {
+    "name": "authority",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/authority",
+          "./research/authorityservice/cmd/export"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/authority"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/authority"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 3049166,
+    "sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+    "archive": "docs/foundational/phase3b2/evidence/model.json.gz",
+    "archived_sha256": "9811655bbe78da6755690e24fadfecc31ea6ecf8815f1380da49efa261715c55",
+    "decoded_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+    "exact_archived_bytes": true
+  },
+  {
+    "name": "audit",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/audit",
+          "./research/authorityservice/cmd/audit"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/audit"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/audit"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 1079758,
+    "sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+    "archive": "docs/foundational/phase3b2/evidence/audit.json.gz",
+    "archived_sha256": "7ccfd68e90f21cc142a53f44b4b9b0b7fb3b61ef8d49d8e040201ab1316c1985",
+    "decoded_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+    "exact_archived_bytes": true
+  },
+  {
+    "name": "revocation-audit",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/revocation-audit",
+          "./research/authorityservice/cmd/revocation"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/revocation-audit"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/revocation-audit"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 1155861,
+    "sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad"
+  },
+  {
+    "name": "revocation-progress",
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "build",
+          "-buildvcs=false",
+          "-o",
+          "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+          "./research/delegationcorrespondence/cmd/progress"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+          "-config",
+          "S2/SeparateGrantRevocation"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a",
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+          "-config",
+          "S2/SeparateGrantRevocation"
+        ],
+        "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+        "exit": 0,
+        "stdout_sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a",
+        "stderr": ""
+      }
+    ],
+    "twice_byte_equal": true,
+    "bytes": 207334,
+    "sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a"
+  }
+]

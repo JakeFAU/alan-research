@@ -1,0 +1,107 @@
+{
+  "status": "Task implementation/evidence closure; final whole-branch review and delivery will be appended before scratch cleanup.",
+  "archive": "workspace.tar.gz",
+  "archive_sha256": "e3a68aa504bcbe3af47dce197982e363920918c4d2173b4f4e41cd6d0116a573",
+  "members": {
+    "final-review-context.md": {
+      "bytes": 3305,
+      "sha256": "9f3c4e9c94e81e8dcf74e88e871b014e7957fa9880c72f25fdae864cd209585c"
+    },
+    "global-constraints.md": {
+      "bytes": 1773,
+      "sha256": "ba99f736c36388382641f5423810ae87b3d27aedbceeed2d0e4de754277a72ae"
+    },
+    "plan-path": {
+      "bytes": 44,
+      "sha256": "f5ff9f36ca7db282b0d9aacd430bcbad124c292fffb65fb285e306fd69bf8aee"
+    },
+    "progress.md": {
+      "bytes": 12883,
+      "sha256": "3664b92fb8deab2da6d4a44cfa573b7c888ac2c8ab340da35e7c4b4743d04362"
+    },
+    "review-331186c7..4ad1f9ef.diff": {
+      "bytes": 83922,
+      "sha256": "5a5aa95bbe7a888238d3c503c2a5fc202437aa3934edb685d9549b5bee636b28"
+    },
+    "review-47d4e4a9..331186c7.diff": {
+      "bytes": 120764,
+      "sha256": "a90033dbd142329a19295f2980e2ff440dc2eab8a7440164f3cae0bbd9cece96"
+    },
+    "review-4ad1f9ef..4cabef20.diff": {
+      "bytes": 66552,
+      "sha256": "78c1ab5ab0644ffb3a869cbba90cfd1b514dee305722ed6c0fa8a9e40e0c24a3"
+    },
+    "review-8971eb11..2107c44c.diff": {
+      "bytes": 38899,
+      "sha256": "5f06aae1c10ea115ac94a78e881056e67ddb52e51c77bfbe369003fdc60b536a"
+    },
+    "review-e6e53deb..0e8d8f87.diff": {
+      "bytes": 108165,
+      "sha256": "ca8959d7231d5ad210ee4acbc5c94d305cfa30e389b845df8dcb4ffc25744cf8"
+    },
+    "task-1-brief.md": {
+      "bytes": 2354,
+      "sha256": "a420d9679df65641c0b415f9d40dafb9140946658a8e39c80de6436a6ad5f3ca"
+    },
+    "task-1-report.md": {
+      "bytes": 8227,
+      "sha256": "852b41b7ab0230ba5fd38a8b370132764fe31775adf1ef5cc92803a1c02ea709"
+    },
+    "task-1-review.md": {
+      "bytes": 5336,
+      "sha256": "bb67bdd199aaefcd4a8e7a5fdb684ebb3c0294df5b829d04c055e01594e877b2"
+    },
+    "task-2-brief.md": {
+      "bytes": 2618,
+      "sha256": "04bc855836c0127d7bb1469299fe452ef0d016dfca3256bdc70ac0d637fa9fde"
+    },
+    "task-2-report.md": {
+      "bytes": 13124,
+      "sha256": "3babca0bd4d208e0ca3094fc5c6ef69daa67158a5b2307c0c24924c9d3449c17"
+    },
+    "task-2-review.md": {
+      "bytes": 7094,
+      "sha256": "2d1e9fd61d63676c87e1d5d4913400347f21e3344997173fa7eb973562f1d59f"
+    },
+    "task-3-brief.md": {
+      "bytes": 3331,
+      "sha256": "296bff9cdddb56d8e91323ebaaa0a724ae45f451072b32c9f7bb503d4bf42b82"
+    },
+    "task-3-context.md": {
+      "bytes": 1756,
+      "sha256": "ffd9273c848f30d889048b67a5c4df78fffb3859a84b6dfd147ea1e5803726b0"
+    },
+    "task-3-fix-1.md": {
+      "bytes": 2136,
+      "sha256": "b49aa0f3e3a7911459ee4abf95815981ea39fcb12fc34667a1bf86ba26451c9d"
+    },
+    "task-3-report.md": {
+      "bytes": 14450,
+      "sha256": "c0090883e6341b787922521ec45bdbc9ea259036c7c0b87f57855de9ea354298"
+    },
+    "task-3-rereview-1.md": {
+      "bytes": 1966,
+      "sha256": "814250ad290ba891ca482171f6b3bb8958ecf08fc06566ebd05a76951a927507"
+    },
+    "task-3-review.md": {
+      "bytes": 8959,
+      "sha256": "e9cb616d6b90e0804c410b0f7953a943b91d4fb74d640a27a491ebfeec9c7ad0"
+    },
+    "task-4-brief.md": {
+      "bytes": 2134,
+      "sha256": "8a14649e6a1863d240a9ce09be428e5cf6ea91399b1336ef773f4894af41fed6"
+    },
+    "task-4-context.md": {
+      "bytes": 3567,
+      "sha256": "a0fd3590a2ff904a872632f28577dfc2b209af2dd5f4e2a3cf90d9b1f2c33360"
+    },
+    "task-4-report.md": {
+      "bytes": 9384,
+      "sha256": "91aa9d22761eb0f06a35177d032b1584f2d552a8710c7ca48f39844ca6a18cf4"
+    },
+    "task-4-review.md": {
+      "bytes": 4142,
+      "sha256": "fe703f9acf09b800aa9c86347bf1303877b3fff542e74501fa08c74449433372"
+    }
+  }
+}

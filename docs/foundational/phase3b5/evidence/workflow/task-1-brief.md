@@ -1,0 +1,11 @@
+### Task 1: Add the opt-in exact-root revocation model
+
+**Files:** Modify `research/authorityservice/model.go`, `explore.go`, `cmd/export/main.go` only as needed; create `revocation_test.go` and command tests; write `docs/foundational/phase3b5/02-model.md` and `evidence/task1/`.
+
+**Interfaces:** Produce `GrantRevocationConfig() Config` returning `{Policy:"S2", Scenario:"SeparateGrantRevocation"}`. `Initial`, `Binding`, `Successors`, `Explore` accept that opt-in configuration. Append `ABOwnPermission` after existing tuples with permission `(increment,counter-AB,blue)`, root `B/g1:c` only available in this configuration. `Configurations()` and default `export -config all` stay unchanged. `export -config S2/SeparateGrantRevocation` selects the new graph. Independent oracle support is Task 2; do not claim it here.
+
+- [ ] Read the contract and `/tmp/alan-phase3b5-model-recon.md`; read relevant source/tests. Add named failing tests for no inline grant, accepted/rejected separate issuance, preserved first allow/fresh refusal, pre-revocation permit applying after revoke, A crash/recovery clearing permit, late-grant sticky refusal, distinct AB root with genuine reciprocal completion, and immutable consumed results.
+- [ ] Run focused new tests and record genuine RED evidence. Implement only configuration routing, distinct tuple/root, separate issuance status and revoke enablement. Keep old numeric values, successor ordering and state/event fields stable.
+- [ ] Add new-scenario-only witness cuts that explicitly identify BA's application after revocation and revoked crash opportunity; avoid the generic cut accidentally selecting AB/c application. Test complete edge descriptor reconstruction and expected target original. Preserve old cuts/output.
+- [ ] Run focused GREEN, old authorityservice model tests and new complete `Explore`. Preserve shortest failing universal-completion witness, safe counterexample states and retry cycles. Record counts only after actual execution. Write transition/invariant proof sketches and limits in `02-model.md`.
+- [ ] Compare old default model export with Phase 3B.2 archived model bytes, and run new export twice for determinism. Run formatting/diff checks. Commit task files/evidence only; report exact command results and source identity. No oracle changes, manuscript or production runtime edits.
