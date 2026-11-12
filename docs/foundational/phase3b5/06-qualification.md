@@ -10,11 +10,11 @@ The [corpus extraction](evidence/preflight/corpus-extraction.json) verifies six 
 
 ## Frozen-source runs
 
-The controller's [qualification records](evidence/task4/qualification/) retain command manifests and compressed logs. The [freeze record](evidence/task4/freeze.json) pins executable and input identities. They record the arguments, working directory, offline environment, timeout, direct exit, log digest and executable-manifest check. The full ordinary outcome remains pending until the runner closes its record.
+The ten closed command records preserve the arguments, working directory, offline environment, timeout, direct exit, log digest and executable-manifest check. The final verifier confirmed all 582 frozen input hashes, all recorded command logs, formatting of changed Go files and the branch whitespace check. The four historical exports matched their archives exactly. The new model, audit and progress outputs matched the retained Task 1 and Task 2 bytes. [Qualification records](evidence/task4/qualification/), [freeze record](evidence/task4/freeze.json) and [final verification](evidence/task4/verification.json).
 
 | Job | Recorded disposition |
 | --- | --- |
-| `go test -json -count=1 -timeout=60m ./...` | Running. Corpus and prior progress checks are enabled. |
+| `go test -json -count=1 -timeout=60m ./...` | Exit 0 in 1,505.540 seconds. 2,633 test and subtest pass events across 51 tested packages, with 13 packages containing no tests. The job enables the earlier normal-mode inputs, prior progress checks and the two-mode opt-in corpus. |
 | `go test -json -count=1 -timeout=15m -race ./research/authorityservice/... ./research/delegationcorrespondence/...` | Exit 0, 422 passing test events, seven packages passed and three had no tests. No named tests skipped. The job enables the earlier race-mode inputs and the two-mode opt-in corpus. |
 | `staticcheck ./research/authorityservice/... ./research/delegationcorrespondence/...` | Exit 0, empty log. |
 | `staticcheck ./...` and `staticcheck -tags=integration ./...` | Exit 1 for each. Logs exactly match the respective baselines with 13 and 31 inherited diagnostics. |
@@ -24,7 +24,17 @@ The controller's [qualification records](evidence/task4/qualification/) retain c
 | `go run -buildvcs=false ./research/authorityservice/cmd/export -config S2/SeparateGrantRevocation -assert-authority-safe` | Exit 0. The output hash matches Task 1's retained model bytes. |
 | `qualify_exports.py` against frozen source | Exit 0. Two runs of each historical export matched its archived bytes. New audit and progress exports are deterministic across two runs each. |
 
-The ordinary stream so far records optional artifact-export skips for `TestCommunicationArtifactExport`, `TestJoinArtifactExport` and `TestCandidateAExport`. The closed record supplies the final named skip inventory. Final format and artifact checks are indexed in [verification](evidence/task4/verification.json).
+The ordinary run recorded exactly three named skips, all optional artifact exports. [Ordinary command record](evidence/task4/qualification/research-ordinary.json) and [skip output](evidence/task4/verification.json).
+
+| Named skip | Recorded reason |
+| --- | --- |
+| `examples/communication/TestCommunicationArtifactExport` | Explicit artifact export was not requested. |
+| `examples/join/TestJoinArtifactExport` | `ALAN_JOIN_EXPORT` was unset. |
+| `examples/substitution/a/TestCandidateAExport` | `ALAN_PHASE1I_A_OUTPUT` is required to export the first retained bytes. |
+
+## Manuscript PDF
+
+Cached Tectonic 0.17.0 built the independently reviewed manuscript at `4cabef20bf48453cba9dad5ac03a7d9e54a19d77`, exit 0. The installed 42-page PDF has SHA-256 `83bfaa590ad6b3cbd61ecf32043efdce93ed7ac75805d4feee1e625911de5bad`. The build record pins the Markdown, TeX and bibliography hashes. The controller inspected rendered pages 1, 2, 9, 28, 29 and 38–42, including new PDF Section 6.8 on pages 39–40 and Conclusion Section 7 on pages 40–41. Five unique box-warning patterns come from unchanged source passages. [Build record](evidence/task4/pdf/build-record.json), [visual inspection](evidence/task4/pdf/visual-review.md) and [archive member hashes](evidence/task4/pdf/manifest.json).
 
 ## Reviewed scoped evidence
 
