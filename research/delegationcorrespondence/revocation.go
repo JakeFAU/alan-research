@@ -38,7 +38,7 @@ type RevocationCapture struct {
 	Events       []ProjectedEvent
 	Audit        *m.Audit
 	State        m.State
-	Unresolved   []b.Obligation
+	Unresolved   []string // AB and BA are the report labels for unresolved permits.
 	Roots        [2]RevocationRoot
 	Principals   [2]RevocationPrincipal
 	Controls     []RevocationControl
@@ -168,7 +168,9 @@ func CheckRevocationDirectory(dir string) (RevocationCaseReport, error) {
 	}
 	if len(out.Reasons) != 0 {
 		for i, phase := range legacy.Phases {
-			out.Captures = append(out.Captures, RevocationCapture{Path: phase.Path, SHA256: phase.SHA256, Final: i == len(legacy.Phases)-1})
+			out.Captures = append(out.Captures, RevocationCapture{
+				Path: phase.Path, SHA256: phase.SHA256, Final: i == len(legacy.Phases)-1, Unresolved: []string{},
+			})
 		}
 		return out, nil
 	}
@@ -299,6 +301,7 @@ func readRevocationReady(label string, files map[string][]byte) (out revocationR
 
 func projectRevocationCapture(phase PhaseReport, final bool, data []byte, entry revocationManifest, exposures []Exposure, config m.Config, files map[string][]byte) (out RevocationCapture) {
 	out.Path, out.SHA256, out.Final = phase.Path, phase.SHA256, final
+	out.Unresolved = []string{}
 	var order int64
 	defer func() {
 		if p := recover(); p != nil {
@@ -532,7 +535,7 @@ func projectRevocationCapture(phase PhaseReport, final bool, data []byte, entry 
 			o.Applied == (p.Receipt != nil) && o.Consumed == p.Original.ReplySelected && audit.Paid[d] == o.Consumed,
 			"model_principal_custody", p.Original.ID, "")
 		if state.Authority[d].Permit && !o.Applied {
-			out.Unresolved = append(out.Unresolved, d)
+			out.Unresolved = append(out.Unresolved, m.Binding(config, d).Original)
 		}
 	}
 	out.Supported = true

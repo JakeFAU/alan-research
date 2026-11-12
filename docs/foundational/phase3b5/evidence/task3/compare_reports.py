@@ -43,16 +43,31 @@ def compare(root, baseline, legacy, checker):
                 or producer["GoVersion"] != "go1.27.3"
             ):
                 raise ValueError(f"verdict or producer mismatch for {mode}/{case}")
+            n07_unresolved = {
+                "before-revoke/inspect.json": ["BA"],
+                "after-revoke/inspect.json": ["BA"],
+                "final/inspect.json": [],
+            }
+            captures = report["Captures"]
+            if case == "N07" and [cut["Path"] for cut in captures] != list(n07_unresolved):
+                raise ValueError(f"unexpected N07 capture sequence for {mode}")
             cuts = []
-            for cut in report["Captures"]:
+            for cut in captures:
                 if cut["Supported"] != supported:
                     raise ValueError(f"unexpected cut verdict for {mode}/{case}/{cut['Path']}")
+                unresolved = cut["Unresolved"]
+                expected = n07_unresolved[cut["Path"]] if case == "N07" else []
+                if not isinstance(unresolved, list) or unresolved != expected:
+                    raise ValueError(
+                        f"unexpected unresolved opportunities for {mode}/{case}/{cut['Path']}: "
+                        f"got {unresolved!r}, expected {expected!r}"
+                    )
                 cuts.append({
                     "path": cut["Path"],
                     "sha256": cut["SHA256"],
                     "supported": cut["Supported"],
                     "event_count": len(cut["Events"] or []),
-                    "unresolved": ["AB" if d == 0 else "BA" for d in (cut["Unresolved"] or [])],
+                    "unresolved": unresolved,
                 })
             results.append({
                 "mode": mode, "case": case, "directory": cases[case],

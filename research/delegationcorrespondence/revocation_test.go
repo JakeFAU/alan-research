@@ -75,8 +75,11 @@ func TestRevocationSealed(t *testing.T) {
 					t.Fatalf("mapped event order %v, want %v", orders, tc.orders)
 				}
 				if tc.name == "N07" {
+					if final.Unresolved == nil || len(final.Unresolved) != 0 {
+						t.Fatalf("final cut reports unresolved opportunities %v", final.Unresolved)
+					}
 					for _, cut := range report.Captures[:2] {
-						if !slices.Equal(cut.Unresolved, []b.Obligation{b.BA}) || cut.State.Base.Obligations[b.BA].Applied {
+						if !slices.Equal(cut.Unresolved, []string{"BA"}) || cut.State.Base.Obligations[b.BA].Applied {
 							t.Fatalf("cut %s lost unresolved opportunity or invented apply", cut.Path)
 						}
 					}
