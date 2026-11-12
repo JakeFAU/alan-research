@@ -11,30 +11,35 @@ import (
 
 // CheckBindingDirectory checks only declared ordered captures and all hashed
 // JSON evidence. SQLite is never opened by the independent checker.
-func CheckBindingDirectory(dir string) (report CaseReport, err error) {
+func CheckBindingDirectory(dir string) (CaseReport, error) {
+	report, _, err := checkBindingDirectory(dir)
+	return report, err
+}
+
+func checkBindingDirectory(dir string) (report CaseReport, files map[string][]byte, err error) {
 	report.Files = map[string]string{}
 	report.Outcomes = map[string]json.RawMessage{}
 	caseBytes, err := os.ReadFile(filepath.Join(dir, "case.json"))
 	if err != nil {
-		return report, err
+		return report, files, err
 	}
 	var entry BindingCase
 	if err = json.Unmarshal(caseBytes, &entry); err != nil {
-		return report, err
+		return report, files, err
 	}
 	if entry.Version != "alan/phase3b4-case/v1" {
-		return report, fmt.Errorf("unknown binding case version %q", entry.Version)
+		return report, files, fmt.Errorf("unknown binding case version %q", entry.Version)
 	}
 	report.Name, report.ClaimedClassification, report.OriginalDirectory, report.CaseSHA256 = entry.Name, entry.Classification, dir, sha(caseBytes)
 	hashes, err := os.ReadFile(filepath.Join(dir, "digests.json"))
 	if err != nil {
-		return report, err
+		return report, files, err
 	}
 	var digests map[string]string
 	if err = strictJSON(hashes, &digests); err != nil {
-		return report, err
+		return report, files, err
 	}
-	files := map[string][]byte{}
+	files = map[string][]byte{}
 	paths := []string{}
 	for p := range digests {
 		paths = append(paths, p)
@@ -43,14 +48,14 @@ func CheckBindingDirectory(dir string) (report CaseReport, err error) {
 	for _, p := range paths {
 		full, e := resolve(dir, dir, filepath.Join(dir, p))
 		if e != nil {
-			return report, e
+			return report, files, e
 		}
 		data, e := os.ReadFile(full)
 		if e != nil {
-			return report, e
+			return report, files, e
 		}
 		if sha(data) != digests[p] {
-			return report, fmt.Errorf("digest mismatch %s", p)
+			return report, files, fmt.Errorf("digest mismatch %s", p)
 		}
 		report.Files[p] = sha(data)
 		if strings.HasSuffix(p, ".json") || strings.HasSuffix(p, ".jsonl") {
@@ -62,7 +67,7 @@ func CheckBindingDirectory(dir string) (report CaseReport, err error) {
 		p := capture.Directory + "/inspect.json"
 		data, ok := files[p]
 		if !ok {
-			return report, fmt.Errorf("missing declared capture %s", p)
+			return report, files, fmt.Errorf("missing declared capture %s", p)
 		}
 		v := CheckRaw(data)
 		if entry.PrincipalRequests[0] != "" {
@@ -86,12 +91,12 @@ func CheckBindingDirectory(dir string) (report CaseReport, err error) {
 	}
 	if len(entry.Captures) == 0 {
 		report.Projection.Reasons = []string{"no_store_created_input_validation_obstruction"}
-		return report, nil
+		return report, files, nil
 	}
 	last := entry.Captures[len(entry.Captures)-1].Directory + "/inspect.json"
 	report.External = CheckExternal(files[last], files)
 	report.ContinuityFailure = CheckContinuity(report.Phases, files)
-	return report, nil
+	return report, files, nil
 }
 
 func checkBindingLosses(c BindingCase, files map[string][]byte, out *ExternalReport) {

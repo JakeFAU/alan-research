@@ -1,0 +1,66 @@
+{
+  "collapse-revoke-root": {
+    "source": "research/delegationcorrespondence/revocation.go",
+    "base_sha256": "a59ed033d904391157efd8edabecce7a81d7659201c4f4b45ec44888370fc1f2",
+    "mutant_sha256": "b404fb289709764664288d82bcc294eb8e46d894bab3f759f57b0f0bf138543d",
+    "build": {
+      "command": [
+        "go",
+        "test",
+        "-overlay",
+        "/private/tmp/alan-phase3b5/task3/mutants/collapse-revoke-root/overlay.json",
+        "-c",
+        "-o",
+        "/private/tmp/alan-phase3b5/task3/mutants/collapse-revoke-root/checker.test",
+        "./research/delegationcorrespondence"
+      ],
+      "exit": 0,
+      "log": "collapse-revoke-root-build.log.gz",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "assertion": {
+      "command": [
+        "/private/tmp/alan-phase3b5/task3/mutants/collapse-revoke-root/checker.test",
+        "-test.v",
+        "-test.run",
+        "^TestRevocationWrongTarget$",
+        "-test.count=1"
+      ],
+      "exit": 1,
+      "log": "collapse-revoke-root-assertion.log.gz",
+      "log_sha256": "fad18899593562a4e84e30ef8d7cfe10c68dc766c7ba08e43dfa316ecce97672"
+    }
+  },
+  "omit-current-gate-revocation": {
+    "source": "research/delegationcorrespondence/check.go",
+    "base_sha256": "a7917838c2937879da36363ddd0898aa96c6bce0ee52a5ecc571fe51a785bc4e",
+    "mutant_sha256": "064ab7097bb02963b05a7a9db7b5b1ddecd46c94ae86b841908a4e9764d62c4e",
+    "build": {
+      "command": [
+        "go",
+        "test",
+        "-overlay",
+        "/private/tmp/alan-phase3b5/task3/mutants/omit-current-gate-revocation/overlay.json",
+        "-c",
+        "-o",
+        "/private/tmp/alan-phase3b5/task3/mutants/omit-current-gate-revocation/checker.test",
+        "./research/delegationcorrespondence"
+      ],
+      "exit": 0,
+      "log": "omit-current-gate-revocation-build.log.gz",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "assertion": {
+      "command": [
+        "/private/tmp/alan-phase3b5/task3/mutants/omit-current-gate-revocation/checker.test",
+        "-test.v",
+        "-test.run",
+        "^TestRevocationRawAttacks/fresh-allow-after-revoke$",
+        "-test.count=1"
+      ],
+      "exit": 1,
+      "log": "omit-current-gate-revocation-assertion.log.gz",
+      "log_sha256": "e8341e2df9b1bf82d3e89fe940aefbb4940f2384962e8e1599972b9f3fbdbf4f"
+    }
+  }
+}
