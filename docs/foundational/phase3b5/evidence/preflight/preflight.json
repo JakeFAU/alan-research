@@ -1,0 +1,8 @@
+{
+  "research_base": "4fea6c31eb8f438c0dea414aa5f8d7d0ecb5e8a4",
+  "research_tree": "3850bfa11b7373315abe4131928801262e4f0772",
+  "runtime_main": "c72c396df09c55b0be1a91b2557dcec2ef6457a8",
+  "runtime_tree_equals_prior_delivery_prospective": "52f4d7c9a2f573e78112be0c1f07b26834918603",
+  "branch": "codex/phase3b5-grant-revocation",
+  "scope": "Continue the proposed next research question after Phase3B4. Both predecessor PRs merged; research main tree equals delivered tree; runtime main tree equals qualified delivery prospective tree. Research-only model/correspondence packet unless a concrete runtime defect is discovered; no runtime policy expansion inferred."
+}

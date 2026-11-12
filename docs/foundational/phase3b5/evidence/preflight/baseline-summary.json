@@ -1,0 +1,161 @@
+{
+  "process_exit": "not retained after session expiration; terminal JSON reports are retained",
+  "package_results": [
+    {
+      "Time": "2026-11-12T15:25:16.097925-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.098097-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.098169-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.09834-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.201644-05:00",
+      "Action": "pass",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/export",
+      "Elapsed": 1.282
+    },
+    {
+      "Time": "2026-11-12T15:25:17.682486-05:00",
+      "Action": "pass",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Elapsed": 1.585
+    },
+    {
+      "Time": "2026-11-12T15:25:21.099293-05:00",
+      "Action": "pass",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/audit",
+      "Elapsed": 5.181
+    },
+    {
+      "Time": "2026-11-12T15:25:24.156318-05:00",
+      "Action": "pass",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+      "Elapsed": 8.24
+    }
+  ],
+  "failures": [],
+  "skips": [
+    {
+      "Time": "2026-11-12T15:25:16.934958-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestBindingConflictPromotions",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.935032-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestBindingExportCorpus",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.935071-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestBindingOrderedRenewals",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:16.935112-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestBindingPrefixMutationDiagnostics",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.072922-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestFrozenCorpus",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.106688-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestFrozenFreshRevocationAndSelection",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.15605-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestFrozenHostileExportsReachEvidenceChecks",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.213694-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestPortableCorpus",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.213709-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestExternalEvidenceAndAppendOnly",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.387879-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestProgressQueries",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.387909-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestFrozenProjectionDomains",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.520728-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestFreshOwnerGateEpochRequiresOpenContext",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.520755-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestOwnerRenewalPreservesTerminalEpoch/cut-06b-applied-no-receipt",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.520767-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestOwnerRenewalPreservesTerminalEpoch/cut-10-one-complete",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-12T15:25:17.520791-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestUncapturedInitialRenewalRemainsExplicit",
+      "Elapsed": 0
+    }
+  ]
+}
