@@ -1,0 +1,14 @@
+{
+  "source_archive": "/Users/jacob/dev/personal/alan/docs/qualification/phase3b3/task4-frozen/evidence.tar.gz",
+  "sha256": "0c8c48f2c9c2c064ed03e210ddec7d0ec8179162d5203692326e99e9254a58d4",
+  "producer": "759df6e3d2505f27e1287b2cfeb07bc4290afc0a",
+  "verified_members": 3784,
+  "extracted_members": 3620,
+  "original_root": "/tmp/alan-phase3b3-runtime-frozen",
+  "cases": {
+    "normal": 48,
+    "race": 48
+  },
+  "SQLiteOpened": false,
+  "reason": "Original 48-case regressions require exact original absolute prefix; newer prospective v1 archive has54 cases and is not substituted."
+}
