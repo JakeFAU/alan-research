@@ -7,6 +7,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"slices"
 	"testing"
 )
 
@@ -42,6 +43,7 @@ func TestRevocationCommand(t *testing.T) {
 		want int
 	}{
 		{"N06", 0},
+		{"N07", 0},
 		{"applied-unknown-revoked-before-fresh-gate", 1},
 	} {
 		var output, diagnostics bytes.Buffer
@@ -51,9 +53,31 @@ func TestRevocationCommand(t *testing.T) {
 		}
 		var report struct {
 			Supported, RawValid bool
+			Captures            []struct {
+				Path       string
+				Unresolved []string
+			}
 		}
 		if err := json.Unmarshal(output.Bytes(), &report); err != nil || !report.RawValid || report.Supported != (tc.want == 0) {
-			t.Fatalf("%s report=%+v err=%v", tc.name, report, err)
+			t.Fatalf("%s status flags or serialized report: %v", tc.name, err)
+		}
+		if tc.name == "N07" {
+			want := []struct {
+				path       string
+				unresolved []string
+			}{
+				{"before-revoke/inspect.json", []string{"BA"}},
+				{"after-revoke/inspect.json", []string{"BA"}},
+				{"final/inspect.json", []string{}},
+			}
+			if len(report.Captures) != len(want) {
+				t.Fatalf("N07 capture count = %d, want %d", len(report.Captures), len(want))
+			}
+			for i, cut := range report.Captures {
+				if cut.Path != want[i].path || cut.Unresolved == nil || !slices.Equal(cut.Unresolved, want[i].unresolved) {
+					t.Fatalf("N07 capture %d = %+v, want %+v", i, cut, want[i])
+				}
+			}
 		}
 		if status := run(args, failedWriter{}, &diagnostics); status != 2 {
 			t.Errorf("writer error gave status %d", status)

@@ -1,0 +1,61 @@
+{
+  "source_commit": "331186c7b44cdc18b9f7a0970992fe00ce89714b",
+  "disposition": "failed evidence superseded after review finding I1",
+  "archived_sha256": {
+    "compare_reports.py": "1599ea54a6dc29d4ce937323bb6b5a3a0b0015afca87d80955612ef9baab69ba",
+    "review.md": "e9cb616d6b90e0804c410b0f7953a943b91d4fb74d640a27a491ebfeec9c7ad0",
+    "source-sha256.json": "715a6fab58c083ff366f83993124f5dbff80601188e40baf60c94f33d54f1564",
+    "verdicts.json": "8ac6bc70dda3e71ebdd5d6313337fed17548d88f84dda9b7464aa4b676c3a142"
+  },
+  "cli_executable_sha256": "5592affd09ec6d6ec863209601f29c37d73994151533b4eb294a0fbdb3754cf0",
+  "observed": [
+    {
+      "command": [
+        "/tmp/alan-phase3b5/task3/i1/revocation-base",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "report_sha256": "71983f0e577bae12096e376d329896491d950903c5ef8d5416affd94a337f5b5",
+      "captures": [
+        {
+          "path": "before-revoke/inspect.json",
+          "Unresolved": "AQ=="
+        },
+        {
+          "path": "after-revoke/inspect.json",
+          "Unresolved": "AQ=="
+        },
+        {
+          "path": "final/inspect.json",
+          "Unresolved": null
+        }
+      ]
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b5/task3/i1/revocation-base",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "exit": 0,
+      "stderr": "",
+      "report_sha256": "1f7df79bd179eb33fedd26b8fb25db087b310e809a0527b189d176785e959475",
+      "captures": [
+        {
+          "path": "before-revoke/inspect.json",
+          "Unresolved": "AQ=="
+        },
+        {
+          "path": "after-revoke/inspect.json",
+          "Unresolved": "AQ=="
+        },
+        {
+          "path": "final/inspect.json",
+          "Unresolved": null
+        }
+      ]
+    }
+  ]
+}

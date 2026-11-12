@@ -1,0 +1,360 @@
+[
+  {
+    "mode": "normal",
+    "case": "N05",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+        ],
+        "exit": 0,
+        "sha256": "0c899f90c2616ebf911e97c2d403237de47940a5434cb5e42a32ca1a3fcd9819"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+        ],
+        "exit": 0,
+        "sha256": "1cee563c1f332d5e71bc74136b6ae8e122e3d0a94a9b59d69a4bd32af91de0ff"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N06",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+        ],
+        "exit": 0,
+        "sha256": "7649939fa42213f322b719ba366b02f454c1c0e8c044c96770dea3dee44604ab"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+        ],
+        "exit": 0,
+        "sha256": "6839d8f305c4710c203f8b0ed44b1b3b44b230067e2afb9299524d0b85d927f9"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N07",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+        ],
+        "exit": 0,
+        "sha256": "71983f0e577bae12096e376d329896491d950903c5ef8d5416affd94a337f5b5"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+        ],
+        "exit": 0,
+        "sha256": "f5e08c0c07fa75ac0dc29240e8ff51fa02ac25135e1e80bd325e4db24bb6352a"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      "AQ==",
+      "AQ==",
+      null
+    ],
+    "after": [
+      [
+        "BA"
+      ],
+      [
+        "BA"
+      ],
+      []
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P02-v2",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+        ],
+        "exit": 0,
+        "sha256": "9229530ba9f442af13217eb56d479a38fb9240abef69e06fdeb45e1d8f974af7"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+        ],
+        "exit": 0,
+        "sha256": "b95690efc63ca481c1969632f451133b7dc8b5aef3f6d106960f5168407d6236"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null
+    ],
+    "after": [
+      []
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+        ],
+        "exit": 1,
+        "sha256": "ca8b5f9314aa29a7c1d20ac5ee682a24efe4bb20c99bf97fb1e2fb3f2c2d99c1"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+        ],
+        "exit": 1,
+        "sha256": "8b25423a0c107320ebe5ea386d7b910ccac7f25e51c95173f252ac5d0324f093"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N05",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+        ],
+        "exit": 0,
+        "sha256": "528c9f910460128b8f946f1d0cb8e74303cf5c204e620129629f62454864d759"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+        ],
+        "exit": 0,
+        "sha256": "61c6a26a36959eb361cdff1aa3219e696520f9ac48e292daadbcf587010c9197"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N06",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+        ],
+        "exit": 0,
+        "sha256": "b0e7b5d475259c60e7923872536f7505631f711a89765e2b50c0ca116d9157d2"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+        ],
+        "exit": 0,
+        "sha256": "e5a2fad5ee97299923a35f975dc7b58e45c4775ec9383fad4980fb0467fa32b5"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N07",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+        ],
+        "exit": 0,
+        "sha256": "1f7df79bd179eb33fedd26b8fb25db087b310e809a0527b189d176785e959475"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+        ],
+        "exit": 0,
+        "sha256": "06873903433372a5749494e07bd04ac5cfae17e4b3d049c0845287afdb03416f"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      "AQ==",
+      "AQ==",
+      null
+    ],
+    "after": [
+      [
+        "BA"
+      ],
+      [
+        "BA"
+      ],
+      []
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P02-v2",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+        ],
+        "exit": 0,
+        "sha256": "84ca0f3345bd2b03b6b489efaed5ba4795e52886de194bd6a32c58db454e411a"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+        ],
+        "exit": 0,
+        "sha256": "0a1acf830ccae051b0ee3f2d7145106bbb41078adba7e3b405db287d5bb82f87"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null
+    ],
+    "after": [
+      []
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "commands": [
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation-base",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+        ],
+        "exit": 1,
+        "sha256": "630f9034f943b51a1e4116d32144e30e6bb2fe55a69edf48a860cc9e6eff9baa"
+      },
+      {
+        "argv": [
+          "/tmp/alan-phase3b5/task3/i1/revocation",
+          "-case",
+          "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+        ],
+        "exit": 1,
+        "sha256": "d03e672834226e2e03a015eebadb3be136ba2c9216ae533cf27efc23f32a7248"
+      }
+    ],
+    "all_other_fields_equal": true,
+    "before": [
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "after": [
+      [],
+      [],
+      [],
+      [],
+      []
+    ]
+  }
+]

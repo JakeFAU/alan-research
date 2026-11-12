@@ -1,0 +1,488 @@
+[
+  {
+    "mode": "normal",
+    "case": "N05",
+    "directory": "N05-306323137",
+    "legacy_sha256": "b829560bc801908bd5f536505e3f31b8190b7972dc4f3d2b0333e2cafefc6e20",
+    "report_sha256": "0c899f90c2616ebf911e97c2d403237de47940a5434cb5e42a32ca1a3fcd9819",
+    "report_bytes": 312950,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 0,
+    "applications": 0,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N05",
+      "Race": false,
+      "SourceSHA256": "81f4e4aed276c813500416fa9572badf75a1ea8687718981fa861419b8b43ae3"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "b70def186ebbbbf4078ddf072e0de190c6f2497827575618a71db19bfc4b337f",
+        "supported": true,
+        "event_count": 7,
+        "unresolved": []
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "139aefbb025118861f4bcf394b5757aabda909ee38a39cd70f59c5b86a4666b4",
+        "supported": true,
+        "event_count": 8,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "478dd0ca1dc21836f6fa2a5aef1b0197b0c6b3a233d05c1c785057d5dff77a70",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N06",
+    "directory": "N06-4077261617",
+    "legacy_sha256": "7297cde15b71961b092959692d91fa54f006efae1355f502745fa870b22ac06a",
+    "report_sha256": "7649939fa42213f322b719ba366b02f454c1c0e8c044c96770dea3dee44604ab",
+    "report_bytes": 339236,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 0,
+    "applications": 0,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N06",
+      "Race": false,
+      "SourceSHA256": "757504ae80f371e247e3aa5530b7a4b98ac3c0e084f8ad3e926a08d2d9f6d7c3"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "f8ac077acd0385362afdd9d39681701a5ea1436d76a3af862ab629e75d9ffbcf",
+        "supported": true,
+        "event_count": 8,
+        "unresolved": []
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "651ee00e8057bf3e1d6aa2100f3ba8c24a8f9b9c428ff8f62e847558e30895b2",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "872b0f798f9519e3e27371287d173e4aff130935f3ee100b703d1e77226d349f",
+        "supported": true,
+        "event_count": 10,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "N07",
+    "directory": "N07-3888622734",
+    "legacy_sha256": "da1fc247e2100a38cdffe61d53c48de96517a330c76bf72f9abf47e9f0afab94",
+    "report_sha256": "71983f0e577bae12096e376d329896491d950903c5ef8d5416affd94a337f5b5",
+    "report_bytes": 454579,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 2,
+    "applications": 2,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N07",
+      "Race": false,
+      "SourceSHA256": "6e2ea53b48d3cd5a88b71e6301e7688622cd77cce7472c4d45c76b7a4ab3ed64"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "0fcb9ac12805a53c476aace555f845a61eb159fefd59cb87b88ad3fc253d077b",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": [
+          "BA",
+          "BA",
+          "BA",
+          "BA"
+        ]
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "9cf1613156d23eac15a84988050e9639b0c49ebb6de937d636698dd74a228617",
+        "supported": true,
+        "event_count": 10,
+        "unresolved": [
+          "BA",
+          "BA",
+          "BA",
+          "BA"
+        ]
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "2be4bbf2ec132bd604b9c159047546f6eba20a517e0ee39d67aa08e93ae889b7",
+        "supported": true,
+        "event_count": 22,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "P02-v2",
+    "directory": "P02-v2-3465277444",
+    "legacy_sha256": "26f4f705d86e0e332461e0a15a204b3d779b8962b4a2535666e2f1fe03c72f19",
+    "report_sha256": "9229530ba9f442af13217eb56d479a38fb9240abef69e06fdeb45e1d8f974af7",
+    "report_bytes": 341449,
+    "legacy_supported": true,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 2,
+    "applications": 2,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignPositive/P02-v2",
+      "Race": false,
+      "SourceSHA256": "8133ad2458f4026df395a6672c86aecc70648bf8f476000417d41dbe188cb581"
+    },
+    "captures": [
+      {
+        "path": "final/inspect.json",
+        "sha256": "84d18f99f97c59f155bbfa92699ae51aa8b26ab9891124a368494e0cb4e13170",
+        "supported": true,
+        "event_count": 21,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "directory": "applied-unknown-revoked-1243056310",
+    "legacy_sha256": "42de403fd4dfda5757b718b20c85b68de8d4b096f9e2574639888687d4f9c64b",
+    "report_sha256": "ca8b5f9314aa29a7c1d20ac5ee682a24efe4bb20c99bf97fb1e2fb3f2c2d99c1",
+    "report_bytes": 245030,
+    "legacy_supported": false,
+    "supported": false,
+    "reasons": [
+      "whole_store_loss",
+      "applied_without_retained_result"
+    ],
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 1,
+    "applications": 1,
+    "acknowledged_losses": 1,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignAppliedUnknownRevoked",
+      "Race": false,
+      "SourceSHA256": "b38d92801eb570abf981e7b02ae9c91370dde5f514291586a909e2772502e284"
+    },
+    "captures": [
+      {
+        "path": "initial/inspect.json",
+        "sha256": "e86e363ffef0650c55db266d08d2a470680d72f29d39636293a554a69ad411c7",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "first-owner/post-open/inspect.json",
+        "sha256": "14062e301bbf79743eb8ea3934acdd9818fec058312835969ea9c31ecc67ce1f",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "stopped/inspect.json",
+        "sha256": "47a30a1ab10265dd440a2d4b094d2756a8fc8054b6703f53e72fd60c010c4a24",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "reopened/inspect.json",
+        "sha256": "a494f1840f6414f85c369f33a6dea803cee44a8733731d4d3195ae42492a9c69",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "0f5f506a2dc7fb0ca17ccb7fc1fdf418161a4024d68097bc19dbcd09dc093262",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N05",
+    "directory": "N05-2640236654",
+    "legacy_sha256": "6f2d15f2df26fa967d86a5f454d6c27f15ea451022e709772b19933621e1d462",
+    "report_sha256": "528c9f910460128b8f946f1d0cb8e74303cf5c204e620129629f62454864d759",
+    "report_bytes": 312948,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 0,
+    "applications": 0,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N05",
+      "Race": true,
+      "SourceSHA256": "d056abac5ed6dfd127752cc8379a164747ae099dc2f2761349e3e8c883ff788d"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "890c2f2330b16a60573144120a945e1e735c226afc4621360aaaf6fbb5c51690",
+        "supported": true,
+        "event_count": 7,
+        "unresolved": []
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "b5be364f51989df51ba92f0597c48cd52e3117909a77abb6c15344f32a65494d",
+        "supported": true,
+        "event_count": 8,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "c26cc457f61b403b871abed3e2e0b2ef6eced699f38e70ce97100f14dbb488d7",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N06",
+    "directory": "N06-2509010472",
+    "legacy_sha256": "31fd69068c1bf89ea9b87d1cc6cc2cde67e55685bd95263ae59dc94f891ceee8",
+    "report_sha256": "b0e7b5d475259c60e7923872536f7505631f711a89765e2b50c0ca116d9157d2",
+    "report_bytes": 339233,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 0,
+    "applications": 0,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N06",
+      "Race": true,
+      "SourceSHA256": "30d266bfa4d603e7b839e4b4f26b6285a9a7f61d3d7929a28afaa70235db13ff"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "927322a48b18cb2bd061bd2c42ec791dff4f0531d678ba61edd4e63ca0d86b06",
+        "supported": true,
+        "event_count": 8,
+        "unresolved": []
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "53f656d7f2d078b5c5b10de1e81f56b800383b4bc920d6c14feb008b3a7777d8",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "7e4a6aabac10974a17a19dac0735e3cdcde680ebda462eeee4213aec510db0eb",
+        "supported": true,
+        "event_count": 10,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N07",
+    "directory": "N07-3721806614",
+    "legacy_sha256": "5b59221efe7ac6896fe4609bdd67ee5c3b2c1c34e3c176ce12339e07df510d71",
+    "report_sha256": "1f7df79bd179eb33fedd26b8fb25db087b310e809a0527b189d176785e959475",
+    "report_bytes": 454576,
+    "legacy_supported": false,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 2,
+    "applications": 2,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignRevocation/N07",
+      "Race": true,
+      "SourceSHA256": "ca0d2bd34a1006c99ecb18917984b56a6ab02ff012a5f36753e59b2d52d32c41"
+    },
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "76bc92e7532344e5b207ac9ad7ffe64e2a1f50774e752c2f02baaaee8086ea4d",
+        "supported": true,
+        "event_count": 9,
+        "unresolved": [
+          "BA",
+          "BA",
+          "BA",
+          "BA"
+        ]
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "84f2fd7a780e63be06e94ac24085639de84933dbab57f455cdffb0a8b50c2525",
+        "supported": true,
+        "event_count": 10,
+        "unresolved": [
+          "BA",
+          "BA",
+          "BA",
+          "BA"
+        ]
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "26e3922c829bc0e3af69e1f661110a9297580ad91099a38cd10ec9c04b1841d0",
+        "supported": true,
+        "event_count": 22,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "P02-v2",
+    "directory": "P02-v2-242773752",
+    "legacy_sha256": "4496a982369245c39f04985059c14213c6f50e4d0575b0bf0d4480bec0a6dacc",
+    "report_sha256": "84ca0f3345bd2b03b6b489efaed5ba4795e52886de194bd6a32c58db454e411a",
+    "report_bytes": 341445,
+    "legacy_supported": true,
+    "supported": true,
+    "reasons": null,
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 2,
+    "applications": 2,
+    "acknowledged_losses": 0,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignPositive/P02-v2",
+      "Race": true,
+      "SourceSHA256": "d848fa2214c75c3f3f91b63965ef32a02144eef1b72f98afa59be3b5e19c7902"
+    },
+    "captures": [
+      {
+        "path": "final/inspect.json",
+        "sha256": "d0fc9e9587f3230228a57ace37bcb13895bfdd32192d055d899c6e2c465323ef",
+        "supported": true,
+        "event_count": 21,
+        "unresolved": []
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "directory": "applied-unknown-revoked-2740959369",
+    "legacy_sha256": "641e41b8ab16929c2e423ad1ab25212f774ce8170ac685d8e8974bf3e03cca62",
+    "report_sha256": "630f9034f943b51a1e4116d32144e30e6bb2fe55a69edf48a860cc9e6eff9baa",
+    "report_bytes": 245027,
+    "legacy_supported": false,
+    "supported": false,
+    "reasons": [
+      "whole_store_loss",
+      "applied_without_retained_result"
+    ],
+    "raw_valid": true,
+    "physical_valid": true,
+    "contacts": 1,
+    "applications": 1,
+    "acknowledged_losses": 1,
+    "producer": {
+      "Commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+      "GoVersion": "go1.27.3",
+      "Test": "TestPhase3B4CampaignAppliedUnknownRevoked",
+      "Race": true,
+      "SourceSHA256": "50e1fd21156081508f8599addce1b80e768b0d0eadd742ad56fd3c5f9ce573f8"
+    },
+    "captures": [
+      {
+        "path": "initial/inspect.json",
+        "sha256": "499c3abca6242804dac5deb4ecce0c22aea61b9d58db1df4b43885137559a757",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "first-owner/post-open/inspect.json",
+        "sha256": "a5f32410ea90b782ca38f6d8cd57f7ac39dac3efdd3a8c7735c26f83f4940686",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "stopped/inspect.json",
+        "sha256": "28b587120dc8d2bab5d996a7c738118280deeb9deb1092836836a873585e9c57",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "reopened/inspect.json",
+        "sha256": "67acfb8ceec0ef5b70ace3cbcab2975397291efcf4243136d087d1dd8b26bfe1",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "c2aed38ee5a590a650c77bbe38c038778739531f9ba7151d853bcbf00e0a13b3",
+        "supported": false,
+        "event_count": 0,
+        "unresolved": []
+      }
+    ]
+  }
+]
