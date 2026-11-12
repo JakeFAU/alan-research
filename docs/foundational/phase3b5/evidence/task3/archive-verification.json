@@ -1,0 +1,98 @@
+{
+  "raw-normal.tar.gz": {
+    "archive_sha256": "878bed2e14ded4d4794e378ca7bab8c865f1e1b98d4dca28ee113a2b7d1d0a9d",
+    "cases": {
+      "N05": "N05-306323137",
+      "N06": "N06-4077261617",
+      "N07": "N07-3888622734",
+      "P02-v2": "P02-v2-3465277444",
+      "applied-unknown-revoked-before-fresh-gate": "applied-unknown-revoked-1243056310"
+    },
+    "directory": "/private/tmp/alan-phase3b5/corpus/raw-normal",
+    "verified": {
+      "N05": {
+        "archive_members": 45,
+        "declared_members": 44,
+        "bytes": 2112104,
+        "case_sha256": "5511cf19dd0579ce84316c10f52d92828e45ba1292abba892f5337235fb1a047",
+        "digests_sha256": "5322c45df648628c48f763567f42f0c35866fdb33442b915d897308d59341191"
+      },
+      "N06": {
+        "archive_members": 46,
+        "declared_members": 45,
+        "bytes": 2154160,
+        "case_sha256": "a14ac3951a8bd6775499d68b2cbcd6b26febf5ecdfb2b84dc3c55a840d765662",
+        "digests_sha256": "95e710e5c1ec5da137a7579241ecc0369a81611e8c267f0a9031357751d99151"
+      },
+      "N07": {
+        "archive_members": 46,
+        "declared_members": 45,
+        "bytes": 2399113,
+        "case_sha256": "98e0f964bb05917006b08f8b3dd319e580762392a4985bed2cfee8c7c5bc8550",
+        "digests_sha256": "e7be3a1fda55cae6c7ba3e58d3693114f1114d4055e08f984facdf07db1c5910"
+      },
+      "P02-v2": {
+        "archive_members": 31,
+        "declared_members": 30,
+        "bytes": 1084456,
+        "case_sha256": "169a7d7dfa17da3676b7e03064be39cf06419b0b18f91de1bc1432a2d7f795e5",
+        "digests_sha256": "b92d6e7597796818efc4eaca2ff0173eb39c1005e511c07fc55d0fbc3b1a9579"
+      },
+      "applied-unknown-revoked-before-fresh-gate": {
+        "archive_members": 64,
+        "declared_members": 63,
+        "bytes": 3655486,
+        "case_sha256": "a64e25c2544ceecac56a5f6efe3718baab73be61ec2907c252d1adbdfbaeba1c",
+        "digests_sha256": "8026d0795c1fb22cf679235a2e9af4094b4e984f77920400c1d5c801f8390b2f"
+      }
+    }
+  },
+  "raw-race.tar.gz": {
+    "archive_sha256": "b7648b74ceddeab78066661a2075895d58e3088196f5290f0debf456d1e3f7d0",
+    "cases": {
+      "N05": "N05-2640236654",
+      "N06": "N06-2509010472",
+      "N07": "N07-3721806614",
+      "P02-v2": "P02-v2-242773752",
+      "applied-unknown-revoked-before-fresh-gate": "applied-unknown-revoked-2740959369"
+    },
+    "directory": "/private/tmp/alan-phase3b5/corpus/raw-race",
+    "verified": {
+      "N05": {
+        "archive_members": 45,
+        "declared_members": 44,
+        "bytes": 2112103,
+        "case_sha256": "ab4926612b0897371c5f62a078bb64127fef15174f6c397127f22c3798da3b81",
+        "digests_sha256": "cf751b5c1e2084dc0bbf230cd181531b5daae70471675a70be56f820f425b63e"
+      },
+      "N06": {
+        "archive_members": 46,
+        "declared_members": 45,
+        "bytes": 2154159,
+        "case_sha256": "cae8904d05fb7558557c6ec24b10fd1314315439cd707683cd4b694a603d5e3c",
+        "digests_sha256": "c72eee7b97d2f715dddbdaff3bd1121a4b88a7680862b61f95e0a1b7cf3f3b2f"
+      },
+      "N07": {
+        "archive_members": 46,
+        "declared_members": 45,
+        "bytes": 2399114,
+        "case_sha256": "c9a1d2ad1c1cb3e35b01ff6f1c39595de06420d97077c5d1a49855173d196b64",
+        "digests_sha256": "4777b734d56017c8b5c3a76505ccb6be2b05ee7ac05db8bad3829d5076dbdf28"
+      },
+      "P02-v2": {
+        "archive_members": 31,
+        "declared_members": 30,
+        "bytes": 1083915,
+        "case_sha256": "5dd7488c87e9d47bc7f79418293852aeb31be1637e177c5e681d1c69acbb05e5",
+        "digests_sha256": "7b038f90ce98668abbdbfebbe454e18c916ffd4fa2956eca66e72653e00c9ad6"
+      },
+      "applied-unknown-revoked-before-fresh-gate": {
+        "archive_members": 64,
+        "declared_members": 63,
+        "bytes": 3655489,
+        "case_sha256": "3104ab111e1a9db52fe0044b8d01f7ab689d08b4482fbdc395d7800142080bdf",
+        "digests_sha256": "da7b729888ad9947f5d30e68d0c0dc591cd3873e96cf76de51f12a6f13545bd3"
+      }
+    }
+  }
+}
