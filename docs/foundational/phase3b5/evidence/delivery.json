@@ -1,0 +1,41 @@
+{
+  "pull_request": "https://github.com/JakeFAU/alan-research/pull/46",
+  "number": 46,
+  "state_at_creation": "open",
+  "draft": true,
+  "merged": false,
+  "created_at": "2026-11-12T22:08:41Z",
+  "base": "main",
+  "base_sha": "4fea6c31eb8f438c0dea414aa5f8d7d0ecb5e8a4",
+  "head": "codex/phase3b5-grant-revocation",
+  "initial_pr_head_sha": "7cbcb60d412c2b030d651b543c52a08d1215bdd2",
+  "executable_commit": "4ad1f9ef37c57375d4a39eafc9a5fcd91bc0425d",
+  "manuscript_source_commit": "4cabef20bf48453cba9dad5ac03a7d9e54a19d77",
+  "whole_branch_reviewed_head": "2b7be7d6612e8770e6638e5026e3ff0b246052f2",
+  "attached_to_task": true,
+  "push": {
+    "argv": [
+      "git",
+      "push",
+      "-u",
+      "origin",
+      "codex/phase3b5-grant-revocation"
+    ],
+    "exit": 0
+  },
+  "scope": "Creation receipt. Later delivery-record commit changes only this receipt, the completed plan and review index. No merge or release.",
+  "remaining_obligations": [
+    "Applied-but-unrecorded effects across process loss",
+    "General runtime crash/recovery correspondence",
+    "Reverse simulation and N-agent closure"
+  ],
+  "delivery_checks": {
+    "frozen_inputs_unchanged": 582,
+    "manuscript_inputs_unchanged": true,
+    "installed_pdf_matches_reviewed_build": true
+  },
+  "closure_apparatus": {
+    "initial_failure": "A delivery-only helper counted the inline checkbox syntax example as an open task and raised AssertionError before editing the plan or review index. The outer shell returned0 after its later whitespace check; the traceback was observed.",
+    "correction": "Match only line-start task checkboxes; the corrected helper passed all source/manuscript/PDF hash assertions. No qualification command or executable source was affected."
+  }
+}
