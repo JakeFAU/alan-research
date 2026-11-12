@@ -1,0 +1,57 @@
+{
+  "base": "e6e53deb",
+  "baseline_source_archive_sha256": "5a4bf48dc75c38aaac4a61a3b49ff4505a7d61e1a1ac558f872988ee008a1a69",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "archive",
+        "e6e53deb",
+        "go.mod",
+        "go.sum",
+        "research/authorityservice",
+        "research/mutualobligations",
+        "research/delegationcorrespondence"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "stdout_sha256": "5a4bf48dc75c38aaac4a61a3b49ff4505a7d61e1a1ac558f872988ee008a1a69",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-buildvcs=false",
+        "-o",
+        "/private/tmp/alan-phase3b5/task2-old-progress-verified/progress",
+        "./research/delegationcorrespondence/cmd/progress"
+      ],
+      "cwd": "/private/tmp/alan-phase3b5/task2-old-progress-verified",
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/alan-phase3b5/task2-old-progress-verified/progress"
+      ],
+      "cwd": "/private/tmp/alan-phase3b5/task2-old-progress-verified",
+      "exit": 0,
+      "stdout_sha256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/private/tmp/alan-phase3b5/task2-exports-final/revocation-progress"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "stdout_sha256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b",
+      "stderr": ""
+    }
+  ],
+  "exact_bytes": true,
+  "sha256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b",
+  "bytes": 103050
+}

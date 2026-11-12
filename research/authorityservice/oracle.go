@@ -34,11 +34,12 @@ type ledgerAgent struct {
 	epoch             uint8
 }
 type authorityLedger struct {
-	originals  [2]ledgerOriginal
-	agents     [2]ledgerAgent
-	grants     map[string]GrantRecord // immutable after insertion; branches copy on write
-	revoked    bool
-	violations Violation
+	originals     [2]ledgerOriginal
+	agents        [2]ledgerAgent
+	grants        map[string]GrantRecord // immutable after insertion; branches copy on write
+	revoked       bool
+	separateRoots bool
+	violations    Violation
 }
 
 // AuditTrace interprets retained events independently. It does not call any
@@ -46,7 +47,7 @@ type authorityLedger struct {
 // Protocol errors stop at the first invalid event; unsafe candidate events are
 // retained and do not stop custody checking.
 func AuditTrace(c Config, events []Event) (Audit, error) {
-	l := authorityLedger{grants: map[string]GrantRecord{}}
+	l := authorityLedger{grants: map[string]GrantRecord{}, separateRoots: c.Scenario == "SeparateGrantRevocation"}
 	if !ledgerConfig(c) {
 		a := l.audit(0)
 		a.ProtocolValid = false
@@ -86,7 +87,7 @@ func ledgerConfig(c Config) bool {
 		case "Local", "Explicit", "Missing", "ScopeMix":
 			return true
 		}
-		return c.Policy == "S2" && (c.Scenario == "Shared" || c.Scenario == "LateGrant" || c.Scenario == "Revocable")
+		return c.Policy == "S2" && (c.Scenario == "Shared" || c.Scenario == "LateGrant" || c.Scenario == "Revocable" || c.Scenario == "SeparateGrantRevocation")
 	case "Cartesian":
 		return c.Scenario == "ScopeMix"
 	}
@@ -94,6 +95,9 @@ func ledgerConfig(c Config) bool {
 }
 func ledgerBinding(c Config, d base.Obligation) ServiceBinding {
 	p := Permission{Operation: "increment", Resource: "counter-B", Scope: "blue"}
+	if d == base.AB && c.Scenario == "SeparateGrantRevocation" {
+		p = Permission{Operation: "increment", Resource: "counter-AB", Scope: "blue"}
+	}
 	if d == base.BA {
 		if c.Scenario == "Local" {
 			p = Permission{Operation: "increment", Resource: "counter-A", Scope: "red"}
@@ -126,6 +130,13 @@ func ledgerRoots() map[string]ledgerRoot {
 		"B/g1:r": {holder: base.B, permission: Permission{Operation: "read", Resource: "status", Scope: "shared"}, bits: 1 << SharedPermission},
 	}
 }
+func (l authorityLedger) roots() map[string]ledgerRoot {
+	roots := ledgerRoots()
+	if l.separateRoots {
+		roots["B/g1:c"] = ledgerRoot{holder: base.B, permission: Permission{Operation: "increment", Resource: "counter-AB", Scope: "blue"}, bits: 1 << ABOwnPermission}
+	}
+	return roots
+}
 func ledgerTuple(p Permission) PermissionSet {
 	switch p {
 	case (Permission{Operation: "increment", Resource: "counter-A", Scope: "red"}):
@@ -134,13 +145,15 @@ func ledgerTuple(p Permission) PermissionSet {
 		return 1 << BPermission
 	case (Permission{Operation: "read", Resource: "status", Scope: "shared"}):
 		return 1 << SharedPermission
+	case (Permission{Operation: "increment", Resource: "counter-AB", Scope: "blue"}):
+		return 1 << ABOwnPermission
 	case (Permission{Operation: "increment", Resource: "counter-A", Scope: "blue"}):
 		return 1 << InventedPermission
 	}
 	return 0
 }
 func (l authorityLedger) rootLive(id string) bool {
-	_, ok := ledgerRoots()[id]
+	_, ok := l.roots()[id]
 	return ok && !(id == "B/g1:b" && l.revoked)
 }
 
@@ -154,7 +167,7 @@ func (l authorityLedger) grantPath(id string, binding ServiceBinding, current bo
 			return "", fmt.Errorf("grant-cycle")
 		}
 		visited[id] = true
-		if r, ok := ledgerRoots()[id]; ok {
+		if r, ok := l.roots()[id]; ok {
 			if _, collision := l.grants[id]; collision {
 				return "", fmt.Errorf("root-identity-collision")
 			}
@@ -220,6 +233,21 @@ func (l *authorityLedger) issue(e Event) error {
 	claim := g
 	claim.Accepted = true
 	probe.grants[g.ID] = claim
+	if l.separateRoots {
+		if g.ID != "grant:BA:b" {
+			return fmt.Errorf("grant-identity")
+		}
+		// Rejected issuance still has to be the one frozen structural claim.
+		structural := probe
+		structural.revoked = false
+		root, structuralErr := structural.grantPath(g.ID, e.Binding, true)
+		if structuralErr != nil {
+			return structuralErr
+		}
+		if root != "B/g1:b" || g.Permissions != 1<<BPermission {
+			return fmt.Errorf("grant-root-or-tuple")
+		}
+	}
 	_, err := probe.grantPath(g.ID, e.Binding, true)
 	if g.Accepted && err != nil {
 		return err
@@ -232,7 +260,7 @@ func (l *authorityLedger) issue(e Event) error {
 }
 func (l authorityLedger) selectWitness(c Config, b ServiceBinding) AuthorityWitness {
 	w := AuthorityWitness{Principal: b.Callee, Generation: b.CalleeGeneration, Permission: b.Permission}
-	for id, r := range ledgerRoots() {
+	for id, r := range l.roots() {
 		if r.holder == b.Callee && r.permission == b.Permission && l.rootLive(id) {
 			w.Path = OwnRoot
 			w.Root = id
@@ -252,7 +280,7 @@ func (l authorityLedger) selectWitness(c Config, b ServiceBinding) AuthorityWitn
 		}
 	}
 	if c.Policy == "S3" {
-		for id, r := range ledgerRoots() {
+		for id, r := range l.roots() {
 			if r.holder == b.Caller && r.permission == b.Permission && l.rootLive(id) {
 				w.Path = Ambient
 				w.Root = id
@@ -325,7 +353,7 @@ func (l *authorityLedger) accept(c Config, e Event) error {
 		return nil
 	}
 	if e.Kind == "revoke" {
-		if c.Scenario != "Revocable" || e.Actor != base.B || l.revoked || e.Obligation != base.NoObligation {
+		if (c.Scenario != "Revocable" && c.Scenario != "SeparateGrantRevocation") || e.Actor != base.B || l.revoked || e.Obligation != base.NoObligation {
 			return fmt.Errorf("revocation-order")
 		}
 		if err := ledgerEmpty(e); err != nil {
@@ -395,7 +423,7 @@ func (l *authorityLedger) accept(c Config, e Event) error {
 		}
 		o.committed = true
 	case "retain-grant":
-		if c.Scenario != "LateGrant" || e.Obligation != base.BA || !o.committed || len(l.grants) != 0 {
+		if (c.Scenario != "LateGrant" && c.Scenario != "SeparateGrantRevocation") || e.Obligation != base.BA || !o.committed || len(l.grants) != 0 {
 			return fmt.Errorf("issuance-order")
 		}
 		if err := l.issue(e); err != nil {
@@ -538,6 +566,7 @@ func auditGraph(g *graph) (GraphAudit, error) {
 	report := GraphAudit{Config: g.config}
 	ledgers := make([]authorityLedger, len(g.nodes))
 	ledgers[0].grants = map[string]GrantRecord{}
+	ledgers[0].separateRoots = g.config.Scenario == "SeparateGrantRevocation"
 	for i, n := range g.nodes {
 		if n.parent >= 0 {
 			l := ledgers[n.parent]
