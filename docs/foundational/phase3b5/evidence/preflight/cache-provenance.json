@@ -1,0 +1,27 @@
+{
+  "source": "/Users/jacob/go/pkg/mod/github.com/mattn/go-sqlite3@v1.14.52",
+  "destination": "/tmp/alan-phase3b5/modcache/github.com/mattn/go-sqlite3@v1.14.52",
+  "download_cache_files": [
+    {
+      "name": "v1.14.52.ziphash",
+      "sha256": "a9b7bda73a3bbbcb330903f403e479a04856238a5fb03c287d14bd534dfe4eac"
+    },
+    {
+      "name": "v1.14.52.info",
+      "sha256": "cf48e858683b7a3860ca07a9084ccd43471be03200d9faf0be0a91de94de5377"
+    },
+    {
+      "name": "v1.14.52.lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "v1.14.52.mod",
+      "sha256": "4c08597e14c92d9ed25f1bd14a2242198f0e3011964e798018abceb2ccbe82bf"
+    },
+    {
+      "name": "v1.14.52.zip",
+      "sha256": "ebd1fef8e9434fbdc2c94e35b9991df62d472c00170f57fc4f75daa69f658a1b"
+    }
+  ],
+  "network_downloads": false
+}
