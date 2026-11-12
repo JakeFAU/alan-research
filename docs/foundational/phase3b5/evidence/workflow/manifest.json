@@ -1,11 +1,16 @@
 {
-  "status": "Task implementation/evidence closure; final whole-branch review and delivery will be appended before scratch cleanup.",
+  "status": "Implementation, qualification, manuscript artifact and final whole-branch review complete. Draft PR receipt is recorded separately after creation.",
   "archive": "workspace.tar.gz",
-  "archive_sha256": "e3a68aa504bcbe3af47dce197982e363920918c4d2173b4f4e41cd6d0116a573",
+  "archive_sha256": "a68dc80aabbd0dcfd0e011a155cbae5be58ca0ecd25868aa28e9fa60262b82b8",
+  "reviewed_head": "2b7be7d6612e8770e6638e5026e3ff0b246052f2",
   "members": {
     "final-review-context.md": {
       "bytes": 3305,
       "sha256": "9f3c4e9c94e81e8dcf74e88e871b014e7957fa9880c72f25fdae864cd209585c"
+    },
+    "final-review.md": {
+      "bytes": 4399,
+      "sha256": "f5f55ef02d21a7df98eb53eeb0a0a43d3a0e3d6cb6c7494c064645739157019b"
     },
     "global-constraints.md": {
       "bytes": 1773,
@@ -16,8 +21,8 @@
       "sha256": "f5ff9f36ca7db282b0d9aacd430bcbad124c292fffb65fb285e306fd69bf8aee"
     },
     "progress.md": {
-      "bytes": 12883,
-      "sha256": "3664b92fb8deab2da6d4a44cfa573b7c888ac2c8ab340da35e7c4b4743d04362"
+      "bytes": 14647,
+      "sha256": "067f6bac780bab809e6384c3b7cd566af026de237eec7685d3b9bbcde5a669f6"
     },
     "review-331186c7..4ad1f9ef.diff": {
       "bytes": 83922,
@@ -30,6 +35,10 @@
     "review-4ad1f9ef..4cabef20.diff": {
       "bytes": 66552,
       "sha256": "78c1ab5ab0644ffb3a869cbba90cfd1b514dee305722ed6c0fa8a9e40e0c24a3"
+    },
+    "review-4fea6c31..2b7be7d6.diff": {
+      "bytes": 874828,
+      "sha256": "0d9c2cecf59922a48b0e76841f6ea6a70ae4cb38f614951f9002d9a1fc6536b2"
     },
     "review-8971eb11..2107c44c.diff": {
       "bytes": 38899,
