@@ -1,0 +1,218 @@
+[
+  {
+    "name": "omit-fresh-root-check",
+    "before": "if !live {\n\t\t\t\treturn fmt.Errorf(\"fresh-admission-revoked\")",
+    "after": "if false && !live {\n\t\t\t\treturn fmt.Errorf(\"fresh-admission-revoked\")",
+    "test": "TestRevocationOracleFreshAdmission",
+    "assertion": "fresh revoked admission accepted",
+    "source_sha256": {
+      "go.mod": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+      "go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "research/authorityservice/explore.go": "b22ea5f645f8dd97a256495e7e5115dd7f9a250a7508beaa603f0593cf65b814",
+      "research/authorityservice/model.go": "1bb9b6f9e4b5011f1dc41fa841e9ccb8f8e92eec3ba982497e0869c80040a0a3",
+      "research/authorityservice/model_test.go": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb",
+      "research/authorityservice/oracle.go": "b77307125ebf6fb308e67e2790f6abc482a34b0047271f349c291dc90e9b2297",
+      "research/authorityservice/oracle_corpus.go": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d",
+      "research/authorityservice/oracle_test.go": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73",
+      "research/authorityservice/revocation_corpus.go": "a489048035cf08fb0644e2db5cbfbd80b9f34963d48234b4bef14fded3f0f977",
+      "research/authorityservice/revocation_oracle_test.go": "a9cd7cbf1abcdc18bf7366c85317d7a2c91351aa66a7fb4c0b3f3f31cd5689f7",
+      "research/authorityservice/revocation_test.go": "71146b279aec503d11ee002836ba79c4bde92efc333b437f0bc43e4747f8081e",
+      "research/mutualobligations/explore.go": "26402c759508579a8c687520c5b2b0e9115dfd04aa15e211f3bad2a5b3123f0f",
+      "research/mutualobligations/model.go": "fe31ad17d0633977d51fb8345940f4868d21d08758dda5f7e47c4af5e32da3d8",
+      "research/mutualobligations/model_test.go": "4ae9d057a7b4d45e653d7f589ff982df281db238594eeba20e62ea1fe4dac288",
+      "research/mutualobligations/oracle.go": "119a99bd7ef458a7d7c6ecbe179d92b07d48db1eada56efa54a3406a7db445ad"
+    },
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-c",
+          "-o",
+          "/private/tmp/alan-phase3b5/task2-mutants-final/omit-fresh-root-check/checker.test",
+          "./research/authorityservice"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/omit-fresh-root-check/source",
+        "exit": 0,
+        "log": "omit-fresh-root-check-build.log.gz",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/task2-mutants-final/omit-fresh-root-check/checker.test",
+          "-test.run",
+          "^TestRevocationOracleFreshAdmission$",
+          "-test.count=1",
+          "-test.v"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/omit-fresh-root-check/source",
+        "exit": 1,
+        "log": "omit-fresh-root-check-assertion.log.gz",
+        "sha256": "2a313b2be554c46e8403377f70887aaab0d33f334cc5da7faa94abea1d1e700f"
+      }
+    ],
+    "qualified_kill": true
+  },
+  {
+    "name": "revoke-c-with-b",
+    "before": "id == \"B/g1:b\" && l.revoked",
+    "after": "(id == \"B/g1:b\" || id == \"B/g1:c\") && l.revoked",
+    "test": "TestRevocationOracleDistinctRoot",
+    "assertion": "distinct c root must survive b revocation",
+    "source_sha256": {
+      "go.mod": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+      "go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "research/authorityservice/explore.go": "b22ea5f645f8dd97a256495e7e5115dd7f9a250a7508beaa603f0593cf65b814",
+      "research/authorityservice/model.go": "1bb9b6f9e4b5011f1dc41fa841e9ccb8f8e92eec3ba982497e0869c80040a0a3",
+      "research/authorityservice/model_test.go": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb",
+      "research/authorityservice/oracle.go": "ba613b0e87fde484da22027bac0a4765aab8ff24225e18e956cb74e0d24650e7",
+      "research/authorityservice/oracle_corpus.go": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d",
+      "research/authorityservice/oracle_test.go": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73",
+      "research/authorityservice/revocation_corpus.go": "a489048035cf08fb0644e2db5cbfbd80b9f34963d48234b4bef14fded3f0f977",
+      "research/authorityservice/revocation_oracle_test.go": "a9cd7cbf1abcdc18bf7366c85317d7a2c91351aa66a7fb4c0b3f3f31cd5689f7",
+      "research/authorityservice/revocation_test.go": "71146b279aec503d11ee002836ba79c4bde92efc333b437f0bc43e4747f8081e",
+      "research/mutualobligations/explore.go": "26402c759508579a8c687520c5b2b0e9115dfd04aa15e211f3bad2a5b3123f0f",
+      "research/mutualobligations/model.go": "fe31ad17d0633977d51fb8345940f4868d21d08758dda5f7e47c4af5e32da3d8",
+      "research/mutualobligations/model_test.go": "4ae9d057a7b4d45e653d7f589ff982df281db238594eeba20e62ea1fe4dac288",
+      "research/mutualobligations/oracle.go": "119a99bd7ef458a7d7c6ecbe179d92b07d48db1eada56efa54a3406a7db445ad"
+    },
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-c",
+          "-o",
+          "/private/tmp/alan-phase3b5/task2-mutants-final/revoke-c-with-b/checker.test",
+          "./research/authorityservice"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/revoke-c-with-b/source",
+        "exit": 0,
+        "log": "revoke-c-with-b-build.log.gz",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/task2-mutants-final/revoke-c-with-b/checker.test",
+          "-test.run",
+          "^TestRevocationOracleDistinctRoot$",
+          "-test.count=1",
+          "-test.v"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/revoke-c-with-b/source",
+        "exit": 1,
+        "log": "revoke-c-with-b-assertion.log.gz",
+        "sha256": "a84ec4fdb932ae9e328b943c189ac23868674356aae6603479c74d8566bdd87f"
+      }
+    ],
+    "qualified_kill": true
+  },
+  {
+    "name": "accept-post-revocation-issuance",
+    "before": "_, err := probe.grantPath(g.ID, e.Binding, true)",
+    "after": "_, err := probe.grantPath(g.ID, e.Binding, false)",
+    "test": "TestRevocationOracleRejectedIssuance",
+    "assertion": "accepted post-revocation issuance was not rejected",
+    "source_sha256": {
+      "go.mod": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+      "go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "research/authorityservice/explore.go": "b22ea5f645f8dd97a256495e7e5115dd7f9a250a7508beaa603f0593cf65b814",
+      "research/authorityservice/model.go": "1bb9b6f9e4b5011f1dc41fa841e9ccb8f8e92eec3ba982497e0869c80040a0a3",
+      "research/authorityservice/model_test.go": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb",
+      "research/authorityservice/oracle.go": "085b17b7d0c54026983c1cb210f704452487af0e7640e0ddf35bcef32a515851",
+      "research/authorityservice/oracle_corpus.go": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d",
+      "research/authorityservice/oracle_test.go": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73",
+      "research/authorityservice/revocation_corpus.go": "a489048035cf08fb0644e2db5cbfbd80b9f34963d48234b4bef14fded3f0f977",
+      "research/authorityservice/revocation_oracle_test.go": "a9cd7cbf1abcdc18bf7366c85317d7a2c91351aa66a7fb4c0b3f3f31cd5689f7",
+      "research/authorityservice/revocation_test.go": "71146b279aec503d11ee002836ba79c4bde92efc333b437f0bc43e4747f8081e",
+      "research/mutualobligations/explore.go": "26402c759508579a8c687520c5b2b0e9115dfd04aa15e211f3bad2a5b3123f0f",
+      "research/mutualobligations/model.go": "fe31ad17d0633977d51fb8345940f4868d21d08758dda5f7e47c4af5e32da3d8",
+      "research/mutualobligations/model_test.go": "4ae9d057a7b4d45e653d7f589ff982df281db238594eeba20e62ea1fe4dac288",
+      "research/mutualobligations/oracle.go": "119a99bd7ef458a7d7c6ecbe179d92b07d48db1eada56efa54a3406a7db445ad"
+    },
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-c",
+          "-o",
+          "/private/tmp/alan-phase3b5/task2-mutants-final/accept-post-revocation-issuance/checker.test",
+          "./research/authorityservice"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/accept-post-revocation-issuance/source",
+        "exit": 0,
+        "log": "accept-post-revocation-issuance-build.log.gz",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/task2-mutants-final/accept-post-revocation-issuance/checker.test",
+          "-test.run",
+          "^TestRevocationOracleRejectedIssuance$",
+          "-test.count=1",
+          "-test.v"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/accept-post-revocation-issuance/source",
+        "exit": 1,
+        "log": "accept-post-revocation-issuance-assertion.log.gz",
+        "sha256": "95c8a5df4d3e4a09c929f0329eab6d0650cc0482104c92d34c0189f7a4f09e3e"
+      }
+    ],
+    "qualified_kill": true
+  },
+  {
+    "name": "retain-crash-permit",
+    "before": "l.originals[1-e.Actor].permit = false\n\t\tl.originals[1-e.Actor].permitEpoch = 0",
+    "after": "// mutant: retain the activation-bound permit across crash",
+    "test": "TestRevocationOracleCrashPermit",
+    "assertion": "crashed permit must clear before fresh refusal",
+    "source_sha256": {
+      "go.mod": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+      "go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "research/authorityservice/explore.go": "b22ea5f645f8dd97a256495e7e5115dd7f9a250a7508beaa603f0593cf65b814",
+      "research/authorityservice/model.go": "1bb9b6f9e4b5011f1dc41fa841e9ccb8f8e92eec3ba982497e0869c80040a0a3",
+      "research/authorityservice/model_test.go": "c8f1cc61eee61ef4a27f6f26402c86826c0c1e29c83096c37ca1fb6b3048abeb",
+      "research/authorityservice/oracle.go": "631763205a476265f17816d4ac58d467e7838928b2b6f5cb4271c128573c1534",
+      "research/authorityservice/oracle_corpus.go": "5bffdacf8f305cd0e1877ed0142396bf7eb66457cd2828d80212310be79eb49d",
+      "research/authorityservice/oracle_test.go": "580cd814bae4249d6b0be18b34b9669d631a4c675bc9f2064394c68021ed7a73",
+      "research/authorityservice/revocation_corpus.go": "a489048035cf08fb0644e2db5cbfbd80b9f34963d48234b4bef14fded3f0f977",
+      "research/authorityservice/revocation_oracle_test.go": "a9cd7cbf1abcdc18bf7366c85317d7a2c91351aa66a7fb4c0b3f3f31cd5689f7",
+      "research/authorityservice/revocation_test.go": "71146b279aec503d11ee002836ba79c4bde92efc333b437f0bc43e4747f8081e",
+      "research/mutualobligations/explore.go": "26402c759508579a8c687520c5b2b0e9115dfd04aa15e211f3bad2a5b3123f0f",
+      "research/mutualobligations/model.go": "fe31ad17d0633977d51fb8345940f4868d21d08758dda5f7e47c4af5e32da3d8",
+      "research/mutualobligations/model_test.go": "4ae9d057a7b4d45e653d7f589ff982df281db238594eeba20e62ea1fe4dac288",
+      "research/mutualobligations/oracle.go": "119a99bd7ef458a7d7c6ecbe179d92b07d48db1eada56efa54a3406a7db445ad"
+    },
+    "commands": [
+      {
+        "argv": [
+          "go",
+          "test",
+          "-c",
+          "-o",
+          "/private/tmp/alan-phase3b5/task2-mutants-final/retain-crash-permit/checker.test",
+          "./research/authorityservice"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/retain-crash-permit/source",
+        "exit": 0,
+        "log": "retain-crash-permit-build.log.gz",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "argv": [
+          "/private/tmp/alan-phase3b5/task2-mutants-final/retain-crash-permit/checker.test",
+          "-test.run",
+          "^TestRevocationOracleCrashPermit$",
+          "-test.count=1",
+          "-test.v"
+        ],
+        "cwd": "/private/tmp/alan-phase3b5/task2-mutants-final/retain-crash-permit/source",
+        "exit": 1,
+        "log": "retain-crash-permit-assertion.log.gz",
+        "sha256": "675278fce997caa74e4fe2954fa2f9e31be073e5f3db6ff37aa88305dc033fb3"
+      }
+    ],
+    "qualified_kill": true
+  }
+]

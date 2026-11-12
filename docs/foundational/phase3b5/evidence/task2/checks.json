@@ -1,0 +1,63 @@
+[
+  {
+    "name": "focused",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./research/authorityservice",
+      "./research/authorityservice/cmd/revocation",
+      "./research/authorityservice/cmd/audit",
+      "./research/authorityservice/cmd/export"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit": 0,
+    "log": "focused.log.gz"
+  },
+  {
+    "name": "progress",
+    "argv": [
+      "go",
+      "test",
+      "-count=1",
+      "-v",
+      "./research/delegationcorrespondence",
+      "./research/delegationcorrespondence/cmd/progress",
+      "-run",
+      "TestGrantRevocationProgress|TestProgress"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit": 0,
+    "log": "progress.log.gz"
+  },
+  {
+    "name": "race",
+    "argv": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "./research/authorityservice",
+      "./research/delegationcorrespondence",
+      "-run",
+      "TestRevocationOracle|TestGrantRevocationProgress|TestProgressCycles"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit": 0,
+    "log": "race.log.gz"
+  },
+  {
+    "name": "staticcheck",
+    "argv": [
+      "staticcheck",
+      "./research/authorityservice",
+      "./research/authorityservice/cmd/revocation",
+      "./research/delegationcorrespondence",
+      "./research/delegationcorrespondence/cmd/progress"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit": 0,
+    "log": "staticcheck.log.gz"
+  }
+]

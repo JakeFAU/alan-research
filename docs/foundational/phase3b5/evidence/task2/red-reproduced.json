@@ -1,0 +1,16 @@
+{
+  "base": "e6e53deb",
+  "argv": [
+    "go",
+    "test",
+    "./research/authorityservice",
+    "-run",
+    "^TestRevocationOracle",
+    "-count=1",
+    "-v"
+  ],
+  "cwd": "/tmp/alan-phase3b5/task2-old-progress-final",
+  "exit": 1,
+  "log": "red-reproduced.log.gz",
+  "purpose": "Replay initial positive ledger expectations against Task2 base with direct process exit capture"
+}
