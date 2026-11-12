@@ -1,0 +1,422 @@
+{
+  "frozen_source_files": 582,
+  "source_unchanged": true,
+  "commands": [
+    {
+      "name": "research-ordinary",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 1505.540366375,
+      "log_sha256": "adcad13addc1afbe8f5ebc54b4aa6af3dfe023ef949087592463086d2f5286fe"
+    },
+    {
+      "name": "affected-race",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 247.653736917,
+      "log_sha256": "1359335daf7aadf631cf146622c0894e5e4378daa06bceb6181901b9c0f6720a"
+    },
+    {
+      "name": "scoped-staticcheck",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 0.6130211250000001,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "global-staticcheck",
+      "exit": 1,
+      "expected_exit": 1,
+      "elapsed_seconds": 31.918653874999997,
+      "log_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+      "baseline_log_byte_equal": true,
+      "diagnostics": 13
+    },
+    {
+      "name": "global-staticcheck-integration",
+      "exit": 1,
+      "expected_exit": 1,
+      "elapsed_seconds": 8.304367999999997,
+      "log_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+      "baseline_log_byte_equal": true,
+      "diagnostics": 31
+    },
+    {
+      "name": "build",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 3.844340625000001,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "module-verify",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 0.09301687499999645,
+      "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+    },
+    {
+      "name": "module-tidy-diff",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 0.07333475000000078,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "new-model",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 1.6142552499999994,
+      "log_sha256": "bb2b3fa469b82a5526691375b474c6e2984d2f532e02fda4e76bb069da4a2f26"
+    },
+    {
+      "name": "frozen-exports",
+      "exit": 0,
+      "expected_exit": 0,
+      "elapsed_seconds": 37.270686915999995,
+      "log_sha256": "b336f071a27600d1b79d48846213ade8da25d0cf1e59e800c964d7c0783da123"
+    }
+  ],
+  "test_runs": {
+    "research-ordinary": {
+      "test_and_subtest_pass_events": 2633,
+      "package_results": {
+        "pass": 51,
+        "skip": 13
+      },
+      "named_skips": [
+        {
+          "package": "github.com/JakeFAU/alan-research/examples/communication",
+          "test": "TestCommunicationArtifactExport",
+          "output": "=== RUN   TestCommunicationArtifactExport\n    deployment_test.go:231: explicit artifact export not requested\n--- SKIP: TestCommunicationArtifactExport (0.00s)\n"
+        },
+        {
+          "package": "github.com/JakeFAU/alan-research/examples/join",
+          "test": "TestJoinArtifactExport",
+          "output": "=== RUN   TestJoinArtifactExport\n    artifacts_test.go:23: ALAN_JOIN_EXPORT is unset\n--- SKIP: TestJoinArtifactExport (0.00s)\n"
+        },
+        {
+          "package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+          "test": "TestCandidateAExport",
+          "output": "=== RUN   TestCandidateAExport\n    candidate_test.go:207: set ALAN_PHASE1I_A_OUTPUT to export first retained bytes\n--- SKIP: TestCandidateAExport (0.00s)\n"
+        }
+      ],
+      "failures": []
+    },
+    "affected-race": {
+      "test_and_subtest_pass_events": 422,
+      "package_results": {
+        "skip": 3,
+        "pass": 7
+      },
+      "named_skips": [],
+      "failures": []
+    }
+  },
+  "format_checks": [
+    {
+      "argv": [
+        "gofmt",
+        "-l",
+        "research/authorityservice/cmd/export/main.go",
+        "research/authorityservice/cmd/export/revocation_test.go",
+        "research/authorityservice/cmd/revocation/main.go",
+        "research/authorityservice/cmd/revocation/main_test.go",
+        "research/authorityservice/explore.go",
+        "research/authorityservice/model.go",
+        "research/authorityservice/oracle.go",
+        "research/authorityservice/revocation_corpus.go",
+        "research/authorityservice/revocation_oracle_test.go",
+        "research/authorityservice/revocation_test.go",
+        "research/delegationcorrespondence/binding_files.go",
+        "research/delegationcorrespondence/cmd/progress/main.go",
+        "research/delegationcorrespondence/cmd/progress/main_test.go",
+        "research/delegationcorrespondence/cmd/revocation/main.go",
+        "research/delegationcorrespondence/cmd/revocation/main_test.go",
+        "research/delegationcorrespondence/progress.go",
+        "research/delegationcorrespondence/revocation.go",
+        "research/delegationcorrespondence/revocation_attacks_test.go",
+        "research/delegationcorrespondence/revocation_progress_test.go",
+        "research/delegationcorrespondence/revocation_test.go"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "4fea6c31"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "model_sha256": "bb2b3fa469b82a5526691375b474c6e2984d2f532e02fda4e76bb069da4a2f26",
+  "exports": [
+    {
+      "name": "twoagent",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/twoagent",
+            "./research/twoagent/cmd/export"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/twoagent"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/twoagent"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 26995,
+      "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+      "archive": "docs/foundational/phase3a/evidence/model.json",
+      "archived_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+      "decoded_sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385",
+      "exact_archived_bytes": true
+    },
+    {
+      "name": "mutual",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/mutual",
+            "./research/mutualobligations/cmd/export"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/mutual"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/mutual"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 129116,
+      "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+      "archive": "docs/foundational/phase3b/evidence/model.json",
+      "archived_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+      "decoded_sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533",
+      "exact_archived_bytes": true
+    },
+    {
+      "name": "authority",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/authority",
+            "./research/authorityservice/cmd/export"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/authority"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/authority"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 3049166,
+      "sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+      "archive": "docs/foundational/phase3b2/evidence/model.json.gz",
+      "archived_sha256": "9811655bbe78da6755690e24fadfecc31ea6ecf8815f1380da49efa261715c55",
+      "decoded_sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e",
+      "exact_archived_bytes": true
+    },
+    {
+      "name": "audit",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/audit",
+            "./research/authorityservice/cmd/audit"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/audit"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/audit"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 1079758,
+      "sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+      "archive": "docs/foundational/phase3b2/evidence/audit.json.gz",
+      "archived_sha256": "7ccfd68e90f21cc142a53f44b4b9b0b7fb3b61ef8d49d8e040201ab1316c1985",
+      "decoded_sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1",
+      "exact_archived_bytes": true
+    },
+    {
+      "name": "revocation-audit",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/revocation-audit",
+            "./research/authorityservice/cmd/revocation"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/revocation-audit"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/revocation-audit"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 1155861,
+      "sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad"
+    },
+    {
+      "name": "revocation-progress",
+      "commands": [
+        {
+          "argv": [
+            "go",
+            "build",
+            "-buildvcs=false",
+            "-o",
+            "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+            "./research/delegationcorrespondence/cmd/progress"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+            "-config",
+            "S2/SeparateGrantRevocation"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "/private/tmp/alan-phase3b5/exports-final/revocation-progress",
+            "-config",
+            "S2/SeparateGrantRevocation"
+          ],
+          "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+          "exit": 0,
+          "stdout_sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a",
+          "stderr": ""
+        }
+      ],
+      "twice_byte_equal": true,
+      "bytes": 207334,
+      "sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a"
+    }
+  ],
+  "scope": "Full ordinary research tree; affected packages under race; unchanged historical runtime corpus, not a new production runtime campaign. Global lint retains the exact inherited diagnostics."
+}

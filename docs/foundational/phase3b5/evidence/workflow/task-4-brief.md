@@ -1,0 +1,10 @@
+### Task 4: Qualify, reconcile and prepare delivery
+
+**Files:** Create `docs/foundational/phase3b5/06-qualification.md`, `07-results.md`, `08-reviews.md` and evidence manifests; modify `paper/alan-dissertation.md`, `.tex`, rebuild `.pdf`, and update bibliography only if actually used. Controller owns final qualification/review/delivery coordination.
+
+**Interfaces:** Consume reviewed Tasks 1–3 and exact executable source. Produce bounded result/counterexample statements, reproducibility manifests, synchronized manuscript and reviewed PDF. No production runtime companion PR unless a separately justified concrete defect changes scope.
+
+- [ ] Freeze/commit executable source and capture inputs/toolchain manifests. Run full ordinary research tests, affected race tests, complete model/audit/progress and both-mode scoped corpus, relevant old corpus regressions, build/module/format/scoped Staticcheck. Record inherited global lint separately. Inventory all named skips and apparatus failures. Requalify affected checks after executable fixes.
+- [ ] State precise result categories: finite graph safety/progress characterization, source-level proof sketch, conditional forward trace relation, actual sealed evidence, shortest universal-completion counterexamples, and unresolved wider claims. Reconcile Abstract/body/Conclusion in Markdown and LaTeX; preserve older phase findings as historical. Propose one next bounded question only.
+- [ ] Obtain task spec/quality review of evidence/manuscript; then controller runs one broad whole-branch review and scoped fixes as necessary. Apply current PDF skill, build only after substantive review, inspect changed pages/continuations visually, and record PDF/source hashes. Never label an unexecuted check passed.
+- [ ] Archive all task briefs/reports/reviews, ledger and rulings. Controller verifies clean intended diff, pushes the task branch and opens/attaches a draft research PR against main. No merge, release, force push or unrelated cleanup. Final report includes question, bounded result, tests, changed artifacts, remaining obligations and material rulings with their costs.

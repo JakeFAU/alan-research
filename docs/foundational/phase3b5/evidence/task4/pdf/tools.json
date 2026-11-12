@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/bin/tectonic",
+        "--version"
+      ],
+      "exit": 0,
+      "version": "Tectonic 0.17.0"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/pdftoppm",
+        "-v"
+      ],
+      "exit": 0,
+      "version": "26.10.0"
+    },
+    {
+      "argv": [
+        "/opt/homebrew/bin/pdfinfo",
+        "-v"
+      ],
+      "exit": 0,
+      "version": "26.10.0"
+    }
+  ],
+  "status": "tool availability only; no new PDF authored or built yet"
+}

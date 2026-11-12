@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-11-12T21:31:55.583821+00:00",
+  "executable_commit": "4ad1f9ef37c57375d4a39eafc9a5fcd91bc0425d",
+  "executable_tree": "70cfd58bc56f9b56f771055481a56fc224877c21",
+  "source_file_count": 582,
+  "source_manifest_sha256": "51ab5216312d59b65987c239b5ff66cbbc3cbd7b44b9fb9cbcc40d80c6e42936",
+  "commands": [
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit": 0,
+      "stdout": "go version go1.27.3 darwin/arm64\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "staticcheck",
+        "-version"
+      ],
+      "exit": 0,
+      "stdout": "staticcheck 2026.2.2 (0.8.2)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "exit": 0,
+      "stdout": "Python 3.9.6\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "4ad1f9ef37c57375d4a39eafc9a5fcd91bc0425d\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit": 0,
+      "stdout": "70cfd58bc56f9b56f771055481a56fc224877c21\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit": 0,
+      "stdout": "4fea6c31eb8f438c0dea414aa5f8d7d0ecb5e8a4\n",
+      "stderr": ""
+    }
+  ],
+  "input_records_sha256": {
+    "docs/foundational/phase3b5/evidence/preflight/corpus-extraction.json": "bbb91917090f34b5bf5353b079ec99ee288765b0b12b07b17b10d1652149cc1d",
+    "docs/foundational/phase3b5/evidence/preflight/old48-extraction.json": "50210ee241109108c39ccae0cb9b97034fc01101df8db95f83277c174dd52939",
+    "docs/foundational/phase3b4/evidence/prospective-main/archives.json": "d4d12cd480a76f21e86acd7f185f37dd0b14c785c3176d2bee22a2a0a95805ef",
+    "docs/foundational/phase3b5/evidence/task3/archive-verification.json": "46747ee4ab7e77ac64f3ceb1317a9b026059c41008e55eb56e96a6a15e0274ca"
+  },
+  "runtime_current_commit": "c72c396df09c55b0be1a91b2557dcec2ef6457a8",
+  "runtime_current_tree": "52f4d7c9a2f573e78112be0c1f07b26834918603",
+  "sealed_input_producer_commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+  "sealed_input_producer_tree": "44af03133ac7ba75fb6f6f8dc36629ed4cf52d98",
+  "scope": "New research execution against sealed historical runtime bytes. Source manifest includes tracked Go/module/testdata and evidence Python scripts; later prose/PDF changes excluded."
+}

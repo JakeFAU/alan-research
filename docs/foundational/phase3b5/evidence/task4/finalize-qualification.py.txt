@@ -1,0 +1,75 @@
+"""Verify retained command evidence and summarize the frozen-source qualification."""
+from pathlib import Path
+import collections
+import gzip
+import hashlib
+import json
+import subprocess
+
+root = Path('/Users/jacob/.codex/worktrees/phase3b4-research/alan-research')
+q = Path('/tmp/alan-phase3b5/qualification-final')
+sha = lambda data: hashlib.sha256(data).hexdigest()
+records = json.loads((q / 'summary.json').read_text())
+assert len(records) == 10
+frozen = json.loads((q / 'source.json').read_text())
+changed = [n for n, h in frozen.items() if sha((root / n).read_bytes()) != h]
+assert not changed, changed
+result = {'frozen_source_files': len(frozen), 'source_unchanged': True, 'commands': [], 'test_runs': {}}
+for record in records:
+    name = record['name']
+    assert record['matched'] and record['source_unchanged'], record
+    packed = (q / (name + '.log.gz')).read_bytes()
+    raw = gzip.decompress(packed)
+    assert sha(packed) == record['archive_sha256']
+    assert sha(raw) == record['log_sha256'] and len(raw) == record['log_bytes']
+    result['commands'].append({k: record[k] for k in ('name', 'exit', 'expected_exit', 'elapsed_seconds', 'log_sha256')})
+    if 'baseline_log_byte_equal' in record:
+        assert record['baseline_log_byte_equal']
+        result['commands'][-1].update(baseline_log_byte_equal=True, diagnostics=len(raw.splitlines()))
+    if 'test_summary' not in record:
+        continue
+    events = []
+    outputs = collections.defaultdict(list)
+    skips = []
+    for line in raw.decode().splitlines():
+        if not line.startswith('{'):
+            continue
+        event = json.loads(line)
+        events.append(event)
+        key = (event.get('Package'), event.get('Test'))
+        if event.get('Action') == 'output' and event.get('Test'):
+            outputs[key].append(event.get('Output', ''))
+        if event.get('Action') == 'skip' and event.get('Test'):
+            skips.append({'package': key[0], 'test': key[1], 'output': ''.join(outputs[key][-8:])})
+    failures = [e for e in events if e.get('Action') == 'fail']
+    assert not failures
+    packages = collections.Counter(e.get('Action') for e in events if 'Test' not in e and e.get('Action') in ('pass', 'skip', 'fail'))
+    passed = [e for e in events if e.get('Action') == 'pass' and 'Test' in e]
+    result['test_runs'][name] = {'test_and_subtest_pass_events': len(passed), 'package_results': dict(packages), 'named_skips': skips, 'failures': failures}
+    assert len(passed) == record['test_summary']['pass_events']
+    assert not any('research/authorityservice' in s['package'] or 'research/delegationcorrespondence' in s['package'] for s in skips)
+new_files = [n for n in subprocess.check_output(['git', 'diff', '--name-only', '4fea6c31', '4ad1f9ef'], cwd=root).decode().splitlines() if n.endswith('.go')]
+checks = []
+for argv in (['gofmt', '-l', *new_files], ['git', 'diff', '--check', '4fea6c31']):
+    r = subprocess.run(argv, cwd=root, capture_output=True, text=True)
+    checks.append({'argv': argv, 'exit': r.returncode, 'stdout': r.stdout, 'stderr': r.stderr})
+    assert r.returncode == 0 and not r.stdout and not r.stderr, checks[-1]
+result['format_checks'] = checks
+model = gzip.decompress((q / 'new-model.log.gz').read_bytes())
+old = gzip.decompress((root / 'docs/foundational/phase3b5/evidence/task1/model.json.gz').read_bytes())
+assert model == old
+result['model_sha256'] = sha(model)
+exports_path = Path('/tmp/alan-phase3b5/exports-final-evidence')
+exports = json.loads((exports_path / 'exports.json').read_text())
+result['exports'] = exports
+for rec in exports:
+    assert rec['twice_byte_equal']
+    if rec.get('archive'):
+        assert rec['exact_archived_bytes']
+    else:
+        value = gzip.decompress((exports_path / (rec['name'] + '.json.gz')).read_bytes())
+        baseline = gzip.decompress((root / 'docs/foundational/phase3b5/evidence/task2' / (rec['name'] + '.json.gz')).read_bytes())
+        assert value == baseline and sha(value) == rec['sha256']
+result['scope'] = 'Full ordinary research tree; affected packages under race; unchanged historical runtime corpus, not a new production runtime campaign. Global lint retains the exact inherited diagnostics.'
+Path('/tmp/alan-phase3b5/verification.json').write_text(json.dumps(result, indent=2) + '\n')
+print(json.dumps({'status': 'verified', 'tests': result['test_runs'], 'model_sha256': result['model_sha256']}, indent=2))

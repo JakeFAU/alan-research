@@ -1,0 +1,29 @@
+{
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "exit": 2,
+  "diagnostics": [
+    "task-1-brief.md:12: new blank line at EOF.",
+    "task-2-brief.md:12: new blank line at EOF.",
+    "task-3-brief.md:12: new blank line at EOF."
+  ],
+  "correction": "Normalize only terminal blank lines in the three generated workflow briefs and their plain copies, then rebuild the archive. No requirement text or executable input changed.",
+  "changed": [
+    {
+      "path": "task-1-brief.md",
+      "removed_terminal_newlines": 1
+    },
+    {
+      "path": "task-2-brief.md",
+      "removed_terminal_newlines": 1
+    },
+    {
+      "path": "task-3-brief.md",
+      "removed_terminal_newlines": 1
+    }
+  ]
+}

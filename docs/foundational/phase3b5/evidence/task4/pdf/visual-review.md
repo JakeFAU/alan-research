@@ -1,0 +1,11 @@
+# Phase 3B.5 PDF inspection
+
+The controller built the substantively reviewed manuscript at research commit `4cabef20bf48453cba9dad5ac03a7d9e54a19d77` with cached Tectonic 0.17.0. The command exited 0 and the Markdown, LaTeX and bibliography hashes were unchanged before and after the build. The resulting A4 PDF has 42 pages and SHA-256 `83bfaa590ad6b3cbd61ecf32043efdce93ed7ac75805d4feee1e625911de5bad`.
+
+Poppler 26.10.0 rendered pages 1, 2, 9, 28, 29, 38, 39, 40, 41 and 42 at 110 dpi. The controller viewed every named PNG. Pages 1–2 cover the updated Abstract and contents; pages 38–40 cover the historical-section transition, new section and its continuation; pages 40–41 cover the Conclusion; pages 41–42 cover the shifted bibliography. Pages 9 and 28–29 cover unchanged passages reported by the TeX warnings. No clipping, overlap, missing glyphs, illegible formula, broken references or pagination defects were observed in these inspected pages.
+
+The new material is Markdown Section 6.13 and PDF Section 6.8, beginning on page 39. Its displayed safe-suffix predicate fits within the margins. The Conclusion remains Markdown Section 8 and PDF Section 7. The pre-existing Markdown-only Formal Falsification section is not inserted into LaTeX; whole-manuscript structural equality is not claimed.
+
+The build retains five unique box warnings across three TeX passes: one underfull warning at lines 214–215, and three underfull plus one 5.2184pt overfull warning at lines 558–559. `warning-source-comparison.json` verifies those exact source passages are unchanged from research base `4fea6c31`. Their rendered pages remain legible. This is not a warning-free build; no new warning concerns the edited Abstract, Phase 3B.5 section or Conclusion.
+
+`build-and-renders.tar.gz` retains the copied manuscript sources, produced PDF, build log, TeX/BibTeX logs, extracted text, PDF metadata, render commands and inspected PNGs. `manifest.json` binds the archive and each member to its SHA-256. The installed `paper/alan-dissertation.pdf` is byte-identical to the archived output. Whole-branch review remains a subsequent gate; any later mathematical source correction requires a new build and inspection.

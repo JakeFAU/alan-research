@@ -1,0 +1,28 @@
+{
+  "script": "/tmp/alan-phase3b5/qualification-runner.py",
+  "attempts": [
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "/tmp/alan-phase3b5/qualification-runner.py"
+      ],
+      "exit": 1,
+      "classification": "apparatus-cache-permission",
+      "message": "PermissionError creating /Users/jacob/Library/Caches/com.apple.python/tmp"
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "py_compile",
+        "/tmp/alan-phase3b5/qualification-runner.py"
+      ],
+      "environment": {
+        "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b5/python-cache"
+      },
+      "exit": 0
+    }
+  ]
+}
