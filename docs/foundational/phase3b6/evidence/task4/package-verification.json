@@ -1,0 +1,216 @@
+{
+  "head_at_check": "8450871e0b0302681ce8b4af9faf505883b203aa",
+  "script_sha256": "ebf717bbdaa1d10f6654e10da00e14952a7be8b57644578501243bfd1c908af8",
+  "frozen_inputs_checked": 612,
+  "packet_files_tracked": 210,
+  "no_go_module_or_research_changes_since_freeze": true,
+  "task_checksum_members": {
+    "task1": 8,
+    "task2": 25,
+    "task3": 79
+  },
+  "gzip_files_decoded": 49,
+  "pdf_archive_members": 26,
+  "pdf_sources_equal": true,
+  "workflow_files_checked": 20,
+  "relative_links_checked": 49,
+  "relative_links": [
+    {
+      "source": "docs/foundational/phase3b6/02-model.md",
+      "target": "evidence/task1/graph.json.gz"
+    },
+    {
+      "source": "docs/foundational/phase3b6/02-model.md",
+      "target": "evidence/task1/summary.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "01-contract.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/audit.json.gz"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/graph.json.gz"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/verification.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/source-sha256.txt"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/SHA256SUMS"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/mutants.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/03-observations.md",
+      "target": "evidence/task2/run-mutants.py"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/freeze.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/ordinary-package-selection.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/ordinary-dynamic-read-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "04-correspondence.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task3/protocol-source/index.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "../phase3b4/evidence/prospective-main/tools-and-readers.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/source-archive-verification.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/verification.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/qualification-unaffected/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "05-runbook.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/qualification-unaffected/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/qualification-final/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/exports/exports.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task1/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task2/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task3/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task1/verification.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task2/verification.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task3/investigation.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/preflight/baseline.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "08-reviews.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/pdf/visual-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "02-model.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "03-observations.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "04-correspondence.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "evidence/task3/protocol-source/index.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "01-contract.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "06-qualification.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "08-reviews.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/07-results.md",
+      "target": "05-runbook.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/preflight/design-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/task-1-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/task-2-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/task-3-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/task-4-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/final-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/task3/review-i1/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/task4/pdf/visual-review.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/"
+    }
+  ],
+  "unstaged_and_staged_diff_checks_passed": true
+}

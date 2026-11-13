@@ -12,6 +12,8 @@ The historical runtime producer is `5b4662fd682a220ca3065b15e86672b7e56567e7`, t
 
 The controller verified all 612 frozen inputs, the 528 earlier input hashes, 14 closed command records and the complete package inventory. Formatting of the 21 changed Go files exited 0 with empty output. [Final verification](evidence/task4/verification.json).
 
+The final package check separately verifies frozen-input stability, absence of later Go/module/research changes, task checksum inventories, compressed evidence, PDF/source equality, workflow manifests, local note links and Git tracking. Its record names the checked head; it does not represent another test-suite execution. [Package verification](evidence/task4/package-verification.json) and [checker](evidence/task4/check_package.py).
+
 | Job | Direct exit | Elapsed (s) | Recorded result |
 | --- | ---: | ---: | --- |
 | `go test -json -count=1 -timeout=60m` with the 58 unchanged packages | 0 | 1,470.108 | 2,383 test and subtest pass events in 48 tested packages. Ten packages contain no tests. Three named skips. |
