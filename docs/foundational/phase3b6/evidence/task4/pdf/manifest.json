@@ -1,0 +1,111 @@
+{
+  "archive": "build-and-renders.tar.gz",
+  "archive_sha256": "c8d8050ae132c83926cb23374be4262addbf19fee3013b6cf45ae26bec3d0517",
+  "members": {
+    "alan-dissertation.blg": {
+      "bytes": 204,
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    "alan-dissertation.log": {
+      "bytes": 16638,
+      "sha256": "5d537ee8640afba277771de79530fbd05cd73fc324f6e4c0fde5032b336b0846"
+    },
+    "alan-dissertation.md": {
+      "bytes": 276875,
+      "sha256": "318f8b09b917279c3478e1f0530ad3171b8e45939ce3770576f738cd5c6b510b"
+    },
+    "alan-dissertation.pdf": {
+      "bytes": 347349,
+      "sha256": "529e237679c32647dd58b9a478b77e628e80a7fc6d3fb211a07b5252b35486ab"
+    },
+    "alan-dissertation.tex": {
+      "bytes": 178593,
+      "sha256": "e69fe88fafaac68e55400338e9bf0a9d06d622c5e2f11d2bcfe6f0fbcd357342"
+    },
+    "build-record.json": {
+      "bytes": 1305,
+      "sha256": "da9d14fa0585a059261f61436055d942576e37c684f32c5819205b470c62253f"
+    },
+    "build.log": {
+      "bytes": 2070,
+      "sha256": "3316a0d8fa773023cb014fa1e56556d989af59806516b2455e44af02f6f8afad"
+    },
+    "build_pdf.py": {
+      "bytes": 2551,
+      "sha256": "02f0126bec25faee43707d914521f62483f246104f7cb2f7592a48cb33841d85"
+    },
+    "page-01.png": {
+      "bytes": 248346,
+      "sha256": "2267d8199855a9e911671b5ae533055ecb0125a8485e9f6810737cfd88202391"
+    },
+    "page-02.png": {
+      "bytes": 193376,
+      "sha256": "0e6d700c06521161256d77ff86d251723d0668abf4ed53620d2bb64459e9f383"
+    },
+    "page-09.png": {
+      "bytes": 360812,
+      "sha256": "986abcb470418198ea8169e6bc73d086b473a2e5b8595daa91d220448480f109"
+    },
+    "page-28.png": {
+      "bytes": 326714,
+      "sha256": "136441ce1383c024a3bc7b9580700379c4182d89ba9f27eaa0f813ec01845ba8"
+    },
+    "page-29.png": {
+      "bytes": 354002,
+      "sha256": "a531ebbf0a0915a2968b7a746598cbb01dfc9b79fad8fbb9ad6af1b96fc3c8da"
+    },
+    "page-38.png": {
+      "bytes": 384320,
+      "sha256": "1089d81011187b1baba11a5b87ae54977baf939f16091df66b5fd342398e3881"
+    },
+    "page-39.png": {
+      "bytes": 354354,
+      "sha256": "df0f02ae77383483e24524e52a5efa420f612676bc1e046ce51802d1deb51b28"
+    },
+    "page-40.png": {
+      "bytes": 374387,
+      "sha256": "cb263cfc913ab1f0c9250e4cab1972008b450c2603bc98e6f83127d07e039ce5"
+    },
+    "page-41.png": {
+      "bytes": 344869,
+      "sha256": "af6c87f9e47418dbb52dacd65e9050555272c9426a8f94916afb76fb6f82a18a"
+    },
+    "page-42.png": {
+      "bytes": 332322,
+      "sha256": "6614b2bf6f3bf5b468ca7fbbafb0ca6ae9823d92354440a7ba35cf126bfb0a86"
+    },
+    "page-43.png": {
+      "bytes": 313681,
+      "sha256": "3453af941855973cb88d3e345e0ffd97cce0b7f975568eebf5552f51cf088d64"
+    },
+    "paper-text.txt": {
+      "bytes": 178985,
+      "sha256": "e5774ee704cb2b34e37ab117d44ccdf712c88f595791caeb40fc5783f157716c"
+    },
+    "pdfinfo.txt": {
+      "bytes": 430,
+      "sha256": "ed96a04e0c0b51c02cdff59ca92437d3e86eee7a99bd1c7d23983e9bf7f73cf5"
+    },
+    "poppler-version.txt": {
+      "bytes": 144,
+      "sha256": "15f830e729f4dc82c7c8989df9727720ade1683330f6ce0ebf808055da03191a"
+    },
+    "references.bib": {
+      "bytes": 8562,
+      "sha256": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+    },
+    "render-records.json": {
+      "bytes": 5071,
+      "sha256": "7d55c4bcb6267bf7023a714dd5ddda35bbbad7d479373ea5f4d172e8b93bfe92"
+    },
+    "tectonic-version.txt": {
+      "bytes": 16,
+      "sha256": "d2c451323def920d009840284f43cb877d93c95a62a92133ffe2dc2b43bed7b6"
+    },
+    "warning-source-comparison.json": {
+      "bytes": 2305,
+      "sha256": "480329622acf423f84756f4df12569058d0534b58d8dc637dd06495631407fa0"
+    }
+  },
+  "installed_pdf_sha256": "529e237679c32647dd58b9a478b77e628e80a7fc6d3fb211a07b5252b35486ab"
+}
