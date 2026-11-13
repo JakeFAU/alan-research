@@ -1,0 +1,11 @@
+{
+  "review": "Task3 APPROVE with minor inventory wording correction",
+  "prior_commit": "b7ed93186a16a0a52637de7b7e3a13a5fd37e523",
+  "source_path": "research/delegationcorrespondence/effect_protocol.go",
+  "prior_source_sha256": "65c1360e47033c5db6d30715e9c2b256f525b548712708ab8762f64360c79480",
+  "corrected_source_sha256": "d13ba06f18db849284117baef861514f58e40a3e79ebc5be80c9bac5804ab5cc",
+  "old_phrase": "four unsigned sealed archives",
+  "new_phrase": "two unsigned sealed archives containing four selected dossiers",
+  "prior_evidence_manifest_sha256": "41b148dccfee869f35fe36482b5f5ad1b6e00e28e94427b701a2f8529bb2947d",
+  "historical_reports": "Original complete report bytes remain at prior_commit:docs/foundational/phase3b6/evidence/task3/reports/*.json.gz; prior-verdicts.json preserves their hashes, sizes and summaries."
+}
