@@ -1,0 +1,4 @@
+# github.com/JakeFAU/alan-research/research/matchedcapture
+research/matchedcapture/review_r1_test.go:12:6: expected '(', found TestReviewR1CompleteReports
+FAIL	github.com/JakeFAU/alan-research/research/matchedcapture [setup failed]
+FAIL

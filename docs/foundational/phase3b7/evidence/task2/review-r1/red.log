@@ -1,0 +1,128 @@
+--- FAIL: TestReviewR1EndpointCoverage (1.65s)
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-a/stopped/null-total (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-a/stopped/null-contacts (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-a/final/null-total (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-a/final/null-contacts (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-b/stopped/null-total (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-b/stopped/null-contacts (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-b/final/null-total (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1EndpointCoverage/endpoint-b/final/null-contacts (0.10s)
+        review_r1_test.go:32: incomplete endpoint coverage: <nil> seal={Valid:true Reasons:[]} world={Valid:true Reasons:[]}
+--- FAIL: TestReviewR1CompleteReports (3.03s)
+    --- FAIL: TestReviewR1CompleteReports/Steps/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Steps/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Steps/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Dispatches/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Dispatches/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Dispatches/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Quiescent/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Quiescent/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Quiescent/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/OpenRuns/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/OpenRuns/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/OpenRuns/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnresolvedIntents/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnresolvedIntents/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnresolvedIntents/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/PendingDeliveries/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/PendingDeliveries/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/PendingDeliveries/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnknownAdapters/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnknownAdapters/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/UnknownAdapters/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Roots/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Roots/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/Roots/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/RejectedAdmissions/delete (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/RejectedAdmissions/null (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+    --- FAIL: TestReviewR1CompleteReports/RejectedAdmissions/wrong-type (0.10s)
+        review_r1_test.go:59: equal incomplete Run report: <nil> raw={Valid:true Reasons:[]} equality={ByteEqual:true StructuralEqual:true Paths:[]}
+--- FAIL: TestReviewR1NestedReportSchema (0.40s)
+    --- FAIL: TestReviewR1NestedReportSchema/root-charge (0.10s)
+        review_r1_test.go:86: incomplete nested report: <nil> raw={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1NestedReportSchema/intent-ordinal (0.10s)
+        review_r1_test.go:86: incomplete nested report: <nil> raw={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1NestedReportSchema/null-root (0.10s)
+        review_r1_test.go:86: incomplete nested report: <nil> raw={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1NestedReportSchema/null-open-run (0.10s)
+        review_r1_test.go:86: incomplete nested report: <nil> raw={Valid:true Reasons:[]}
+--- FAIL: TestReviewR1AuthorizedEvent (1.00s)
+    --- FAIL: TestReviewR1AuthorizedEvent/Subject/"wrong" (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Generation/2 (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Epoch/999 (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Sequence/999 (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Phase/"wrong" (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Root/"wrong" (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/AuthorityAdmissionOrdinal/1 (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/InFlight/["wrong"] (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/InFlight/[] (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+    --- FAIL: TestReviewR1AuthorizedEvent/Generation/null (0.10s)
+        review_r1_test.go:109: contradictory native authorization: <nil> protocol={Valid:true Reasons:[]}
+--- FAIL: TestReviewR1EffectiveSelection (1.53s)
+    --- FAIL: TestReviewR1EffectiveSelection/double-equals (0.10s)
+        review_r1_test.go:143: effective selection valid=true: <nil> source={Valid:false Reasons:[source.json: capture test not selected]} supported=false
+    --- FAIL: TestReviewR1EffectiveSelection/single-separated (0.10s)
+        review_r1_test.go:143: effective selection valid=true: <nil> source={Valid:false Reasons:[source.json: capture test not selected]} supported=false
+    --- FAIL: TestReviewR1EffectiveSelection/double-separated (0.10s)
+        review_r1_test.go:143: effective selection valid=true: <nil> source={Valid:false Reasons:[source.json: capture test not selected]} supported=false
+    --- FAIL: TestReviewR1EffectiveSelection/override (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/override-double-separated (0.11s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/duplicate-identical (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/terminated-before (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/positional-before (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/hidden-override-after-termination (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/selector-as-another-value (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+    --- FAIL: TestReviewR1EffectiveSelection/skip-selected (0.10s)
+        review_r1_test.go:143: effective selection valid=false: <nil> source={Valid:true Reasons:[]} supported=true
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/matchedcapture	7.815s
+FAIL

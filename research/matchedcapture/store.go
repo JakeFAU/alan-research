@@ -9,6 +9,26 @@ import (
 	m "github.com/JakeFAU/alan-research/research/effectobservation"
 )
 
+type rootView struct {
+	RootID                                                  string
+	Run                                                     dc.RunID
+	LocalStatus                                             string
+	Limits                                                  dc.Limits
+	Charges                                                 dc.Charge
+	Outcome                                                 json.RawMessage
+	Pending                                                 string
+	PendingInvocations, UnresolvedExternal, UnknownExternal []string
+}
+type runReport struct {
+	Steps, Dispatches                                   int
+	Quiescent                                           bool
+	OpenRuns                                            []dc.RunID
+	UnresolvedIntents                                   []dc.Intent
+	PendingDeliveries, UnknownExternal, UnknownAdapters []string
+	Roots                                               []rootView
+	RejectedAdmissions                                  int
+}
+
 func checkStore(f map[string][]byte, branch string) dc.MatchedBindingReport {
 	local := map[string][]byte{"initial/inspect.json": f["seed/initial/inspect.json"]}
 	for p, b := range f {
@@ -58,11 +78,21 @@ func checkStore(f map[string][]byte, branch string) dc.MatchedBindingReport {
 	report := dc.CheckMatchedBinding(local, f["seed/manifest.json"])
 	require(report.Failure == nil, branch, "raw binding: "+fmt.Sprint(report.Failure))
 	require(len(report.Bindings) == 3, branch, "missing selected cut bindings")
-	run := read[map[string]json.RawMessage](local, "run.json")
-	require(decode[string](run["Error"], "run.json.Error") == "<nil>", branch+"/run.json", "run failure")
-	body := decode[map[string]json.RawMessage](run["Report"], "run.json.Report")
-	unknown := decode[[]string](body["UnknownExternal"], "run.json.Report.UnknownExternal")
-	require(same(unknown, []string{service}), branch+"/run.json", "unknown external identity")
+	path := branch + "/run.json"
+	run := decodeComplete[struct {
+		Error  string
+		Report runReport
+	}](local["run.json"], path)
+	body := run.Report
+	require(run.Error == "<nil>", path, "run failure")
+	require(body.Steps >= 0 && body.Dispatches >= 0 && body.RejectedAdmissions >= 0 &&
+		body.OpenRuns != nil && body.UnresolvedIntents != nil && body.PendingDeliveries != nil &&
+		body.UnknownExternal != nil && body.UnknownAdapters != nil && body.Roots != nil,
+		path, "native successful Run report counters and arrays")
+	require(same(body.UnknownExternal, []string{service}), path, "unknown external identity")
+	final := read[dc.RawSnapshot](local, "final/inspect.json")
+	comparison, err := CompareJSON(jsonBytes(body.Roots), final.Roots)
+	require(err == nil && comparison.StructuralEqual, path, "Run root summaries/final export join")
 	return report
 }
 func exactRenewal(a, b []byte, epoch int64, path string) {
@@ -256,16 +286,6 @@ func checkOuter(raw dc.RawSnapshot, cut, path string) {
 		Synchronous, ForeignKeys, BusyTimeoutMS, QueryOnly int
 	}](raw.Settings, path+".Settings")
 	require(settings.JournalMode == "wal" && settings.SQLiteVersion != "" && settings.SQLiteSourceID != "" && settings.Synchronous == 2 && settings.ForeignKeys == 1 && settings.BusyTimeoutMS == 5000 && settings.QueryOnly == 1, path, "inspection settings")
-	type rootView struct {
-		RootID                                                  string
-		Run                                                     dc.RunID
-		LocalStatus                                             string
-		Limits                                                  dc.Limits
-		Charges                                                 dc.Charge
-		Outcome                                                 json.RawMessage
-		Pending                                                 string
-		PendingInvocations, UnresolvedExternal, UnknownExternal []string
-	}
 	roots := decode[[]rootView](raw.Roots, path+".Roots")
 	require(len(roots) == 2 && len(raw.Tables["composition_roots"]) == 2, path, "complete root summaries")
 	seen := map[string]bool{}

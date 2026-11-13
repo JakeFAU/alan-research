@@ -20,9 +20,9 @@ type endpointSnapshot struct {
 	Total, Contacts                            int64
 }
 type endpointExport struct {
-	Ready    ready
-	Snapshot endpointSnapshot
-	Error    string
+	Ready    ready            `json:"ready"`
+	Snapshot endpointSnapshot `json:"snapshot"`
+	Error    string           `json:"error"`
 }
 type journalRecord struct {
 	Event              string
@@ -63,10 +63,11 @@ func checkWorld(f map[string][]byte, d map[string]Digest, branch string) WorldFa
 			p := prefix + "/" + cut + ".json"
 			outer := read[map[string]json.RawMessage](f, p)
 			require(len(outer) == 3, p, "complete endpoint export")
-			e := read[endpointExport](f, p)
+			e := decodeComplete[endpointExport](f[p], p)
 			s := e.Snapshot
 			require(e.Error == "<nil>" && same(e.Ready, r), p, "snapshot ready identity")
 			require(s.ForeignKeys == 1 && s.BusyTimeoutMS == 5000 && s.SQLiteVersion != "" && s.SQLiteSourceID != "" && s.JournalMode == "wal" && s.Synchronous == 2 && s.QueryOnly == 1, p, "snapshot configuration")
+			require(s.Applications != nil, p, "native application coverage must be an array")
 			require(s.Contacts == int64(want) && s.Total == int64(want) && len(s.Requests) == want && len(s.Applications) == want, p, "snapshot contact/application coverage")
 			if want == 1 {
 				require(s.Requests[0] == q && s.Applications[0] == receipt, p, "snapshot journal binding")

@@ -1,0 +1,16 @@
+=== RUN   TestIndependentReviewProbes
+=== RUN   TestIndependentReviewProbes/missing-zero-snapshot-fields
+    independent_review_probe_test.go:14: Supported=false Seal=true Source=true Raw=true Protocol=true World=false
+=== RUN   TestIndependentReviewProbes/contradictory-authorized-coordinate
+    independent_review_probe_test.go:14: Supported=false Seal=true Source=true Raw=true Protocol=false World=true
+=== RUN   TestIndependentReviewProbes/incomplete-equal-final-report
+    independent_review_probe_test.go:14: Supported=false Seal=true Source=true Raw=false Protocol=true World=true
+=== RUN   TestIndependentReviewProbes/override-test-selector
+    independent_review_probe_test.go:14: Supported=false Seal=true Source=false Raw=true Protocol=true World=true
+--- PASS: TestIndependentReviewProbes (0.45s)
+    --- PASS: TestIndependentReviewProbes/missing-zero-snapshot-fields (0.11s)
+    --- PASS: TestIndependentReviewProbes/contradictory-authorized-coordinate (0.11s)
+    --- PASS: TestIndependentReviewProbes/incomplete-equal-final-report (0.11s)
+    --- PASS: TestIndependentReviewProbes/override-test-selector (0.12s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/matchedcapture	0.554s

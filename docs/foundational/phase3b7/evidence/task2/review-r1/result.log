@@ -1,0 +1,21 @@
+=== RUN   TestIndependentReviewProbes
+=== RUN   TestIndependentReviewProbes/missing-zero-snapshot-fields
+    independent_review_probe_test.go:14: Supported=true Seal=true Source=true Raw=true Protocol=true World=true
+    independent_review_probe_test.go:14: malformed or contradictory resealed evidence accepted
+=== RUN   TestIndependentReviewProbes/contradictory-authorized-coordinate
+    independent_review_probe_test.go:14: Supported=true Seal=true Source=true Raw=true Protocol=true World=true
+    independent_review_probe_test.go:14: malformed or contradictory resealed evidence accepted
+=== RUN   TestIndependentReviewProbes/incomplete-equal-final-report
+    independent_review_probe_test.go:14: Supported=true Seal=true Source=true Raw=true Protocol=true World=true
+    independent_review_probe_test.go:14: malformed or contradictory resealed evidence accepted
+=== RUN   TestIndependentReviewProbes/override-test-selector
+    independent_review_probe_test.go:14: Supported=true Seal=true Source=true Raw=true Protocol=true World=true
+    independent_review_probe_test.go:14: malformed or contradictory resealed evidence accepted
+--- FAIL: TestIndependentReviewProbes (0.42s)
+    --- FAIL: TestIndependentReviewProbes/missing-zero-snapshot-fields (0.13s)
+    --- FAIL: TestIndependentReviewProbes/contradictory-authorized-coordinate (0.10s)
+    --- FAIL: TestIndependentReviewProbes/incomplete-equal-final-report (0.10s)
+    --- FAIL: TestIndependentReviewProbes/override-test-selector (0.10s)
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/matchedcapture	0.634s
+FAIL

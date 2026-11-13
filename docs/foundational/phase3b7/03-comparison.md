@@ -73,6 +73,23 @@ unsupported schema. It is not silently dropped to accommodate an old helper.
 Both Open checks change exactly the two `runs[].epoch` values (1→2 and 2→3)
 in the complete prior export and compare every remaining field exactly.
 
+Native endpoint snapshots require every ordinary snapshot member with its
+native type at both cuts for both endpoints. An empty native Requests slice
+may be explicit `null`; Applications must be an array, and Total and Contacts
+must be explicit integers. Successful final Run reports require all ten native
+fields, complete nested records, and root summaries matching the final export.
+Schema validation never replaces the original inputs to full equality.
+
+The passive `external.authorized` event must carry the selected wire's complete
+Subject/Generation/Epoch/Sequence and Intent/Attempt, `pre-transport` phase,
+empty optional root/admission selectors, and native nil InFlight. The later
+inherited scheduler acknowledgment has its own enriched InFlight check.
+Source argv uses Go flag parsing and requires one exact capture selector and
+an effective count of one. Single/double dash and separate/equal values are
+supported; repeated selectors, trailing positional arguments, and unsupported
+flags fail closed. Accepted driver flags are `test.run`, `test.count`,
+`test.timeout`, `test.testlogfile`, `test.paniconexit0`, and `test.v`.
+
 ## Authority and model boundary
 
 `delegationcorrespondence.CheckMatchedBinding` is a narrow adapter around the

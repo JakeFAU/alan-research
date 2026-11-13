@@ -1,0 +1,15 @@
+package matchedcapture
+import "testing"
+func TestIndependentReviewProbes(t *testing.T) {
+ tests := []struct{name string; edit func(map[string][]byte)}{
+ {"missing-zero-snapshot-fields", func(f map[string][]byte){
+  for _, cut := range []string{"stopped", "final"} { editJSON(f,"zero/endpoint-b/"+cut+".json",func(d map[string]any){s:=d["snapshot"].(map[string]any); for _, k:=range []string{"Requests","Applications","Total","Contacts"}{delete(s,k)}}) }
+ }},
+ {"contradictory-authorized-coordinate",func(f map[string][]byte){
+  p:="zero/first-owner/boundaries.jsonl"; rows:=lines[event](f,p); for i:=range rows {if rows[i].Boundary=="external.authorized" {rows[i].Epoch=999; rows[i].Sequence=999; rows[i].Subject="wrong"}}; f[p]=nil; for _,r:=range rows {f[p]=append(f[p],append(jsonBytes(r),'\n')...)}
+ }},
+ {"incomplete-equal-final-report",func(f map[string][]byte){for _,b:=range []string{"zero","applied"}{f[b+"/run.json"]=jsonBytes(map[string]any{"Error":"<nil>","Report":map[string]any{"UnknownExternal":[]string{service}}})}}},
+ {"override-test-selector",func(f map[string][]byte){editJSON(f,"source.json",func(d map[string]any){d["test_argv"]=append(d["test_argv"].([]any),"-test.run=^OtherTest$")})}},
+ }
+ for _,tc:=range tests {t.Run(tc.name,func(t *testing.T){f:=fixture(t); tc.edit(f); r,e:=CheckDirectory(sealFixture(t,f)); if e!=nil {t.Fatal(e)}; t.Logf("Supported=%v Seal=%v Source=%v Raw=%v Protocol=%v World=%v",r.Supported,r.Seal.Valid,r.Source.Valid,r.Raw.Valid,r.Protocol.Valid,r.World.Valid); if r.Supported {t.Error("malformed or contradictory resealed evidence accepted")} })}
+}
