@@ -72,7 +72,7 @@ func checkEffectProducer(files map[string][]byte, legacy CaseReport) EffectObser
 	return EffectObservationProducer{Commit: anchors.Commit, Tree: anchors.Tree, Test: source.Test, GoVersion: source.GoVersion,
 		Race: source.RaceChildren, SourceSHA256: sha(files["source.json"]), BindingSourceSHA256: sha(files["binding-source.json"]),
 		ArchiveSHA256: anchor.ArchiveSHA256, MemberPrefix: anchor.MemberPrefix, SealedDigestSHA256: anchor.DigestSHA256,
-		SealedBytesMatch: sha(bytesJSON(legacy.Files)) == anchor.CanonicalMembersSHA256, SourceFiles: anchors.SourceFiles, Trust: "Pinned commit/tree/source and four unsigned sealed archives are external assumptions. Runtime token/Store anchor is not an Open field or general process authentication."}
+		SealedBytesMatch: sha(bytesJSON(legacy.Files)) == anchor.CanonicalMembersSHA256, SourceFiles: anchors.SourceFiles, Trust: "Pinned commit/tree/source and two unsigned sealed archives containing four selected dossiers are external assumptions. Runtime token/Store anchor is not an Open field or general process authentication."}
 }
 
 func checkEffectCaptures(files map[string][]byte, entry revocationManifest, legacy CaseReport, loss bool) {

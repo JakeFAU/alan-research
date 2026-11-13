@@ -1,0 +1,170 @@
+{
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "XDG_CACHE_HOME": "/tmp/alan-phase3b6/cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+    "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/delegationcorrespondence/cmd/effectobservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 1.3042111250000001
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "./research/delegationcorrespondence/cmd/effectobservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.328429667
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "b7ed93186a16a0a52637de7b7e3a13a5fd37e523:docs/foundational/phase3b6/evidence/task3/reports/normal-N07.json.gz"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.011338666999999969
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.2030389589999999
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.08388258299999984
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "b7ed93186a16a0a52637de7b7e3a13a5fd37e523:docs/foundational/phase3b6/evidence/task3/reports/normal-loss.json.gz"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.01015145900000003
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.08285554099999981
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.08417616699999986
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "b7ed93186a16a0a52637de7b7e3a13a5fd37e523:docs/foundational/phase3b6/evidence/task3/reports/race-N07.json.gz"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.01008820900000007
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.09094391600000007
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.08385100000000012
+    },
+    {
+      "command": [
+        "git",
+        "show",
+        "b7ed93186a16a0a52637de7b7e3a13a5fd37e523:docs/foundational/phase3b6/evidence/task3/reports/race-loss.json.gz"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.010280124999999973
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.09367133300000008
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation-review-i1",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.0937114160000001
+    },
+    {
+      "command": [
+        "gofmt",
+        "-l",
+        "research/delegationcorrespondence/effect_protocol.go"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "seconds": 0.009681875000000062
+    }
+  ]
+}

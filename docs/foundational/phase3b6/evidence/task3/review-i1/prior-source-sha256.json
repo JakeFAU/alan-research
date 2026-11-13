@@ -1,0 +1,10 @@
+{
+  "research/delegationcorrespondence/effect_attacks_test.go": "9859dd57fa78c37cf06be575297992af400ba289c19e29a5f0132f149da59a32",
+  "research/delegationcorrespondence/effect_mapping.go": "23601591c499485a51f82873e8c586df8fc095d16fd5dea579466054c81716bb",
+  "research/delegationcorrespondence/effect_observation.go": "1b20d4ad638c9e148c7f6167a0476d7abee0e23b23d1b92ec06088d71ec3d1df",
+  "research/delegationcorrespondence/effect_observation_test.go": "8c467dd72623fc6ebb0a8476c27cf45b5631d22e81f0c1a2bad9332c6322494a",
+  "research/delegationcorrespondence/effect_protocol.go": "65c1360e47033c5db6d30715e9c2b256f525b548712708ab8762f64360c79480",
+  "research/delegationcorrespondence/cmd/effectobservation/main.go": "5395c3e7e8b5ae27cf865460bb34388f286b72cd02e9b4edfe5241dc3c1958de",
+  "research/delegationcorrespondence/cmd/effectobservation/main_test.go": "05c6c0050ef23780cdb67def75bb77aef13d7248f9cd3a4474a24fcd18aac35c",
+  "research/delegationcorrespondence/testdata/effect-observation/anchors.json": "749e2cd82c3b43ec39c6c388b0d3ef6a3bf8f63b6a7b7fdb3b80a5027c2358ad"
+}

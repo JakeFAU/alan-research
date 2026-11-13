@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "normal",
+    "case": "N07",
+    "old_sha256": "2d314ee3d40c5fd0ad0a5d24f2f5fe8528a3ecb9e6b6222df3af1e0057e3dc67",
+    "new_sha256": "add2467d01d836b5815cc7088afb635d0a83099388be6eca50707d7b7a4b57da",
+    "old_bytes": 357858,
+    "new_bytes": 357891,
+    "only_reviewed_phrase_changed": true,
+    "deterministic": true
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "old_sha256": "7d6cbe0e9860299e7092400437ad63aa22bfa53ed8336ece7ccfc993e2bdd973",
+    "new_sha256": "d79d4f4a27d30e9c2c577c5ca6e14cec1d5ae7c448bbbff3509dc7cf31f6c57d",
+    "old_bytes": 287707,
+    "new_bytes": 287740,
+    "only_reviewed_phrase_changed": true,
+    "deterministic": true
+  },
+  {
+    "mode": "race",
+    "case": "N07",
+    "old_sha256": "b635bd9f17f6f04c168d98dd1aa7cbac7f40a01a306348ab3ca801ec3ec73476",
+    "new_sha256": "bb311a46e144b06b5b822df843c84784b7d81aec1fa4dc9bb573c193e01efb9f",
+    "old_bytes": 357855,
+    "new_bytes": 357888,
+    "only_reviewed_phrase_changed": true,
+    "deterministic": true
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "old_sha256": "ee6b1d93c086ae0a1f36ca2fedc881e165ef8d799900996c53954a5a6dc97f6e",
+    "new_sha256": "e775313dba06581105e5166e2c4dcd96e56d5c69fe2f1c010ba87168fb9cdf9e",
+    "old_bytes": 287704,
+    "new_bytes": 287737,
+    "only_reviewed_phrase_changed": true,
+    "deterministic": true
+  }
+]
