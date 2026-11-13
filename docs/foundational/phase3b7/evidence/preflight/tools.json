@@ -1,0 +1,7 @@
+{
+  "Go": "go1.27.4 darwin/arm64",
+  "Staticcheck": "2026.2.2 (0.8.2)",
+  "Python": "3.9.6",
+  "Tectonic": "0.17.0",
+  "Poppler": "26.11.0"
+}
