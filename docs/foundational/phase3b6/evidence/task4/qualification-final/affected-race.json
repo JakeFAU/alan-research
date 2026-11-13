@@ -1,0 +1,106 @@
+{
+  "name": "affected-race",
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-timeout=15m",
+    "-race",
+    "./research/effectobservation/...",
+    "./research/delegationcorrespondence/..."
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache",
+    "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/race",
+    "ALAN_TASK3_PROGRESS": "1",
+    "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-race",
+    "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-race",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+    "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "timeout_seconds": 1000,
+  "expected_exit": 0,
+  "exit": 0,
+  "elapsed_seconds": 263.64076712499997,
+  "log_sha256": "f1004795d9664641dc0ddef6e22dcb9893d2225bc9fdde82de18459554e34066",
+  "log_bytes": 428360,
+  "archive_sha256": "a6deb7f830b310c5586ea2b8484f0f3c814f84ef2d9095a0ec7db5887bcba654",
+  "source_unchanged": true,
+  "test_summary": {
+    "pass_events": 419,
+    "package_results": [
+      {
+        "Time": "2026-11-13T14:32:07.14783-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/audit",
+        "Elapsed": 1.156
+      },
+      {
+        "Time": "2026-11-13T14:32:07.165596-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/export",
+        "Elapsed": 1.172
+      },
+      {
+        "Time": "2026-11-13T14:32:07.183835-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation",
+        "Elapsed": 1.199
+      },
+      {
+        "Time": "2026-11-13T14:32:07.621805-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:07.621879-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:07.622239-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:16.467295-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/revocation",
+        "Elapsed": 8.845
+      },
+      {
+        "Time": "2026-11-13T14:32:17.173036-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation",
+        "Elapsed": 9.551
+      },
+      {
+        "Time": "2026-11-13T14:32:41.630423-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+        "Elapsed": 34.008
+      },
+      {
+        "Time": "2026-11-13T14:36:22.781831-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+        "Elapsed": 255.16
+      }
+    ],
+    "named_skips": [],
+    "failures": []
+  },
+  "matched": true
+}
