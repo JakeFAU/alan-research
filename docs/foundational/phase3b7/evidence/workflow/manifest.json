@@ -1,0 +1,69 @@
+{
+  "files": {
+    "final-review-instructions.md": {
+      "bytes": 2414,
+      "sha256": "61f71c3ef4403637ce90e22baee74ef2b55940f6c2b25f9ac8f8d8f52bc71110"
+    },
+    "progress.md": {
+      "bytes": 15562,
+      "sha256": "6d9e7eb25efe033fb9be35889f18c2b0ce38f54e3470d3ce0f33041ad324917c"
+    },
+    "task-1-brief.md": {
+      "bytes": 2561,
+      "sha256": "52f7a8f0fcf0c5db0a3381521e4758d9e3872b2ec7db85d35d161ec704cb43cf"
+    },
+    "task-1-report.md": {
+      "bytes": 6766,
+      "sha256": "632cc316e384a0fd82019df86f201fd7aa8626aa307030d94a408c66416a7dbc"
+    },
+    "task-1-review.md": {
+      "bytes": 7328,
+      "sha256": "16a7e97676aae933a87e26940500c8c100ea1705abf405cc9474471308df67a5"
+    },
+    "task-2-brief.md": {
+      "bytes": 2671,
+      "sha256": "1e9c6a4d4a7f6fde7d3a7dcbf39bb13eccba0f5669527d5268d68eec709a0ff8"
+    },
+    "task-2-report.md": {
+      "bytes": 23467,
+      "sha256": "caa418e6b4b60ebc6c73bc93677d3666e83f4913ba9e8ed7af263bce1e2c06b2"
+    },
+    "task-2-review-r1.md": {
+      "bytes": 5870,
+      "sha256": "5c8e3db45735e6d298774cdcf0bdca051922fcf3aba59d730617f719ae2f9d4d"
+    },
+    "task-2-review-r2.md": {
+      "bytes": 6030,
+      "sha256": "893c9f85ca273efb7ccaebf5ba7927b06283613c01335ed5d3dd64e5a30dd919"
+    },
+    "task-2-review.md": {
+      "bytes": 6404,
+      "sha256": "4fe73129b3cc6c5847c3c8bb90b4a0d68a11eea784a3eaa056ec7a432055b685"
+    },
+    "task-3-brief.md": {
+      "bytes": 2290,
+      "sha256": "6518decb10e9134836b5b968e7de0d93ff9237ff5dac0b2ff54049a91ff54d76"
+    },
+    "task-3-context.md": {
+      "bytes": 4423,
+      "sha256": "baac82b28ee1979a95be35330b2de2406b88d18accca994bda5f40002a33846b"
+    },
+    "task-3-controller-report.md": {
+      "bytes": 3694,
+      "sha256": "dbe41ce8250bc0fdca9fe95cd354532beef04cc2cc188cc36affc42cd1e3bbac"
+    },
+    "task-3-report.md": {
+      "bytes": 4864,
+      "sha256": "7d75e566a56d8c976e92994b3c2054dd1f022d676d0579499aabbfd2e834eab4"
+    },
+    "task-3-review-instructions.md": {
+      "bytes": 2914,
+      "sha256": "6cdf31fdbb39f825a1f9b9f51b09cafe4d864502ebcb4108b9d6484d43e4c593"
+    },
+    "task-3-review.md": {
+      "bytes": 7557,
+      "sha256": "4f3f336b6d99067b7404fbdfad13e1b208cd4d2860dee7d3381a61bc8fdf72e9"
+    }
+  },
+  "stage": "task-reviews-complete; final-review-pending"
+}

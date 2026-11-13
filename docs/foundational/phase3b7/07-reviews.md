@@ -9,7 +9,7 @@ against the frozen runtime source. [Design review](evidence/preflight/design-rev
 | Task 2 checker | `f238b778..eca3b3be` | REJECT / REJECT | Incomplete endpoint snapshots and Run reports, incomplete authorization coordinates, and ineffective exact test-argument validation. [Review](evidence/workflow/task-2-review.md) |
 | Task 2 re-review | `eca3b3be..6dc16ecf` | APPROVE / APPROVE | The four reported defects were addressed. The subsequent genuine captures exposed an incorrect assumption about the native authorization ordinal. [Review](evidence/workflow/task-2-review-r1.md) |
 | Task 2 post-capture re-review | `19303940..90724cce` | APPROVE / APPROVE | The wrapper stamps the admitted worker's ordinal before emission. Native controls and the preserved rejection identify the corrected condition. The review is scoped to that correction. [Review](evidence/workflow/task-2-review-r2.md) |
-| Task 3 results, qualification and manuscript | Pending | Pending | Independent task review follows the completed evidence package. |
+| Task 3 results, qualification and manuscript | `6dc16ecf..964d9f2e` | APPROVE / APPROVE | Independent archive, source, report, command-log and manuscript checks; no actionable findings. [Review](evidence/workflow/task-3-review.md) |
 | Final branch review | Pending | Pending | Whole-branch review follows Task 3 review. |
 
 The initial Task 2 rejection and the original checker rejection of both
