@@ -53,4 +53,4 @@ The earlier short-mode targeted baseline is separate from the final ordinary and
 
 ## Manuscript and PDF
 
-The Markdown and LaTeX Abstract, Phase 3B.5/3B.6 subsections and Conclusion reconcile the bounded claim. Section 7 is an inherited Markdown-only section. The PDF build and visual inspection follow independent manuscript source review. [PDF evidence](evidence/task4/pdf/).
+The Markdown and LaTeX Abstract, Phase 3B.5/3B.6 subsections and Conclusion reconcile the bounded claim. Section 7 is an inherited Markdown-only section. After independent source approval, cached Tectonic 0.17.0 built the 43-page PDF with exit 0; source hashes remained unchanged. The controller inspected eleven rendered pages covering the edited passages, continuations, contents, bibliography and inherited warning locations. The five unique box warnings and their source passages match the prior packet. The new PDF SHA-256 is `529e237679c32647dd58b9a478b77e628e80a7fc6d3fb211a07b5252b35486ab`. [Build and visual evidence](evidence/task4/pdf/visual-review.md).
