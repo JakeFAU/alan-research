@@ -1,0 +1,7 @@
+# Evidence reconnaissance correction
+
+Task3 owning-source inspection at reviewed base77f897e0 found an error in the retained reconnaissance/handoff account. research/delegationcorrespondence/external.go:508-514 explicitly applies checkOwnerRenewal to stopped/inspect.json and inline reopened/inspect.json. The earlier report incorrectly implied that this inline renewal was unchecked because it was not a /post-open owner record.
+
+The existing check (external.go:395-418) compares selected run fields and iterates tables present in the before snapshot. It already rejects one-principal epoch renewal. Phase3B6 adds exact full run-field comparison and bidirectional table coverage. Hostile tests and compiled mutants must distinguish those new checks from inherited rejection. The original report is retained as historical reconnaissance, not silently rewritten. Task3 report/correspondence should carry the corrected boundary.
+
+Further Task3 investigation: raw schema validation already rejects extra tables/run fields. The new exact-renewal helper therefore overlaps inherited validation. A Settings.JournalMode difference can evade existing layers, but Settings/Roots are inspection summaries/configuration outside the stated table/run preservation contract; that extra equality rule is not adopted merely to create a mutant kill. The renewal mutant is qualified at the helper boundary, while the causal-ack mutant exercises end-to-end false acceptance. Investigation candidates are retained separately from accepted scope.
