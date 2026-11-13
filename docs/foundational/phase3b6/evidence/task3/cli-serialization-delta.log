@@ -1,0 +1,6 @@
+=== RUN   TestEffectObservationUsage
+--- PASS: TestEffectObservationUsage (0.00s)
+=== RUN   TestEffectObservationCommand
+--- PASS: TestEffectObservationCommand (0.51s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation	0.622s

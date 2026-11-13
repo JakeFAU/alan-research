@@ -1,0 +1,54 @@
+func exchangeExternal(ctx context.Context, work externalWork) externalCompletion {
+	result := externalCompletion{work: work}
+	a := work.attempt
+	if err := boundary.Reached(ctx, work.event); err != nil {
+		result.err = err
+		return result
+	}
+	raw, err := json.Marshal(a.Request)
+	if err != nil {
+		result.err = err
+		return result
+	}
+	request, err := http.NewRequestWithContext(ctx, http.MethodPost, a.Intent.Target, bytes.NewReader(raw))
+	if err != nil {
+		result.err = err
+		return result
+	}
+	request.Header.Set("Content-Type", "application/json")
+	client := &http.Client{Timeout: work.timeout, CheckRedirect: func(*http.Request, []*http.Request) error { return http.ErrUseLastResponse }}
+	if err = dispatchEvent(ctx, work.event, "dispatch.admitted", "pre-call"); err != nil {
+		result.err = err
+		return result
+	}
+	response, err := client.Do(request)
+	if err != nil {
+		result.err = ctx.Err()
+		return result
+	}
+	defer response.Body.Close()
+	if response.StatusCode != http.StatusOK {
+		return result
+	}
+	var receipt resource.Receipt
+	decoder := json.NewDecoder(io.LimitReader(response.Body, int64(work.maxBytes)+1))
+	decoder.DisallowUnknownFields()
+	if err = decoder.Decode(&receipt); err != nil {
+		return result
+	}
+	var extra any
+	if decoder.Decode(&extra) != io.EOF {
+		return result
+	}
+	if !validReceipt(a, receipt) {
+		result.err = fmt.Errorf("external receipt does not match retained request")
+		return result
+	}
+	// Preserve a received outcome even if cancellation interrupts the test boundary.
+	result.receipt = &receipt
+	event := work.event
+	event.Boundary = "external.response"
+	event.Phase = "pre-record"
+	result.err = boundary.Reached(ctx, event)
+	return result
+}

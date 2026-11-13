@@ -1,0 +1,6 @@
+func bindingCaptureLive(t *testing.T, path, dir string) *runtime.ExecutionSnapshot {
+	t.Helper()
+	backup := filepath.Join(t.TempDir(), "capture.sqlite")
+	reciprocalBackup(t, path, backup)
+	return bindingCapture(t, backup, dir)
+}

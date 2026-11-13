@@ -1,0 +1,8 @@
+		if external != nil && active < options.MaxInFlight {
+			if report.Dispatches >= options.MaxDispatch {
+				return report, fmt.Errorf("dispatch budget exhausted: %w", ErrLimit)
+			}
+			report.Dispatches++
+			attempted[external.intent] = true
+			var event boundary.Event
+			var transport func(*dispatchOpportunity) externalCompletion

@@ -1,0 +1,14 @@
+=== RUN   TestEffectObservationPositive
+=== RUN   TestEffectObservationPositive/normal/N07
+=== RUN   TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate
+=== RUN   TestEffectObservationPositive/race/N07
+=== RUN   TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate
+--- PASS: TestEffectObservationPositive (0.39s)
+    --- PASS: TestEffectObservationPositive/normal/N07 (0.10s)
+    --- PASS: TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate (0.10s)
+    --- PASS: TestEffectObservationPositive/race/N07 (0.10s)
+    --- PASS: TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate (0.10s)
+=== RUN   TestEffectObservationCausalAckRequired
+    effect_observation_test.go:60: semantic assertion: final application without endpoint causal acknowledgment must not certify application-before-loss
+--- FAIL: TestEffectObservationCausalAckRequired (0.11s)
+FAIL

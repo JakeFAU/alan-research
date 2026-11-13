@@ -1,0 +1,77 @@
+[
+  {
+    "name": "baseline",
+    "compiled": true,
+    "build_command": [
+      "go",
+      "test",
+      "-c",
+      "-o",
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/baseline.test",
+      "./research/delegationcorrespondence"
+    ],
+    "command": [
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/baseline.test",
+      "-test.v",
+      "-test.count=1",
+      "-test.run=^TestEffectObservation(Positive|CausalAckRequired|RenewalCoverage)$"
+    ],
+    "expected_exit": 0,
+    "exit": 0,
+    "seconds": 0.610537042,
+    "source_sha256": "1b20d4ad638c9e148c7f6167a0476d7abee0e23b23d1b92ec06088d71ec3d1df",
+    "renewal_source_sha256": "65c1360e47033c5db6d30715e9c2b256f525b548712708ab8762f64360c79480",
+    "scope": "end-to-end",
+    "log_sha256": "f7536a2447b8982d990497c7bee456d8b3ee13596fb0cdc62cbe1f2969bd378c"
+  },
+  {
+    "name": "omit-causal-acks",
+    "compiled": true,
+    "build_command": [
+      "go",
+      "test",
+      "-c",
+      "-o",
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/omit-causal-acks.test",
+      "./research/delegationcorrespondence"
+    ],
+    "command": [
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/omit-causal-acks.test",
+      "-test.v",
+      "-test.count=1",
+      "-test.run=^TestEffectObservation(Positive|CausalAckRequired)$"
+    ],
+    "expected_exit": 1,
+    "exit": 1,
+    "seconds": 0.6131272910000001,
+    "source_sha256": "360501bde89d8f92ce9fde830296f4ef7fd8b095661022e8b893352eb9bbe336",
+    "renewal_source_sha256": "65c1360e47033c5db6d30715e9c2b256f525b548712708ab8762f64360c79480",
+    "scope": "end-to-end",
+    "log_sha256": "92ad3bf8f760bf4401d1eaba2089ccb7bb6cb069f20c368cd50b2217f015def4"
+  },
+  {
+    "name": "omit-exact-renewal",
+    "compiled": true,
+    "build_command": [
+      "go",
+      "test",
+      "-c",
+      "-o",
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/omit-exact-renewal.test",
+      "./research/delegationcorrespondence"
+    ],
+    "command": [
+      "/tmp/alan-phase3b6/effect-mutants-3mampdiw/omit-exact-renewal.test",
+      "-test.v",
+      "-test.count=1",
+      "-test.run=^TestEffectObservation(Positive|RenewalCoverage)$"
+    ],
+    "expected_exit": 1,
+    "exit": 1,
+    "seconds": 0.5061751669999999,
+    "source_sha256": "1b20d4ad638c9e148c7f6167a0476d7abee0e23b23d1b92ec06088d71ec3d1df",
+    "renewal_source_sha256": "c438b7f1973d48d538f68fa92d97df37375b6ac057a9cd16e11b9220e3f7d9e1",
+    "scope": "helper-level exact renewal",
+    "log_sha256": "143b8ae1a63a4016554f7ef6e788491539a08ad03492e4c209a7433f404146c4"
+  }
+]

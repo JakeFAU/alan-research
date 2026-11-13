@@ -1,0 +1,39 @@
+func reciprocalRevokeProgram(t *testing.T, p *runtime.Provision, m *delegation.Manifest) {
+	p.Permissions = append(p.Permissions, runtime.Permission{Kind: "input", Source: "local", Target: "b", Operation: "input", Obligation: "revoke-trigger"})
+	claim, _ := json.Marshal(runtime.RevocationClaim{Version: runtime.RequestAuthorityVersion, Root: m.BAServiceRoot})
+	reciprocalEdit(t, p, "b", func(program map[string]any) {
+		code := program["Code"].([]any)
+		reciprocalShift(code, 5, 3)
+		emit := map[string]any{"Op": "emit", "Dst": "revoke", "Effect": map[string]any{"Kind": "lifecycle", "Target": reciprocalLiteral(schema.Text("b")), "Generation": reciprocalLiteral(schema.Int(1)), "Obligation": reciprocalLiteral(schema.Text("revocation-result")), "Payload": map[string]any{"operation": reciprocalLiteral(schema.Text("RevokeAuthority")), "revision": reciprocalLiteral(schema.Int(1)), "claim": reciprocalLiteral(schema.Text(string(claim)))}}}
+		receive := map[string]any{"Op": "receive", "Match": map[string]any{"Kind": "lifecycle", "Provenance": "runtime-lifecycle", "Source": reciprocalLiteral(schema.Text("b")), "Generation": reciprocalLiteral(schema.Int(1)), "Obligation": reciprocalLiteral(schema.Text("revocation-result")), "Operation": map[string]any{"Ref": "revoke"}}, "Bind": map[string]string{"accepted": "revoked"}}
+		next := append([]any{}, code[:5]...)
+		next = append(next, reciprocalInput("revoke-trigger"), emit, receive)
+		program["Code"] = append(next, code[5:]...)
+	})
+	m.ABService = `["b",1,12,0]`
+	m.ABReply = `["b",1,15,0]`
+}
+func reciprocalRevoke(t *testing.T, s *runtime.Store, m delegation.Manifest, dir string) {
+	t.Helper()
+	reciprocalInputCommit(t, s, m.B, "revoke-trigger")
+	reciprocalCommit(t, s, m.B, "")
+	id := `["b",1,7,0]`
+	auth, err := s.AuthorizeIntent(t.Context(), id)
+	if err != nil || !auth.Allowed {
+		t.Fatal(auth, err)
+	}
+	r, err := s.LoadLifecycleRequest(t.Context(), id)
+	if err != nil {
+		t.Fatal(err)
+	}
+	decision, err := s.DecideLifecycle(t.Context(), r)
+	if err != nil || !decision.Accepted {
+		t.Fatal(decision, err)
+	}
+	admission, err := s.SettleLifecycle(t.Context(), id, "revocation-delivery")
+	if err != nil || !admission.Accepted {
+		t.Fatal(admission, err)
+	}
+	reciprocalCommit(t, s, m.B, admission.ObservationID)
+	baseline3b3Write(t, dir, "controlled-revocation.json", map[string]any{"Authorization": auth, "Decision": decision, "Admission": admission})
+}

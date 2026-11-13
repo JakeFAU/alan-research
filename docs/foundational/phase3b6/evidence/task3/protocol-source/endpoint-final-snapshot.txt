@@ -1,0 +1,10 @@
+func bindingEndpoints(t *testing.T, dir, pa, pb string, ca, cb *child) map[string]resource.Snapshot {
+	t.Helper()
+	e := map[string]resource.Snapshot{"a": phaseSnapshot(t, pa), "b": phaseSnapshot(t, pb)}
+	phaseStopEndpoint(t, ca)
+	phaseStopEndpoint(t, cb)
+	baseline3b3Write(t, dir, "endpoints.json", e)
+	reciprocalCopyDB(t, pa, filepath.Join(dir, "endpoint-a.sqlite"))
+	reciprocalCopyDB(t, pb, filepath.Join(dir, "endpoint-b.sqlite"))
+	return e
+}

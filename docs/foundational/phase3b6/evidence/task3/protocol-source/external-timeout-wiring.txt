@@ -1,0 +1,37 @@
+// externalWork is copied into a transport worker. Workers never access Store.
+type externalWork struct {
+	attempt  ExternalAttempt
+	event    boundary.Event
+	maxBytes int
+	timeout  time.Duration
+}
+type externalCompletion struct {
+	opportunity *dispatchOpportunity
+	adapter     *adapterCompletion
+	work        externalWork
+	receipt     *resource.Receipt
+	err         error
+}
+
+// prepareExternalWork retains authorization before exposing transport work.
+func (s *Store) prepareExternalWork(ctx context.Context, id string, timeout time.Duration) (*externalWork, error) {
+	a, fresh, err := s.prepareExternal(ctx, id)
+	if err != nil {
+		return nil, err
+	}
+	source, err := s.Snapshot(ctx, a.Intent.Run)
+	if err != nil {
+		return nil, err
+	}
+	record := recordedDispatch{id: id, kind: "external", source: a.Intent.Run}
+	if present, err := s.settleRecordedDispatch(ctx, record); err != nil || present {
+		return nil, err
+	}
+	if !a.Allowed {
+		return nil, ErrCorrupt
+	}
+	if !fresh && a.Request.Profile == "non-idempotent" {
+		return nil, nil
+	}
+	return &externalWork{attempt: a, event: boundary.Event{Boundary: "external.authorized", Phase: "pre-transport", Subject: a.Intent.Run.Subject, Generation: a.Intent.Run.Generation, Epoch: source.Epoch, Sequence: source.Sequence, Intent: id, Attempt: a.AuthorizationID}, maxBytes: s.limits.MaxObservationBytes, timeout: timeout}, nil
+}

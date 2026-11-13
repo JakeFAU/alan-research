@@ -1,0 +1,719 @@
+{
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "XDG_CACHE_HOME": "/tmp/alan-phase3b6/cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+    "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "commands": [
+    {
+      "command": [
+        "go",
+        "version"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0067645
+    },
+    {
+      "command": [
+        "staticcheck",
+        "-version"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.007377958
+    },
+    {
+      "command": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3b6/evidence/task3/verify_source.py"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 1.407942458
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/delegationcorrespondence",
+        "./research/delegationcorrespondence/cmd/effectobservation",
+        "-run",
+        "^TestEffectObservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 4.997258958
+    },
+    {
+      "command": [
+        "staticcheck",
+        "./research/delegationcorrespondence/..."
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.24683633300000007
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "./research/delegationcorrespondence/cmd/effectobservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.1843664580000004
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/revocation",
+        "./research/delegationcorrespondence/cmd/revocation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.18257749999999984
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/check",
+        "./research/delegationcorrespondence/cmd/check"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.18257041699999998
+    },
+    {
+      "command": [
+        "git",
+        "archive",
+        "df840103aa3a85e33b4b95ddcf2fe3df071cb024",
+        "go.mod",
+        "go.sum",
+        "research"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.03771633299999966
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "./research/delegationcorrespondence/cmd/revocation"
+      ],
+      "cwd": "/tmp/alan-phase3b6/task3/phase3b5-source",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0584968340000005
+    },
+    {
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/tmp/alan-phase3b6/task3/old-check",
+        "./research/delegationcorrespondence/cmd/check"
+      ],
+      "cwd": "/tmp/alan-phase3b6/task3/phase3b5-source",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.056796417000000154
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.10254937499999972
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09996312499999949
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09246366699999964
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N05-306323137"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0908430840000003
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.06236787499999963
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.06389099999999992
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.05929954200000065
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N06-4077261617"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.058069083000000354
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.08426458399999959
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.08151845899999977
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07476441699999903
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07356374999999993
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.043586874999999026
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.043247915999998554
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.04012283399999994
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/P02-v2-3465277444"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.04075779200000085
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 1,
+      "expected_exit": 1,
+      "seconds": 0.07700637499999985
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 1,
+      "expected_exit": 1,
+      "seconds": 0.07804574999999936
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07622241700000032
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07710525000000068
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0596274999999995
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.05894658299999911
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.05302079199999987
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N05-2640236654"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.053134458000000606
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.06121541699999966
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.05959516599999937
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.05429008299999971
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N06-2509010472"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0617285410000008
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0831252919999983
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07933937499999999
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07332175000000163
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0731103330000007
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.042484625000000165
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0434182089999986
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.03942245800000066
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/P02-v2-242773752"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.04002604199999915
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 1,
+      "expected_exit": 1,
+      "seconds": 0.0771987920000008
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/revocation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 1,
+      "expected_exit": 1,
+      "seconds": 0.07834891699999957
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/old-check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07844974999999899
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/check",
+        "-binding-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.07687370799999904
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.13542645799999953
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/N07-3888622734"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09678183299999965
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0942724160000008
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-normal/applied-unknown-revoked-1243056310"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0917018340000002
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09326237500000012
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/N07-3721806614"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09282991600000123
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09153916700000053
+    },
+    {
+      "command": [
+        "/tmp/alan-phase3b6/task3/effectobservation",
+        "-case",
+        "/tmp/alan-phase3b5/corpus/raw-race/applied-unknown-revoked-2740959369"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.09286545800000034
+    },
+    {
+      "command": [
+        "gofmt",
+        "-l",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/effect_attacks_test.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/effect_mapping.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/effect_observation.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/effect_observation_test.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/effect_protocol.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/cmd/effectobservation/main.go",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/research/delegationcorrespondence/cmd/effectobservation/main_test.go"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.0062195000000002665
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/delegationcorrespondence/cmd/effectobservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.813388958
+    },
+    {
+      "command": [
+        "staticcheck",
+        "./research/delegationcorrespondence/cmd/effectobservation"
+      ],
+      "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+      "exit": 0,
+      "expected_exit": 0,
+      "seconds": 0.130795958
+    }
+  ]
+}

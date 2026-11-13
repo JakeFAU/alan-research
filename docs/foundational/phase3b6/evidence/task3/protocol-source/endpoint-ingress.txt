@@ -1,0 +1,35 @@
+		} else {
+			journalMu.Lock()
+			contactNumber++
+			contact = contactNumber
+			journalMu.Unlock()
+			defer r.Body.Close()
+			raw, readErr := io.ReadAll(io.LimitReader(r.Body, (1<<20)+1))
+			if err := observe(map[string]any{"Event": "ingress", "Contact": contact, "Method": r.Method, "Path": r.URL.Path, "Body": string(raw)}); err != nil {
+				http.Error(w, "journal unavailable", http.StatusServiceUnavailable)
+				return
+			}
+			if r.Method != http.MethodPost || r.URL.Path != "/apply" {
+				http.Error(w, "unsupported protocol", http.StatusNotFound)
+				return
+			}
+			// The explicitly instrumented profile retains a complete bounded body.
+			if readErr != nil || len(raw) > 1<<20 {
+				http.Error(w, "bad request", http.StatusBadRequest)
+				return
+			}
+			body = bytes.NewReader(raw)
+		}
+		decoder := json.NewDecoder(body)
+		decoder.DisallowUnknownFields()
+		var request fixture.Request
+		if err := decoder.Decode(&request); err != nil {
+			http.Error(w, "bad request", http.StatusBadRequest)
+			return
+		}
+		var extra any
+		if decoder.Decode(&extra) != io.EOF {
+			http.Error(w, "bad request", http.StatusBadRequest)
+			return
+		}
+		event := boundary.Event{Boundary: "resource.ingress", Phase: "pre-apply", Subject: request.Subject, Generation: request.Generation, Epoch: request.Epoch, Sequence: request.Sequence, Intent: request.Key, Attempt: request.Authorization}

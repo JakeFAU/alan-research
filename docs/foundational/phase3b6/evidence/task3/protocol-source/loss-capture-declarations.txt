@@ -1,0 +1,31 @@
+func bindingAncillaryIndex(t *testing.T, p runtime.Provision, c reciprocalCase) {
+	m := delegation.RequestBindingManifest{Version: "alan/phase3b4-ancillary/v1", Reciprocal: c.Manifest, PrincipalRequests: [2]string{c.Manifest.ABRequest, c.Manifest.BARequest}}
+	names := []string{"initial", "first-owner/post-open", "stopped", "fresh-owner/post-open", "reopened", "final"}
+	var captures []bindingCaptureRef
+	for _, name := range names {
+		if _, err := os.Stat(filepath.Join(c.Directory, name, "runtime.sqlite")); err == nil {
+			prev := ""
+			if len(captures) > 0 {
+				prev = captures[len(captures)-1].Directory
+			}
+			ref := bindingCaptureRef{Ordinal: len(captures) + 1, Predecessor: prev, Label: name, Directory: name}
+			if name == "stopped" && c.Cut != nil {
+				ref.OwnerPID = c.Cut.PID
+				ref.AcknowledgedSIGKILL = true
+			}
+			if name == "final" && c.Name == "generic-unknown" {
+				var opened struct{ PID int }
+				raw, err := os.ReadFile(filepath.Join(c.Directory, "fresh-owner", "open.json"))
+				if err != nil {
+					t.Fatal(err)
+				}
+				if err = json.Unmarshal(raw, &opened); err != nil || opened.PID <= 0 {
+					t.Fatal(err)
+				}
+				ref.OwnerPID = opened.PID
+			}
+			captures = append(captures, ref)
+		}
+	}
+	bindingIndex(t, c.Directory, bindingCase{Name: c.Name, Schedule: "ancillary-v2-" + c.Schedule, Classification: c.Classification, Manifest: m, Captures: captures}, p)
+}

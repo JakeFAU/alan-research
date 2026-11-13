@@ -1,0 +1,11 @@
+	journalPath := flags.String("journal", "", "optional passive ingress/result JSONL journal")
+	ledger := flags.Bool("receipt-ledger", false, "opt in to the version 2 exact-wire application ledger and receipt lookup")
+	responseMode := flags.String("response-mode", "normal", "normal, drop-after-commit, or finish-accepted")
+	if err := flags.Parse(os.Args[1:]); err != nil {
+		return err
+	}
+	if *path == "" || *token == "" || flags.NArg() != 0 {
+		return fmt.Errorf("db and token required")
+	}
+	if *responseMode != "normal" && *responseMode != "drop-after-commit" && *responseMode != "finish-accepted" {
+		return fmt.Errorf("unsupported response mode")

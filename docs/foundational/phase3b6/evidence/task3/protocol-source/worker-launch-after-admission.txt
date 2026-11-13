@@ -1,0 +1,41 @@
+			} else {
+				work, err := s.prepareExternalWork(ctx, external.intent, options.ExternalTimeout)
+				if err != nil {
+					return report, err
+				}
+				if work != nil {
+					event = work.event
+					transport = func(op *dispatchOpportunity) externalCompletion {
+						if op.authority != nil {
+							work.event.AuthorityAdmissionOrdinal = op.authority.Ordinal
+							work.event.Epoch = op.authority.Source.Epoch
+							work.event.Sequence = op.authority.Source.Sequence
+						}
+						return transportExternal(ctx, *work)
+					}
+				}
+			}
+			if transport != nil {
+				root, _, err := s.deliveryRoot(ctx, external.intent)
+				if err != nil {
+					return report, err
+				}
+				op, err := s.admitDispatch(ctx, event)
+				if err != nil {
+					return report, err
+				}
+				if op != nil {
+					activeOperations[external.intent] = root
+					if root != "" {
+						activeRoots[root]++
+					}
+					active++
+					workers.Add(1)
+					go func() {
+						defer workers.Done()
+						result := transport(op)
+						result.opportunity = op
+						completions <- result
+					}()
+				}
+			}

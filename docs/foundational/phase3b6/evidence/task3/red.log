@@ -1,0 +1,20 @@
+=== RUN   TestEffectObservationPositive
+=== RUN   TestEffectObservationPositive/normal/N07
+    effect_observation_test.go:26: semantic assertion: genuine sealed cut must be supported: raw=false continuity=false physical=false protocol=false supported=true reasons=[]
+=== RUN   TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate
+    effect_observation_test.go:26: semantic assertion: genuine sealed cut must be supported: raw=false continuity=false physical=false protocol=false supported=true reasons=[]
+=== RUN   TestEffectObservationPositive/race/N07
+    effect_observation_test.go:26: semantic assertion: genuine sealed cut must be supported: raw=false continuity=false physical=false protocol=false supported=true reasons=[]
+=== RUN   TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate
+    effect_observation_test.go:26: semantic assertion: genuine sealed cut must be supported: raw=false continuity=false physical=false protocol=false supported=true reasons=[]
+--- FAIL: TestEffectObservationPositive (0.30s)
+    --- FAIL: TestEffectObservationPositive/normal/N07 (0.09s)
+    --- FAIL: TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate (0.07s)
+    --- FAIL: TestEffectObservationPositive/race/N07 (0.06s)
+    --- FAIL: TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate (0.08s)
+=== RUN   TestEffectObservationCausalAckRequired
+    effect_observation_test.go:37: semantic assertion: final application without endpoint causal acknowledgment must not certify application-before-loss
+--- FAIL: TestEffectObservationCausalAckRequired (0.08s)
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/delegationcorrespondence	0.593s
+FAIL
