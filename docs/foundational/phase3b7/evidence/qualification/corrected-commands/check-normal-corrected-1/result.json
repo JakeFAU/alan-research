@@ -1,0 +1,19 @@
+{
+  "name": "check-normal-corrected-1",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "/tmp/alan-phase3b7/matched-check-corrected",
+    "-pair",
+    "/tmp/alan-phase3b7/raw-normal-v1"
+  ],
+  "timeout_seconds": 120,
+  "job_sha256": "356fc9041c3242bb6b4012ac4e9d239a951a5787c448badb9a00f90469b0334d",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:50:27Z",
+  "pid": 58628,
+  "exit": 0,
+  "elapsed_seconds": 0.31108587499999996,
+  "output_bytes": 437910,
+  "output_sha256": "edf131b32f95075db836c86d16992f779fe03a18fbde327acba71dfe56aaa3e3",
+  "compressed_output_sha256": "f4145bfa6a7eee19b731fe0eacf30b9dbd5c8ccaa85cd9d3c3f87e46493af002"
+}

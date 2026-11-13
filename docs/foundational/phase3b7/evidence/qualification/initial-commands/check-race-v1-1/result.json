@@ -1,0 +1,19 @@
+{
+  "name": "check-race-v1-1",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "/tmp/alan-phase3b7/matched-check",
+    "-pair",
+    "/tmp/alan-phase3b7/raw-race-v1"
+  ],
+  "timeout_seconds": 120,
+  "job_sha256": "459559e79bc897d1cc8591bd12d31af7145ee358c4a84a307090b0dd213bca61",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:39:47Z",
+  "pid": 55629,
+  "exit": 1,
+  "elapsed_seconds": 0.12922950000000002,
+  "output_bytes": 421289,
+  "output_sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217",
+  "compressed_output_sha256": "4100ae0a67d4c15eaae79442fd276960c698df52f2c10168093f8ce82e18c9da"
+}

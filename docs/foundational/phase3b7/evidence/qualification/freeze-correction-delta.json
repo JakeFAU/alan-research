@@ -1,0 +1,60 @@
+{
+  "before": "193039406557cb37be815d5f846b22a75d48fde6",
+  "after": "90724cce9082f1ca978d785efa743e851a344617",
+  "changed": {
+    "docs/foundational/phase3b7/03-comparison.md": {
+      "before": {
+        "bytes": 9549,
+        "sha256": "93a94bb16ed582ece21c8518539c5a70b35fdefed7f1a21e4d4efcc2a2e1890e"
+      },
+      "after": {
+        "bytes": 9694,
+        "sha256": "f063b9da7509cb6e473e70f08ab5950ac3be714d71598610d707290530b4e79b"
+      }
+    },
+    "research/matchedcapture/fixture_test.go": {
+      "before": {
+        "bytes": 10923,
+        "sha256": "16042334774bc936de84048b22c9f01f5819f6d8d90754e600731d657e1666db"
+      },
+      "after": {
+        "bytes": 10954,
+        "sha256": "664b89ffee308692f93b1143ed974f79434e6c3cfa11e9b81522c513ed43361c"
+      }
+    },
+    "research/matchedcapture/protocol.go": {
+      "before": {
+        "bytes": 12234,
+        "sha256": "eedac7a906495f0b347edd0b422cf882ac333e4454ddb1ab825c9f09379d9a88"
+      },
+      "after": {
+        "bytes": 12322,
+        "sha256": "57607b95bc81763ff7c45cb50a12971c3243d9d02dc0183e8c3f46e713c8bac9"
+      }
+    },
+    "research/matchedcapture/review_r1_test.go": {
+      "before": {
+        "bytes": 9150,
+        "sha256": "4edda6e2cc6fcb53e84414ccaa8b5b3f2792222bbed5f59dcb3223c21fceddd2"
+      },
+      "after": {
+        "bytes": 9150,
+        "sha256": "170c155112c7e00eb62def20671f765ae8f1ce94faebd066564c3cdc86a8fbfa"
+      }
+    },
+    "research/matchedcapture/review_r2_test.go": {
+      "before": null,
+      "after": {
+        "bytes": 2900,
+        "sha256": "bd29fb460bc880907af95df7b03b362e6fc7ef29193c67da133d67fdb156d75f"
+      }
+    },
+    "research/matchedcapture/testdata/native-authorization.json.gz": {
+      "before": null,
+      "after": {
+        "bytes": 4532,
+        "sha256": "5cbdbe2af6d1beb73f6e132aa5156d345ef074e17c18cee9ab9353460595429c"
+      }
+    }
+  }
+}

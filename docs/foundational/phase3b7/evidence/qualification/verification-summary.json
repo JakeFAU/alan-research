@@ -1,0 +1,84 @@
+{
+  "build": {
+    "elapsed_seconds": 9.852774540999999,
+    "exit": 0,
+    "output_bytes": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "corpus-ordinary": {
+    "elapsed_seconds": 32.981241167,
+    "exit": 0,
+    "output_bytes": 430873,
+    "output_sha256": "a2f5a10b29cc9a99219ae8fca512b95187c9407cdb8a59fd232a6c903b85e345",
+    "tests": {
+      "named_skips": [],
+      "no_test_packages": 3,
+      "pass_events": 422,
+      "tested_packages": 7
+    }
+  },
+  "corpus-race": {
+    "elapsed_seconds": 267.564483,
+    "exit": 0,
+    "output_bytes": 430886,
+    "output_sha256": "3d2a7fb1107505bf98b94be1e5fdb425786a1dea5b688563cb66a4b08ebb0de5",
+    "tests": {
+      "named_skips": [],
+      "no_test_packages": 3,
+      "pass_events": 422,
+      "tested_packages": 7
+    }
+  },
+  "format": {
+    "elapsed_seconds": 0.02418604199999999,
+    "exit": 0,
+    "output_bytes": 70,
+    "output_sha256": "fad220fef78116bf36d0af84e2ea3a33dbba4c341b41bce342c82cc92dbb014e"
+  },
+  "format-current": {
+    "elapsed_seconds": 0.012318541999999998,
+    "exit": 0,
+    "output_bytes": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "freeze-check": {
+    "elapsed_seconds": 1.7743004169999999,
+    "exit": 0,
+    "output_bytes": 40,
+    "output_sha256": "83c3f02e4599407dfd26963af5cee6f308c1f5e4b3e052672167f2242636bd3d"
+  },
+  "global-staticcheck": {
+    "baseline_byte_identical": true,
+    "diagnostics": 13,
+    "elapsed_seconds": 12.081024167,
+    "exit": 1,
+    "output_bytes": 1136,
+    "output_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1"
+  },
+  "global-staticcheck-integration": {
+    "baseline_byte_identical": true,
+    "diagnostics": 31,
+    "elapsed_seconds": 12.387026209,
+    "exit": 1,
+    "output_bytes": 3531,
+    "output_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b"
+  },
+  "module-tidy-diff": {
+    "elapsed_seconds": 0.18499395800000001,
+    "exit": 0,
+    "output_bytes": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "module-verify": {
+    "elapsed_seconds": 0.180291209,
+    "exit": 0,
+    "output_bytes": 21,
+    "output_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+  },
+  "scoped-staticcheck": {
+    "elapsed_seconds": 3.3492720840000003,
+    "exit": 0,
+    "output_bytes": 0,
+    "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

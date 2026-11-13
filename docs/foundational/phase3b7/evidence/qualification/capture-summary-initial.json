@@ -1,0 +1,56 @@
+{
+  "normal": {
+    "archive_member_count": 122,
+    "archive_bytes": 369092,
+    "archive_sha256": "0d2b423ea6f611be28595ac71d973507c7ccf6d2444e68fc05c28af61fdf4b65",
+    "final_tables": 41,
+    "final_rows": 94,
+    "final_runs": [
+      {
+        "epoch": 3,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "318909108cfc7fe1f99984fc6505f702c4ff6f625bac186ea429b721e6d0651c",
+        "projection": "{\"PC\":4,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v2\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:53454/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 4,
+        "subject": "a"
+      },
+      {
+        "epoch": 3,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "b58638d03da2f1c9410597509736976184103a0ae9a84732fe5a691ee91477ab",
+        "projection": "{\"PC\":8,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"revoke\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,7,0]\",\"Flag\":false},\"revoked\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 8,
+        "subject": "b"
+      }
+    ]
+  },
+  "race": {
+    "archive_member_count": 122,
+    "archive_bytes": 369260,
+    "archive_sha256": "19be235cec79f5555eaaa4d92263af884f36c9fa4ef45ff814f81de9bc4c6292",
+    "final_tables": 41,
+    "final_rows": 94,
+    "final_runs": [
+      {
+        "epoch": 3,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "9cdba6d3bc8ef3b3042c1c5dfb3eca8496e3618b2ff9ab43f14478e98bf102a5",
+        "projection": "{\"PC\":4,\"Data\":{\"ab_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,1,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"grant_data\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"peer_claim\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"{\\\"Version\\\":\\\"alan/request-authority/v2\\\",\\\"Root\\\":{\\\"Run\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"RootRun\\\":{\\\"Subject\\\":\\\"b\\\",\\\"Generation\\\":1},\\\"Permission\\\":{\\\"Kind\\\":\\\"external\\\",\\\"Source\\\":\\\"b\\\",\\\"Target\\\":\\\"http://127.0.0.1:53475/apply\\\",\\\"Operation\\\":\\\"apply\\\",\\\"Revision\\\":1,\\\"Obligation\\\":\\\"ba-service\\\"}},\\\"Recipient\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRoot\\\":{\\\"Subject\\\":\\\"a\\\",\\\"Generation\\\":1},\\\"RecipientRevision\\\":1,\\\"OriginalRequestID\\\":\\\"[\\\\\\\"b\\\\\\\",1,1,0]\\\",\\\"ServiceOperationID\\\":\\\"[\\\\\\\"a\\\\\\\",1,4,0]\\\"}\",\"Flag\":false},\"peer_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_operation\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"a\\\",1,4,0]\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 4,
+        "subject": "a"
+      },
+      {
+        "epoch": 3,
+        "generation": 1,
+        "initial": "{\"PC\":0,\"Data\":{\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "program_id": "e134c432df5a7fa539e7a33c57d036835b88852cc6040ca8268d3f9d67b05e4a",
+        "projection": "{\"PC\":8,\"Data\":{\"ba_request\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,1,0]\",\"Flag\":false},\"grant\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,2,0]\",\"Flag\":false},\"grant_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"paid\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false},\"ready\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,5,0]\",\"Flag\":false},\"revoke\":{\"Kind\":\"string\",\"Number\":0,\"Text\":\"[\\\"b\\\",1,7,0]\",\"Flag\":false},\"revoked\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":true},\"service_accepted\":{\"Kind\":\"bool\",\"Number\":0,\"Text\":\"\",\"Flag\":false}},\"Status\":\"open\"}",
+        "sequence": 8,
+        "subject": "b"
+      }
+    ]
+  }
+}

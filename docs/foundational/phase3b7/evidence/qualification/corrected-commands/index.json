@@ -1,0 +1,47 @@
+{
+  "build-checker-corrected": {
+    "elapsed_seconds": 0.5117909580000001,
+    "exit": 0,
+    "files": {
+      "job.json": "18428256827f4feb00bc74363efcbc442c4cf953f6c0aa18a410c84f7b70985b",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "77d93331b1492bdf7b22846f2c38ebb972bd673277a9c4d2c4923bf5fdf3c5ea"
+    }
+  },
+  "check-normal-corrected-1": {
+    "elapsed_seconds": 0.31108587499999996,
+    "exit": 0,
+    "files": {
+      "job.json": "356fc9041c3242bb6b4012ac4e9d239a951a5787c448badb9a00f90469b0334d",
+      "output.log.gz": "f4145bfa6a7eee19b731fe0eacf30b9dbd5c8ccaa85cd9d3c3f87e46493af002",
+      "result.json": "f73b520cce6370f8633b9063f502e97d2397ccba9a625246bd05c618ede20448"
+    }
+  },
+  "check-normal-corrected-2": {
+    "elapsed_seconds": 0.365012,
+    "exit": 0,
+    "files": {
+      "job.json": "436d34ee77e962c7680f2aaeb3c721bb48c4f7206c2eb32218660a14fa053a0c",
+      "output.log.gz": "f4145bfa6a7eee19b731fe0eacf30b9dbd5c8ccaa85cd9d3c3f87e46493af002",
+      "result.json": "5cd6374b739590e623a4d90022c449d2b029aa787df0310e87b913f6e3217728"
+    }
+  },
+  "check-race-corrected-1": {
+    "elapsed_seconds": 0.3110845,
+    "exit": 0,
+    "files": {
+      "job.json": "112c31671363ba91d4216880940c21e4640d6157fc8f981a6c48a9eded61a6cc",
+      "output.log.gz": "ef3fc4395ecb8e48065699d4944e6b54406923f2fe07172cfc0fac9ae3b2f1c6",
+      "result.json": "875a05f25fee551dcd37096a8d1da51bfd5eef00ec571e82248c30cd9e9466fc"
+    }
+  },
+  "check-race-corrected-2": {
+    "elapsed_seconds": 0.365826542,
+    "exit": 0,
+    "files": {
+      "job.json": "bb335a450696cf33f9de6d2762cb3a28cd1e0f0a0e59e6b6b4bd4f8be052b7f7",
+      "output.log.gz": "ef3fc4395ecb8e48065699d4944e6b54406923f2fe07172cfc0fac9ae3b2f1c6",
+      "result.json": "f77c6e6b09d18c5567704933ea97a7b76ffbc0a23bbce91e4d156a91fdd0c4d2"
+    }
+  }
+}

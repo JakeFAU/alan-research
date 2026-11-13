@@ -1,0 +1,42 @@
+{
+  "archives": {
+    "normal": {
+      "final_rows": 94,
+      "final_tables": 41,
+      "four_exports_and_final_report_byte_equal": true,
+      "initial_rejections_and_corrected_reports_preserved": true,
+      "members": 122,
+      "sha256": "0d2b423ea6f611be28595ac71d973507c7ccf6d2444e68fc05c28af61fdf4b65"
+    },
+    "race": {
+      "final_rows": 94,
+      "final_tables": 41,
+      "four_exports_and_final_report_byte_equal": true,
+      "initial_rejections_and_corrected_reports_preserved": true,
+      "members": 122,
+      "sha256": "19be235cec79f5555eaaa4d92263af884f36c9fa4ef45ff814f81de9bc4c6292"
+    }
+  },
+  "commands": {
+    "corrected-commands": {
+      "hashes_and_outputs_valid": true,
+      "records": 5
+    },
+    "initial-commands": {
+      "hashes_and_outputs_valid": true,
+      "records": 7
+    },
+    "verification-commands": {
+      "hashes_and_outputs_valid": true,
+      "records": 11
+    }
+  },
+  "frozen_inputs_unchanged": true,
+  "head": "90724cce9082f1ca978d785efa743e851a344617",
+  "limitations": [
+    "This verifies retained package consistency, not artifact authenticity or a new experiment.",
+    "SQLite members are opaque bytes; no database was opened.",
+    "Full protocol/world/model judgments remain in the separately reviewed checker reports."
+  ],
+  "verifier_sha256": "63b2f8f83d3df7759564e67aecec57a7dcb9d991b16be12c6b12c0af5948ff07"
+}

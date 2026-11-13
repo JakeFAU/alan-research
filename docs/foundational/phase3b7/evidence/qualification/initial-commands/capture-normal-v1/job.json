@@ -1,0 +1,28 @@
+{
+  "name": "capture-normal-v1",
+  "cwd": "/tmp/alan-phase3b7/producer-verified",
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-tags=integration",
+    "-timeout=10m",
+    "./internal/durabletest",
+    "-run",
+    "^TestPhase3B7MatchedCapture$"
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b7/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b7/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b7/python-cache",
+    "ALAN_PHASE3B7_EVIDENCE": "/tmp/alan-phase3b7/raw-normal-v1"
+  },
+  "timeout_seconds": 700,
+  "go_test_json": true
+}

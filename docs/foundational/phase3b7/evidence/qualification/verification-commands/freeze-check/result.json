@@ -1,0 +1,32 @@
+{
+  "name": "freeze-check",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "python3",
+    "docs/foundational/phase3b7/evidence/qualification/freeze-inputs.py",
+    ".",
+    "--check",
+    "docs/foundational/phase3b7/evidence/qualification/freeze-corrected.json"
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b7/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b7/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b7/python-cache"
+  },
+  "timeout_seconds": 600,
+  "expected_exit": 0,
+  "job_sha256": "95007b581446d73e48b69c6541b1abaefaa4682a7ce4d0d67efe237f435991a5",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:55:08Z",
+  "pid": 60042,
+  "exit": 0,
+  "elapsed_seconds": 1.7743004169999999,
+  "output_bytes": 40,
+  "output_sha256": "83c3f02e4599407dfd26963af5cee6f308c1f5e4b3e052672167f2242636bd3d",
+  "compressed_output_sha256": "fa24b3f3328ef2bbdb612006ce9141a0efff4223e5dc9f47301cebcaf5184312"
+}
