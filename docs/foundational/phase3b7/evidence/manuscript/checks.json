@@ -1,0 +1,79 @@
+{
+  "comparison_base": "90724cce9082f1ca978d785efa743e851a344617",
+  "normalized_source_sections_equal": {
+    "abstract": true,
+    "phase3b6_closing": true,
+    "phase3b7": true,
+    "conclusion": true
+  },
+  "inherited_markdown_only_section_7_preserved": true,
+  "bibliography_unchanged": true,
+  "installed_pdf_sha256": "7fc751e059f61423dc307e346826dd17099ac3d99c8a8787dd5d48fed17e8f76",
+  "old_pages": 43,
+  "new_pages": 44,
+  "changed_extracted_text_pages": [
+    1,
+    2,
+    41,
+    42,
+    43,
+    44
+  ],
+  "inherited_layout_warnings": [
+    "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215",
+    "warning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559"
+  ],
+  "inherited_warning_line_ranges_unchanged": [
+    [
+      214,
+      215
+    ],
+    [
+      558,
+      559
+    ]
+  ],
+  "read_only_capture_cross_checks": {
+    "normal": {
+      "archive_sha256": "0d2b423ea6f611be28595ac71d973507c7ccf6d2444e68fc05c28af61fdf4b65",
+      "members": 122,
+      "inspect_exports": 9,
+      "four_paired_inspect_bytes_equal": true,
+      "final_run_bytes_equal": true,
+      "final_tables": 41,
+      "final_rows": 94,
+      "checker_repetitions": {
+        "initial": {
+          "both_exits": 1,
+          "report_sha256": "39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df"
+        },
+        "corrected": {
+          "both_exits": 0,
+          "report_sha256": "edf131b32f95075db836c86d16992f779fe03a18fbde327acba71dfe56aaa3e3"
+        }
+      }
+    },
+    "race": {
+      "archive_sha256": "19be235cec79f5555eaaa4d92263af884f36c9fa4ef45ff814f81de9bc4c6292",
+      "members": 122,
+      "inspect_exports": 9,
+      "four_paired_inspect_bytes_equal": true,
+      "final_run_bytes_equal": true,
+      "final_tables": 41,
+      "final_rows": 94,
+      "checker_repetitions": {
+        "initial": {
+          "both_exits": 1,
+          "report_sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217"
+        },
+        "corrected": {
+          "both_exits": 0,
+          "report_sha256": "4d7326b200b8bacc679eb0f3c1a57e16b3bab6628756855a82cb00a1e820c38f"
+        }
+      }
+    }
+  }
+}

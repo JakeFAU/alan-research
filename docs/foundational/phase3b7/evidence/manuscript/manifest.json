@@ -1,0 +1,91 @@
+{
+  "archive": "build-and-renders.tar.gz",
+  "bytes": 2506748,
+  "sha256": "a4b1f9869ad393319223b2cebaa64ab69e35afd8b940a410a3c5937d19d96c11",
+  "members": {
+    "alan-dissertation.blg": {
+      "bytes": 204,
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    "alan-dissertation.log": {
+      "bytes": 16643,
+      "sha256": "a75f91c5eba29ab4af3cc37745524d2a016aca42a133e20a588c1c7dc754504c"
+    },
+    "alan-dissertation.md": {
+      "bytes": 280553,
+      "sha256": "67b92619be8ee2afc14f68f70791124856db1c232878d7b49dd5147e6890d1a7"
+    },
+    "alan-dissertation.pdf": {
+      "bytes": 351825,
+      "sha256": "7fc751e059f61423dc307e346826dd17099ac3d99c8a8787dd5d48fed17e8f76"
+    },
+    "alan-dissertation.tex": {
+      "bytes": 182267,
+      "sha256": "3c4f4fcfff693cc51b5ad3d37a9ea24ed4dab11204cceaa5d9192ae781afc804"
+    },
+    "build-record.json": {
+      "bytes": 1305,
+      "sha256": "8de212864372a9141945194f86f7ae3f17a45da8337fbc41e8c95f132d40651d"
+    },
+    "build.log": {
+      "bytes": 2071,
+      "sha256": "138ddc4177d001fc5722d4195396903a4fe2c8efaf8ff697e8b015ac45d0d1d3"
+    },
+    "build_pdf.py": {
+      "bytes": 2558,
+      "sha256": "d1758c542c834bfacf38a42eecbdbd5251060f5012fcc91395b3be9071b982b8"
+    },
+    "paper-text.txt": {
+      "bytes": 182805,
+      "sha256": "37b3555f4a02eb3aee0ef524e5d31cab5a3e07a06eea151ce5237774b738cb9b"
+    },
+    "pdfinfo.txt": {
+      "bytes": 430,
+      "sha256": "cff88d5faf18c4d6658259669e38e64439f2afc94281a4ee3e800da50af6c8a8"
+    },
+    "poppler-version.txt": {
+      "bytes": 144,
+      "sha256": "15f830e729f4dc82c7c8989df9727720ade1683330f6ce0ebf808055da03191a"
+    },
+    "references.bib": {
+      "bytes": 8562,
+      "sha256": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+    },
+    "render-records.json": {
+      "bytes": 2002,
+      "sha256": "78bb27b00a3cfb1c210d8b88a6e97812f7008d6096e2867f41380b0721c47be7"
+    },
+    "render/page-01.png": {
+      "bytes": 255621,
+      "sha256": "722e2ac185572ab32033f7558d3ebeeb2d3b5a65fb02ae37d2df84f4d4ac3131"
+    },
+    "render/page-02.png": {
+      "bytes": 200672,
+      "sha256": "cff961393591cd4e9c706d921b4f8360f9d89d3e2ca06f6efa81d336e771f1fa"
+    },
+    "render/page-40.png": {
+      "bytes": 374387,
+      "sha256": "cb263cfc913ab1f0c9250e4cab1972008b450c2603bc98e6f83127d07e039ce5"
+    },
+    "render/page-41.png": {
+      "bytes": 361915,
+      "sha256": "6c321d949b3a899324ceff052421ea7da08c3e07d9174d5be9849fb85ac593dd"
+    },
+    "render/page-42.png": {
+      "bytes": 346723,
+      "sha256": "7da8c42c8a5f23ff9cd8ed3fbee34d4bcc5be47ec92f31bc03683a390a7b0a6a"
+    },
+    "render/page-43.png": {
+      "bytes": 322996,
+      "sha256": "b3ef51b5bdca82d4c1b734d9b2468b37ed165d7b7325e6eabc3c45019d32df4e"
+    },
+    "render/page-44.png": {
+      "bytes": 244927,
+      "sha256": "0ad19390fdc14816e771506e957ccb81e60e2912a0df239d5cc6a4b4ee42bfe3"
+    },
+    "tectonic-version.txt": {
+      "bytes": 16,
+      "sha256": "d2c451323def920d009840284f43cb877d93c95a62a92133ffe2dc2b43bed7b6"
+    }
+  }
+}
