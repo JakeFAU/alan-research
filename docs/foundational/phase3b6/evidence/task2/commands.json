@@ -1,0 +1,114 @@
+{
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+  },
+  "commands": [
+    {
+      "name": "versions",
+      "command": [
+        "go",
+        "version"
+      ],
+      "exit": 0,
+      "stdout_sha256": "c6f1c8d54aedc3afa72560d934397ad6c33b28f1b4d3546ec53176439b2397d5",
+      "stderr": ""
+    },
+    {
+      "name": "staticcheck-version",
+      "command": [
+        "staticcheck",
+        "-version"
+      ],
+      "exit": 0,
+      "stdout_sha256": "129e8482ea7967a9991755f5236f4613081e8b49c8ac47acd416013ae6a4a658",
+      "stderr": ""
+    },
+    {
+      "name": "tests",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/effectobservation/..."
+      ],
+      "exit": 0,
+      "stdout_sha256": "4268bf1ee5e1c614e8bfdb58a35863e31e0584814e7631c77ec2f2bfdd53f2f3",
+      "stderr": ""
+    },
+    {
+      "name": "audit-a",
+      "command": [
+        "go",
+        "run",
+        "./research/effectobservation/cmd/audit"
+      ],
+      "exit": 0,
+      "stdout_sha256": "20a5479244fc69f1655af2535d7f2adb3aac451136e76c49da1eeb3047fc26bd",
+      "stderr": ""
+    },
+    {
+      "name": "audit-b",
+      "command": [
+        "go",
+        "run",
+        "./research/effectobservation/cmd/audit"
+      ],
+      "exit": 0,
+      "stdout_sha256": "20a5479244fc69f1655af2535d7f2adb3aac451136e76c49da1eeb3047fc26bd",
+      "stderr": ""
+    },
+    {
+      "name": "model-a",
+      "command": [
+        "go",
+        "run",
+        "./research/effectobservation/cmd/export"
+      ],
+      "exit": 0,
+      "stdout_sha256": "142ae6cd3ce9622ecd535d15ad67b923983d8991e357da596858c86239be8d15",
+      "stderr": ""
+    },
+    {
+      "name": "model-b",
+      "command": [
+        "go",
+        "run",
+        "./research/effectobservation/cmd/export"
+      ],
+      "exit": 0,
+      "stdout_sha256": "142ae6cd3ce9622ecd535d15ad67b923983d8991e357da596858c86239be8d15",
+      "stderr": ""
+    },
+    {
+      "name": "format",
+      "command": [
+        "gofmt",
+        "-l",
+        "research/effectobservation"
+      ],
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    },
+    {
+      "name": "staticcheck",
+      "command": [
+        "staticcheck",
+        "./research/effectobservation/..."
+      ],
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": ""
+    }
+  ],
+  "audit_bytes_equal": true,
+  "graph_bytes_equal": true
+}

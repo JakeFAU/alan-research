@@ -1,0 +1,5 @@
+--- a/research/effectobservation/oracle.go
++++ b/research/effectobservation/oracle.go
+@@ -101 +101 @@
+-		if !original || l.World == NoResult || l.Inbox != NoResult || l.Stored != NoResult || e.Value != l.World {
++		if l.Dead || l.World == NoResult || l.Inbox != NoResult || l.Stored != NoResult || e.Value != l.World {
