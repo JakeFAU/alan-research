@@ -1,0 +1,15 @@
+func (c *child) kill(t *testing.T) {
+	t.Helper()
+	if !c.acknowledged {
+		t.Fatal("refuse claimed crash without validated acknowledgment")
+	}
+	if err := c.cmd.Process.Signal(syscall.SIGKILL); err != nil {
+		t.Fatal(err)
+	}
+	err := c.cmd.Wait()
+	status, ok := c.cmd.ProcessState.Sys().(syscall.WaitStatus)
+	if err == nil || !ok || !status.Signaled() || status.Signal() != syscall.SIGKILL {
+		t.Fatalf("not SIGKILL: %v", err)
+	}
+	emit(t, map[string]any{"type": "process", "command": c.cmd.Args, "pid": c.cmd.Process.Pid, "exit_signal": status.Signal().String(), "barrier_config": c.config, "race_children": raceChildren})
+}

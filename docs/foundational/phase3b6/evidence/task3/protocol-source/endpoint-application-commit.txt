@@ -1,0 +1,22 @@
+	err = errors.Join(err, rows.Err(), rows.Close())
+	if err != nil {
+		return Receipt{}, err
+	}
+	if request.Profile == "idempotent" && prior != nil {
+		return *prior, tx.Commit()
+	}
+	if (request.Delta > 0 && last.Total > math.MaxInt64-request.Delta) || (request.Delta < 0 && last.Total < math.MinInt64-request.Delta) || last.Mutation == math.MaxInt64 {
+		return Receipt{}, fmt.Errorf("resource capacity")
+	}
+	result := Receipt{Key: request.Key, Profile: request.Profile, Delta: request.Delta, Mutation: last.Mutation + 1, Total: last.Total + request.Delta, Process: r.process, PID: os.Getpid()}
+	raw, _ := json.Marshal(result)
+	if _, err = tx.ExecContext(ctx, "INSERT INTO applications VALUES(?,?)", result.Mutation, raw); err != nil {
+		return Receipt{}, err
+	}
+	if r.ledgerID != "" {
+		if _, err = tx.ExecContext(ctx, "INSERT INTO application_wires(number,key,wire) VALUES(?,?,?)", result.Mutation, request.Key, received); err != nil {
+			return Receipt{}, err
+		}
+	}
+	return result, tx.Commit()
+}

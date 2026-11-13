@@ -1,0 +1,32 @@
+	var journalMu sync.Mutex
+	var contactNumber int64
+	observe := func(record map[string]any) error {
+		if journal == nil {
+			return nil
+		}
+		journalMu.Lock()
+		defer journalMu.Unlock()
+		record["PID"] = os.Getpid()
+		record["Process"] = *token
+		if err := json.NewEncoder(journal).Encode(record); err != nil {
+			return err
+		}
+		return journal.Sync()
+	}
+	host, _, err := net.SplitHostPort(*address)
+	if err != nil || net.ParseIP(host) == nil || !net.ParseIP(host).IsLoopback() {
+		return fmt.Errorf("literal loopback address required")
+	}
+	ctx, err := boundary.FromEnvironment(context.Background(), *path)
+	if err != nil {
+		return err
+	}
+	openResource := fixture.Open
+	if *ledger {
+		openResource = fixture.OpenLedger
+	}
+	resource, err := openResource(ctx, *path, *token)
+	if err != nil {
+		return err
+	}
+	defer resource.Close()

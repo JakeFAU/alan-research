@@ -1,0 +1,27 @@
+		rootProgress, err := s.settleRoots(ctx)
+		if err != nil {
+			return report, err
+		}
+		if progressed || rootProgress {
+			continue
+		}
+		if active == 0 {
+			quiescent = true
+			return report, nil
+		}
+		if err := boundary.Reached(ctx, boundary.Event{Boundary: "runner.waiting", Phase: "in-flight"}); err != nil {
+			return report, err
+		}
+		select {
+		case <-wake:
+		case <-ctx.Done():
+			return report, ctx.Err()
+		case result := <-completions:
+			active--
+			releaseSlot(result)
+			if err = s.accountReceived(ctx, result); err != nil {
+				return report, err
+			}
+		}
+	}
+}

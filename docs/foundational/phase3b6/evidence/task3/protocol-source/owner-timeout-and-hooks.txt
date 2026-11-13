@@ -1,0 +1,39 @@
+		mu.Lock()
+		err := json.NewEncoder(f).Encode(e)
+		if err == nil {
+			err = f.Sync()
+		}
+		mu.Unlock()
+		if err != nil {
+			return err
+		}
+		if os.Getenv("ALAN_BARRIER") == "" {
+			return nil
+		}
+		return boundary.Reached(boundary.Inherit(ctx, hooks), e)
+	})
+	var config []reciprocalAdapter
+	if raw := os.Getenv("ALAN_PHASE3B4_ADAPTERS"); raw != "" {
+		if err := json.Unmarshal([]byte(raw), &config); err != nil {
+			t.Fatal(err)
+		}
+	}
+	report, runErr := s.Run(ctx, runtime.RunOptions{Adapters: reciprocalAdapters(config), MaxSteps: 256, MaxDispatch: 256, MaxInFlight: 2, ExternalTimeout: 5 * time.Second})
+	baseline3b3Write(t, out, "run.json", map[string]any{"Report": report, "Error": fmt.Sprint(runErr)})
+	if runErr != nil {
+		t.Fatal(runErr)
+	}
+}
+
+func bindingOwner(t *testing.T, db, dir string, cut *barrier, manifest string, revoke bool) *child {
+	t.Helper()
+	if err := os.MkdirAll(dir, 0700); err != nil {
+		t.Fatal(err)
+	}
+	return phaseTestProcess(t, db, "", "", cut, "TestPhase3B4Owner", func(cmd *exec.Cmd) {
+		cmd.Env = append(cmd.Env, "ALAN_PHASE3B4_CHILD=1", "ALAN_PHASE3B4_OUTPUT="+dir, "ALAN_PHASE3B4_MANIFEST="+manifest)
+		if revoke {
+			cmd.Env = append(cmd.Env, "ALAN_PHASE3B4_REVOKE=1")
+		}
+	})
+}

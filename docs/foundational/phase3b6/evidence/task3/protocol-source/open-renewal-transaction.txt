@@ -1,0 +1,61 @@
+	// SQLite only applies its spill policy outside a transaction. Use a
+	// separate writer for validation and activation so a failed large renewal
+	// cannot leave uncommitted WAL frames, and normal execution keeps its
+	// original pager settings. Both connections are under the same owner lock.
+	renewal, err := connect(ctx, real, false)
+	if err != nil {
+		return nil, err
+	}
+	defer renewal.Close()
+	if _, err = renewal.conn.ExecContext(ctx, "PRAGMA cache_spill=OFF"); err != nil {
+		return nil, err
+	}
+	tx, err := renewal.conn.BeginTx(ctx, nil)
+	if err != nil {
+		return nil, err
+	}
+	defer tx.Rollback()
+	var report ReplayReport
+	if composition {
+		report, err = validateCompositionStore(ctx, tx, limits)
+		if err == nil {
+			s.composition, err = readCompositionProfile(ctx, tx, limits)
+		}
+	} else {
+		report, err = validateLedger(ctx, tx, limits)
+		if err == nil {
+			n, e := schemaNumber(ctx, tx)
+			if e != nil {
+				return nil, e
+			}
+			if isCompositionSchema(n) {
+				s.composition, err = readCompositionProfile(ctx, tx, limits)
+			}
+		}
+	}
+	if err != nil {
+		return nil, err
+	}
+	stored, err := storedSchemaNumber(ctx, tx)
+	if err != nil {
+		return nil, err
+	}
+	s.reconciliation = protocolSchemaNumber(stored) == reconciliationSchemaVersion
+	s.dispatchAdmissions = hasDispatchAdmissionSchema(stored)
+	s.namespace = report.Namespace
+	for _, r := range report.Runs {
+		if r.Projection.Status != "open" {
+			continue
+		}
+		if r.Epoch == math.MaxInt64 {
+			return nil, ErrLimit
+		}
+		if _, err = tx.ExecContext(ctx, "UPDATE runs SET epoch=epoch+1 WHERE subject=? AND generation=?", r.ID.Subject, r.ID.Generation); err != nil {
+			return nil, err
+		}
+	}
+	if err = tx.Commit(); err != nil {
+		return nil, err
+	}
+	s.lock = lock
+	return s, nil

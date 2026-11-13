@@ -1,0 +1,34 @@
+=== RUN   TestEffectObservationPositive
+=== RUN   TestEffectObservationPositive/normal/N07
+=== RUN   TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate
+=== RUN   TestEffectObservationPositive/race/N07
+=== RUN   TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate
+--- PASS: TestEffectObservationPositive (0.38s)
+    --- PASS: TestEffectObservationPositive/normal/N07 (0.10s)
+    --- PASS: TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate (0.09s)
+    --- PASS: TestEffectObservationPositive/race/N07 (0.10s)
+    --- PASS: TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate (0.10s)
+=== RUN   TestEffectObservationRenewalCoverage
+=== RUN   TestEffectObservationRenewalCoverage/run-missing
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted run-missing
+=== RUN   TestEffectObservationRenewalCoverage/run-extra
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted run-extra
+=== RUN   TestEffectObservationRenewalCoverage/one-epoch
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted one-epoch
+=== RUN   TestEffectObservationRenewalCoverage/run-field
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted run-field
+=== RUN   TestEffectObservationRenewalCoverage/table-missing
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted table-missing
+=== RUN   TestEffectObservationRenewalCoverage/table-extra
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted table-extra
+=== RUN   TestEffectObservationRenewalCoverage/non-run-row
+    effect_observation_test.go:153: semantic assertion: exact renewal helper accepted non-run-row
+--- FAIL: TestEffectObservationRenewalCoverage (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/run-missing (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/run-extra (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/one-epoch (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/run-field (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/table-missing (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/table-extra (0.00s)
+    --- FAIL: TestEffectObservationRenewalCoverage/non-run-row (0.00s)
+FAIL

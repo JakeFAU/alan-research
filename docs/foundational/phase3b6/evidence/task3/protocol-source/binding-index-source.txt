@@ -1,0 +1,48 @@
+func bindingIndex(t *testing.T, dir string, c bindingCase, p runtime.Provision) {
+	t.Helper()
+	c.Version = "alan/phase3b4-case/v1"
+	c.Profile = p.Composition.RequestAuthority
+	c.PrincipalRequests = c.Manifest.PrincipalRequests
+	for i := range c.Captures {
+		r := &c.Captures[i]
+		if r.OwnerPID != 0 {
+			continue
+		}
+		r.OwnerPID = os.Getpid()
+		if strings.HasSuffix(r.Directory, "/post-open") {
+			var opened struct{ PID int }
+			raw, err := os.ReadFile(filepath.Join(dir, strings.TrimSuffix(r.Directory, "/post-open"), "open.json"))
+			if err != nil {
+				t.Fatal(err)
+			}
+			if err = json.Unmarshal(raw, &opened); err != nil || opened.PID <= 0 {
+				t.Fatal("capture owner", err)
+			}
+			r.OwnerPID = opened.PID
+		}
+	}
+
+	c.Manifest.ProgramIDs = map[string]string{}
+	for _, r := range p.Runs {
+		c.Manifest.ProgramIDs[r.ID.Subject] = r.ProgramID
+	}
+	baseline3b3Write(t, dir, "case.json", c)
+	baseline3b3Write(t, dir, "manifest.json", c.Manifest)
+	reciprocalSources(t, dir)
+	files := map[string]string{}
+	for _, pat := range []string{"phase3b4_*test.go", "../../examples/delegation/request_binding*.go"} {
+		paths, err := filepath.Glob(pat)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, path := range paths {
+			raw, err := os.ReadFile(path)
+			if err != nil {
+				t.Fatal(err)
+			}
+			sum := sha256.Sum256(raw)
+			files[path] = hex.EncodeToString(sum[:])
+		}
+	}
+	baseline3b3Write(t, dir, "binding-source.json", files)
+	baseline3b3Manifest(t, dir)

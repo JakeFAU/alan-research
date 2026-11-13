@@ -1,0 +1,57 @@
+func reciprocalEndpoint(t *testing.T, dir, name string, cut *barrier) (*child, string, string) {
+	t.Helper()
+	path := filepath.Join(t.TempDir(), name+".sqlite")
+	token := fmt.Sprintf("reciprocal-%s-%d", name, time.Now().UnixNano())
+	config := barrier{Scenario: t.Name(), Token: token, Store: path}
+	if cut != nil {
+		config.Boundary = cut.Boundary
+		config.Phase = cut.Phase
+		config.Subject = cut.Subject
+		config.Sequence = cut.Sequence
+	}
+	read, write := pipe2c(t)
+	resumeRead, resumeWrite := pipe2c(t)
+	cmd := exec.Command(filepath.Join(binaries(t), "alan-resource"), "--db", path, "--token", token, "--listen", "127.0.0.1:0", "--journal", filepath.Join(dir, "endpoint-"+name+".jsonl"))
+	if cut != nil {
+		raw, _ := json.Marshal(config)
+		cmd.Env = append(os.Environ(), "ALAN_BARRIER="+string(raw))
+	}
+	cmd.ExtraFiles = []*os.File{write, resumeRead}
+	stdout, err := cmd.StdoutPipe()
+	if err != nil {
+		t.Fatal(err)
+	}
+	log, err := os.Create(filepath.Join(dir, "endpoint-"+name+".log"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	cmd.Stderr = log
+	if err = cmd.Start(); err != nil {
+		t.Fatal(err)
+	}
+	write.Close()
+	resumeRead.Close()
+	c := &child{cmd: cmd, ack: read, release: resumeWrite, config: config, stderr: log}
+	t.Cleanup(func() {
+		if cmd.ProcessState == nil {
+			cmd.Process.Kill()
+			cmd.Wait()
+		}
+		read.Close()
+		resumeWrite.Close()
+		log.Close()
+	})
+	var ready struct {
+		URL, Token, Store string
+		PID               int
+	}
+	if err = json.NewDecoder(stdout).Decode(&ready); err != nil {
+		raw, _ := os.ReadFile(log.Name())
+		t.Fatal(err, string(raw))
+	}
+	if ready.PID != cmd.Process.Pid || ready.Token != token || ready.Store != path {
+		t.Fatal("endpoint identity", ready)
+	}
+	baseline3b3Write(t, dir, "endpoint-"+name+"-ready.json", ready)
+	return c, ready.URL, path
+}

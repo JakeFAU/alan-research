@@ -1,0 +1,473 @@
+{
+  "archive_directory": "docs/foundational/phase3b4/evidence/prospective-main",
+  "archive_manifest_sha256": "d4d12cd480a76f21e86acd7f185f37dd0b14c785c3176d2bee22a2a0a95805ef",
+  "archives": {
+    "raw-normal.tar.gz": {
+      "bytes": 7048138,
+      "cases": {
+        "N07": {
+          "artifact_sha256": {
+            "after-revoke/inspect.json": "9cf1613156d23eac15a84988050e9639b0c49ebb6de937d636698dd74a228617",
+            "before-revoke/inspect.json": "0fcb9ac12805a53c476aace555f845a61eb159fefd59cb87b88ad3fc253d077b",
+            "binding-source.json": "7af68047bed9a5d06d51fe99ca08f31ae2f6f95562d28e6cb029977bebb8ac77",
+            "case.json": "98e0f964bb05917006b08f8b3dd319e580762392a4985bed2cfee8c7c5bc8550",
+            "controlled-revocation.json": "e240e32e393acdfdf3acd3e1e64bd9b60d59c9a30c56cf10c480b8befede3560",
+            "digests.json": "e7be3a1fda55cae6c7ba3e58d3693114f1114d4055e08f984facdf07db1c5910",
+            "endpoint-a-ready.json": "13b153aaa9701aa95dfd3d22bb48e70eab8c741d5590984b71994839ae72d691",
+            "endpoint-a.jsonl": "5ddf965f16907cf9bdee455e6c7ddb319f42b88485c2d8dd74c93f1f0fa6ff37",
+            "endpoint-b-ready.json": "93400f5ac7974912c001fa385d46504583cd6d67ecaa52466d0d4e14b5f1fb83",
+            "endpoint-b.jsonl": "cbf6a145a92737a7ee6224e33c206d3af541f732382e5a8a527f0f1f3588d290",
+            "endpoints.json": "1b86630901fc87b1d16df3f6a088b5a9dae4a60705fc57d73f3c9edcf7f8f8c8",
+            "final/inspect.json": "2be4bbf2ec132bd604b9c159047546f6eba20a517e0ee39d67aa08e93ae889b7",
+            "run.json": "be5d5ce98166756fcbb664d46bd388400f969a8d0cb0d89985e76d093c380628",
+            "source.json": "6e2ea53b48d3cd5a88b71e6301e7688622cd77cce7472c4d45c76b7a4ab3ed64",
+            "temporal-boundary.json": "7ede5ef5d83d813a6d8e33d180b3f79239621840a9c327d4bc2da1911413b0ae"
+          },
+          "case_declared_member_hashes_verified": 45,
+          "member_prefix": "N07-3888622734",
+          "producer_test": "TestPhase3B4CampaignRevocation/N07",
+          "race_children": false,
+          "regular_members_verified": 46
+        },
+        "applied-unknown-revoked-before-fresh-gate": {
+          "artifact_sha256": {
+            "acknowledgments.json": "a933b28a2e0e431d2150aa0541ff75969bd8412b69457c7c52ac24d731a0dcea",
+            "binding-source.json": "7af68047bed9a5d06d51fe99ca08f31ae2f6f95562d28e6cb029977bebb8ac77",
+            "case.json": "a64e25c2544ceecac56a5f6efe3718baab73be61ec2907c252d1adbdfbaeba1c",
+            "controlled-revocation.json": "209ebcef19d8bc384a4717a10b36e91b62be45c07f02f6323de40ed5f509a3db",
+            "digests.json": "8026d0795c1fb22cf679235a2e9af4094b4e984f77920400c1d5c801f8390b2f",
+            "endpoint-a-ready.json": "8473ed0e0c5b93037fddcc2195b3ef0f6cff3cf77d2d3b61b9caf3db275d7fa7",
+            "endpoint-a.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "endpoint-b-ready.json": "de7797b8b6ccb7651378909ad0601f95e4135ddaf7ce4ef20f3f75ac030de4c1",
+            "endpoint-b.jsonl": "dd9d13dba0841f647e7f71af82ebd166eed8321c518c7e55aad433bab9a85e18",
+            "endpoints.json": "d2489fb3e1c8674ec58bc06f01dc71a8cce97aeb753cdd3304143702dc4e57fb",
+            "final/inspect.json": "0f5f506a2dc7fb0ca17ccb7fc1fdf418161a4024d68097bc19dbcd09dc093262",
+            "first-owner/boundaries.jsonl": "1cdbfd77ddb95cab113aa28e0b086ab613ffb7410fa31f9a636857f4712a1010",
+            "first-owner/open.json": "d98fbbe5e266ddfcad653904508453ebc93a47965c45cd00d13b5b7ec0c91a36",
+            "first-owner/post-open/inspect.json": "14062e301bbf79743eb8ea3934acdd9818fec058312835969ea9c31ecc67ce1f",
+            "initial/inspect.json": "e86e363ffef0650c55db266d08d2a470680d72f29d39636293a554a69ad411c7",
+            "kill.json": "ac594bf535714757c7dfafa87b57af53aa3ad5af5cc0e995a81c88c417e2e308",
+            "reopened/inspect.json": "a494f1840f6414f85c369f33a6dea803cee44a8733731d4d3195ae42492a9c69",
+            "run.json": "d7a9da4978bf7e5f9f8963db8046acc0cd9629c0d5c5bce2c9240ac2d7a7091c",
+            "source.json": "b38d92801eb570abf981e7b02ae9c91370dde5f514291586a909e2772502e284",
+            "stopped/inspect.json": "47a30a1ab10265dd440a2d4b094d2756a8fc8054b6703f53e72fd60c010c4a24"
+          },
+          "case_declared_member_hashes_verified": 63,
+          "member_prefix": "applied-unknown-revoked-1243056310",
+          "producer_test": "TestPhase3B4CampaignAppliedUnknownRevoked",
+          "race_children": false,
+          "regular_members_verified": 64
+        }
+      },
+      "regular_members_verified": 110,
+      "sha256": "878bed2e14ded4d4794e378ca7bab8c865f1e1b98d4dca28ee113a2b7d1d0a9d"
+    },
+    "raw-race.tar.gz": {
+      "bytes": 7048123,
+      "cases": {
+        "N07": {
+          "artifact_sha256": {
+            "after-revoke/inspect.json": "84f2fd7a780e63be06e94ac24085639de84933dbab57f455cdffb0a8b50c2525",
+            "before-revoke/inspect.json": "76bc92e7532344e5b207ac9ad7ffe64e2a1f50774e752c2f02baaaee8086ea4d",
+            "binding-source.json": "7af68047bed9a5d06d51fe99ca08f31ae2f6f95562d28e6cb029977bebb8ac77",
+            "case.json": "c9a1d2ad1c1cb3e35b01ff6f1c39595de06420d97077c5d1a49855173d196b64",
+            "controlled-revocation.json": "780b643278de5863fad38fdcf4fa99fb8ee771ca7798bcef8f989e18ee1d95ec",
+            "digests.json": "4777b734d56017c8b5c3a76505ccb6be2b05ee7ac05db8bad3829d5076dbdf28",
+            "endpoint-a-ready.json": "de50f755a9a3817ea7612db7a98dbbad575482326afeca74dc59f6d0cfd14767",
+            "endpoint-a.jsonl": "77554514c75a6b62539a13c25537901c7d77a83ab72915d7fd16301fd904c5c0",
+            "endpoint-b-ready.json": "2d8af4a5541a162f7ee5a70cdd2901bfb84ddfbb60cf7ee3681c01e8434eea48",
+            "endpoint-b.jsonl": "9fd684c435f49e1e54ed5fcea4ab4d8b17aba1d8b91786f41829103ae59cb4a2",
+            "endpoints.json": "5ffd5d548ba2b6d94c6ba8c53d8d21cd47b500aed9ec59b2edf86b7fe8884c2f",
+            "final/inspect.json": "26e3922c829bc0e3af69e1f661110a9297580ad91099a38cd10ec9c04b1841d0",
+            "run.json": "e0c782494da8dc188bc98b0b70e41d9693eb2ff58461c7fbdd775cc8d3e1b08a",
+            "source.json": "ca0d2bd34a1006c99ecb18917984b56a6ab02ff012a5f36753e59b2d52d32c41",
+            "temporal-boundary.json": "7ede5ef5d83d813a6d8e33d180b3f79239621840a9c327d4bc2da1911413b0ae"
+          },
+          "case_declared_member_hashes_verified": 45,
+          "member_prefix": "N07-3721806614",
+          "producer_test": "TestPhase3B4CampaignRevocation/N07",
+          "race_children": true,
+          "regular_members_verified": 46
+        },
+        "applied-unknown-revoked-before-fresh-gate": {
+          "artifact_sha256": {
+            "acknowledgments.json": "a109409e974644c25a39cd5b929da96bb2930711f1663e897ba6de35c56e74b6",
+            "binding-source.json": "7af68047bed9a5d06d51fe99ca08f31ae2f6f95562d28e6cb029977bebb8ac77",
+            "case.json": "3104ab111e1a9db52fe0044b8d01f7ab689d08b4482fbdc395d7800142080bdf",
+            "controlled-revocation.json": "a9ccc96be733dc31ea35966afa4bd59fe8c7265e6f820f44aed3356962d40ad1",
+            "digests.json": "da7b729888ad9947f5d30e68d0c0dc591cd3873e96cf76de51f12a6f13545bd3",
+            "endpoint-a-ready.json": "15174ef20a963c60c326f15e306507bc08c108fd59008f0bb359df5f10db06cf",
+            "endpoint-a.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "endpoint-b-ready.json": "7373a05a749e19d444577c84a32317dccc45dfc1a8fddd2f642cfcdc33e3db7d",
+            "endpoint-b.jsonl": "4464a1b2687c4f6858e3c885933a93cde2e492338d96135a113ae2925e1758f3",
+            "endpoints.json": "ae57c6650c2757c71ff00a2547969d9b256b089a06df0baeeb3aead1fc49eae9",
+            "final/inspect.json": "c2aed38ee5a590a650c77bbe38c038778739531f9ba7151d853bcbf00e0a13b3",
+            "first-owner/boundaries.jsonl": "65f80c700212df6eeed834bde8646530be977154e31fcba44f2e8668b82096e6",
+            "first-owner/open.json": "ac5334849af272d01ac603318864cfec3fcfd85f9e27469bed4cfd26a5679ed4",
+            "first-owner/post-open/inspect.json": "a5f32410ea90b782ca38f6d8cd57f7ac39dac3efdd3a8c7735c26f83f4940686",
+            "initial/inspect.json": "499c3abca6242804dac5deb4ecce0c22aea61b9d58db1df4b43885137559a757",
+            "kill.json": "707c5f94bf9dbb0368c5f87a70a0e0c62559860be44e77859050d38484160e9f",
+            "reopened/inspect.json": "67acfb8ceec0ef5b70ace3cbcab2975397291efcf4243136d087d1dd8b26bfe1",
+            "run.json": "4bba134efdadae59af5d1e13ac7531f2c49cba1c56e139fa6ad88eb66a18e439",
+            "source.json": "50e1fd21156081508f8599addce1b80e768b0d0eadd742ad56fd3c5f9ce573f8",
+            "stopped/inspect.json": "28b587120dc8d2bab5d996a7c738118280deeb9deb1092836836a873585e9c57"
+          },
+          "case_declared_member_hashes_verified": 63,
+          "member_prefix": "applied-unknown-revoked-2740959369",
+          "producer_test": "TestPhase3B4CampaignAppliedUnknownRevoked",
+          "race_children": true,
+          "regular_members_verified": 64
+        }
+      },
+      "regular_members_verified": 110,
+      "sha256": "b7648b74ceddeab78066661a2075895d58e3088196f5290f0debf456d1e3f7d0"
+    }
+  },
+  "binding_source_hashes": {
+    "examples/delegation/request_binding.go": "9264b74f48bcd5200fa6ea4e2503e99212fbf0a264ef7f24d3fd3347330f5f7c",
+    "examples/delegation/request_binding_run_test.go": "1b4462ebccfbb3a1b7a82c6c6fab4e18f8ea6cc1f7d77cb0322e561dc27d9c8a",
+    "examples/delegation/request_binding_test.go": "0ea779d833d8f8f5680a1b04ebbf42d670cea90c656e3dbf347cd2f101a79d8e",
+    "internal/durabletest/phase3b4_ancillary_test.go": "52bba08f121ca83ad2687c4a90ce57adbf29ba072c58fae250a4ba5d7efefbb6",
+    "internal/durabletest/phase3b4_auxiliary_test.go": "fb4095a394d082b5f6a6a97ffd726bfad334b6aa8f8dc18c18cb48b2af7ed674",
+    "internal/durabletest/phase3b4_binding_test.go": "1528342d075504e1919728b670e68c0fb8bc8afa9620313121928c107eb4faa2",
+    "internal/durabletest/phase3b4_campaign_test.go": "eef35b2c1129f6092cb1f870ffa5656db949e60828aabf55265283dd997c2cf5",
+    "internal/durabletest/phase3b4_capacity_test.go": "5c20782b82e95360ff6d2ab7ac95ad95f5356000c96e33f03b43649bb896b060",
+    "internal/durabletest/phase3b4_compatibility_test.go": "1fcde8bf521a635bd4383e70c8d91d7fca1b2e75fe124d790e7b3fa9a1290ce6",
+    "internal/durabletest/phase3b4_construction_test.go": "f456c9cd405740ed8cfd61ecddd5250950707a3003097a622b1ce6ace4d2aac8",
+    "internal/durabletest/phase3b4_controlled_test.go": "da73442b4ade5b928a6f5091024f4ae109c46cc23f7a9152979cc28201431621",
+    "internal/durabletest/phase3b4_cost_test.go": "0284f6409964551d314a1f52e7729feecb906dbadf4ff48e1f7936757fd9da0a",
+    "internal/durabletest/phase3b4_cuts_test.go": "31528037888aceba2d3c31f69028080c5463e7626ea576e12dcdb7abff434bb3",
+    "internal/durabletest/phase3b4_evidence_test.go": "cd07b16fc55c5d7ec451e3bd0837b88f5c9ad98a807ab500b24286e385b99975",
+    "internal/durabletest/phase3b4_generation_parent_test.go": "41efd8c1cd7560d8a00e86c9c56073574b4bb9adb11af0a08cf4a6c8446cdbe4",
+    "internal/durabletest/phase3b4_negative_test.go": "f96cd5a1f2f9e5e39116b5e504b01422c3f9b479fd2dcfc61e64783c5b3c5d64"
+  },
+  "binding_source_hashes_per_case": 16,
+  "producer": {
+    "commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+    "current_checkout_head_at_read": "c72c396df09c55b0be1a91b2557dcec2ef6457a8",
+    "tree": "44af03133ac7ba75fb6f6f8dc36629ed4cf52d98"
+  },
+  "runtime_frozen_inputs_manifest_sha256": "d0c75f7f5cf46eb6d491b2991a13f3febe6a56770f31231e6eb56a68d72df4d3",
+  "source_files": {
+    "internal/boundary/boundary.go": {
+      "extracts": [
+        {
+          "bytes": 672,
+          "first_line": 26,
+          "last_line": 42,
+          "path": "synchronous-observer.txt",
+          "sha256": "f7de70004fdf4e84f13c4b834b51b4ac41e815a75ec37a8fd4e809cc1e1cb8a7"
+        },
+        {
+          "bytes": 3164,
+          "first_line": 62,
+          "last_line": 155,
+          "path": "barrier-ack-release-cancellation.txt",
+          "sha256": "f2b063d5d759941be52cdfc82b03f657de909f8e67124edc268489566b873304"
+        }
+      ],
+      "whole_source_bytes": 5011,
+      "whole_source_sha256": "97c68b4fefb0372c0acf49de86b4b09903e20d600297092591111b31e51ff6a8"
+    },
+    "internal/durabletest/crash_test.go": {
+      "extracts": [
+        {
+          "bytes": 621,
+          "first_line": 158,
+          "last_line": 172,
+          "path": "kill-confirmation.txt",
+          "sha256": "f8c45c03753955a25287cd833cbde241f61895093ae4d9deabe8b7685230e34e"
+        }
+      ],
+      "whole_source_bytes": 15829,
+      "whole_source_sha256": "80124a777080b93899f33d4a214fc21e215c52e5c887c3fb57958271ec55cbe0"
+    },
+    "internal/durabletest/phase3b3_cuts_test.go": {
+      "extracts": [
+        {
+          "bytes": 1784,
+          "first_line": 21,
+          "last_line": 77,
+          "path": "endpoint-pipe-ready.txt",
+          "sha256": "4cf3b4ae00e7a03e92314578e2e929954918134f3570854089f885837d482e5e"
+        }
+      ],
+      "whole_source_bytes": 10579,
+      "whole_source_sha256": "0ed9e7c2232ab5b6150ae07aa71964f5e646c8af40f3af6348fe505d115bb2fc"
+    },
+    "internal/durabletest/phase3b3_runtime_test.go": {
+      "extracts": [
+        {
+          "bytes": 1049,
+          "first_line": 347,
+          "last_line": 365,
+          "path": "ack-validation.txt",
+          "sha256": "2faa05a49de7e6eda416aa3499269669357f0b0ae5d120817e8ff4988c404ad3"
+        }
+      ],
+      "whole_source_bytes": 20375,
+      "whole_source_sha256": "5cfeaf08b5603ff56909683550bd922546ff71d081fe28a1f4c70772bb856c13"
+    },
+    "internal/durabletest/phase3b3_temporal_test.go": {
+      "extracts": [
+        {
+          "bytes": 2410,
+          "first_line": 55,
+          "last_line": 93,
+          "path": "exact-root-controlled-revoke.txt",
+          "sha256": "fc9a4141e91ffa66cb6d96d7819100a0a6e3352c750fa0e4998384fcf888ca04"
+        }
+      ],
+      "whole_source_bytes": 15212,
+      "whole_source_sha256": "5f89f136643af7a2b10e9d4ba67352d5af682b58bfef770409a376fb9d9dc3be"
+    },
+    "internal/durabletest/phase3b4_ancillary_test.go": {
+      "extracts": [
+        {
+          "bytes": 3666,
+          "first_line": 180,
+          "last_line": 244,
+          "path": "loss-controller.txt",
+          "sha256": "d759a4bfb1b3a72777bb4b8720221ec05de1c675541fe5067d9942b235a01a85"
+        },
+        {
+          "bytes": 1394,
+          "first_line": 247,
+          "last_line": 277,
+          "path": "loss-capture-declarations.txt",
+          "sha256": "b5d043524743d533652e5d95af98525a7c94b839ee397b322459fe92747ea3ef"
+        }
+      ],
+      "whole_source_bytes": 13034,
+      "whole_source_sha256": "52bba08f121ca83ad2687c4a90ce57adbf29ba072c58fae250a4ba5d7efefbb6"
+    },
+    "internal/durabletest/phase3b4_campaign_test.go": {
+      "extracts": [
+        {
+          "bytes": 1451,
+          "first_line": 54,
+          "last_line": 101,
+          "path": "binding-index-source.txt",
+          "sha256": "ebb3ca14f32c1d2736b667b31c02c556bd3a43e7b2c944021b5467953eb8e61e"
+        },
+        {
+          "bytes": 446,
+          "first_line": 166,
+          "last_line": 175,
+          "path": "endpoint-final-snapshot.txt",
+          "sha256": "1928b1b155b57e58e314710946b5539223a19b147c5abf95f17fddd1f04c42e9"
+        }
+      ],
+      "whole_source_bytes": 12544,
+      "whole_source_sha256": "eef35b2c1129f6092cb1f870ffa5656db949e60828aabf55265283dd997c2cf5"
+    },
+    "internal/durabletest/phase3b4_controlled_test.go": {
+      "extracts": [
+        {
+          "bytes": 229,
+          "first_line": 67,
+          "last_line": 72,
+          "path": "live-capture.txt",
+          "sha256": "f6ea6ef04541be6ea24a2ef454f461ffcbe46fc60835b19ffc177cd652ddd50e"
+        },
+        {
+          "bytes": 716,
+          "first_line": 252,
+          "last_line": 267,
+          "path": "n07-fixture.txt",
+          "sha256": "5c1c2227d0986a5408a3d0c4d96338d481f64bf975f414ea594cfc101a04f009"
+        },
+        {
+          "bytes": 2393,
+          "first_line": 281,
+          "last_line": 321,
+          "path": "n07-synchronous-callback.txt",
+          "sha256": "7303441a5fa975f4c460af2293ff2ba7ca32446ded4dd60b5c8ef5d2ad862b87"
+        }
+      ],
+      "whole_source_bytes": 12681,
+      "whole_source_sha256": "da73442b4ade5b928a6f5091024f4ae109c46cc23f7a9152979cc28201431621"
+    },
+    "internal/durabletest/phase3b4_cuts_test.go": {
+      "extracts": [
+        {
+          "bytes": 1205,
+          "first_line": 21,
+          "last_line": 55,
+          "path": "owner-open-before-run.txt",
+          "sha256": "240993c6c3292a513c615b8ed265fd7e2c21f9e08d16f9179ff9061e27eeea30"
+        },
+        {
+          "bytes": 1218,
+          "first_line": 71,
+          "last_line": 109,
+          "path": "owner-timeout-and-hooks.txt",
+          "sha256": "8f0559e5a2421cdb4ff98337ce84f621f035b3712f4bbfa9a883d5332888d55c"
+        }
+      ],
+      "whole_source_bytes": 11202,
+      "whole_source_sha256": "31528037888aceba2d3c31f69028080c5463e7626ea576e12dcdb7abff434bb3"
+    },
+    "internal/durabletest/reconciliation_helpers_test.go": {
+      "extracts": [
+        {
+          "bytes": 1388,
+          "first_line": 35,
+          "last_line": 86,
+          "path": "owner-pipe-wiring.txt",
+          "sha256": "6a8dd7dda62a4104be4f29673aba3297c91df421e10fd16f0da1411aad987198"
+        }
+      ],
+      "whole_source_bytes": 7841,
+      "whole_source_sha256": "c8dcbd4722cc261dd96d5f3116f0f60f9ec9540423839555d330e396161f7508"
+    },
+    "internal/executor/dispatch.go": {
+      "extracts": [
+        {
+          "bytes": 1073,
+          "first_line": 51,
+          "last_line": 84,
+          "path": "admission-observer.txt",
+          "sha256": "598997d4d543eed451a078c5fb133b34105b6d0ff438d96eaf5efbfb6642efa2"
+        }
+      ],
+      "whole_source_bytes": 12615,
+      "whole_source_sha256": "d88be256e136c344577d60d006aab0179d5b98586265cb1c4b5620ca6436bd1f"
+    },
+    "internal/executor/external.go": {
+      "extracts": [
+        {
+          "bytes": 1370,
+          "first_line": 139,
+          "last_line": 175,
+          "path": "external-timeout-wiring.txt",
+          "sha256": "1eebcea5955dbda85211d8709d1a782682e3a0a698531d8a2dbd31fa7fb82a32"
+        },
+        {
+          "bytes": 1678,
+          "first_line": 185,
+          "last_line": 238,
+          "path": "external-response-validation.txt",
+          "sha256": "a8f3940612112819f016a2abb8b04d069e597900b453cf8d7f229d546b6c3c0c"
+        }
+      ],
+      "whole_source_bytes": 20426,
+      "whole_source_sha256": "fe7047689a9d02ee2da4216cb66d210a751e3902710a2fc5b19ba399fed90514"
+    },
+    "internal/executor/runner.go": {
+      "extracts": [
+        {
+          "bytes": 333,
+          "first_line": 173,
+          "last_line": 180,
+          "path": "scheduler-dispatch-count.txt",
+          "sha256": "755bc80d03955ee537535d3da37e0181e976464d8a691106414b100d9d087532"
+        },
+        {
+          "bytes": 1068,
+          "first_line": 202,
+          "last_line": 242,
+          "path": "worker-launch-after-admission.txt",
+          "sha256": "51540133422a37820ef5994c7da2a2c6298b7a67a07dc091d36f8c623996e1ea"
+        },
+        {
+          "bytes": 575,
+          "first_line": 264,
+          "last_line": 290,
+          "path": "runner-in-flight-boundary.txt",
+          "sha256": "174c28d1f36ac9d6ab56c15c2c172c080d897f9071bd2d53770be526f43a62de"
+        }
+      ],
+      "whole_source_bytes": 20775,
+      "whole_source_sha256": "1f33e072ef00f37321f5f8d136546c7bedb4e2bb1bce6d6cc1857eb017351d93"
+    },
+    "internal/executor/store.go": {
+      "extracts": [
+        {
+          "bytes": 464,
+          "first_line": 601,
+          "last_line": 618,
+          "path": "open-owner-lock.txt",
+          "sha256": "6f34e42b3affb83774752d9fe57e12aa243ec893b6a78ec2fbec8017e35a2dc4"
+        },
+        {
+          "bytes": 1744,
+          "first_line": 637,
+          "last_line": 697,
+          "path": "open-renewal-transaction.txt",
+          "sha256": "3cd4b0362c62e5d49ca0c5c672c29edbb54c72522aab8d57e6655dd8f9df2c44"
+        }
+      ],
+      "whole_source_bytes": 35681,
+      "whole_source_sha256": "7eaaaf80fb569d7e831e17b513c402efd90d2b5b98083d0bb94454d70d1ff644"
+    },
+    "internal/fixture/resource.go": {
+      "extracts": [
+        {
+          "bytes": 689,
+          "first_line": 138,
+          "last_line": 158,
+          "path": "endpoint-apply-transaction.txt",
+          "sha256": "78de776e2c42071d3e546dc2d71b39cec5ddd3f401534a6709b0219da78bf899"
+        },
+        {
+          "bytes": 998,
+          "first_line": 196,
+          "last_line": 217,
+          "path": "endpoint-application-commit.txt",
+          "sha256": "8b587d7cd91cf62b926268e0d9581237d836ceba37b37fc893e65f468dc10753"
+        }
+      ],
+      "whole_source_bytes": 10699,
+      "whole_source_sha256": "0e1bd22168ec26673f8438acead36d67798bf6aa1e14da195e6a667fa56da70f"
+    },
+    "internal/testcmd/alan-resource/main.go": {
+      "extracts": [
+        {
+          "bytes": 650,
+          "first_line": 35,
+          "last_line": 45,
+          "path": "endpoint-default-mode.txt",
+          "sha256": "1eafd03d1870709c7984d20dfdd8e2b7cf1086038d11d36b867a96873d580928"
+        },
+        {
+          "bytes": 831,
+          "first_line": 56,
+          "last_line": 87,
+          "path": "endpoint-journal-process-identity.txt",
+          "sha256": "c6e8c47d5c10dae5e69cec9062937a97132658681759b17f088f1c1c15026ce1"
+        },
+        {
+          "bytes": 1375,
+          "first_line": 149,
+          "last_line": 183,
+          "path": "endpoint-ingress.txt",
+          "sha256": "095c8cf5e82c33631e8a19c806f95bacecc732a4d0e83bdff3e769241ac6b0cb"
+        },
+        {
+          "bytes": 1843,
+          "first_line": 184,
+          "last_line": 237,
+          "path": "endpoint-post-commit-response.txt",
+          "sha256": "6261b65f3ccb58efc0d410c2fe16874359c835fbfb68c8f18bcb81cc82a42e37"
+        }
+      ],
+      "whole_source_bytes": 9614,
+      "whole_source_sha256": "1ac7055a0360e9bdebe2168886d69b86b3f9c56f9278ec6caf80a52b23fbab00"
+    },
+    "runtime/runtime.go": {
+      "extracts": [
+        {
+          "bytes": 110,
+          "first_line": 50,
+          "last_line": 52,
+          "path": "public-open.txt",
+          "sha256": "3e8067681f4839ca1168b2389cab4d41e82208b4b4674ee4ca6d1d2962764175"
+        }
+      ],
+      "whole_source_bytes": 3457,
+      "whole_source_sha256": "68caedc9a4f30af7da683d71968228fa95fc2580267c477192e5f461169f1819"
+    }
+  },
+  "version": "alan/phase3b6-protocol-source/v1"
+}

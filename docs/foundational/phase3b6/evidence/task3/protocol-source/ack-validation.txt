@@ -1,0 +1,19 @@
+// This reader preserves the authority ordinal and avoids legacy fixture-specific
+// assertions about terminal events, attempt presence and first activation epochs.
+func reciprocalAwait(t *testing.T, c *child) boundary.Event {
+	t.Helper()
+	if err := c.ack.SetReadDeadline(time.Now().Add(40 * time.Second)); err != nil {
+		t.Fatal(err)
+	}
+	var e boundary.Event
+	if err := json.NewDecoder(c.ack).Decode(&e); err != nil {
+		raw, _ := os.ReadFile(c.stderr.Name())
+		t.Fatal("ack", err, string(raw))
+	}
+	w := c.config
+	if e.Scenario != w.Scenario || e.Token != w.Token || e.Store != w.Store || e.PID != c.cmd.Process.Pid || e.Boundary != w.Boundary || (w.Phase != "" && e.Phase != w.Phase) || (w.Subject != "" && e.Subject != w.Subject) || (w.Sequence != 0 && e.Sequence != w.Sequence) || (w.Intent != "" && e.Intent != w.Intent) || (w.Attempt != "" && e.Attempt != w.Attempt) || (w.Generation != 0 && e.Generation != w.Generation) || (w.Epoch != 0 && e.Epoch != w.Epoch) {
+		t.Fatal("wrong process/boundary", e, w)
+	}
+	c.acknowledged = true
+	return e
+}
