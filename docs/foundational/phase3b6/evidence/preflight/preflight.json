@@ -1,0 +1,85 @@
+{
+  "question": "Admitted opportunity versus applied-but-unrecorded mutation across one acknowledged process loss, interacting with exact-root revocation and reciprocal obligations.",
+  "base": "df840103aa3a85e33b4b95ddcf2fe3df071cb024",
+  "prior_pr": {
+    "url": "https://github.com/JakeFAU/alan-research/pull/46",
+    "state": "open",
+    "draft": true,
+    "merged": false,
+    "verified_via": "GitHub connector on2026-11-13"
+  },
+  "preflight_time_utc": "2026-11-13T18:21:55.068907+00:00",
+  "commands": [
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "exit": 0,
+      "stdout": "go version go1.27.4 darwin/arm64\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "staticcheck",
+        "-version"
+      ],
+      "exit": 0,
+      "stdout": "staticcheck 2026.2.2 (0.8.2)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit": 0,
+      "stdout": "df840103aa3a85e33b4b95ddcf2fe3df071cb024\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD^{tree}"
+      ],
+      "exit": 0,
+      "stdout": "081fa38f16d481249d1a1a8a3609cd647308645c\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--git-dir"
+      ],
+      "exit": 0,
+      "stdout": "/Users/jacob/dev/personal/alan-research/.git/worktrees/alan-research\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--git-common-dir"
+      ],
+      "exit": 0,
+      "stdout": "/Users/jacob/dev/personal/alan-research/.git\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "--show-superproject-working-tree"
+      ],
+      "exit": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "prior_qualification_inputs_unchanged": 582,
+  "prior_qualification_manifest_sha256": "51ab5216312d59b65987c239b5ff66cbbc3cbd7b44b9fb9cbcc40d80c6e42936",
+  "scope_status": "Read-only recon underway. No new implementation, result, or runtime campaign yet. Separate branch will target prior branch while PR46 remains unmerged; no merge authorized."
+}
