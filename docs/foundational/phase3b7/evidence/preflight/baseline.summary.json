@@ -1,0 +1,12 @@
+{
+  "command": "env GOTOOLCHAIN=local GOWORK=off GOPROXY=off GOSUMDB=off GOMODCACHE=/tmp/alan-phase3b5/modcache GOCACHE=/tmp/alan-phase3b7/go-build go test -json -count=1 -timeout=10m ./research/effectobservation/... ./research/delegationcorrespondence/...",
+  "exit_code": 0,
+  "events": 1190,
+  "test_pass_events": 228,
+  "package_actions": {
+    "pass": 7,
+    "skip": 3
+  },
+  "first_event": "2026-11-13T15:25:42.782146-05:00",
+  "last_event": "2026-11-13T15:25:45.974204-05:00"
+}
