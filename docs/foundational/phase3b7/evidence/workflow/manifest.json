@@ -1,12 +1,20 @@
 {
   "files": {
+    "final-dispositions.md": {
+      "bytes": 1986,
+      "sha256": "5cf9f8620fd260187fbbd6c82a4b791fcbbed050a1bca8495ee9c95e038e6208"
+    },
     "final-review-instructions.md": {
       "bytes": 2414,
       "sha256": "61f71c3ef4403637ce90e22baee74ef2b55940f6c2b25f9ac8f8d8f52bc71110"
     },
+    "final-review.md": {
+      "bytes": 11309,
+      "sha256": "664ffe6066af85eec37ec07ccb68ce0fad96e8725e68d99998e43ada3dbb85e2"
+    },
     "progress.md": {
-      "bytes": 15562,
-      "sha256": "6d9e7eb25efe033fb9be35889f18c2b0ce38f54e3470d3ce0f33041ad324917c"
+      "bytes": 16373,
+      "sha256": "75d1c791d09c1adea240c5808ac62f3422ccdaee13f59069d681121f1a5fbcbb"
     },
     "task-1-brief.md": {
       "bytes": 2561,
@@ -65,5 +73,5 @@
       "sha256": "4f3f336b6d99067b7404fbdfad13e1b208cd4d2860dee7d3381a61bc8fdf72e9"
     }
   },
-  "stage": "task-reviews-complete; final-review-pending"
+  "stage": "final-review-approved; draft-PR-pending"
 }
