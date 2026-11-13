@@ -1,0 +1,33 @@
+{
+  "decompressed_sha256": "557e832fc84e7cbdb47d1d4767938f80ddd1ca1d77c8c647cb665a3436546994",
+  "runtime_commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+  "runtime_tree": "44af03133ac7ba75fb6f6f8dc36629ed4cf52d98",
+  "runtime_members": 637,
+  "overlays": {
+    "internal/durabletest/phase3b7_controls_test.go": {
+      "bytes": 5780,
+      "sha256": "f9cb040cc4076c4c96a5821e64a02cc5ac1cc9ecd557ec3be4299cab006d5cb8",
+      "source": "phase3b7_controls_test.go.txt"
+    },
+    "internal/durabletest/phase3b7_matched_test.go": {
+      "bytes": 13714,
+      "sha256": "51de04cd2df49bcd139a6ada0e79e055c5e4dc1b03c4d5c52d9a583f9447a0f2",
+      "source": "phase3b7_matched_test.go.txt"
+    },
+    "internal/durabletest/phase3b7_owner_test.go": {
+      "bytes": 6970,
+      "sha256": "9a018ac303c46e14af9c394878fd2766f91c795e98f3cc176c225ea5ddce2fe1",
+      "source": "phase3b7_owner_test.go.txt"
+    },
+    "internal/durabletest/phase3b7_process_test.go": {
+      "bytes": 8853,
+      "sha256": "731c2a6738fabc26492150ca3614b4ec5e5fe74f8b363c7fb96b2e575896bf54",
+      "source": "phase3b7_process_test.go.txt"
+    }
+  },
+  "preparation_script": {
+    "bytes": 4208,
+    "sha256": "c5b706843b6016aeec63be88682a7ccab4962dbe007edef3503f829dd0d2933f"
+  },
+  "exact_task1_compressed_copy": true
+}
