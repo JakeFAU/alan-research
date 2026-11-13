@@ -1,0 +1,37 @@
+{
+  "source_sha256": "d23d2edce9c4ebace2f25074c4411ae8b8dd214bdd94ec73af3c3e5f898759c4",
+  "mutants": [
+    {
+      "name": "packet-deletion-on-loss",
+      "compile_exit": 0,
+      "targeted_test": "^TestLedgerLawfulControls$/^packet-survives-loss$",
+      "baseline_test_exit": 0,
+      "mutant_test_exit": 1,
+      "mutant_source_sha256": "fc7adb76674a9f25e8c022f84e6fe7257c0b31a938d2b71483a72d04a88f7024"
+    },
+    {
+      "name": "application-as-retention",
+      "compile_exit": 0,
+      "targeted_test": "^TestLedgerLawfulControls$/^application-is-not-retention$",
+      "baseline_test_exit": 0,
+      "mutant_test_exit": 1,
+      "mutant_source_sha256": "b43df4035c1735c02b6adc856689666f9bf549301088bb271131995a1fb2eab9"
+    },
+    {
+      "name": "old-response-after-reopen",
+      "compile_exit": 0,
+      "targeted_test": "^TestLedgerRejectsInvalidCustody$/^revived-old-response$",
+      "baseline_test_exit": 0,
+      "mutant_test_exit": 1,
+      "mutant_source_sha256": "87d09063a3f761ca1475c97a03402d33181d0c56ce58989598ce4e80cd8c545a"
+    },
+    {
+      "name": "c-revocation",
+      "compile_exit": 0,
+      "targeted_test": "^TestLedgerLawfulControls$/^old-permit-survives-revoke$",
+      "baseline_test_exit": 0,
+      "mutant_test_exit": 1,
+      "mutant_source_sha256": "e8d7d33f2e787319dede448a469bd32e4458a00333f39582b51911e9a3a85e35"
+    }
+  ]
+}

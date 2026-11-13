@@ -1,0 +1,4 @@
+--- a/research/effectobservation/oracle.go
++++ b/research/effectobservation/oracle.go
+@@ -119,0 +120 @@
++		l.CValid = false
