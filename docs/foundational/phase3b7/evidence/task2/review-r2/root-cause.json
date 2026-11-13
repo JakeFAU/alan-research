@@ -1,0 +1,90 @@
+{
+  "runtime_commit": "5b4662fd682a220ca3065b15e86672b7e56567e7",
+  "prepared_manifest_sha256": "557e832fc84e7cbdb47d1d4767938f80ddd1ca1d77c8c647cb665a3436546994",
+  "source_trace": [
+    {
+      "path": "internal/executor/external.go",
+      "bytes": 20426,
+      "sha256": "fe7047689a9d02ee2da4216cb66d210a751e3902710a2fc5b19ba399fed90514",
+      "start": 174,
+      "end": 195,
+      "text": "\treturn &externalWork{attempt: a, event: boundary.Event{Boundary: \"external.authorized\", Phase: \"pre-transport\", Subject: a.Intent.Run.Subject, Generation: a.Intent.Run.Generation, Epoch: source.Epoch, Sequence: source.Sequence, Intent: id, Attempt: a.AuthorizationID}, maxBytes: s.limits.MaxObservationBytes, timeout: timeout}, nil\n}\n\nfunc transportExternal(ctx context.Context, work externalWork) externalCompletion {\n\tresult := exchangeExternal(ctx, work)\n\tevent := work.event\n\tevent.Boundary = \"external.finished\"\n\tevent.Phase = \"transport-ended\"\n\tresult.err = errors.Join(result.err, boundary.Reached(ctx, event))\n\treturn result\n}\nfunc exchangeExternal(ctx context.Context, work externalWork) externalCompletion {\n\tresult := externalCompletion{work: work}\n\ta := work.attempt\n\tif err := boundary.Reached(ctx, work.event); err != nil {\n\t\tresult.err = err\n\t\treturn result\n\t}\n\traw, err := json.Marshal(a.Request)\n\tif err != nil {\n\t\tresult.err = err\n\t\treturn result\n"
+    },
+    {
+      "path": "internal/executor/runner.go",
+      "bytes": 20775,
+      "sha256": "1f33e072ef00f37321f5f8d136546c7bedb4e2bb1bce6d6cc1857eb017351d93",
+      "start": 203,
+      "end": 215,
+      "text": "\t\t\t\twork, err := s.prepareExternalWork(ctx, external.intent, options.ExternalTimeout)\n\t\t\t\tif err != nil {\n\t\t\t\t\treturn report, err\n\t\t\t\t}\n\t\t\t\tif work != nil {\n\t\t\t\t\tevent = work.event\n\t\t\t\t\ttransport = func(op *dispatchOpportunity) externalCompletion {\n\t\t\t\t\t\tif op.authority != nil {\n\t\t\t\t\t\t\twork.event.AuthorityAdmissionOrdinal = op.authority.Ordinal\n\t\t\t\t\t\t\twork.event.Epoch = op.authority.Source.Epoch\n\t\t\t\t\t\t\twork.event.Sequence = op.authority.Source.Sequence\n\t\t\t\t\t\t}\n\t\t\t\t\t\treturn transportExternal(ctx, *work)\n"
+    },
+    {
+      "path": "internal/durabletest/phase3b7_owner_test.go",
+      "bytes": 6970,
+      "sha256": "9a018ac303c46e14af9c394878fd2766f91c795e98f3cc176c225ea5ddce2fe1",
+      "start": 144,
+      "end": 181,
+      "text": "\tctx = boundary.WithObserver(ctx, func(ctx context.Context, e boundary.Event) error {\n\t\trecord := phase3B7Stamp(config, os.Getpid(), e)\n\t\tmu.Lock()\n\t\terr := phase3B7Append(log, record)\n\t\tmu.Unlock()\n\t\tif err != nil {\n\t\t\tphase3B7AbortOwner(dir, \"boundary-log\", record, err)\n\t\t}\n\t\tswitch {\n\t\tcase e.Boundary == \"dispatch.admitted\" && e.Phase == \"pre-call\":\n\t\t\tif e.Intent != phase3B7Service {\n\t\t\t\tphase3B7AbortOwner(dir, \"unexpected-worker\", record, errors.New(\"unexpected pre-call\"))\n\t\t\t}\n\t\t\tif err := phase3B7WriteJSON(filepath.Join(dir, \"pre-call.json\"), record); err != nil {\n\t\t\t\tphase3B7AbortOwner(dir, \"pre-call-log\", record, err)\n\t\t\t}\n\t\t\tif err := json.NewEncoder(workerAck).Encode(record); err != nil {\n\t\t\t\tphase3B7AbortOwner(dir, \"pre-call-ack\", record, err)\n\t\t\t}\n\t\t\tclose(precalls)\n\t\t\tif err := phase3B7WorkerRelease(ctx, workerRelease); err != nil {\n\t\t\t\tphase3B7AbortOwner(dir, \"worker-release\", record, err)\n\t\t\t}\n\t\t\tif err := phase3B7WriteJSON(filepath.Join(dir, \"worker-release.json\"), record); err != nil {\n\t\t\t\tphase3B7AbortOwner(dir, \"worker-release-log\", record, err)\n\t\t\t}\n\t\t\treturn ctx.Err()\n\t\tcase e.Boundary == \"runner.waiting\" && e.Phase == \"in-flight\":\n\t\t\tselect {\n\t\t\tcase <-precalls:\n\t\t\tcase <-ctx.Done():\n\t\t\t\tphase3B7AbortOwner(dir, \"before-scheduler-hold\", record, ctx.Err())\n\t\t\t}\n\t\t\treturn phase3B7HoldScheduler(ctx, inherited, dir, config, e)\n\t\tdefault:\n\t\t\t// external.authorized registers the attempt before pre-call.\n\t\t\treturn boundary.Reached(boundary.Inherit(ctx, inherited), e)\n\t\t}\n"
+    }
+  ],
+  "initial_reports": {
+    "/tmp/alan-phase3b7/qualification/check-normal-v1-1/output.log": {
+      "bytes": 421289,
+      "sha256": "39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df",
+      "Supported": false,
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      }
+    },
+    "/tmp/alan-phase3b7/qualification/check-normal-v1-2/output.log": {
+      "bytes": 421289,
+      "sha256": "39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df",
+      "Supported": false,
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      }
+    },
+    "/tmp/alan-phase3b7/qualification/check-race-v1-1/output.log": {
+      "bytes": 421289,
+      "sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217",
+      "Supported": false,
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      }
+    },
+    "/tmp/alan-phase3b7/qualification/check-race-v1-2/output.log": {
+      "bytes": 421289,
+      "sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217",
+      "Supported": false,
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      }
+    }
+  },
+  "old_frozen_binary": {
+    "/tmp/alan-phase3b7/matched-check": {
+      "bytes": 5472738,
+      "sha256": "e49b1d5d0d8caa33916cf9557aca453c346ddeb24cfd906b728a3c80c7f6075c"
+    }
+  }
+}

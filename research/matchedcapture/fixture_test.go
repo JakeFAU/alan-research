@@ -148,7 +148,7 @@ func fixture(t *testing.T) map[string][]byte {
 		authorized := worker
 		authorized.Boundary = "external.authorized"
 		authorized.Phase = "pre-transport"
-		authorized.AuthorityAdmissionOrdinal = 0
+		authorized.AuthorityAdmissionOrdinal = worker.AuthorityAdmissionOrdinal
 		passive := owner
 		f[base+"first-owner/boundaries.jsonl"] = append(append(append(jsonBytes(authorized), '\n'), append(jsonBytes(worker), '\n')...), append(jsonBytes(passive), '\n')...)
 		f[base+"first-owner/process.log"] = []byte{}
