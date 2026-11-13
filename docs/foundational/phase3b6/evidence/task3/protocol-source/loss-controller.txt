@@ -1,0 +1,65 @@
+func TestPhase3B4CampaignAppliedUnknownRevoked(t *testing.T) {
+	dir := bindingDirectory(t, "applied-unknown-revoked")
+	ca, ua, pa := reciprocalEndpoint(t, dir, "a", nil)
+	cb, ub, pb := reciprocalEndpoint(t, dir, "b", &barrier{Boundary: "resource.applied", Phase: "post-commit", Subject: "a", Sequence: 4})
+	p, m, err := delegation.Reciprocal(delegation.Options{EndpointA: ua, EndpointB: ub, Scenario: delegation.S2Handshake, TerminalHandshake: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	reciprocalRevokeProgram(t, &p, &m)
+	bindingVersion(t, &p, runtime.RequestAuthorityBindingVersion)
+	m.Claim.Version = runtime.RequestAuthorityBindingVersion
+	baseline3b3Write(t, dir, "provision.json", p)
+	baseline3b3Write(t, dir, "manifest.json", m)
+	db := filepath.Join(t.TempDir(), "runtime.sqlite")
+	s, err := runtime.Create(t.Context(), db, p, runtime.DefaultLimits())
+	if err != nil {
+		t.Fatal(err)
+	}
+	s.Close()
+	bindingCapture(t, db, filepath.Join(dir, "initial"))
+	first := bindingOwner(t, db, filepath.Join(dir, "first-owner"), &barrier{Boundary: "runner.waiting", Phase: "in-flight"}, "", false)
+	endpointAck := reciprocalAwait(t, cb)
+	ack := reciprocalAwait(t, first)
+	baseline3b3Write(t, dir, "acknowledgments.json", map[string]any{"Runtime": ack, "Endpoint": endpointAck})
+	first.kill(t)
+	baseline3b3Write(t, dir, "kill.json", map[string]any{"PID": first.cmd.Process.Pid, "Wait": first.cmd.ProcessState.String()})
+	stopped := bindingCapture(t, db, filepath.Join(dir, "stopped"))
+	before, _ := stopped.Effect(m.BAService)
+	if before == nil || before.ExternalReceipt != nil || len(before.AuthorityAdmissions) != 1 {
+		t.Fatal("unknown prefix", before)
+	}
+	if _, err = cb.release.Write([]byte("c")); err != nil {
+		t.Fatal(err)
+	}
+	s, err = runtime.Open(t.Context(), db, runtime.DefaultLimits())
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer s.Close()
+	backup := filepath.Join(t.TempDir(), "opened.sqlite")
+	reciprocalBackup(t, db, backup)
+	bindingCapture(t, backup, filepath.Join(dir, "reopened"))
+	reciprocalRevoke(t, s, m, dir)
+	report, err := s.Run(t.Context(), runtime.RunOptions{MaxSteps: 256, MaxDispatch: 256, MaxInFlight: 2, ExternalTimeout: 5 * time.Second})
+	s.Close()
+	baseline3b3Write(t, dir, "run.json", map[string]any{"Report": report, "Error": fmt.Sprint(err)})
+	if len(report.UnknownExternal) != 1 || report.UnknownExternal[0] != m.BAService {
+		t.Fatal("unknown original missing from report", report)
+	}
+	if err != nil {
+		t.Fatal(err)
+	}
+	endpoints := map[string]resource.Snapshot{"a": phaseSnapshot(t, pa), "b": phaseSnapshot(t, pb)}
+	phaseStopEndpoint(t, ca)
+	phaseStopEndpoint(t, cb)
+	baseline3b3Write(t, dir, "endpoints.json", endpoints)
+	reciprocalCopyDB(t, pa, filepath.Join(dir, "endpoint-a.sqlite"))
+	reciprocalCopyDB(t, pb, filepath.Join(dir, "endpoint-b.sqlite"))
+	snap := bindingCapture(t, db, filepath.Join(dir, "final"))
+	e, _ := snap.Effect(m.BAService)
+	if e == nil || !reflect.DeepEqual(before.ExternalAttempt, e.ExternalAttempt) || e.ExternalReceipt != nil || e.Settlement != nil || len(e.AuthorityAdmissions) != 2 || e.AuthorityAdmissions[1].Allowed || e.AuthorityAdmissions[1].Source.Epoch != before.AuthorityAdmissions[0].Source.Epoch+1 || endpoints["b"].Contacts != 1 || len(endpoints["b"].Applications) != 1 || endpoints["a"].Contacts != 0 {
+		t.Fatal("revoked unknown re-exposed or fabricated", e, endpoints)
+	}
+	bindingAncillaryIndex(t, p, reciprocalCase{Version: "alan/phase3b4-ancillary/v1", Name: "applied-unknown-revoked-before-fresh-gate", Schedule: "process-cut-then-controlled-retained-protocol", Directory: dir, Classification: "permission-blocked-transport-unknown", Manifest: m, Cut: &ack})
+	baseline3b3Manifest(t, dir)

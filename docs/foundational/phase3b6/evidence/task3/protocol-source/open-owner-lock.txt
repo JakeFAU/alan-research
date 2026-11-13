@@ -1,0 +1,18 @@
+func Open(ctx context.Context, path string, limits Limits) (*Store, error) {
+	return openStore(ctx, path, limits, false)
+}
+
+func openStore(ctx context.Context, path string, limits Limits, composition bool) (store *Store, err error) {
+	real, err := canonicalPath(path, false)
+	if err != nil {
+		return nil, err
+	}
+	lock, err := acquire(real)
+	if err != nil {
+		return nil, err
+	}
+	defer func() {
+		if store == nil {
+			err = errors.Join(err, lock.Close())
+		}
+	}()

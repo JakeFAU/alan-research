@@ -1,0 +1,170 @@
+=== RUN   TestEffectObservationAckAttacks
+=== RUN   TestEffectObservationAckAttacks/endpoint-phase
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-boundary
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-key
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-auth
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-subject
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-generation
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-epoch
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-sequence
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_ack_binding: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-pid
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-token
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-store
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/endpoint-scenario
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_endpoint_causal_ack: Endpoint]
+=== RUN   TestEffectObservationAckAttacks/runtime-phase
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_runtime_inflight_ack: Runtime]
+=== RUN   TestEffectObservationAckAttacks/runtime-scenario
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_runtime_inflight_ack: Runtime]
+=== RUN   TestEffectObservationAckAttacks/runtime-inflight-missing
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_runtime_inflight_ack: Runtime]
+=== RUN   TestEffectObservationAckAttacks/runtime-inflight-other
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_runtime_inflight_ack: Runtime]
+=== RUN   TestEffectObservationAckAttacks/runtime-token
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_sealed_process_anchor: Runtime]
+=== RUN   TestEffectObservationAckAttacks/runtime-store
+    effect_attacks_test.go:59: raw/continuity/physical valid; rejected at [effect_sealed_process_anchor: Runtime]
+--- PASS: TestEffectObservationAckAttacks (1.82s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-phase (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-boundary (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-key (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-auth (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-subject (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-generation (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-epoch (0.09s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-sequence (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-pid (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-token (0.17s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-store (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/endpoint-scenario (0.09s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-phase (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-scenario (0.09s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-inflight-missing (0.09s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-inflight-other (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-token (0.10s)
+    --- PASS: TestEffectObservationAckAttacks/runtime-store (0.09s)
+=== RUN   TestEffectObservationProtocolAttacks
+=== RUN   TestEffectObservationProtocolAttacks/changed-producer
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_producer_identity: source.json]
+=== RUN   TestEffectObservationProtocolAttacks/changed-source
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_producer_source: source.json]
+=== RUN   TestEffectObservationProtocolAttacks/changed-binding-source
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_producer_source: binding-source.json]
+=== RUN   TestEffectObservationProtocolAttacks/changed-schedule
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_protocol_declaration: case.json]
+=== RUN   TestEffectObservationProtocolAttacks/multiple-loss
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_capture_order: first-owner/post-open]
+=== RUN   TestEffectObservationProtocolAttacks/moved-revoke
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_controlled_revoke_join: final/inspect.json]
+=== RUN   TestEffectObservationProtocolAttacks/aliased-revoke
+    effect_attacks_test.go:84: raw/continuity/physical valid; rejected at [effect_controlled_revoke_join: final/inspect.json]
+=== NAME  TestEffectObservationProtocolAttacks
+    effect_attacks_test.go:89: raw/continuity/physical valid; rejected at [effect_synchronous_callback: temporal-boundary.json]
+--- PASS: TestEffectObservationProtocolAttacks (0.78s)
+    --- PASS: TestEffectObservationProtocolAttacks/changed-producer (0.10s)
+    --- PASS: TestEffectObservationProtocolAttacks/changed-source (0.09s)
+    --- PASS: TestEffectObservationProtocolAttacks/changed-binding-source (0.09s)
+    --- PASS: TestEffectObservationProtocolAttacks/changed-schedule (0.09s)
+    --- PASS: TestEffectObservationProtocolAttacks/multiple-loss (0.09s)
+    --- PASS: TestEffectObservationProtocolAttacks/moved-revoke (0.11s)
+    --- PASS: TestEffectObservationProtocolAttacks/aliased-revoke (0.11s)
+=== RUN   TestEffectObservationPhysicalAndRawAttacks
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/one-principal-renewal
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:owner_renewal ID:reopened/inspect.json Detail:a Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/wrong-wait
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:loss_acknowledgment ID:kill.json Detail:exit status 0 Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/wrong-kill
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:missing_acknowledged_loss ID:stopped Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/runtime-pid
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:loss_boundary ID:kill.json Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/missing-ready-a
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:required_endpoint_artifact_missing ID:endpoint-a-ready.json Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/missing-journal-a
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:required_endpoint_artifact_missing ID:endpoint-a.jsonl Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/missing-snapshot
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:required_endpoint_artifact_missing ID:endpoints.json Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/duplicate-ingress
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:endpoint_contact_order ID:endpoint-b.jsonl Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/duplicate-commit
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:endpoint_commit_coverage ID:endpoint-b.jsonl Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/missing-coverage
+    effect_attacks_test.go:173: raw=true continuity=true physical=false physicalFailure=&{Edge:endpoint_snapshot_coverage ID:b Detail: Order:0} reasons=[required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/stale-fresh-gate
+    effect_attacks_test.go:173: raw=true continuity=true physical=true physicalFailure=<nil> reasons=[effect_fresh_gate: final/inspect.json]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/lifecycle-as-receipt
+    effect_attacks_test.go:173: raw=false continuity=true physical=false physicalFailure=&{Edge:raw_invalid_external_not_evaluated ID: Detail: Order:0} reasons=[raw_binding_not_valid required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/forged-custody
+    effect_attacks_test.go:173: raw=false continuity=true physical=false physicalFailure=&{Edge:raw_invalid_external_not_evaluated ID: Detail: Order:0} reasons=[raw_binding_not_valid required_physical_evidence_not_valid]
+=== RUN   TestEffectObservationPhysicalAndRawAttacks/final-only-at-cut
+    effect_attacks_test.go:173: raw=true continuity=false physical=true physicalFailure=<nil> reasons=[capture_continuity_failed]
+--- PASS: TestEffectObservationPhysicalAndRawAttacks (1.16s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/one-principal-renewal (0.09s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/wrong-wait (0.07s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/wrong-kill (0.07s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/runtime-pid (0.08s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/missing-ready-a (0.09s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/missing-journal-a (0.08s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/missing-snapshot (0.09s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/duplicate-ingress (0.07s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/duplicate-commit (0.09s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/missing-coverage (0.09s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/stale-fresh-gate (0.10s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/lifecycle-as-receipt (0.06s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/forged-custody (0.06s)
+    --- PASS: TestEffectObservationPhysicalAndRawAttacks/final-only-at-cut (0.10s)
+=== RUN   TestEffectObservationCoherentRepeatedIngress
+--- PASS: TestEffectObservationCoherentRepeatedIngress (0.07s)
+=== RUN   TestEffectObservationManifestProgramJoin
+    effect_attacks_test.go:224: raw/continuity/physical valid; rejected at [effect_manifest_programs: before-revoke/inspect.json]
+--- PASS: TestEffectObservationManifestProgramJoin (0.10s)
+=== RUN   TestEffectObservationPositive
+=== RUN   TestEffectObservationPositive/normal/N07
+=== RUN   TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate
+=== RUN   TestEffectObservationPositive/race/N07
+=== RUN   TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate
+--- PASS: TestEffectObservationPositive (0.37s)
+    --- PASS: TestEffectObservationPositive/normal/N07 (0.09s)
+    --- PASS: TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate (0.09s)
+    --- PASS: TestEffectObservationPositive/race/N07 (0.09s)
+    --- PASS: TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate (0.09s)
+=== RUN   TestEffectObservationCausalAckRequired
+--- PASS: TestEffectObservationCausalAckRequired (0.09s)
+=== RUN   TestEffectObservationCutSeparation
+--- PASS: TestEffectObservationCutSeparation (0.18s)
+=== RUN   TestEffectObservationReencodedPositive
+--- PASS: TestEffectObservationReencodedPositive (0.10s)
+=== RUN   TestEffectObservationRenewalCoverage
+=== RUN   TestEffectObservationRenewalCoverage/run-missing
+=== RUN   TestEffectObservationRenewalCoverage/run-extra
+=== RUN   TestEffectObservationRenewalCoverage/one-epoch
+=== RUN   TestEffectObservationRenewalCoverage/run-field
+=== RUN   TestEffectObservationRenewalCoverage/table-missing
+=== RUN   TestEffectObservationRenewalCoverage/table-extra
+=== RUN   TestEffectObservationRenewalCoverage/non-run-row
+--- PASS: TestEffectObservationRenewalCoverage (0.01s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-missing (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-extra (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/one-epoch (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-field (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/table-missing (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/table-extra (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/non-run-row (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/delegationcorrespondence	4.774s
+=== RUN   TestEffectObservationUsage
+--- PASS: TestEffectObservationUsage (0.00s)
+=== RUN   TestEffectObservationCommand
+--- PASS: TestEffectObservationCommand (0.53s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation	0.609s

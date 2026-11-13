@@ -1,0 +1,16 @@
+func TestPhase3B4CampaignRevocation(t *testing.T) {
+	for _, name := range []string{"N05", "N06", "N07"} {
+		t.Run(name, func(t *testing.T) {
+			dir := bindingDirectory(t, name)
+			ca, ua, pa := reciprocalEndpoint(t, dir, "a", nil)
+			cb, ub, pb := reciprocalEndpoint(t, dir, "b", nil)
+			p, m := bindingFixture(t, ua, ub, 0, nil, false)
+			reciprocalRevokeProgram(t, &p, &m.Reciprocal)
+			bindingVersion(t, &p, runtime.RequestAuthorityBindingVersion)
+			baseline3b3Write(t, dir, "provision.json", p)
+			baseline3b3Write(t, dir, "manifest.json", m)
+			db := filepath.Join(t.TempDir(), "runtime.sqlite")
+			s, err := runtime.Create(t.Context(), db, p, runtime.DefaultLimits())
+			if err != nil {
+				t.Fatal(err)
+			}

@@ -1,0 +1,34 @@
+func dispatchEvent(ctx context.Context, event boundary.Event, name, phase string) error {
+	event.Boundary = name
+	event.Phase = phase
+	return boundary.Reached(ctx, event)
+}
+
+// An allowed reservation reaches this gate for each distinct physical exposure.
+func (s *Store) admitDispatch(ctx context.Context, event boundary.Event) (*dispatchOpportunity, error) {
+	if err := dispatchEvent(ctx, event, "dispatch.consider", "pre-admission"); err != nil {
+		return nil, err
+	}
+	var gate *AuthorityAdmission
+	op, reason, err := s.registerDispatchRecord(ctx, event.Intent, &gate)
+	if gate != nil {
+		event.AuthorityAdmissionOrdinal = gate.Ordinal
+		event.Epoch = gate.Source.Epoch
+		event.Sequence = gate.Source.Sequence
+	}
+	if err == nil && gate != nil {
+		phase := "allowed"
+		if !gate.Allowed {
+			phase = "refused"
+		}
+		err = dispatchEvent(ctx, event, "authority.admission", phase)
+		if err != nil && op != nil {
+			s.finishDispatch(op, err)
+			op = nil
+		}
+	}
+	if err == nil && reason != "" {
+		err = dispatchEvent(ctx, event, "dispatch.refused", reason)
+	}
+	return op, err
+}

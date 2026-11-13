@@ -1,0 +1,41 @@
+			ctx, cancel := context.WithTimeout(t.Context(), 15*time.Second)
+			defer cancel()
+			ctx = boundary.WithObserver(ctx, func(_ context.Context, e boundary.Event) error {
+				target := name == "N05" && e.Boundary == "execution.committed" && e.Sequence == 4 || name == "N06" && e.Boundary == "dispatch.consider" && e.Phase == "pre-admission" || name == "N07" && e.Boundary == "authority.admission" && e.Phase == "allowed"
+				if !did && target && e.Intent == m.Reciprocal.BAService {
+					did = true
+					baseline3b3Write(t, dir, "temporal-boundary.json", e)
+					bindingCaptureLive(t, db, filepath.Join(dir, "before-revoke"))
+					reciprocalRevoke(t, s, m.Reciprocal, dir)
+					bindingCaptureLive(t, db, filepath.Join(dir, "after-revoke"))
+				}
+				return nil
+			})
+			report, runErr := s.Run(ctx, runtime.RunOptions{MaxSteps: 256, MaxDispatch: 256, MaxInFlight: 2, ExternalTimeout: 5 * time.Second})
+			s.Close()
+			baseline3b3Write(t, dir, "run.json", map[string]any{"Report": report, "Error": fmt.Sprint(runErr)})
+			if runErr != nil || !did {
+				t.Fatal(runErr, did)
+			}
+			endpoints := bindingEndpoints(t, dir, pa, pb, ca, cb)
+			snap := bindingCapture(t, db, filepath.Join(dir, "final"))
+			e, _ := snap.Effect(m.Reciprocal.BAService)
+			if e == nil || e.ExternalAttempt == nil {
+				t.Fatal(e)
+			}
+			if name == "N05" {
+				if e.ExternalAttempt.Allowed || len(e.AuthorityAdmissions) != 0 || e.ExternalReceipt != nil {
+					t.Fatal(e)
+				}
+			} else if !e.ExternalAttempt.Allowed || len(e.AuthorityAdmissions) != 1 {
+				t.Fatal(e)
+			}
+			if name == "N07" {
+				bindingComplete(t, snap, m.Reciprocal, endpoints)
+			} else if endpoints["a"].Contacts != 0 || endpoints["b"].Contacts != 0 || name == "N06" && e.AuthorityAdmissions[0].Allowed {
+				t.Fatal("fresh revoked exposure", e, endpoints)
+			}
+			raw, _ := json.Marshal(e.ExternalAttempt.Authority)
+			baseline3b3Write(t, dir, "historical-authority.json", json.RawMessage(raw))
+			bindingIndex(t, dir, bindingCase{Name: name, Schedule: "controlled-public-revocation-at-boundary", Classification: "historical-versus-current-authority", Manifest: m, Captures: []bindingCaptureRef{{Ordinal: 1, Label: "before-revoke", Directory: "before-revoke"}, {Ordinal: 2, Predecessor: "before-revoke", Label: "after-revoke", Directory: "after-revoke"}, {Ordinal: 3, Predecessor: "after-revoke", Label: "final", Directory: "final"}}}, p)
+		})

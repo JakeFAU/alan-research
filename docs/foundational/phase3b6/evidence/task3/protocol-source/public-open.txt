@@ -1,0 +1,3 @@
+func Open(ctx context.Context, path string, l Limits) (*Store, error) {
+	return executor.Open(ctx, path, l)
+}

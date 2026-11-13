@@ -1,0 +1,15 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-v",
+    "./research/delegationcorrespondence",
+    "-run",
+    "^TestEffectObservation"
+  ],
+  "cwd": "/tmp/alan-phase3b6/task3/red-reproduction",
+  "exit": 1,
+  "seconds": 1.004115792,
+  "source": "red-source.tar.gz over frozen Phase3B5 package"
+}

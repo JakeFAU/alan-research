@@ -1,0 +1,54 @@
+		// In this opt-in world the accepted packet belongs to the endpoint.
+		// Client death cannot withdraw it after validation.
+		applyCtx := r.Context()
+		if *responseMode == "finish-accepted" {
+			applyCtx = ctx
+		}
+		if err := boundary.Reached(boundary.Inherit(applyCtx, ctx), event); err != nil {
+			http.Error(w, err.Error(), http.StatusServiceUnavailable)
+			return
+		}
+		var receipt fixture.Receipt
+		var err error
+		if *ledger {
+			receipt, err = resource.ApplyWire(applyCtx, string(wire))
+		} else {
+			receipt, err = resource.Apply(applyCtx, request)
+		}
+		if err != nil {
+			status := http.StatusBadRequest
+			if errors.Is(err, fixture.ErrConflict) {
+				status = http.StatusConflict
+			}
+			observe(map[string]any{"Event": "rejected", "Contact": contact, "Status": status, "Error": err.Error()})
+			http.Error(w, err.Error(), status)
+			return
+		}
+		if err := observe(map[string]any{"Event": "committed", "Contact": contact, "Receipt": receipt}); err != nil {
+			http.Error(w, "journal unavailable", http.StatusServiceUnavailable)
+			return
+		}
+		event.Boundary = "resource.applied"
+		event.Phase = "post-commit"
+		if err = boundary.Reached(boundary.Inherit(r.Context(), ctx), event); err != nil {
+			http.Error(w, err.Error(), http.StatusServiceUnavailable)
+			return
+		}
+		if *responseMode == "drop-after-commit" {
+			connection, _, err := w.(http.Hijacker).Hijack()
+			if err == nil {
+				connection.Close()
+			}
+			return
+		}
+		w.Header().Set("Content-Type", "application/json")
+		if *ledger {
+			raw, _ := json.Marshal(receipt)
+			w.Write(raw)
+		} else {
+			json.NewEncoder(w).Encode(receipt)
+		}
+	})
+	server := &http.Server{Handler: handler, ReadHeaderTimeout: 5 * time.Second}
+	base := "http://" + listener.Addr().String()
+	ready := map[string]any{"URL": base + applyPath, "Token": *token, "Store": *path, "PID": os.Getpid()}

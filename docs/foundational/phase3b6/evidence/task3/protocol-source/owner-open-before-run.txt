@@ -1,0 +1,35 @@
+func TestPhase3B4Owner(t *testing.T) {
+	if os.Getenv("ALAN_PHASE3B4_CHILD") != "1" {
+		return
+	}
+	ctx, cancel := context.WithTimeout(t.Context(), 15*time.Second)
+	defer cancel()
+	path := os.Getenv("ALAN_PHASE2_DB")
+	out := os.Getenv("ALAN_PHASE3B4_OUTPUT")
+	hooks, err := boundary.FromEnvironment(ctx, path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	s, err := runtime.Open(ctx, path, runtime.DefaultLimits())
+	if err != nil {
+		baseline3b3Write(t, out, "open.json", map[string]string{"Error": err.Error()})
+		t.Fatal(err)
+	}
+	defer s.Close()
+	states := map[string]runtime.RunState{}
+	for _, id := range []string{"a", "b"} {
+		states[id], err = s.Snapshot(ctx, runtime.RunID{Subject: id, Generation: 1})
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+	baseline3b3Write(t, out, "open.json", map[string]any{"PID": os.Getpid(), "Namespace": s.Namespace(), "Runs": states, "Error": "<nil>"})
+	backup := filepath.Join(t.TempDir(), "post-open.sqlite")
+	reciprocalBackup(t, path, backup)
+	bindingCapture(t, backup, filepath.Join(out, "post-open"))
+	f, err := os.OpenFile(filepath.Join(out, "boundaries.jsonl"), os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0600)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer f.Close()
+	var mu sync.Mutex

@@ -1,0 +1,710 @@
+[
+  {
+    "mode": "normal",
+    "case": "N07",
+    "report_sha256": "2d314ee3d40c5fd0ad0a5d24f2f5fe8528a3ecb9e6b6222df3af1e0057e3dc67",
+    "report_bytes": 357858,
+    "file": "normal-N07.json.gz",
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "0fcb9ac12805a53c476aace555f845a61eb159fefd59cb87b88ad3fc253d077b",
+        "supported": true,
+        "reason": "",
+        "event_count": 0,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": false,
+          "applied": ""
+        }
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "9cf1613156d23eac15a84988050e9639b0c49ebb6de937d636698dd74a228617",
+        "supported": true,
+        "reason": "",
+        "event_count": 1,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": false,
+          "applied": ""
+        }
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "2be4bbf2ec132bd604b9c159047546f6eba20a517e0ee39d67aa08e93ae889b7",
+        "supported": true,
+        "reason": "",
+        "event_count": 7,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "v1",
+          "consumed": "v1"
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "v1",
+          "consumed": "v1",
+          "ingress": true,
+          "applied": "v1"
+        }
+      }
+    ]
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "report_sha256": "7d6cbe0e9860299e7092400437ad63aa22bfa53ed8336ece7ccfc993e2bdd973",
+    "report_bytes": 287707,
+    "file": "normal-loss.json.gz",
+    "captures": [
+      {
+        "path": "initial/inspect.json",
+        "sha256": "e86e363ffef0650c55db266d08d2a470680d72f29d39636293a554a69ad411c7",
+        "supported": false,
+        "reason": "outside_domain_pre_admission",
+        "event_count": 0,
+        "store": null,
+        "dossier": null
+      },
+      {
+        "path": "first-owner/post-open/inspect.json",
+        "sha256": "14062e301bbf79743eb8ea3934acdd9818fec058312835969ea9c31ecc67ce1f",
+        "supported": false,
+        "reason": "outside_domain_pre_admission",
+        "event_count": 0,
+        "store": null,
+        "dossier": null
+      },
+      {
+        "path": "stopped/inspect.json",
+        "sha256": "47a30a1ab10265dd440a2d4b094d2756a8fc8054b6703f53e72fd60c010c4a24",
+        "supported": true,
+        "reason": "",
+        "event_count": 4,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "stopped",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "stopped",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      },
+      {
+        "path": "reopened/inspect.json",
+        "sha256": "a494f1840f6414f85c369f33a6dea803cee44a8733731d4d3195ae42492a9c69",
+        "supported": true,
+        "reason": "",
+        "event_count": 5,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "0f5f506a2dc7fb0ca17ccb7fc1fdf418161a4024d68097bc19dbcd09dc093262",
+        "supported": true,
+        "reason": "",
+        "event_count": 7,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": true,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": true,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "N07",
+    "report_sha256": "b635bd9f17f6f04c168d98dd1aa7cbac7f40a01a306348ab3ca801ec3ec73476",
+    "report_bytes": 357855,
+    "file": "race-N07.json.gz",
+    "captures": [
+      {
+        "path": "before-revoke/inspect.json",
+        "sha256": "76bc92e7532344e5b207ac9ad7ffe64e2a1f50774e752c2f02baaaee8086ea4d",
+        "supported": true,
+        "reason": "",
+        "event_count": 0,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": false,
+          "applied": ""
+        }
+      },
+      {
+        "path": "after-revoke/inspect.json",
+        "sha256": "84f2fd7a780e63be06e94ac24085639de84933dbab57f455cdffb0a8b50c2525",
+        "supported": true,
+        "reason": "",
+        "event_count": 1,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": false,
+          "applied": ""
+        }
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "26e3922c829bc0e3af69e1f661110a9297580ad91099a38cd10ec9c04b1841d0",
+        "supported": true,
+        "reason": "",
+        "event_count": 7,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "v1",
+          "consumed": "v1"
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "original",
+          "activation": 1,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "v1",
+          "consumed": "v1",
+          "ingress": true,
+          "applied": "v1"
+        }
+      }
+    ]
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "report_sha256": "ee6b1d93c086ae0a1f36ca2fedc881e165ef8d799900996c53954a5a6dc97f6e",
+    "report_bytes": 287704,
+    "file": "race-loss.json.gz",
+    "captures": [
+      {
+        "path": "initial/inspect.json",
+        "sha256": "499c3abca6242804dac5deb4ecce0c22aea61b9d58db1df4b43885137559a757",
+        "supported": false,
+        "reason": "outside_domain_pre_admission",
+        "event_count": 0,
+        "store": null,
+        "dossier": null
+      },
+      {
+        "path": "first-owner/post-open/inspect.json",
+        "sha256": "a5f32410ea90b782ca38f6d8cd57f7ac39dac3efdd3a8c7735c26f83f4940686",
+        "supported": false,
+        "reason": "outside_domain_pre_admission",
+        "event_count": 0,
+        "store": null,
+        "dossier": null
+      },
+      {
+        "path": "stopped/inspect.json",
+        "sha256": "28b587120dc8d2bab5d996a7c738118280deeb9deb1092836836a873585e9c57",
+        "supported": true,
+        "reason": "",
+        "event_count": 4,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "stopped",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "stopped",
+          "activation": 1,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      },
+      {
+        "path": "reopened/inspect.json",
+        "sha256": "67acfb8ceec0ef5b70ace3cbcab2975397291efcf4243136d087d1dd8b26bfe1",
+        "supported": true,
+        "reason": "",
+        "event_count": 5,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": false,
+          "control_root": "B/g1:c",
+          "fresh_refused": false,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      },
+      {
+        "path": "final/inspect.json",
+        "sha256": "c2aed38ee5a590a650c77bbe38c038778739531f9ba7151d853bcbf00e0a13b3",
+        "supported": true,
+        "reason": "",
+        "event_count": 7,
+        "store": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": true,
+          "retained": "",
+          "consumed": ""
+        },
+        "dossier": {
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "accepted_grant": true,
+          "first_allow": true,
+          "debit": 1,
+          "first_gate_allowed": true,
+          "owner": "reopened",
+          "activation": 2,
+          "b_revoked": true,
+          "control_root": "B/g1:c",
+          "fresh_refused": true,
+          "retained": "",
+          "consumed": "",
+          "ingress": true,
+          "applied": "v1"
+        }
+      }
+    ]
+  }
+]

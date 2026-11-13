@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "normal",
+    "case": "N05",
+    "report_sha256": "1cee563c1f332d5e71bc74136b6ae8e122e3d0a94a9b59d69a4bd32af91de0ff",
+    "raw_legacy_sha256": "b829560bc801908bd5f536505e3f31b8190b7972dc4f3d2b0333e2cafefc6e20",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "normal",
+    "case": "N06",
+    "report_sha256": "6839d8f305c4710c203f8b0ed44b1b3b44b230067e2afb9299524d0b85d927f9",
+    "raw_legacy_sha256": "7297cde15b71961b092959692d91fa54f006efae1355f502745fa870b22ac06a",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "normal",
+    "case": "N07",
+    "report_sha256": "f5e08c0c07fa75ac0dc29240e8ff51fa02ac25135e1e80bd325e4db24bb6352a",
+    "raw_legacy_sha256": "da1fc247e2100a38cdffe61d53c48de96517a330c76bf72f9abf47e9f0afab94",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "normal",
+    "case": "P02-v2",
+    "report_sha256": "b95690efc63ca481c1969632f451133b7dc8b5aef3f6d106960f5168407d6236",
+    "raw_legacy_sha256": "26f4f705d86e0e332461e0a15a204b3d779b8962b4a2535666e2f1fe03c72f19",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "normal",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "report_sha256": "8b25423a0c107320ebe5ea386d7b910ccac7f25e51c95173f252ac5d0324f093",
+    "raw_legacy_sha256": "42de403fd4dfda5757b718b20c85b68de8d4b096f9e2574639888687d4f9c64b",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "race",
+    "case": "N05",
+    "report_sha256": "61c6a26a36959eb361cdff1aa3219e696520f9ac48e292daadbcf587010c9197",
+    "raw_legacy_sha256": "6f2d15f2df26fa967d86a5f454d6c27f15ea451022e709772b19933621e1d462",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "race",
+    "case": "N06",
+    "report_sha256": "e5a2fad5ee97299923a35f975dc7b58e45c4775ec9383fad4980fb0467fa32b5",
+    "raw_legacy_sha256": "31fd69068c1bf89ea9b87d1cc6cc2cde67e55685bd95263ae59dc94f891ceee8",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "race",
+    "case": "N07",
+    "report_sha256": "06873903433372a5749494e07bd04ac5cfae17e4b3d049c0845287afdb03416f",
+    "raw_legacy_sha256": "5b59221efe7ac6896fe4609bdd67ee5c3b2c1c34e3c176ce12339e07df510d71",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "race",
+    "case": "P02-v2",
+    "report_sha256": "0a1acf830ccae051b0ee3f2d7145106bbb41078adba7e3b405db287d5bb82f87",
+    "raw_legacy_sha256": "4496a982369245c39f04985059c14213c6f50e4d0575b0bf0d4480bec0a6dacc",
+    "frozen_baseline_and_archived_hash_match": true
+  },
+  {
+    "mode": "race",
+    "case": "applied-unknown-revoked-before-fresh-gate",
+    "report_sha256": "d03e672834226e2e03a015eebadb3be136ba2c9216ae533cf27efc23f32a7248",
+    "raw_legacy_sha256": "641e41b8ab16929c2e423ad1ab25212f774ce8170ac685d8e8974bf3e03cca62",
+    "frozen_baseline_and_archived_hash_match": true
+  }
+]

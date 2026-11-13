@@ -1,0 +1,17 @@
+type observerKey struct{}
+type Observer func(context.Context, Event) error
+
+func WithObserver(ctx context.Context, observer Observer) context.Context {
+	return context.WithValue(ctx, observerKey{}, observer)
+}
+func Reached(ctx context.Context, event Event) error {
+	if observe, ok := ctx.Value(observerKey{}).(Observer); ok {
+		return observe(ctx, event)
+	}
+	return nil
+}
+
+// FromEnvironment uses inherited fd3 for acknowledgments and fd4 for release.
+// Absence of ALAN_BARRIER leaves execution unchanged. A selected boundary pauses
+// once; EOF is an error, never permission to proceed.
+func FromEnvironment(ctx context.Context, store string) (context.Context, error) {

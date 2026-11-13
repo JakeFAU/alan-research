@@ -1,0 +1,29 @@
+=== RUN   TestEffectObservationPositive
+=== RUN   TestEffectObservationPositive/normal/N07
+=== RUN   TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate
+=== RUN   TestEffectObservationPositive/race/N07
+=== RUN   TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate
+--- PASS: TestEffectObservationPositive (0.38s)
+    --- PASS: TestEffectObservationPositive/normal/N07 (0.10s)
+    --- PASS: TestEffectObservationPositive/normal/applied-unknown-revoked-before-fresh-gate (0.10s)
+    --- PASS: TestEffectObservationPositive/race/N07 (0.09s)
+    --- PASS: TestEffectObservationPositive/race/applied-unknown-revoked-before-fresh-gate (0.10s)
+=== RUN   TestEffectObservationCausalAckRequired
+--- PASS: TestEffectObservationCausalAckRequired (0.09s)
+=== RUN   TestEffectObservationRenewalCoverage
+=== RUN   TestEffectObservationRenewalCoverage/run-missing
+=== RUN   TestEffectObservationRenewalCoverage/run-extra
+=== RUN   TestEffectObservationRenewalCoverage/one-epoch
+=== RUN   TestEffectObservationRenewalCoverage/run-field
+=== RUN   TestEffectObservationRenewalCoverage/table-missing
+=== RUN   TestEffectObservationRenewalCoverage/table-extra
+=== RUN   TestEffectObservationRenewalCoverage/non-run-row
+--- PASS: TestEffectObservationRenewalCoverage (0.01s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-missing (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-extra (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/one-epoch (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/run-field (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/table-missing (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/table-extra (0.00s)
+    --- PASS: TestEffectObservationRenewalCoverage/non-run-row (0.00s)
+PASS

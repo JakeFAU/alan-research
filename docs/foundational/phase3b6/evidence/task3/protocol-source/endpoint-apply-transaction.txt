@@ -1,0 +1,21 @@
+func (r *Resource) Apply(ctx context.Context, request Request) (Receipt, error) {
+	if r.ledgerID != "" {
+		return Receipt{}, fmt.Errorf("ledger requires exact received bytes")
+	}
+	return r.apply(ctx, request, nil)
+}
+
+func (r *Resource) apply(ctx context.Context, request Request, received []byte) (Receipt, error) {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+	if request.Key == "" || len(request.Key) > 1<<20 || (request.Profile != "idempotent" && request.Profile != "non-idempotent") {
+		return Receipt{}, fmt.Errorf("invalid request")
+	}
+	if received == nil {
+		received = mustJSON(request)
+	}
+	tx, err := r.conn.BeginTx(ctx, nil)
+	if err != nil {
+		return Receipt{}, err
+	}
+	defer tx.Rollback()
