@@ -30,7 +30,7 @@ Design review pending: /root/effect_observation_design_review; report /tmp/alan-
 - [x] Task 1 model
 - [x] Task 2 independent observation audit
 - [x] Task 3 concrete causal evidence relation
-- [ ] Task 4 qualification, manuscript and delivery
+- [x] Task 4 qualification, manuscript and delivery
 
 Design review R1: REJECT preserved at evidence/preflight/design-review.md. Controller corrected the proposed contract/plan: no successful receipt before post-death release, rather than continuous barrier occupancy through death; timeout/error completion is abstracted away. Focused re-review pending. This is a correction to the controller-authored design before implementation.
 
@@ -94,3 +94,5 @@ Archival apparatus note: initial staged diff-check exited2 solely on trailingbla
 Finalwhole-branchreview dispatched /root/effect_final_review(gpt-6-astra high), rangedf840103..8450871e, full1035054-byte reviewpackage. Controller packaging precheck exit0:612 frozeninputs,208trackedpacketfiles,112taskchecksum entries,49gzip streams,26PDFarchive members,19workflow records and48relative links. PR46 freshcheck stillopen/draft/unmerged atdf840103; intendedstackbase unchanged. Finalreview/delivery pending.
 
 Finalwhole-branchreview APPROVE spec/quality at8450871e, no Critical/Important/Minor findings, no fixwave needed. Read full finalreview. Its seven unassessed domains retain their existing contract/ruling limits; individual dispositions are in08-reviews.md, with liveGitHubstate assigned to actualdeliverycheck. No finding was waived.
+
+Task 4: complete (implementation566b5e3e..8450871e, independent source and final reviews clean). PR47 created2026-11-13T19:59:29Z andattached, creationheadcfc92876, basecodex/phase3b5-grant-revocation@df840103. ParentPR46 rechecked immediatelybeforepush:open/draft/unmerged atdf840103. Sixrulings collected inchronologicalorder for final userreport; no new ruling or waivedfinding. Closuremetadata/packagecheck refresh follows, with no executable/manuscript changes. Activeworktree preserved; only this archived ignoredscratchworkspace will be removed afterverification.
