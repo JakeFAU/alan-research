@@ -1,0 +1,109 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-short",
+    "-count=1",
+    "-timeout=10m",
+    "./research/authorityservice/...",
+    "./research/delegationcorrespondence/..."
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+    "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-normal",
+    "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-normal",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "exit": 0,
+  "elapsed_seconds": 16.825149875,
+  "log_sha256": "dda56346dc658d34d9f7142b34fd15035a2a298f40beedd0601fb63212a99401",
+  "pass_events": 371,
+  "named_skips": [
+    {
+      "Time": "2026-11-13T13:22:25.265054-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+      "Test": "TestCompleteGraphs",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.265665-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+      "Test": "TestOracleAllGraphEdges",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.266292-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/revocation",
+      "Test": "TestExportsIndependentEvidence",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.266308-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/revocation",
+      "Test": "TestOutputFailure",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.269188-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+      "Test": "TestRevocationOracleGraph",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.269514-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice",
+      "Test": "TestSeparateGrantRevocationGraph",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.277233-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/authorityservice/cmd/audit",
+      "Test": "TestExportsIndependentEvidence",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.393718-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+      "Test": "TestProgressSelection",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:25.393811-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+      "Test": "TestProgressOutputFailure",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:35.224629-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestProgressQueries",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T13:22:38.166211-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+      "Test": "TestGrantRevocationProgress",
+      "Elapsed": 0
+    }
+  ],
+  "failures": []
+}
