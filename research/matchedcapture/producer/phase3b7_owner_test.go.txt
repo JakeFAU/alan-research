@@ -1,0 +1,189 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"context"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"os"
+	"path/filepath"
+	"sync"
+	"syscall"
+	"testing"
+	"time"
+
+	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan/runtime"
+)
+
+const (
+	phase3B7Service   = `["a",1,4,0]`
+	phase3B7AbortCode = 77
+)
+
+var errPhase3B7Release = errors.New("invalid worker release byte")
+
+func phase3B7WorkerRelease(ctx context.Context, read *os.File) error {
+	return phase3B7ReadRelease(ctx, read, func() {})
+}
+
+func phase3B7ReadRelease(ctx context.Context, read *os.File, entered func()) error {
+	// The deadline bounds cancellation latency.
+	entered()
+	for {
+		if err := ctx.Err(); err != nil {
+			return err
+		}
+		if err := read.SetReadDeadline(time.Now().Add(50 * time.Millisecond)); err != nil {
+			return err
+		}
+		var command [1]byte
+		_, err := io.ReadFull(read, command[:])
+		if errors.Is(err, os.ErrDeadlineExceeded) {
+			continue
+		}
+		if err != nil {
+			return err
+		}
+		if command[0] != 'c' {
+			return errPhase3B7Release
+		}
+		return ctx.Err()
+	}
+}
+
+func phase3B7Stamp(config boundary.Event, pid int, event boundary.Event) boundary.Event {
+	event.Scenario, event.Token, event.Store, event.PID = config.Scenario, config.Token, config.Store, pid
+	return event
+}
+
+func phase3B7CheckIdentity(config boundary.Event, pid int, event boundary.Event) error {
+	if pid <= 0 || config.Scenario == "" || config.Token == "" || config.Store == "" ||
+		event.Scenario != config.Scenario || event.Token != config.Token || event.Store != config.Store || event.PID != pid {
+		return fmt.Errorf("wrong process identity: %+v", event)
+	}
+	return nil
+}
+
+func phase3B7CheckPairAck(config boundary.Event, pid int, worker, scheduler boundary.Event) error {
+	if err := errors.Join(phase3B7CheckIdentity(config, pid, worker), phase3B7CheckIdentity(config, pid, scheduler)); err != nil {
+		return err
+	}
+	if worker.Boundary != "dispatch.admitted" || worker.Phase != "pre-call" ||
+		worker.Intent != phase3B7Service || worker.Subject != "a" || worker.Generation != 1 ||
+		worker.Sequence != 4 || worker.Epoch != 2 || worker.AuthorityAdmissionOrdinal != 1 || worker.Attempt == "" {
+		return fmt.Errorf("wrong selected pre-call: %+v", worker)
+	}
+	if scheduler.Boundary != config.Boundary || scheduler.Phase != config.Phase ||
+		len(scheduler.InFlight) != 1 || scheduler.InFlight[0] != worker.Attempt {
+		return fmt.Errorf("scheduler does not hold exactly the selected authorization: %+v", scheduler)
+	}
+	return nil
+}
+
+func phase3B7AbortOwner(dir, stage string, e boundary.Event, cause error) {
+	err := phase3B7WriteJSON(filepath.Join(dir, "abort.json"), map[string]any{
+		"stage": stage, "event": e, "error": fmt.Sprint(cause),
+	})
+	fmt.Fprintln(os.Stderr, "Phase 3B.7 owner abort", stage, cause, err)
+	// A return to Store.Run would permit its deferred completion accounting.
+	os.Exit(phase3B7AbortCode)
+}
+
+func phase3B7HoldScheduler(ctx, inherited context.Context, dir string, config boundary.Event, event boundary.Event) error {
+	err := boundary.Reached(boundary.Inherit(ctx, inherited), event)
+	phase3B7AbortOwner(dir, "scheduler-return", phase3B7Stamp(config, os.Getpid(), event), err)
+	return err
+}
+
+func phase3B7OpenEvidence(t *testing.T, ctx context.Context, s *runtime.Store, path string, id boundary.Event) {
+	t.Helper()
+	states := map[string]runtime.RunState{}
+	for _, subject := range []string{"a", "b"} {
+		state, err := s.Snapshot(ctx, runtime.RunID{Subject: subject, Generation: 1})
+		phase3B7Must(t, err)
+		states[subject] = state
+	}
+	phase3B7Must(t, phase3B7WriteJSON(path, map[string]any{"PID": id.PID, "Scenario": id.Scenario, "Token": id.Token, "Store": id.Store, "Namespace": s.Namespace(), "Runs": states, "Error": "<nil>"}))
+}
+
+func TestPhase3B7Owner(t *testing.T) {
+	dir := os.Getenv("ALAN_PHASE3B7_OWNER")
+	if dir == "" {
+		t.Skip("owner subprocess only")
+	}
+	// The controller owns the only timeout. This process must stay in its
+	// acknowledged scheduler callback until SIGKILL.
+	ctx := context.WithoutCancel(t.Context())
+	var config boundary.Event
+	phase3B7Must(t, json.Unmarshal([]byte(os.Getenv("ALAN_BARRIER")), &config))
+	inherited, err := boundary.FromEnvironment(ctx, config.Store)
+	phase3B7Must(t, err)
+	workerAck := os.NewFile(5, "phase3b7-worker-ack")
+	phase3B7Must(t, syscall.SetNonblock(6, true))
+	workerRelease := os.NewFile(6, "phase3b7-worker-release")
+	defer workerAck.Close()
+	defer workerRelease.Close()
+	s, err := runtime.Open(ctx, config.Store, runtime.DefaultLimits())
+	if err != nil {
+		phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "open.json"), map[string]any{"PID": os.Getpid(), "Store": config.Store, "Error": err.Error()}))
+		t.Fatal(err)
+	}
+	defer s.Close()
+	phase3B7OpenEvidence(t, ctx, s, filepath.Join(dir, "open.json"), phase3B7Stamp(config, os.Getpid(), boundary.Event{}))
+	bindingCaptureLive(t, config.Store, filepath.Join(dir, "post-open"))
+
+	log, err := os.OpenFile(filepath.Join(dir, "boundaries.jsonl"), os.O_WRONLY|os.O_CREATE|os.O_EXCL, 0600)
+	phase3B7Must(t, err)
+	defer log.Close()
+	var mu sync.Mutex
+	precalls := make(chan struct{})
+	ctx = boundary.WithObserver(ctx, func(ctx context.Context, e boundary.Event) error {
+		record := phase3B7Stamp(config, os.Getpid(), e)
+		mu.Lock()
+		err := phase3B7Append(log, record)
+		mu.Unlock()
+		if err != nil {
+			phase3B7AbortOwner(dir, "boundary-log", record, err)
+		}
+		switch {
+		case e.Boundary == "dispatch.admitted" && e.Phase == "pre-call":
+			if e.Intent != phase3B7Service {
+				phase3B7AbortOwner(dir, "unexpected-worker", record, errors.New("unexpected pre-call"))
+			}
+			if err := phase3B7WriteJSON(filepath.Join(dir, "pre-call.json"), record); err != nil {
+				phase3B7AbortOwner(dir, "pre-call-log", record, err)
+			}
+			if err := json.NewEncoder(workerAck).Encode(record); err != nil {
+				phase3B7AbortOwner(dir, "pre-call-ack", record, err)
+			}
+			close(precalls)
+			if err := phase3B7WorkerRelease(ctx, workerRelease); err != nil {
+				phase3B7AbortOwner(dir, "worker-release", record, err)
+			}
+			if err := phase3B7WriteJSON(filepath.Join(dir, "worker-release.json"), record); err != nil {
+				phase3B7AbortOwner(dir, "worker-release-log", record, err)
+			}
+			return ctx.Err()
+		case e.Boundary == "runner.waiting" && e.Phase == "in-flight":
+			select {
+			case <-precalls:
+			case <-ctx.Done():
+				phase3B7AbortOwner(dir, "before-scheduler-hold", record, ctx.Err())
+			}
+			return phase3B7HoldScheduler(ctx, inherited, dir, config, e)
+		default:
+			// external.authorized registers the attempt before pre-call.
+			return boundary.Reached(boundary.Inherit(ctx, inherited), e)
+		}
+	})
+	report, err := s.Run(ctx, phase3B7RunOptions())
+	phase3B7AbortOwner(dir, "run-return", phase3B7Stamp(config, os.Getpid(), boundary.Event{}), fmt.Errorf("Run returned: %v, report: %+v", err, report))
+}
+
+func phase3B7RunOptions() runtime.RunOptions {
+	return runtime.RunOptions{MaxSteps: 256, MaxDispatch: 256, MaxInFlight: 2, ExternalTimeout: 5 * time.Second}
+}

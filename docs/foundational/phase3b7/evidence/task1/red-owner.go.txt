@@ -1,0 +1,33 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"context"
+	"errors"
+	"os"
+
+	"github.com/JakeFAU/alan/internal/boundary"
+)
+
+const phase3B7Service = `["a",1,4,0]`
+
+var errPhase3B7Release = errors.New("invalid worker release byte")
+
+func phase3B7WorkerRelease(ctx context.Context, read *os.File) error {
+	return phase3B7ReadRelease(ctx, read, func() {})
+}
+
+func phase3B7ReadRelease(_ context.Context, _ *os.File, entered func()) error {
+	entered()
+	return nil
+}
+
+func phase3B7Stamp(config boundary.Event, pid int, event boundary.Event) boundary.Event {
+	event.Scenario, event.Token, event.Store, event.PID = config.Scenario, config.Token, config.Store, pid
+	return event
+}
+
+func phase3B7CheckPairAck(_ boundary.Event, _ int, _, _ boundary.Event) error {
+	return nil
+}
