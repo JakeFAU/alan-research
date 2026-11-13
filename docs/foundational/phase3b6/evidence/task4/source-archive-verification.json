@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3b6/evidence/task3/verify_source.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "exit": 0,
+  "elapsed_seconds": 1.1432179580000001,
+  "source_sha256": "61b504ea19d43c5af698446d6c2c07e32afe6eb8c256ab6e0a33545807ce369a",
+  "log_sha256": "04fe10edf132153f0ca5fe63052da6a09d552e898ad25c78fbb83979cec0c954",
+  "archive_sha256": "616b98ae0d28ec34a5cbae61e34ee7e0288b2add82efa9133667fbf908b8d78c",
+  "scope": "Post-qualification hash/source recheck of sealed historical inputs; no new runtime experiment and no SQLite access."
+}

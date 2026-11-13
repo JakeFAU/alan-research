@@ -1,0 +1,179 @@
+{
+  "head_at_verification": "e0615c1300baef94c077fea8168c729e6f6434ed",
+  "executable_freeze": "e0615c1300baef94c077fea8168c729e6f6434ed",
+  "verified_source_inputs": 612,
+  "verified_unchanged_group_inputs": 528,
+  "closed_command_records": 14,
+  "ordinary_package_groups": [
+    58,
+    10
+  ],
+  "ordinary_packages": 68,
+  "ordinary_tested_packages": 55,
+  "ordinary_no_test_packages": 13,
+  "ordinary_pass_events": 2802,
+  "ordinary_named_skips": [
+    {
+      "Time": "2026-11-13T14:04:05.651947-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/examples/communication",
+      "Test": "TestCommunicationArtifactExport",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T14:04:06.948995-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/examples/join",
+      "Test": "TestJoinArtifactExport",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-13T14:04:08.447448-05:00",
+      "Action": "skip",
+      "Package": "github.com/JakeFAU/alan-research/examples/substitution/a",
+      "Test": "TestCandidateAExport",
+      "Elapsed": 0
+    }
+  ],
+  "race": {
+    "pass_events": 419,
+    "package_results": [
+      {
+        "Time": "2026-11-13T14:32:07.14783-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/audit",
+        "Elapsed": 1.156
+      },
+      {
+        "Time": "2026-11-13T14:32:07.165596-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/export",
+        "Elapsed": 1.172
+      },
+      {
+        "Time": "2026-11-13T14:32:07.183835-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/effectobservation",
+        "Elapsed": 1.199
+      },
+      {
+        "Time": "2026-11-13T14:32:07.621805-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:07.621879-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:07.622239-05:00",
+        "Action": "skip",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-13T14:32:16.467295-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/revocation",
+        "Elapsed": 8.845
+      },
+      {
+        "Time": "2026-11-13T14:32:17.173036-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation",
+        "Elapsed": 9.551
+      },
+      {
+        "Time": "2026-11-13T14:32:41.630423-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+        "Elapsed": 34.008
+      },
+      {
+        "Time": "2026-11-13T14:36:22.781831-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+        "Elapsed": 255.16
+      }
+    ],
+    "named_skips": [],
+    "failures": []
+  },
+  "format_command": [
+    "gofmt",
+    "-l",
+    "research/delegationcorrespondence/cmd/effectobservation/main.go",
+    "research/delegationcorrespondence/cmd/effectobservation/main_test.go",
+    "research/delegationcorrespondence/effect_attacks_test.go",
+    "research/delegationcorrespondence/effect_mapping.go",
+    "research/delegationcorrespondence/effect_observation.go",
+    "research/delegationcorrespondence/effect_observation_test.go",
+    "research/delegationcorrespondence/effect_protocol.go",
+    "research/effectobservation/cmd/audit/main.go",
+    "research/effectobservation/cmd/audit/main_test.go",
+    "research/effectobservation/cmd/export/main.go",
+    "research/effectobservation/cmd/export/main_test.go",
+    "research/effectobservation/controls.go",
+    "research/effectobservation/controls_test.go",
+    "research/effectobservation/explore.go",
+    "research/effectobservation/explore_test.go",
+    "research/effectobservation/model.go",
+    "research/effectobservation/model_test.go",
+    "research/effectobservation/observations.go",
+    "research/effectobservation/observations_test.go",
+    "research/effectobservation/oracle.go",
+    "research/effectobservation/oracle_test.go"
+  ],
+  "format_exit": 0,
+  "format_output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "matched_exports": [
+    {
+      "job": "new-model",
+      "archive": "docs/foundational/phase3b6/evidence/task1/graph.json.gz",
+      "sha256": "142ae6cd3ce9622ecd535d15ad67b923983d8991e357da596858c86239be8d15"
+    },
+    {
+      "job": "new-audit",
+      "archive": "docs/foundational/phase3b6/evidence/task2/audit.json.gz",
+      "sha256": "20a5479244fc69f1655af2535d7f2adb3aac451136e76c49da1eeb3047fc26bd"
+    },
+    {
+      "job": "prior-revocation-model",
+      "archive": "docs/foundational/phase3b5/evidence/task1/model.json.gz",
+      "sha256": "bb2b3fa469b82a5526691375b474c6e2984d2f532e02fda4e76bb069da4a2f26"
+    },
+    {
+      "job": "prior-default-progress",
+      "sha256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b"
+    },
+    {
+      "job": "twoagent",
+      "sha256": "b380e7653a843b03ad9fe036f8ec5ca03a966cb1151b89e8a3e36a3177baf385"
+    },
+    {
+      "job": "mutual",
+      "sha256": "28718bb9d29cd31eb870d05bad63360175abf105d1ee0724f96c36a6e7b43533"
+    },
+    {
+      "job": "authority",
+      "sha256": "180dc509fcf2a017a241e0c3cfb2a22a7f4f353a0731737c897d053d5feed46e"
+    },
+    {
+      "job": "audit",
+      "sha256": "a8e2c4f2f5395c3992c12609afdc89948c97347e1c8221942f8574647c0b45c1"
+    },
+    {
+      "job": "revocation-audit",
+      "sha256": "a5f9f8fac9faaceed3dc4af2c213565383b7954f75b271e7426807c20e0491ad"
+    },
+    {
+      "job": "revocation-progress",
+      "sha256": "faf6ff19137e9c5ac9e22b97a4835699fc151323eb972fb5538c4a277a65db5a"
+    }
+  ],
+  "verifier_sha256": "2ae1f059bd05a1429a388af28da4afe3aada01f5c6cf7d5852127dd42e21ab6e",
+  "scope": "Frozen executable inputs and closed grouped qualification; manuscript/PDF checks are separate. Archived recorder/verifier copies are evidence apparatus, not additional Go package inputs."
+}
