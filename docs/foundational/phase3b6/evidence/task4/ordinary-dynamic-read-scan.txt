@@ -1,0 +1,8 @@
+author/external_test.go:41: build := exec.Command("go", args...)
+cmd/alan-evidence/main_integration_test.go:57: if out, err := exec.CommandContext(t.Context(), "go", args...).CombinedOutput(); err != nil {
+examples/evidence/excluding_test.go:41: command := exec.CommandContext(t.Context(), "go", "run", "-mod=mod", ".")
+examples/evidence/external_test.go:47: build := exec.CommandContext(t.Context(), "go", args...)
+examples/investigation/external_test.go:43: command := exec.CommandContext(t.Context(), "go", "build", "-mod=mod", "-o", filepath.Join(dir, "consumer"), ".")
+internal/durabletest/faults_test.go:263: build := exec.Command("go", args...)
+internal/durabletest/phase2_process_test.go:76: err = filepath.WalkDir(root, func(path string, entry os.DirEntry, walkErr error) error {
+internal/durabletest/crash_test.go:40: cmd := exec.Command("go", args...)
