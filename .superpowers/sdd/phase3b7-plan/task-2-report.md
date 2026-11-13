@@ -245,3 +245,105 @@ All four reproduced findings now have passing rejection controls, while lawful
 synthetic positives pass. Independent re-review and genuine qualification
 remain outstanding; all source-conditioned and single-host limits above
 remain in force. There is no new manuscript empirical claim in this fix.
+
+## Post-capture correction, round 2
+
+Base: `193039406557cb37be815d5f846b22a75d48fde6`; reviewed checker:
+`6dc16ecf36441a99005a62eba4cee2418f5f5d72`. The controller subsequently ran
+both prescribed genuine normal/race pairs once and sealed them. Its first
+frozen checker returned Supported=false on both, reproducibly across two
+invocations each. Initial reports show Seal/Source/Raw/World valid and all four
+paired Store exports plus final reports byte-identical; Protocol rejected the
+native authorization event. This correction performs no recapture and does
+not claim a new whole-pair qualification verdict.
+
+The round-1 interpretation of the native admission ordinal was wrong. Reading
+only `prepareExternalWork`'s event constructor missed the Run transport
+wrapper. In the same frozen runtime source:
+
+1. `internal/executor/external.go:174` constructs the pre-transport event.
+2. `internal/executor/runner.go:203–215`, specifically 209–213, copies the
+   selected `op.authority.Ordinal`, source Epoch and Sequence into `work.event`
+   before `transportExternal`.
+3. `internal/executor/external.go:177–190` reaches that event before HTTP.
+4. `internal/durabletest/phase3b7_owner_test.go:144–181` stamps and logs it before
+   forwarding to the inherited observer. Passive InFlight is still null.
+
+All four actual branch logs have AuthorityAdmissionOrdinal=1, matching their
+pre-call event and the retained first allowed admission gate. The unchanged
+raw validator already requires first gate ordinal 1 at
+`research/delegationcorrespondence/effect_mapping.go:98`. The corrected
+`checkBoundaries` requires exactly 1 and equality with the selected worker's
+ordinal. It does not accept both zero and one. All Subject/Generation/Epoch/
+Sequence, Intent/Attempt, phase, root, InFlight, process, and ordering checks
+remain. Observation/equality criteria, contract, producer source, and source
+anchor are unchanged. `03-comparison.md` changes only this native event mapping.
+
+Only the synthetic authorization fixture changes from zero to the worker's
+ordinal; the earlier wrong-ordinal attack changes from 1 to 2 because 1 is now
+correctly recognized as native. New negative controls isolate each branch and
+then reseal the synthetic dossier, rejecting omitted/default zero, 2, and -1
+while Seal and Raw remain valid. The zero control uses the native omitempty
+representation; the checker does not infer the first ordinal from omission.
+The first new RED run demonstrated false rejection of all four native excerpts
+and the corrected synthetic positive. A second RED strengthened the negatives
+with a direct branch check, demonstrating the old helper's acceptance of
+omitted zero independently of the other branch's false rejection.
+
+New `TestNativeAuthorizationOrdinal` uses exact copied boundary/pre-call
+bytes and unchanged selected external-attempt/gate descriptor strings from
+all four sealed branches. `testdata/native-authorization.json.gz` is a narrow
+read-only excerpt, not a fabricated complete pair. Extraction is reproducible
+with `python3 docs/foundational/phase3b7/evidence/task2/review-r2/extract-native.py`
+(exit 0); original paths, lengths and hashes are in `native-inputs.json`.
+The extraction reads only JSON/JSONL. This test validates the native event
+mapping, not the complete causal protocol or SQLite contents.
+
+Evidence under `evidence/task2/review-r2/` retains a byte-identical copy of the
+controller's `initial-checks.json`, source excerpts with whole-file hashes in
+`root-cause.json`, and initial report identities. Original reports remain at
+`/tmp/alan-phase3b7/qualification/check-{normal,race}-v1-{1,2}/output.log`.
+Normal report SHA-256 is
+`39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df`;
+race report SHA-256 is
+`319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217`.
+The old `/tmp/alan-phase3b7/matched-check` remains unchanged at
+`e49b1d5d0d8caa33916cf9557aca453c346ddeb24cfd906b728a3c80c7f6075c`,
+verified against `checker-before.json`. All twelve source JSON/JSONL members
+used for the excerpt were rehashed and matched their recorded input hashes.
+Neither raw directory, archive, initial report, nor existing freeze was edited
+or resealed; no archived SQLite was opened. Controller-owned untracked evidence
+is excluded from this correction commit.
+
+All Go commands below used the same offline environment prefix recorded
+above. Logs preserve exact output; RED logs are losslessly gzip-compressed.
+
+| Command | Exit | Output |
+| --- | --- | --- |
+| `go test -count=1 -v ./research/matchedcapture -run '^(TestNativeAuthorizationOrdinal\|TestResealedAuthorizationOrdinal\|TestSyntheticPair)$'` | 1 | `red.log.gz`: all native positives and corrected synthetic positive rejected by old checker |
+| Same command after strengthening branch-isolated zero controls, before checker fix | 1 | `red-isolated.log.gz`: additionally exposes omitted-zero acceptance in both branches |
+| `go test -count=1 -v ./research/matchedcapture/...` | 0 | `green-normal.log`: checker 21.582s; nested command 0.107s |
+| `go test -race -count=1 -v ./research/matchedcapture -run '^(TestSyntheticPair\|TestNativeAuthorizationOrdinal\|TestResealedAuthorizationOrdinal\|TestReviewR1AuthorizedEvent\|TestReviewR1RequiredAuthorizationMembers)$'` | 0 | `green-race.log`: 39.622s; native and synthetic positives, ordinal attacks, and retained coordinate/schema attacks |
+| `staticcheck ./research/matchedcapture/...` | 0 | `staticcheck.log`: no diagnostics |
+
+The ordinary suite covers all existing checker/comparator/command tests. Race
+coverage is narrowed to the changed boundary validator, synthetic fixture,
+and affected controls; round 1's broad race result remains prior evidence.
+No shared authority/runtime source changed, so those broad suites and old
+output-byte comparisons were not repeated. The controller owns the new
+freeze, checker build and repeated final report exports on the same immutable
+pairs after independent review. This correction does not overwrite the frozen
+binary, invoke the complete checker on genuine pairs, change a manuscript
+claim, or assert that qualification is complete.
+
+`python3 docs/foundational/phase3b7/evidence/task2/review-r2/verify-preserved.py`
+exited 0 (`verify-preserved.log`): the three source trace member lengths/hashes
+match the frozen preparation manifest, and initial reports/summary, original
+excerpt inputs, and old frozen checker remain unchanged. An initial ad hoc
+source assertion compared entire metadata dictionaries and failed because the
+manifest additionally contains git_blob/mode; comparing the intended bytes and
+SHA-256 fields succeeds. This was a verification-script error, not source drift.
+
+Full source/test/docs/excerpt/evidence diff was self-reviewed;
+`git diff --check` and `gofmt -l research/matchedcapture` exited 0 with empty
+output. Independent re-review remains required.

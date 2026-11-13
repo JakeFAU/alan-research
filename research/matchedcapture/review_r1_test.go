@@ -93,7 +93,7 @@ func TestReviewR1AuthorizedEvent(t *testing.T) {
 	for _, tc := range []struct {
 		field string
 		value any
-	}{{"Subject", "wrong"}, {"Generation", 2}, {"Epoch", 999}, {"Sequence", 999}, {"Phase", "wrong"}, {"Root", "wrong"}, {"AuthorityAdmissionOrdinal", 1}, {"InFlight", []string{"wrong"}}, {"InFlight", []string{}}, {"Generation", nil}, {"Intent", "wrong"}, {"Attempt", "wrong"}} {
+	}{{"Subject", "wrong"}, {"Generation", 2}, {"Epoch", 999}, {"Sequence", 999}, {"Phase", "wrong"}, {"Root", "wrong"}, {"AuthorityAdmissionOrdinal", 2}, {"InFlight", []string{"wrong"}}, {"InFlight", []string{}}, {"Generation", nil}, {"Intent", "wrong"}, {"Attempt", "wrong"}} {
 		t.Run(tc.field+"/"+string(jsonBytes(tc.value)), func(t *testing.T) {
 			f := fixture(t)
 			p := "zero/first-owner/boundaries.jsonl"

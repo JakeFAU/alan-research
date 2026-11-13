@@ -1,0 +1,53 @@
+{
+  "inputs": {
+    "/tmp/alan-phase3b7/raw-normal-v1/zero/first-owner/boundaries.jsonl": {
+      "bytes": 11303,
+      "sha256": "b5a85d27d28bc289292b8897bf962041b567df4c348dab8734eaecf73fe23589"
+    },
+    "/tmp/alan-phase3b7/raw-normal-v1/zero/first-owner/pre-call.json": {
+      "bytes": 445,
+      "sha256": "fc46f3336495024c948b0c97db3254e69a022d60bb003fe3d24301c79f61af57"
+    },
+    "/tmp/alan-phase3b7/raw-normal-v1/zero/stopped/inspect.json": {
+      "bytes": 93407,
+      "sha256": "5de6d7cb074ffc37e03c5a661734bbcc034a7f0c0e431aca086231a925a07ac1"
+    },
+    "/tmp/alan-phase3b7/raw-normal-v1/applied/first-owner/boundaries.jsonl": {
+      "bytes": 11477,
+      "sha256": "b75bcbb513c6a6088f4f363a1584f579cfce4d0ee1e43e55cb5c6970b4f9d6cb"
+    },
+    "/tmp/alan-phase3b7/raw-normal-v1/applied/first-owner/pre-call.json": {
+      "bytes": 451,
+      "sha256": "5fac36a54cbfb0060ab88d3b1cd44a871e48cc58b871c7061037732cd7cc3bb4"
+    },
+    "/tmp/alan-phase3b7/raw-normal-v1/applied/stopped/inspect.json": {
+      "bytes": 93407,
+      "sha256": "5de6d7cb074ffc37e03c5a661734bbcc034a7f0c0e431aca086231a925a07ac1"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/zero/first-owner/boundaries.jsonl": {
+      "bytes": 11303,
+      "sha256": "87267a533e19f5fc47f6a80562ed1899c7c46c11f58c8fb23e831faa132afa35"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/zero/first-owner/pre-call.json": {
+      "bytes": 445,
+      "sha256": "57a2e7804149574f1ec1c25fd572253964c2ca911131fbe636c4845b8b50376e"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/zero/stopped/inspect.json": {
+      "bytes": 93407,
+      "sha256": "60f2e21695b6ff275c7e77f2c2aec82c87130d4b9baa3f38dd258f473472bd92"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/applied/first-owner/boundaries.jsonl": {
+      "bytes": 11477,
+      "sha256": "bb2ed37649938a2117ea64b0da26773c988b900147d9b2523f6f7a5644fed138"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/applied/first-owner/pre-call.json": {
+      "bytes": 451,
+      "sha256": "322755fa21714e6fae3e130bfc8701e445d0bd823f641ae4bbd627028ade3156"
+    },
+    "/tmp/alan-phase3b7/raw-race-v1/applied/stopped/inspect.json": {
+      "bytes": 93407,
+      "sha256": "60f2e21695b6ff275c7e77f2c2aec82c87130d4b9baa3f38dd258f473472bd92"
+    }
+  },
+  "excerpt_sha256": "19cfd7318d98162b730044c81628570d9c0abe0a0ad04125f40f39121ec87419"
+}

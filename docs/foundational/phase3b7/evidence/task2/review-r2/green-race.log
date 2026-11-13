@@ -1,0 +1,72 @@
+=== RUN   TestSyntheticPair
+--- PASS: TestSyntheticPair (1.51s)
+=== RUN   TestReviewR1AuthorizedEvent
+=== RUN   TestReviewR1AuthorizedEvent/Subject/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Generation/2
+=== RUN   TestReviewR1AuthorizedEvent/Epoch/999
+=== RUN   TestReviewR1AuthorizedEvent/Sequence/999
+=== RUN   TestReviewR1AuthorizedEvent/Phase/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Root/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/AuthorityAdmissionOrdinal/2
+=== RUN   TestReviewR1AuthorizedEvent/InFlight/["wrong"]
+=== RUN   TestReviewR1AuthorizedEvent/InFlight/[]
+=== RUN   TestReviewR1AuthorizedEvent/Generation/null
+=== RUN   TestReviewR1AuthorizedEvent/Intent/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Attempt/"wrong"
+--- PASS: TestReviewR1AuthorizedEvent (17.12s)
+    --- PASS: TestReviewR1AuthorizedEvent/Subject/"wrong" (1.42s)
+    --- PASS: TestReviewR1AuthorizedEvent/Generation/2 (1.43s)
+    --- PASS: TestReviewR1AuthorizedEvent/Epoch/999 (1.41s)
+    --- PASS: TestReviewR1AuthorizedEvent/Sequence/999 (1.49s)
+    --- PASS: TestReviewR1AuthorizedEvent/Phase/"wrong" (1.49s)
+    --- PASS: TestReviewR1AuthorizedEvent/Root/"wrong" (1.41s)
+    --- PASS: TestReviewR1AuthorizedEvent/AuthorityAdmissionOrdinal/2 (1.40s)
+    --- PASS: TestReviewR1AuthorizedEvent/InFlight/["wrong"] (1.41s)
+    --- PASS: TestReviewR1AuthorizedEvent/InFlight/[] (1.41s)
+    --- PASS: TestReviewR1AuthorizedEvent/Generation/null (1.41s)
+    --- PASS: TestReviewR1AuthorizedEvent/Intent/"wrong" (1.42s)
+    --- PASS: TestReviewR1AuthorizedEvent/Attempt/"wrong" (1.42s)
+=== RUN   TestReviewR1RequiredAuthorizationMembers
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Subject
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Generation
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Epoch
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Sequence
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Phase
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Intent
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Attempt
+=== RUN   TestReviewR1RequiredAuthorizationMembers/InFlight
+--- PASS: TestReviewR1RequiredAuthorizationMembers (11.33s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Subject (1.44s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Generation (1.41s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Epoch (1.40s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Sequence (1.40s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Phase (1.40s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Intent (1.40s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Attempt (1.45s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/InFlight (1.42s)
+=== RUN   TestNativeAuthorizationOrdinal
+=== RUN   TestNativeAuthorizationOrdinal/normal/applied
+=== RUN   TestNativeAuthorizationOrdinal/normal/zero
+=== RUN   TestNativeAuthorizationOrdinal/race/applied
+=== RUN   TestNativeAuthorizationOrdinal/race/zero
+--- PASS: TestNativeAuthorizationOrdinal (0.03s)
+    --- PASS: TestNativeAuthorizationOrdinal/normal/applied (0.01s)
+    --- PASS: TestNativeAuthorizationOrdinal/normal/zero (0.01s)
+    --- PASS: TestNativeAuthorizationOrdinal/race/applied (0.01s)
+    --- PASS: TestNativeAuthorizationOrdinal/race/zero (0.01s)
+=== RUN   TestResealedAuthorizationOrdinal
+=== RUN   TestResealedAuthorizationOrdinal/zero/0
+=== RUN   TestResealedAuthorizationOrdinal/zero/2
+=== RUN   TestResealedAuthorizationOrdinal/zero/-1
+=== RUN   TestResealedAuthorizationOrdinal/applied/0
+=== RUN   TestResealedAuthorizationOrdinal/applied/2
+=== RUN   TestResealedAuthorizationOrdinal/applied/-1
+--- PASS: TestResealedAuthorizationOrdinal (8.50s)
+    --- PASS: TestResealedAuthorizationOrdinal/zero/0 (1.42s)
+    --- PASS: TestResealedAuthorizationOrdinal/zero/2 (1.41s)
+    --- PASS: TestResealedAuthorizationOrdinal/zero/-1 (1.42s)
+    --- PASS: TestResealedAuthorizationOrdinal/applied/0 (1.43s)
+    --- PASS: TestResealedAuthorizationOrdinal/applied/2 (1.41s)
+    --- PASS: TestResealedAuthorizationOrdinal/applied/-1 (1.41s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/matchedcapture	39.622s

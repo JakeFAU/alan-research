@@ -1,0 +1,4 @@
+All three source trace members match the frozen manifest lengths/hashes.
+Initial summary, 12 excerpt inputs, four initial reports, and old frozen checker are unchanged.
+green-normal.log ['ok  \tgithub.com/JakeFAU/alan-research/research/matchedcapture\t21.582s', 'ok  \tgithub.com/JakeFAU/alan-research/research/matchedcapture/cmd/check\t0.107s']
+green-race.log ['ok  \tgithub.com/JakeFAU/alan-research/research/matchedcapture\t39.622s']

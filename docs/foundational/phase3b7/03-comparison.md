@@ -82,7 +82,9 @@ Schema validation never replaces the original inputs to full equality.
 
 The passive `external.authorized` event must carry the selected wire's complete
 Subject/Generation/Epoch/Sequence and Intent/Attempt, `pre-transport` phase,
-empty optional root/admission selectors, and native nil InFlight. The later
+empty optional root, admission ordinal 1 matching the selected admitted worker,
+and native nil InFlight. Run stamps this ordinal in its transport wrapper before
+emission; it is not the constructor's zero value. The later
 inherited scheduler acknowledgment has its own enriched InFlight check.
 Source argv uses Go flag parsing and requires one exact capture selector and
 an effective count of one. Single/double dash and separate/equal values are

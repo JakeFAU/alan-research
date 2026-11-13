@@ -200,13 +200,14 @@ func checkBoundaries(f map[string][]byte, branch string, owner process, worker e
 			pre++
 		case "external.authorized":
 			_ = decodeComplete[event](rawEvent, p)
-			// The passive native event is logged before the inherited observer
-			// enriches its own scheduler-ack copy with InFlight.
+			// Run stamps the selected admission ordinal before transport emits
+			// this event. The passive log precedes inherited InFlight enrichment.
 			require(e.Intent == service && e.Attempt == q.Authorization &&
 				e.Subject == q.Subject && e.Generation == q.Generation &&
 				e.Epoch == q.Epoch && e.Sequence == q.Sequence &&
 				e.Phase == "pre-transport" && e.Root == "" &&
-				e.AuthorityAdmissionOrdinal == 0 && e.InFlight == nil,
+				e.AuthorityAdmissionOrdinal == 1 &&
+				e.AuthorityAdmissionOrdinal == worker.AuthorityAdmissionOrdinal && e.InFlight == nil,
 				p, "selected native authorization coordinates/selectors")
 			authorized++
 		case "runner.waiting":
