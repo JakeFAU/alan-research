@@ -1,0 +1,31 @@
+{
+  "research_head": "c3665e68e706065126c2ecb2971a04fbb72ebd61",
+  "argv": [
+    "/opt/homebrew/bin/tectonic",
+    "--only-cached",
+    "--keep-logs",
+    "alan-dissertation.tex"
+  ],
+  "cwd": "/tmp/alan-phase3b6/pdf-final",
+  "exit": 0,
+  "elapsed_seconds": 1.0975374999999998,
+  "source_sha256_before": {
+    "alan-dissertation.md": "318f8b09b917279c3478e1f0530ad3171b8e45939ce3770576f738cd5c6b510b",
+    "alan-dissertation.tex": "e69fe88fafaac68e55400338e9bf0a9d06d622c5e2f11d2bcfe6f0fbcd357342",
+    "references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+  },
+  "source_sha256_after": {
+    "alan-dissertation.md": "318f8b09b917279c3478e1f0530ad3171b8e45939ce3770576f738cd5c6b510b",
+    "alan-dissertation.tex": "e69fe88fafaac68e55400338e9bf0a9d06d622c5e2f11d2bcfe6f0fbcd357342",
+    "references.bib": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+  },
+  "build_log_sha256": "3316a0d8fa773023cb014fa1e56556d989af59806516b2455e44af02f6f8afad",
+  "previous_pdf_sha256": "83bfaa590ad6b3cbd61ecf32043efdce93ed7ac75805d4feee1e625911de5bad",
+  "source_unchanged": true,
+  "pdf_sha256": "529e237679c32647dd58b9a478b77e628e80a7fc6d3fb211a07b5252b35486ab",
+  "operation_marker": {
+    "already_run_once": true,
+    "tool_chunk": "e5232e",
+    "exit": 0
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "base": "df840103aa3a85e33b4b95ddcf2fe3df071cb024",
+  "warnings": [
+    "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215",
+    "warning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559",
+    "warning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559"
+  ],
+  "same_unique_warnings_as_phase3b5": true,
+  "unchanged_source_ranges": [
+    {
+      "line_start": 214,
+      "line_end": 215,
+      "byte_equal": true,
+      "sha256": "1a532fc7581bf7c68862d70e2f1dc6e7ba99d22fc41c7968b2b2feb21c057af5",
+      "text": "Let $P$ be any program passing \\texttt{validateProgram(P)} under \\allowbreak\\texttt{CollectionSemanticVersion} (\\path{internal/executor/collections.go}), with code length $L = |P.\\mathtt{Code}|$, maximum loop-snapshot capacity $M = \\max_c c.\\mathtt{MaxItems}$, where $c$ ranges over the \\texttt{Collection} schemas of \\texttt{foreach} instructions (set $M=0$ if there are no loops), and actual finite loop nesting depth $d$. The public authoring compiler additionally enforces $d \\le \\mathtt{author.MaxNesting}$; the raw program validator does not impose that cap. For any valid open projection $\\sigma_0$:\n\\begin{enumerate}"
+    },
+    {
+      "line_start": 558,
+      "line_end": 559,
+      "byte_equal": true,
+      "sha256": "789d7d4d76920c86db7e48865e2a8f946f7320d4ec9903048687d9ad8a79ed08",
+      "text": "In \\path{examples/evidence/evidence.go} and \\path{examples/investigation/investigation.go}, LLM invocations (\\texttt{evidence-model}) are compiled into split-phase \\texttt{author.Request} and \\texttt{author.Await} steps surrounded by pure deterministic guards: budget enforcement (\\texttt{model\\_spent < model\\_limit}), tool-name verification (\\texttt{plan\\_tool == \"lookup\"}), deterministic span-exclusion copying across revision rounds, and byte-exact citation provenance verification across \\texttt{document}, \\texttt{version}, \\texttt{snippet}, \\texttt{start}, and \\texttt{end}.\n"
+    }
+  ]
+}
