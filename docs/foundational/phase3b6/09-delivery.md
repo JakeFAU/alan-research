@@ -1,0 +1,9 @@
+# Phase 3B.6 delivery
+
+[Draft PR #47](https://github.com/JakeFAU/alan-research/pull/47) was opened and attached to the task on 2026-11-13, from `codex/phase3b6-effect-observation` into `codex/phase3b5-grant-revocation`. Its creation head was `cfc92876612870f4320005d49ee29a2b27e9d09a`. Immediately before delivery, [parent PR #46](https://github.com/JakeFAU/alan-research/pull/46) remained open, draft and unmerged at base commit `df840103aa3a85e33b4b95ddcf2fe3df071cb024`. No merge or release was performed.
+
+The final independent review approved specification and quality over `df840103..8450871e`, with no actionable findings. Subsequent closure changes archive the verdict, package checks and delivery state. Executable inputs remain frozen at `e0615c1300baef94c077fea8168c729e6f6434ed`; the reviewed manuscript sources and inspected PDF remain unchanged. [Review and scope dispositions](08-reviews.md), [qualification](06-qualification.md) and [package check](evidence/task4/package-verification.json).
+
+The chronological ledger, all six material rulings, task briefs, implementer reports and independent reviews are preserved in the [workflow archive](evidence/workflow/). The controller removes only this plan's ignored scratch directory after checking that archive; generated review diffs remain reproducible from the recorded Git ranges. The active worktree and branch remain available for PR iteration. Neither the main checkout nor another task's worktree is removed.
+
+The outstanding research obligation is the matched v2 zero-application capture with equal declared local observations under the same after-admission loss, exact-root revoke and fresh-refusal schedule. The current packet contains the finite counterexample and a source-conditioned relation to historical captures; it does not claim that missing experiment or general recovery/compositional closure.

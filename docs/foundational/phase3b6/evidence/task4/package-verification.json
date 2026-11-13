@@ -1,8 +1,8 @@
 {
-  "head_at_check": "8450871e0b0302681ce8b4af9faf505883b203aa",
+  "head_at_check": "cfc92876612870f4320005d49ee29a2b27e9d09a",
   "script_sha256": "ebf717bbdaa1d10f6654e10da00e14952a7be8b57644578501243bfd1c908af8",
   "frozen_inputs_checked": 612,
-  "packet_files_tracked": 210,
+  "packet_files_tracked": 212,
   "no_go_module_or_research_changes_since_freeze": true,
   "task_checksum_members": {
     "task1": 8,
@@ -13,7 +13,7 @@
   "pdf_archive_members": 26,
   "pdf_sources_equal": true,
   "workflow_files_checked": 20,
-  "relative_links_checked": 49,
+  "relative_links_checked": 55,
   "relative_links": [
     {
       "source": "docs/foundational/phase3b6/02-model.md",
@@ -86,6 +86,14 @@
     {
       "source": "docs/foundational/phase3b6/06-qualification.md",
       "target": "evidence/task4/verification.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/package-verification.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/06-qualification.md",
+      "target": "evidence/task4/check_package.py"
     },
     {
       "source": "docs/foundational/phase3b6/06-qualification.md",
@@ -209,6 +217,22 @@
     },
     {
       "source": "docs/foundational/phase3b6/08-reviews.md",
+      "target": "evidence/workflow/"
+    },
+    {
+      "source": "docs/foundational/phase3b6/09-delivery.md",
+      "target": "08-reviews.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/09-delivery.md",
+      "target": "06-qualification.md"
+    },
+    {
+      "source": "docs/foundational/phase3b6/09-delivery.md",
+      "target": "evidence/task4/package-verification.json"
+    },
+    {
+      "source": "docs/foundational/phase3b6/09-delivery.md",
       "target": "evidence/workflow/"
     }
   ],
