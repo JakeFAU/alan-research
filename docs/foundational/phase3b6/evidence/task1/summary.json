@@ -1,0 +1,739 @@
+{
+  "states": 63,
+  "arcs": 104,
+  "arcs_by_event": {
+    "apply": 14,
+    "consume": 8,
+    "fresh-refuse": 5,
+    "ingress": 7,
+    "launch": 2,
+    "lose-owner": 22,
+    "record": 4,
+    "reopen": 18,
+    "response": 4,
+    "revoke-b": 20
+  },
+  "maximum_shortest_prefix_length": 9,
+  "boundary_witnesses": {
+    "same_store_zero_versus_one_application": [
+      {
+        "state": 25,
+        "events": 4,
+        "prefix": [
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "reopen",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 2,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "fresh-refuse",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 2,
+            "root": "B/g1:b",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "state": 49,
+        "events": 7,
+        "prefix": [
+          {
+            "kind": "launch",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "ingress",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "apply",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": "v1"
+          },
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "reopen",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 2,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "fresh-refuse",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 2,
+            "root": "B/g1:b",
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "same_store_two_authentic_world_values": [
+      {
+        "state": 49,
+        "events": 7,
+        "prefix": [
+          {
+            "kind": "launch",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "ingress",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "apply",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": "v1"
+          },
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "reopen",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 2,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "fresh-refuse",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 2,
+            "root": "B/g1:b",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "state": 54,
+        "events": 7,
+        "prefix": [
+          {
+            "kind": "launch",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "ingress",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "apply",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": "v2"
+          },
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "reopen",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 2,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "fresh-refuse",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 2,
+            "root": "B/g1:b",
+            "value": ""
+          }
+        ]
+      }
+    ],
+    "negative_cut_then_late_application": [
+      {
+        "state": 13,
+        "events": 3,
+        "prefix": [
+          {
+            "kind": "launch",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          }
+        ]
+      },
+      {
+        "state": 28,
+        "events": 5,
+        "prefix": [
+          {
+            "kind": "launch",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "A",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "revoke-b",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "B",
+            "incarnation": 1,
+            "root": "B/g1:b",
+            "value": ""
+          },
+          {
+            "kind": "lose-owner",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "owner",
+            "incarnation": 1,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "ingress",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": ""
+          },
+          {
+            "kind": "apply",
+            "binding": {
+              "original": "BA/1",
+              "source_generation": 1,
+              "source_revision": 1,
+              "grant": "grant:BA:b",
+              "root": "B/g1:b",
+              "original_activation": 1,
+              "wire": "wire:BA:1"
+            },
+            "actor": "endpoint",
+            "incarnation": 0,
+            "root": "",
+            "value": "v1"
+          }
+        ]
+      }
+    ],
+    "retained_before_loss_consumed_after_reopen": {
+      "state": 61,
+      "events": 9,
+      "prefix": [
+        {
+          "kind": "launch",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "A",
+          "incarnation": 1,
+          "root": "",
+          "value": ""
+        },
+        {
+          "kind": "ingress",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "endpoint",
+          "incarnation": 0,
+          "root": "",
+          "value": ""
+        },
+        {
+          "kind": "apply",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "endpoint",
+          "incarnation": 0,
+          "root": "",
+          "value": "v1"
+        },
+        {
+          "kind": "response",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "A",
+          "incarnation": 1,
+          "root": "",
+          "value": "v1"
+        },
+        {
+          "kind": "record",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "A",
+          "incarnation": 1,
+          "root": "",
+          "value": "v1"
+        },
+        {
+          "kind": "revoke-b",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "B",
+          "incarnation": 1,
+          "root": "B/g1:b",
+          "value": ""
+        },
+        {
+          "kind": "lose-owner",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "owner",
+          "incarnation": 1,
+          "root": "",
+          "value": ""
+        },
+        {
+          "kind": "reopen",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "owner",
+          "incarnation": 2,
+          "root": "",
+          "value": ""
+        },
+        {
+          "kind": "consume",
+          "binding": {
+            "original": "BA/1",
+            "source_generation": 1,
+            "source_revision": 1,
+            "grant": "grant:BA:b",
+            "root": "B/g1:b",
+            "original_activation": 1,
+            "wire": "wire:BA:1"
+          },
+          "actor": "B",
+          "incarnation": 2,
+          "root": "",
+          "value": "v1"
+        }
+      ]
+    }
+  }
+}
