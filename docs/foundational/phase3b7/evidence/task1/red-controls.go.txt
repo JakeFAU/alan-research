@@ -1,0 +1,108 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"context"
+	"errors"
+	"io"
+	"testing"
+	"time"
+
+	"github.com/JakeFAU/alan/internal/boundary"
+)
+
+func TestPhase3B7BarrierControls(t *testing.T) {
+	for _, tc := range []struct {
+		name    string
+		command byte
+		cancel  bool
+		want    error
+	}{
+		{name: "explicit release", command: 'c'},
+		{name: "EOF", want: io.EOF},
+		{name: "wrong byte", command: 'x', want: errPhase3B7Release},
+		{name: "canceled even with release pending", command: 'c', cancel: true, want: context.Canceled},
+	} {
+		t.Run(tc.name, func(t *testing.T) {
+			read, write := pipe2c(t)
+			defer read.Close()
+			defer write.Close()
+			ctx, cancel := context.WithCancel(t.Context())
+			defer cancel()
+			if tc.cancel {
+				cancel()
+			}
+			if tc.command != 0 {
+				if _, err := write.Write([]byte{tc.command}); err != nil {
+					t.Fatal(err)
+				}
+			}
+			if err := write.Close(); err != nil {
+				t.Fatal(err)
+			}
+			if err := phase3B7WorkerRelease(ctx, read); !errors.Is(err, tc.want) {
+				t.Fatalf("release returned %v, want %v", err, tc.want)
+			}
+		})
+	}
+
+	t.Run("unreleased then canceled", func(t *testing.T) {
+		read, write := pipe2c(t)
+		defer read.Close()
+		defer write.Close()
+		ctx, cancel := context.WithCancel(t.Context())
+		defer cancel()
+		result := make(chan error, 1)
+		readEntered := make(chan struct{})
+		go func() {
+			result <- phase3B7ReadRelease(ctx, read, func() { close(readEntered) })
+		}()
+		timer := time.NewTimer(5 * time.Second)
+		defer timer.Stop()
+		select {
+		case <-readEntered:
+		case <-timer.C:
+			t.Fatal("worker never entered its release read")
+		}
+		select {
+		case err := <-result:
+			t.Fatalf("unreleased worker escaped with %v", err)
+		default:
+		}
+		cancel()
+		select {
+		case err := <-result:
+			if !errors.Is(err, context.Canceled) {
+				t.Fatalf("release returned %v", err)
+			}
+		case <-timer.C:
+			t.Fatal("canceled worker did not return")
+		}
+	})
+
+	t.Run("exact selected authorization", func(t *testing.T) {
+		config := boundary.Event{Scenario: "phase3b7/zero/owner", Token: "token", Store: "/path", Boundary: "runner.waiting", Phase: "in-flight"}
+		worker := phase3B7Stamp(config, 23, boundary.Event{Boundary: "dispatch.admitted", Phase: "pre-call", Subject: "a", Generation: 1, Sequence: 4, Epoch: 2, Intent: phase3B7Service, Attempt: "authorization", AuthorityAdmissionOrdinal: 1})
+		scheduler := phase3B7Stamp(config, 23, boundary.Event{Boundary: "runner.waiting", Phase: "in-flight", InFlight: []string{"authorization"}})
+		if err := phase3B7CheckPairAck(config, 23, worker, scheduler); err != nil {
+			t.Fatal(err)
+		}
+		for _, edit := range []func(*boundary.Event, *boundary.Event){
+			func(w, _ *boundary.Event) { w.Store = "/other" },
+			func(w, _ *boundary.Event) { w.Intent = "different service" },
+			func(w, _ *boundary.Event) { w.AuthorityAdmissionOrdinal = 2 },
+			func(w, _ *boundary.Event) { w.Epoch = 3 },
+			func(_, s *boundary.Event) { s.Token = "different" },
+			func(_, s *boundary.Event) { s.PID++ },
+			func(_, s *boundary.Event) { s.InFlight = []string{"different"} },
+			func(_, s *boundary.Event) { s.InFlight = []string{"authorization", "extra"} },
+		} {
+			w, s := worker, scheduler
+			edit(&w, &s)
+			if err := phase3B7CheckPairAck(config, 23, w, s); err == nil {
+				t.Fatalf("accepted mismatched acknowledgments: %+v %+v", w, s)
+			}
+		}
+	})
+}

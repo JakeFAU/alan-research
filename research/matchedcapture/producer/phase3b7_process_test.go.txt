@@ -1,0 +1,267 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"crypto/rand"
+	"encoding/hex"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"net"
+	"net/url"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
+	"syscall"
+	"testing"
+	"time"
+
+	"github.com/JakeFAU/alan/internal/boundary"
+	resource "github.com/JakeFAU/alan/internal/fixture"
+)
+
+type phase3B7Protocol struct {
+	log     *os.File
+	ordinal int
+}
+
+func (p *phase3B7Protocol) record(t *testing.T, action, role string, pid int, data any) {
+	t.Helper()
+	phase3B7Must(t, p.append(action, role, pid, data))
+}
+
+func (p *phase3B7Protocol) append(action, role string, pid int, data any) error {
+	p.ordinal++
+	return phase3B7Append(p.log, map[string]any{"ordinal": p.ordinal, "action": action, "role": role, "pid": pid, "data": data})
+}
+
+type phase3B7Process struct {
+	cmd                   *exec.Cmd
+	config                boundary.Event
+	role                  string
+	ack, release          *os.File
+	workerAck, workerPipe *os.File
+	ready                 phase3B7Ready
+	acknowledged          bool
+}
+
+type phase3B7Ready struct {
+	URL, Token, Store string
+	PID               int
+}
+
+func phase3B7Token(t *testing.T) string {
+	t.Helper()
+	var token [16]byte
+	_, err := rand.Read(token[:])
+	phase3B7Must(t, err)
+	return hex.EncodeToString(token[:])
+}
+
+func phase3B7ChildEnv(cmd *exec.Cmd) []string {
+	var env []string
+	for _, setting := range cmd.Environ() {
+		key, _, _ := strings.Cut(setting, "=")
+		if key != "ALAN_BARRIER" && !strings.HasPrefix(key, "ALAN_PHASE") {
+			env = append(env, setting)
+		}
+	}
+	return env
+}
+
+func phase3B7Start(t *testing.T, p *phase3B7Protocol, role string, cmd *exec.Cmd, config boundary.Event, logPath, ownerDir string) *phase3B7Process {
+	t.Helper()
+	process := &phase3B7Process{cmd: cmd, config: config, role: role}
+	log, err := os.OpenFile(logPath, os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
+	phase3B7Must(t, err)
+	var childFiles, parentFiles []*os.File
+	addPipe := func(childWrites bool) *os.File {
+		read, write := pipe2c(t)
+		parent, child := write, read
+		if childWrites {
+			parent, child = read, write
+		}
+		childFiles = append(childFiles, child)
+		parentFiles = append(parentFiles, parent)
+		return parent
+	}
+	t.Cleanup(func() {
+		// Preserve holds until the process has been reaped, even on failure.
+		if cmd.Process != nil && cmd.ProcessState == nil {
+			process.stop(t, p, "cleanup")
+		}
+		for _, f := range parentFiles {
+			f.Close()
+		}
+		log.Close()
+	})
+	defer func() {
+		for _, f := range childFiles {
+			f.Close()
+		}
+	}()
+
+	process.ack, process.release = addPipe(true), addPipe(false)
+	cmd.Env = phase3B7ChildEnv(cmd)
+	if config.Boundary != "" {
+		raw, err := json.Marshal(config)
+		phase3B7Must(t, err)
+		cmd.Env = append(cmd.Env, "ALAN_BARRIER="+string(raw))
+	}
+	cmd.Stdout, cmd.Stderr = log, log
+	var ready *os.File
+	if ownerDir != "" {
+		process.workerAck, process.workerPipe = addPipe(true), addPipe(false)
+		cmd.Env = append(cmd.Env, "ALAN_PHASE3B7_OWNER="+ownerDir, "TMPDIR="+filepath.Dir(config.Store))
+		cmd.ExtraFiles = childFiles
+	} else {
+		ready = addPipe(true)
+		cmd.Stdout = childFiles[len(childFiles)-1]
+		cmd.ExtraFiles = childFiles[:2]
+	}
+	p.record(t, "start-request", role, 0, map[string]any{"config": config, "command": cmd.Args})
+	err = cmd.Start()
+	pid := 0
+	if cmd.Process != nil {
+		pid = cmd.Process.Pid
+	}
+	p.record(t, "start-result", role, pid, map[string]any{"error": fmt.Sprint(err)})
+	phase3B7Must(t, err)
+	// Close parent copies of child descriptors before waiting for any data.
+	for _, f := range childFiles {
+		f.Close()
+	}
+	if ready != nil {
+		err = phase3B7Read(ready, &process.ready)
+		p.record(t, "ready", role, pid, map[string]any{"record": process.ready, "error": fmt.Sprint(err)})
+		phase3B7Must(t, err)
+	}
+	return process
+}
+
+func phase3B7Read(file *os.File, v any) error {
+	if err := file.SetReadDeadline(time.Now().Add(40 * time.Second)); err != nil {
+		return err
+	}
+	decoder := json.NewDecoder(file)
+	decoder.DisallowUnknownFields()
+	return decoder.Decode(v)
+}
+
+func (c *phase3B7Process) await(t *testing.T, p *phase3B7Protocol, action string, pipe *os.File) boundary.Event {
+	t.Helper()
+	var event boundary.Event
+	err := phase3B7Read(pipe, &event)
+	p.record(t, action, c.role, c.cmd.Process.Pid, map[string]any{"event": event, "error": fmt.Sprint(err)})
+	phase3B7Must(t, err)
+	return event
+}
+
+func (c *phase3B7Process) resume(t *testing.T, p *phase3B7Protocol, target string, pipe *os.File) {
+	t.Helper()
+	p.record(t, "release-request", c.role, c.cmd.Process.Pid, map[string]string{"target": target, "command": "c"})
+	n, err := pipe.Write([]byte{'c'})
+	p.record(t, "release-result", c.role, c.cmd.Process.Pid, map[string]any{"target": target, "bytes": n, "error": fmt.Sprint(err)})
+	phase3B7Must(t, err)
+	if n != 1 {
+		t.Fatalf("%s release wrote %d bytes", target, n)
+	}
+}
+
+func (c *phase3B7Process) stop(t *testing.T, p *phase3B7Protocol, purpose string) {
+	t.Helper()
+	pid := c.cmd.Process.Pid
+	// The controller's attempted kill is durable before delivery.
+	if purpose == "owner-loss" && !c.acknowledged {
+		t.Fatal("refuse declared owner loss without validated acknowledgments")
+	}
+	recordErr := p.append("kill-request", c.role, pid, map[string]string{"purpose": purpose, "signal": syscall.SIGKILL.String()})
+	killErr := c.cmd.Process.Signal(syscall.SIGKILL)
+	waitErr := c.cmd.Wait()
+	state := c.cmd.ProcessState
+	signal, exitCode, wait := "", -1, ""
+	if state != nil {
+		exitCode, wait = state.ExitCode(), state.String()
+		if status, ok := state.Sys().(syscall.WaitStatus); ok && status.Signaled() {
+			signal = status.Signal().String()
+		}
+	}
+	waitRecordErr := p.append("wait", c.role, pid, map[string]any{
+		"purpose": purpose, "kill_error": fmt.Sprint(killErr), "error": fmt.Sprint(waitErr),
+		"signal": signal, "exit_code": exitCode, "status": wait,
+	})
+	if err := errors.Join(recordErr, waitRecordErr); err != nil {
+		if purpose != "cleanup" {
+			t.Fatal(err)
+		}
+		t.Error(err)
+	}
+	if purpose != "cleanup" && (killErr != nil || waitErr == nil || signal != syscall.SIGKILL.String()) {
+		t.Fatalf("%s %s was not confirmed SIGKILL: kill=%v wait=%v signal=%q", c.role, purpose, killErr, waitErr, signal)
+	}
+}
+
+func phase3B7Endpoint(t *testing.T, p *phase3B7Protocol, branch, raw, working, label, listen string) *phase3B7Process {
+	t.Helper()
+	role := "endpoint-" + label
+	dir := filepath.Join(raw, role)
+	phase3B7Must(t, os.Mkdir(dir, 0700))
+	db := filepath.Join(working, role+".sqlite")
+	config := boundary.Event{Scenario: "phase3b7/" + branch + "/" + role, Token: phase3B7Token(t), Store: db}
+	if label == "b" {
+		config.Boundary, config.Phase, config.Subject, config.Sequence = "resource.applied", "post-commit", "a", 4
+	}
+	cmd := exec.Command(filepath.Join(binaries(t), "alan-resource"), "--db", db, "--token", config.Token, "--listen", listen, "--journal", filepath.Join(dir, "journal.jsonl"))
+	process := phase3B7Start(t, p, role, cmd, config, filepath.Join(dir, "process.log"), "")
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "ready.json"), process.ready))
+	ready := process.ready
+	if ready.PID != process.cmd.Process.Pid || ready.Token != config.Token || ready.Store != config.Store {
+		t.Fatalf("%s invalid ready identity: %+v", role, ready)
+	}
+	u, err := url.Parse(ready.URL)
+	phase3B7Must(t, err)
+	if u.Scheme != "http" || u.Hostname() != "127.0.0.1" || u.Port() == "" || u.Port() == "0" ||
+		u.Path != "/apply" || u.RawQuery != "" || u.Fragment != "" || u.User != nil ||
+		(listen != "127.0.0.1:0" && listen != u.Host) {
+		t.Fatalf("%s invalid ready URL %q for %q", role, ready.URL, listen)
+	}
+	return process
+}
+
+func (c *phase3B7Process) endpointCapture(t *testing.T, p *phase3B7Protocol, dir, cut, source string) {
+	t.Helper()
+	snapshot, err := resource.Inspect(t.Context(), source)
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, c.role, cut+".json"), map[string]any{
+		"ready": c.ready, "snapshot": snapshot, "error": fmt.Sprint(err),
+	}))
+	p.record(t, "endpoint-snapshot", c.role, c.cmd.Process.Pid, map[string]string{"cut": cut, "error": fmt.Sprint(err)})
+	phase3B7Must(t, err)
+}
+
+func (c *phase3B7Process) closeEndpoint(t *testing.T, p *phase3B7Protocol, raw string) {
+	t.Helper()
+	c.stop(t, p, "endpoint-stop")
+	dir := filepath.Join(raw, c.role)
+	reciprocalCopyDB(t, c.config.Store, filepath.Join(dir, "resource.sqlite"))
+	probe := filepath.Join(t.TempDir(), "resource.sqlite")
+	reciprocalCopyDB(t, c.config.Store, probe)
+	c.endpointCapture(t, p, raw, "final", probe)
+}
+
+func phase3B7Listen(t *testing.T, endpoint string) string {
+	t.Helper()
+	u, err := url.Parse(endpoint)
+	phase3B7Must(t, err)
+	host, port, err := net.SplitHostPort(u.Host)
+	phase3B7Must(t, err)
+	return net.JoinHostPort(host, port)
+}
+
+func phase3B7Absent(t *testing.T, path string) {
+	t.Helper()
+	if _, err := os.Lstat(path); !errors.Is(err, os.ErrNotExist) {
+		t.Fatalf("expected absence of %s, stat error %v", path, err)
+	}
+}

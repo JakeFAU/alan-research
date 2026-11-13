@@ -1,0 +1,361 @@
+//go:build integration
+
+package durabletest
+
+import (
+	"crypto/sha256"
+	"encoding/hex"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"io"
+	"io/fs"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"reflect"
+	goruntime "runtime"
+	"runtime/debug"
+	"strings"
+	"testing"
+
+	"github.com/JakeFAU/alan/examples/delegation"
+	"github.com/JakeFAU/alan/internal/boundary"
+	"github.com/JakeFAU/alan/runtime"
+)
+
+const phase3B7Version = "alan/phase3b7-matched/v1"
+
+type phase3B7Digest struct {
+	Bytes  int64  `json:"bytes"`
+	SHA256 string `json:"sha256"`
+}
+
+func phase3B7Must(t *testing.T, err error) {
+	t.Helper()
+	if err != nil {
+		t.Fatal(err)
+	}
+}
+
+func phase3B7Append(file *os.File, v any) error {
+	if err := json.NewEncoder(file).Encode(v); err != nil {
+		return err
+	}
+	return file.Sync()
+}
+
+func phase3B7WriteJSON(path string, v any) error {
+	f, err := os.OpenFile(path, os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
+	if err != nil {
+		return err
+	}
+	return errors.Join(phase3B7Append(f, v), f.Close())
+}
+
+func phase3B7Hash(path string) (phase3B7Digest, error) {
+	f, err := os.Open(path)
+	if err != nil {
+		return phase3B7Digest{}, err
+	}
+	defer f.Close()
+	h := sha256.New()
+	n, err := io.Copy(h, f)
+	return phase3B7Digest{n, hex.EncodeToString(h.Sum(nil))}, err
+}
+
+func phase3B7Manifest(root string) error {
+	files := make(map[string]phase3B7Digest)
+	err := filepath.WalkDir(root, func(path string, e fs.DirEntry, err error) error {
+		if err != nil || e.IsDir() {
+			return err
+		}
+		if !e.Type().IsRegular() {
+			return fmt.Errorf("nonregular archive member %s", path)
+		}
+		rel, err := filepath.Rel(root, path)
+		if err != nil {
+			return err
+		}
+		digest, err := phase3B7Hash(path)
+		if err == nil {
+			files[filepath.ToSlash(rel)] = digest
+		}
+		return err
+	})
+	if err != nil {
+		return err
+	}
+	return phase3B7WriteJSON(filepath.Join(root, "members.json"), map[string]any{"version": phase3B7Version, "files": files})
+}
+
+func phase3B7DBSet(t *testing.T, path string) map[string]phase3B7Digest {
+	t.Helper()
+	files := make(map[string]phase3B7Digest)
+	for _, suffix := range []string{"", "-wal", "-shm"} {
+		digest, err := phase3B7Hash(path + suffix)
+		if suffix != "" && errors.Is(err, os.ErrNotExist) {
+			continue
+		}
+		phase3B7Must(t, err)
+		files["runtime.sqlite"+suffix] = digest
+	}
+	phase3B7Absent(t, path+"-journal")
+	return files
+}
+
+func phase3B7Seed(t *testing.T, raw, working string, urls [2]string) delegation.Manifest {
+	t.Helper()
+	dir := filepath.Join(raw, "seed")
+	phase3B7Must(t, os.Mkdir(dir, 0700))
+	p, m, err := delegation.Reciprocal(delegation.Options{EndpointA: urls[0], EndpointB: urls[1], Scenario: delegation.S2Handshake, TerminalHandshake: true})
+	phase3B7Must(t, err)
+	reciprocalRevokeProgram(t, &p, &m)
+	bindingVersion(t, &p, runtime.RequestAuthorityBindingVersion)
+	m.Claim.Version = runtime.RequestAuthorityBindingVersion
+	if m.BAService != phase3B7Service {
+		t.Fatalf("unexpected BA service %q", m.BAService)
+	}
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "provision.json"), p))
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "manifest.json"), m))
+
+	path := filepath.Join(working, "seed.sqlite")
+	s, err := runtime.Create(t.Context(), path, p, runtime.DefaultLimits())
+	phase3B7Must(t, err)
+	phase3B7Must(t, s.Close())
+	seed := phase3B7DBSet(t, path)
+	initial := filepath.Join(dir, "initial")
+	bindingCapture(t, path, initial)
+	if !reflect.DeepEqual(seed, phase3B7DBSet(t, filepath.Join(initial, "runtime.sqlite"))) {
+		t.Fatal("sealed seed and working seed differ")
+	}
+	sets := map[string]map[string]phase3B7Digest{"seed": seed}
+	for _, name := range []string{"zero", "applied"} {
+		copyPath := filepath.Join(working, name, "runtime.sqlite")
+		reciprocalCopyDB(t, path, copyPath)
+		sets[name] = phase3B7DBSet(t, copyPath)
+	}
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "copies.json"), sets))
+	if !reflect.DeepEqual(seed, sets["zero"]) || !reflect.DeepEqual(seed, sets["applied"]) {
+		t.Fatal("seed and pre-execution copies differ")
+	}
+	return m
+}
+
+func phase3B7Owner(t *testing.T, p *phase3B7Protocol, branch, db, dir string) *phase3B7Process {
+	t.Helper()
+	phase3B7Must(t, os.Mkdir(dir, 0700))
+	executable, err := os.Executable()
+	phase3B7Must(t, err)
+	cmd := exec.Command(executable, "-test.run=^TestPhase3B7Owner$", "-test.v")
+	config := boundary.Event{Scenario: "phase3b7/" + branch + "/owner", Token: phase3B7Token(t), Store: db, Boundary: "runner.waiting", Phase: "in-flight"}
+	return phase3B7Start(t, p, "owner", cmd, config, filepath.Join(dir, "process.log"), dir)
+}
+
+func phase3B7CheckEndpointAck(c *phase3B7Process, worker, e boundary.Event) error {
+	if err := phase3B7CheckIdentity(c.config, c.cmd.Process.Pid, e); err != nil {
+		return err
+	}
+	if e.Boundary != c.config.Boundary || e.Phase != c.config.Phase ||
+		e.Subject != worker.Subject || e.Generation != worker.Generation || e.Sequence != worker.Sequence ||
+		e.Epoch != worker.Epoch || e.Attempt != worker.Attempt || e.Intent == "" {
+		return fmt.Errorf("wrong endpoint application acknowledgment: %+v", e)
+	}
+	return nil
+}
+
+func phase3B7Branch(t *testing.T, raw, working, branch string, urls *[2]string, m *delegation.Manifest) {
+	t.Helper()
+	dir := filepath.Join(raw, branch)
+	work := filepath.Join(working, branch)
+	phase3B7Must(t, os.Mkdir(dir, 0700))
+	log, err := os.OpenFile(filepath.Join(dir, "protocol.jsonl"), os.O_CREATE|os.O_EXCL|os.O_WRONLY, 0600)
+	phase3B7Must(t, err)
+	t.Cleanup(func() { phase3B7Must(t, log.Close()) })
+	t.Cleanup(func() {
+		if !t.Failed() {
+			return
+		}
+		// Process cleanups above this one have reaped every started child.
+		failed := filepath.Join(dir, "failed-working")
+		phase3B7Must(t, os.Mkdir(failed, 0700))
+		for _, name := range []string{"runtime.sqlite", "endpoint-a.sqlite", "endpoint-b.sqlite"} {
+			reciprocalCopyDB(t, filepath.Join(work, name), filepath.Join(failed, name))
+		}
+	})
+	p := &phase3B7Protocol{log: log}
+	applied := branch == "applied"
+	listens := [2]string{"127.0.0.1:0", "127.0.0.1:0"}
+	if applied {
+		for i, endpoint := range urls {
+			listens[i] = phase3B7Listen(t, endpoint)
+		}
+	}
+	ca := phase3B7Endpoint(t, p, branch, dir, work, "a", listens[0])
+	cb := phase3B7Endpoint(t, p, branch, dir, work, "b", listens[1])
+	actual := [2]string{ca.ready.URL, cb.ready.URL}
+	if actual[0] == actual[1] {
+		t.Fatal("endpoint identities share a listener")
+	}
+	if !applied {
+		*urls = actual
+		*m = phase3B7Seed(t, raw, working, *urls)
+		p.record(t, "seed-copies", "controller", os.Getpid(), map[string]string{"file": "seed/copies.json"})
+	} else if actual != *urls {
+		t.Fatalf("endpoint URLs drifted: %v != %v", actual, *urls)
+	}
+
+	db := filepath.Join(work, "runtime.sqlite")
+	ownerDir := filepath.Join(dir, "first-owner")
+	owner := phase3B7Owner(t, p, branch, db, ownerDir)
+	worker := owner.await(t, p, "pre-call-ack", owner.workerAck)
+	scheduler := owner.await(t, p, "scheduler-ack", owner.ack)
+	phase3B7Must(t, phase3B7CheckPairAck(owner.config, owner.cmd.Process.Pid, worker, scheduler))
+	owner.acknowledged = true
+	var endpointAck boundary.Event
+	if applied {
+		owner.resume(t, p, "worker", owner.workerPipe)
+		endpointAck = cb.await(t, p, "application-ack", cb.ack)
+		phase3B7Must(t, phase3B7CheckEndpointAck(cb, worker, endpointAck))
+	}
+	owner.stop(t, p, "owner-loss")
+	phase3B7Absent(t, filepath.Join(ownerDir, "abort.json"))
+	if !applied {
+		phase3B7Absent(t, filepath.Join(ownerDir, "worker-release.json"))
+	}
+	stopped := bindingCapture(t, db, filepath.Join(dir, "stopped"))
+	p.record(t, "capture", "controller", os.Getpid(), map[string]string{"cut": "stopped"})
+	ca.endpointCapture(t, p, dir, "stopped", ca.config.Store)
+	cb.endpointCapture(t, p, dir, "stopped", cb.config.Store)
+	if applied {
+		cb.resume(t, p, "endpoint-response", cb.release)
+	}
+	before, ok := stopped.Effect(m.BAService)
+	if !ok || before.ExternalAttempt == nil || !before.ExternalAttempt.Allowed ||
+		before.ExternalReceipt != nil || before.Settlement != nil || len(before.AuthorityAdmissions) != 1 ||
+		!before.AuthorityAdmissions[0].Allowed || before.ExternalAttempt.AuthorizationID != worker.Attempt ||
+		(applied && (endpointAck.Intent != before.ExternalAttempt.Request.Key || endpointAck.Epoch != before.ExternalAttempt.Request.Epoch)) {
+		t.Fatalf("unexpected retained prefix or application identity: %+v", before)
+	}
+	phase3B7Coordinates(t, stopped, m, 2, 4, 5)
+	s, err := runtime.Open(t.Context(), db, runtime.DefaultLimits())
+	openID := boundary.Event{PID: os.Getpid(), Scenario: "phase3b7/" + branch + "/recovery", Token: phase3B7Token(t), Store: db}
+	p.record(t, "recovery-open", "controller", os.Getpid(), map[string]any{"identity": openID, "error": fmt.Sprint(err)})
+	phase3B7Must(t, err)
+	defer s.Close()
+	phase3B7OpenEvidence(t, t.Context(), s, filepath.Join(dir, "recovery-open.json"), openID)
+	reopened := bindingCaptureLive(t, db, filepath.Join(dir, "reopened"))
+	p.record(t, "capture", "controller", os.Getpid(), map[string]string{"cut": "reopened"})
+	bindingRenewal(t, stopped, reopened)
+	phase3B7Coordinates(t, reopened, m, 3, 4, 5)
+	reciprocalRevoke(t, s, *m, dir)
+	p.record(t, "revocation", "controller", os.Getpid(), map[string]string{"file": "controlled-revocation.json"})
+	report, runErr := s.Run(t.Context(), phase3B7RunOptions())
+	closeErr := s.Close()
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(dir, "run.json"), map[string]any{"Report": report, "Error": fmt.Sprint(runErr)}))
+	p.record(t, "recovery-close", "controller", os.Getpid(), map[string]string{"run_error": fmt.Sprint(runErr), "close_error": fmt.Sprint(closeErr)})
+	phase3B7Must(t, errors.Join(runErr, closeErr))
+
+	ca.closeEndpoint(t, p, dir)
+	cb.closeEndpoint(t, p, dir)
+	final := bindingCapture(t, db, filepath.Join(dir, "final"))
+	p.record(t, "capture", "controller", os.Getpid(), map[string]string{"cut": "final"})
+	phase3B7Coordinates(t, final, m, 3, 4, 8)
+	now, ok := final.Effect(m.BAService)
+	if !ok || !reflect.DeepEqual(before.ExternalAttempt, now.ExternalAttempt) ||
+		now.ExternalReceipt != nil || now.Settlement != nil || len(now.AuthorityAdmissions) != 2 ||
+		!reflect.DeepEqual(before.AuthorityAdmissions[0], now.AuthorityAdmissions[0]) ||
+		now.AuthorityAdmissions[1].Allowed || now.AuthorityAdmissions[1].Ordinal != 2 ||
+		now.AuthorityAdmissions[1].Source.Epoch != 3 || now.AuthorityAdmissions[1].Reason != "authority_revoked" ||
+		!reflect.DeepEqual(report.UnknownExternal, []string{m.BAService}) {
+		t.Fatalf("unexpected final authority or custody: effect=%+v unknown=%v", now, report.UnknownExternal)
+	}
+	p.record(t, "branch-complete", "controller", os.Getpid(), nil)
+}
+
+func phase3B7Coordinates(t *testing.T, s *runtime.ExecutionSnapshot, m *delegation.Manifest, epoch, a, b int64) {
+	t.Helper()
+	left, okA := s.Run(m.A)
+	right, okB := s.Run(m.B)
+	if len(s.Runs) != 2 || !okA || !okB || left.Epoch != epoch || right.Epoch != epoch || left.Sequence != a || right.Sequence != b {
+		t.Fatalf("unexpected cut coordinates: A=%+v B=%+v", left, right)
+	}
+}
+
+func phase3B7RecordSource(t *testing.T, raw string) {
+	t.Helper()
+	prepared, err := os.ReadFile("../../phase3b7-producer-source.json")
+	phase3B7Must(t, err)
+	binary, err := os.Executable()
+	phase3B7Must(t, err)
+	ownerDigest, err := phase3B7Hash(binary)
+	phase3B7Must(t, err)
+	endpointDigest, err := phase3B7Hash(filepath.Join(binaries(t), "alan-resource"))
+	phase3B7Must(t, err)
+	env := make(map[string]string)
+	for _, key := range []string{"GOTOOLCHAIN", "GOWORK", "GOPROXY", "GOSUMDB", "GOMODCACHE", "GOCACHE", "GOFLAGS", "GOENV", "CGO_ENABLED"} {
+		env[key] = os.Getenv(key)
+	}
+	info, ok := debug.ReadBuildInfo()
+	if !ok {
+		t.Fatal("test executable build identity unavailable")
+	}
+	phase3B7Must(t, phase3B7WriteJSON(filepath.Join(raw, "source.json"), map[string]any{
+		"version": phase3B7Version, "prepared": json.RawMessage(prepared),
+		"go_version": goruntime.Version(), "goos": goruntime.GOOS, "goarch": goruntime.GOARCH,
+		"race": raceChildren, "environment": env, "test_argv": os.Args, "build_info": info,
+		"owner_binary": ownerDigest, "endpoint_binary": endpointDigest,
+	}))
+}
+
+func TestPhase3B7MatchedCapture(t *testing.T) {
+	raw := os.Getenv("ALAN_PHASE3B7_EVIDENCE")
+	if raw == "" {
+		t.Skip("explicit ALAN_PHASE3B7_EVIDENCE path required")
+	}
+	raw, err := filepath.Abs(raw)
+	phase3B7Must(t, err)
+	phase3B7Must(t, os.Mkdir(raw, 0700))
+	completed := []string{}
+	working := ""
+	t.Cleanup(func() {
+		status := "complete"
+		if t.Failed() || len(completed) != 2 {
+			status = "failed"
+		}
+		mode := "normal"
+		if raceChildren {
+			mode = "race"
+		}
+		pairErr := phase3B7WriteJSON(filepath.Join(raw, "pair.json"), map[string]any{
+			"version": phase3B7Version, "status": status, "mode": mode,
+			"controller_pid": os.Getpid(), "completed_branches": completed,
+		})
+		manifestErr := phase3B7Manifest(raw)
+		phase3B7Must(t, errors.Join(pairErr, manifestErr))
+	})
+	phase3B7RecordSource(t, raw)
+	// Register cleanup after t.TempDir so the failed seed can be copied before
+	// testing removes the temporary directory and before the pair is sealed.
+	working = t.TempDir()
+	t.Cleanup(func() {
+		if t.Failed() {
+			reciprocalCopyDB(t, filepath.Join(working, "seed.sqlite"), filepath.Join(raw, "failed-seed.sqlite"))
+		}
+	})
+	// Use a canonical physical path even when TMPDIR has an alias.
+	working, err = filepath.EvalSymlinks(working)
+	phase3B7Must(t, err)
+	for _, branch := range []string{"zero", "applied"} {
+		phase3B7Must(t, os.Mkdir(filepath.Join(working, branch), 0700))
+	}
+	var urls [2]string
+	var manifest delegation.Manifest
+	for _, branch := range []string{"zero", "applied"} {
+		if !t.Run(branch, func(t *testing.T) { phase3B7Branch(t, raw, working, branch, &urls, &manifest) }) {
+			break
+		}
+		completed = append(completed, branch)
+	}
+	t.Log("Phase 3B.7 raw evidence", strings.Join(completed, ", "), raw)
+}
