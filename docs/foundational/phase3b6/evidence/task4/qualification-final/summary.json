@@ -1,0 +1,534 @@
+[
+  {
+    "name": "ordinary-affected",
+    "argv": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-timeout=60m",
+      "./research/effectobservation/...",
+      "./research/delegationcorrespondence/..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache",
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+      "ALAN_TASK3_PROGRESS": "1",
+      "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-normal",
+      "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-normal",
+      "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+      "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+    },
+    "timeout_seconds": 4200,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 31.570549999999997,
+    "log_sha256": "e839b58ab9a1ca0723c105a23d09b0532ec3ac3521b8238f18a3a55ce826de55",
+    "log_bytes": 428328,
+    "archive_sha256": "cc00a1b1c38cba35e9ea07a2a5f4ab0330d9cb18b43e842995850dddc2b22a68",
+    "source_unchanged": true,
+    "test_summary": {
+      "pass_events": 419,
+      "package_results": [
+        {
+          "Time": "2026-11-13T14:31:59.956394-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/export",
+          "Elapsed": 0.172
+        },
+        {
+          "Time": "2026-11-13T14:31:59.961699-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/audit",
+          "Elapsed": 0.177
+        },
+        {
+          "Time": "2026-11-13T14:31:59.968654-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation",
+          "Elapsed": 0.185
+        },
+        {
+          "Time": "2026-11-13T14:32:00.245002-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:00.245058-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:00.245171-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:01.327855-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/revocation",
+          "Elapsed": 1.082
+        },
+        {
+          "Time": "2026-11-13T14:32:01.394424-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation",
+          "Elapsed": 1.149
+        },
+        {
+          "Time": "2026-11-13T14:32:06.078861-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 5.834
+        },
+        {
+          "Time": "2026-11-13T14:32:30.789366-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+          "Elapsed": 30.544
+        }
+      ],
+      "named_skips": [],
+      "failures": []
+    },
+    "matched": true
+  },
+  {
+    "name": "affected-race",
+    "argv": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-timeout=15m",
+      "-race",
+      "./research/effectobservation/...",
+      "./research/delegationcorrespondence/..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache",
+      "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/race",
+      "ALAN_TASK3_PROGRESS": "1",
+      "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-race",
+      "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-race",
+      "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+      "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+    },
+    "timeout_seconds": 1000,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 263.64076712499997,
+    "log_sha256": "f1004795d9664641dc0ddef6e22dcb9893d2225bc9fdde82de18459554e34066",
+    "log_bytes": 428360,
+    "archive_sha256": "a6deb7f830b310c5586ea2b8484f0f3c814f84ef2d9095a0ec7db5887bcba654",
+    "source_unchanged": true,
+    "test_summary": {
+      "pass_events": 419,
+      "package_results": [
+        {
+          "Time": "2026-11-13T14:32:07.14783-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/audit",
+          "Elapsed": 1.156
+        },
+        {
+          "Time": "2026-11-13T14:32:07.165596-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation/cmd/export",
+          "Elapsed": 1.172
+        },
+        {
+          "Time": "2026-11-13T14:32:07.183835-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/effectobservation",
+          "Elapsed": 1.199
+        },
+        {
+          "Time": "2026-11-13T14:32:07.621805-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/check",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:07.621879-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/corpus",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:07.622239-05:00",
+          "Action": "skip",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/mutations",
+          "Elapsed": 0
+        },
+        {
+          "Time": "2026-11-13T14:32:16.467295-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/revocation",
+          "Elapsed": 8.845
+        },
+        {
+          "Time": "2026-11-13T14:32:17.173036-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/effectobservation",
+          "Elapsed": 9.551
+        },
+        {
+          "Time": "2026-11-13T14:32:41.630423-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence/cmd/progress",
+          "Elapsed": 34.008
+        },
+        {
+          "Time": "2026-11-13T14:36:22.781831-05:00",
+          "Action": "pass",
+          "Package": "github.com/JakeFAU/alan-research/research/delegationcorrespondence",
+          "Elapsed": 255.16
+        }
+      ],
+      "named_skips": [],
+      "failures": []
+    },
+    "matched": true
+  },
+  {
+    "name": "scoped-staticcheck",
+    "argv": [
+      "staticcheck",
+      "./research/effectobservation/...",
+      "./research/delegationcorrespondence/..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 600,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 1.099324459,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "log_bytes": 0,
+    "archive_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "global-staticcheck",
+    "argv": [
+      "staticcheck",
+      "./..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 600,
+    "expected_exit": 1,
+    "exit": 1,
+    "elapsed_seconds": 3.1058746249999998,
+    "log_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+    "log_bytes": 1136,
+    "archive_sha256": "69e618279094f03e410f1989c22aaab76261dd97c7ace4eccce36822f263d75f",
+    "source_unchanged": true,
+    "baseline_log_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+    "baseline_log_byte_equal": true,
+    "matched": true
+  },
+  {
+    "name": "global-staticcheck-integration",
+    "argv": [
+      "staticcheck",
+      "-tags=integration",
+      "./..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 600,
+    "expected_exit": 1,
+    "exit": 1,
+    "elapsed_seconds": 3.40805925,
+    "log_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+    "log_bytes": 3531,
+    "archive_sha256": "ae851acb460dd61db885dbabf6c557803b99d2bc7409161f213413f5dfe3ff3b",
+    "source_unchanged": true,
+    "baseline_log_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+    "baseline_log_byte_equal": true,
+    "matched": true
+  },
+  {
+    "name": "build",
+    "argv": [
+      "go",
+      "build",
+      "./..."
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 600,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 2.2281762500000006,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "log_bytes": 0,
+    "archive_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "module-verify",
+    "argv": [
+      "go",
+      "mod",
+      "verify"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 0.07431895800000099,
+    "log_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+    "log_bytes": 21,
+    "archive_sha256": "4699dce40a065353f016ef7eb2c309ee9dee73281263a6b29287016349618a1b",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "module-tidy-diff",
+    "argv": [
+      "go",
+      "mod",
+      "tidy",
+      "-diff"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 0.07390808400000104,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "log_bytes": 0,
+    "archive_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "new-model",
+    "argv": [
+      "go",
+      "run",
+      "-buildvcs=false",
+      "./research/effectobservation/cmd/export"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 0.07957162499999981,
+    "log_sha256": "142ae6cd3ce9622ecd535d15ad67b923983d8991e357da596858c86239be8d15",
+    "log_bytes": 214308,
+    "archive_sha256": "86932a6c27edb30af628b6d2b6584ea5b19e738017e3720ae7b38e2d7c5f2112",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "frozen-exports",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3b5/evidence/task2/qualify_exports.py",
+      ".",
+      "/tmp/alan-phase3b6/exports-final",
+      "/tmp/alan-phase3b6/exports-final-evidence"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 600,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 30.081127834000004,
+    "log_sha256": "b336f071a27600d1b79d48846213ade8da25d0cf1e59e800c964d7c0783da123",
+    "log_bytes": 583,
+    "archive_sha256": "1ea5f61d1cf7ef474653e95a771e2b4e1df23a452ebc1f7c420c03eab2a53b70",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "new-audit",
+    "argv": [
+      "go",
+      "run",
+      "-buildvcs=false",
+      "./research/effectobservation/cmd/audit"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 0.07568591700000127,
+    "log_sha256": "20a5479244fc69f1655af2535d7f2adb3aac451136e76c49da1eeb3047fc26bd",
+    "log_bytes": 68895,
+    "archive_sha256": "c80ddf980a7459ae930888f62384c8ee1c7e02a5437fa12830e41251d750b809",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "prior-revocation-model",
+    "argv": [
+      "go",
+      "run",
+      "-buildvcs=false",
+      "./research/authorityservice/cmd/export",
+      "-config",
+      "S2/SeparateGrantRevocation",
+      "-assert-authority-safe"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 1.1048328329999961,
+    "log_sha256": "bb2b3fa469b82a5526691375b474c6e2984d2f532e02fda4e76bb069da4a2f26",
+    "log_bytes": 344951,
+    "archive_sha256": "b89caa77c51028db8ea08fa8941ea9745bd98ae6671a66198e1f5493e543a7b3",
+    "source_unchanged": true,
+    "matched": true
+  },
+  {
+    "name": "prior-default-progress",
+    "argv": [
+      "go",
+      "run",
+      "-buildvcs=false",
+      "./research/delegationcorrespondence/cmd/progress"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOTOOLCHAIN": "local",
+      "GOWORK": "off",
+      "GOPROXY": "off",
+      "GOSUMDB": "off",
+      "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+      "GOCACHE": "/tmp/alan-phase3b6/go-build",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+      "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+    },
+    "timeout_seconds": 300,
+    "expected_exit": 0,
+    "exit": 0,
+    "elapsed_seconds": 2.1474933339999964,
+    "log_sha256": "0dd6ff088c598ec5f82f24bd8d1e2f0418514b1e1f4d406ce80c602db1323d5b",
+    "log_bytes": 103050,
+    "archive_sha256": "b885af18a1fb2818df4073ceba2117c722d2f9be0762512c7bef0acba9e13f93",
+    "source_unchanged": true,
+    "matched": true
+  }
+]

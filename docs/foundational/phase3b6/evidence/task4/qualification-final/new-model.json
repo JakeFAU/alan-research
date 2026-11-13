@@ -1,0 +1,29 @@
+{
+  "name": "new-model",
+  "argv": [
+    "go",
+    "run",
+    "-buildvcs=false",
+    "./research/effectobservation/cmd/export"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b6/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b6/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b6/python-cache"
+  },
+  "timeout_seconds": 300,
+  "expected_exit": 0,
+  "exit": 0,
+  "elapsed_seconds": 0.07957162499999981,
+  "log_sha256": "142ae6cd3ce9622ecd535d15ad67b923983d8991e357da596858c86239be8d15",
+  "log_bytes": 214308,
+  "archive_sha256": "86932a6c27edb30af628b6d2b6584ea5b19e738017e3720ae7b38e2d7c5f2112",
+  "source_unchanged": true,
+  "matched": true
+}
