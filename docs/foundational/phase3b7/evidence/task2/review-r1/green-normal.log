@@ -1,0 +1,524 @@
+=== RUN   TestSyntheticPair
+--- PASS: TestSyntheticPair (0.11s)
+=== RUN   TestResealedAttacks
+=== RUN   TestResealedAttacks/missing-precall
+=== RUN   TestResealedAttacks/wrong-precall
+=== RUN   TestResealedAttacks/missing-scheduler
+=== RUN   TestResealedAttacks/wrong-scheduler
+=== RUN   TestResealedAttacks/premature-worker
+=== RUN   TestResealedAttacks/zero-worker-release
+=== RUN   TestResealedAttacks/wrong-kill
+=== RUN   TestResealedAttacks/wrong-wait
+=== RUN   TestResealedAttacks/owner-abort
+=== RUN   TestResealedAttacks/missing-journal
+=== RUN   TestResealedAttacks/missing-snapshot
+=== RUN   TestResealedAttacks/second-contact
+=== RUN   TestResealedAttacks/same-applied
+=== RUN   TestResealedAttacks/hidden-state
+=== RUN   TestResealedAttacks/nonexact-renewal
+=== RUN   TestResealedAttacks/outer-renewal
+=== RUN   TestResealedAttacks/stale-refusal
+=== RUN   TestResealedAttacks/wrong-root
+=== RUN   TestResealedAttacks/invented-receipt
+=== RUN   TestResealedAttacks/invented-outer-receipt
+=== RUN   TestResealedAttacks/self-declared-source
+=== RUN   TestResealedAttacks/cross-store
+=== RUN   TestResealedAttacks/wrong-application
+=== RUN   TestResealedAttacks/response-before-death
+--- PASS: TestResealedAttacks (2.50s)
+    --- PASS: TestResealedAttacks/missing-precall (0.10s)
+    --- PASS: TestResealedAttacks/wrong-precall (0.10s)
+    --- PASS: TestResealedAttacks/missing-scheduler (0.10s)
+    --- PASS: TestResealedAttacks/wrong-scheduler (0.10s)
+    --- PASS: TestResealedAttacks/premature-worker (0.11s)
+    --- PASS: TestResealedAttacks/zero-worker-release (0.12s)
+    --- PASS: TestResealedAttacks/wrong-kill (0.11s)
+    --- PASS: TestResealedAttacks/wrong-wait (0.12s)
+    --- PASS: TestResealedAttacks/owner-abort (0.12s)
+    --- PASS: TestResealedAttacks/missing-journal (0.12s)
+    --- PASS: TestResealedAttacks/missing-snapshot (0.11s)
+    --- PASS: TestResealedAttacks/second-contact (0.11s)
+    --- PASS: TestResealedAttacks/same-applied (0.11s)
+    --- PASS: TestResealedAttacks/hidden-state (0.09s)
+    --- PASS: TestResealedAttacks/nonexact-renewal (0.08s)
+    --- PASS: TestResealedAttacks/outer-renewal (0.08s)
+    --- PASS: TestResealedAttacks/stale-refusal (0.11s)
+    --- PASS: TestResealedAttacks/wrong-root (0.09s)
+    --- PASS: TestResealedAttacks/invented-receipt (0.10s)
+    --- PASS: TestResealedAttacks/invented-outer-receipt (0.08s)
+    --- PASS: TestResealedAttacks/self-declared-source (0.11s)
+    --- PASS: TestResealedAttacks/cross-store (0.11s)
+    --- PASS: TestResealedAttacks/wrong-application (0.11s)
+    --- PASS: TestResealedAttacks/response-before-death (0.11s)
+=== RUN   TestInvalidSeal
+--- PASS: TestInvalidSeal (0.10s)
+=== RUN   TestStatusNotSemanticAuthority
+--- PASS: TestStatusNotSemanticAuthority (0.11s)
+=== RUN   TestSeedProvisionJoin
+--- PASS: TestSeedProvisionJoin (0.11s)
+=== RUN   TestUnexpectedProcessArtifact
+--- PASS: TestUnexpectedProcessArtifact (0.11s)
+=== RUN   TestEmptySourceArgvFailsClosed
+--- PASS: TestEmptySourceArgvFailsClosed (0.11s)
+=== RUN   TestDeterministicReport
+--- PASS: TestDeterministicReport (0.20s)
+=== RUN   TestResealedDuplicateKey
+--- PASS: TestResealedDuplicateKey (0.07s)
+=== RUN   TestCoherentIdentityAttacks
+=== RUN   TestCoherentIdentityAttacks/precall-binding-all-copies
+=== RUN   TestCoherentIdentityAttacks/shared-store-all-copies
+=== RUN   TestCoherentIdentityAttacks/endpoint-reused-all-copies
+--- PASS: TestCoherentIdentityAttacks (0.32s)
+    --- PASS: TestCoherentIdentityAttacks/precall-binding-all-copies (0.11s)
+    --- PASS: TestCoherentIdentityAttacks/shared-store-all-copies (0.11s)
+    --- PASS: TestCoherentIdentityAttacks/endpoint-reused-all-copies (0.11s)
+=== RUN   TestSourceNullDependencyFailsClosed
+--- PASS: TestSourceNullDependencyFailsClosed (0.11s)
+=== RUN   TestSyntheticCommand
+--- PASS: TestSyntheticCommand (0.54s)
+=== RUN   TestMalformedEvidenceFailsClosed
+=== RUN   TestMalformedEvidenceFailsClosed/pair.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/pair.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/pair.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/source.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/source.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/source.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/seed/manifest.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/seed/manifest.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/seed/manifest.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/seed/provision.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/seed/provision.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/seed/provision.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/[]
+=== RUN   TestMalformedEvidenceFailsClosed/zero/recovery-open.json/null
+=== RUN   TestMalformedEvidenceFailsClosed/zero/recovery-open.json/{}
+=== RUN   TestMalformedEvidenceFailsClosed/zero/recovery-open.json/[]
+--- PASS: TestMalformedEvidenceFailsClosed (2.54s)
+    --- PASS: TestMalformedEvidenceFailsClosed/pair.json/null (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/pair.json/{} (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/pair.json/[] (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/source.json/null (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/source.json/{} (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/source.json/[] (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/manifest.json/null (0.05s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/manifest.json/{} (0.05s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/manifest.json/[] (0.05s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/provision.json/null (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/provision.json/{} (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/seed/provision.json/[] (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/null (0.07s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/{} (0.07s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/stopped/inspect.json/[] (0.07s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/null (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/{} (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/first-owner/open.json/[] (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/null (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/{} (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/ready.json/[] (0.10s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/null (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/{} (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/endpoint-b/final.json/[] (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/recovery-open.json/null (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/recovery-open.json/{} (0.11s)
+    --- PASS: TestMalformedEvidenceFailsClosed/zero/recovery-open.json/[] (0.11s)
+=== RUN   TestProjectedMatchDoesNotHideFullDifference
+--- PASS: TestProjectedMatchDoesNotHideFullDifference (0.11s)
+=== RUN   TestMalformedOuterSchema
+=== RUN   TestMalformedOuterSchema/Settings
+=== RUN   TestMalformedOuterSchema/Roots
+--- PASS: TestMalformedOuterSchema (0.09s)
+    --- PASS: TestMalformedOuterSchema/Settings (0.05s)
+    --- PASS: TestMalformedOuterSchema/Roots (0.05s)
+=== RUN   TestSeedSourceMultiplicity
+=== RUN   TestSeedSourceMultiplicity/Programs
+=== RUN   TestSeedSourceMultiplicity/Runs
+=== RUN   TestSeedSourceMultiplicity/Subjects
+=== RUN   TestSeedSourceMultiplicity/Permissions
+--- PASS: TestSeedSourceMultiplicity (0.44s)
+    --- PASS: TestSeedSourceMultiplicity/Programs (0.11s)
+    --- PASS: TestSeedSourceMultiplicity/Runs (0.11s)
+    --- PASS: TestSeedSourceMultiplicity/Subjects (0.11s)
+    --- PASS: TestSeedSourceMultiplicity/Permissions (0.11s)
+=== RUN   TestWrongFixtureManifest
+--- PASS: TestWrongFixtureManifest (0.11s)
+=== RUN   TestSyntheticRacePair
+--- PASS: TestSyntheticRacePair (0.11s)
+=== RUN   TestWrongTestSelection
+--- PASS: TestWrongTestSelection (0.11s)
+=== RUN   TestManifestCannotReplaceMemberWithMissingZeroDigest
+--- PASS: TestManifestCannotReplaceMemberWithMissingZeroDigest (0.10s)
+=== RUN   TestMissingExportsDoNotClaimByteEquality
+--- PASS: TestMissingExportsDoNotClaimByteEquality (0.00s)
+=== RUN   TestCompleteJSON
+=== RUN   TestCompleteJSON/object-order
+=== RUN   TestCompleteJSON/hidden-state
+=== RUN   TestCompleteJSON/duplicate
+=== RUN   TestCompleteJSON/null-empty
+=== RUN   TestCompleteJSON/array-order
+=== RUN   TestCompleteJSON/large-number
+=== RUN   TestCompleteJSON/descriptor-exact
+=== RUN   TestCompleteJSON/receipt-evidence
+--- PASS: TestCompleteJSON (0.00s)
+    --- PASS: TestCompleteJSON/object-order (0.00s)
+    --- PASS: TestCompleteJSON/hidden-state (0.00s)
+    --- PASS: TestCompleteJSON/duplicate (0.00s)
+    --- PASS: TestCompleteJSON/null-empty (0.00s)
+    --- PASS: TestCompleteJSON/array-order (0.00s)
+    --- PASS: TestCompleteJSON/large-number (0.00s)
+    --- PASS: TestCompleteJSON/descriptor-exact (0.00s)
+    --- PASS: TestCompleteJSON/receipt-evidence (0.00s)
+=== RUN   TestUnambiguousDifferencePath
+--- PASS: TestUnambiguousDifferencePath (0.00s)
+=== RUN   TestMalformedBytesStillReportByteEquality
+--- PASS: TestMalformedBytesStillReportByteEquality (0.00s)
+=== RUN   TestReviewR1EndpointCoverage
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/stopped/delete-coverage
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/stopped/null-total
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/stopped/null-contacts
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/stopped/null-applications
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/final/delete-coverage
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/final/null-total
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/final/null-contacts
+=== RUN   TestReviewR1EndpointCoverage/endpoint-a/final/null-applications
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/stopped/delete-coverage
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/stopped/null-total
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/stopped/null-contacts
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/stopped/null-applications
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/final/delete-coverage
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/final/null-total
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/final/null-contacts
+=== RUN   TestReviewR1EndpointCoverage/endpoint-b/final/null-applications
+--- PASS: TestReviewR1EndpointCoverage (1.78s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/stopped/delete-coverage (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/stopped/null-total (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/stopped/null-contacts (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/stopped/null-applications (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/final/delete-coverage (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/final/null-total (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/final/null-contacts (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-a/final/null-applications (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/stopped/delete-coverage (0.12s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/stopped/null-total (0.12s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/stopped/null-contacts (0.12s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/stopped/null-applications (0.12s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/final/delete-coverage (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/final/null-total (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/final/null-contacts (0.11s)
+    --- PASS: TestReviewR1EndpointCoverage/endpoint-b/final/null-applications (0.11s)
+=== RUN   TestReviewR1CompleteReports
+=== RUN   TestReviewR1CompleteReports/Steps/delete
+=== RUN   TestReviewR1CompleteReports/Steps/null
+=== RUN   TestReviewR1CompleteReports/Steps/wrong-type
+=== RUN   TestReviewR1CompleteReports/Dispatches/delete
+=== RUN   TestReviewR1CompleteReports/Dispatches/null
+=== RUN   TestReviewR1CompleteReports/Dispatches/wrong-type
+=== RUN   TestReviewR1CompleteReports/Quiescent/delete
+=== RUN   TestReviewR1CompleteReports/Quiescent/null
+=== RUN   TestReviewR1CompleteReports/Quiescent/wrong-type
+=== RUN   TestReviewR1CompleteReports/OpenRuns/delete
+=== RUN   TestReviewR1CompleteReports/OpenRuns/null
+=== RUN   TestReviewR1CompleteReports/OpenRuns/wrong-type
+=== RUN   TestReviewR1CompleteReports/UnresolvedIntents/delete
+=== RUN   TestReviewR1CompleteReports/UnresolvedIntents/null
+=== RUN   TestReviewR1CompleteReports/UnresolvedIntents/wrong-type
+=== RUN   TestReviewR1CompleteReports/PendingDeliveries/delete
+=== RUN   TestReviewR1CompleteReports/PendingDeliveries/null
+=== RUN   TestReviewR1CompleteReports/PendingDeliveries/wrong-type
+=== RUN   TestReviewR1CompleteReports/UnknownExternal/delete
+=== RUN   TestReviewR1CompleteReports/UnknownExternal/null
+=== RUN   TestReviewR1CompleteReports/UnknownExternal/wrong-type
+=== RUN   TestReviewR1CompleteReports/UnknownAdapters/delete
+=== RUN   TestReviewR1CompleteReports/UnknownAdapters/null
+=== RUN   TestReviewR1CompleteReports/UnknownAdapters/wrong-type
+=== RUN   TestReviewR1CompleteReports/Roots/delete
+=== RUN   TestReviewR1CompleteReports/Roots/null
+=== RUN   TestReviewR1CompleteReports/Roots/wrong-type
+=== RUN   TestReviewR1CompleteReports/RejectedAdmissions/delete
+=== RUN   TestReviewR1CompleteReports/RejectedAdmissions/null
+=== RUN   TestReviewR1CompleteReports/RejectedAdmissions/wrong-type
+--- PASS: TestReviewR1CompleteReports (3.26s)
+    --- PASS: TestReviewR1CompleteReports/Steps/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Steps/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Steps/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Dispatches/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Dispatches/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Dispatches/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Quiescent/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Quiescent/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Quiescent/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/OpenRuns/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/OpenRuns/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/OpenRuns/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnresolvedIntents/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnresolvedIntents/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnresolvedIntents/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/PendingDeliveries/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/PendingDeliveries/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/PendingDeliveries/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownExternal/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownExternal/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownExternal/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownAdapters/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownAdapters/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/UnknownAdapters/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Roots/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Roots/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/Roots/wrong-type (0.11s)
+    --- PASS: TestReviewR1CompleteReports/RejectedAdmissions/delete (0.11s)
+    --- PASS: TestReviewR1CompleteReports/RejectedAdmissions/null (0.11s)
+    --- PASS: TestReviewR1CompleteReports/RejectedAdmissions/wrong-type (0.11s)
+=== RUN   TestReviewR1NestedReportSchema
+=== RUN   TestReviewR1NestedReportSchema/root-charge
+=== RUN   TestReviewR1NestedReportSchema/intent-ordinal
+=== RUN   TestReviewR1NestedReportSchema/null-root
+=== RUN   TestReviewR1NestedReportSchema/null-open-run
+--- PASS: TestReviewR1NestedReportSchema (0.43s)
+    --- PASS: TestReviewR1NestedReportSchema/root-charge (0.11s)
+    --- PASS: TestReviewR1NestedReportSchema/intent-ordinal (0.11s)
+    --- PASS: TestReviewR1NestedReportSchema/null-root (0.11s)
+    --- PASS: TestReviewR1NestedReportSchema/null-open-run (0.11s)
+=== RUN   TestReviewR1AuthorizedEvent
+=== RUN   TestReviewR1AuthorizedEvent/Subject/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Generation/2
+=== RUN   TestReviewR1AuthorizedEvent/Epoch/999
+=== RUN   TestReviewR1AuthorizedEvent/Sequence/999
+=== RUN   TestReviewR1AuthorizedEvent/Phase/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Root/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/AuthorityAdmissionOrdinal/1
+=== RUN   TestReviewR1AuthorizedEvent/InFlight/["wrong"]
+=== RUN   TestReviewR1AuthorizedEvent/InFlight/[]
+=== RUN   TestReviewR1AuthorizedEvent/Generation/null
+=== RUN   TestReviewR1AuthorizedEvent/Intent/"wrong"
+=== RUN   TestReviewR1AuthorizedEvent/Attempt/"wrong"
+--- PASS: TestReviewR1AuthorizedEvent (1.30s)
+    --- PASS: TestReviewR1AuthorizedEvent/Subject/"wrong" (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Generation/2 (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Epoch/999 (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Sequence/999 (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Phase/"wrong" (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Root/"wrong" (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/AuthorityAdmissionOrdinal/1 (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/InFlight/["wrong"] (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/InFlight/[] (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Generation/null (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Intent/"wrong" (0.11s)
+    --- PASS: TestReviewR1AuthorizedEvent/Attempt/"wrong" (0.11s)
+=== RUN   TestReviewR1EffectiveSelection
+=== RUN   TestReviewR1EffectiveSelection/single-equals
+=== RUN   TestReviewR1EffectiveSelection/double-equals
+=== RUN   TestReviewR1EffectiveSelection/single-separated
+=== RUN   TestReviewR1EffectiveSelection/double-separated
+=== RUN   TestReviewR1EffectiveSelection/normal-driver
+=== RUN   TestReviewR1EffectiveSelection/terminal-after-selector
+=== RUN   TestReviewR1EffectiveSelection/override
+=== RUN   TestReviewR1EffectiveSelection/override-double-separated
+=== RUN   TestReviewR1EffectiveSelection/duplicate-identical
+=== RUN   TestReviewR1EffectiveSelection/terminated-before
+=== RUN   TestReviewR1EffectiveSelection/positional-before
+=== RUN   TestReviewR1EffectiveSelection/hidden-override-after-termination
+=== RUN   TestReviewR1EffectiveSelection/selector-as-another-value
+=== RUN   TestReviewR1EffectiveSelection/missing-value
+=== RUN   TestReviewR1EffectiveSelection/repeat-count
+=== RUN   TestReviewR1EffectiveSelection/zero-count
+=== RUN   TestReviewR1EffectiveSelection/skip-selected
+--- PASS: TestReviewR1EffectiveSelection (1.89s)
+    --- PASS: TestReviewR1EffectiveSelection/single-equals (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/double-equals (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/single-separated (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/double-separated (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/normal-driver (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/terminal-after-selector (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/override (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/override-double-separated (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/duplicate-identical (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/terminated-before (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/positional-before (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/hidden-override-after-termination (0.12s)
+    --- PASS: TestReviewR1EffectiveSelection/selector-as-another-value (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/missing-value (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/repeat-count (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/zero-count (0.11s)
+    --- PASS: TestReviewR1EffectiveSelection/skip-selected (0.11s)
+=== RUN   TestReviewR1CoherentTruncation
+=== RUN   TestReviewR1CoherentTruncation/endpoint-a
+=== RUN   TestReviewR1CoherentTruncation/endpoint-b
+=== RUN   TestReviewR1CoherentTruncation/run
+--- PASS: TestReviewR1CoherentTruncation (0.34s)
+    --- PASS: TestReviewR1CoherentTruncation/endpoint-a (0.12s)
+    --- PASS: TestReviewR1CoherentTruncation/endpoint-b (0.11s)
+    --- PASS: TestReviewR1CoherentTruncation/run (0.11s)
+=== RUN   TestReviewR1RequiredSnapshotMembers
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Contacts/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Contacts/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Contacts/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Requests/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Requests/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Synchronous/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Synchronous/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Synchronous/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Total/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Total/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Total/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Applications/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Applications/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/Applications/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/JournalMode/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/JournalMode/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/JournalMode/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Requests/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Requests/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Applications/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Applications/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Applications/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Synchronous/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Synchronous/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Synchronous/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Total/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Total/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Total/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Contacts/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Contacts/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/Contacts/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/JournalMode/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/JournalMode/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/JournalMode/null
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/delete
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/wrong-type
+=== RUN   TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/null
+--- PASS: TestReviewR1RequiredSnapshotMembers (0.01s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/BusyTimeoutMS/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Contacts/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Contacts/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Contacts/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/ForeignKeys/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Requests/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Requests/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Synchronous/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Synchronous/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Synchronous/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Total/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Total/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Total/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Applications/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Applications/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/Applications/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/JournalMode/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/JournalMode/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/JournalMode/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/QueryOnly/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteSourceID/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/zero/SQLiteVersion/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Requests/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Requests/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteSourceID/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Applications/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Applications/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Applications/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/BusyTimeoutMS/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/ForeignKeys/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/SQLiteVersion/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Synchronous/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Synchronous/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Synchronous/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Total/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Total/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Total/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Contacts/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Contacts/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/Contacts/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/JournalMode/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/JournalMode/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/JournalMode/null (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/delete (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/wrong-type (0.00s)
+    --- PASS: TestReviewR1RequiredSnapshotMembers/applied/QueryOnly/null (0.00s)
+=== RUN   TestReviewR1RequiredAuthorizationMembers
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Subject
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Generation
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Epoch
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Sequence
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Phase
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Intent
+=== RUN   TestReviewR1RequiredAuthorizationMembers/Attempt
+=== RUN   TestReviewR1RequiredAuthorizationMembers/InFlight
+--- PASS: TestReviewR1RequiredAuthorizationMembers (0.87s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Subject (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Generation (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Epoch (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Sequence (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Phase (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Intent (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/Attempt (0.11s)
+    --- PASS: TestReviewR1RequiredAuthorizationMembers/InFlight (0.11s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/matchedcapture	18.005s
+=== RUN   TestUsageAndRejectedDirectory
+=== RUN   TestUsageAndRejectedDirectory/missing
+=== RUN   TestUsageAndRejectedDirectory/flag
+=== RUN   TestUsageAndRejectedDirectory/extra
+=== RUN   TestUsageAndRejectedDirectory/empty
+--- PASS: TestUsageAndRejectedDirectory (0.00s)
+    --- PASS: TestUsageAndRejectedDirectory/missing (0.00s)
+    --- PASS: TestUsageAndRejectedDirectory/flag (0.00s)
+    --- PASS: TestUsageAndRejectedDirectory/extra (0.00s)
+    --- PASS: TestUsageAndRejectedDirectory/empty (0.00s)
+=== RUN   TestWriteError
+--- PASS: TestWriteError (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/matchedcapture/cmd/check	0.133s

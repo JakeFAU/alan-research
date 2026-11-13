@@ -189,16 +189,25 @@ func identity(e, config event, pid int, path string) {
 }
 func checkBoundaries(f map[string][]byte, branch string, owner process, worker event, q dc.WireRequest) {
 	p := branch + "/first-owner/boundaries.jsonl"
-	events := lines[event](f, p)
+	events := lines[json.RawMessage](f, p)
 	pre, wait, authorized := 0, 0, 0
-	for _, e := range events {
+	for _, rawEvent := range events {
+		e := decode[event](rawEvent, p)
 		identity(e, owner.Config, owner.PID, p)
 		switch e.Boundary {
 		case "dispatch.admitted":
 			require(e.Phase == "pre-call" && same(e, worker) && authorized == 1, p, "unexpected worker or pre-call before authorization")
 			pre++
 		case "external.authorized":
-			require(e.Intent == service && e.Attempt == q.Authorization, p, "unexpected authorization")
+			_ = decodeComplete[event](rawEvent, p)
+			// The passive native event is logged before the inherited observer
+			// enriches its own scheduler-ack copy with InFlight.
+			require(e.Intent == service && e.Attempt == q.Authorization &&
+				e.Subject == q.Subject && e.Generation == q.Generation &&
+				e.Epoch == q.Epoch && e.Sequence == q.Sequence &&
+				e.Phase == "pre-transport" && e.Root == "" &&
+				e.AuthorityAdmissionOrdinal == 0 && e.InFlight == nil,
+				p, "selected native authorization coordinates/selectors")
 			authorized++
 		case "runner.waiting":
 			if e.Phase == "in-flight" {

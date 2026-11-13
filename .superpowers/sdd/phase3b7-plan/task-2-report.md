@@ -157,3 +157,91 @@ qualification are still required before claiming a matched concrete witness.
 Full staged source/test/documentation diff and binary-fixture provenance were
 self-reviewed; the scope contains no unrelated production changes. No push,
 amend, merge or genuine matched-capture invocation was performed.
+
+## Review round 1 corrections
+
+Independent review rejected `eca3b3bee03b32c7bfffc65cba124d3ba638446c`
+with four reproduced acceptance gaps. All four are addressed in this follow-up;
+the original REJECT remains in `task-2-review.md`. Original probe source and
+output were copied byte-for-byte from `/tmp/phase3b7-review-probes/` to
+`evidence/task2/review-r1/probe_test.go.txt` and `result.log`; the original
+`overlay.json` is also retained. These copies were not edited. This correction is subject to independent re-review, not yet approval.
+
+The owning source was inspected in the Task 1 frozen prepared checkout
+`/tmp/alan-phase3b7/producer-verified`, with the same runtime commit/tree and
+complete preparation manifest identified above. Relevant native definitions
+are `internal/fixture/resource.go:35` (Snapshot), `:218` (Inspect),
+`internal/executor/runner.go:27` (RunReport), `:498` (finishRun),
+`internal/executor/program.go:81` (Intent),
+`internal/executor/composition_inspect.go:11` (RootCompletion),
+`internal/boundary/boundary.go:17` (Event), and
+`internal/executor/external.go:174` (the emitted authorization event).
+Go 1.27.4's `src/flag/flag.go:1075` was also inspected for termination,
+flag spellings, separate values, and repeated assignment behavior.
+
+Corrections:
+
+- Endpoint exports now validate all eleven ordinary snapshot fields and native
+  types, including required zero-valued fields. Both endpoints and both cuts
+  are checked. Native zero `Requests:null`, `Applications:[]`, and explicit
+  integer counters remain valid. Applications:null and missing fields fail.
+- Both final successful Run reports require all ten native fields, typed nested
+  records, non-null report arrays, and nonnegative counters. Their Roots join
+  the final raw export. Complete-schema validation compares a typed round trip
+  only as a validation step; the original entire JSON inputs still determine
+  full report equality. Equal truncated reports therefore remain equal but
+  fail Raw and Supported.
+- The passive authorization boundary joins the selected retained wire's entire
+  Subject/Generation/Epoch/Sequence and Intent/Attempt, requires pre-transport,
+  empty optional root/admission selectors, and nil InFlight. The inherited
+  scheduler acknowledgment's enriched InFlight remains separately checked.
+  The synthetic fixture's previously empty authorization Phase was corrected
+  to the owning source's pre-transport value; producer source is unchanged.
+- Source argv is parsed with Go's flag parser. Exactly one exact test.run
+  selector and effective count one are required. Single/double dash and
+  separate/equal-value spellings are supported. Repeated selectors, effective
+  overrides, selector text used as another option's value, positional tails,
+  termination before selection, skip flags, and other unsupported flags fail.
+  The supported driver flags are listed in `03-comparison.md`.
+
+`review_r1_test.go` adds resealed deletion/null/wrong-type/contradiction/override
+controls, coherent both-cut zero deletions, identically truncated reports,
+nested report omissions, and lawful flag forms. It also directly probes each
+ordinary snapshot member's presence/type. Existing normal/race synthetic
+positives and original causal, equality, malformed-input, and command tests
+remain in the full suite. No genuine pair ran or archive was rewritten; no
+SQLite API was used. Old anchored authority entry points and their source are
+unchanged in this correction. The earlier four historical output-byte
+regressions remain prior evidence and were not rerun for these isolated fixes.
+
+All Go commands below used the offline environment prefix shown in the
+original verification section (including STATICCHECK_CACHE for Staticcheck).
+Complete outputs are retained under `evidence/task2/review-r1/`:
+
+| Command | Exit | Output |
+| --- | --- | --- |
+| `go test -count=1 ./research/matchedcapture -run '^TestReviewR1'` (first test-writing attempt) | 1 | `red-setup-error.log`: missing test-file brace; no tests ran |
+| Same command after correcting test syntax, before checker fixes | 1 | `red.log`: semantic RED failures in all five initial control groups, 7.815s |
+| Same command after checker fixes | 0 | `green-first.log`: initial new controls, 7.857s |
+| `go test -count=1 -v ./research/matchedcapture ./cmd/check` | 1 | `normal-wrong-command-path.log`: actual checker passed in 17.225s; nonexistent root command path failed setup |
+| `staticcheck ./research/matchedcapture/... ./cmd/check` | 1 | `staticcheck-wrong-command-path.log`: nonexistent root command path |
+| `go test -overlay=/tmp/phase3b7-review-probes/overlay.json -run '^TestIndependentReviewProbes$' -v ./research/matchedcapture` | 0 | `probes-green.log`: all four original attacks rejected, 0.554s |
+| `go test -count=1 -v ./research/matchedcapture/...` | 0 | `green-normal.log`: checker 18.005s; actual nested command 0.133s |
+| `staticcheck ./research/matchedcapture/...` | 0 | `staticcheck.log`: empty, no diagnostics |
+| `go test -race -count=1 -v ./research/matchedcapture/...` | 0 | `green-race.log`: checker 216.329s, nested command 1.126s; no race diagnostics |
+
+Scoped normal/race suites include every test in `check_test.go`,
+`compare_test.go`, `review_r1_test.go`, and the actual nested command package.
+Staticcheck covers the same affected package tree. Broad authority/runtime
+verification was not repeated because those sources are unchanged. Formatting
+(`gofmt -l research/matchedcapture`) and `git diff --check` emitted no output
+and exited 0. Byte comparisons confirmed preserved review probe/result files
+against their originals; SHA-256 values are respectively
+`93d7dcd40f2e2300938a8f72641ffee248701ca4401992417730f651bbe2f674`
+and `45fdd362a1272b3843863ee72128093852a6bff7ba5608b3aefd9d55b9319beb`.
+
+Full follow-up source/test/documentation/evidence diff was self-reviewed.
+All four reproduced findings now have passing rejection controls, while lawful
+synthetic positives pass. Independent re-review and genuine qualification
+remain outstanding; all source-conditioned and single-host limits above
+remain in force. There is no new manuscript empirical claim in this fix.

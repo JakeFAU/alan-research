@@ -147,7 +147,7 @@ func fixture(t *testing.T) map[string][]byte {
 		put(base+"first-owner/pre-call.json", worker)
 		authorized := worker
 		authorized.Boundary = "external.authorized"
-		authorized.Phase = ""
+		authorized.Phase = "pre-transport"
 		authorized.AuthorityAdmissionOrdinal = 0
 		passive := owner
 		f[base+"first-owner/boundaries.jsonl"] = append(append(append(jsonBytes(authorized), '\n'), append(jsonBytes(worker), '\n')...), append(jsonBytes(passive), '\n')...)

@@ -63,6 +63,16 @@ func decode[T any](b []byte, path string) T {
 	require(e == nil, path, fmt.Sprint(e))
 	return v
 }
+
+// decodeComplete validates a frozen native JSON schema without projecting the
+// input used by equality. Round-trip equality also detects missing required
+// zero-valued fields and null scalars that encoding/json otherwise accepts.
+func decodeComplete[T any](b []byte, path string) T {
+	v := decode[T](b, path)
+	c, e := CompareJSON(b, jsonBytes(v))
+	require(e == nil && c.StructuralEqual, path, "incomplete or non-native schema")
+	return v
+}
 func jsonBytes(v any) []byte {
 	b, e := json.Marshal(v)
 	if e != nil {

@@ -5,6 +5,7 @@ import (
 	"compress/gzip"
 	_ "embed"
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io"
 	"io/fs"
@@ -12,6 +13,7 @@ import (
 	"path/filepath"
 	"runtime/debug"
 	"sort"
+	"strconv"
 	"strings"
 )
 
@@ -119,13 +121,7 @@ func checkSource(f map[string][]byte, p pair) {
 	require((p.Mode == "race") == s.Race && (p.Mode == "normal" || p.Mode == "race"), "source.json", "race mode join")
 	require(s.OwnerBinary.Bytes > 0 && validSHA(s.OwnerBinary.SHA256) && s.EndpointBinary.Bytes > 0 && validSHA(s.EndpointBinary.SHA256), "source.json", "missing binary identities")
 	require(len(s.TestArgv) > 1 && s.TestArgv[0] != "", "source.json", "test executable argv")
-	found := false
-	for _, arg := range s.TestArgv {
-		if arg == "-test.run=^TestPhase3B7MatchedCapture$" {
-			found = true
-		}
-	}
-	require(found, "source.json", "capture test not selected")
+	checkTestSelection(s.TestArgv[1:])
 	settings := map[string]string{}
 	for _, v := range s.BuildInfo.Settings {
 		_, exists := settings[v.Key]
@@ -192,4 +188,29 @@ func checkArchiveShape(d map[string]Digest) {
 	for _, name := range names {
 		require(allowed[name], name, "outside complete frozen archive schema")
 	}
+}
+
+// Use the owning Go flag grammar (including --, double dash, and separated
+// values), while admitting only the frozen non-selection-changing driver flags.
+func checkTestSelection(args []string) {
+	flags := flag.NewFlagSet("capture", flag.ContinueOnError)
+	flags.SetOutput(io.Discard)
+	var selected string
+	selections := 0
+	flags.Func("test.run", "", func(v string) error { selections++; selected = v; return nil })
+	count := flags.Int("test.count", 1, "")
+	flags.Duration("test.timeout", 0, "")
+	flags.String("test.testlogfile", "", "")
+	flags.Bool("test.paniconexit0", false, "")
+	flags.BoolFunc("test.v", "", func(v string) error {
+		if v == "test2json" {
+			return nil
+		}
+		_, e := strconv.ParseBool(v)
+		return e
+	})
+	err := flags.Parse(args)
+	require(err == nil && flags.NArg() == 0 && selections == 1 &&
+		selected == "^TestPhase3B7MatchedCapture$" && *count == 1,
+		"source.json.test_argv", "unsupported or nonunique effective capture selection")
 }
