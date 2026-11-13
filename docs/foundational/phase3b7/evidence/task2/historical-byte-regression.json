@@ -1,0 +1,41 @@
+{
+  "base": "f238b778ac786d3efbd86f94e98068439b9e4ed2",
+  "reports": [
+    {
+      "mode": "normal",
+      "case": "N07",
+      "bytes": 357891,
+      "sha256": "add2467d01d836b5815cc7088afb635d0a83099388be6eca50707d7b7a4b57da",
+      "old_exit": 0,
+      "new_exit": 0,
+      "identical": true
+    },
+    {
+      "mode": "normal",
+      "case": "applied-unknown-revoked-before-fresh-gate",
+      "bytes": 287740,
+      "sha256": "d79d4f4a27d30e9c2c577c5ca6e14cec1d5ae7c448bbbff3509dc7cf31f6c57d",
+      "old_exit": 0,
+      "new_exit": 0,
+      "identical": true
+    },
+    {
+      "mode": "race",
+      "case": "N07",
+      "bytes": 357888,
+      "sha256": "bb311a46e144b06b5b822df843c84784b7d81aec1fa4dc9bb573c193e01efb9f",
+      "old_exit": 0,
+      "new_exit": 0,
+      "identical": true
+    },
+    {
+      "mode": "race",
+      "case": "applied-unknown-revoked-before-fresh-gate",
+      "bytes": 287737,
+      "sha256": "e775313dba06581105e5166e2c4dcd96e56d5c69fe2f1c010ba87168fb9cdf9e",
+      "old_exit": 0,
+      "new_exit": 0,
+      "identical": true
+    }
+  ]
+}
