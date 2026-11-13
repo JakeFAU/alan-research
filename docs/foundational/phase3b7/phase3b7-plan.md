@@ -45,7 +45,7 @@
 
 ### Task 2: Implement independent raw comparison and causal validation
 
-**Files:** Create `research/matchedcapture/check.go`, `protocol.go`, `compare.go`, focused `*_test.go`, `cmd/check/main.go` and tests; `docs/foundational/phase3b7/03-comparison.md`, `evidence/task2/`. Add small adapters to the existing correspondence package only if required to expose unchanged validation, with old output byte regressions.
+**Files:** Create `research/matchedcapture/check.go` (report/orchestration), `protocol.go` (process chronology), `compare.go` (strict complete JSON equality), `store.go` (raw binding/renewal/model projection), `world.go` (endpoint coverage), `source.go` (source/member seals), focused `*_test.go`, `cmd/check/main.go` and tests; `docs/foundational/phase3b7/03-comparison.md`, `evidence/task2/`. Shared wire types may live in `wire.go`; keep responsibilities focused. Add small adapters to the existing correspondence package only if required to expose unchanged validation, with old output byte regressions.
 
 **Interfaces:** `CheckDirectory(dir string) (Report, error)` reads the pair directory without opening databases. The opt-in command accepts `-pair DIR` and prints deterministic JSON; errors exit nonzero. The Report contains independent seal/source/raw/protocol/world/equality/model verdicts, exact input digests and deterministic JSON paths for differences, with no inferred success from case names. Consume Task 1's actual schema documented in its report. Full-export equality covers seed/post-open/stopped/reopened/final; final report equality is separate. Model mapping uses the existing Phase 3B.6 `StoreView` domain and independent ledger for each supported cut.
 
