@@ -1,0 +1,7 @@
+{
+  "prepared_root": "/tmp/alan-phase3b7/producer-verified",
+  "manifest_sha256": "557e832fc84e7cbdb47d1d4767938f80ddd1ca1d77c8c647cb665a3436546994",
+  "runtime_members_checked": 637,
+  "overlays_checked": 4,
+  "all_equal": true
+}

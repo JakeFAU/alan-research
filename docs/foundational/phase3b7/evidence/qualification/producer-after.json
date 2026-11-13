@@ -1,0 +1,9 @@
+{
+  "runtime_members_checked": 637,
+  "overlays_checked": 4,
+  "all_equal": true,
+  "capture_attempts": {
+    "normal": 1,
+    "race": 1
+  }
+}

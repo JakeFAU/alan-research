@@ -1,0 +1,168 @@
+{
+  "normal": {
+    "report_sha256": "39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df",
+    "repeated_bytes_equal": true,
+    "Supported": false,
+    "Seal": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Source": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Raw": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Protocol": {
+      "Valid": false,
+      "Reasons": [
+        "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+        "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+        "protocol: branch chronology prerequisite"
+      ]
+    },
+    "World": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Equality": {
+      "final": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "first-owner/post-open": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "reopened": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "seed-copies": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "stopped": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      }
+    },
+    "ReportEquality": {
+      "ByteEqual": true,
+      "StructuralEqual": true,
+      "Paths": []
+    },
+    "Worlds": {
+      "applied": {
+        "Contacts": 1,
+        "Applications": 1,
+        "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+        "Receipt": {
+          "Key": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+          "Profile": "idempotent",
+          "Delta": 1,
+          "Mutation": 1,
+          "Total": 1,
+          "Process": "b1c35a5d006f4950cce119fd35541643",
+          "PID": 55230
+        }
+      },
+      "zero": {
+        "Contacts": 0,
+        "Applications": 0,
+        "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+        "Receipt": null
+      }
+    }
+  },
+  "race": {
+    "report_sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217",
+    "repeated_bytes_equal": true,
+    "Supported": false,
+    "Seal": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Source": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Raw": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Protocol": {
+      "Valid": false,
+      "Reasons": [
+        "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+        "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+        "protocol: branch chronology prerequisite"
+      ]
+    },
+    "World": {
+      "Valid": true,
+      "Reasons": []
+    },
+    "Equality": {
+      "final": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "first-owner/post-open": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "reopened": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "seed-copies": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "stopped": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      }
+    },
+    "ReportEquality": {
+      "ByteEqual": true,
+      "StructuralEqual": true,
+      "Paths": []
+    },
+    "Worlds": {
+      "applied": {
+        "Contacts": 1,
+        "Applications": 1,
+        "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+        "Receipt": {
+          "Key": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+          "Profile": "idempotent",
+          "Delta": 1,
+          "Mutation": 1,
+          "Total": 1,
+          "Process": "3a7482ff8cf29c476028c29a142fd87f",
+          "PID": 55373
+        }
+      },
+      "zero": {
+        "Contacts": 0,
+        "Applications": 0,
+        "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+        "Receipt": null
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "research_head": "193039406557cb37be815d5f846b22a75d48fde6",
+  "freeze_sha256": "747a2eceb8ce790e05c5c5b65d952da6399bee8c303655ba09d9df6ef0dc2350",
+  "input_count": 627,
+  "checker": "/tmp/alan-phase3b7/matched-check",
+  "checker_bytes": 5472738,
+  "checker_sha256": "e49b1d5d0d8caa33916cf9557aca453c346ddeb24cfd906b728a3c80c7f6075c",
+  "build_info": "/tmp/alan-phase3b7/matched-check: go1.27.4\n\tpath\tgithub.com/JakeFAU/alan-research/research/matchedcapture/cmd/check\n\tmod\tgithub.com/JakeFAU/alan-research\tv0.0.0-20261113213809-193039406557+dirty\t\n\tbuild\t-buildmode=exe\n\tbuild\t-compiler=gc\n\tbuild\tCGO_ENABLED=1\n\tbuild\tCGO_CFLAGS=\n\tbuild\tCGO_CPPFLAGS=\n\tbuild\tCGO_CXXFLAGS=\n\tbuild\tCGO_LDFLAGS=\n\tbuild\tGOARCH=arm64\n\tbuild\tGOOS=darwin\n\tbuild\tGOARM64=v8.0\n\tbuild\tvcs=git\n\tbuild\tvcs.revision=193039406557cb37be815d5f846b22a75d48fde6\n\tbuild\tvcs.time=2026-11-13T21:38:09Z\n\tbuild\tvcs.modified=true\n"
+}

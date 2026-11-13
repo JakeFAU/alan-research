@@ -1,0 +1,22 @@
+{
+  "archive": "raw.tar.gz",
+  "archive_bytes": 471,
+  "archive_members_equal": true,
+  "archive_sha256": "1b2e438939bcca0d80e6eb6ce1d8a83da3145c2264432eb8b3b560778a38f1db",
+  "archiver_sha256": "ac727808853b3e416957f62c9a15037de53abff222e7a6bb51fb4c487a4906aa",
+  "files": {
+    "nested/opaque.sqlite": {
+      "bytes": 256,
+      "mode": 420,
+      "sha256": "40aff2e9d2d8922e47afd4648e6967497158785fbd1da870e7110266bf944880"
+    },
+    "note.json": {
+      "bytes": 38,
+      "mode": 420,
+      "sha256": "e0015f0cbd0b77104cf959e1f4cc9a18dabb99ca9a217a514764806f3c9f2c46"
+    }
+  },
+  "producer_member_seal_present": false,
+  "raw_directory": "/private/tmp/alan-phase3b7/archiver-control-input",
+  "raw_unchanged": true
+}

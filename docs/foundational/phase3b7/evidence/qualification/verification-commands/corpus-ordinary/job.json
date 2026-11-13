@@ -1,0 +1,31 @@
+{
+  "name": "corpus-ordinary",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-timeout=60m",
+    "./research/effectobservation/...",
+    "./research/delegationcorrespondence/..."
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b7/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b7/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b7/python-cache",
+    "ALAN_TASK3_RAW": "/tmp/alan-phase3b3-runtime-frozen/normal",
+    "ALAN_TASK3_PROGRESS": "1",
+    "ALAN_PHASE3B4_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/raw-normal",
+    "ALAN_PHASE3B4_PROMOTED_CHECK_ROOT": "/tmp/alan-phase3b5/corpus/promoted-normal",
+    "ALAN_REVOCATION_CORPUS": "/tmp/alan-phase3b5/corpus",
+    "ALAN_EFFECT_OBSERVATION_CORPUS": "/tmp/alan-phase3b5/corpus"
+  },
+  "timeout_seconds": 1000,
+  "go_test_json": true
+}

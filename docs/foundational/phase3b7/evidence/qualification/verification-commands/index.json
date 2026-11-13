@@ -1,0 +1,101 @@
+{
+  "build": {
+    "elapsed_seconds": 9.852774540999999,
+    "exit": 0,
+    "files": {
+      "job.json": "ff1202c354837d56c8ab62313101452ab9722590ee0545a6d2eb5da0db52aabd",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "b5eb00473e2d2eac882e250bf119a0df9926da073b036e3b1a3ccb4754a59634"
+    }
+  },
+  "corpus-ordinary": {
+    "elapsed_seconds": 32.981241167,
+    "exit": 0,
+    "files": {
+      "job.json": "ac002f8e51ca513d966290d56ff9ce0a1eef7bbb700b32c56f439ab91532f8ce",
+      "output.log.gz": "42e39abbaa7d5e7c5502d2fce0b7edce14f3fe35e54f999c50673351d728ead8",
+      "result.json": "cb165eda55e5afeeb87255f3248df9265e9728f8d103b491c3bb5f818a20a85b"
+    }
+  },
+  "corpus-race": {
+    "elapsed_seconds": 267.564483,
+    "exit": 0,
+    "files": {
+      "job.json": "9d9773a081fb220cc829f241842ccb06881545bf6ffa7280514e81e78be7e047",
+      "output.log.gz": "a287c7f3dd87e9e14dd9a957f02fb0a511438201107e7ba16fea110fd7e36cec",
+      "result.json": "402cb32a13fdc3ac7db692572733da96db9bf7b41daf8b45402f635a7f5f6db5"
+    }
+  },
+  "format": {
+    "elapsed_seconds": 0.02418604199999999,
+    "exit": 0,
+    "files": {
+      "job.json": "53afe3395f0f63ef27ec37c510ebdf2ab3f71e1540dc600010db0c5555181ea9",
+      "output.log.gz": "a977e00c312e57847a4c030e0c9d89026410648815f2b9e6c0bc3ae31ebf3dcd",
+      "result.json": "f51ecab3994b5062226dfcbe929ca6e18891efb273077d9160a7f46a4ca2b0ec"
+    }
+  },
+  "format-current": {
+    "elapsed_seconds": 0.012318541999999998,
+    "exit": 0,
+    "files": {
+      "job.json": "ef3d8ae11de83c8861dadb19eec2cb663bb01980d990bf965bc1bc37de240787",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "e53323a426028e0ea4733af313fe1ec55306104fa436e1e00fb94d4677d2cf9f"
+    }
+  },
+  "freeze-check": {
+    "elapsed_seconds": 1.7743004169999999,
+    "exit": 0,
+    "files": {
+      "job.json": "95007b581446d73e48b69c6541b1abaefaa4682a7ce4d0d67efe237f435991a5",
+      "output.log.gz": "fa24b3f3328ef2bbdb612006ce9141a0efff4223e5dc9f47301cebcaf5184312",
+      "result.json": "44abb08887621b0639451789a5e3507ef0c032184b4ac4845931868aae006f4f"
+    }
+  },
+  "global-staticcheck": {
+    "elapsed_seconds": 12.081024167,
+    "exit": 1,
+    "files": {
+      "job.json": "e2ffbb8b2d14a9cc559048b87a20cf04484c42395af6b195c7c74553ddbcc680",
+      "output.log.gz": "69e618279094f03e410f1989c22aaab76261dd97c7ace4eccce36822f263d75f",
+      "result.json": "7e3ccd2877f3a9f27bb73ad37190adfa4528b8553a5fbe63124f2475ca322849"
+    }
+  },
+  "global-staticcheck-integration": {
+    "elapsed_seconds": 12.387026209,
+    "exit": 1,
+    "files": {
+      "job.json": "ac58fa9b837e9a2a3b13a1047c30a1e802006f142a817d3d5a2dcb67793cd86d",
+      "output.log.gz": "ae851acb460dd61db885dbabf6c557803b99d2bc7409161f213413f5dfe3ff3b",
+      "result.json": "99eed21749d7552775f3ff7186769cf00ad5dc7d0ea72aceb7ab109a21cd2bd6"
+    }
+  },
+  "module-tidy-diff": {
+    "elapsed_seconds": 0.18499395800000001,
+    "exit": 0,
+    "files": {
+      "job.json": "c905e81e3cf0a621c16968d596298dd303e5d04f37167f91cee9d976a95bb745",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "839c80287a0f32e8d9860cb3cb28504033db1e5801b515f43713d3781722a6c9"
+    }
+  },
+  "module-verify": {
+    "elapsed_seconds": 0.180291209,
+    "exit": 0,
+    "files": {
+      "job.json": "eb95cb7b32b6226a41ea294853271cd6d8521fa5760df8db8f49a7260a66e036",
+      "output.log.gz": "4699dce40a065353f016ef7eb2c309ee9dee73281263a6b29287016349618a1b",
+      "result.json": "ab6388bf9b7babbac7560a66fb5874f97c8f9eb2e70e9aaf2e51a2e26a706c83"
+    }
+  },
+  "scoped-staticcheck": {
+    "elapsed_seconds": 3.3492720840000003,
+    "exit": 0,
+    "files": {
+      "job.json": "7f92c298c0037c56dda7ae2c79a8529edac687b25d634622d2a00de70c62e7be",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "384c6efd609d76bcb3036a37dcef7c3575e4d9ae9be891c8ca34f04217985bd5"
+    }
+  }
+}

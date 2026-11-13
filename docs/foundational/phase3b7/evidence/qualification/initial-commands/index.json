@@ -1,0 +1,65 @@
+{
+  "build-checker": {
+    "exit": 0,
+    "elapsed_seconds": 0.533681792,
+    "files": {
+      "job.json": "dd6bfbb7b53b7b091b1a691dbfc37042b840657421145fc3a0f5ebd285b23788",
+      "output.log.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "result.json": "8958a92b6d2261269a04d88837eabd3a693367aa4974a85e7a3ccc0742b6dd63"
+    }
+  },
+  "capture-normal-v1": {
+    "exit": 0,
+    "elapsed_seconds": 4.035817208,
+    "files": {
+      "job.json": "1bb061dabde1a37e985d7abed35b113040976788ef59511c2abf3469dec90735",
+      "output.log.gz": "d463450163ccd517503c8d7674296eb80211e579f07da69ec3e7b02617a0ecb3",
+      "result.json": "a217cd711ac4e9ea0935ad06cd35a5576ff65ee84de432a51f6a28e22cbedfef"
+    }
+  },
+  "capture-race-v1": {
+    "exit": 0,
+    "elapsed_seconds": 11.621542834,
+    "files": {
+      "job.json": "a8c8e6137ecab5d07cec7c72666eb350018d36902554e537974848a9b5c571b3",
+      "output.log.gz": "f2cd821cf73bef821ba3ab8df180a669557d6e7d374226599328c98715a67eb1",
+      "result.json": "82e37d4b620bb936a63ec17bad65f603467efa36c6ca918ae53660131dace3e8"
+    }
+  },
+  "check-normal-v1-1": {
+    "exit": 1,
+    "elapsed_seconds": 0.24708479100000003,
+    "files": {
+      "job.json": "2813b47947d4b460e9706c9503dcf2dc04fb830c2f0f072aabafbbbdbbff9aaf",
+      "output.log.gz": "ebcdba5cee64df6e9fac75d7bde6ba9ec7e17b6852c9f7b3a4325b99ef802a1b",
+      "result.json": "9a842bc7f213d0dba59b52a505df916dd8b40b48e94e326929e614e4742b4b11"
+    }
+  },
+  "check-normal-v1-2": {
+    "exit": 1,
+    "elapsed_seconds": 0.139403667,
+    "files": {
+      "job.json": "7045b2d9afe9e9dd093ec6c5422efe0065ebb9a717e66962091fdf3aa04f96a4",
+      "output.log.gz": "ebcdba5cee64df6e9fac75d7bde6ba9ec7e17b6852c9f7b3a4325b99ef802a1b",
+      "result.json": "edfa02f6cb51baee53685947476d91b3a49dde4e68ac9cebeb19afd6e2253dbd"
+    }
+  },
+  "check-race-v1-1": {
+    "exit": 1,
+    "elapsed_seconds": 0.12922950000000002,
+    "files": {
+      "job.json": "459559e79bc897d1cc8591bd12d31af7145ee358c4a84a307090b0dd213bca61",
+      "output.log.gz": "4100ae0a67d4c15eaae79442fd276960c698df52f2c10168093f8ce82e18c9da",
+      "result.json": "2a4f25c5cf6d882120e71182053574796ec0bd3456f257173c09487d447b16ec"
+    }
+  },
+  "check-race-v1-2": {
+    "exit": 1,
+    "elapsed_seconds": 0.128186292,
+    "files": {
+      "job.json": "6331b914111728dead1e7407184be86e2bff41b917b6764a6e7437811ba71ded",
+      "output.log.gz": "4100ae0a67d4c15eaae79442fd276960c698df52f2c10168093f8ce82e18c9da",
+      "result.json": "2c68aa255ba0911e3118c579f815c95b66f1250f506141f2ad30ff66c421c207"
+    }
+  }
+}

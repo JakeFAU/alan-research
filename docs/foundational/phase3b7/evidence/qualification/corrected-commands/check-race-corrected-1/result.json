@@ -1,0 +1,19 @@
+{
+  "name": "check-race-corrected-1",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "/tmp/alan-phase3b7/matched-check-corrected",
+    "-pair",
+    "/tmp/alan-phase3b7/raw-race-v1"
+  ],
+  "timeout_seconds": 120,
+  "job_sha256": "112c31671363ba91d4216880940c21e4640d6157fc8f981a6c48a9eded61a6cc",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:50:27Z",
+  "pid": 58627,
+  "exit": 0,
+  "elapsed_seconds": 0.3110845,
+  "output_bytes": 437910,
+  "output_sha256": "4d7326b200b8bacc679eb0f3c1a57e16b3bab6628756855a82cb00a1e820c38f",
+  "compressed_output_sha256": "ef3fc4395ecb8e48065699d4944e6b54406923f2fe07172cfc0fac9ae3b2f1c6"
+}

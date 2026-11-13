@@ -1,0 +1,30 @@
+{
+  "name": "global-staticcheck-integration",
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "argv": [
+    "staticcheck",
+    "-tags=integration",
+    "./..."
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b7/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b7/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b7/python-cache"
+  },
+  "timeout_seconds": 600,
+  "expected_exit": 1,
+  "job_sha256": "ac58fa9b837e9a2a3b13a1047c30a1e802006f142a817d3d5a2dcb67793cd86d",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:55:08Z",
+  "pid": 60031,
+  "exit": 1,
+  "elapsed_seconds": 12.387026209,
+  "output_bytes": 3531,
+  "output_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+  "compressed_output_sha256": "ae851acb460dd61db885dbabf6c557803b99d2bc7409161f213413f5dfe3ff3b"
+}

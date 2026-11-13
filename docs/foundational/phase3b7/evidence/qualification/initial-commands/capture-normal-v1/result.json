@@ -1,0 +1,51 @@
+{
+  "name": "capture-normal-v1",
+  "cwd": "/tmp/alan-phase3b7/producer-verified",
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-count=1",
+    "-tags=integration",
+    "-timeout=10m",
+    "./internal/durabletest",
+    "-run",
+    "^TestPhase3B7MatchedCapture$"
+  ],
+  "environment": {
+    "GOTOOLCHAIN": "local",
+    "GOWORK": "off",
+    "GOPROXY": "off",
+    "GOSUMDB": "off",
+    "GOMODCACHE": "/tmp/alan-phase3b5/modcache",
+    "GOCACHE": "/tmp/alan-phase3b7/go-build",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3b7/staticcheck",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3b7/python-cache",
+    "ALAN_PHASE3B7_EVIDENCE": "/tmp/alan-phase3b7/raw-normal-v1"
+  },
+  "timeout_seconds": 700,
+  "go_test_json": true,
+  "job_sha256": "1bb061dabde1a37e985d7abed35b113040976788ef59511c2abf3469dec90735",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:38:40Z",
+  "pid": 55168,
+  "exit": 0,
+  "elapsed_seconds": 4.035817208,
+  "output_bytes": 3287,
+  "output_sha256": "6beb74702fb6f1d5051bccdea893ab8193504311513ce9b38f6f2308090457f0",
+  "compressed_output_sha256": "d463450163ccd517503c8d7674296eb80211e579f07da69ec3e7b02617a0ecb3",
+  "test_summary": {
+    "pass_events": 3,
+    "package_results": [
+      {
+        "Time": "2026-11-13T16:38:44.196296-05:00",
+        "Action": "pass",
+        "Package": "github.com/JakeFAU/alan/internal/durabletest",
+        "Elapsed": 3.263
+      }
+    ],
+    "named_skips": [],
+    "failures": [],
+    "non_event_lines": []
+  }
+}

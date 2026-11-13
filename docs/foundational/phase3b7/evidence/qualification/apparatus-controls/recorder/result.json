@@ -1,0 +1,19 @@
+{
+  "cwd": "/tmp/alan-phase3b7",
+  "argv": [
+    "python3",
+    "-c",
+    "print(\"command recorder control\"); raise SystemExit(7)"
+  ],
+  "timeout_seconds": 30,
+  "expected_exit": 7,
+  "job_sha256": "3c902f6aa12719bd9b6770b1f0f587b253d98d80cfb3c09e88ec40b12d4219cf",
+  "runner_sha256": "098dca69a75c2414990bbe66fa1527a3ba6633e303a5cc9a68ad28c95773b873",
+  "started_utc": "2026-11-13T21:01:52Z",
+  "pid": 46536,
+  "exit": 7,
+  "elapsed_seconds": 0.023961082999999998,
+  "output_bytes": 25,
+  "output_sha256": "1d7551149cf2a3f946d5dc0acb845710a7c691f5aa13b5a6061c0a23341a4b0d",
+  "compressed_output_sha256": "5fb682605ddc7b691a8208935a401abe8d8be9eee820de5cd05acbfce16f48f2"
+}
