@@ -1,0 +1,9 @@
+{
+  "qualification_archived_files": 38,
+  "manuscript_compressed_artifacts": 8,
+  "local_links_checked": 31,
+  "new_section_exact_after_markup_normalization": true,
+  "changed_abstract_conclusion_prose_equal": true,
+  "current_paper_hashes_match": true,
+  "result": "PASS"
+}

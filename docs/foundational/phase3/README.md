@@ -17,7 +17,7 @@ safety and system progress are separate claims.
 
 ## Current status
 
-[The Phase 3B closure assessment](../phase3b-closure/01-assessment.md) closes the bounded investigation against the original gates below. It records contracts, adverse witnesses, implemented fragments and explicit obstructions, without claiming a unified two-agent correctness theorem. Positive cross-invocation delegation, delegated cancellation-after-admission custody and whole-pair split-effect completion remain unestablished. Phase 3C's composition/equivalence, hiding/regrouping, three-agent cycle and shared-authority fan-out questions remain open.
+[The Phase 3B closure assessment](../phase3b-closure/01-assessment.md) closes the bounded investigation against the original gates below. It records contracts, adverse witnesses, implemented fragments and explicit obstructions, without claiming a unified two-agent correctness theorem. Positive cross-invocation delegation, delegated cancellation-after-admission custody and whole-pair split-effect completion remain unestablished. [Phase 3C.1](../phase3c1/04-results.md) now gives a conditional source argument for possible-completion preservation under compatible grouping in a fixed three-agent chain/cycle, with complete small abstract checks, factored transport probes and concrete hiding failures. It retains every named debt, binding and endpoint policy dependency. This does not establish shared-authority fan-out, arbitrary contexts/topologies, runtime refinement or general Phase 3C closure.
 
 ## First slice
 

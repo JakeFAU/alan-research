@@ -1,0 +1,13 @@
+=== RUN   TestConcreteHiddenDebtAndHiddenWait
+--- PASS: TestConcreteHiddenDebtAndHiddenWait (0.00s)
+=== RUN   TestPreRecordLossCustodyAndNoReapplication
+--- PASS: TestPreRecordLossCustodyAndNoReapplication (0.00s)
+=== RUN   TestAbstractEligibilityIsNotImmediateReadiness
+--- PASS: TestAbstractEligibilityIsNotImmediateReadiness (0.00s)
+=== RUN   TestWitnessHostileBindingsReleaseAndDuplicateApplication
+--- PASS: TestWitnessHostileBindingsReleaseAndDuplicateApplication (0.00s)
+=== RUN   TestEveryOldEdgeRepresentativeProjectionAndLifting
+    concrete_test.go:257: old durable-ACK states=311; factored representatives=7464; micro arcs checked=49992; enabled AB lifts=4320
+--- PASS: TestEveryOldEdgeRepresentativeProjectionAndLifting (0.14s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/contractcomposition	0.286s

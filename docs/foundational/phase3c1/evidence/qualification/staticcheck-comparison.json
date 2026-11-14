@@ -1,0 +1,20 @@
+[
+  {
+    "check": "global-staticcheck",
+    "historical_path": "docs/foundational/phase3b7/evidence/qualification/verification-commands/global-staticcheck/output.log.gz",
+    "historical_findings": 13,
+    "current_findings": 13,
+    "exact_bytes_equal": true,
+    "missing": [],
+    "added": []
+  },
+  {
+    "check": "global-staticcheck-integration",
+    "historical_path": "docs/foundational/phase3b7/evidence/qualification/verification-commands/global-staticcheck-integration/output.log.gz",
+    "historical_findings": 31,
+    "current_findings": 31,
+    "exact_bytes_equal": true,
+    "missing": [],
+    "added": []
+  }
+]

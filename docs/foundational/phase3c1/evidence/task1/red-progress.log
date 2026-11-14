@@ -1,0 +1,33 @@
+--- FAIL: TestClosedPortsOwnersResourcesRejected (0.00s)
+    compose_test.go:5: closed unresolved B port
+    compose_test.go:6: accepted duplicated owner
+    compose_test.go:8: accepted shared resource
+--- FAIL: TestGroupedEqualityAllMasks (0.00s)
+    compose_test.go:16: lost named contract at chain/0
+--- FAIL: TestSerialCycleObstructionAndAcyclicSufficiency (0.00s)
+    explore_test.go:6: missing complete graph
+--- FAIL: TestCompleteGraphRetainsAllIncomingArcs (0.00s)
+    explore_test.go:17: two independent four-stage paths: got 0 states 0 arcs 0 completing
+--- FAIL: TestHiddenDebtCompletionCollision (0.00s)
+    model_test.go:22: completion must retain hidden AB debt
+--- FAIL: TestHiddenWaitReadinessCollision (0.00s)
+    model_test.go:30: serial A must read its named outgoing stage
+--- FAIL: TestConfigRejectsChangedBindingsAndResources (0.00s)
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/resource_alias (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/grant (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/generation (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/operation (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/duplicate_identity (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/owner (0.00s)
+        model_test.go:45: accepted incompatible contract
+    --- FAIL: TestConfigRejectsChangedBindingsAndResources/mask (0.00s)
+        model_test.go:45: accepted incompatible contract
+    model_test.go:46: fixture chain/0: <nil> contractcomposition.Config{Topology:"", ServiceMask:0x0, Agents:[]contractcomposition.Agent(nil), Originals:[]contractcomposition.Binding(nil)}
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition	0.092s
+FAIL

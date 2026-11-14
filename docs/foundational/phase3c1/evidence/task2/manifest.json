@@ -1,0 +1,861 @@
+{
+  "artifacts": [
+    {
+      "compressed_sha256": "e4b0f47e065c9a620a1fa135b75ca847d22f0bac916c7ddfec676aa7f0294c16",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/export.json.gz",
+      "raw_bytes": 1584501,
+      "raw_sha256": "48b4cfb4cc10b7dde4979874f669014f4863e1e05e48737ef4561f119dfc3602"
+    },
+    {
+      "compressed_sha256": "0c02cd2eb9a98ec2f63d99ca77d9f0a1c64e05a22e4391598fcd6d093a434678",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/schema-version.json.gz",
+      "raw_bytes": 705224,
+      "raw_sha256": "66e650a422d0fba9b9bf0ba7026e0fdfa42740c074296bc62b5c4d920a5cbfdb"
+    },
+    {
+      "compressed_sha256": "b3316723173090ae750a62e09b70ae892e558f220d9f5a05bdd3a4167d6c43db",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/missing-field.json.gz",
+      "raw_bytes": 705232,
+      "raw_sha256": "8d6b4e84e260ffb405dd11bfd4a0119fcefea5537b03a7f8b8c5f22300fe0339"
+    },
+    {
+      "compressed_sha256": "cbcdf6af1d37b58858473b00ef14f8480f1fe73887d4acc2c9bc4c5ffc7f29dc",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/bool-as-count.json.gz",
+      "raw_bytes": 705246,
+      "raw_sha256": "e7152a468e923f5ecac8a41f75753db6839dcbd2661567021afcabaa0fe6309f"
+    },
+    {
+      "compressed_sha256": "e191a3f32b64f1d0a2aa14ca12225281f58022a26f3d8a501ac02c15417fefd2",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/null-array.json.gz",
+      "raw_bytes": 704759,
+      "raw_sha256": "45846bdbde11a74843be640bd76e6506bd82b2532e9d69ce259e514ec569b102"
+    },
+    {
+      "compressed_sha256": "a3588e4cbfe95bfebe48d067811d1f06f45b554ce2f0a0d3057a7f48386ec5dc",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/missing-config.json.gz",
+      "raw_bytes": 648589,
+      "raw_sha256": "b9441dd78a7ced39d96af3e7f05b23bc8c5fa6e5439cfbacaf8fe8dff4739e2b"
+    },
+    {
+      "compressed_sha256": "6c3cd79d3ee28c0524929c3de232ee5e494bc9119080b37532283dbbde9fcc33",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/forged-binding.json.gz",
+      "raw_bytes": 705224,
+      "raw_sha256": "43ee8b7c92e9f92d1bc3cf889eaa0856236f711d6c742e03273fd6bfd9dfcb21"
+    },
+    {
+      "compressed_sha256": "f5e59d5f0473ecad907f276330f881a45b2a5db0fea3de148c2eb69a4bbfe347",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/forged-config.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "a01c6f940891637b47b6629d73b451c55815b0c103f52982ee8257b6ed700ab4"
+    },
+    {
+      "compressed_sha256": "1509f8160719741dc8c2ae330f7a6288f415a84891b7b3b70efa01d786d32cf0",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/missing-arc.json.gz",
+      "raw_bytes": 705000,
+      "raw_sha256": "fe5a4a02b036e3ba2d4661cacd989a618f1360270f19e1115fb10cb9c1cb470e"
+    },
+    {
+      "compressed_sha256": "8551a3d431f1d333df2f50fd1d019d0ac05933e09e1f95c7c49f01356614430e",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/extra-arc.json.gz",
+      "raw_bytes": 705488,
+      "raw_sha256": "47132969ed530320c839ac3b20176f041125b54f96ef48891a455801ec7812d7"
+    },
+    {
+      "compressed_sha256": "0c7cc69ecbd5070372043d2250fbfd28c5fe82dd45881217c43cad811027fdc3",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/missing-incoming-arc.json.gz",
+      "raw_bytes": 705000,
+      "raw_sha256": "3f62e824899162922fe6c9b26b85ed9c1255eeade53e23b8e10e417b929733b0"
+    },
+    {
+      "compressed_sha256": "b918f3cf9de147e46b2e78aa7d841c67735011863c05ec94d0273087244669c0",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-serial-guard.json.gz",
+      "raw_bytes": 705487,
+      "raw_sha256": "38dcbd1ddb3a0ea5634e2f6da72ec064fa4433437076d97885b60624953d141a"
+    },
+    {
+      "compressed_sha256": "4368c8ef8846e2fbce07cf72810f9685c80475ad5c2e49536b10a8eb83b59fc2",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-complete.json.gz",
+      "raw_bytes": 705243,
+      "raw_sha256": "77a1160c1c5c2f3dfc408ac6c42870cb0150008f6ff3e92ccf6d68ea2ea635ce"
+    },
+    {
+      "compressed_sha256": "93797fc5a4e339f3bb70ab1f9d9182e39547617bae3c225c367d450135284904",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-can-complete.json.gz",
+      "raw_bytes": 705245,
+      "raw_sha256": "34739487eb5a1d94b96657add1e4a7a58035ae71e0b122f42365a92876f12d1f"
+    },
+    {
+      "compressed_sha256": "2bb78915eef2e4aebe6d71ac0c738bdbedfdeb8f9b924fe63e8bf2c4dca31ad4",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-count.json.gz",
+      "raw_bytes": 705243,
+      "raw_sha256": "7107c2febc8e0162feb1395f17bf0c4285790b33146c24932efda8c41940c710"
+    },
+    {
+      "compressed_sha256": "d586dc65160c83039dc59ad2aa051a357f12e979d3963b4526d5a33ddeba946d",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-parent.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "cd44a8958f8027d55612192d21c7ad8d9a04c5454ffccb094eb7ac372fe809d0"
+    },
+    {
+      "compressed_sha256": "852dbab2450e2552cf9e13e2fd66e3ecdbfa29d2fa6171271e3bd9be709a8779",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/unreachable-state.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "cfc483fe82ab65c4eb660249b2ccaf36ff7699065ce88f23f583472cc94dc0b2"
+    },
+    {
+      "compressed_sha256": "e3dd154dea764cb2a415844d2b5bb1f1cec09f831e518a7caabc33af8921edd0",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/dependency-erasure.json.gz",
+      "raw_bytes": 705143,
+      "raw_sha256": "ac1f4b230e041d719ca92d7c07cafc4120390fa03d1cc25afe63aadabaf83ada"
+    },
+    {
+      "compressed_sha256": "318e74ac2a22d85bdb6c298942df1bc9735322587ade5c96e869ed03ff9d63b9",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/dependency-order.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "f1a6462d01a3424ad056e6b9ae8b04afed0c95bc9ef3e07083f4e9405243a2cf"
+    },
+    {
+      "compressed_sha256": "fdf922650d4099aa242d29ae7e1fbc3c3c7497145ac0d1eb207c22da9c4825c3",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/dropped-hidden-debt.json.gz",
+      "raw_bytes": 705062,
+      "raw_sha256": "94efbdbce07617396cb2466a9a13f05ef6804eb69b717030f80a7110f88db133"
+    },
+    {
+      "compressed_sha256": "7c33f29c2d149cbd7295451473e59a55cc6536a808e8c810933febeee322748c",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/collapsed-availability.json.gz",
+      "raw_bytes": 705200,
+      "raw_sha256": "ee2dc564b4aef5bece17ae1adf32bc77de6d87a6b1454ea9fa640c5549df96bc"
+    },
+    {
+      "compressed_sha256": "a2d618c450b683b3c55964dd3db96461ece0aa4f6dab407e5ad27561b1191e81",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/erased-port.json.gz",
+      "raw_bytes": 705201,
+      "raw_sha256": "23aaa672e0d5356c0ea70a77a2cd7c825ba87727d569842b13a03dbe773e91fa"
+    },
+    {
+      "compressed_sha256": "ec18708db7c9b0b62e3d08a75a0ad0801db28a65533f29a62cdd0a6be27156d6",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-grouped-config.json.gz",
+      "raw_bytes": 705062,
+      "raw_sha256": "1444a9de98fca94d1935b23cb8a66daa9c0825cf65eb71ee7fb12f42ea367169"
+    },
+    {
+      "compressed_sha256": "0fe340a42e45f7610d35aa9a951f03ce3b5ac24eadda83dcdad3ba569e83c275",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/forged-event-binding.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "1fbcfaa9838c9cccddd3affdce5b410ab089283b27c65cd50f31a127f7c3c6aa"
+    },
+    {
+      "compressed_sha256": "5125609cee078ed4ed8f99801264b36ab882da2693ce9ff55facf4de72035afa",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/invented-initial-receipt.json.gz",
+      "raw_bytes": 705246,
+      "raw_sha256": "6f6faeaa34e3fdfdf45bc2276524e77bbc4cc20b8222345a6cf9d086ab0c97c1"
+    },
+    {
+      "compressed_sha256": "5db0d16fe100b679540ff28d6803a0824b81d7d317a8d93b04c63af9711f5990",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/post-state-invention.json.gz",
+      "raw_bytes": 705246,
+      "raw_sha256": "6d2d91a2fafe8848072580194c9301d2f55ca61e3d34bfc323c6a574910de497"
+    },
+    {
+      "compressed_sha256": "5f879d68462f3bc5dcc48d023166b9f76b240a849c4daf179b642be658522eb7",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/hidden-application-erasure.json.gz",
+      "raw_bytes": 705017,
+      "raw_sha256": "9e16c4af0892d98b45fa401d261ab621f0ad8bf507c35826ef14396868a8e8a3"
+    },
+    {
+      "compressed_sha256": "508ab5776c77abd568cf2d0034f38b2b7ce25de84925538be150066838f99c9e",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-witness-progress.json.gz",
+      "raw_bytes": 705243,
+      "raw_sha256": "79c78e2f5cd4ab80604ea56ed2d534eefdd8969b75dfe08f40e55312a7db961b"
+    },
+    {
+      "compressed_sha256": "f6e97f00a6bc88b9a2819a7b8beabfc552ae169aa87f213e990bf412f3614923",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/premature-release.json.gz",
+      "raw_bytes": 705238,
+      "raw_sha256": "c19d58a49361fe129011d51c8e847ed326113d20d89ebedd5322f7f0bd876ee3"
+    },
+    {
+      "compressed_sha256": "b9155b2f2beea65e207652ffa83252b0ef2ec44ff032fe4fb7d64dd6cf3f846c",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/repeated-application.json.gz",
+      "raw_bytes": 706795,
+      "raw_sha256": "a748839ecca0e8cba70d598d95281d9b09961a4c51fe36bc5e43f0a9df3d0c8e"
+    },
+    {
+      "compressed_sha256": "9b2342e472cda828fd03d4be71910414e318903c045eafb2f9a001e844ebf6b9",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/down-actor.json.gz",
+      "raw_bytes": 703738,
+      "raw_sha256": "a94c5721dca275494d5df72b66c4399798c7ba2c2b80c89c64f90959dd51aeca"
+    },
+    {
+      "compressed_sha256": "ec3a2f0047c21e6710c088124c75cbecb78897449d2a7e5c166919f798e2475d",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/invented-receipt.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "de1c1033f0a1aeb50659abf7cd7763c84c16aa2e815ee95012301334bdba2a3e"
+    },
+    {
+      "compressed_sha256": "39bce130ce2a45d1f79e08a77871b7eb9ea17a5788ea575dc8741d280096938f",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-collision.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "1060b6495784b7da501487dc1aae2adedc02f0ab180d8766f6cfc266d44f3b18"
+    },
+    {
+      "compressed_sha256": "af72cd03b9f766d6336c8c2af06e94275735aebb86b33172e103802a3573e68d",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-retry.json.gz",
+      "raw_bytes": 705244,
+      "raw_sha256": "04fb8abeed3d52637bde05a022e8eab7d7a8c9c8e2438812f7ac6dbaa2746cd9"
+    },
+    {
+      "compressed_sha256": "185974ec8ccfc9d5e642531acc96c2ae52c9c9162aa9b110f10119f2fd4d1156",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/missing-loss-witness.json.gz",
+      "raw_bytes": 682919,
+      "raw_sha256": "c53b7505226b07180d12eeb3223a4018b31069a3d91da5621e5733f81f846cb1"
+    },
+    {
+      "compressed_sha256": "53e7d8e1eb7b258a7844461d91a0f8e6e615d78c6ef3458b7aad1d550bbec03f",
+      "gzip_mtime": 0,
+      "path": "docs/foundational/phase3c1/evidence/task2/hostile/overstated-claim.json.gz",
+      "raw_bytes": 705247,
+      "raw_sha256": "ecad160e1ee4c98e8b9a26db6d6abb993af141f78b842b70095ca5c975475022"
+    }
+  ],
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "--version"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/python-version.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "go",
+        "version"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/go-version.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/source-head.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "go",
+        "run",
+        "./research/contractcomposition/cmd/export"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/export-1.log",
+      "stdout": "/tmp/alan-phase3c1/task2/fresh-1.json"
+    },
+    {
+      "argv": [
+        "go",
+        "run",
+        "./research/contractcomposition/cmd/export"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/export-2.log",
+      "stdout": "/tmp/alan-phase3c1/task2/fresh-2.json"
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/fresh-1.json"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/audit.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools",
+        "-p",
+        "test_*.py"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "log": "docs/foundational/phase3c1/evidence/task2/unittest.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/schema-version.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/schema-version.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/missing-field.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/missing-field.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/bool-as-count.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/bool-as-count.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/null-array.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/null-array.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/missing-config.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/missing-config.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/forged-binding.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/forged-binding.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/forged-config.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/forged-config.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/missing-arc.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/missing-arc.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/extra-arc.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/extra-arc.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/missing-incoming-arc.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/missing-incoming-arc.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-serial-guard.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-serial-guard.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-complete.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-complete.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-can-complete.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-can-complete.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-count.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-count.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-parent.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-parent.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/unreachable-state.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/unreachable-state.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/dependency-erasure.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/dependency-erasure.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/dependency-order.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/dependency-order.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/dropped-hidden-debt.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/dropped-hidden-debt.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/collapsed-availability.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/collapsed-availability.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/erased-port.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/erased-port.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-grouped-config.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-grouped-config.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/forged-event-binding.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/forged-event-binding.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/invented-initial-receipt.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/invented-initial-receipt.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/post-state-invention.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/post-state-invention.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/hidden-application-erasure.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/hidden-application-erasure.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-witness-progress.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-witness-progress.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/premature-release.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/premature-release.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/repeated-application.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/repeated-application.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/down-actor.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/down-actor.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/invented-receipt.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/invented-receipt.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-collision.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-collision.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/wrong-retry.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/wrong-retry.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/missing-loss-witness.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/missing-loss-witness.log",
+      "stdout": null
+    },
+    {
+      "argv": [
+        "python3",
+        "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/audit.py",
+        "/tmp/alan-phase3c1/task2/overstated-claim.json"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "log": "docs/foundational/phase3c1/evidence/task2/hostile/overstated-claim.log",
+      "stdout": null
+    }
+  ],
+  "fresh_exports_equal": true,
+  "frozen_sample_sha256": "48b4cfb4cc10b7dde4979874f669014f4863e1e05e48737ef4561f119dfc3602",
+  "historical_logs": [
+    {
+      "outcome": "36 assertion failures before implementation; outer shell exit was not captured separately",
+      "path": "red-initial.log"
+    },
+    {
+      "outcome": "one wrong expected-reason failure in down-actor fixture; corrected post-states to reach availability guard",
+      "path": "green-attempt-1.log"
+    },
+    {
+      "exit_code": 1,
+      "outcome": "two assertions expose missing loss-witness coverage; subsequently implemented",
+      "path": "red-loss-witness.log"
+    }
+  ],
+  "hostile_rejections": 35,
+  "retained_file_sha256": {
+    "docs/foundational/phase3c1/evidence/task2/audit.log": "ffab40c286726386177944649ebc9cc31d84b6aa6848578439ac35d0c0705057",
+    "docs/foundational/phase3c1/evidence/task2/capture.py": "4c2f75a88223a1f4ce9edac6bbf9cb9c206b278954fd4b71aa746cf01041226b",
+    "docs/foundational/phase3c1/evidence/task2/export-1.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3c1/evidence/task2/export-2.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "docs/foundational/phase3c1/evidence/task2/export.json.gz": "e4b0f47e065c9a620a1fa135b75ca847d22f0bac916c7ddfec676aa7f0294c16",
+    "docs/foundational/phase3c1/evidence/task2/go-version.log": "c6f1c8d54aedc3afa72560d934397ad6c33b28f1b4d3546ec53176439b2397d5",
+    "docs/foundational/phase3c1/evidence/task2/green-attempt-1.log": "989ccb68495065e158d9d83af2930eb83c5e5e92f9b04626c942b60df36f6383",
+    "docs/foundational/phase3c1/evidence/task2/hostile-rejections.json": "75fcb193f1ad0ecc489bb1414f1b70e7f1b18a0774b2493017d21dee781148f3",
+    "docs/foundational/phase3c1/evidence/task2/hostile/bool-as-count.json.gz": "cbcdf6af1d37b58858473b00ef14f8480f1fe73887d4acc2c9bc4c5ffc7f29dc",
+    "docs/foundational/phase3c1/evidence/task2/hostile/bool-as-count.log": "d229658d6c0c5dded25b10565cdbb21a0c167cfae9f3ffbd178ee8ddc97dd3c7",
+    "docs/foundational/phase3c1/evidence/task2/hostile/collapsed-availability.json.gz": "7c33f29c2d149cbd7295451473e59a55cc6536a808e8c810933febeee322748c",
+    "docs/foundational/phase3c1/evidence/task2/hostile/collapsed-availability.log": "341295f59c4a5d9c0388620aa814707ac8ec23073e559080c1a69346d48563d5",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dependency-erasure.json.gz": "e3dd154dea764cb2a415844d2b5bb1f1cec09f831e518a7caabc33af8921edd0",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dependency-erasure.log": "e75d85561ac348056ee21d5f556358b5c6129f8c5b1675c3765ae51f81fed128",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dependency-order.json.gz": "318e74ac2a22d85bdb6c298942df1bc9735322587ade5c96e869ed03ff9d63b9",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dependency-order.log": "e75d85561ac348056ee21d5f556358b5c6129f8c5b1675c3765ae51f81fed128",
+    "docs/foundational/phase3c1/evidence/task2/hostile/down-actor.json.gz": "9b2342e472cda828fd03d4be71910414e318903c045eafb2f9a001e844ebf6b9",
+    "docs/foundational/phase3c1/evidence/task2/hostile/down-actor.log": "7984736095c3b03219b955044fd8f4a6edccdde6330e6cc66aa7229181d6613a",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dropped-hidden-debt.json.gz": "fdf922650d4099aa242d29ae7e1fbc3c3c7497145ac0d1eb207c22da9c4825c3",
+    "docs/foundational/phase3c1/evidence/task2/hostile/dropped-hidden-debt.log": "341295f59c4a5d9c0388620aa814707ac8ec23073e559080c1a69346d48563d5",
+    "docs/foundational/phase3c1/evidence/task2/hostile/erased-port.json.gz": "a2d618c450b683b3c55964dd3db96461ece0aa4f6dab407e5ad27561b1191e81",
+    "docs/foundational/phase3c1/evidence/task2/hostile/erased-port.log": "341295f59c4a5d9c0388620aa814707ac8ec23073e559080c1a69346d48563d5",
+    "docs/foundational/phase3c1/evidence/task2/hostile/extra-arc.json.gz": "8551a3d431f1d333df2f50fd1d019d0ac05933e09e1f95c7c49f01356614430e",
+    "docs/foundational/phase3c1/evidence/task2/hostile/extra-arc.log": "4b838ca889e41edd1837de3920ea2ceaf90165f445258644a7e0d0ecc316c424",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-binding.json.gz": "6c3cd79d3ee28c0524929c3de232ee5e494bc9119080b37532283dbbde9fcc33",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-binding.log": "2c3744953fbbaf1253fa5707b9c3dd860ec7136133e7d3509ab56c6ab3510de7",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-config.json.gz": "f5e59d5f0473ecad907f276330f881a45b2a5db0fea3de148c2eb69a4bbfe347",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-config.log": "0b887f35949ad024101573cdd952b10698c541b13f7397a8e4fedd0a63fcb1f3",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-event-binding.json.gz": "0fe340a42e45f7610d35aa9a951f03ce3b5ac24eadda83dcdad3ba569e83c275",
+    "docs/foundational/phase3c1/evidence/task2/hostile/forged-event-binding.log": "d0dc25c618e35151505dc8137fb1dd5a3be2dcb6f9fde046e924a3e5626b659f",
+    "docs/foundational/phase3c1/evidence/task2/hostile/hidden-application-erasure.json.gz": "5f879d68462f3bc5dcc48d023166b9f76b240a849c4daf179b642be658522eb7",
+    "docs/foundational/phase3c1/evidence/task2/hostile/hidden-application-erasure.log": "7d524d1fa5918409cbf490a62910af421939b1970625c6066f0db2b16af5a949",
+    "docs/foundational/phase3c1/evidence/task2/hostile/invented-initial-receipt.json.gz": "5125609cee078ed4ed8f99801264b36ab882da2693ce9ff55facf4de72035afa",
+    "docs/foundational/phase3c1/evidence/task2/hostile/invented-initial-receipt.log": "cf2969b67f6807507432acc90d6d61376fde522f898f75127997be6a8d9b0d4b",
+    "docs/foundational/phase3c1/evidence/task2/hostile/invented-receipt.json.gz": "ec3a2f0047c21e6710c088124c75cbecb78897449d2a7e5c166919f798e2475d",
+    "docs/foundational/phase3c1/evidence/task2/hostile/invented-receipt.log": "5c9f2fa6c538260dd0641a38298fa6beab20de9ef45480c8e0b8e7ed6af38e2c",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-arc.json.gz": "1509f8160719741dc8c2ae330f7a6288f415a84891b7b3b70efa01d786d32cf0",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-arc.log": "4b838ca889e41edd1837de3920ea2ceaf90165f445258644a7e0d0ecc316c424",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-config.json.gz": "a3588e4cbfe95bfebe48d067811d1f06f45b554ce2f0a0d3057a7f48386ec5dc",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-config.log": "47ce65e1acb27865792f2757898024eef567cd0d88192d09f9fd0fcd20601029",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-field.json.gz": "b3316723173090ae750a62e09b70ae892e558f220d9f5a05bdd3a4167d6c43db",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-field.log": "898c6d4ad0f87409daeb7db278e110088d941d795bf2455f8e6aa0c7618fb27b",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-incoming-arc.json.gz": "0c7cc69ecbd5070372043d2250fbfd28c5fe82dd45881217c43cad811027fdc3",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-incoming-arc.log": "6d8c4702e3e02313777e8c77de4fa585f33f58d116e38f3a19426f168d52b86a",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-loss-witness.json.gz": "185974ec8ccfc9d5e642531acc96c2ae52c9c9162aa9b110f10119f2fd4d1156",
+    "docs/foundational/phase3c1/evidence/task2/hostile/missing-loss-witness.log": "5af96ee58ed68184dc0c666ea04f1ea06bdd9126933555520d06216bcc2063d4",
+    "docs/foundational/phase3c1/evidence/task2/hostile/null-array.json.gz": "e191a3f32b64f1d0a2aa14ca12225281f58022a26f3d8a501ac02c15417fefd2",
+    "docs/foundational/phase3c1/evidence/task2/hostile/null-array.log": "951edb08d9c9f07c64b9830cd13ea5998bd58fe6cba811c6c2fbc9ec77b7749a",
+    "docs/foundational/phase3c1/evidence/task2/hostile/overstated-claim.json.gz": "53e7d8e1eb7b258a7844461d91a0f8e6e615d78c6ef3458b7aad1d550bbec03f",
+    "docs/foundational/phase3c1/evidence/task2/hostile/overstated-claim.log": "28407d8959fb056ff3ab42104c422313979ebd83a4fb100c260f51c4e3d9d930",
+    "docs/foundational/phase3c1/evidence/task2/hostile/post-state-invention.json.gz": "5db0d16fe100b679540ff28d6803a0824b81d7d317a8d93b04c63af9711f5990",
+    "docs/foundational/phase3c1/evidence/task2/hostile/post-state-invention.log": "ea09edf5b0a322db3b67dc4759a4a54659c5745b88885c0b132e1c20cf7408a7",
+    "docs/foundational/phase3c1/evidence/task2/hostile/premature-release.json.gz": "f6e97f00a6bc88b9a2819a7b8beabfc552ae169aa87f213e990bf412f3614923",
+    "docs/foundational/phase3c1/evidence/task2/hostile/premature-release.log": "4d9456e6c89025e3a76fd69fa1686e7c3c9fb5795d1dfa3d367148c185198cd8",
+    "docs/foundational/phase3c1/evidence/task2/hostile/repeated-application.json.gz": "b9155b2f2beea65e207652ffa83252b0ef2ec44ff032fe4fb7d64dd6cf3f846c",
+    "docs/foundational/phase3c1/evidence/task2/hostile/repeated-application.log": "3521d852aa11f492e05118c6b8e1c6a54fe68084e19a9dd4725389b312effc49",
+    "docs/foundational/phase3c1/evidence/task2/hostile/schema-version.json.gz": "0c02cd2eb9a98ec2f63d99ca77d9f0a1c64e05a22e4391598fcd6d093a434678",
+    "docs/foundational/phase3c1/evidence/task2/hostile/schema-version.log": "039a7c2136f743ebd510b12adb8941fb96dfb68290f8755005fe3c69dd030eb2",
+    "docs/foundational/phase3c1/evidence/task2/hostile/unreachable-state.json.gz": "852dbab2450e2552cf9e13e2fd66e3ecdbfa29d2fa6171271e3bd9be709a8779",
+    "docs/foundational/phase3c1/evidence/task2/hostile/unreachable-state.log": "b868233a20e9d8534ce178bbc423d7ab3867cbfd34a9df9187dc37317603896c",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-can-complete.json.gz": "93797fc5a4e339f3bb70ab1f9d9182e39547617bae3c225c367d450135284904",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-can-complete.log": "8db3a41b494c04c7027642b07a74773ba73fcf6213958387e99245e429cacd4d",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-collision.json.gz": "39bce130ce2a45d1f79e08a77871b7eb9ea17a5788ea575dc8741d280096938f",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-collision.log": "4ff36b75785b98f01a7d9496bbb59dba882b2e13a7df8241ade275d2cb507955",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-complete.json.gz": "4368c8ef8846e2fbce07cf72810f9685c80475ad5c2e49536b10a8eb83b59fc2",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-complete.log": "1e56b82cf022af1973d777b2cfa3e9c14af9dda393a3d65434153c3cc496ef09",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-count.json.gz": "2bb78915eef2e4aebe6d71ac0c738bdbedfdeb8f9b924fe63e8bf2c4dca31ad4",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-count.log": "c94f6d2e362cb71e497c94987b31771531ffd0cdefab2e0f520fe72ef81a2dd2",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-grouped-config.json.gz": "ec18708db7c9b0b62e3d08a75a0ad0801db28a65533f29a62cdd0a6be27156d6",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-grouped-config.log": "cca284ed63f5036343570734746fea02e93ab2747143c77adb309a3ee38fa3ca",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-parent.json.gz": "d586dc65160c83039dc59ad2aa051a357f12e979d3963b4526d5a33ddeba946d",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-parent.log": "c70eee080cf4dde31e8d82ab54490bf771ea8702601cc0ac391ad2ddce4ed0d3",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-retry.json.gz": "af72cd03b9f766d6336c8c2af06e94275735aebb86b33172e103802a3573e68d",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-retry.log": "f574845f81d1f2b8d56cef4413e18484502df8ed9bacf4c9c93a0a1557542245",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-serial-guard.json.gz": "b918f3cf9de147e46b2e78aa7d841c67735011863c05ec94d0273087244669c0",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-serial-guard.log": "ce563394fe9b51cc8d362a4b4df1e3581fa807b248142a6a1204bc9026f0f8bd",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-witness-progress.json.gz": "508ab5776c77abd568cf2d0034f38b2b7ce25de84925538be150066838f99c9e",
+    "docs/foundational/phase3c1/evidence/task2/hostile/wrong-witness-progress.log": "d8bf0b795f6c710dd04309cb48724a5e67be417bba36da709b6492f8dcbfa41a",
+    "docs/foundational/phase3c1/evidence/task2/protocol-interface.md": "7535b14f93b31d843578055b6654629bdbcee0c4821515f9193a1b9aa6352d8e",
+    "docs/foundational/phase3c1/evidence/task2/python-version.log": "fd0fd4290ad100adc37e4a82e45f821faeacbecae70f4d3eba08e85be138c632",
+    "docs/foundational/phase3c1/evidence/task2/red-initial.log": "25a447ec68c1b01867e48210a98e01f156559a0c16db6a819a13ae4a40421c1c",
+    "docs/foundational/phase3c1/evidence/task2/red-loss-witness.log": "334e62482676531554e66b29f4ce10470cd74c19e1a826b2f65c07376fa6fd99",
+    "docs/foundational/phase3c1/evidence/task2/source-head.log": "13d006484e174da4fe05042fccc5ddc0d7fa6dd7843d32c91d82b6aafcdf6176",
+    "docs/foundational/phase3c1/evidence/task2/unittest.log": "e1f5f6b3f1f247a25f3cd68c8591653c03c6564250c3c11c83b9b31d5250d0d7"
+  },
+  "schema": "alan.phase3c1.task2.provenance.v1",
+  "source_sha256": {
+    "docs/foundational/phase3c1/00-contract.md": "13ece18e483693ad69c8e8cd707250750777dfee57260e458ce0d8d8da9e03b5",
+    "docs/foundational/phase3c1/01-argument.md": "9b6c5ace730da0eaf4f4e740ae378d2147ce4a53ca029974a7fd176726a06e58",
+    "docs/foundational/phase3c1/02-evidence-schema.md": "25b489fa016d672db04fe7a0a8fb9e4e385fa53190ffc7db7a5147a5bc45c055",
+    "docs/foundational/phase3c1/03-independent-audit.md": "ed60265dbd71e8624728b54ea47fff211f87019623c4c3da8e5cd57e9206bec9",
+    "docs/foundational/phase3c1/evidence/task2/capture.py": "4c2f75a88223a1f4ce9edac6bbf9cb9c206b278954fd4b71aa746cf01041226b",
+    "docs/foundational/phase3c1/evidence/task2/protocol-interface.md": "7535b14f93b31d843578055b6654629bdbcee0c4821515f9193a1b9aa6352d8e",
+    "docs/foundational/phase3c1/tools/audit.py": "687373705b0faabc9507bebd050bcd9c83ca7f4b8ff8effe243048e7fcf21ac9",
+    "docs/foundational/phase3c1/tools/test_audit.py": "a71f411df6b66046d540c291d7b2922347654d5335fb443aea177697bc3521c3",
+    "research/contractcomposition/README.md": "7151330d220d2c0f0d0b29e1d940e41f10bf7b16b11ce71dd70777560a545367",
+    "research/contractcomposition/cmd/export/main.go": "b7c552f4e9ac8342158ea6b4cd6398f7c14c5e027e4d30f509fc27b52efa16ee",
+    "research/contractcomposition/cmd/export/main_test.go": "4417201bb233eba2e3ead48e893749a49f0f6cffad18ee73d03d293852f13194",
+    "research/contractcomposition/compose.go": "5e4ce913310d50ab8172da27642bdd26e412b4936354f27db043538ccb0e12b1",
+    "research/contractcomposition/compose_test.go": "a5f3bc84b502712c7e7d5a8c342ddcb430046264f6e97b5766eacd071f6a3a55",
+    "research/contractcomposition/concrete.go": "0c5e2c1226189e1e597a135e7203c31dd07cca72b2765d4fb0de7df0bc8898b0",
+    "research/contractcomposition/concrete_test.go": "0738ada30213681acdb9d5d151e07e57be0edb34ecb0193c679b780869a7bfb9",
+    "research/contractcomposition/explore.go": "bc524c014a8e7e58b4bc6fcd077c8a169709ed408e4c7eaea01b6eb99b63b573",
+    "research/contractcomposition/explore_test.go": "ffaeafd89a953d91f4dbada1ccbfc368c7d673fbca350bf036f23f5c559a2760",
+    "research/contractcomposition/model.go": "c146d28476ebd11647c9457f8ab4994ec465e2428ed5901004d6f75ba46f69b0",
+    "research/contractcomposition/model_test.go": "fb3f22425cee10e1563674b7bf328b8a283c891b5f4d3e2531d8bcb8d4190f81",
+    "research/twoagent/explore.go": "9240ed39125dd9a59c4599304800d349c174a104c7eec297ff52f974d4982694",
+    "research/twoagent/model.go": "8d8ce74bd91b27cd4f511bdf2b5a24863a3243f257e92d682f3377b6f04ce3ee",
+    "research/twoagent/oracle.go": "e0d229e8ed028b5889bb9a4077c6ec5110b1f58d08486be67b3eaead6bb3052a"
+  },
+  "task_base": "5f907cda569d97ec5c08923b35e77de5b3df06ce",
+  "tools": {
+    "go": "go version go1.27.4 darwin/arm64",
+    "python": "Python 3.9.6"
+  }
+}

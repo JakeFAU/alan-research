@@ -1,0 +1,272 @@
+{
+  "attribution": "Controller-run baseline/root checks during this Phase 3C.1 task; copied and verified by Task 3. Earlier Phase 3B.7 lint is comparison evidence only.",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/environment.json",
+      "raw_bytes": 219,
+      "raw_sha256": "35a83452de2ef0a22471bc632794df9009e5ad76378a045bbde606997b96bcb6",
+      "retained_sha256": "35a83452de2ef0a22471bc632794df9009e5ad76378a045bbde606997b96bcb6",
+      "source": "/tmp/alan-phase3c1/baseline/environment.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/inputs.json",
+      "raw_bytes": 9364,
+      "raw_sha256": "c9a17520b82d01311c99dafa3efb242d00ed07a47baf4ee42cc11af1cc2f15a6",
+      "retained_sha256": "c9a17520b82d01311c99dafa3efb242d00ed07a47baf4ee42cc11af1cc2f15a6",
+      "source": "/tmp/alan-phase3c1/baseline/inputs.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/old-go-inputs.json",
+      "raw_bytes": 97839,
+      "raw_sha256": "0653076df2e1503abce7d6f090c07c8fd032360beae98a8e50d32faa3658e06b",
+      "retained_sha256": "0653076df2e1503abce7d6f090c07c8fd032360beae98a8e50d32faa3658e06b",
+      "source": "/tmp/alan-phase3c1/baseline/old-go-inputs.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/ordinary.jsonl.gz",
+      "raw_bytes": 10728708,
+      "raw_sha256": "778f5b87749ab59d8873a29cb7f1e434a5754cc422077070b35f3d187c410d67",
+      "retained_sha256": "b9df39157168e0cb9bdacded9f8de6d4e1775265a66081783531e8632af257d1",
+      "source": "/tmp/alan-phase3c1/baseline/ordinary.jsonl"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/ordinary.stderr.gz",
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retained_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/tmp/alan-phase3c1/baseline/ordinary.stderr"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/baseline/result.json",
+      "raw_bytes": 75,
+      "raw_sha256": "41e6260812c39b72530e31322314c298f055e9e7df63ce5f5d965c58c40fb8ee",
+      "retained_sha256": "41e6260812c39b72530e31322314c298f055e9e7df63ce5f5d965c58c40fb8ee",
+      "source": "/tmp/alan-phase3c1/baseline/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/go-inputs.json",
+      "raw_bytes": 75250,
+      "raw_sha256": "aade378c599e0dcfe301a9d3ccd929864e6329e79a5329540f4e72d8f7e2a4ac",
+      "retained_sha256": "aade378c599e0dcfe301a9d3ccd929864e6329e79a5329540f4e72d8f7e2a4ac",
+      "source": "/tmp/alan-phase3c1/qualification/go-inputs.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/input-comparison.json",
+      "raw_bytes": 8063,
+      "raw_sha256": "5c11b27d3e9837e46ccbde24cd37a7ded30a6cdca3e78a067ad139548f490f49",
+      "retained_sha256": "5c11b27d3e9837e46ccbde24cd37a7ded30a6cdca3e78a067ad139548f490f49",
+      "source": "/tmp/alan-phase3c1/qualification/input-comparison.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/staticcheck-comparison.json",
+      "raw_bytes": 627,
+      "raw_sha256": "66bd708346383a28849d38ae88c60c537c871933fb82d3e0cee8e9e92ae0d869",
+      "retained_sha256": "66bd708346383a28849d38ae88c60c537c871933fb82d3e0cee8e9e92ae0d869",
+      "source": "/tmp/alan-phase3c1/qualification/staticcheck-comparison.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/package-coverage.json",
+      "raw_bytes": 605,
+      "raw_sha256": "33fcc6b229b631be3711d140aaef7b2a33be580ceeb84a6a8ba3e981c53d2a0a",
+      "retained_sha256": "33fcc6b229b631be3711d140aaef7b2a33be580ceeb84a6a8ba3e981c53d2a0a",
+      "source": "/tmp/alan-phase3c1/qualification/package-coverage.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/run_check.py",
+      "raw_bytes": 1680,
+      "raw_sha256": "54392fb32f68b79233977122d188a5da238209f3510d2cd05c4d605e0526cd96",
+      "retained_sha256": "54392fb32f68b79233977122d188a5da238209f3510d2cd05c4d605e0526cd96",
+      "source": "/tmp/alan-phase3c1/qualification/run_check.py"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build/job.json",
+      "raw_bytes": 398,
+      "raw_sha256": "e5c073c303398dcb603fbf5415b153d65caafa24228cbc6a51e3e1fe4affd33c",
+      "retained_sha256": "e5c073c303398dcb603fbf5415b153d65caafa24228cbc6a51e3e1fe4affd33c",
+      "source": "/tmp/alan-phase3c1/qualification/build/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build/result.json",
+      "raw_bytes": 160,
+      "raw_sha256": "37e459c937dade6a2a155a2b5f1b2cfde24cfb30a3bb8ef03273d9b55052cb89",
+      "retained_sha256": "37e459c937dade6a2a155a2b5f1b2cfde24cfb30a3bb8ef03273d9b55052cb89",
+      "source": "/tmp/alan-phase3c1/qualification/build/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build/output.log.gz",
+      "raw_bytes": 186,
+      "raw_sha256": "dc18e8252ce80705d0eb66c88456734cfe2d8109dd394255173e94fc557ed91a",
+      "retained_sha256": "3ea5f986253ec358db3ba9cb5d0c7de3d61d9eb534ab4e89b2b637aa47a95817",
+      "source": "/tmp/alan-phase3c1/qualification/build/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build-cache-writable/job.json",
+      "raw_bytes": 398,
+      "raw_sha256": "bda7228ea9e8e566a2ede04a18bb667f421e42800f936ede0c6a28ca9e3fe07d",
+      "retained_sha256": "bda7228ea9e8e566a2ede04a18bb667f421e42800f936ede0c6a28ca9e3fe07d",
+      "source": "/tmp/alan-phase3c1/qualification/build-cache-writable/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build-cache-writable/result.json",
+      "raw_bytes": 156,
+      "raw_sha256": "e73c48f39494e27d12cbe5b82c8641d7cfeb3016e7d90917adb937321fcd4bbf",
+      "retained_sha256": "e73c48f39494e27d12cbe5b82c8641d7cfeb3016e7d90917adb937321fcd4bbf",
+      "source": "/tmp/alan-phase3c1/qualification/build-cache-writable/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/build-cache-writable/output.log.gz",
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retained_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/tmp/alan-phase3c1/qualification/build-cache-writable/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck/job.json",
+      "raw_bytes": 394,
+      "raw_sha256": "88fa6f7882c72de0d9a2c4c9da35ff908a58866401738a6c9e873dd654dda03f",
+      "retained_sha256": "88fa6f7882c72de0d9a2c4c9da35ff908a58866401738a6c9e873dd654dda03f",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck/result.json",
+      "raw_bytes": 161,
+      "raw_sha256": "433f9ff9bbd6003fe87f01823d7b479a352b191bb0f44c9c9a35d8f23f4d5695",
+      "retained_sha256": "433f9ff9bbd6003fe87f01823d7b479a352b191bb0f44c9c9a35d8f23f4d5695",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck/output.log.gz",
+      "raw_bytes": 1136,
+      "raw_sha256": "dbe77ce3c2b9ecaac6be2a6cdc36b05f519447866c291b450e5e737b850edaa1",
+      "retained_sha256": "69e618279094f03e410f1989c22aaab76261dd97c7ace4eccce36822f263d75f",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck-integration/job.json",
+      "raw_bytes": 419,
+      "raw_sha256": "cd3f6e99544193e9898794f268c9c69432b670c730a169d5ab54b9db4a2735cb",
+      "retained_sha256": "cd3f6e99544193e9898794f268c9c69432b670c730a169d5ab54b9db4a2735cb",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck-integration/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck-integration/result.json",
+      "raw_bytes": 159,
+      "raw_sha256": "e11e21c54045e559d48b2e3b8e1ec77b09562c4ec45c2b854289ca238fabad38",
+      "retained_sha256": "e11e21c54045e559d48b2e3b8e1ec77b09562c4ec45c2b854289ca238fabad38",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck-integration/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/global-staticcheck-integration/output.log.gz",
+      "raw_bytes": 3531,
+      "raw_sha256": "2492848a69591f8dc8a5b4bdcb936aa66f0109c92a33c60489bbc6b5afaa293b",
+      "retained_sha256": "ae851acb460dd61db885dbabf6c557803b99d2bc7409161f213413f5dfe3ff3b",
+      "source": "/tmp/alan-phase3c1/qualification/global-staticcheck-integration/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-tidy-diff/job.json",
+      "raw_bytes": 408,
+      "raw_sha256": "fcbe11f95a714b8e4f40e588988846864f89394431b63d30464020d636394b13",
+      "retained_sha256": "fcbe11f95a714b8e4f40e588988846864f89394431b63d30464020d636394b13",
+      "source": "/tmp/alan-phase3c1/qualification/module-tidy-diff/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-tidy-diff/result.json",
+      "raw_bytes": 157,
+      "raw_sha256": "b3c82ba989aa5714367efe233f0034c49d5dd4af37cd4256a66ab4f8a565a431",
+      "retained_sha256": "b3c82ba989aa5714367efe233f0034c49d5dd4af37cd4256a66ab4f8a565a431",
+      "source": "/tmp/alan-phase3c1/qualification/module-tidy-diff/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-tidy-diff/output.log.gz",
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retained_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/tmp/alan-phase3c1/qualification/module-tidy-diff/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-verify/job.json",
+      "raw_bytes": 397,
+      "raw_sha256": "e33602560e623b685827140675935c9745080eea1e02ae06ed70c164a09223fd",
+      "retained_sha256": "e33602560e623b685827140675935c9745080eea1e02ae06ed70c164a09223fd",
+      "source": "/tmp/alan-phase3c1/qualification/module-verify/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-verify/result.json",
+      "raw_bytes": 158,
+      "raw_sha256": "d37ff67b28171a1adb9f9bdacc809476ac12ccf2d66c129ed43d6772314c7b08",
+      "retained_sha256": "d37ff67b28171a1adb9f9bdacc809476ac12ccf2d66c129ed43d6772314c7b08",
+      "source": "/tmp/alan-phase3c1/qualification/module-verify/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/module-verify/output.log.gz",
+      "raw_bytes": 21,
+      "raw_sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "retained_sha256": "4699dce40a065353f016ef7eb2c309ee9dee73281263a6b29287016349618a1b",
+      "source": "/tmp/alan-phase3c1/qualification/module-verify/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list/job.json",
+      "raw_bytes": 397,
+      "raw_sha256": "9557551ae9fc8a5b638db6edf92903ebd5508dd2f31f0a5178e1344785c6c273",
+      "retained_sha256": "9557551ae9fc8a5b638db6edf92903ebd5508dd2f31f0a5178e1344785c6c273",
+      "source": "/tmp/alan-phase3c1/qualification/package-list/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list/result.json",
+      "raw_bytes": 160,
+      "raw_sha256": "98b61e6f4c4523d8e2bc2dce6fc0408f957dca077a9efd70b0e73267dd0e16d4",
+      "retained_sha256": "98b61e6f4c4523d8e2bc2dce6fc0408f957dca077a9efd70b0e73267dd0e16d4",
+      "source": "/tmp/alan-phase3c1/qualification/package-list/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list/output.log.gz",
+      "raw_bytes": 4431,
+      "raw_sha256": "a99e2faa6914999936353ec3545a446986ec536b5dc47a1b6b346165a241c7b3",
+      "retained_sha256": "f15d6bb62361b9323d802c8116765ad25c94dd0d422d8340a44632653f8bdf97",
+      "source": "/tmp/alan-phase3c1/qualification/package-list/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list-cache-writable/job.json",
+      "raw_bytes": 397,
+      "raw_sha256": "aed5f31231a554e35ded29228fb501a759f0894007faaf9bc61fde264f503dc0",
+      "retained_sha256": "aed5f31231a554e35ded29228fb501a759f0894007faaf9bc61fde264f503dc0",
+      "source": "/tmp/alan-phase3c1/qualification/package-list-cache-writable/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list-cache-writable/result.json",
+      "raw_bytes": 160,
+      "raw_sha256": "df973eae1a146215e49b30bd830683aa1f5b66a6b395500c2bcd072c713f6ee4",
+      "retained_sha256": "df973eae1a146215e49b30bd830683aa1f5b66a6b395500c2bcd072c713f6ee4",
+      "source": "/tmp/alan-phase3c1/qualification/package-list-cache-writable/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/package-list-cache-writable/output.log.gz",
+      "raw_bytes": 4245,
+      "raw_sha256": "50eecd4c5b988e350b7644b9c9c3f2ef6c36133301bfd5be18756ee2d0632f6c",
+      "retained_sha256": "153b3ea2cf01a67028d5c6b9e2ed87e3ed87f95bcf0fd740c1d06732f6c004d0",
+      "source": "/tmp/alan-phase3c1/qualification/package-list-cache-writable/output.log"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/scoped-staticcheck/job.json",
+      "raw_bytes": 423,
+      "raw_sha256": "e9781b0e7d167901299ce6bd0dd816f817345bdcecc08ab11e7d5855cb716631",
+      "retained_sha256": "e9781b0e7d167901299ce6bd0dd816f817345bdcecc08ab11e7d5855cb716631",
+      "source": "/tmp/alan-phase3c1/qualification/scoped-staticcheck/job.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/scoped-staticcheck/result.json",
+      "raw_bytes": 158,
+      "raw_sha256": "a148d55f150b710e043a243ff232aab2a308c629f30329e0a5583cdb07bbdf7f",
+      "retained_sha256": "a148d55f150b710e043a243ff232aab2a308c629f30329e0a5583cdb07bbdf7f",
+      "source": "/tmp/alan-phase3c1/qualification/scoped-staticcheck/result.json"
+    },
+    {
+      "path": "docs/foundational/phase3c1/evidence/qualification/commands/scoped-staticcheck/output.log.gz",
+      "raw_bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retained_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+      "source": "/tmp/alan-phase3c1/qualification/scoped-staticcheck/output.log"
+    }
+  ],
+  "schema": "alan.phase3c1.qualification.archive.v1"
+}

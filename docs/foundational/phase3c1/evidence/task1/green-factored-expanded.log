@@ -1,0 +1,5 @@
+=== RUN   TestEveryOldEdgeRepresentativeProjectionAndLifting
+    concrete_test.go:269: old durable-ACK states=311; factored representatives=24258; micro arcs checked=184256; enabled named-edge lifts=14058
+--- PASS: TestEveryOldEdgeRepresentativeProjectionAndLifting (0.65s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/contractcomposition	0.748s
