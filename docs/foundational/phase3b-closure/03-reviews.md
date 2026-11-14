@@ -31,4 +31,4 @@ Every declined-to-judge item has a controller disposition below. These preserve 
 
 ## Delivery
 
-Draft-PR delivery is pending. This report records exact reviewed ranges; subsequent review/delivery metadata does not alter the assessed manuscript or research interpretation. See [workflow manifest](evidence/workflow/manifest.json) for archived report bytes.
+[Draft PR #49](https://github.com/JakeFAU/alan-research/pull/49) was created and attached from `7f7e0f33115025fe580fd84238d8506524decb4a` against main at the original merged base. A fresh remote read confirmed open, draft, unmerged and mergeable status. The final commit records delivery metadata only; the assessed manuscript and research interpretation are unchanged from the reviewed head. See the [delivery snapshot](evidence/delivery.json) and [workflow manifest](evidence/workflow/manifest.json). No merge or release was performed.

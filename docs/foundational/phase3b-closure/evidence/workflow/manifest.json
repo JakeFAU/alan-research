@@ -1,5 +1,5 @@
 {
-  "description": "Exact workflow snapshots; original review and author reports are unchanged. Review packages are reconstructible from named git ranges and retained in local scratch. Ledger snapshot is updated at milestones.",
+  "description": "Exact workflow snapshots; original review and author reports are unchanged. Review packages are reconstructible from named git ranges and retained in /tmp/alan-phase3b-closure/workflow-scratch-complete. Final ledger snapshot includes delivery and scratch relocation.",
   "task_review_range": {
     "base": "b0a3b2a1f45f21a770321c5e38d1d55dc0024bea",
     "head": "cb227ef63dbc458bb30da7b328c72a9018ce93c5"
@@ -30,8 +30,8 @@
       "sha256": "93fbbd8dbed0a6416315432351e0a8fa61d62c337bd84b423345f366dec2215d"
     },
     "progress.md": {
-      "bytes": 5530,
-      "sha256": "b348be3cb94fb2a33c08f79be5ae4112a12899310a33efaeda984e3dadac5ba2"
+      "bytes": 6210,
+      "sha256": "8b2b8ea3d07e2c0df2272db066ad383c65817ea5449e27f3ab9e1e67bc1b47ce"
     },
     "final-review.md": {
       "bytes": 13260,
