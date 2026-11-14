@@ -2,14 +2,19 @@
   "scope": "Exact workflow input/report bytes and controller ledger snapshot. Review agreement is not mathematical proof. Review heads are recorded in each report.",
   "files": [
     {
+      "path": "docs/foundational/phase3c3/evidence/workflow/final-review.md",
+      "sha256": "763d2305d6c373261341cbe144ce6a4cb6ebc82d2a1c1d01b664db2eca541e2e",
+      "bytes": 11081
+    },
+    {
       "path": "docs/foundational/phase3c3/evidence/workflow/global-constraints.md",
       "sha256": "8ca9a2971380e646cf2cfd4b66d1bc218165b80c67c370176585bd201d762704",
       "bytes": 1449
     },
     {
       "path": "docs/foundational/phase3c3/evidence/workflow/progress.md",
-      "sha256": "b30ca8ce523a05e86d51b0eea281dd03c60f3b6fc13ccc08b07cd7abb62ef92e",
-      "bytes": 8388
+      "sha256": "59c3f8257f886f30ea42e729c77325aeb3ff7734aea3b3bc9132b61727549a3a",
+      "bytes": 9512
     },
     {
       "path": "docs/foundational/phase3c3/evidence/workflow/review-focus.md",
