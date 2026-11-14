@@ -1,0 +1,1967 @@
+{
+  "serial_wait": {
+    "Profile": "serial_serial",
+    "SendOrder": [
+      "a",
+      "b"
+    ],
+    "DeliveryOrder": [
+      "a",
+      "b"
+    ],
+    "Counts": {
+      "RequestsAdmitted": 2,
+      "RequestsConsumed": 0,
+      "ResultsAdmitted": 0,
+      "ResultsConsumed": 0,
+      "Unpaid": [
+        "a-request",
+        "b-request"
+      ]
+    },
+    "Reports": {
+      "first": {
+        "Steps": 0,
+        "Dispatches": 0,
+        "Quiescent": true,
+        "OpenRuns": [
+          {
+            "Subject": "a",
+            "Generation": 1
+          },
+          {
+            "Subject": "b",
+            "Generation": 1
+          }
+        ],
+        "UnresolvedIntents": [],
+        "PendingDeliveries": [],
+        "UnknownExternal": [],
+        "UnknownAdapters": [],
+        "Roots": null,
+        "RejectedAdmissions": 0
+      },
+      "reopened": {
+        "Steps": 0,
+        "Dispatches": 0,
+        "Quiescent": true,
+        "OpenRuns": [
+          {
+            "Subject": "a",
+            "Generation": 1
+          },
+          {
+            "Subject": "b",
+            "Generation": 1
+          }
+        ],
+        "UnresolvedIntents": [],
+        "PendingDeliveries": [],
+        "UnknownExternal": [],
+        "UnknownAdapters": [],
+        "Roots": null,
+        "RejectedAdmissions": 0
+      },
+      "repeated": {
+        "Steps": 0,
+        "Dispatches": 0,
+        "Quiescent": true,
+        "OpenRuns": [
+          {
+            "Subject": "a",
+            "Generation": 1
+          },
+          {
+            "Subject": "b",
+            "Generation": 1
+          }
+        ],
+        "UnresolvedIntents": [],
+        "PendingDeliveries": [],
+        "UnknownExternal": [],
+        "UnknownAdapters": [],
+        "Roots": null,
+        "RejectedAdmissions": 0
+      }
+    }
+  },
+  "authority": {
+    "states": 1198963,
+    "arcs": 9155940,
+    "selected": [
+      {
+        "Config": {
+          "Policy": "S3",
+          "Scenario": "Missing"
+        },
+        "States": 103361,
+        "Arcs": 793736,
+        "CyclicStates": 85796,
+        "CyclicComponents": 33632,
+        "OperationalInvariantViolations": 0,
+        "CustodyViolations": 0,
+        "SafeStates": 4815,
+        "SafeTransitions": 25600,
+        "UnsafeStates": 98546,
+        "ViolatingTransitions": 5776,
+        "ConsentTransitions": 5776,
+        "TupleInventionTransitions": 0,
+        "AppliedStates": 102736,
+        "ReleasedStates": 65920,
+        "CompleteStates": 16384,
+        "SafeCompleteStates": 0,
+        "CanComplete": 103361,
+        "CannotComplete": 0,
+        "CanCompleteSafely": 0,
+        "CannotCompleteSafely": 103361,
+        "WitnessLengths": {
+          "ShortestComplete": 20,
+          "ShortestSafeComplete": null,
+          "ShortestUnsafe": 4,
+          "ShortestCannotComplete": null
+        },
+        "CutLengths": {
+          "admitted-then-server-crashed": 6,
+          "application-retained": 6,
+          "applied-then-crashed": 7,
+          "authorization-allowed": 4,
+          "dispatch-admitted": 5,
+          "receipt-released": 11,
+          "recovered-fresh-admission": 7,
+          "released-then-crashed": 12,
+          "unsafe-apply": 6,
+          "unsafe-authorize": 4,
+          "unsafe-dispatch-admit": 5
+        }
+      },
+      {
+        "Config": {
+          "Policy": "S2",
+          "Scenario": "Shared"
+        },
+        "States": 103361,
+        "Arcs": 793736,
+        "CyclicStates": 85796,
+        "CyclicComponents": 33632,
+        "OperationalInvariantViolations": 0,
+        "CustodyViolations": 0,
+        "SafeStates": 103361,
+        "SafeTransitions": 793736,
+        "UnsafeStates": 0,
+        "ViolatingTransitions": 0,
+        "ConsentTransitions": 0,
+        "TupleInventionTransitions": 0,
+        "AppliedStates": 102736,
+        "ReleasedStates": 65920,
+        "CompleteStates": 16384,
+        "SafeCompleteStates": 16384,
+        "CanComplete": 103361,
+        "CannotComplete": 0,
+        "CanCompleteSafely": 103361,
+        "CannotCompleteSafely": 0,
+        "WitnessLengths": {
+          "ShortestComplete": 20,
+          "ShortestSafeComplete": 20,
+          "ShortestUnsafe": null,
+          "ShortestCannotComplete": null
+        },
+        "CutLengths": {
+          "admitted-then-server-crashed": 6,
+          "application-retained": 6,
+          "applied-then-crashed": 7,
+          "authorization-allowed": 4,
+          "dispatch-admitted": 5,
+          "receipt-released": 11,
+          "recovered-fresh-admission": 7,
+          "released-then-crashed": 12
+        }
+      },
+      {
+        "Config": {
+          "Policy": "S2",
+          "Scenario": "Revocable"
+        },
+        "States": 220564,
+        "Arcs": 1740832,
+        "CyclicStates": 181896,
+        "CyclicComponents": 71960,
+        "OperationalInvariantViolations": 0,
+        "CustodyViolations": 0,
+        "SafeStates": 220564,
+        "SafeTransitions": 1740832,
+        "UnsafeStates": 0,
+        "ViolatingTransitions": 0,
+        "ConsentTransitions": 0,
+        "TupleInventionTransitions": 0,
+        "AppliedStates": 217904,
+        "ReleasedStates": 137216,
+        "CompleteStates": 32768,
+        "SafeCompleteStates": 32768,
+        "CanComplete": 193681,
+        "CannotComplete": 26883,
+        "CanCompleteSafely": 193681,
+        "CannotCompleteSafely": 26883,
+        "WitnessLengths": {
+          "ShortestComplete": 20,
+          "ShortestSafeComplete": 20,
+          "ShortestUnsafe": null,
+          "ShortestCannotComplete": 1
+        },
+        "CutLengths": {
+          "admitted-then-server-crashed": 6,
+          "application-after-revocation": 7,
+          "application-retained": 6,
+          "applied-then-crashed": 7,
+          "authorization-allowed": 4,
+          "authorization-refused": 5,
+          "dispatch-admitted": 5,
+          "fresh-admission-refused": 6,
+          "grant-issuance-rejected": 2,
+          "grant-retained": 1,
+          "receipt-released": 11,
+          "recovered-fresh-admission": 7,
+          "released-then-crashed": 12,
+          "revocation-after-admission": 6,
+          "revocation-after-application": 7,
+          "revocation-before-authorization": 1,
+          "revocation-between-authorization-admission": 5
+        }
+      },
+      {
+        "Config": {
+          "Policy": "Cartesian",
+          "Scenario": "ScopeMix"
+        },
+        "States": 103361,
+        "Arcs": 793736,
+        "CyclicStates": 85796,
+        "CyclicComponents": 33632,
+        "OperationalInvariantViolations": 0,
+        "CustodyViolations": 0,
+        "SafeStates": 4815,
+        "SafeTransitions": 25600,
+        "UnsafeStates": 98546,
+        "ViolatingTransitions": 5776,
+        "ConsentTransitions": 0,
+        "TupleInventionTransitions": 5776,
+        "AppliedStates": 102736,
+        "ReleasedStates": 65920,
+        "CompleteStates": 16384,
+        "SafeCompleteStates": 0,
+        "CanComplete": 103361,
+        "CannotComplete": 0,
+        "CanCompleteSafely": 0,
+        "CannotCompleteSafely": 103361,
+        "WitnessLengths": {
+          "ShortestComplete": 20,
+          "ShortestSafeComplete": null,
+          "ShortestUnsafe": 4,
+          "ShortestCannotComplete": null
+        },
+        "CutLengths": {
+          "admitted-then-server-crashed": 6,
+          "application-retained": 6,
+          "applied-then-crashed": 7,
+          "authorization-allowed": 4,
+          "dispatch-admitted": 5,
+          "grant-retained": 1,
+          "receipt-released": 11,
+          "recovered-fresh-admission": 7,
+          "released-then-crashed": 12,
+          "unsafe-apply": 6,
+          "unsafe-authorize": 4,
+          "unsafe-dispatch-admit": 5
+        }
+      }
+    ]
+  },
+  "revocation_progress": {
+    "Predicate": "Unsafe==0 and BA.Decision!=Refused and (!Revoked or BA.Applied or BA.Permit)",
+    "States": 229834,
+    "Arcs": 1807246,
+    "SafeComplete": 32768,
+    "SafeCompletable": 203833,
+    "PredicateTrue": 203833,
+    "PredicateMismatches": 0,
+    "NonCompletableNoBARefusal": 16371,
+    "RefusedNoGrant": 3852,
+    "RefusedRetainedGrant": 3852,
+    "MaxSuffix": 23,
+    "IncompleteDeadEnds": 0,
+    "StateSetSHA256": "0e9c40aceeaae702b576026164a64b851f9aedfef299fe5296e272b3968e60de",
+    "ArcSetSHA256": "d6a91fb65a652913a9adf55b5054ab8fb9a87b1cd5565e16da501296a1b93f9f",
+    "HashEncoding": "JSONL in deterministic BFS discovery order; arc records are From/To/Successor-index in unchanged Successors"
+  },
+  "revocation_progress_keys": [
+    "Revocation",
+    "Config",
+    "Predicate",
+    "States",
+    "Arcs",
+    "SafeComplete",
+    "SafeCompletable",
+    "PredicateTrue",
+    "PredicateMismatches",
+    "NonCompletableNoBARefusal",
+    "RefusedNoGrant",
+    "RefusedRetainedGrant",
+    "MaxSuffix",
+    "IncompleteDeadEnds",
+    "Counterexample",
+    "LongestSuffix",
+    "StateSetSHA256",
+    "ArcSetSHA256",
+    "HashEncoding",
+    "Limits"
+  ],
+  "revocation_audit": [
+    {
+      "Config": {
+        "Policy": "S2",
+        "Scenario": "SeparateGrantRevocation"
+      },
+      "Prefixes": 229834,
+      "Edges": 1807246,
+      "UnsafePrefixes": 0,
+      "UnsafeEdges": 0,
+      "PaidOriginals": [
+        91520,
+        82304
+      ]
+    }
+  ],
+  "split_audit": {
+    "checked_states": 63,
+    "checked_arcs": 104,
+    "checked_prefixes": 63,
+    "merged_targets": 33,
+    "merge_arcs": 42,
+    "store_classes": 31,
+    "dossier_classes": 52,
+    "search_criterion": "From the post-admission initial cut: minimum total event count for pairs, then left length, then left/right event-order lexicographic paths; individual witnesses minimize length then event-order lexicographic path. Event order: launch, ingress, apply(v1), apply(v2), response, record, consume, revoke-b, lose-owner, reopen, fresh-refuse. Negative cut must be stopped/revoked with packet pending ingress; its extension ingresses/applies while stopped. Recovery ends in consume from a reopened/revoked source. Supplied shortest target prefixes alone do not determine history-qualified witnesses."
+  },
+  "cancel_after_admission": {
+    "normal/idempotent": {
+      "events": [
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.authorized",
+          "Phase": "pre-transport",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.admitted",
+          "Phase": "pre-call",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "lifecycle.decided",
+          "Phase": "accepted",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        "R confirmed against durable source/scope",
+        {
+          "Boundary": "dispatch.waiting",
+          "Phase": "in-flight",
+          "Subject": "client"
+        },
+        "release held opportunity",
+        {
+          "Boundary": "external.response",
+          "Phase": "pre-record",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.finished",
+          "Phase": "transport-ended",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.received",
+          "Phase": "pre-account",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.result-recorded",
+          "Phase": "pre-settlement",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.settled",
+          "Phase": "post-record",
+          "Subject": "client"
+        },
+        "successful Q after Run handling"
+      ],
+      "world_held_contacts": 0,
+      "world_final_contacts": 1,
+      "applications": 1,
+      "revoked_lifecycle": [
+        {
+          "Request": {
+            "Intent": {
+              "ID": "[\"operator\",1,2,0]",
+              "Run": {
+                "Subject": "operator",
+                "Generation": 1
+              },
+              "Sequence": 2,
+              "Ordinal": 0,
+              "Kind": "lifecycle",
+              "Target": "client",
+              "Generation": 1,
+              "Obligation": "control",
+              "Payload": {
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "CancelRun",
+                  "Flag": false
+                },
+                "revision": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                }
+              }
+            },
+            "SourceRevision": 1,
+            "Operation": "CancelRun",
+            "ExpectedRevision": 1
+          },
+          "DecisionSequence": 1,
+          "Accepted": true,
+          "Reason": "closed",
+          "Successor": 0,
+          "Before": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "03762494096055011239a26feaa71a608f6f8c7d95a8647787744b0146017908",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "pending": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "open"
+            }
+          },
+          "After": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "03762494096055011239a26feaa71a608f6f8c7d95a8647787744b0146017908",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "pending": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "cancelled"
+            }
+          }
+        }
+      ]
+    },
+    "normal/adapter": {
+      "events": [
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.authorized",
+          "Phase": "pre-transport",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.admitted",
+          "Phase": "pre-call",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "lifecycle.decided",
+          "Phase": "accepted",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        "R confirmed against durable source/scope",
+        {
+          "Boundary": "dispatch.waiting",
+          "Phase": "in-flight",
+          "Subject": "client"
+        },
+        "release held opportunity",
+        {
+          "Boundary": "adapter.response",
+          "Phase": "pre-record",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.finished",
+          "Phase": "transport-ended",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.received",
+          "Phase": "pre-account",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.result-recorded",
+          "Phase": "pre-settlement",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.settled",
+          "Phase": "pre-consumption",
+          "Subject": "client"
+        },
+        "successful Q after Run handling"
+      ],
+      "world_held_contacts": 0,
+      "world_final_contacts": 1,
+      "applications": 1,
+      "revoked_lifecycle": [
+        {
+          "Request": {
+            "Intent": {
+              "ID": "[\"operator\",1,2,0]",
+              "Run": {
+                "Subject": "operator",
+                "Generation": 1
+              },
+              "Sequence": 2,
+              "Ordinal": 0,
+              "Kind": "lifecycle",
+              "Target": "client",
+              "Generation": 1,
+              "Obligation": "control",
+              "Payload": {
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "CancelRun",
+                  "Flag": false
+                },
+                "revision": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                }
+              }
+            },
+            "SourceRevision": 1,
+            "Operation": "CancelRun",
+            "ExpectedRevision": 1
+          },
+          "DecisionSequence": 1,
+          "Accepted": true,
+          "Reason": "closed",
+          "Successor": 0,
+          "Before": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "7bded51b5eacb92a78417c99dc330d203572933a4007b8fa0acefd914e495086",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "open"
+            }
+          },
+          "After": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "7bded51b5eacb92a78417c99dc330d203572933a4007b8fa0acefd914e495086",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "cancelled"
+            }
+          }
+        }
+      ]
+    },
+    "race/idempotent": {
+      "events": [
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.authorized",
+          "Phase": "pre-transport",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.admitted",
+          "Phase": "pre-call",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "lifecycle.decided",
+          "Phase": "accepted",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        "R confirmed against durable source/scope",
+        {
+          "Boundary": "dispatch.waiting",
+          "Phase": "in-flight",
+          "Subject": "client"
+        },
+        "release held opportunity",
+        {
+          "Boundary": "external.response",
+          "Phase": "pre-record",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.finished",
+          "Phase": "transport-ended",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.received",
+          "Phase": "pre-account",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.result-recorded",
+          "Phase": "pre-settlement",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "external.settled",
+          "Phase": "post-record",
+          "Subject": "client"
+        },
+        "successful Q after Run handling"
+      ],
+      "world_held_contacts": 0,
+      "world_final_contacts": 1,
+      "applications": 1,
+      "revoked_lifecycle": [
+        {
+          "Request": {
+            "Intent": {
+              "ID": "[\"operator\",1,2,0]",
+              "Run": {
+                "Subject": "operator",
+                "Generation": 1
+              },
+              "Sequence": 2,
+              "Ordinal": 0,
+              "Kind": "lifecycle",
+              "Target": "client",
+              "Generation": 1,
+              "Obligation": "control",
+              "Payload": {
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "CancelRun",
+                  "Flag": false
+                },
+                "revision": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                }
+              }
+            },
+            "SourceRevision": 1,
+            "Operation": "CancelRun",
+            "ExpectedRevision": 1
+          },
+          "DecisionSequence": 1,
+          "Accepted": true,
+          "Reason": "closed",
+          "Successor": 0,
+          "Before": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "ee7671603580d8bea0d4c84bd462ae9bf485e90ceca339d7237e982cfe65cc3a",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "pending": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "open"
+            }
+          },
+          "After": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "ee7671603580d8bea0d4c84bd462ae9bf485e90ceca339d7237e982cfe65cc3a",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "pending": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "cancelled"
+            }
+          }
+        }
+      ]
+    },
+    "race/adapter": {
+      "events": [
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.consider",
+          "Phase": "pre-admission",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.authorized",
+          "Phase": "pre-transport",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "dispatch.admitted",
+          "Phase": "pre-call",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "pre-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "post-commit",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "intent.authorized",
+          "Phase": "authorized",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "lifecycle.decided",
+          "Phase": "accepted",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.staged",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "execution.committed",
+          "Phase": "terminal",
+          "Subject": "operator"
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        {
+          "Boundary": "runner.waiting",
+          "Phase": "in-flight",
+          "Subject": ""
+        },
+        "R confirmed against durable source/scope",
+        {
+          "Boundary": "dispatch.waiting",
+          "Phase": "in-flight",
+          "Subject": "client"
+        },
+        "release held opportunity",
+        {
+          "Boundary": "adapter.response",
+          "Phase": "pre-record",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.finished",
+          "Phase": "transport-ended",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "runner.received",
+          "Phase": "pre-account",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.result-recorded",
+          "Phase": "pre-settlement",
+          "Subject": "client"
+        },
+        {
+          "Boundary": "adapter.settled",
+          "Phase": "pre-consumption",
+          "Subject": "client"
+        },
+        "successful Q after Run handling"
+      ],
+      "world_held_contacts": 0,
+      "world_final_contacts": 1,
+      "applications": 1,
+      "revoked_lifecycle": [
+        {
+          "Request": {
+            "Intent": {
+              "ID": "[\"operator\",1,2,0]",
+              "Run": {
+                "Subject": "operator",
+                "Generation": 1
+              },
+              "Sequence": 2,
+              "Ordinal": 0,
+              "Kind": "lifecycle",
+              "Target": "client",
+              "Generation": 1,
+              "Obligation": "control",
+              "Payload": {
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "CancelRun",
+                  "Flag": false
+                },
+                "revision": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                }
+              }
+            },
+            "SourceRevision": 1,
+            "Operation": "CancelRun",
+            "ExpectedRevision": 1
+          },
+          "DecisionSequence": 1,
+          "Accepted": true,
+          "Reason": "closed",
+          "Successor": 0,
+          "Before": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "7bded51b5eacb92a78417c99dc330d203572933a4007b8fa0acefd914e495086",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "open"
+            }
+          },
+          "After": {
+            "Run": {
+              "Subject": "client",
+              "Generation": 1
+            },
+            "ProgramID": "7bded51b5eacb92a78417c99dc330d203572933a4007b8fa0acefd914e495086",
+            "Owner": "owner:client",
+            "Revision": 1,
+            "Epoch": 1,
+            "Sequence": 1,
+            "Retired": false,
+            "RetryCancelled": false,
+            "Projection": {
+              "PC": 1,
+              "Data": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "operation": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "[\"client\",1,1,0]",
+                  "Flag": false
+                }
+              },
+              "Status": "cancelled"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "retry_obstruction": {
+    "N10e-holder-4067308393/construction-obstruction.json": {
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "runs": [
+        {
+          "Subject": "b",
+          "Generation": 1
+        },
+        {
+          "Subject": "b",
+          "Generation": 1
+        }
+      ]
+    },
+    "N10e-recipient-1898952475/construction-obstruction.json": {
+      "Accepted": false,
+      "Reason": "invocation_retry_unsupported",
+      "Successor": 0,
+      "runs": [
+        {
+          "Subject": "a",
+          "Generation": 1
+        },
+        {
+          "Subject": "a",
+          "Generation": 1
+        }
+      ]
+    }
+  },
+  "matched": {
+    "normal": {
+      "byte_equal": {
+        "first-owner/post-open/inspect.json": true,
+        "stopped/inspect.json": true,
+        "reopened/inspect.json": true,
+        "final/inspect.json": true,
+        "run.json": true
+      },
+      "report": {
+        "Error": "<nil>",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 1,
+          "Quiescent": true,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [
+            {
+              "Authority": {
+                "Version": "alan/request-authority/v2",
+                "Path": "delegated",
+                "Root": {
+                  "Run": {
+                    "Subject": "b",
+                    "Generation": 1
+                  },
+                  "RootRun": {
+                    "Subject": "b",
+                    "Generation": 1
+                  },
+                  "Permission": {
+                    "Kind": "external",
+                    "Source": "b",
+                    "Target": "http://127.0.0.1:53454/apply",
+                    "Operation": "apply",
+                    "Revision": 1,
+                    "Obligation": "ba-service"
+                  }
+                },
+                "GrantID": "[\"b\",1,2,0]"
+              },
+              "ID": "[\"a\",1,4,0]",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "Sequence": 4,
+              "Ordinal": 0,
+              "Kind": "external",
+              "Target": "http://127.0.0.1:53454/apply",
+              "Generation": 1,
+              "Obligation": "ba-service",
+              "Payload": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "profile": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "idempotent",
+                  "Flag": false
+                }
+              }
+            }
+          ],
+          "PendingDeliveries": [
+            "[\"external-delivery\",\"[\\\"a\\\",1,4,0]\"]"
+          ],
+          "UnknownExternal": [
+            "[\"a\",1,4,0]"
+          ],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "1003ee42caf3436daa87337612c17e80ff8caf7ad8a95d6a7035cd24edd35665",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "1003ee42caf3436daa87337612c17e80ff8caf7ad8a95d6a7035cd24edd35665",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 1,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [
+                "[\"a\",1,4,0]"
+              ],
+              "UnknownExternal": [
+                "[\"a\",1,4,0]"
+              ]
+            },
+            {
+              "RootID": "310e8020f8d0d6c503d486c267743313c53306e90c3d657d5da093c6e96886ce",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "310e8020f8d0d6c503d486c267743313c53306e90c3d657d5da093c6e96886ce",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      "regular_members": 122
+    },
+    "race": {
+      "byte_equal": {
+        "first-owner/post-open/inspect.json": true,
+        "stopped/inspect.json": true,
+        "reopened/inspect.json": true,
+        "final/inspect.json": true,
+        "run.json": true
+      },
+      "report": {
+        "Error": "<nil>",
+        "Report": {
+          "Steps": 0,
+          "Dispatches": 1,
+          "Quiescent": true,
+          "OpenRuns": [
+            {
+              "Subject": "a",
+              "Generation": 1
+            },
+            {
+              "Subject": "b",
+              "Generation": 1
+            }
+          ],
+          "UnresolvedIntents": [
+            {
+              "Authority": {
+                "Version": "alan/request-authority/v2",
+                "Path": "delegated",
+                "Root": {
+                  "Run": {
+                    "Subject": "b",
+                    "Generation": 1
+                  },
+                  "RootRun": {
+                    "Subject": "b",
+                    "Generation": 1
+                  },
+                  "Permission": {
+                    "Kind": "external",
+                    "Source": "b",
+                    "Target": "http://127.0.0.1:53475/apply",
+                    "Operation": "apply",
+                    "Revision": 1,
+                    "Obligation": "ba-service"
+                  }
+                },
+                "GrantID": "[\"b\",1,2,0]"
+              },
+              "ID": "[\"a\",1,4,0]",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "Sequence": 4,
+              "Ordinal": 0,
+              "Kind": "external",
+              "Target": "http://127.0.0.1:53475/apply",
+              "Generation": 1,
+              "Obligation": "ba-service",
+              "Payload": {
+                "delta": {
+                  "Kind": "int",
+                  "Number": 1,
+                  "Text": "",
+                  "Flag": false
+                },
+                "profile": {
+                  "Kind": "string",
+                  "Number": 0,
+                  "Text": "idempotent",
+                  "Flag": false
+                }
+              }
+            }
+          ],
+          "PendingDeliveries": [
+            "[\"external-delivery\",\"[\\\"a\\\",1,4,0]\"]"
+          ],
+          "UnknownExternal": [
+            "[\"a\",1,4,0]"
+          ],
+          "UnknownAdapters": [],
+          "Roots": [
+            {
+              "RootID": "2fee4519261d2f6867992a34c15f41f851345a2c4d103ee28d4dfa7383a88254",
+              "Run": {
+                "Subject": "b",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "2fee4519261d2f6867992a34c15f41f851345a2c4d103ee28d4dfa7383a88254",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 0,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [],
+              "UnknownExternal": []
+            },
+            {
+              "RootID": "6cd99707b54dc5de73acb773ef2b9e9631e2aac2383177109dc5259df622f85d",
+              "Run": {
+                "Subject": "a",
+                "Generation": 1
+              },
+              "LocalStatus": "open",
+              "Limits": {
+                "MaxInvocations": 0,
+                "MaxCreatedRuns": 0,
+                "MaxDepth": 0,
+                "MaxEffects": 1,
+                "MaxInFlight": 1
+              },
+              "Charges": {
+                "RootID": "6cd99707b54dc5de73acb773ef2b9e9631e2aac2383177109dc5259df622f85d",
+                "OperationID": "",
+                "Kind": "",
+                "Invocations": 0,
+                "CreatedRuns": 0,
+                "Effects": 1,
+                "DecisionOrder": 0
+              },
+              "Outcome": null,
+              "Pending": "members",
+              "PendingInvocations": [],
+              "UnresolvedExternal": [
+                "[\"a\",1,4,0]"
+              ],
+              "UnknownExternal": [
+                "[\"a\",1,4,0]"
+              ]
+            }
+          ],
+          "RejectedAdmissions": 0
+        }
+      },
+      "regular_members": 122
+    }
+  },
+  "corrected": {
+    "normal": {
+      "Equality": {
+        "final": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "first-owner/post-open": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "reopened": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "seed-copies": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "stopped": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        }
+      },
+      "Model": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "ProducerStatus": "complete",
+      "Protocol": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Raw": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "ReportEquality": {
+        "ByteEqual": true,
+        "Paths": [],
+        "StructuralEqual": true
+      },
+      "Seal": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Source": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Supported": true,
+      "World": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Worlds": {
+        "applied": {
+          "Applications": 1,
+          "Contacts": 1,
+          "Receipt": {
+            "Delta": 1,
+            "Key": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+            "Mutation": 1,
+            "PID": 55230,
+            "Process": "b1c35a5d006f4950cce119fd35541643",
+            "Profile": "idempotent",
+            "Total": 1
+          },
+          "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]"
+        },
+        "zero": {
+          "Applications": 0,
+          "Contacts": 0,
+          "Receipt": null,
+          "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]"
+        }
+      },
+      "custody": {
+        "archive_bytes": 369092,
+        "archive_sha256": "0d2b423ea6f611be28595ac71d973507c7ccf6d2444e68fc05c28af61fdf4b65",
+        "member_count": 122,
+        "raw_and_archive_members_unchanged": true
+      },
+      "model_trace_lengths": {
+        "applied": [
+          4,
+          5,
+          7
+        ],
+        "zero": [
+          1,
+          2,
+          4
+        ]
+      },
+      "repeated_bytes_equal": true,
+      "report_sha256": "edf131b32f95075db836c86d16992f779fe03a18fbde327acba71dfe56aaa3e3"
+    },
+    "race": {
+      "Equality": {
+        "final": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "first-owner/post-open": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "reopened": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "seed-copies": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        },
+        "stopped": {
+          "ByteEqual": true,
+          "Paths": [],
+          "StructuralEqual": true
+        }
+      },
+      "Model": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "ProducerStatus": "complete",
+      "Protocol": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Raw": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "ReportEquality": {
+        "ByteEqual": true,
+        "Paths": [],
+        "StructuralEqual": true
+      },
+      "Seal": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Source": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Supported": true,
+      "World": {
+        "Reasons": [],
+        "Valid": true
+      },
+      "Worlds": {
+        "applied": {
+          "Applications": 1,
+          "Contacts": 1,
+          "Receipt": {
+            "Delta": 1,
+            "Key": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+            "Mutation": 1,
+            "PID": 55373,
+            "Process": "3a7482ff8cf29c476028c29a142fd87f",
+            "Profile": "idempotent",
+            "Total": 1
+          },
+          "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]"
+        },
+        "zero": {
+          "Applications": 0,
+          "Contacts": 0,
+          "Receipt": null,
+          "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]"
+        }
+      },
+      "custody": {
+        "archive_bytes": 369260,
+        "archive_sha256": "19be235cec79f5555eaaa4d92263af884f36c9fa4ef45ff814f81de9bc4c6292",
+        "member_count": 122,
+        "raw_and_archive_members_unchanged": true
+      },
+      "model_trace_lengths": {
+        "applied": [
+          4,
+          5,
+          7
+        ],
+        "zero": [
+          1,
+          2,
+          4
+        ]
+      },
+      "repeated_bytes_equal": true,
+      "report_sha256": "4d7326b200b8bacc679eb0f3c1a57e16b3bab6628756855a82cb00a1e820c38f"
+    }
+  },
+  "initial": {
+    "normal": {
+      "report_sha256": "39a48f793a410b08f11a2e22f0c537d7fd15d8d81a8dd7c28059232b44c900df",
+      "repeated_bytes_equal": true,
+      "Supported": false,
+      "Seal": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Source": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Raw": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      },
+      "World": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Equality": {
+        "final": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "first-owner/post-open": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "reopened": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "seed-copies": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "stopped": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        }
+      },
+      "ReportEquality": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "Worlds": {
+        "applied": {
+          "Contacts": 1,
+          "Applications": 1,
+          "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+          "Receipt": {
+            "Key": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+            "Profile": "idempotent",
+            "Delta": 1,
+            "Mutation": 1,
+            "Total": 1,
+            "Process": "b1c35a5d006f4950cce119fd35541643",
+            "PID": 55230
+          }
+        },
+        "zero": {
+          "Contacts": 0,
+          "Applications": 0,
+          "SelectedKey": "[2,\"e9b6fa544abec0c4f1cc72c1bcb4ac86bfe737eeba8008ca41ba9d71778ff9ff\",\"[\\\"a\\\",1,4,0]\"]",
+          "Receipt": null
+        }
+      }
+    },
+    "race": {
+      "report_sha256": "319acbb7639f9ed8ddf40d09b0d550ea7dc53763b8670f38576ca0dbcc492217",
+      "repeated_bytes_equal": true,
+      "Supported": false,
+      "Seal": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Source": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Raw": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Protocol": {
+        "Valid": false,
+        "Reasons": [
+          "zero/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "applied/first-owner/boundaries.jsonl: selected native authorization coordinates/selectors",
+          "protocol: branch chronology prerequisite"
+        ]
+      },
+      "World": {
+        "Valid": true,
+        "Reasons": []
+      },
+      "Equality": {
+        "final": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "first-owner/post-open": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "reopened": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "seed-copies": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        },
+        "stopped": {
+          "ByteEqual": true,
+          "StructuralEqual": true,
+          "Paths": []
+        }
+      },
+      "ReportEquality": {
+        "ByteEqual": true,
+        "StructuralEqual": true,
+        "Paths": []
+      },
+      "Worlds": {
+        "applied": {
+          "Contacts": 1,
+          "Applications": 1,
+          "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+          "Receipt": {
+            "Key": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+            "Profile": "idempotent",
+            "Delta": 1,
+            "Mutation": 1,
+            "Total": 1,
+            "Process": "3a7482ff8cf29c476028c29a142fd87f",
+            "PID": 55373
+          }
+        },
+        "zero": {
+          "Contacts": 0,
+          "Applications": 0,
+          "SelectedKey": "[2,\"d60f754ba11941a0919aee8f770acdfb2b07a349b17d9715c41380a9d2c0782a\",\"[\\\"a\\\",1,4,0]\"]",
+          "Receipt": null
+        }
+      }
+    }
+  },
+  "archived_source_excerpts": {
+    "internal/executor/dispatch.go": "90: func (s *Store) registerDispatchRecord(ctx context.Context, id string, captured **AuthorityAdmission) (*dispatchOpportunity, string, error) {\n91: \ts.mu.Lock()\n92: \tdefer s.mu.Unlock()\n93: \tif s.closed || !s.dispatchOwnerOpen() {\n94: \t\treturn nil, \"\", sql.ErrConnDone\n95: \t}\n96: \tintent, err := loadIntent(ctx, s.conn, id)\n97: \tif err != nil {\n98: \t\treturn nil, \"\", err\n99: \t}\n100: \tenabled, err := requestAuthorityEnabled(ctx, s.conn)\n101: \tif err != nil {\n102: \t\treturn nil, \"\", err\n103: \t}\n104: \tif !enabled {\n105: \t\treason, e := s.dispatchSourceReason(ctx, intent.Run, intent.revision)\n106: \t\tif e != nil || reason != \"\" {\n107: \t\t\treturn nil, reason, e\n108: \t\t}\n109: \t}\n110: \t// Keep Close and durable R outside the final check-and-register interval.\n111: \ts.ownerMu.Lock()\n112: \tdefer s.ownerMu.Unlock()\n113: \tif s.closing {\n114: \t\treturn nil, \"\", sql.ErrConnDone\n115: \t}\n116: \tif err = ctx.Err(); err != nil {\n117: \t\treturn nil, \"\", err\n118: \t}\n119: \top := &dispatchOpportunity{intent: id, source: intent.Run, done: make(chan struct{})}\n120: \tif enabled {\n121: \t\top.authority, err = s.recordAuthorityAdmission(ctx, id)\n122: \t\tif err != nil {\n123: \t\t\treturn nil, \"\", err\n124: \t\t}\n125: \t\tif captured != nil {\n126: \t\t\t*captured = op.authority\n127: \t\t}\n128: \t\tif !op.authority.Allowed {\n129: \t\t\treturn nil, op.authority.Reason, nil\n130: \t\t}\n131: \t}\n132: \tif s.dispatchAdmissions && intent.Kind == \"adapter\" {\n133: \t\tif err := s.recordDispatchAdmission(ctx, intent.Intent); err != nil {\n134: \t\t\treturn nil, \"\", err\n135: \t\t}\n136: \t}\n137: \tif s.reconciliation && intent.Kind == \"adapter\" && intent.Target == receiptReadCapability {\n138: \t\top.read, op.readRefusal, err = s.reserveReadLocked(ctx, id)\n139: \t\tif err != nil {\n140: \t\t\treturn nil, \"\", err\n141: \t\t}\n142: \t}\n143: \tif s.liveDispatch == nil {\n144: \t\ts.liveDispatch = make(map[*dispatchOpportunity]struct{})\n145: \t}\n146: \ts.liveDispatch[op] = struct{}{}\n147: \treturn op, \"\", nil\n148: }",
+    "internal/executor/external.go": "185: func exchangeExternal(ctx context.Context, work externalWork) externalCompletion {\n186: \tresult := externalCompletion{work: work}\n187: \ta := work.attempt\n188: \tif err := boundary.Reached(ctx, work.event); err != nil {\n189: \t\tresult.err = err\n190: \t\treturn result\n191: \t}\n192: \traw, err := json.Marshal(a.Request)\n193: \tif err != nil {\n194: \t\tresult.err = err\n195: \t\treturn result\n196: \t}\n197: \trequest, err := http.NewRequestWithContext(ctx, http.MethodPost, a.Intent.Target, bytes.NewReader(raw))\n198: \tif err != nil {\n199: \t\tresult.err = err\n200: \t\treturn result\n201: \t}\n202: \trequest.Header.Set(\"Content-Type\", \"application/json\")\n203: \tclient := &http.Client{Timeout: work.timeout, CheckRedirect: func(*http.Request, []*http.Request) error { return http.ErrUseLastResponse }}\n204: \tif err = dispatchEvent(ctx, work.event, \"dispatch.admitted\", \"pre-call\"); err != nil {\n205: \t\tresult.err = err\n206: \t\treturn result\n207: \t}\n208: \tresponse, err := client.Do(request)\n209: \tif err != nil {\n210: \t\tresult.err = ctx.Err()",
+    "internal/executor/lifecycle.go": "310: \tif err == nil && s.invocationEnabled() && before != nil && request.Operation == \"Retry\" {\n311: \t\trootID, e := compositionMembershipRoot(ctx, tx, before.Run)\n312: \t\tif e != nil {\n313: \t\t\treturn result, e\n314: \t\t}\n315: \t\tif rootID != \"\" {\n316: \t\t\tafter := *before\n317: \t\t\tresult.Accepted = false\n318: \t\t\tresult.Successor = 0\n319: \t\t\tresult.Reason = \"invocation_retry_unsupported\"\n320: \t\t\tresult.After = &after\n321: \t\t}\n322: \t}\n323: \n324: \tif err != nil {\n325: \t\treturn result, err\n326: \t}\n327: \tif result.Accepted {\n328: \t\tif result.Successor != 0 {\n329: \t\t\tinitial, e := json.Marshal(root.Initial)\n330: \t\t\tif e != nil {\n331: \t\t\t\treturn result, e\n332: \t\t\t}\n333: \t\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO runs VALUES(?,?,?,?,1,0,?)\", subject.ID, result.Successor, root.ProgramID, initial, initial); err != nil {\n334: \t\t\t\treturn result, err\n335: \t\t\t}\n336: \t\t\tif _, err = tx.ExecContext(ctx, \"INSERT INTO run_origins VALUES(?,?,'retry',?,?,?)\", subject.ID, result.Successor, request.Intent.ID, before.Run.Generation, rootRaw); err != nil {\n337: \t\t\t\treturn result, err\n338: \t\t\t}\n339: \t\t\tif _, err = tx.ExecContext(ctx, \"UPDATE subjects SET generation=? WHERE id=?\", result.Successor, subject.ID); err != nil {\n340: \t\t\t\treturn result, err\n341: \t\t\t}\n342: \t\t} else {\n343: \t\t\tif result.After.Retired != before.Retired {\n344: \t\t\t\tif _, err = tx.ExecContext(ctx, \"UPDATE subjects SET retired=? WHERE id=?\", result.After.Retired, subject.ID); err != nil {\n345: \t\t\t\t\treturn result, err\n346: \t\t\t\t}\n347: \t\t\t}\n348: \t\t\tif before.Projection.Status == \"open\" && result.After.Projection.Status != \"open\" {",
+    "internal/executor/request_binding.go": "1: package executor\n2: \n3: import (\n4: \t\"context\"\n5: \t\"database/sql\"\n6: \t\"encoding/json\"\n7: \t\"errors\"\n8: \t\"math\"\n9: \t\"reflect\"\n10: )\n11: \n12: // selectedOriginalRequest starts with the immutable grant's exact original ID.\n13: // Admission has no chronological ordinal. The writer requires admission before\n14: // selection; the selection's execution fact and its source authorization anchor\n15: // that causal dependency in the ordered prefix. Duplicate transports may follow.\n16: func selectedOriginalRequest(ctx context.Context, q queryer, x *authorityPrefix, service retainedIntent, claim DelegationClaim) (string, int64, error) {\n17: \toriginal, err := loadIntent(ctx, q, claim.OriginalRequestID)\n18: \tif err != nil {\n19: \t\treturn \"\", 0, err\n20: \t}\n21: \tif !x.committed(original.Intent) || original.Kind != \"message\" || original.Run != claim.Root.Run || original.revision != claim.Root.Permission.Revision || original.Target != service.Run.Subject || original.Generation != service.Run.Generation {\n22: \t\treturn \"\", 0, corrupt(\"binding original request differs from grant\")\n23: \t}\n24: \tfor _, intent := range []retainedIntent{original, service} {\n25: \t\tif err := validateBindingCommit(ctx, q, intent); err != nil {\n26: \t\t\treturn \"\", 0, err\n27: \t\t}\n28: \t}\n29: \tobservationID := identity(\"observation\", \"message\", original.ID)\n30: \tvar run RunID\n31: \tvar raw []byte\n32: \tvar consumed sql.NullInt64\n33: \terr = q.QueryRowContext(ctx, \"SELECT subject,generation,descriptor,consumed_sequence FROM observations WHERE id=?\", observationID).Scan(&run.Subject, &run.Generation, &raw, &consumed)\n34: \tif errors.Is(err, sql.ErrNoRows) {\n35: \t\treturn \"\", 0, nil\n36: \t}\n37: \tif err != nil {\n38: \t\treturn \"\", 0, err\n39: \t}\n40: \tvar observation Observation\n41: \tif err = decode(raw, &observation); err != nil {\n42: \t\treturn \"\", 0, err\n43: \t}\n44: \texpected := observationFor(messageDescriptor(original.Intent, \"unused transport\"), service.Run)\n45: \tif run != service.Run || !sameJSON(raw, observation) || !reflect.DeepEqual(expected, observation) {\n46: \t\treturn \"\", 0, corrupt(\"binding observation differs from original\")\n47: \t}\n48: \t// An absent or future consumption cannot populate the historical witness.\n49: \tif !consumed.Valid || consumed.Int64 >= service.Sequence {\n50: \t\treturn \"\", 0, nil\n51: \t}\n52: \tif consumed.Int64 <= 0 {\n53: \t\treturn \"\", 0, corrupt(\"invalid binding consumption\")\n54: \t}\n55: \tvar selected sql.NullString\n56: \tvar revision int64\n57: \tvar successor, intents []byte\n58: \tif err = q.QueryRowContext(ctx, \"SELECT selected_observation,source_revision,successor,intents FROM history WHERE subject=? AND generation=? AND sequence=?\", service.Run.Subject, service.Run.Generation, consumed.Int64).Scan(&selected, &revision, &successor, &intents); err != nil {\n59: \t\treturn \"\", 0, err\n60: \t}\n61: \tif !selected.Valid || selected.String != observationID || revision != claim.RecipientRevision {\n62: \t\treturn \"\", 0, corrupt(\"binding history/consumption mismatch\")\n63: \t}\n64: \tvar selectionOrder, serviceOrder, authorizationOrder, originalOrder int64\n65: \tfor _, f := range x.facts {\n66: \t\tif f.Kind == compositionExecutionFact {\n67: \t\t\tif f.Run == service.Run && f.Sequence == consumed.Int64 {\n68: \t\t\t\tselectionOrder = f.Order\n69: \t\t\t}\n70: \t\t\tif f.Run == service.Run && f.Sequence == service.Sequence {\n71: \t\t\t\tserviceOrder = f.Order\n72: \t\t\t}\n73: \t\t\tif f.Run == original.Run && f.Sequence == original.Sequence {\n74: \t\t\t\toriginalOrder = f.Order\n75: \t\t\t}\n76: \t\t}\n77: \t\tif f.Kind == compositionAuthorizationFact && f.OperationID == original.ID {\n78: \t\t\tauthorizationOrder = f.Order\n79: \t\t}\n80: \t}\n81: \tif selectionOrder == 0 || serviceOrder <= selectionOrder || originalOrder == 0 || authorizationOrder <= originalOrder || authorizationOrder >= selectionOrder {\n82: \t\treturn \"\", 0, corrupt(\"binding causal prefix mismatch\")\n83: \t}\n84: \tauth, err := validatedAuthorization(ctx, q, identity(\"authorization\", original.ID))\n85: \tif err != nil {\n86: \t\treturn \"\", 0, err\n87: \t}\n88: \tif !auth.Allowed {\n89: \t\treturn \"\", 0, corrupt(\"selected original lacks source authorization\")\n90: \t}\n91: \trows, err := q.QueryContext(ctx, \"SELECT id FROM admissions WHERE observation_id=? ORDER BY id\", observationID)\n92: \tif err != nil {\n93: \t\treturn \"\", 0, err\n94: \t}\n95: \tvar ids []string\n96: \tfor rows.Next() {\n97: \t\tvar id string\n98: \t\tif err = rows.Scan(&id); err != nil {\n99: \t\t\trows.Close()\n100: \t\t\treturn \"\", 0, err\n101: \t\t}\n102: \t\tids = append(ids, id)\n103: \t}\n104: \tif err = errors.Join(rows.Err(), rows.Close()); err != nil {\n105: \t\treturn \"\", 0, err\n106: \t}\n107: \tif len(ids) == 0 {\n108: \t\treturn \"\", 0, corrupt(\"selected original lacks admission\")\n109: \t}\n110: \tfor _, id := range ids {\n111: \t\td, a, err := loadAdmissionKey(ctx, q, id)\n112: \t\tif err != nil {\n113: \t\t\treturn \"\", 0, err\n114: \t\t}\n115: \t\tif !validAdmissionHeader(d) || !reflect.DeepEqual(d, messageDescriptor(original.Intent, d.TransportID)) || !a.Accepted || a.Bound == nil || *a.Bound != service.Run || a.ObservationID != observationID || !reflect.DeepEqual(observationFor(d, service.Run), observation) {\n116: \t\t\treturn \"\", 0, corrupt(\"binding admission differs from original\")\n117: \t\t}\n118: \t\tpermitted, err := admissionPermitted(ctx, q, d)\n119: \t\tif err != nil {\n120: \t\t\treturn \"\", 0, err\n121: \t\t}\n122: \t\tif !permitted {\n123: \t\t\treturn \"\", 0, corrupt(\"binding admission lacks route permission\")\n124: \t\t}\n125: \t}\n126: \t// Check the actual receive transition, independent of its retained successor.\n127: \t// Byte ceilings are enforced by Commit and whole-ledger validation with caller\n128: \t// Limits. This semantic recheck must not introduce a smaller default ceiling.\n129: \tlimits := Limits{math.MaxInt, math.MaxInt, math.MaxInt, math.MaxInt}\n130: \trunState, err := loadRun(ctx, q, service.Run)\n131: \tif err != nil {\n132: \t\treturn \"\", 0, err\n133: \t}\n134: \tprogram, err := loadProgram(ctx, q, runState.ProgramID, limits)\n135: \tif err != nil {\n136: \t\treturn \"\", 0, err\n137: \t}\n138: \tbefore, err := projectionAt(ctx, q, service.Run, consumed.Int64-1)\n139: \tif err != nil {\n140: \t\treturn \"\", 0, err\n141: \t}\n142: \t// Size the canonical typed inputs and retained expected outputs, rather\n143: \t// than raw JSON whose omitted zero fields may marshal to a larger value.\n144: \tvar retainedSuccessor Projection\n145: \tif err = decode(successor, &retainedSuccessor); err != nil {\n146: \t\treturn \"\", 0, err\n147: \t}\n148: \tsize := func(value any) (int, error) { raw, err := json.Marshal(value); return len(raw), err }\n149: \tif limits.MaxProgramBytes, err = size(program); err != nil {\n150: \t\treturn \"\", 0, err\n151: \t}\n152: \tif limits.MaxObservationBytes, err = size(observation); err != nil {\n153: \t\treturn \"\", 0, err\n154: \t}\n155: \tbeforeSize, err := size(before)\n156: \tif err != nil {\n157: \t\treturn \"\", 0, err\n158: \t}\n159: \tafterSize, err := size(retainedSuccessor)\n160: \tif err != nil {\n161: \t\treturn \"\", 0, err\n162: \t}\n163: \tlimits.MaxDataBytes = max(beforeSize, afterSize)\n164: \t// Receive emits no intents. Its exact expected output is the empty array.\n165: \tlimits.MaxOutputBytes = len(\"[]\")\n166: \treduction, err := Reduce(program, before, &observation, service.Run, consumed.Int64, limits)\n167: \tif err != nil {\n168: \t\treturn \"\", 0, corrupt(\"binding selection reduction: %v\", err)\n169: \t}\n170: \tif !sameJSON(successor, reduction.Projection) || !sameJSON(intents, reduction.Intents) {\n171: \t\treturn \"\", 0, corrupt(\"binding selection reduction differs from history\")\n172: \t}\n173: \treturn observationID, consumed.Int64, nil\n174: }\n175: \n176: func validateRequestBindingIndex(ctx context.Context, q queryer, version int) error {\n177: \trows, err := q.QueryContext(ctx, \"SELECT name,\\\"unique\\\",origin,partial FROM pragma_index_list('admissions') WHERE name='admissions_observation_id'\")\n178: \tif err != nil {\n179: \t\treturn err\n180: \t}"
+  }
+}
