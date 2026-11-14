@@ -1,0 +1,14 @@
+{
+  "baseline.json": {
+    "bytes": 497,
+    "sha256": "59f941f233692148aab552843d19002ad0c71b291644143cce727ca357ef02b9"
+  },
+  "early-evidence.md": {
+    "bytes": 18949,
+    "sha256": "08f6388d0b278c57c6bfa7a12c94a5a13e1285773b91367cdeab031e24e40f49"
+  },
+  "late-evidence.md": {
+    "bytes": 12903,
+    "sha256": "5e21d22aac6805bf1de363bf878de8d906f1ff2438a2cee621a2150d2bed4ce3"
+  }
+}
