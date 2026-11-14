@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c3/evidence/manuscript/verify.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "exit_code": 0,
+  "elapsed_seconds": 5.616,
+  "stdout": "{\n  \"result\": \"PASS\",\n  \"baseline_inputs_against_current_and_git\": 669,\n  \"accepted_new_go_inputs\": 14,\n  \"producer_inputs\": 27,\n  \"task2_artifacts\": 125,\n  \"checker_sources\": 4,\n  \"hostile_input_identities\": 55,\n  \"root_packages\": 76,\n  \"go_top_level_tests_in_accepted_ordinary_and_race\": 9,\n  \"qualification_archive_files\": 17,\n  \"manuscript_archive_files\": 22,\n  \"local_links\": 24,\n  \"changed_section_abstract_conclusion_aligned\": true,\n  \"new_reference_metadata_aligned\": true,\n  \"warnings_unchanged\": true,\n  \"changed_pages_inspected\": true,\n  \"paper_hashes_match\": true\n}\n",
+  "stderr": ""
+}
