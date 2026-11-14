@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "codec",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "invalid-utf8.input.gz",
+  "InputArchiveSHA256": "d017daf8adfc6fd8cb09735cb65075c59c54e87bb8cd7b82c3f079d64c22731b",
+  "InputBytes": 1,
+  "InputSHA256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+  "Name": "invalid-utf8",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

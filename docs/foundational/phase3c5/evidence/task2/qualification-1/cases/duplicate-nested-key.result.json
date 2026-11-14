@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "duplicate key",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "duplicate-nested-key.input.gz",
+  "InputArchiveSHA256": "5ab047eed28dd4ce724fd76ace37201360018d60e7d5a925f51ebb43cdfe5c3b",
+  "InputBytes": 19,
+  "InputSHA256": "5f1d46b1bd328c7d2bda52ce98c1a59df906f65085d94774d1239d99161e12f5",
+  "Name": "duplicate-nested-key",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

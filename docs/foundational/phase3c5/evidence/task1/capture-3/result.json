@@ -1,0 +1,33 @@
+{
+  "CompiledRosterEqual": true,
+  "CompressedBytes": 324201,
+  "CompressedSHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+  "Counts": {
+    "BlockingSubstitutions": 1928,
+    "Comparisons": 36,
+    "Controllers": 324,
+    "EqualFULL": 6,
+    "EqualJ": 7,
+    "EqualLanguages": 13,
+    "EqualMAX": 13,
+    "EqualMIN": 7,
+    "InitialCanComplete": 1234,
+    "LanguageSubsetPairs": 5208,
+    "Monitors": 9,
+    "NonblockingProducts": 760,
+    "NonblockingSubstitutions": 844,
+    "Plants": 72,
+    "ProductArcs": 59492,
+    "ProductCanComplete": 22716,
+    "ProductStates": 45800,
+    "Products": 3564,
+    "ProfileSubsetPairs": 146,
+    "ResidualComparisons": 1442,
+    "Substitutions": 2772
+  },
+  "InheritedSources": 40,
+  "RawBytes": 14097260,
+  "RawSHA256": "ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a",
+  "ReadInputs": 54,
+  "Schema": "alan/phase3c5/v1"
+}

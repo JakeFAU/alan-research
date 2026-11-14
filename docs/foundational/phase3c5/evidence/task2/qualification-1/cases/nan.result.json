@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "nonfinite",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "nan.input.gz",
+  "InputArchiveSHA256": "23483db8872c0dc3b992d12894267305d21a2e3de80dd30d5b2224ac2f850927",
+  "InputBytes": 3,
+  "InputSHA256": "d5b592c05dc25b5032553f1b27f4139be95e881f73db33b02b05ab20c3f9981e",
+  "Name": "nan",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

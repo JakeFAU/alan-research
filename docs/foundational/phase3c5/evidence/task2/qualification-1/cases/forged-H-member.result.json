@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "H",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "forged-H-member.input.gz",
+  "InputArchiveSHA256": "321647573ce6ff3f16d24654da28fd7c5d85a863988edf5f1141ea2946870d9f",
+  "InputBytes": 324139,
+  "InputSHA256": "5ac26901eec3dc136b9430d6f86df0ae5adbd6d8a4d581e9fba184176b1abb4c",
+  "Name": "forged-H-member",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

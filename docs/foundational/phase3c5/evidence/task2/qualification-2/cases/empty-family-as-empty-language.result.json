@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "LeftFamily",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "empty-family-as-empty-language.input.gz",
+  "InputArchiveSHA256": "90af80998d424270409fc326061b63a4ed58d3b7c30ce23a73613b06d2b1e366",
+  "InputBytes": 14093244,
+  "InputSHA256": "58163217ba159be8ba9b965f5ecf1d6c13db98a63994e00e7cd0b1b3bd391609",
+  "Name": "empty-family-as-empty-language",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

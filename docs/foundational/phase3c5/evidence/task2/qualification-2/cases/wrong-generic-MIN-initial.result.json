@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "CanComplete",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "wrong-generic-MIN-initial.input.gz",
+  "InputArchiveSHA256": "ae23f93963863cdad00e166f0cf9406e068a953f2116c819243431d23371f49d",
+  "InputBytes": 14093161,
+  "InputSHA256": "cb071ebec7e8939e76f46bfac61e440c53563e70ebd6852c6e37054c672e944f",
+  "Name": "wrong-generic-MIN-initial",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

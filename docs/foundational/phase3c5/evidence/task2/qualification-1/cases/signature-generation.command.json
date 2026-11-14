@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/audit.py",
+    "/var/folders/qn/d3_l9fv5585g36qycsc804hh0000gn/T/alan-phase3c5-audit-ik511ysf/input.json.gz"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+    "GOMODCACHE": "/tmp/alan-phase3c5/mod-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c5/staticcheck-cache"
+  },
+  "exit": 1,
+  "stderr_archive": "signature-generation.stderr.gz",
+  "stderr_bytes": 88,
+  "stderr_sha256": "a528537920cc9001f9aee8512bbd99d71183e972149424edff463b0d7820de65",
+  "stdout_archive": "signature-generation.stdout.gz",
+  "stdout_bytes": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

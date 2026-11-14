@@ -1,0 +1,160 @@
+{
+  "scope": "Workflow/review history through final whole-branch APPROVE at bbf58bf49407480a8de747f5c1b18c42b05b7074 and draft PR54 creation at 6c7aa2cb6be35034bb0c001b2d88b16a40728ac6. All earlier entries and captures are unchanged.",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-attempted-plan.md.gz",
+      "bytes": 5203,
+      "sha256": "32d0076bb97f8229cac07a666cd6b668f00348da97798eefb54b51ac441aabb3"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-plan-restoration.json",
+      "bytes": 623,
+      "sha256": "8f3d57fd91b6e92c843c22b1013b228d1da7f1465f2408a1a3f8c90f85a321af"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-proof-check.md.gz",
+      "bytes": 908,
+      "sha256": "02d34f43c7eca6ab54a82a055fc9f0277007271a407b84d07eb2a1f20e9a4494"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-verification-before-review.json",
+      "bytes": 846,
+      "sha256": "324b3934d9e59eccf6348fff3d52f96ee088e7066be2af858d4cbd80bc264593"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-verification-plan-drift.json",
+      "bytes": 1008,
+      "sha256": "2c44e24d994d98c167bc68034ca9cc7e9c7ad4271c14cfbd116006ce175281f3"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/controller-visual-check.md.gz",
+      "bytes": 401,
+      "sha256": "1420e4dac0fef1538281ba7b0fdd1be7809bc3e10c8b8a772e63fdf3d034b87d"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/global-constraints.md",
+      "bytes": 973,
+      "sha256": "6662d6b4eac0b16de5695eea3e2156a25901f15528c77571106424e5d3e6c771"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/progress.md",
+      "bytes": 11595,
+      "sha256": "81b9a09b8943484bd701dfb4815552f2f3f808354dbc3421df40e0c15d070dcb"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/review-focus.md",
+      "bytes": 783,
+      "sha256": "e910bfd04b10464162e8e379f6b3c48caa72e659a7c64e3f97397e6182d5dc9d"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-1-brief.md.gz",
+      "bytes": 1932,
+      "sha256": "85936db347a5f9d50fe142c8c5ef69fe3fd0852bc4e0c9f22116391055def37c"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-1-report.md",
+      "bytes": 10287,
+      "sha256": "5fab570d7e9030738c8a2ada573496f19801af68a7e211b0d618f74a3647f3c8"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-1-review.md",
+      "bytes": 8118,
+      "sha256": "54c786dd941936deaeaed97b3fde4d98a311a7ce3528bf362a5ef39f98d0f6dc"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-brief.md.gz",
+      "bytes": 1227,
+      "sha256": "fce316e5fa8b478864ab2ded9d60959d1eed2a279bae32e554e6d091f5e7a588"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-fix-1-brief.md.gz",
+      "bytes": 2516,
+      "sha256": "2f7b93bb25e7beca229276fafffd87ef3803e3ed4d178e3aafe7b01e62337341"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-report.md",
+      "bytes": 11732,
+      "sha256": "0a47be22ba494f55cfe95c9f48f217d9b777b439ae84ac5c06b0b666d03581f2"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-rereview-1.md",
+      "bytes": 5863,
+      "sha256": "005af3688ffebd2fd4ecce42b291a49e1227c3419f82022991eea54f5445216e"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-review-cache-repro.command.json",
+      "bytes": 700,
+      "sha256": "fd06964cf034e2e2d88ad1da64076203f2bb14319bd14ae8ebf9f80dd88cc9a3"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-review-cache-repro.py",
+      "bytes": 1540,
+      "sha256": "d39639b72e12a3de1ffe35516837a106cdbdb5b45cc2ac97e16a6d7520f22788"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-review-cache-repro.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-review-cache-repro.stdout",
+      "bytes": 145,
+      "sha256": "3bc0be917b8cffc55b9ed986764565731499abfde19d447961a385cb7ff22872"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-2-review.md",
+      "bytes": 10170,
+      "sha256": "f3353772754392ddf3efea4cb0904861cafa86ea588b18f452a5375445f0b05b"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-3-brief.md.gz",
+      "bytes": 1259,
+      "sha256": "6eae9e17a49d99f851d6888cfbace969ec39335a605208e4207f931988c33174"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-3-fix-1-brief.md.gz",
+      "bytes": 1777,
+      "sha256": "6f91ec7eb50927f152c2338c556766d027747287943d651ee49437d359fdba98"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-3-report.md",
+      "bytes": 11433,
+      "sha256": "4b3ab66d487db171f67233c25275706f6e5f4e915eda05d8c854e4ec27c93cb8"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-3-rereview-1.md",
+      "bytes": 2351,
+      "sha256": "954405425557fa7dfacf9887aa09d2cb50e3824c59a7f6c03cd3991a8215d0ae"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task-3-review.md",
+      "bytes": 7564,
+      "sha256": "ee31ce85ba88c31336e03103d77bb05b8b3ffaa02bb84e6742d95b5473e14d2e"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/task3-handoff.md.gz",
+      "bytes": 3271,
+      "sha256": "2458c629ce882e6e8b39c26d2a05d9e58df2d70f20fc4d8c66bbc53d522d1d57"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/final-review.md",
+      "bytes": 11239,
+      "sha256": "b4d700d0d0528a8f61008773181da17a1fe7c706196f23b2666c8a1706c0c2d1"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/progress-final-review.md",
+      "bytes": 12331,
+      "sha256": "638d016820fab7955039a7f6308da01fd9c3f42698ee612031e3b69b3096499c"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/pr-created.json",
+      "bytes": 674,
+      "sha256": "054031fd578e9975d60cd077ddb03cac5887b1bcc12623f413f1d60d56ece283"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/progress-delivery.md",
+      "bytes": 12755,
+      "sha256": "f12c54702e01a7f7a29356472078c710881b29802ded54330f5ed99ffe921f44"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "type",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "null-array.input.gz",
+  "InputArchiveSHA256": "4a0031726ff0a557d8afc8cd7381daf2a4e1b631b3aaf3575e7b621fbdff58d4",
+  "InputBytes": 14092908,
+  "InputSHA256": "0fa29c3b337ea6967baedd623eca1ba90bfe3ac470e2d35cacb8cd1513b9ec18",
+  "Name": "null-array",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

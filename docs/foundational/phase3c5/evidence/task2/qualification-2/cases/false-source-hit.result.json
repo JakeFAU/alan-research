@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Hit",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "false-source-hit.input.gz",
+  "InputArchiveSHA256": "05ce0f36859e9a5c09c5d0d41e54a4f8230e0fd644a2df716988d7934913b8a5",
+  "InputBytes": 324144,
+  "InputSHA256": "92386136a70fb67ec4402b47b78d482e548d7621b2c30681ed624c7c494dfa8b",
+  "Name": "false-source-hit",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

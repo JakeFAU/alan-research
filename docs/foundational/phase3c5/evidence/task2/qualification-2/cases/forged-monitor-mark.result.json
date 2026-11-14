@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Marked",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "forged-monitor-mark.input.gz",
+  "InputArchiveSHA256": "37222d6b282c376813efc1346b89be12e36712c50e0e8735eac39593d20bd0cd",
+  "InputBytes": 324139,
+  "InputSHA256": "b0a71ba1cdad29206e3e7e3046eebd1b3e0fb9afc2af4df772012b9c38e432ef",
+  "Name": "forged-monitor-mark",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

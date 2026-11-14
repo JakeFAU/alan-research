@@ -1,0 +1,21 @@
+{
+  "Label": "deliberately false hypothesis; expected semantic failure",
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-count=1",
+    "-run",
+    "^TestFalseHypotheses$",
+    "./research/residualantichains"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+    "ALAN_FALSE_HYPOTHESIS": "MAX-preserves-NB"
+  },
+  "exit": 1,
+  "stdout": "=== RUN   TestFalseHypotheses\n    evidence_test.go:227: falsified: MAX plus initial language preserves NB\n--- FAIL: TestFalseHypotheses (0.03s)\nFAIL\nFAIL\tgithub.com/JakeFAU/alan-research/research/residualantichains\t0.109s\nFAIL\n",
+  "stderr": "",
+  "Source": "research/residualantichains/evidence_test.go",
+  "SourceSHA256": "4b14b279dc85b91a5ab2c46cd0a548bf1ef348ec67d3c0588e176c51ec44e51a"
+}

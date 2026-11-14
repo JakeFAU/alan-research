@@ -1,0 +1,10 @@
+{
+  "Observed": "capture-1 and capture-2 go-list exit 0 with stat-cache permission warning on stderr",
+  "Change": "capture helper overrides GOMODCACHE with /tmp/alan-phase3c5/mod-cache",
+  "SemanticSourcesChanged": false,
+  "PriorCapturesEdited": false,
+  "FinalCaptureDirectories": [
+    "capture-3",
+    "capture-4"
+  ]
+}

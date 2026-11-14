@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "MINWord",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "bad-shortest-prefix.input.gz",
+  "InputArchiveSHA256": "a15a667d7756c1785a2ba1b49bcb001adb956952a7cd57588a3071cc1142ca8f",
+  "InputBytes": 324140,
+  "InputSHA256": "34995f02478c597985df5a20d9877d20df2328de1c7906c537ffcc7bc43ee0dd",
+  "Name": "bad-shortest-prefix",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

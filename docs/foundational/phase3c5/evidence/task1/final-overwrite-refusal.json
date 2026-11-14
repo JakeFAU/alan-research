@@ -1,0 +1,135 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/capture.py",
+    "docs/foundational/phase3c5/evidence/task1/capture-3"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "refusing existing capture directory\n",
+  "Unchanged": true,
+  "Before": [
+    {
+      "Path": "artifact-manifest.json",
+      "SHA256": "ce02ba5d24571170e968ca3f2e266549204c161496b4e4868a77c0dcee7b0f9f",
+      "MTimeNS": 1794689684761533394,
+      "Bytes": 1289
+    },
+    {
+      "Path": "compiled-roster.json",
+      "SHA256": "69be3ea0417c8e9f3c5ab6ca1440b175fca816a099485ffc78e100f8c4559a7a",
+      "MTimeNS": 1794689684753017472,
+      "Bytes": 1317
+    },
+    {
+      "Path": "environment.json",
+      "SHA256": "9e0aa3bbc1f6afa7da05b706ff304bf930edd5f12b845aa9bfc98d240f198354",
+      "MTimeNS": 1794689683753455339,
+      "Bytes": 553
+    },
+    {
+      "Path": "export.command.json",
+      "SHA256": "0b0e28ea60f411e67bb128851fa0f3e4f02ca6a6e3eb3274ce49db60eb3ebcd3",
+      "MTimeNS": 1794689684558632442,
+      "Bytes": 530
+    },
+    {
+      "Path": "export.json.gz",
+      "SHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+      "MTimeNS": 1794689684751853799,
+      "Bytes": 324201
+    },
+    {
+      "Path": "export.stdout.gz",
+      "SHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+      "MTimeNS": 1794689684554229877,
+      "Bytes": 324201
+    },
+    {
+      "Path": "go-list-deps.command.json",
+      "SHA256": "c5c437ed4f43f252ef172f62483dabf6b69b1e8f95fcb5abdd11466074078704",
+      "MTimeNS": 1794689684168239916,
+      "Bytes": 561
+    },
+    {
+      "Path": "go-list-deps.stdout.gz",
+      "SHA256": "a96553faba5168d7350ad69be642bb17a9ad827f4d5e04a9e0e922b207b426c0",
+      "MTimeNS": 1794689684168033374,
+      "Bytes": 20741
+    },
+    {
+      "Path": "read-inputs.json",
+      "SHA256": "6a5ea49950cbd9ecbbae63342f65b834e53ce29a12131cfa66d0df52ee0c5a06",
+      "MTimeNS": 1794689684756148239,
+      "Bytes": 11275
+    },
+    {
+      "Path": "result.json",
+      "SHA256": "d5be6ac57bbb5182833b9b6764d9195ae4655362fa1417db41862f43170b06a3",
+      "MTimeNS": 1794689684760878057,
+      "Bytes": 911
+    }
+  ],
+  "After": [
+    {
+      "Path": "artifact-manifest.json",
+      "SHA256": "ce02ba5d24571170e968ca3f2e266549204c161496b4e4868a77c0dcee7b0f9f",
+      "MTimeNS": 1794689684761533394,
+      "Bytes": 1289
+    },
+    {
+      "Path": "compiled-roster.json",
+      "SHA256": "69be3ea0417c8e9f3c5ab6ca1440b175fca816a099485ffc78e100f8c4559a7a",
+      "MTimeNS": 1794689684753017472,
+      "Bytes": 1317
+    },
+    {
+      "Path": "environment.json",
+      "SHA256": "9e0aa3bbc1f6afa7da05b706ff304bf930edd5f12b845aa9bfc98d240f198354",
+      "MTimeNS": 1794689683753455339,
+      "Bytes": 553
+    },
+    {
+      "Path": "export.command.json",
+      "SHA256": "0b0e28ea60f411e67bb128851fa0f3e4f02ca6a6e3eb3274ce49db60eb3ebcd3",
+      "MTimeNS": 1794689684558632442,
+      "Bytes": 530
+    },
+    {
+      "Path": "export.json.gz",
+      "SHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+      "MTimeNS": 1794689684751853799,
+      "Bytes": 324201
+    },
+    {
+      "Path": "export.stdout.gz",
+      "SHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+      "MTimeNS": 1794689684554229877,
+      "Bytes": 324201
+    },
+    {
+      "Path": "go-list-deps.command.json",
+      "SHA256": "c5c437ed4f43f252ef172f62483dabf6b69b1e8f95fcb5abdd11466074078704",
+      "MTimeNS": 1794689684168239916,
+      "Bytes": 561
+    },
+    {
+      "Path": "go-list-deps.stdout.gz",
+      "SHA256": "a96553faba5168d7350ad69be642bb17a9ad827f4d5e04a9e0e922b207b426c0",
+      "MTimeNS": 1794689684168033374,
+      "Bytes": 20741
+    },
+    {
+      "Path": "read-inputs.json",
+      "SHA256": "6a5ea49950cbd9ecbbae63342f65b834e53ce29a12131cfa66d0df52ee0c5a06",
+      "MTimeNS": 1794689684756148239,
+      "Bytes": 11275
+    },
+    {
+      "Path": "result.json",
+      "SHA256": "d5be6ac57bbb5182833b9b6764d9195ae4655362fa1417db41862f43170b06a3",
+      "MTimeNS": 1794689684760878057,
+      "Bytes": 911
+    }
+  ]
+}

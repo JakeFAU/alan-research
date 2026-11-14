@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Sources",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "source-omission.input.gz",
+  "InputArchiveSHA256": "aefe46712d201222b39bcce864541644d83a64d45cbbe5bc2cc5d7ed83cecd4b",
+  "InputBytes": 14093001,
+  "InputSHA256": "867f9d180925ffe1ebf9722fccf29fb3e334e365471ca14c5de4f57e20bcb073",
+  "Name": "source-omission",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

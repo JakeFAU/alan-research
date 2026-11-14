@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "SHA256",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "inherited-source-hash.input.gz",
+  "InputArchiveSHA256": "ff5a08403d6e37e6351ba7613ed4298cc6321884217f9c3eb29f84c880bc6b47",
+  "InputBytes": 324089,
+  "InputSHA256": "a0d213f60553ca43fc8e63c96a01fce6f139dfb72265ca792333507d68321255",
+  "Name": "inherited-source-hash",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

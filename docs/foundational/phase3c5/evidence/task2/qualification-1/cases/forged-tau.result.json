@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Edges",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "forged-tau.input.gz",
+  "InputArchiveSHA256": "021fc33b0f67adab8e088fa52e259d472049167215b42a8ffbb7ab3e62db392c",
+  "InputBytes": 14093160,
+  "InputSHA256": "b4eb16815b8761bf47127c36026aed9a6e1ec8b573f8510961bac18f630c04ce",
+  "Name": "forged-tau",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

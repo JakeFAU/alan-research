@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "J",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "wrong-generic-nonnecessity.input.gz",
+  "InputArchiveSHA256": "e0b94e74b6e2abaad8b1ef2613cdaf4770efb8e14d961ed6203164ca1fd9cab6",
+  "InputBytes": 324139,
+  "InputSHA256": "11e67775a85b8b164b81c13102af43a397f166318f81923656ad71e1c62f1f4b",
+  "Name": "wrong-generic-nonnecessity",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

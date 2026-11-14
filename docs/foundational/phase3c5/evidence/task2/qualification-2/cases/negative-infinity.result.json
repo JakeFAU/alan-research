@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "nonfinite",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "negative-infinity.input.gz",
+  "InputArchiveSHA256": "13f16e6ea70358a4fa548ab8cffb052d64307ed83baedc68da41ba18664593b2",
+  "InputBytes": 9,
+  "InputSHA256": "c64ddf11bcd45660f0cf66dd0c22d2b4570ef3d3fc6527a9a6f6c722aefa3c39",
+  "Name": "negative-infinity",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

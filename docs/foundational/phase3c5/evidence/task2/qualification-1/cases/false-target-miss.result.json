@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "TargetMiss",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "false-target-miss.input.gz",
+  "InputArchiveSHA256": "aee4e55221516acd20ae18bf092cb607a70c2b7f773ae9ef98ac7619875a156c",
+  "InputBytes": 14093161,
+  "InputSHA256": "cb2d2d5893e5085e27cce248fe4fbd2c2f8563afe1401c31539a9d7e539e0e75",
+  "Name": "false-target-miss",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

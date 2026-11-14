@@ -1,0 +1,152 @@
+[
+  {
+    "path": "docs/foundational/phase3/README.md",
+    "bytes": 8456,
+    "sha256": "834f3d746c7aa7aacb6d43822af578935c03f56c501ac9b2de33737023398a08"
+  },
+  {
+    "path": "docs/foundational/phase3c5/04-results.md",
+    "bytes": 6862,
+    "sha256": "05bc5397883e6b3ef6008f6cb424f833a57442d89923f1d41c17018894fb8053"
+  },
+  {
+    "path": "docs/foundational/phase3c5/05-qualification.md",
+    "bytes": 6355,
+    "sha256": "ae74e7a851f38a2623592d54ded15a79c1ee2ef7dd3646c4461da378b1feb3aa"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/manifest.json",
+    "bytes": 18299,
+    "sha256": "33128e381c953d273a549847db815ebf6d614ed9024615e2dcea96fa6fb7208d"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/baseline-inputs.json",
+    "bytes": 123559,
+    "sha256": "4f3a3f1aedc4de321c0366c540c4f564428f26c1dd13c38a27e6c3d36ce63ddd"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/baseline-package-list.txt",
+    "bytes": 4648,
+    "sha256": "5dd056e82544bd9ba0ccd2650e3a525ba7e4518e3d7592c8d255a82e9ba56f95"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/baseline-package-provenance.json",
+    "bytes": 484,
+    "sha256": "8b1d386bf950a4553617418a46debe89fd813b03d01a410f40ce7d6b2e1caa8e"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/build/job.json",
+    "bytes": 420,
+    "sha256": "a69e2918bb22223ac4a061a299dea8b49be4d7506d3fd8ef882064331bca0b1f"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/build/result.json",
+    "bytes": 266,
+    "sha256": "56ae91eda84508134ff7417782bf900bfea8a7503f95f345e45e8d47629eb0db"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/build/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/build/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/embedded-inputs.json",
+    "bytes": 1707,
+    "sha256": "ff623227760e6eb6ee35b743bc5ffb430ec23c0fee263c81bcd3965ecf74619f"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-cache-seed.json",
+    "bytes": 1095,
+    "sha256": "c35031f8617a532c9fdc2a9c1c66f596638d8cec43ce0fc16163255ebe5079f0"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-tidy-diff/job.json",
+    "bytes": 430,
+    "sha256": "5a32977c247dd09e7dfef1ac414b64aa8a25e7b7e1fcf3aaa72ff7b331659703"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-tidy-diff/result.json",
+    "bytes": 265,
+    "sha256": "920a01927d2209d94fef52e1b7080f845ec012ee1ab3accf3bd9cf5684e727d9"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-tidy-diff/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-tidy-diff/stdout.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-verify/job.json",
+    "bytes": 419,
+    "sha256": "de06ac48a3f53f9250450c2c8ebac5dd1bcd6d8e36a3515f29cce3a41d5e8db8"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-verify/result.json",
+    "bytes": 266,
+    "sha256": "65849c637bb3c61990ae43c1f45745f8b7052bf659826dd6189733692e015efd"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-verify/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/module-verify/stdout.log",
+    "bytes": 21,
+    "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/new-go-inputs.json",
+    "bytes": 2764,
+    "sha256": "81d2e3b3b22c4099a3219ec3e832fa7bac835d2ae2a35a2dffeaf91138e4bf9a"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/package-comparison.json",
+    "bytes": 826,
+    "sha256": "279a6d7716416a1ff4053a21afef2e5250ac80616fd298fb1164f0fbeecdc28f"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/package-list/job.json",
+    "bytes": 419,
+    "sha256": "7354ce3e13f19bf15ae5d36ce4458ccb2d90216ada0840edb0598e210ffd351b"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/package-list/result.json",
+    "bytes": 268,
+    "sha256": "12fefbcb359a147fc6f450e733811961c22ea75e65ee6c822adfed4271d0404d"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/package-list/stderr.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/package-list/stdout.log",
+    "bytes": 4781,
+    "sha256": "ac00c9e50e874d61371f0ca5c47ee4e9e553b1cec3625c6024ff8b351a167800"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/run-root-check.py",
+    "bytes": 1624,
+    "sha256": "c772e37b8f05194e5f35fa5025ad6422879cde66b688c1c0fb1759eb2369583a"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/qualification/verifier-development.json",
+    "bytes": 479,
+    "sha256": "2c693cab34cddb7e4c2bc744b66cf6736aec0d57dac13b0983b901bb02404796"
+  },
+  {
+    "path": "docs/foundational/phase3c5/tools/verify.py",
+    "bytes": 12694,
+    "sha256": "7d61365133b2d2ff825e76dd3b3938d006457e50b39bb7032994e51438837def"
+  }
+]

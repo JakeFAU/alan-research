@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "H",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "missing-H-member.input.gz",
+  "InputArchiveSHA256": "59f77b31b85eda3df94522ccbc95d0b8c0906453338d9bc3fbcfdfee3f21c11d",
+  "InputBytes": 14093148,
+  "InputSHA256": "35b7a62976744a90c06242749249e72433392c71aaca44accbc63ddcfe1f67bc",
+  "Name": "missing-H-member",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

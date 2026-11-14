@@ -1,0 +1,85 @@
+{
+  "status": "PASS",
+  "files": [
+    {
+      "path": "base/alan-dissertation.blg",
+      "bytes": 204,
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    {
+      "path": "base/alan-dissertation.log",
+      "bytes": 16678,
+      "sha256": "7fbd395961a2bd8a0a7ea101f6af60dc9a59cc82f4956b8c67e30bf1fce2238d"
+    },
+    {
+      "path": "base/alan-dissertation.pdf",
+      "bytes": 386902,
+      "sha256": "a22ccdeaf2831e29487bc9cdbba14bcd7065bcec3edb48b8241cf0b3c97d7ca6"
+    },
+    {
+      "path": "base/alan-dissertation.tex",
+      "bytes": 214035,
+      "sha256": "8cc9b9eaf70049e36ecf34bd743c087d79bf89b0ae193148e7f533ccf059ffe0"
+    },
+    {
+      "path": "base/pdfinfo.txt",
+      "bytes": 430,
+      "sha256": "afe0c21c104768086a88e4ee5bcc77273abbd874b1af3a1dcf8c9f4f2eecae63"
+    },
+    {
+      "path": "base/references.bib",
+      "bytes": 9696,
+      "sha256": "2b03a12c8c485a5e9e253f3579605d61863f2243a83e12fac2b8ee6d3dd8b778"
+    },
+    {
+      "path": "base/text.txt",
+      "bytes": 215720,
+      "sha256": "e1bfa586809567fbc8a6451db17a462280d552070aee0b36a3f2cf96678be1b5"
+    },
+    {
+      "path": "build-commands.json",
+      "bytes": 234611,
+      "sha256": "dc0722dab63d5058f91625502efabfc9e5fe597eead04698fb6ade62d8605b9b"
+    },
+    {
+      "path": "build-inputs.json",
+      "bytes": 688,
+      "sha256": "81bf2dcde35a30e7cceb700a0216adfa31734978356f9b68ce2e243d2af669e1"
+    },
+    {
+      "path": "current/alan-dissertation.blg",
+      "bytes": 204,
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    {
+      "path": "current/alan-dissertation.log",
+      "bytes": 16693,
+      "sha256": "79501483d2add10e0bc03762933c60688bde29780a029d861325e232433af119"
+    },
+    {
+      "path": "current/alan-dissertation.pdf",
+      "bytes": 396433,
+      "sha256": "c31e0c531c572b3330cc443d985069e62d2ae44a1d7f965bdffc234ba5c963e3"
+    },
+    {
+      "path": "current/alan-dissertation.tex",
+      "bytes": 221453,
+      "sha256": "64732d05a67b3370e2c1ce635762a8928d1cf96739b05e30a6741dbf239d36bf"
+    },
+    {
+      "path": "current/pdfinfo.txt",
+      "bytes": 430,
+      "sha256": "9b44f410595b0485ae94c3ed21775793bc2e107298d528ed6e100ba0c5a2e3d2"
+    },
+    {
+      "path": "current/references.bib",
+      "bytes": 10033,
+      "sha256": "2bfbaeb34f3d16ff61fd886d877f851a93415db847aafad483345a2a60689f0c"
+    },
+    {
+      "path": "current/text.txt",
+      "bytes": 223551,
+      "sha256": "d87ccd69f086fd10d843b859b0e278a1af0e4472a8ed628c5b02478a85fa7fb2"
+    }
+  ]
+}

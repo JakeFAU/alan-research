@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "RawSHA256",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "pinned-raw-hash.input.gz",
+  "InputArchiveSHA256": "f41efa55e6f1017a3586e6c92fa6f1e1a6621f8eb59032ea5ec36b2de53ad74c",
+  "InputBytes": 14093160,
+  "InputSHA256": "f44c69d66b2f9c0ec502b54f662ede131259d0b66170dc34ce2bc74bfcf92279",
+  "Name": "pinned-raw-hash",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

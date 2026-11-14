@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "keys",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "unknown-key.input.gz",
+  "InputArchiveSHA256": "efdbc2e1043513946120462c8fa00051d3a6ecd90eaef6c27596c05e7b7b2b8b",
+  "InputBytes": 324145,
+  "InputSHA256": "b85d4254ad5535d2406aee95846b38e6c885537ea97007d37614e29bab051eec",
+  "Name": "unknown-key",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

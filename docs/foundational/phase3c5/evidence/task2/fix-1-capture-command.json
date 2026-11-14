@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/capture_audit.py",
+    "docs/foundational/phase3c5/evidence/task2/qualification-2"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "exit": 0,
+  "stdout": "valid-plain: PASS\nvalid-gzip: PASS\nmissing-non-tree-arc-repaired-counts: PASS\nmissing-language-non-tree-arc: PASS\nmissing-profile-non-tree-arc: PASS\nreversed-inclusion: PASS\ndropped-equivalent-minimum-member: PASS\nmax-substituted-for-min: PASS\nlost-proper-dominator: PASS\nempty-family-as-empty-language: PASS\nempty-H-as-epsilon-H: PASS\nmissing-H-member: PASS\nforged-H-member: PASS\nmissing-outside-source: PASS\nfalse-source-hit: PASS\nfalse-target-miss: PASS\nbad-shortest-prefix: PASS\nbad-shortest-directional-word: PASS\nfalse-initial-acceptance: PASS\nwrong-generic-MIN-initial: PASS\nwrong-generic-nonnecessity: PASS\nwrong-local-hit-NB: PASS\nwrong-multiword-target-hit: PASS\nforged-trie-mark: PASS\nforged-monitor-mark: PASS\nforged-tau: PASS\nforged-product-mark: PASS\nforged-product-completion: PASS\nforged-product-node: PASS\nbad-negative-path: PASS\nbad-legal-trace-inclusion: PASS\nforged-legal-plant-mark: PASS\nmissing-blocking-substitution: PASS\nwrong-J-substitution-initial: PASS\nsignature-generation: PASS\nsignature-root-limit: PASS\nalphabet-root: PASS\nsource-hash: PASS\nsource-use: PASS\nsource-omission: PASS\ninherited-source-hash: PASS\npinned-raw-hash: PASS\nunknown-key: PASS\nunknown-nested-key: PASS\nbool-as-int: PASS\nint-as-bool: PASS\nfloat-as-int: PASS\nnull-array: PASS\nduplicate-product: PASS\nduplicate-top-key: PASS\nduplicate-nested-key: PASS\nnan: PASS\ninfinity: PASS\nnegative-infinity: PASS\noverflow-number: PASS\ntrailing-json: PASS\ninvalid-utf8: PASS\nmalformed-gzip: PASS\n",
+  "stderr": "",
+  "Note": "Original successful invocation; repeated-path refusal is separately recorded."
+}

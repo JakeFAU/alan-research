@@ -1,0 +1,38 @@
+[
+  {
+    "argv": [
+      "go",
+      "env",
+      "-json",
+      "GOVERSION",
+      "GOROOT",
+      "GOTOOLCHAIN",
+      "GOOS",
+      "GOARCH",
+      "GOCACHE",
+      "GOMODCACHE"
+    ],
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+      "GOMODCACHE": "/tmp/alan-phase3c5/mod-cache",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c5/staticcheck-cache"
+    },
+    "exit": 0,
+    "stdout": "{\n\t\"GOARCH\": \"arm64\",\n\t\"GOCACHE\": \"/tmp/alan-phase3c5/go-cache\",\n\t\"GOMODCACHE\": \"/tmp/alan-phase3c5/mod-cache\",\n\t\"GOOS\": \"darwin\",\n\t\"GOROOT\": \"/opt/homebrew/Cellar/go/1.27.4/libexec\",\n\t\"GOTOOLCHAIN\": \"auto\",\n\t\"GOVERSION\": \"go1.27.4\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "staticcheck",
+      "-version"
+    ],
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+      "GOMODCACHE": "/tmp/alan-phase3c5/mod-cache",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c5/staticcheck-cache"
+    },
+    "exit": 0,
+    "stdout": "staticcheck 2026.2.2 (0.8.2)\n",
+    "stderr": ""
+  }
+]

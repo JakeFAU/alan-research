@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/capture.py",
+    "docs/foundational/phase3c5/evidence/task1/capture-4"
+  ],
+  "exit": 0,
+  "stdout": "{\"Counts\": {\"BlockingSubstitutions\": 1928, \"Comparisons\": 36, \"Controllers\": 324, \"EqualFULL\": 6, \"EqualJ\": 7, \"EqualLanguages\": 13, \"EqualMAX\": 13, \"EqualMIN\": 7, \"InitialCanComplete\": 1234, \"LanguageSubsetPairs\": 5208, \"Monitors\": 9, \"NonblockingProducts\": 760, \"NonblockingSubstitutions\": 844, \"Plants\": 72, \"ProductArcs\": 59492, \"ProductCanComplete\": 22716, \"ProductStates\": 45800, \"Products\": 3564, \"ProfileSubsetPairs\": 146, \"ResidualComparisons\": 1442, \"Substitutions\": 2772}, \"RawBytes\": 14097260, \"RawSHA256\": \"ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a\"}\n",
+  "stderr": ""
+}

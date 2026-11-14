@@ -1,0 +1,20 @@
+[
+  {
+    "Capture": "capture-3",
+    "Packages": 109,
+    "PackageErrors": [],
+    "Exit": 0,
+    "Stderr": "",
+    "NormalizedRosterEqual": true,
+    "CompiledFiles": 10
+  },
+  {
+    "Capture": "capture-4",
+    "Packages": 109,
+    "PackageErrors": [],
+    "Exit": 0,
+    "Stderr": "",
+    "NormalizedRosterEqual": true,
+    "CompiledFiles": 10
+  }
+]

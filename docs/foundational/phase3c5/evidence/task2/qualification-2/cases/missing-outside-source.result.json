@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Outside",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "missing-outside-source.input.gz",
+  "InputArchiveSHA256": "fcb4a96cee7cbeedafe4757c71d0bd70e24f0ed5ec14b0d9ddc8e1235698d3d4",
+  "InputBytes": 14093126,
+  "InputSHA256": "519f456f490f7f73a3c1b4b18aa7b4932855a86faadcb9fad582daf7c79951c2",
+  "Name": "missing-outside-source",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

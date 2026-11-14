@@ -1,0 +1,157 @@
+[
+  {
+    "path": "docs/foundational/phase3c5/05-qualification.md",
+    "bytes": 8668,
+    "sha256": "2ed68052c90caa8a622b18333eedec180b6ad26ea7d071b6c50e42d6178e0ba7"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/build_pdf.py",
+    "bytes": 232,
+    "sha256": "1be59fcf1786ba08fcff107902f637ef9bb2f320a63492620431608c846e160d"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/build-manifest.json",
+    "bytes": 2573,
+    "sha256": "3cca43ec9a8deed5e8ef7e10365743a49229cd5680fd42ad3abf89ac042f137e"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/commands.json",
+    "bytes": 4822,
+    "sha256": "b917e8112497ea71db4fd43e23d8377fc9e9c1941aee7612ff7ad0a212216c2d"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-base-alan-dissertation.log.gz",
+    "bytes": 5521,
+    "sha256": "5276f749bafdda9ddcd169b282b810e40946b6dbdb13ed04554ff95f902ccd79"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-base-alan-dissertation.pdf.gz",
+    "bytes": 378979,
+    "sha256": "a3f4ebdd8df1e908f8e1d408b8092e549965a99599e7cd838edfbc1572d385ba"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-base-pdfinfo.txt.gz",
+    "bytes": 274,
+    "sha256": "4252385db8a90ed0ce3a246007f2ee0214d4554cfa98729a007e50468acb6a43"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-base-text.txt.gz",
+    "bytes": 73958,
+    "sha256": "a2d087fed994f93a7883853947cfe41b7d8802f357be9e0f18d24a5fdd87e8b9"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-build-commands.json",
+    "bytes": 234611,
+    "sha256": "dc0722dab63d5058f91625502efabfc9e5fe597eead04698fb6ade62d8605b9b"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-build-inputs.json",
+    "bytes": 688,
+    "sha256": "81bf2dcde35a30e7cceb700a0216adfa31734978356f9b68ce2e243d2af669e1"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-comparison.json",
+    "bytes": 2204,
+    "sha256": "95980b3d2de2d790a0356ed36bf35274756c87f982039a16b997af03732d7b6b"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-current-alan-dissertation.log.gz",
+    "bytes": 5531,
+    "sha256": "a16ec2e499478e9e7aee5a05314b555a1aa3e56f35345a89951c29616984e4dd"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-current-alan-dissertation.pdf.gz",
+    "bytes": 388373,
+    "sha256": "783dc790d60e2b58ca5a9d6c3f82aa517110bced9f873ef8a6849f4cf19846b9"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-current-pdfinfo.txt.gz",
+    "bytes": 274,
+    "sha256": "b805c6620272fa5277032539392fda5257c1d5820fb37db33fa9764cfcfc27ea"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-current-text.txt.gz",
+    "bytes": 76634,
+    "sha256": "abafcf7e7c1a2b14915d3a4fd1b3e185b270c4fb793a1f69a20408d94a7c6b35"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/fresh-render-commands.json",
+    "bytes": 20235,
+    "sha256": "d7a7bf1acba2c847c6934e6ee7c9b471050f7a97d3b717ad97777fccee11e657"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/05-qualification.md.txt",
+    "bytes": 6355,
+    "sha256": "ae74e7a851f38a2623592d54ded15a79c1ee2ef7dd3646c4461da378b1feb3aa"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/build_pdf.py.txt",
+    "bytes": 1689,
+    "sha256": "9a14b393f394c24b1ef1339d447c7edca8a22cefdb2b89eca94c8e8dd5d232e3"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/render_pdf.py.txt",
+    "bytes": 2508,
+    "sha256": "622dd4ba7215e2d14b784f1b182675e93e1d022ac2426e4a866599c25e4ac384"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/verify.py.txt",
+    "bytes": 12694,
+    "sha256": "7d61365133b2d2ff825e76dd3b3938d006457e50b39bb7032994e51438837def"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical-sources.json",
+    "bytes": 1237,
+    "sha256": "4bc29ae81642e84fe7fdceac776888572d31a3b28b39ada0831463483fd544c3"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/output-identities.json",
+    "bytes": 8112,
+    "sha256": "a6886df43a36de05f5d2134a5f518b2c7878f979db77d735ef12b9fa22ef50cc"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/protected-after.json",
+    "bytes": 125896,
+    "sha256": "d1a0d92da5f34da3d8c75b28c454a6172385f08254ff9389a5cbe5106d3e32ff"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/protected-before.json",
+    "bytes": 125896,
+    "sha256": "d1a0d92da5f34da3d8c75b28c454a6172385f08254ff9389a5cbe5106d3e32ff"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/render-manifest.json",
+    "bytes": 10367,
+    "sha256": "a81106eebbc9628d28ffb25161496a2a59a8bb5efc79ca1ddd0812b2d6396342"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/fix-1/result.json",
+    "bytes": 333,
+    "sha256": "11d0a4a2dc77d67d80c5b0e15af7d07dcf58502b9f7d92a08059e06fdca2e513"
+  },
+  {
+    "path": "docs/foundational/phase3c5/evidence/manuscript/render_pdf.py",
+    "bytes": 233,
+    "sha256": "6b7d480e10cc56711ca1848b23182dca6cc3a0aa02c8bf306ebc7fb8bc97c06f"
+  },
+  {
+    "path": "docs/foundational/phase3c5/tools/build_pdf.py",
+    "bytes": 2682,
+    "sha256": "b643200f21defe26f73ae85bce85043eba4bfbc29a4d39037e463a427bf18598"
+  },
+  {
+    "path": "docs/foundational/phase3c5/tools/check_pdf_capture.py",
+    "bytes": 4342,
+    "sha256": "d84675202c427b37e19ccf414b5ab1b2e9f787707bdf6c41b2d6f9333c104b8f"
+  },
+  {
+    "path": "docs/foundational/phase3c5/tools/render_pdf.py",
+    "bytes": 3812,
+    "sha256": "547772204d7d25ff3a469a9672604d7d517af80a5b693e764f9178d877540b71"
+  },
+  {
+    "path": "docs/foundational/phase3c5/tools/verify.py",
+    "bytes": 15747,
+    "sha256": "6ae8ba6925dad3db869c61bb5e00ace2af79cf9dd5910531daca5bad2f22d582"
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "commit": "fbcedaee554582ec9b2ca5b6ea8f873458516894",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c5/evidence/manuscript/build_pdf.py",
+      "snapshot": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/build_pdf.py.txt",
+      "bytes": 1689,
+      "sha256": "9a14b393f394c24b1ef1339d447c7edca8a22cefdb2b89eca94c8e8dd5d232e3"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/manuscript/render_pdf.py",
+      "snapshot": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/render_pdf.py.txt",
+      "bytes": 2508,
+      "sha256": "622dd4ba7215e2d14b784f1b182675e93e1d022ac2426e4a866599c25e4ac384"
+    },
+    {
+      "path": "docs/foundational/phase3c5/tools/verify.py",
+      "snapshot": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/verify.py.txt",
+      "bytes": 12694,
+      "sha256": "7d61365133b2d2ff825e76dd3b3938d006457e50b39bb7032994e51438837def"
+    },
+    {
+      "path": "docs/foundational/phase3c5/05-qualification.md",
+      "snapshot": "docs/foundational/phase3c5/evidence/manuscript/fix-1/historical/05-qualification.md.txt",
+      "bytes": 6355,
+      "sha256": "ae74e7a851f38a2623592d54ded15a79c1ee2ef7dd3646c4461da378b1feb3aa"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "keys",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "unknown-nested-key.input.gz",
+  "InputArchiveSHA256": "673d74958883925d0836be9f619f170d156e7270c4c86fe64d57f6334a1fa2d3",
+  "InputBytes": 14093175,
+  "InputSHA256": "65790dd08e34b8fc527c4532eb46646039a56297866cf4eed14c2e129a5ff095",
+  "Name": "unknown-nested-key",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

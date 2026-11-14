@@ -1,0 +1,38 @@
+[
+  {
+    "Path": "docs/foundational/phase3c2/tools/audit.py",
+    "SHA256": "1dc485fb2e3f0594b6122daa3a63ec05a12c8f5a6b9988afe5d2a775a768f193"
+  },
+  {
+    "Path": "docs/foundational/phase3c3/tools/audit.py",
+    "SHA256": "287be61a4e632b37510d401a658be7fa3fea465697d5586b43f07a58b2b7ad75"
+  },
+  {
+    "Path": "docs/foundational/phase3c4/tools/audit.py",
+    "SHA256": "163fb14ea65af59a507e52b88c188c0b4fe2df65b40e8d2d5c7aef7f076fc88e"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/audit.py",
+    "SHA256": "a2657b3a2212c16fba0f64908a6bf51bfcef716bf4b8c54f777cd553ccf2a86a"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/capture_audit.py",
+    "SHA256": "140273986f79e70b27a16b4f1b19fbff333645619e5b7847b908852bdf9af677"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/run_audit_tests.py",
+    "SHA256": "1e1aa01887f96d9749b3288547cbee808fb0039a197c409e2813dfc1e7ea6279"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/source_loading.py",
+    "SHA256": "69c5788d996b3aa30c0db190cbc3e3cc5372ba25a910687f2e246dad6f3bba1a"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/test_audit.py",
+    "SHA256": "15dc11a56e93569959b209cea6c24dee53c5f9d1e7385393b31d22e1f4d485f6"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/test_source_loading.py",
+    "SHA256": "9d6b52e1d045dc7d3f985aa20452dbd635c0b8ffca78a319d0b73914de600f5c"
+  }
+]

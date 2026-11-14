@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "historical_commit": "fbcedaee554582ec9b2ca5b6ea8f873458516894",
+  "protected_files": 779,
+  "protected_unchanged": true,
+  "existing_build_render_unchanged": true,
+  "build_files": 17,
+  "render_files": 67,
+  "fresh_successes": 2,
+  "refusals": 8,
+  "visual_review": "Not performed; capture behavior only"
+}

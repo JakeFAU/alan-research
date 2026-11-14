@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestDirectedInclusion|TestStrictReduction|TestGenericMINInformationLoss",
+    "./research/residualantichains"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c5/go-cache"
+  },
+  "exit": 1,
+  "stdout": "=== RUN   TestDirectedInclusion\n    language_test.go:17: proper inclusion incorrectly decided: {LeftSubset:false RightSubset:false LeftOutside:<nil> RightOutside:<nil> Left:epsilon Right:epsilon-or-a Equal:false Word:[apply:AB] LeftAccept:false RightAccept:true Pairs:[{Left:[0] Right:[0] LeftAccept:true RightAccept:true Arcs:[{Label:commit:AB To:1} {Label:reserve-capacity:AB To:1} {Label:apply:AB To:2} {Label:consume:AB To:1} {Label:commit:BC To:1} {Label:reserve-capacity:BC To:1} {Label:apply:BC To:1} {Label:consume:BC To:1}]} {Left:[] Right:[] LeftAccept:false RightAccept:false Arcs:[{Label:commit:AB To:1} {Label:reserve-capacity:AB To:1} {Label:apply:AB To:1} {Label:consume:AB To:1} {Label:commit:BC To:1} {Label:reserve-capacity:BC To:1} {Label:apply:BC To:1} {Label:consume:BC To:1}]} {Left:[] Right:[1] LeftAccept:false RightAccept:true Arcs:[{Label:commit:AB To:1} {Label:reserve-capacity:AB To:1} {Label:apply:AB To:1} {Label:consume:AB To:1} {Label:commit:BC To:1} {Label:reserve-capacity:BC To:1} {Label:apply:BC To:1} {Label:consume:BC To:1}]}]}\n--- FAIL: TestDirectedInclusion (0.00s)\n=== RUN   TestStrictReduction\n    profile_test.go:8: strict reduction: FULL=false MIN=false MAX=false initial=true J=false\n--- FAIL: TestStrictReduction (0.00s)\n=== RUN   TestGenericMINInformationLoss\n    profile_test.go:13: MIN loses initial information: MIN=false initial=false J=false\n--- FAIL: TestGenericMINInformationLoss (0.00s)\nFAIL\nFAIL\tgithub.com/JakeFAU/alan-research/research/residualantichains\t0.350s\nFAIL\n",
+  "stderr": ""
+}

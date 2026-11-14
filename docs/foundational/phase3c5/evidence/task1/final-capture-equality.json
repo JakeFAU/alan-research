@@ -1,0 +1,11 @@
+{
+  "First": "capture-3/export.json.gz",
+  "Second": "capture-4/export.json.gz",
+  "RawEqual": true,
+  "CompressedEqual": true,
+  "EqualToInitialCaptures": true,
+  "RawBytes": 14097260,
+  "RawSHA256": "ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a",
+  "CompressedBytes": 324201,
+  "CompressedSHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4"
+}

@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Products",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "duplicate-product.input.gz",
+  "InputArchiveSHA256": "048d5374927ba16a5b0fe541213c91df8dfa46df57aed1923cae3c50901f5f1d",
+  "InputBytes": 324413,
+  "InputSHA256": "98552bbc0171c4e3d18fc482916b0a0151e951f8e6bbbb82449fb34baebd68e6",
+  "Name": "duplicate-product",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

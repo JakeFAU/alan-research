@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "keys",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "overflow-number.input.gz",
+  "InputArchiveSHA256": "9570acf625596a60b02f3da581fbbb29ade2b76b9d788cd3623f492f0bd5c312",
+  "InputBytes": 16,
+  "InputSHA256": "e1e51ae4fbb31a02b3c1e4a176b45a183ede745aa81b3087ecf9d4a6948af68b",
+  "Name": "overflow-number",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

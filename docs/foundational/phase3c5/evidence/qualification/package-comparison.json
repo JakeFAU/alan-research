@@ -1,0 +1,16 @@
+{
+  "base": "347d93ba25a5f7a10f75144b1a44107be09a2f39",
+  "path": "docs/foundational/phase3c4/evidence/qualification/package-list/output.log",
+  "raw_sha256": "5dd056e82544bd9ba0ccd2650e3a525ba7e4518e3d7592c8d255a82e9ba56f95",
+  "count": 78,
+  "scope": "Historical merged baseline roster compared with fresh package list; not whole-root test execution",
+  "preparation_failure": "Initial git show used nonexistent output.log.gz (exit128); actual tracked output.log located using git ls-tree, then read successfully.",
+  "new_raw_sha256": "ac00c9e50e874d61371f0ca5c47ee4e9e553b1cec3625c6024ff8b351a167800",
+  "old_count": 78,
+  "new_count": 80,
+  "added": [
+    "github.com/JakeFAU/alan-research/research/residualantichains",
+    "github.com/JakeFAU/alan-research/research/residualantichains/cmd/export"
+  ],
+  "removed": []
+}

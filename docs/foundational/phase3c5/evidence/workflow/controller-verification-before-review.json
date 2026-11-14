@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/verify.py"
+  ],
+  "source_head": "a49ee5b046b066deee8b766a25787aa606661179",
+  "exit_code": 0,
+  "observation": "Fresh tool-session output reported PASS after restoring the frozen plan. No suite/model/runtime execution. This record summarizes the observed output; it is not an exact stdout byte capture.",
+  "observed": {
+    "baseline_inputs": 695,
+    "new_go_inputs": 15,
+    "accepted_frozen_files": 760,
+    "accepted_checker_sources": 9,
+    "accepted_child_reports": 59,
+    "Products": 3564,
+    "ProductStates": 45800,
+    "ProductArcs": 59492,
+    "CLI_valid": 2,
+    "CLI_hostile": 56,
+    "checker_tests": 13,
+    "PDF_pages_base": 51,
+    "PDF_pages_current": 54,
+    "capture_fresh_successes": 2,
+    "capture_refusals": 8,
+    "capture_protected_files": 779
+  }
+}
