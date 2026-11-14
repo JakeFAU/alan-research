@@ -1,0 +1,10 @@
+- New code is confined to `research/componentinterfaces/`; records and Python auditor to `docs/foundational/phase3c3/`.
+- No production code, dependencies, old models or historical evidence changes.
+- The unchanged Phase 3C.2 relation K retains the full A/B/C service, authority and capacity semantics. This is continuation-monitor substitution, not replacement of an entire agent.
+- All eight old named commit/reserve-capacity/apply/consume labels and their exact bindings remain visible. Only private bookkeeping tau is hidden.
+- The five M fixtures and 324 two-state A/C controllers are exactly those in the contract. Every state of the five M fixtures is marked.
+- Complete means both originals D and all factor marks; CanComplete is existential finite completion. It is distinct from every-reachable-state nonblocking.
+- Product signatures retain one shared Q relation; monitors cannot change authority, stages, holds or external effects independently.
+- Preserve exact raw captures, rejected inputs, source hashes and prior failures. Passing bounded checks do not prove the general source argument.
+- Use scoped ordinary/race Go checks and Staticcheck; Python independent reconstruction; fresh build/module checks. Historical qualification may be reused only with exact source identity and explicit attribution.
+- Reconcile changed Markdown/LaTeX mathematical content, bibliography implications and rebuilt PDF. General Phase 3C remains open.

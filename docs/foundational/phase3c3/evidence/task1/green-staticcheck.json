@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "staticcheck",
+    "./research/componentinterfaces/..."
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c3/staticcheck-cache"
+  },
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

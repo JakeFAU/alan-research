@@ -1,0 +1,497 @@
+[
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "98a7298a0886d9f78e447efdc7b960e2dd326dff1d2842fa6e957d6f8121c5b1",
+    "name": "removed-non-tree-arc",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/removed-non-tree-arc.json.gz",
+    "rawSHA256": "5b8720133b5f5996a9c3f754e894f85adb75f433ab049fb4dd90f4d18614df34",
+    "reason": "REJECT: Products[0].Nodes[13].Arcs: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "5d4030ef58a3e269a24bfa1dacb2257f3ec86851ec5463cc8191872c4375da6f",
+    "name": "changed-plant-gate",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/changed-plant-gate.json.gz",
+    "rawSHA256": "d353da07f72d1a4372917c29dce462c90a8dc8a4662b8156f23f5aed0e47b42f",
+    "reason": "REJECT: Plants[0].Edges: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "f1c652a86b46711921e8ba2962f5d80389970d1d5eb38ab46084a1e30bb7f95a",
+    "name": "forged-equivalence",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-equivalence.json.gz",
+    "rawSHA256": "39fd015c0f589bd7d0bbe595ce04891f72518c9707c141423f097616fe6ad771",
+    "reason": "REJECT: Comparisons[0].Equal: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "a754565f4996f0bffb731b26db26fdfb3834a2c97d05457339737bc2f7c2bbc2",
+    "name": "wrong-distinguishing-word",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-distinguishing-word.json.gz",
+    "rawSHA256": "0872c087f786603b561b57fc99367495762737b9c2d1475b3ef69e225a798901",
+    "reason": "REJECT: Comparisons[0].Word: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "fd6fcf6bfc6e22386a118692a9d330bc76f28552885ac1a6a58f8d36609b37b2",
+    "name": "nonshortest-distinguishing-word",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonshortest-distinguishing-word.json.gz",
+    "rawSHA256": "829bc10d92b740db386ee11ce761a9c70dc0897f1b5c4994196c1ea878f17e90",
+    "reason": "REJECT: Comparisons[0].Word: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "5004e9bd119052087e87fd6064fec6a3590aa78c21dee7372ba8baa6157d21a0",
+    "name": "wrong-subset-acceptance",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-subset-acceptance.json.gz",
+    "rawSHA256": "19216acb6989193c83c2a863efaeeb14926815c89e2a6e9ad7235fabcd5eca71",
+    "reason": "REJECT: Comparisons[0].Pairs[0].LeftAccept: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "43c82b25076d520dc02d2c49da35d46da7039a694ca7094c701937034ef4d834",
+    "name": "missing-subset-arc",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-subset-arc.json.gz",
+    "rawSHA256": "9b0b2fd5b0e61c0c62523aadbae6e33a90ccf4959df761c8da60a4bfa6213b6f",
+    "reason": "REJECT: Comparisons[0].Pairs[0].Arcs: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "c75db97a9994bbebccdd51233eeacc6be6b8768f7da31cb18fda414251b58c59",
+    "name": "omitted-tau",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/omitted-tau.json.gz",
+    "rawSHA256": "3b51d5c43c7bca5058e35d6d72c66c5913f166180c9af151ab7dfb6b4cff65d3",
+    "reason": "REJECT: Monitors[3].Edges: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "76d9e9053706863748e01a92cc1c87c035809f02fec920804c48b8a1e4d6caa9",
+    "name": "forged-monitor-mark",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-monitor-mark.json.gz",
+    "rawSHA256": "9f731575dbca28cb60478f17d4697f3fa93b1c3ab8c712ec0e4c88bff47c4fc3",
+    "reason": "REJECT: Monitors[2].States[0].Marked: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "f2c256914e3bc535326d46439517a9ad677f01f20409eb5b69d50a8910df2879",
+    "name": "external-action-veto",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/external-action-veto.json.gz",
+    "rawSHA256": "cad5b2fb494c66a746edae594ad67d87e98bde8ab3e96a717b5cd0c93ee2153f",
+    "reason": "REJECT: Monitors[2].Edges: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "1b1ce01b73c4a4beedaad2459bf9da7a2da0eff5cb042c2b2115c0f7797c095d",
+    "name": "hidden-effect-label",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/hidden-effect-label.json.gz",
+    "rawSHA256": "3d608286d9485c86530fd02fde713c803c1793f10103251cccce7c4425e1e593",
+    "reason": "REJECT: Alphabet[2].ID: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "b461cef6d220837e939089b04e203910c3556b73b758751010aecff308562118",
+    "name": "forged-effect-binding",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-effect-binding.json.gz",
+    "rawSHA256": "641fe93c60b02f15a50e6069ed1c5edb98209d244337d6dcb67ffb94542ecdb5",
+    "reason": "REJECT: Alphabet[2].Action.Binding.Grant: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "7a4bec3dcf122c13703708700001e7fb9cd68f3bde8f38d6d39be0d167b7c3cf",
+    "name": "forged-actor",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-actor.json.gz",
+    "rawSHA256": "31d97128ab626ada17855fc11679e32dce6c40cd6e6b6dcc7022da1f02231cad",
+    "reason": "REJECT: Alphabet[2].Actor: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "6579e4208f856d9e7fab3c00fe4cf75d15a6defcea880f05fa9b63cdf6fdd646",
+    "name": "wrong-root",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-root.json.gz",
+    "rawSHA256": "741a88d05347f10705cb3032f2f8d388a67cf1b7054337ed513f97960410435c",
+    "reason": "REJECT: Plants[0].Signature.Memberships[0].Root: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "9b9e67418294c9b900f297806fe849046c141e05cca66e3a0d11478c3fa73733",
+    "name": "conflicting-root-limit",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/conflicting-root-limit.json.gz",
+    "rawSHA256": "003d01ae4ea1cea3c9e39eec65b68db0c376910a5093614c67fbd6a352c51fce",
+    "reason": "REJECT: Monitors[0].Signature.Roots[0].Limit: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "b0eee68277643483d6b5e3468e4d314eb2860fd31e8229e66040e45d41d005ac",
+    "name": "signature-missing-binding",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/signature-missing-binding.json.gz",
+    "rawSHA256": "1fe643308cf39f58b1a31f0655aaec9a672847c98fbf373ebec766c4d787b288",
+    "reason": "REJECT: Plants[0].Signature.Base.Originals: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "9631a771d39295c6791fb439726a84841da23b6f04f240f309718b7ed9f45e35",
+    "name": "boolean-generation",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-generation.json.gz",
+    "rawSHA256": "745ca18f2f257d82afbcdc69e112d73686bdc5fd944ef82728ed9ba1ba012f3e",
+    "reason": "REJECT: Monitors[0].Signature.Base.Agents[0].Generation: type mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "c0ab19a06535b8aaba85681afff8e4cc00f8eb327c3908aa53ca4a1f3c983f01",
+    "name": "fabricated-product-completion",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/fabricated-product-completion.json.gz",
+    "rawSHA256": "80b7024a583ab8d438c8ffad4db2da2445976ed7c2a1486a7f02607c13e50698",
+    "reason": "REJECT: Products[1].Nodes[0].CanComplete: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "30f9e28a0ec6f3b0cc4c2935dc4048a395bedfc8e10e90b37044f61c92bd04fe",
+    "name": "forged-product-mark",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-product-mark.json.gz",
+    "rawSHA256": "7b36bf015daf48c34d848893b9bb381118c0eb5ddfa8c9dedb90684082940187",
+    "reason": "REJECT: Products[0].Nodes[12].Marked: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "0548f4af9d5432315177a4ecde75c3093293ecc8603190ea446a3b8b67014812",
+    "name": "wrong-grouping-normalization",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-grouping-normalization.json.gz",
+    "rawSHA256": "ac526cd94d6e78d6a2de32d086fff1e616757ac34a0c3482f78f55c7fe5a5324",
+    "reason": "REJECT: Groupings[0].Left.Nodes[0].Tuple[1]: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "601fb8b352578fd581f778fc717d9f1420e4616ce0c59f9476b06648126b15ac",
+    "name": "grouped-internal-effect-hidden",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/grouped-internal-effect-hidden.json.gz",
+    "rawSHA256": "0e8814d4feaa77292c0aa45edb00303001268bb311965f1e5b029dcff214e642",
+    "reason": "REJECT: Groupings[0].Right.Nodes[0].Arcs[0].Label: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "af8c416e47f9d62ef627ca74cebe89bf73a9a051f54db551420c66bb103a22b8",
+    "name": "missing-controller",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-controller.json.gz",
+    "rawSHA256": "a289371f07c823e1e4498fdc6a9d296778053c18a47e568c03315bb1484329f5",
+    "reason": "REJECT: Controllers: roster length"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "7b5d28f76c84e532f15c6039308831b55a6b921a9dcebbce99629a952c34caa8",
+    "name": "duplicate-controller",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-controller.json.gz",
+    "rawSHA256": "625f7b0ae86072672122646778a19882e53a37272104d11931d1644f437021b2",
+    "reason": "REJECT: Controllers[1].ID: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "cda91a641ddf745bb9ff99f148eae3256e15a145e84da6580fd2162afb27d1b3",
+    "name": "duplicate-edge",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-edge.json.gz",
+    "rawSHA256": "379423b7d541ac69be64420406739d9d4798e58cf8774bedc85f2908f836b969",
+    "reason": "REJECT: Monitors[0].Edges: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "d630acbb1680b7037419c6716a40ba658b263332f7d0eaa5660a021beb6f90a7",
+    "name": "duplicate-state",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-state.json.gz",
+    "rawSHA256": "81eb400c12cc3fbdf5dfa55d7546b836766f7a55c42600568d4620c9c64af14a",
+    "reason": "REJECT: Monitors[0].States: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "c0cf7ac089d6fbdfa94965a584af4a750e5c0eaf446aa9cc12477ca82417572e",
+    "name": "unknown-monitor-label",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-monitor-label.json.gz",
+    "rawSHA256": "97fe56df7ec3d13dffd650e1935208b4652a6cb34169af1930c41fcf19e5d72f",
+    "reason": "REJECT: Monitors[0].Edges[2].Label: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "7cc811c0af0fecdbcae0b185a44c6da861885b056d37dc08ac02bc27f5cc3ec5",
+    "name": "missing-substitution",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-substitution.json.gz",
+    "rawSHA256": "a7ab0e09c6aed5eb189ecc91bbcc38c490bb77c9621ffabc8fab9869f97d1f88",
+    "reason": "REJECT: Substitutions: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "a17757cb4c701ed28920842c6798b600f47977e999d4eb9a8bef61d0b7902c03",
+    "name": "false-substitution-completion",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-substitution-completion.json.gz",
+    "rawSHA256": "fab95efe273d0afd981b6722eaefe7ed40ed07b95456173d57e2dec4b46e492e",
+    "reason": "REJECT: Substitutions[404].CanCompleteLeft: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "94718edce3e6725aa64bd165e9b8a1a154e9f968cb5a8ce70fa228ade5915191",
+    "name": "missing-history",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-history.json.gz",
+    "rawSHA256": "03c7486baf408fa1e01274a1d56c0fa5a1267396b0cd965e26d59afa84746591",
+    "reason": "REJECT: Histories: roster length"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "47bbbe03f9ff9fb04616dd373e7008664b7b5a78909ee83606e69e249b654fe7",
+    "name": "invented-initial-receipt",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-initial-receipt.json.gz",
+    "rawSHA256": "1ab6855ef06c1299eb11f0cc039fb414cf0ac06cd3af209d21cc7c3696e53c6c",
+    "reason": "REJECT: Histories[0].Initial.Old.Base.Originals[0].Retained: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "ee4794aa263b91ed3fb0a262a8391d1b708c3be28ad6f8e5a83798c5df5df7b7",
+    "name": "wrong-common-cut-time",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-time.json.gz",
+    "rawSHA256": "af9cff6a5ab0d7dff3a5e28d0333625b7618793beabea8f898a48b681e9bd823",
+    "reason": "REJECT: Histories[0].Cut.after-reserve-AB.Node: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "3e86b5c25b93157bd2c00384c6756caf55eb1e98068613716d382d9475bbdd79",
+    "name": "wrong-common-cut-holder",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-holder.json.gz",
+    "rawSHA256": "1b36a7b8705fa80524ef16171288662707b2588572d39deb3313630f8f007a9f",
+    "reason": "REJECT: Histories[0].Steps[3].State.Old.Held[0]: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "eee581f981ae569f49c6d9282a05048af947d57b52529e91f78693baabb8bad3",
+    "name": "false-cut-cancomplete",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-cut-cancomplete.json.gz",
+    "rawSHA256": "6a44005ae7930e1e0f101cf85643ba4fc750d4921f4d89a05bcfc81bde9b4edf",
+    "reason": "REJECT: Histories[0].Cut.after-reserve-AB.CanComplete: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "4e4e4fa126eb056ee25438ebe789beb111dbd8f1b53f8888ad6f284746549d6c",
+    "name": "false-final-completion",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-final-completion.json.gz",
+    "rawSHA256": "c1aad57ab4a81d66995f5c67ba9b7e994ba7583cbf8eea69ec95d3f8c19aac51",
+    "reason": "REJECT: Histories[0].Complete: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "3fb89b4a023e5670e3296832d8d62fd443edb85070de69e1958b6cbc19355ef9",
+    "name": "forged-concrete-binding",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-concrete-binding.json.gz",
+    "rawSHA256": "f09af50b8c47611e882a35cf5ed4591950302be613a86709d478d3c148f42624",
+    "reason": "REJECT: Histories[0].Steps[0].Event.Binding.Operation: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "b8e2ef225646f7008b4bab7c95c3ee281f9284421078df9af1dd48a3a669a92f",
+    "name": "forged-result-provenance",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-result-provenance.json.gz",
+    "rawSHA256": "d6793a9488b3817745302d2624e079897c0757c3bd043c5c4e33a46ddf08fa1d",
+    "reason": "REJECT: Histories[1].Steps[6].Event: result provenance"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "3871102d04f4087dc3b4fb18d645ce227fb3066ff98edfe1b06bc2db0db74416",
+    "name": "invented-application-poststate",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-application-poststate.json.gz",
+    "rawSHA256": "eff61058613fa8cfa687fa8b094b1385a340e92ab4f4e92f181b9f3c08924d1b",
+    "reason": "REJECT: Histories[1].Steps[4].State.Old.Base.Originals[0].WorldResult: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "0e81da47c44841e7e7432fc40e9feeaa72d017dbac753c58ef5e1dab68d530e1",
+    "name": "missing-real-application",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-real-application.json.gz",
+    "rawSHA256": "67313c9e60d5109d2965c6c6e3960ecb69395033b87e0b7bf374c20412570d82",
+    "reason": "REJECT: Histories[1].Steps[4]: monitor forbids visible step"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "4330688dfa167666b6062c4725d7bcfc8142cdec6709265aa10ae581b00d95cd",
+    "name": "private-step-while-down",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-while-down.json.gz",
+    "rawSHA256": "1fbcf3f847aff0f572de59f004c8a02c574a3b07da7779f8d4ccd3f520d25d76",
+    "reason": "REJECT: Histories[5].Steps[5]: private actor B down"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "d3096d829cf50bb95059a541173411daaedd22257f84bf1c4a93506e36839b25",
+    "name": "private-step-forged-role",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-forged-role.json.gz",
+    "rawSHA256": "ea045c1c5c5489ee0443d79320f16f83303842fc046b997bdaf8e8f1dec33b55",
+    "reason": "REJECT: Histories[5].Steps[6].Event.Actor: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "c8ca55a15d63b0e1f2114b101612cfe9658892e344b2e75f157f55f9a58a7b2d",
+    "name": "private-step-hidden-q-change",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-hidden-q-change.json.gz",
+    "rawSHA256": "f9610043b3a98d7e12e2e8ed7bc87981f6156b2f242f7f98e9ab25ee1efc7e16",
+    "reason": "REJECT: Histories[5].Steps[6].State.Old.Held[0]: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "b5b3e9531336a34bd133658477f9d5b0c6a9a02ea7f022969df8b4b3746a56ec",
+    "name": "recovery-resets-pc",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-resets-pc.json.gz",
+    "rawSHA256": "974de6e0f58b050286dc0cae280444725caffde27b6c2678e6d8fa667cbcd1c4",
+    "reason": "REJECT: Histories[7].Steps[6].State.Monitor: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "552492e5210b775605ef2ab38fcd84949055565be02347ff7b15c9593c1cfbb0",
+    "name": "recovery-releases-q",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-releases-q.json.gz",
+    "rawSHA256": "0a49c7f7537ef24a5eda4f8acf61b563c9d5d1a70d21fb93cee7b01eaaf61f99",
+    "reason": "REJECT: Histories[7].Steps[6].State.Old.Held[0]: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "05c19e24c6787b90c6727d5e610fe1048f5ff0d1b30ac0597b765d7e00721504",
+    "name": "wrong-activation",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-activation.json.gz",
+    "rawSHA256": "9813955d806c46f4c294073a2cffe1b1943a85aa91ea2fbd9544beea41658a55",
+    "reason": "REJECT: Histories[7].Steps[6].State.Old.Base.Agents[1].Activation: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "57f1ccdc43c603711b3220bde3c037f337760036b03cfe948be30a47ae5e2c7f",
+    "name": "physical-event-wrong-actor",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/physical-event-wrong-actor.json.gz",
+    "rawSHA256": "06db27c93e137a828bdb6c84d4c2d59b67e31fb2741f8837b5d1c3e773b29515",
+    "reason": "REJECT: Histories[5].Steps[4].State.Old.Base.Agents[0].Down: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "d0cd5601c67f28a0537896331fa952ec0f2e19215907dcbc25dbe8b90305e9e4",
+    "name": "false-private-flag",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-private-flag.json.gz",
+    "rawSHA256": "7c405ed36a1f6a6d0e02a90668adb03a89b93aa0ddfe6dbf687a48b057bfb82a",
+    "reason": "REJECT: Histories[5].Steps[6].Private: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "88b2abca0e85dd1a5758ce767475255032d74d770bd61ff0b482b92ec418d360",
+    "name": "boolean-count",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-count.json.gz",
+    "rawSHA256": "0dfe691a0ae51507b1f64b1a0ef4d3f889762dd4eeadc8089a3ed584035a44bf",
+    "reason": "REJECT: Counts.Histories: type mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "8f2385622730aac2a67ffaf315a9f2344b6c750e18119a8a185b53bee77655f5",
+    "name": "float-count",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/float-count.json.gz",
+    "rawSHA256": "3c924ed98bb59dd13d45cc04a98a09a5fb7a3b6341dd600bb984b26d874ba8c3",
+    "reason": "REJECT: Counts.Histories: type mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "bdbc5cfefe7e9912d7affb0a460d233942bb0fb85f65c4b0c348f9475a5293b1",
+    "name": "null-array",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/null-array.json.gz",
+    "rawSHA256": "8e67e4843784940db536dea605ad7417944ab0450e4e3076c744c4ab64dfcd87",
+    "reason": "REJECT: Monitors: roster length"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "21941af5cfcc66d8854ced3326cf39e74ef3ee891756e213d1b6680c6fd099cf",
+    "name": "unknown-top-field",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-top-field.json.gz",
+    "rawSHA256": "ba34ccdb20d904ce24d44b196e5a674e7ed3d77a82556c0e04c6614892a7cb74",
+    "reason": "REJECT: export: keys mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "e0f8a4d523b4ffe298b433f458bb1820ff4732926352005f407f5dd977a46b05",
+    "name": "unknown-event-field",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-event-field.json.gz",
+    "rawSHA256": "cc4c2979678c88f49f4e551df3eb37d42b499f979cda5f610639380ecc0d19c4",
+    "reason": "REJECT: Histories[0].Steps[0].Event: keys mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "b27c553d6e001d83e925a96ebe1b02d5f020c8c28ef9c82889763495a8df3524",
+    "name": "source-forged",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-forged.json.gz",
+    "rawSHA256": "a33531d064de252ce0ca05a79573d554e841c0d7f63fc27bfd406c1705e726bc",
+    "reason": "REJECT: Sources[0].SHA256: value mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "9bc6ec30469ad01b1065bfc7116c6d2bb86eec9eb88565ed4c0e76d9ba27014f",
+    "name": "source-omitted",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-omitted.json.gz",
+    "rawSHA256": "854d6692656fec61c929b34c1368a2368ea8c43b4301fca545088551697505fe",
+    "reason": "REJECT: Sources: length mismatch"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "d3c6685a11dd317eef1688567336ec808cc86d7760578367e42368e5e257cfc5",
+    "name": "duplicate-json-key",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-json-key.json.gz",
+    "rawSHA256": "64b094b1234135d0f0e00aed1dbba09e82afe7a7a7ff3cd694f47e0e440aa5a8",
+    "reason": "REJECT: duplicate key: Schema"
+  },
+  {
+    "exit": 1,
+    "expected": "reject",
+    "gzipSHA256": "caf4090010d4f4379c080bbcb86b633b3ede4449d4910588d425b2ba722293d4",
+    "name": "nonfinite-json-number",
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonfinite-json-number.json.gz",
+    "rawSHA256": "4da6d0329d06ce309e21e384d57fe5b856a148eb98866aae72af7cc49bf7d021",
+    "reason": "REJECT: nonfinite JSON number: NaN"
+  }
+]

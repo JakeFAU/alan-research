@@ -1,0 +1,92 @@
+[
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/artifact-manifest.json",
+    "bytes": 1302,
+    "sha256": "955ece10ef282cf149aebef27cdbd0abfe0901f56fbd1febf1053dc2ca762d7f"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/check-02.json",
+    "bytes": 1693,
+    "sha256": "540e2f99adf395bc2573106a1c85f8f9c7281e2fab6ab2faa66c0beb387bb084"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/export.json.gz",
+    "bytes": 403411,
+    "sha256": "86a9d22f9808a67dd0066b6b77dd2b3c01a2125d10863c6fbe1369097f6624c8"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/failed-staticcheck-cache.json",
+    "bytes": 418,
+    "sha256": "76ecf780552853384764276603429a705b536bd34e83d6b967c70385fef3b1ab"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/false-hypotheses_test.go.txt",
+    "bytes": 857,
+    "sha256": "c01d3bd7b04cff27da73396d5a7fbcf1a6dc0daeb2d6ba8a0824edf6c5c11b5d"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/green-race.json",
+    "bytes": 3456,
+    "sha256": "9852d2ee6fc4471b097251741c44838fb43df8fa893036a0e53b0c404a56470d"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/green-staticcheck.json",
+    "bytes": 258,
+    "sha256": "2ba028551a1dfc266ac1ada2dc1445cc6b4e3a7d0b00613c613186ffa7e2945d"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/green-test.json",
+    "bytes": 3441,
+    "sha256": "73ee4916da56e4911e057bff25462dc4fb36c71b04126afcdc1d1744fc9474e8"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/red-01.json",
+    "bytes": 1251,
+    "sha256": "ad6f50dfb03a438764d4ba0230f09597c913cf2746e9b810e4cec6fd8b2f3d37"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/red-03-export.json",
+    "bytes": 725,
+    "sha256": "fd03eb6061e4aef12d94d8c17045d0987e80611f59ac71d0268d103a4b99437d"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/red-04-false-hypotheses.json",
+    "bytes": 764,
+    "sha256": "5b694f4e31ac400453f2805723ebdc34640e0b2083082a6602b0cc8291da4b69"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/source-binding-check.json",
+    "bytes": 2008,
+    "sha256": "eba013d714c398415e8293a99993feab2cc036fec897082640321df3c73056d5"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/source-dependencies-cache-warning.json",
+    "bytes": 237695,
+    "sha256": "d8a769903b4c17283b3f8327fe6c9141678cb6a2faf9e9bc854d91980a55eb85"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/source-dependencies.json",
+    "bytes": 237559,
+    "sha256": "8d62a124dfb3ecdb350b2317ecb51fda1a319d91655a9a40c433e54333ccf693"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/toolchain-git-diff.json",
+    "bytes": 186,
+    "sha256": "2d3c1bc6b075de084d3f98bf72c68f4fa43fb8d0d3e3a51d5631386f8a953625"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/toolchain-go-env.json",
+    "bytes": 479,
+    "sha256": "d1f182b1ba344734971dcf8c823b51f5ea1eb1b9f2f3f69e0aca1d213c4bdbc6"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/toolchain-go-version.json",
+    "bytes": 191,
+    "sha256": "ae54b58ebe5cbbe6199b1a32a46d114471e82fc98ea4df85ae6c5378bb0207be"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task1/toolchain-staticcheck-version.json",
+    "bytes": 197,
+    "sha256": "230ec2fb5adb942e38cc3dd953d93543cbd8eee0e0c83e2698b24dc4bc226537"
+  }
+]

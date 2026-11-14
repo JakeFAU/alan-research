@@ -1,0 +1,18 @@
+[
+  {
+    "path": "docs/foundational/phase3c3/tools/audit.py",
+    "sha256": "287be61a4e632b37510d401a658be7fa3fea465697d5586b43f07a58b2b7ad75"
+  },
+  {
+    "path": "docs/foundational/phase3c3/tools/test_audit.py",
+    "sha256": "4d2d71818ba16fedd9008885ee704ace5be47726d7ae709090141d42658f799e"
+  },
+  {
+    "path": "docs/foundational/phase3c2/tools/audit.py",
+    "sha256": "1dc485fb2e3f0594b6122daa3a63ec05a12c8f5a6b9988afe5d2a775a768f193"
+  },
+  {
+    "path": "docs/foundational/phase3c3/evidence/task2/capture.py",
+    "sha256": "4103171df58bc791c364436605d6d3d95779f7fbc0653d7d74b1be42d6a10b99"
+  }
+]

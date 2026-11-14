@@ -1,0 +1,32 @@
+package componentinterfaces
+
+import "testing"
+
+// Deliberately false research hypotheses, retained with raw RED before removal.
+func TestAttackSnapshotSufficiency(t *testing.T) {
+	hs, e := histories()
+	if e != nil {
+		t.Fatal(e)
+	}
+	if hs[0].Cuts[0].CanComplete != hs[1].Cuts[0].CanComplete {
+		t.Fatal("FALSIFIED: identical full old concrete state and config has opposite residual CanComplete")
+	}
+}
+func TestAttackEqualLanguagePreservesNonblocking(t *testing.T) {
+	c := coreConfig(t)
+	m := monitors(c)
+	if !compareLanguages(m[2], m[4]).Equal {
+		t.Fatal("premise failed")
+	}
+	a, e := product(plant(c), m[2])
+	if e != nil {
+		t.Fatal(e)
+	}
+	b, e := product(plant(c), m[4])
+	if e != nil {
+		t.Fatal(e)
+	}
+	if a.Nonblocking != b.Nonblocking {
+		t.Fatal("FALSIFIED: equal initial successful language does not preserve every-reachable-state nonblocking")
+	}
+}

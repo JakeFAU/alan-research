@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "go",
+    "version"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 0,
+  "stdout": "go version go1.27.4 darwin/arm64\n",
+  "stderr": ""
+}

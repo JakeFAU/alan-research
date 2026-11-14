@@ -1,0 +1,306 @@
+{
+  "baseline_commit": "ab01204a0b5121b81379043576ee7bbe46118a19",
+  "task3_input_head": "c4b4e503a1f7e135ea25e06fc918c008e33f0100",
+  "current_paper": {
+    "alan-dissertation.md": "5e157504a3573408458b0187c60e7fbe5d496be77bba9526f50cfa4d5b6228fb",
+    "alan-dissertation.tex": "a1404e92233eb440e8b0785d96efd9522e3231c4cb9baa19c5a623da54a3bfef",
+    "references.bib": "2b03a12c8c485a5e9e253f3579605d61863f2243a83e12fac2b8ee6d3dd8b778",
+    "alan-dissertation.pdf": "ab36c49b635575c1934fd208975573e7ddac6a21b421f256b5bb5a1023c9b499"
+  },
+  "build_sources": {
+    "base": {
+      "alan-dissertation.tex": "a9463a4c2fc8ea92ea923e27fe965ac96317a22045dd6ae008aff68f211d588f",
+      "references.bib": "17cd3c64677ed6cee29549ae8563edd745f017ae8b8876d7ecd4bf02e4c207df"
+    },
+    "current": {
+      "alan-dissertation.tex": "a1404e92233eb440e8b0785d96efd9522e3231c4cb9baa19c5a623da54a3bfef",
+      "references.bib": "2b03a12c8c485a5e9e253f3579605d61863f2243a83e12fac2b8ee6d3dd8b778"
+    }
+  },
+  "baseline_pdf_sha256": "90068cb0ec5ce854fbdc01b3761cf5027d4b31105efec4849971d0c452edaefc",
+  "page_counts": {
+    "base": 48,
+    "current": 50
+  },
+  "changed_current_pages": [
+    1,
+    2,
+    4,
+    5,
+    24,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "rendered_and_visually_inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    23,
+    24,
+    25,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "render_sha256": {
+    "1": "d1b4008477ab925bef6582cac86f682e138e500067c154393b0f8fd6e56b2746",
+    "2": "2ec8e29be8454f4c2b2b40dcb220c151bb85dbc683132c4802a4acfa14ad2d89",
+    "3": "932284874d5f88790f63d8b7f8a5f820b50382b504b19226c1c298f16127d865",
+    "4": "0a709f89e8e1856132b320cd5f98377581da49178ed33892e100d72203ed8378",
+    "5": "cae81938530386f796f76233e4ad99f153cdc131f652a0f0dbdc7da96bdade3f",
+    "6": "8063e6404870e78391cf8406acf1f6f6704ac4f823af14de4762863d08f39a0c",
+    "23": "3b6805d85530217847589ddec2bafa616bb0db252aa88ebd518fcb0e294c832c",
+    "24": "b48cd6b0d82183fb232632aa07f527fb3164686b7402474b834d340bf2e66360",
+    "25": "756cbc78539f3a7026c5753060cd0661e372d51c46ea63838ee292e421e6c756",
+    "44": "fe70712798a385ea48cb9a55aaec35725682b4f3a2ae8db83423f535e65696b4",
+    "45": "ec537653e780dcf300677333a356723bc2dc212bff4c284c6835d7e189abb33a",
+    "46": "d012e7de47e958148bfd3d768e9cf4c08d95f15da08f347e049261c791c027ac",
+    "47": "1fc4a22193c2440c7744f06410cadf276374415a7309495fa63ad56dd18f49fd",
+    "48": "18fa71723ea73b8937f7223e026463a3bf9ed950216d21a7e6c047f8654045ad",
+    "49": "7a8ecdd1cd680aa0d04e16b86540365a3252d194ccd2ebd9e2fd19d1f2c2f538",
+    "50": "c05c779513071a72dc17d7a7298b6cd1276264f75d6b932a6dc8f3b7bb6a21aa"
+  },
+  "warning_comparison": {
+    "exact_warning_lines_equal": true,
+    "baseline": [
+      "Underfull \\hbox (badness 2744) in paragraph at lines 214--215",
+      "LaTeX Font Warning: Command \\small invalid in math mode on input line 283.",
+      "LaTeX Font Warning: Command \\small invalid in math mode on input line 295.",
+      "Underfull \\hbox (badness 5161) in paragraph at lines 558--559",
+      "Underfull \\hbox (badness 1087) in paragraph at lines 558--559",
+      "Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559",
+      "Underfull \\hbox (badness 3229) in paragraph at lines 558--559"
+    ],
+    "current": [
+      "Underfull \\hbox (badness 2744) in paragraph at lines 214--215",
+      "LaTeX Font Warning: Command \\small invalid in math mode on input line 283.",
+      "LaTeX Font Warning: Command \\small invalid in math mode on input line 295.",
+      "Underfull \\hbox (badness 5161) in paragraph at lines 558--559",
+      "Underfull \\hbox (badness 1087) in paragraph at lines 558--559",
+      "Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559",
+      "Underfull \\hbox (badness 3229) in paragraph at lines 558--559"
+    ]
+  },
+  "inspection": "Viewed four contact sheets covering pages 1-6,23-25,44-50 at100dpi. Initial draft Abstract spilled two lines onto contents page; shortened only new summary and rebuilt. Re-rendered all16 pages; only pages1/2 changed, freshly viewed individually. Other14 render hashes remained identical to inspected images. Final Abstract fits page1, contents starts cleanly, new section45-47 and Conclusion47-48/bibliography48-50 remain readable with intact margins, equations and continuations. No new clipping/overlap/missing glyphs found. Inherited code-block pagination remains unchanged. Review fix round1: replaced unsupported necessity sentence in both formats. Current-only rebuild remains50pages, same warnings; all16 pages rerendered, only page46 changed. Page46 freshly visually inspected; other15 hashes match previously inspected images, including continuations45/47. No clipping, overlap or damaged paragraph/equation layout. Prior operational captures remain unchanged; prior manifest retained in fix-round1/prior-manifest.json.",
+  "inherited_discrepancies": [
+    "Markdown-only Section7",
+    "Different section/theorem numbering: new subsection Markdown6.18 versus PDF6.13",
+    "Format-specific markup and inherited bibliography numbering/content differences"
+  ],
+  "scope": "Changed mathematical content and new bibliography metadata aligned; no global source-format equivalence or runtime qualification. Controller inspected primary literature; prior failed access attempts are not verified-text attribution.",
+  "artifacts": [
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/base-alan-dissertation.log.gz",
+      "bytes": 5512,
+      "sha256": "33a81c6426c728687220f4bc9ef29004ed1a282f09f16b4234cae1333b92b22a",
+      "raw_bytes": 16663,
+      "raw_sha256": "41157929baadfc03fa524b093ecaff65a6d832023acddb5060d357e0c6ea172d"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/base-text.txt.gz",
+      "bytes": 68692,
+      "sha256": "ace4fa6388e44778fcf1cff33e38f8ebf13216496c296777161fb81c2c031e71",
+      "raw_bytes": 199331,
+      "raw_sha256": "1a0d735ff1e0a88396292a61e23a88e1895b7e8c6337f1c590fa40f388b1181b"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/base-pdfinfo.txt.gz",
+      "bytes": 275,
+      "sha256": "f29979d6a113f30368c06812298ecf1f082d635954f4423b47976430a3c621cf",
+      "raw_bytes": 430,
+      "raw_sha256": "8dbc1c0f57d1fc89bf58fb84755a4cc9a695892447b1123cab349c16271e492e"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/current-alan-dissertation.log.gz",
+      "bytes": 5518,
+      "sha256": "3d0e6ab236af9e4635666539bd003bb4d1e745e8fad3856f10063fe3b636a7f4",
+      "raw_bytes": 16673,
+      "raw_sha256": "2caac30755a017aef1d09a563cedc1b5e28525347e9453d60f0472b7d71f2383"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/current-text.txt.gz",
+      "bytes": 71529,
+      "sha256": "a8850d63390a91bfc36e91b193f6dfd68bfb2dfe89317e1c7b2c2915f12b517b",
+      "raw_bytes": 207907,
+      "raw_sha256": "984212ec18d88d1982b3cb05c74f07467088be7c6243b9d3e9125cf3b8b776eb"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/current-pdfinfo.txt.gz",
+      "bytes": 274,
+      "sha256": "7f35915a9c00d813ae189e03f4e252e1ea7563fc472a7f127c6150af030f68fd",
+      "raw_bytes": 430,
+      "raw_sha256": "b74f03c5a3e9ba88ba8e135cc619fd5bad043a450ec3e82aaf4e6cdf50512e8e"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/base-alan-dissertation.pdf.gz",
+      "bytes": 361013,
+      "sha256": "01c3938172008dcffa11d282a62b9a96c450f3c1a90ae43bc0bcb8c184f825ed",
+      "raw_bytes": 368765,
+      "raw_sha256": "90068cb0ec5ce854fbdc01b3761cf5027d4b31105efec4849971d0c452edaefc"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/current-alan-dissertation.log.gz",
+      "bytes": 5517,
+      "sha256": "f1cb626aba9ba3c4ff8ce7e76c53828ab2eb4f802db6aa89fb8ab6eb2eefc022",
+      "raw_bytes": 16673,
+      "raw_sha256": "79a96319201742d843ae78eb64bb4bcaf6d4da245625671ce5f800b8d1920c1e"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/current-pdfinfo.txt.gz",
+      "bytes": 274,
+      "sha256": "b6568542db2794b3ddedd7f1de903413adfb75f7f536a0df55eb1a622b1c89b9",
+      "raw_bytes": 430,
+      "raw_sha256": "ce1690ba9bf91bc3d35b3b7637b5c12935c6e6ecea92e1c446c7c1d18e090154"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/current-text.txt.gz",
+      "bytes": 71519,
+      "sha256": "f05eb5c8ad294f1cb74d4339b8547e4cae4f2841a3a162eb2e5da50b2c5cd479",
+      "raw_bytes": 207884,
+      "raw_sha256": "2ecd06649e0f46e9cf79cd169364d16c7a0ec873072d7b8fed0c104c600b76cb"
+    }
+  ],
+  "supporting_files": [
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/build-commands.json",
+      "bytes": 6875,
+      "sha256": "6bf0d5850873e2949f7af11f9a870fc64ae84f63ec6e2318cb162fbaa5b289f6"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/build_pdf.py",
+      "bytes": 1689,
+      "sha256": "cae1247f6172c51214bad80b1c00eb0b3373b6cbd22fef0dcc2c6b3ddd58b97d"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/comparison.json",
+      "bytes": 1346,
+      "sha256": "2cc90f58f75b0bad63fca7469ff1d6dae1874081ab93290bcca2c8cb8709b630"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/initial-build-commands.json",
+      "bytes": 6877,
+      "sha256": "3887d27a271cb892d0775daf3a5b35b8275b9fe2c7568a6d432d10fd6a816a7b"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/initial-comparison.json",
+      "bytes": 1346,
+      "sha256": "2cc90f58f75b0bad63fca7469ff1d6dae1874081ab93290bcca2c8cb8709b630"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/initial-render-hashes.json",
+      "bytes": 1363,
+      "sha256": "d9b90e90e95fd5d5d3004517a8eed6e403963aadde95699f5ac106f467a4c234"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/operation-marker.json",
+      "bytes": 489,
+      "sha256": "241245e31ce7d5aa9f737993ac6640906562269aecb6371590aae70eae36fd6b"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/primary-literature.md",
+      "bytes": 1316,
+      "sha256": "1db111df700f0ae5e70a2e88f711b77b614c57f14bdef8fb0fef91f8877263dd"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/render-commands.json",
+      "bytes": 5303,
+      "sha256": "52b8ff156f07514594d6d6fa377b9ee54f3fcafda35cd443849bc2023dfb38ac"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/render_pdf.py",
+      "bytes": 2104,
+      "sha256": "b7ca78daea66141894c9a155845f80ee2242cb5ad430a307dd7dc577e69ef1b3"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/verify.py",
+      "bytes": 10325,
+      "sha256": "ce5e844b098e2d53dbcc40f0f2c96ffedd91fd9d6e37000d74f6534d23b3af78"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/versions.json",
+      "bytes": 1058,
+      "sha256": "3aa7a95c7e96acce0983d32496e85486b45ed1125ef745a1a2b58e388b3e4b18"
+    },
+    {
+      "path": "docs/foundational/phase3c3/04-results.md",
+      "bytes": 6805,
+      "sha256": "c5b617774a037cd1c61a892749b5a7b0a4135a9d54dd55885fd43f845321ebf9"
+    },
+    {
+      "path": "docs/foundational/phase3c3/05-qualification.md",
+      "bytes": 7245,
+      "sha256": "fa5818cda37884944ff95048b27209f760eae6d8f86ae3e68c8df314b05c710f"
+    },
+    {
+      "path": "docs/foundational/phase3/README.md",
+      "bytes": 6756,
+      "sha256": "7dff8070e6414ffd015bd91f3226be5b2786c2525295057452d76b053e996329"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/commands.json",
+      "bytes": 10314,
+      "sha256": "f5c003054605c38ff02f34c4cf926d336c4dc92892c5e4dfb8a2125f430496ed"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/comparison.json",
+      "bytes": 3353,
+      "sha256": "4646992f4df79756118bfafee971435b03dfa0097f3ec9b24b73011576f829ea"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/prior-manifest.json",
+      "bytes": 10179,
+      "sha256": "3d5602194d29cd19d795c1a684417ebd2970a19bc380227d3adda19cac64e655"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/manuscript/fix-round1/rebuild.py",
+      "bytes": 3444,
+      "sha256": "f661c7a84b4ed60b49363426f25767f40e59747365da2f2df6e00dbd68a089b1"
+    }
+  ],
+  "artifact_stage_prefixes": {
+    "current": "fix-round1/current"
+  },
+  "additional_command_records": [
+    "docs/foundational/phase3c3/evidence/manuscript/fix-round1/commands.json"
+  ],
+  "review_fix": {
+    "reviewed_head": "32ffd396b3aa7767dc5908714a36e18cb9266c9d",
+    "finding": "P2: snapshot insufficiency does not establish necessity of the entire transition relation",
+    "replacement": "The snapshot therefore omits a completion-relevant distinction in future ordering.",
+    "changed_pdf_pages": [
+      46
+    ],
+    "freshly_visually_inspected_pages": [
+      46
+    ],
+    "unchanged_previously_inspected_render_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      23,
+      24,
+      25,
+      44,
+      45,
+      47,
+      48,
+      49,
+      50
+    ],
+    "original_review_preserved": ".superpowers/sdd/phase3c3-plan/task-3-review.md"
+  }
+}

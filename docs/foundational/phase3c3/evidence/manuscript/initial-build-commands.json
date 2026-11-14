@@ -1,0 +1,76 @@
+[
+  {
+    "argv": [
+      "tectonic",
+      "--only-cached",
+      "--keep-logs",
+      "alan-dissertation.tex"
+    ],
+    "cwd": "/tmp/alan-phase3c3/task3-pdf/base",
+    "exit_code": 0,
+    "elapsed_seconds": 0.983,
+    "stdout": "note: using only cached resource files\nnote: Running TeX ...\nnote: Running BibTeX on alan-dissertation.aux ...\nnote: Rerunning TeX because bibtex was run ...\nnote: Rerunning TeX because \"alan-dissertation.aux\" changed ...\nnote: Running xdvipdfmx ...\nnote: Writing `alan-dissertation.blg` (204 B)\nnote: Writing `alan-dissertation.log` (16.2724609375 KiB)\nnote: Writing `alan-dissertation.pdf` (360.1220703125 KiB)\nnote: Skipped writing 4 intermediate files (use --keep-intermediates to keep them)\n",
+    "stderr": "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.\n"
+  },
+  {
+    "argv": [
+      "pdfinfo",
+      "/tmp/alan-phase3c3/task3-pdf/base/alan-dissertation.pdf"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.079,
+    "stdout": "Creator:         LaTeX with hyperref\nProducer:        xdvipdfmx (0.1)\nCreationDate:    Sat Nov 14 11:01:32 2026 EST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           48\nEncrypted:       no\nPage size:       595.28 x 841.89 pts (A4)\nPage rot:        0\nFile size:       368765 bytes\nOptimized:       no\nPDF version:     1.5\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftotext",
+      "-layout",
+      "/tmp/alan-phase3c3/task3-pdf/base/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-pdf/base/text.txt"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.075,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "tectonic",
+      "--only-cached",
+      "--keep-logs",
+      "alan-dissertation.tex"
+    ],
+    "cwd": "/tmp/alan-phase3c3/task3-pdf/current",
+    "exit_code": 0,
+    "elapsed_seconds": 0.905,
+    "stdout": "note: using only cached resource files\nnote: Running TeX ...\nnote: Running BibTeX on alan-dissertation.aux ...\nnote: Rerunning TeX because bibtex was run ...\nnote: Rerunning TeX because \"alan-dissertation.aux\" changed ...\nnote: Running xdvipdfmx ...\nnote: Writing `alan-dissertation.blg` (204 B)\nnote: Writing `alan-dissertation.pdf` (369.0947265625 KiB)\nnote: Writing `alan-dissertation.log` (16.2822265625 KiB)\nnote: Skipped writing 4 intermediate files (use --keep-intermediates to keep them)\n",
+    "stderr": "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.\n"
+  },
+  {
+    "argv": [
+      "pdfinfo",
+      "/tmp/alan-phase3c3/task3-pdf/current/alan-dissertation.pdf"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.014,
+    "stdout": "Creator:         LaTeX with hyperref\nProducer:        xdvipdfmx (0.1)\nCreationDate:    Sat Nov 14 11:01:34 2026 EST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           50\nEncrypted:       no\nPage size:       595.28 x 841.89 pts (A4)\nPage rot:        0\nFile size:       377953 bytes\nOptimized:       no\nPDF version:     1.5\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftotext",
+      "-layout",
+      "/tmp/alan-phase3c3/task3-pdf/current/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-pdf/current/text.txt"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.068,
+    "stdout": "",
+    "stderr": ""
+  }
+]

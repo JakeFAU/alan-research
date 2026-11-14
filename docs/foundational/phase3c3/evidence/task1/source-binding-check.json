@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "python3",
+    "-c",
+    "import gzip,hashlib,json,pathlib\np=pathlib.Path(\"docs/foundational/phase3c3/evidence/task1\")\nb=gzip.decompress((p/\"export.json.gz\").read_bytes());e=json.loads(b);m=json.loads((p/\"artifact-manifest.json\").read_text())\nassert len(b)==m[\"raw\"][\"bytes\"] and hashlib.sha256(b).hexdigest()==m[\"raw\"][\"sha256\"]\nfor s in e[\"Sources\"]: assert hashlib.sha256(pathlib.Path(s[\"Path\"]).read_bytes()).hexdigest()==s[\"SHA256\"],s[\"Path\"]\nr=json.loads((p/\"source-dependencies.json\").read_text());assert r[\"exit\"]==0\ntext=r[\"stdout\"];offset=0;decoder=json.JSONDecoder();paths=[];root=pathlib.Path.cwd()\nwhile offset<len(text):\n while offset<len(text) and text[offset].isspace(): offset+=1\n if offset==len(text): break\n obj,offset=decoder.raw_decode(text,offset)\n if obj.get(\"ImportPath\",\"\").startswith(\"github.com/JakeFAU/alan-research/\"):\n  paths.extend(str(pathlib.Path(obj[\"Dir\"]).relative_to(root)/f) for f in obj.get(\"GoFiles\",[]))\nassert sorted(paths)==[s[\"Path\"] for s in e[\"Sources\"] if s[\"Path\"].endswith(\".go\")]\nassert all(n[\"Marked\"] for a in e[\"Monitors\"] for n in a[\"States\"])\nprint(json.dumps({\"source_hashes_verified\":len(e[\"Sources\"]),\"compiled_local_go_sources_bound\":len(paths),\"all_monitor_states_marked\":True,\"counts\":e[\"Counts\"]},sort_keys=True))\n"
+  ],
+  "environment": {},
+  "exit": 0,
+  "stdout": "{\"all_monitor_states_marked\": true, \"compiled_local_go_sources_bound\": 22, \"counts\": {\"BlockedSubstitutions\": 792, \"Comparisons\": 10, \"ConcreteSteps\": 123, \"Controllers\": 324, \"EqualComparisons\": 3, \"Groupings\": 1620, \"Histories\": 8, \"InitialCanComplete\": 622, \"Monitors\": 5, \"NonblockingProducts\": 392, \"Plants\": 72, \"ProductArcs\": 23420, \"ProductCanComplete\": 9526, \"ProductStates\": 19544, \"Products\": 1980, \"SubsetPairs\": 43, \"Substitutions\": 1188, \"SuccessfulSubstitutions\": 396}, \"source_hashes_verified\": 27}\n",
+  "stderr": ""
+}

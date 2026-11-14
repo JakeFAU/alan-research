@@ -1,0 +1,14 @@
+{
+  "current": 76,
+  "prior": 74,
+  "added": [
+    "github.com/JakeFAU/alan-research/research/componentinterfaces",
+    "github.com/JakeFAU/alan-research/research/componentinterfaces/cmd/export"
+  ],
+  "removed": [],
+  "prior_source": "docs/foundational/phase3c2/evidence/qualification/package-list-cache-writable/output.log",
+  "prior_source_sha256": "7154fea743c04eea5ff530f65781840ac98ed31e5377f049e59597c4d9a41f34",
+  "prior_source_base": "ab01204a0b5121b81379043576ee7bbe46118a19",
+  "current_output_sha256": "b65beca1fce556c00b1cd67e2f20e42524d2b06c7de53b5769b4746fdc882266",
+  "attribution": "Fresh current roster versus exact merged historical roster bytes; historical test coverage is reused, not rerun."
+}

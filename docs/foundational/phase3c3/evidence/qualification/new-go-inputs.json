@@ -1,0 +1,75 @@
+{
+  "accepted_head": "c8230eb2ed2bf3cd45635f72d5eef84bcc7372fa",
+  "files": [
+    {
+      "path": "research/componentinterfaces/automaton.go",
+      "bytes": 3509,
+      "sha256": "8725ba61e19f7ce11356f003e91ad00f5fe102d421183d0c7e18a9470b6ca133"
+    },
+    {
+      "path": "research/componentinterfaces/automaton_test.go",
+      "bytes": 2241,
+      "sha256": "3085b851a3f34962926ef50705f9b3f0d0a78616a51555eaf4dfe80b1daead81"
+    },
+    {
+      "path": "research/componentinterfaces/capture.go",
+      "bytes": 4241,
+      "sha256": "3e7d0e2e7494ad95bedce6c4559ab3213bfbe619287aa83c8b8eda602ee4de57"
+    },
+    {
+      "path": "research/componentinterfaces/cmd/export/main.go",
+      "bytes": 340,
+      "sha256": "68e287f14ee3ef5c43012ba2faba11ea185e1275d4639efee98f036212b8ddec"
+    },
+    {
+      "path": "research/componentinterfaces/concrete.go",
+      "bytes": 4933,
+      "sha256": "94577d0f355a163458be57521828aadc36441bede6370be01dca8107c9e366f8"
+    },
+    {
+      "path": "research/componentinterfaces/concrete_test.go",
+      "bytes": 2151,
+      "sha256": "ed5080099b4bcd87f745ae5c55c896809b1dcf43b796fd5df5d8093086098cb4"
+    },
+    {
+      "path": "research/componentinterfaces/evidence.go",
+      "bytes": 6306,
+      "sha256": "b002561e012caea0f56dbdfb98a5beb767bc5e27dcfd8ba7c0ed820f72301e5d"
+    },
+    {
+      "path": "research/componentinterfaces/evidence_test.go",
+      "bytes": 1463,
+      "sha256": "f5213546eeceb0c3d8a4a0f5083a4f67be64af5cd065e77ebb858868c13ad0f0"
+    },
+    {
+      "path": "research/componentinterfaces/fixtures.go",
+      "bytes": 2573,
+      "sha256": "7327ae7e2de142d802e73a7352ff11c9e1f74092dd5ea26c9863e4c6bbe175b8"
+    },
+    {
+      "path": "research/componentinterfaces/language.go",
+      "bytes": 2727,
+      "sha256": "eae4653ba2a834fa34b62a248fc4e7de577cd53126c28be275213d1a26db813d"
+    },
+    {
+      "path": "research/componentinterfaces/language_test.go",
+      "bytes": 2381,
+      "sha256": "cd74a187151cee0f0b133246d773dd6f105d28b334b5b8b4b8d801c2d5288550"
+    },
+    {
+      "path": "research/componentinterfaces/plant.go",
+      "bytes": 1005,
+      "sha256": "c6bafb266607ef50380573d43cdbb78ee80141959cc5cb75e9c4fe2209039ef6"
+    },
+    {
+      "path": "research/componentinterfaces/product.go",
+      "bytes": 4406,
+      "sha256": "0c254b99546461ab5820ae973e6dc2f48d99ed89265a8dba4c09fa495609c0f4"
+    },
+    {
+      "path": "research/componentinterfaces/product_test.go",
+      "bytes": 793,
+      "sha256": "78e7c2aaa1a26d97c1f97dab504eb40df69d4b77afd4c759d46f66384251877e"
+    }
+  ]
+}

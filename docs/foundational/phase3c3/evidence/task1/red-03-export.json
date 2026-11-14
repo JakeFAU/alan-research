@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "./research/componentinterfaces/..."
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 1,
+  "stdout": "FAIL\tgithub.com/JakeFAU/alan-research/research/componentinterfaces [build failed]\nFAIL\n",
+  "stderr": "# github.com/JakeFAU/alan-research/research/componentinterfaces [github.com/JakeFAU/alan-research/research/componentinterfaces.test]\nresearch/componentinterfaces/evidence_test.go:11:9: undefined: buildEvidence\nresearch/componentinterfaces/evidence_test.go:23:10: undefined: Export\nresearch/componentinterfaces/evidence_test.go:25:8: undefined: evidence\nresearch/componentinterfaces/evidence_test.go:27:10: undefined: Export\n"
+}

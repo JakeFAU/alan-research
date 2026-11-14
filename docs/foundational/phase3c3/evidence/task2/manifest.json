@@ -1,0 +1,627 @@
+[
+  {
+    "bytes": 452,
+    "path": "docs/foundational/phase3c3/evidence/task2/accepted-index.json",
+    "sha256": "5f96be9fb81b6316735eab7f6732ea76668712fd8541802dcbc0fea449308493"
+  },
+  {
+    "bytes": 967,
+    "path": "docs/foundational/phase3c3/evidence/task2/audit-gzip.command.json",
+    "sha256": "142b5833e2ccf4c6694e6a477e79481d8f34f468b58c61b77ef780168ea8617e"
+  },
+  {
+    "bytes": 891,
+    "path": "docs/foundational/phase3c3/evidence/task2/audit-plain.command.json",
+    "sha256": "329d7e7fbb7716819f39063d9f5678129e300c1602bdd8153f6a96de10e12d87"
+  },
+  {
+    "bytes": 5461,
+    "path": "docs/foundational/phase3c3/evidence/task2/capture.py",
+    "sha256": "4103171df58bc791c364436605d6d3d95779f7fbc0653d7d74b1be42d6a10b99"
+  },
+  {
+    "bytes": 607,
+    "path": "docs/foundational/phase3c3/evidence/task2/checker-sources.json",
+    "sha256": "ecaaf9fb0116e8e084e41bf5074656f29cae575cdc7a42d23bcdcd783795c6d1"
+  },
+  {
+    "bytes": 403411,
+    "path": "docs/foundational/phase3c3/evidence/task2/export.json.gz",
+    "sha256": "86a9d22f9808a67dd0066b6b77dd2b3c01a2125d10863c6fbe1369097f6624c8"
+  },
+  {
+    "bytes": 219,
+    "path": "docs/foundational/phase3c3/evidence/task2/fresh-export-comparison.json",
+    "sha256": "5d9229dccd33aa68071879dde1639bf9989aa73e91054b4263812b13468cb907"
+  },
+  {
+    "bytes": 493,
+    "path": "docs/foundational/phase3c3/evidence/task2/fresh-export.command.json",
+    "sha256": "a02e75cc6fd9c222bb2d288e96889fa4f6f17c1e0ebdcbd03cde096588e3bc16"
+  },
+  {
+    "bytes": 578,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-count.command.json",
+    "sha256": "4983e259e86c5dd8bbce28f16e8046b6d10f81ba3afd78d80d31f4b2fc6aeabb"
+  },
+  {
+    "bytes": 208671,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-count.json.gz",
+    "sha256": "88b2abca0e85dd1a5758ce767475255032d74d770bd61ff0b482b92ec418d360"
+  },
+  {
+    "bytes": 615,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-generation.command.json",
+    "sha256": "0ee34f91df9dde2f5e9f909f7cad7e7a078fd7cb4053a8f0032f45e8e3a980c5"
+  },
+  {
+    "bytes": 208681,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/boolean-generation.json.gz",
+    "sha256": "9631a771d39295c6791fb439726a84841da23b6f04f240f309718b7ed9f45e35"
+  },
+  {
+    "bytes": 585,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/changed-plant-gate.command.json",
+    "sha256": "0dbf62e6e8ca4b5b72d6f88723e129c075bc5d6691754b3c25590db214f0d9d7"
+  },
+  {
+    "bytes": 208662,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/changed-plant-gate.json.gz",
+    "sha256": "5d4030ef58a3e269a24bfa1dacb2257f3ec86851ec5463cc8191872c4375da6f"
+  },
+  {
+    "bytes": 609,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/conflicting-root-limit.command.json",
+    "sha256": "3dbb9df39cd162fa4c89434a681bc0467a8bdafed343a9c261a4d984cdfe68cc"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/conflicting-root-limit.json.gz",
+    "sha256": "9b9e67418294c9b900f297806fe849046c141e05cca66e3a0d11478c3fa73733"
+  },
+  {
+    "bytes": 588,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-controller.command.json",
+    "sha256": "6300946aeffbe8c5434277deacf2c3a31c5535c988d2d6f4b216f3f7ebb3e0fd"
+  },
+  {
+    "bytes": 208666,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-controller.json.gz",
+    "sha256": "7b5d28f76c84e532f15c6039308831b55a6b921a9dcebbce99629a952c34caa8"
+  },
+  {
+    "bytes": 583,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-edge.command.json",
+    "sha256": "31e543f500f57a5446967d86fb66c402550efdbe629666c30a402ff449b70d03"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-edge.json.gz",
+    "sha256": "cda91a641ddf745bb9ff99f148eae3256e15a145e84da6580fd2162afb27d1b3"
+  },
+  {
+    "bytes": 574,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-json-key.command.json",
+    "sha256": "d8ce8cc24b6813116fa568cca458194f6388b602ec7b18d16b217a50d842e7b3"
+  },
+  {
+    "bytes": 60,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-json-key.json.gz",
+    "sha256": "d3c6685a11dd317eef1688567336ec808cc86d7760578367e42368e5e257cfc5"
+  },
+  {
+    "bytes": 584,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-state.command.json",
+    "sha256": "2c97513bc1778f876e8db7b275e05d95445c40b9489166aa2fad2c5c51d6fe61"
+  },
+  {
+    "bytes": 208673,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/duplicate-state.json.gz",
+    "sha256": "d630acbb1680b7037419c6716a40ba658b263332f7d0eaa5660a021beb6f90a7"
+  },
+  {
+    "bytes": 589,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/external-action-veto.command.json",
+    "sha256": "570da7e8c20835bd5d24391c372da47d2c280a54af7501d9d14b0add39c93715"
+  },
+  {
+    "bytes": 208673,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/external-action-veto.json.gz",
+    "sha256": "f2c256914e3bc535326d46439517a9ad677f01f20409eb5b69d50a8910df2879"
+  },
+  {
+    "bytes": 612,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/fabricated-product-completion.command.json",
+    "sha256": "95506b44ceaa9a39ef0451a0fd69c465594e3abeaf6cd76daad38a381dae2145"
+  },
+  {
+    "bytes": 208663,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/fabricated-product-completion.json.gz",
+    "sha256": "c0ab19a06535b8aaba85681afff8e4cc00f8eb327c3908aa53ca4a1f3c983f01"
+  },
+  {
+    "bytes": 617,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-cut-cancomplete.command.json",
+    "sha256": "09e25632e042b697df98d1a8303525a0c93b8f2457daea5c73ef75c95a0b7ee1"
+  },
+  {
+    "bytes": 208667,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-cut-cancomplete.json.gz",
+    "sha256": "eee581f981ae569f49c6d9282a05048af947d57b52529e91f78693baabb8bad3"
+  },
+  {
+    "bytes": 594,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-final-completion.command.json",
+    "sha256": "ce24a4a95bbd975d90321790cee6140fa043bdbff14ddc76f26c8e4b519df13e"
+  },
+  {
+    "bytes": 208679,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-final-completion.json.gz",
+    "sha256": "4e4e4fa126eb056ee25438ebe789beb111dbd8f1b53f8888ad6f284746549d6c"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-private-flag.command.json",
+    "sha256": "d5ae4fe9e6324e5ffd4203fb540989c5aa8f837e27ac87e76a464d3b334f6163"
+  },
+  {
+    "bytes": 208663,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-private-flag.json.gz",
+    "sha256": "d0cd5601c67f28a0537896331fa952ec0f2e19215907dcbc25dbe8b90305e9e4"
+  },
+  {
+    "bytes": 614,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-substitution-completion.command.json",
+    "sha256": "0b66e328b3e892738dc7cf4faee5b83a77dc7489e93b772723150f683c047d4d"
+  },
+  {
+    "bytes": 208676,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/false-substitution-completion.json.gz",
+    "sha256": "a17757cb4c701ed28920842c6798b600f47977e999d4eb9a8bef61d0b7902c03"
+  },
+  {
+    "bytes": 577,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/float-count.command.json",
+    "sha256": "f5e1f698ee5f402cde4d6dbc186b80d679a869effdad926e362f057c124584c5"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/float-count.json.gz",
+    "sha256": "8f2385622730aac2a67ffaf315a9f2344b6c750e18119a8a185b53bee77655f5"
+  },
+  {
+    "bytes": 580,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-actor.command.json",
+    "sha256": "d8b5e5d5d179d520a036fc23dd68b009adfc5f985afc2110a5a233f202b91ce5"
+  },
+  {
+    "bytes": 208670,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-actor.json.gz",
+    "sha256": "7a4bec3dcf122c13703708700001e7fb9cd68f3bde8f38d6d39be0d167b7c3cf"
+  },
+  {
+    "bytes": 617,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-concrete-binding.command.json",
+    "sha256": "dac8120216f9523e4233bc7812a269a9fa251695b662eca43bd27bfebf3ec318"
+  },
+  {
+    "bytes": 208678,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-concrete-binding.json.gz",
+    "sha256": "3fb89b4a023e5670e3296832d8d62fd443edb85070de69e1958b6cbc19355ef9"
+  },
+  {
+    "bytes": 603,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-effect-binding.command.json",
+    "sha256": "e1a5a3c3adb7d723818fe37910e6b29b60cead64e7899d28cd5aca929f03f40c"
+  },
+  {
+    "bytes": 208685,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-effect-binding.json.gz",
+    "sha256": "b461cef6d220837e939089b04e203910c3556b73b758751010aecff308562118"
+  },
+  {
+    "bytes": 589,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-equivalence.command.json",
+    "sha256": "666553e7bf00dbdf5b4cae119a2e606ca0c78db6f242e5a717f694bfa2adf692"
+  },
+  {
+    "bytes": 208674,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-equivalence.json.gz",
+    "sha256": "f1c652a86b46711921e8ba2962f5d80389970d1d5eb38ab46084a1e30bb7f95a"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-monitor-mark.command.json",
+    "sha256": "5525f9866e842a965265fa74ed4db9833cb0c662a08a3eb6d9273824674c1215"
+  },
+  {
+    "bytes": 208673,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-monitor-mark.json.gz",
+    "sha256": "76d9e9053706863748e01a92cc1c87c035809f02fec920804c48b8a1e4d6caa9"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-product-mark.command.json",
+    "sha256": "40dcd7ae6e0abd4c8337640a0979a26224bf22fcaa28d6bba47d4580d6d67330"
+  },
+  {
+    "bytes": 208681,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-product-mark.json.gz",
+    "sha256": "30f9e28a0ec6f3b0cc4c2935dc4048a395bedfc8e10e90b37044f61c92bd04fe"
+  },
+  {
+    "bytes": 605,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-result-provenance.command.json",
+    "sha256": "ed5010997581e94adb388213b326513bf25cfe9fe84c557d019d8b6ad58bee14"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/forged-result-provenance.json.gz",
+    "sha256": "b8e2ef225646f7008b4bab7c95c3ee281f9284421078df9af1dd48a3a669a92f"
+  },
+  {
+    "bytes": 621,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/grouped-internal-effect-hidden.command.json",
+    "sha256": "099871e406b3cdc4283171a4b75ca40260d9c96e1642d69ab93d6a3197e0f87b"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/grouped-internal-effect-hidden.json.gz",
+    "sha256": "601fb8b352578fd581f778fc717d9f1420e4616ce0c59f9476b06648126b15ac"
+  },
+  {
+    "bytes": 584,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/hidden-effect-label.command.json",
+    "sha256": "8deb55b8d8a94f7d99c05c40f8f8de3625c912fa08a04188930981c198e0154d"
+  },
+  {
+    "bytes": 208673,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/hidden-effect-label.json.gz",
+    "sha256": "1b1ce01b73c4a4beedaad2459bf9da7a2da0eff5cb042c2b2115c0f7797c095d"
+  },
+  {
+    "bytes": 642,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-application-poststate.command.json",
+    "sha256": "a516056ab9d073cc225bd3b1f475ddc79bb137d23ae0aed5f68c2e1d68dfbe61"
+  },
+  {
+    "bytes": 208671,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-application-poststate.json.gz",
+    "sha256": "3871102d04f4087dc3b4fb18d645ce227fb3066ff98edfe1b06bc2db0db74416"
+  },
+  {
+    "bytes": 626,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-initial-receipt.command.json",
+    "sha256": "0250d2c355f70702aa2a237639e39a5033b4393dcf98b4c84d7c507c6270931e"
+  },
+  {
+    "bytes": 208675,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/invented-initial-receipt.json.gz",
+    "sha256": "47bbbe03f9ff9fb04616dd373e7008664b7b5a78909ee83606e69e249b654fe7"
+  },
+  {
+    "bytes": 579,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-controller.command.json",
+    "sha256": "10ccd6c30e07968d6beed9454d2ed5c6fcd1092fd746831b1c2cc6ec982f53dc"
+  },
+  {
+    "bytes": 208661,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-controller.json.gz",
+    "sha256": "af8c416e47f9d62ef627ca74cebe89bf73a9a051f54db551420c66bb103a22b8"
+  },
+  {
+    "bytes": 574,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-history.command.json",
+    "sha256": "6a1c20309cfaad0450f5a679590f2f8265a256dd420c6b5f36c23e86e8e2fb8d"
+  },
+  {
+    "bytes": 208527,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-history.json.gz",
+    "sha256": "94718edce3e6725aa64bd165e9b8a1a154e9f968cb5a8ce70fa228ade5915191"
+  },
+  {
+    "bytes": 610,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-real-application.command.json",
+    "sha256": "30df7eaa48cb82e833ade2e54e1c6d1363a2b3e8fd3f5b93750a5debc42ea0de"
+  },
+  {
+    "bytes": 208645,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-real-application.json.gz",
+    "sha256": "0e81da47c44841e7e7432fc40e9feeaa72d017dbac753c58ef5e1dab68d530e1"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-subset-arc.command.json",
+    "sha256": "7ad41fb19a4cf52e45c54524ea30cf31fc519cc44d2518ce80aef13356353b9f"
+  },
+  {
+    "bytes": 208677,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-subset-arc.json.gz",
+    "sha256": "43c82b25076d520dc02d2c49da35d46da7039a694ca7094c701937034ef4d834"
+  },
+  {
+    "bytes": 585,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-substitution.command.json",
+    "sha256": "06d6a19be9089d7c52022b2ee450f269baf1dc81ccb2de409e211c509d7ded9c"
+  },
+  {
+    "bytes": 208670,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/missing-substitution.json.gz",
+    "sha256": "7cc811c0af0fecdbcae0b185a44c6da861885b056d37dc08ac02bc27f5cc3ec5"
+  },
+  {
+    "bytes": 581,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonfinite-json-number.command.json",
+    "sha256": "8bd361bca32592a338a52b14d4b3b25b301cee2e6c89de0454524b9ae4b0022a"
+  },
+  {
+    "bytes": 34,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonfinite-json-number.json.gz",
+    "sha256": "caf4090010d4f4379c080bbcb86b633b3ede4449d4910588d425b2ba722293d4"
+  },
+  {
+    "bytes": 602,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonshortest-distinguishing-word.command.json",
+    "sha256": "9443db6b01c299ec946f75dd8c9ea86cbe8fddb4bcdf1596b15dd4a09c01f92e"
+  },
+  {
+    "bytes": 208677,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/nonshortest-distinguishing-word.json.gz",
+    "sha256": "fd6fcf6bfc6e22386a118692a9d330bc76f28552885ac1a6a58f8d36609b37b2"
+  },
+  {
+    "bytes": 568,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/null-array.command.json",
+    "sha256": "2a0ca1ca366fc41975df3f4dc3c99731f17bfbed88784451a60c3714a12f01e0"
+  },
+  {
+    "bytes": 208363,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/null-array.json.gz",
+    "sha256": "bdbc5cfefe7e9912d7affb0a460d233942bb0fb85f65c4b0c348f9475a5293b1"
+  },
+  {
+    "bytes": 580,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/omitted-tau.command.json",
+    "sha256": "040ce26b27c92f67cee9a330530e349b82b73653dc1395662f9eb15a229e16b5"
+  },
+  {
+    "bytes": 208671,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/omitted-tau.json.gz",
+    "sha256": "c75db97a9994bbebccdd51233eeacc6be6b8768f7da31cb18fda414251b58c59"
+  },
+  {
+    "bytes": 626,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/physical-event-wrong-actor.command.json",
+    "sha256": "e32e1d86ad33f1d96c35efd943df6413dc3c8e884b1f08ecab21d068d58a4e37"
+  },
+  {
+    "bytes": 208673,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/physical-event-wrong-actor.json.gz",
+    "sha256": "57f1ccdc43c603711b3220bde3c037f337760036b03cfe948be30a47ae5e2c7f"
+  },
+  {
+    "bytes": 608,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-forged-role.command.json",
+    "sha256": "059bca1ad77f86aeb1c945a3697d6ced61cb537561307b3ce943d2b9298a234b"
+  },
+  {
+    "bytes": 208672,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-forged-role.json.gz",
+    "sha256": "d3096d829cf50bb95059a541173411daaedd22257f84bf1c4a93506e36839b25"
+  },
+  {
+    "bytes": 618,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-hidden-q-change.command.json",
+    "sha256": "e679863f18e061ed8a4c1d3ce6568b82285a1c26c2fa9e3c89277ca7d6a0e533"
+  },
+  {
+    "bytes": 208677,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-hidden-q-change.json.gz",
+    "sha256": "c8ca55a15d63b0e1f2114b101612cfe9658892e344b2e75f157f55f9a58a7b2d"
+  },
+  {
+    "bytes": 601,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-while-down.command.json",
+    "sha256": "e17251b28a5ab67242fa241a503aa708aeb6bb3dd1c71ce7561ae2759b18a2a0"
+  },
+  {
+    "bytes": 208662,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/private-step-while-down.json.gz",
+    "sha256": "4330688dfa167666b6062c4725d7bcfc8142cdec6709265aa10ae581b00d95cd"
+  },
+  {
+    "bytes": 608,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-releases-q.command.json",
+    "sha256": "64f63318395be32392e2b8d15e18948f13b1d10664d1a28e00af8f93b58d7337"
+  },
+  {
+    "bytes": 208671,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-releases-q.json.gz",
+    "sha256": "552492e5210b775605ef2ab38fcd84949055565be02347ff7b15c9593c1cfbb0"
+  },
+  {
+    "bytes": 604,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-resets-pc.command.json",
+    "sha256": "11502e92bc8851b709fa602ad724ab727e675151b1fb978faf80a1192db8399d"
+  },
+  {
+    "bytes": 208670,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/recovery-resets-pc.json.gz",
+    "sha256": "b5b3e9531336a34bd133658477f9d5b0c6a9a02ea7f022969df8b4b3746a56ec"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/removed-non-tree-arc.command.json",
+    "sha256": "4dabc3e3b5637fc6d1d7aa7c93717a2237e73143438838d5ab8b2b47f3a89f8e"
+  },
+  {
+    "bytes": 208684,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/removed-non-tree-arc.json.gz",
+    "sha256": "98a7298a0886d9f78e447efdc7b960e2dd326dff1d2842fa6e957d6f8121c5b1"
+  },
+  {
+    "bytes": 611,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/signature-missing-binding.command.json",
+    "sha256": "435372020c6e426624703e67960efea292fb1c8699d448dc29c81bf06861bdd8"
+  },
+  {
+    "bytes": 208671,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/signature-missing-binding.json.gz",
+    "sha256": "b0eee68277643483d6b5e3468e4d314eb2860fd31e8229e66040e45d41d005ac"
+  },
+  {
+    "bytes": 581,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-forged.command.json",
+    "sha256": "bafcc629dac667bdfb48e72e936dcd5c7397c3fd350aa70d33795e250c10657a"
+  },
+  {
+    "bytes": 208637,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-forged.json.gz",
+    "sha256": "b27c553d6e001d83e925a96ebe1b02d5f020c8c28ef9c82889763495a8df3524"
+  },
+  {
+    "bytes": 573,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-omitted.command.json",
+    "sha256": "10980b08fb78f91463cb56ee6e3b7cca9248a7ab507112b98efe66917a58907e"
+  },
+  {
+    "bytes": 208623,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/source-omitted.json.gz",
+    "sha256": "9bc6ec30469ad01b1065bfc7116c6d2bb86eec9eb88565ed4c0e76d9ba27014f"
+  },
+  {
+    "bytes": 596,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-event-field.command.json",
+    "sha256": "29f4121d26de1fe4ec0d2f53bd5528f534e95c072668a5dfef4701415407927b"
+  },
+  {
+    "bytes": 208689,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-event-field.json.gz",
+    "sha256": "e0f8a4d523b4ffe298b433f458bb1820ff4732926352005f407f5dd977a46b05"
+  },
+  {
+    "bytes": 598,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-monitor-label.command.json",
+    "sha256": "a7bc37ee78558c74248fa61dc483e3b931685f74724a755778a03634fb569af6"
+  },
+  {
+    "bytes": 208679,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-monitor-label.json.gz",
+    "sha256": "c0cf7ac089d6fbdfa94965a584af4a750e5c0eaf446aa9cc12477ca82417572e"
+  },
+  {
+    "bytes": 573,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-top-field.command.json",
+    "sha256": "5f03855bfb11973188c6ebbdebf90e407078d9265fc5fea6518b54b3b2f6e8c8"
+  },
+  {
+    "bytes": 208684,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/unknown-top-field.json.gz",
+    "sha256": "21941af5cfcc66d8854ced3326cf39e74ef3ee891756e213d1b6680c6fd099cf"
+  },
+  {
+    "bytes": 624,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-activation.command.json",
+    "sha256": "7250f7c52ec6664e113f3785fd4806f37f19a715847db49d1d1cf24d900ee0ad"
+  },
+  {
+    "bytes": 208667,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-activation.json.gz",
+    "sha256": "05c19e24c6787b90c6727d5e610fe1048f5ff0d1b30ac0597b765d7e00721504"
+  },
+  {
+    "bytes": 613,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-holder.command.json",
+    "sha256": "63063f68c45afab0e48bf5946b96ce775c10a45cf54a03d84b211a6d7c5c823d"
+  },
+  {
+    "bytes": 208675,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-holder.json.gz",
+    "sha256": "3e86b5c25b93157bd2c00384c6756caf55eb1e98068613716d382d9475bbdd79"
+  },
+  {
+    "bytes": 610,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-time.command.json",
+    "sha256": "ae93279609f94d8d8f87c213da77f1e997e462e51e2f8604bafd0f34a63dbe50"
+  },
+  {
+    "bytes": 208674,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-common-cut-time.json.gz",
+    "sha256": "ee4794aa263b91ed3fb0a262a8391d1b708c3be28ad6f8e5a83798c5df5df7b7"
+  },
+  {
+    "bytes": 596,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-distinguishing-word.command.json",
+    "sha256": "d30624c0572d6cad378a15902068ea0cccc0d149cb52306fb801f67423633cdc"
+  },
+  {
+    "bytes": 208670,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-distinguishing-word.json.gz",
+    "sha256": "a754565f4996f0bffb731b26db26fdfb3834a2c97d05457339737bc2f7c2bbc2"
+  },
+  {
+    "bytes": 614,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-grouping-normalization.command.json",
+    "sha256": "bfe82a9129b49f9c00a8ff6de6ca92568c6cbc62a5edd81ac5897a1cd51975df"
+  },
+  {
+    "bytes": 208676,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-grouping-normalization.json.gz",
+    "sha256": "0548f4af9d5432315177a4ecde75c3093293ecc8603190ea446a3b8b67014812"
+  },
+  {
+    "bytes": 599,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-root.command.json",
+    "sha256": "298edbc3b38809745f153ed291e2811980f5a6b9261557edd22285006250bef7"
+  },
+  {
+    "bytes": 208686,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-root.json.gz",
+    "sha256": "6579e4208f856d9e7fab3c00fe4cf75d15a6defcea880f05fa9b63cdf6fdd646"
+  },
+  {
+    "bytes": 608,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-subset-acceptance.command.json",
+    "sha256": "afa6114880808121b136bbc9683645651bc8da51f10a355f0f2b0336f74d80fa"
+  },
+  {
+    "bytes": 208682,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile/wrong-subset-acceptance.json.gz",
+    "sha256": "5004e9bd119052087e87fd6064fec6a3590aa78c21dee7372ba8baa6157d21a0"
+  },
+  {
+    "bytes": 23093,
+    "path": "docs/foundational/phase3c3/evidence/task2/hostile-index.json",
+    "sha256": "9289b7dff9b666e147a2304e2b28689eb52b82c4383303e94746ef8183a2abd0"
+  },
+  {
+    "bytes": 437,
+    "path": "docs/foundational/phase3c3/evidence/task2/independent-counts.json",
+    "sha256": "72b12c879133fd9e2d917bf34e8f9673ad96a2b3dd48bccdd326b797cfe80973"
+  },
+  {
+    "bytes": 643,
+    "path": "docs/foundational/phase3c3/evidence/task2/initial-hostile-unittest.txt",
+    "sha256": "771842889d6566ee16e0cd032dae300e31ce3f8cfd0f9e997f1fc3f0f344a57e"
+  },
+  {
+    "bytes": 3208,
+    "path": "docs/foundational/phase3c3/evidence/task2/non-tree-control-check.json",
+    "sha256": "3dd890af8b8abed26ae79926c7a369209789423d0a50e8b881f77212dac17c93"
+  },
+  {
+    "bytes": 791,
+    "path": "docs/foundational/phase3c3/evidence/task2/red-unittest.txt",
+    "sha256": "e41b16bfeb264fa6e8200d0fad8559634f027a72ac80662ad1873538404db2b3"
+  },
+  {
+    "bytes": 1071,
+    "path": "docs/foundational/phase3c3/evidence/task2/unittest.command.json",
+    "sha256": "1d0fdd5d3c545ad035b9482e598a3c8f1ce9d594e4fd43d5a91e03ed63846d22"
+  },
+  {
+    "bytes": 93,
+    "path": "docs/foundational/phase3c3/evidence/task2/versions.json",
+    "sha256": "3a820dce1617a55dd0245ca5ff3da7dc71efc9bd894570a88b26fe847c1e9b15"
+  }
+]

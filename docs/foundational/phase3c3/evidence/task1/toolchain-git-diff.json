@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

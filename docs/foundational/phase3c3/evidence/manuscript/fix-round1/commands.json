@@ -1,0 +1,359 @@
+[
+  {
+    "argv": [
+      "tectonic",
+      "--only-cached",
+      "--keep-logs",
+      "alan-dissertation.tex"
+    ],
+    "cwd": "/tmp/alan-phase3c3/task3-fix1",
+    "exit_code": 0,
+    "elapsed_seconds": 1.002,
+    "stdout": "note: using only cached resource files\nnote: Running TeX ...\nnote: Running BibTeX on alan-dissertation.aux ...\nnote: Rerunning TeX because bibtex was run ...\nnote: Rerunning TeX because \"alan-dissertation.aux\" changed ...\nnote: Running xdvipdfmx ...\nnote: Writing `alan-dissertation.blg` (204 B)\nnote: Writing `alan-dissertation.pdf` (368.9794921875 KiB)\nnote: Writing `alan-dissertation.log` (16.2822265625 KiB)\nnote: Skipped writing 4 intermediate files (use --keep-intermediates to keep them)\n",
+    "stderr": "warning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:215: Underfull \\hbox (badness 2744) in paragraph at lines 214--215\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 5161) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 1087) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Overfull \\hbox (5.2184pt too wide) in paragraph at lines 558--559\nwarning: alan-dissertation.tex:559: Underfull \\hbox (badness 3229) in paragraph at lines 558--559\nwarning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.\n"
+  },
+  {
+    "argv": [
+      "pdfinfo",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.029,
+    "stdout": "Creator:         LaTeX with hyperref\nProducer:        xdvipdfmx (0.1)\nCreationDate:    Sat Nov 14 11:12:55 2026 EST\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           50\nEncrypted:       no\nPage size:       595.28 x 841.89 pts (A4)\nPage rot:        0\nFile size:       377835 bytes\nOptimized:       no\nPDF version:     1.5\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftotext",
+      "-layout",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/text.txt"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.074,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "1",
+      "-l",
+      "1",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-01"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.174,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "2",
+      "-l",
+      "2",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-02"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.12,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "3",
+      "-l",
+      "3",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-03"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.146,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "4",
+      "-l",
+      "4",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-04"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.148,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "5",
+      "-l",
+      "5",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-05"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.162,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "6",
+      "-l",
+      "6",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-06"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.165,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "23",
+      "-l",
+      "23",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-23"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.181,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "24",
+      "-l",
+      "24",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-24"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.15,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "25",
+      "-l",
+      "25",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-25"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.16,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "44",
+      "-l",
+      "44",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-44"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.193,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "45",
+      "-l",
+      "45",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-45"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.177,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "46",
+      "-l",
+      "46",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-46"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.171,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "47",
+      "-l",
+      "47",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-47"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.17,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "48",
+      "-l",
+      "48",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-48"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.163,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "49",
+      "-l",
+      "49",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-49"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.142,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "pdftoppm",
+      "-f",
+      "50",
+      "-l",
+      "50",
+      "-r",
+      "100",
+      "-png",
+      "-singlefile",
+      "/tmp/alan-phase3c3/task3-fix1/alan-dissertation.pdf",
+      "/tmp/alan-phase3c3/task3-fix1/renders/page-50"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.059,
+    "stdout": "",
+    "stderr": ""
+  }
+]

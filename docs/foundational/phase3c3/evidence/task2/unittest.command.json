@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "docs/foundational/phase3c3/tools",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "duration_seconds": 35.771,
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit": 0,
+  "stderr": "test_complete_export (test_audit.AuditTests) ... ok\ntest_duplicate_json_key_and_nonfinite_number (test_audit.AuditTests) ... ok\ntest_epsilon_cycles_nondeterminism_empty_subsets_and_empty_words (test_audit.AuditTests) ... ok\ntest_equal_language_does_not_preserve_nonblocking (test_audit.AuditTests) ... ok\ntest_hostile_semantic_controls (test_audit.AuditTests) ... ok\ntest_non_tree_attack_retains_all_discovery_parents_and_counts (test_audit.AuditTests) ... ok\ntest_shortest_separators_have_independent_acceptance (test_audit.AuditTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 35.504s\n\nOK\n",
+  "stdout": ""
+}

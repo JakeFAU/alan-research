@@ -1,0 +1,89 @@
+{
+  "files": [
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/accepted-task1-records.json",
+      "bytes": 3411,
+      "sha256": "5aa0470eca42f4959545784e835c88b1a1a65119206e27badea1735666f99bab"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/baseline-inputs.json",
+      "bytes": 118915,
+      "sha256": "be04d16b178018bd4094a094a196548e1a3397d8f9b374bdb17867e5d57dfb61"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/build-cache-writable/job.json",
+      "bytes": 369,
+      "sha256": "be08dca8dd4e4c4cb66ec792f116199c4dfa00ba65a2d22cf79f6cc0074ad8ad"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/build-cache-writable/output.log.gz",
+      "bytes": 20,
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/build-cache-writable/result.json",
+      "bytes": 158,
+      "sha256": "8fe0b9ccc9ee62bf30a4bafd1107dff403d58b00fd5d58abbae442f890197a02"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-tidy-diff/job.json",
+      "bytes": 379,
+      "sha256": "829283fb931b753bedf29871c05abc02326bbc2ff2ad83e46babd57f54c713e6"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-tidy-diff/output.log.gz",
+      "bytes": 20,
+      "sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-tidy-diff/result.json",
+      "bytes": 157,
+      "sha256": "eacf3cfc037db57329f6f177501e3cf7d424cfb8519d54885fa7efc9e0071ee8"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-verify/job.json",
+      "bytes": 368,
+      "sha256": "7283b8d557e2cbac7fd8c919ad2cd882dfaa1f19e579faf6331d484f3765b594"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-verify/output.log.gz",
+      "bytes": 41,
+      "sha256": "4699dce40a065353f016ef7eb2c309ee9dee73281263a6b29287016349618a1b"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/module-verify/result.json",
+      "bytes": 158,
+      "sha256": "c18667bda05a5fa73dc3cb2b7c25fdeb4315a9b2f57057a1e2f293cff85205e9"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/new-go-inputs.json",
+      "bytes": 2559,
+      "sha256": "7e61ca1771c81327a2595faa0e2c1325157f520a8a05c8279ab57bacc5058760"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/package-comparison.json",
+      "bytes": 716,
+      "sha256": "d0e4fef657ca94fbb0b063768467070d15f598117080fa528cb768edae4022ab"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/package-list-cache-writable/job.json",
+      "bytes": 368,
+      "sha256": "4d55d397bee12cb8694c61ef398ea24432d5560f69c9ed652a0fe496f6bb0da5"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/package-list-cache-writable/output.log.gz",
+      "bytes": 551,
+      "sha256": "90311025f61d796a15a145e4644517f3beb38448b7d3b5ee7de3baa96b8e668f"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/package-list-cache-writable/result.json",
+      "bytes": 160,
+      "sha256": "8bab6b0f80a115b2a12d00323685d53db3487721012dcd27dc2a260f14a51255"
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/qualification/run_check.py",
+      "bytes": 1510,
+      "sha256": "e5c85279eee27d3714b7da2194e136937896488d727880ddab77ca828ad9ddc3"
+    }
+  ]
+}
