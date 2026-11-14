@@ -1,0 +1,20 @@
+{
+  "BlockedSubstitutions": 792,
+  "Comparisons": 10,
+  "ConcreteSteps": 123,
+  "Controllers": 324,
+  "EqualComparisons": 3,
+  "Groupings": 1620,
+  "Histories": 8,
+  "InitialCanComplete": 622,
+  "Monitors": 5,
+  "NonblockingProducts": 392,
+  "Plants": 72,
+  "ProductArcs": 23420,
+  "ProductCanComplete": 9526,
+  "ProductStates": 19544,
+  "Products": 1980,
+  "SubsetPairs": 43,
+  "Substitutions": 1188,
+  "SuccessfulSubstitutions": 396
+}

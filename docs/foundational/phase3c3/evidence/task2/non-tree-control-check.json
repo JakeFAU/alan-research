@@ -1,0 +1,126 @@
+{
+  "PreservedParents": [
+    {
+      "From": "[\"D,W,false,false\",\"0\"]",
+      "Label": "reserve-capacity:BC",
+      "To": "[\"D,W,false,true\",\"0\"]"
+    },
+    {
+      "From": "[\"D,W,false,true\",\"0\"]",
+      "Label": "apply:BC",
+      "To": "[\"D,P,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"P,D,false,false\",\"0\"]",
+      "Label": "consume:AB",
+      "To": "[\"D,D,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"P,U,false,false\",\"0\"]",
+      "Label": "commit:BC",
+      "To": "[\"P,W,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"P,U,false,false\",\"0\"]",
+      "Label": "consume:AB",
+      "To": "[\"D,U,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"P,W,false,false\",\"0\"]",
+      "Label": "consume:AB",
+      "To": "[\"D,W,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"P,W,false,false\",\"0\"]",
+      "Label": "reserve-capacity:BC",
+      "To": "[\"P,W,false,true\",\"0\"]"
+    },
+    {
+      "From": "[\"P,W,false,true\",\"0\"]",
+      "Label": "apply:BC",
+      "To": "[\"P,P,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"U,P,false,false\",\"0\"]",
+      "Label": "consume:BC",
+      "To": "[\"U,D,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"U,U,false,false\",\"0\"]",
+      "Label": "commit:AB",
+      "To": "[\"W,U,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"U,U,false,false\",\"0\"]",
+      "Label": "commit:BC",
+      "To": "[\"U,W,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"U,W,false,false\",\"0\"]",
+      "Label": "reserve-capacity:BC",
+      "To": "[\"U,W,false,true\",\"0\"]"
+    },
+    {
+      "From": "[\"U,W,false,true\",\"0\"]",
+      "Label": "apply:BC",
+      "To": "[\"U,P,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,D,false,false\",\"0\"]",
+      "Label": "reserve-capacity:AB",
+      "To": "[\"W,D,true,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,D,true,false\",\"0\"]",
+      "Label": "apply:AB",
+      "To": "[\"P,D,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,P,false,false\",\"0\"]",
+      "Label": "consume:BC",
+      "To": "[\"W,D,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,P,false,false\",\"0\"]",
+      "Label": "reserve-capacity:AB",
+      "To": "[\"W,P,true,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,U,false,false\",\"0\"]",
+      "Label": "commit:BC",
+      "To": "[\"W,W,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,U,false,false\",\"0\"]",
+      "Label": "reserve-capacity:AB",
+      "To": "[\"W,U,true,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,U,true,false\",\"0\"]",
+      "Label": "apply:AB",
+      "To": "[\"P,U,false,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,W,false,false\",\"0\"]",
+      "Label": "reserve-capacity:AB",
+      "To": "[\"W,W,true,false\",\"0\"]"
+    },
+    {
+      "From": "[\"W,W,false,false\",\"0\"]",
+      "Label": "reserve-capacity:BC",
+      "To": "[\"W,W,false,true\",\"0\"]"
+    },
+    {
+      "From": "[\"W,W,false,true\",\"0\"]",
+      "Label": "apply:BC",
+      "To": "[\"W,P,false,false\",\"0\"]"
+    }
+  ],
+  "RemainingArcs": 33,
+  "Removed": {
+    "From": "[\"U,W,false,false\",\"0\"]",
+    "Label": "commit:AB",
+    "To": "[\"W,W,false,false\",\"0\"]"
+  },
+  "States": 24
+}

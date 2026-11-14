@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python3",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c3/tools/audit.py",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c3/evidence/task2/export.json.gz"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "duration_seconds": 2.259,
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "exit": 0,
+  "stderr": "",
+  "stdout": "ACCEPT: {\"BlockedSubstitutions\": 792, \"Comparisons\": 10, \"ConcreteSteps\": 123, \"Controllers\": 324, \"EqualComparisons\": 3, \"Groupings\": 1620, \"Histories\": 8, \"InitialCanComplete\": 622, \"Monitors\": 5, \"NonblockingProducts\": 392, \"Plants\": 72, \"ProductArcs\": 23420, \"ProductCanComplete\": 9526, \"ProductStates\": 19544, \"Products\": 1980, \"SubsetPairs\": 43, \"Substitutions\": 1188, \"SuccessfulSubstitutions\": 396}\n"
+}
