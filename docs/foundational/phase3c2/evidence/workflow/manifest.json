@@ -1,5 +1,5 @@
 {
-  "scope": "Exact task briefs (deterministic gzip preserving original trailing bytes), implementer/reviewer reports and controller ledger snapshot. Reports retain their original attribution and historical scope; they are not independent mathematical proofs. Final branch review pending at this snapshot.",
+  "scope": "Exact task briefs (deterministic gzip preserving original trailing bytes), implementer/reviewer reports and controller ledger snapshot. Whole-branch review APPROVE at a86146fe; attributions and exclusions remain explicit. Review agreement is not mathematical proof.",
   "task_heads": {
     "1": "60d46a43dd32caa07f0b814e6741213f506a9cb6",
     "2": "a24f8ff1c6aac22a0cffcffc2c614ccfca819c71",
@@ -7,9 +7,14 @@
   },
   "files": [
     {
+      "path": "docs/foundational/phase3c2/evidence/workflow/final-review.md",
+      "sha256": "ea493a4909a2f4c4260f9f32fb66b447434701b353f5c9368c41c421e0ae5e34",
+      "bytes": 13835
+    },
+    {
       "path": "docs/foundational/phase3c2/evidence/workflow/progress.md",
-      "sha256": "eb477dd904f748f59e3eee7bbf80509fb259793aff0883d97731e5c8c95d3b04",
-      "bytes": 7761
+      "sha256": "ff92149846f396ae98d53da2307fd83d2f7ed19a802a1a05439d13afea399dda",
+      "bytes": 9548
     },
     {
       "path": "docs/foundational/phase3c2/evidence/workflow/task-1-brief.md.gz",
@@ -62,5 +67,6 @@
       "sha256": "60b6079d634b8b184008c0456d358d48cbad9e2a53665f6d6fde5edc35f6e6f7",
       "bytes": 8762
     }
-  ]
+  ],
+  "reviewed_head": "a86146fe041ede25753bf470205c1cb5ecf565f2"
 }

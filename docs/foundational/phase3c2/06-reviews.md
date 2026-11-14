@@ -9,7 +9,7 @@ the Phase 3C.1 merge `69534188f796efab2e866750f6a76e2c7a3a1706`.
 | Task 1 | `072cf44c..60d46a43`: model, adapter, proof, schema and export | Spec compliant; quality APPROVE. M1 requested the recorded explicit race timeout; corrected and verified in Task 3. |
 | Task 2 | `60d46a43..a24f8ff1`: independent audit and retained hostile evidence | Spec PASS; quality APPROVE; no actionable findings. |
 | Task 3 | `a24f8ff1..fcb2a6d5`: qualification, manuscript and PDF | Spec compliant; quality APPROVE; no actionable findings. |
-| Whole branch | Complete packet | Pending. |
+| Whole branch | `69534188..a86146fe`: complete packet | APPROVE for draft-PR delivery; no actionable findings. No merge authorization. |
 
 Exact preflight reports are retained in [preflight evidence](evidence/preflight/manifest.json).
 The controller archives the exact task reports, review reports and ledger under
@@ -40,3 +40,13 @@ Exhaustive concrete-product exploration, mechanized proof, distributed runtime
 refinement, inevitable completion and arbitrary-context closure remain outside
 the accepted claims. A review declining those stronger checks is not evidence
 that they were established.
+
+The [whole-branch report](evidence/workflow/final-review.md) records seven
+declined judgments and their explicit controller dispositions: repeat runs of
+unchanged suites; stronger product/probe/proof claims; excluded runtime/semantic
+domains; global inherited manuscript repair; broader fresh visual inspection;
+new external citation verification; and reconstruction of historical execution
+chronology/environments. These remain bounded attributions or open obligations,
+not waived defects. The review accepted the frozen packet at `a86146fe`.
+Subsequent review/delivery-record commits add metadata only; they do not change
+the reviewed model, checker, proof, captures or manuscript.
