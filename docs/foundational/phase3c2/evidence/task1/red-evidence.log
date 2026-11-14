@@ -1,0 +1,7 @@
+--- FAIL: TestExportWitnessesAreActualHistories (0.00s)
+    evidence_test.go:4: missing required witness histories
+--- FAIL: TestFactoredRepresentativeProjectionAndEveryEnabledLift (0.00s)
+    evidence_test.go:22: factored probe runner not implemented
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/capacitycomposition	0.130s
+FAIL

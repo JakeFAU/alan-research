@@ -1,0 +1,5 @@
+Command: GOCACHE=/tmp/alan-phase3c2/gocache staticcheck ./research/capacitycomposition/...
+-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/b1/b139a8cf298751c7271d2fb6d0b6f01514bafa17125f6c64188f652d33592e46-d: operation not permitted (compile)
+
+Exit status: 1
+Elapsed seconds: 0.625

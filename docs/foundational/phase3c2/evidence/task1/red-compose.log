@@ -1,0 +1,7 @@
+--- FAIL: TestJoinRetainsOneRootAndAssociates (0.00s)
+    compose_test.go:8: regrouping changed roots or relation
+--- FAIL: TestInvalidCompositionRejected (0.00s)
+    compose_test.go:13: leaf omitted root membership
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/capacitycomposition	0.123s
+FAIL

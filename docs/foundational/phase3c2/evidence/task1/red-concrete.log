@@ -1,0 +1,11 @@
+--- FAIL: TestGenuineConcreteHolderCollision (0.00s)
+    concrete_test.go:7: missing concrete AB/commit
+--- FAIL: TestApplyNeedsAdmittedHoldAndReleasesAtomically (0.00s)
+    concrete_test.go:14: missing concrete AB/commit
+--- FAIL: TestLiftUsesNewResourceAwareAction (0.00s)
+    concrete_test.go:21: missing concrete AB/commit
+--- FAIL: TestCrashCustodyAndOracleIndependence (0.00s)
+    concrete_test.go:33: missing concrete AB/commit
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/capacitycomposition	0.130s
+FAIL

@@ -1,0 +1,5 @@
+Command: GOCACHE=/tmp/alan-phase3c2/gocache staticcheck -version
+staticcheck 2026.2.2 (0.8.2)
+
+Exit status: 0
+Elapsed seconds: 0.033
