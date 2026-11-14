@@ -1,0 +1,247 @@
+[
+  {
+    "actual_reason": "schema: unsupported version",
+    "exit_code": 1,
+    "input_raw_sha256": "66e650a422d0fba9b9bf0ba7026e0fdfa42740c074296bc62b5c4d920a5cbfdb",
+    "name": "schema-version",
+    "required_reason": "schema"
+  },
+  {
+    "actual_reason": "schema: $.Graphs[0] has missing/unknown fields",
+    "exit_code": 1,
+    "input_raw_sha256": "8d6b4e84e260ffb405dd11bfd4a0119fcefea5537b03a7f8b8c5f22300fe0339",
+    "name": "missing-field",
+    "required_reason": "schema"
+  },
+  {
+    "actual_reason": "schema: $.Graphs[0].States has wrong primitive type",
+    "exit_code": 1,
+    "input_raw_sha256": "e7152a468e923f5ecac8a41f75753db6839dcbd2661567021afcabaa0fe6309f",
+    "name": "bool-as-count",
+    "required_reason": "schema"
+  },
+  {
+    "actual_reason": "schema: $.Graphs[0].Nodes[0].Arcs must be array",
+    "exit_code": 1,
+    "input_raw_sha256": "45846bdbde11a74843be640bd76e6506bd82b2532e9d69ce259e514ec569b102",
+    "name": "null-array",
+    "required_reason": "schema"
+  },
+  {
+    "actual_reason": "config roster: expected all 16 ordered profiles",
+    "exit_code": 1,
+    "input_raw_sha256": "b9441dd78a7ced39d96af3e7f05b23bc8c5fa6e5439cfbacaf8fe8dff4739e2b",
+    "name": "missing-config",
+    "required_reason": "config roster"
+  },
+  {
+    "actual_reason": "binding: graph action has forged identity",
+    "exit_code": 1,
+    "input_raw_sha256": "43ee8b7c92e9f92d1bc3cf889eaa0856236f711d6c742e03273fd6bfd9dfcb21",
+    "name": "forged-binding",
+    "required_reason": "binding"
+  },
+  {
+    "actual_reason": "config: exact identity/policy roster mismatch",
+    "exit_code": 1,
+    "input_raw_sha256": "a01c6f940891637b47b6629d73b451c55815b0c103f52982ee8257b6ed700ab4",
+    "name": "forged-config",
+    "required_reason": "config"
+  },
+  {
+    "actual_reason": "transition relation: missing/extra/unguarded arc at ('U', 'U', '')",
+    "exit_code": 1,
+    "input_raw_sha256": "fe5a4a02b036e3ba2d4661cacd989a618f1360270f19e1115fb10cb9c1cb470e",
+    "name": "missing-arc",
+    "required_reason": "transition relation"
+  },
+  {
+    "actual_reason": "transition relation: missing/extra/unguarded arc at ('U', 'U', '')",
+    "exit_code": 1,
+    "input_raw_sha256": "47132969ed530320c839ac3b20176f041125b54f96ef48891a455801ec7812d7",
+    "name": "extra-arc",
+    "required_reason": "transition relation"
+  },
+  {
+    "actual_reason": "transition relation: missing/extra/unguarded arc at ('U', 'W', '')",
+    "exit_code": 1,
+    "input_raw_sha256": "3f62e824899162922fe6c9b26b85ed9c1255eeade53e23b8e10e417b929733b0",
+    "name": "missing-incoming-arc",
+    "required_reason": "transition relation"
+  },
+  {
+    "actual_reason": "transition relation: missing/extra/unguarded arc at ('W', 'W', 'W')",
+    "exit_code": 1,
+    "input_raw_sha256": "38dcbd1ddb3a0ea5634e2f6da72ec064fa4433437076d97885b60624953d141a",
+    "name": "wrong-serial-guard",
+    "required_reason": "transition relation"
+  },
+  {
+    "actual_reason": "completion: wrong Complete predicate",
+    "exit_code": 1,
+    "input_raw_sha256": "77a1160c1c5c2f3dfc408ac6c42870cb0150008f6ff3e92ccf6d68ea2ea635ce",
+    "name": "wrong-complete",
+    "required_reason": "completion"
+  },
+  {
+    "actual_reason": "progress verdict: wrong reverse reachability",
+    "exit_code": 1,
+    "input_raw_sha256": "34739487eb5a1d94b96657add1e4a7a58035ae71e0b122f42365a92876f12d1f",
+    "name": "wrong-can-complete",
+    "required_reason": "progress verdict"
+  },
+  {
+    "actual_reason": "counts: graph totals differ",
+    "exit_code": 1,
+    "input_raw_sha256": "7107c2febc8e0162feb1395f17bf0c4285790b33146c24932efda8c41940c710",
+    "name": "wrong-count",
+    "required_reason": "counts"
+  },
+  {
+    "actual_reason": "BFS predecessor: invalid predecessor/action/depth",
+    "exit_code": 1,
+    "input_raw_sha256": "cd44a8958f8027d55612192d21c7ad8d9a04c5454ffccb094eb7ac372fe809d0",
+    "name": "wrong-parent",
+    "required_reason": "BFS predecessor"
+  },
+  {
+    "actual_reason": "reachable state set: missing, duplicated or unreachable state",
+    "exit_code": 1,
+    "input_raw_sha256": "cfc483fe82ab65c4eb660249b2ccaf36ff7699065ce88f23f583472cc94dc0b2",
+    "name": "unreachable-state",
+    "required_reason": "reachable state set"
+  },
+  {
+    "actual_reason": "dependency: edges, order or acyclicity differs",
+    "exit_code": 1,
+    "input_raw_sha256": "ac1f4b230e041d719ca92d7c07cafc4120390fa03d1cc25afe63aadabaf83ada",
+    "name": "dependency-erasure",
+    "required_reason": "dependency"
+  },
+  {
+    "actual_reason": "dependency: edges, order or acyclicity differs",
+    "exit_code": 1,
+    "input_raw_sha256": "f1a6462d01a3424ad056e6b9ae8b04afed0c95bc9ef3e07083f4e9405243a2cf",
+    "name": "dependency-order",
+    "required_reason": "dependency"
+  },
+  {
+    "actual_reason": "grouping: erased debt/ports or incompatible component",
+    "exit_code": 1,
+    "input_raw_sha256": "94efbdbce07617396cb2466a9a13f05ef6804eb69b717030f80a7110f88db133",
+    "name": "dropped-hidden-debt",
+    "required_reason": "grouping"
+  },
+  {
+    "actual_reason": "grouping: erased debt/ports or incompatible component",
+    "exit_code": 1,
+    "input_raw_sha256": "ee2dc564b4aef5bece17ae1adf32bc77de6d87a6b1454ea9fa640c5549df96bc",
+    "name": "collapsed-availability",
+    "required_reason": "grouping"
+  },
+  {
+    "actual_reason": "grouping: erased debt/ports or incompatible component",
+    "exit_code": 1,
+    "input_raw_sha256": "23aaa672e0d5356c0ea70a77a2cd7c825ba87727d569842b13a03dbe773e91fa",
+    "name": "erased-port",
+    "required_reason": "grouping"
+  },
+  {
+    "actual_reason": "grouping: closed config dropped debt or policy",
+    "exit_code": 1,
+    "input_raw_sha256": "1444a9de98fca94d1935b23cb8a66daa9c0825cf65eb71ee7fb12f42ea367169",
+    "name": "wrong-grouped-config",
+    "required_reason": "grouping"
+  },
+  {
+    "actual_reason": "R0-unpaid step 0: binding: forged event identity",
+    "exit_code": 1,
+    "input_raw_sha256": "1fbcfaa9838c9cccddd3affdce5b410ab089283b27c65cd50f31a127f7c3c6aa",
+    "name": "forged-event-binding",
+    "required_reason": "binding"
+  },
+  {
+    "actual_reason": "initial state: invented durable/volatile/physical fact",
+    "exit_code": 1,
+    "input_raw_sha256": "6f6faeaa34e3fdfdf45bc2276524e77bbc4cc20b8222345a6cf9d086ab0c97c1",
+    "name": "invented-initial-receipt",
+    "required_reason": "initial state"
+  },
+  {
+    "actual_reason": "post-state: R0-unpaid step 0 disagrees with causal ledger",
+    "exit_code": 1,
+    "input_raw_sha256": "6d2d91a2fafe8848072580194c9301d2f55ca61e3d34bfc323c6a574910de497",
+    "name": "post-state-invention",
+    "required_reason": "post-state"
+  },
+  {
+    "actual_reason": "projection: hidden or invented visible progress",
+    "exit_code": 1,
+    "input_raw_sha256": "9e16c4af0892d98b45fa401d261ab621f0ad8bf507c35826ef14396868a8e8a3",
+    "name": "hidden-application-erasure",
+    "required_reason": "projection"
+  },
+  {
+    "actual_reason": "witness progress: completion/reverse-reachability verdict differs",
+    "exit_code": 1,
+    "input_raw_sha256": "79c78e2f5cd4ab80604ea56ed2d534eefdd8969b75dfe08f40e55312a7db961b",
+    "name": "wrong-witness-progress",
+    "required_reason": "witness progress"
+  },
+  {
+    "actual_reason": "pre-record-loss-and-release step 4: release requires recorded ACK: no causal caller custody",
+    "exit_code": 1,
+    "input_raw_sha256": "c19d58a49361fe129011d51c8e847ed326113d20d89ebedd5322f7f0bd876ee3",
+    "name": "premature-release",
+    "required_reason": "release requires recorded ACK"
+  },
+  {
+    "actual_reason": "pre-record-loss-and-release step 4: repeated application: original already applied",
+    "exit_code": 1,
+    "input_raw_sha256": "a748839ecca0e8cba70d598d95281d9b09961a4c51fe36bc5e43f0a9df3d0c8e",
+    "name": "repeated-application",
+    "required_reason": "repeated application"
+  },
+  {
+    "actual_reason": "pre-record-loss-and-release step 8: actor unavailable: physical owner down",
+    "exit_code": 1,
+    "input_raw_sha256": "a94c5721dca275494d5df72b66c4399798c7ba2c2b80c89c64f90959dd51aeca",
+    "name": "down-actor",
+    "required_reason": "actor unavailable"
+  },
+  {
+    "actual_reason": "R0-unpaid step 5: receipt custody: send-result did not use actual Retained",
+    "exit_code": 1,
+    "input_raw_sha256": "de1c1033f0a1aeb50659abf7cd7763c84c16aa2e815ee95012301334bdba2a3e",
+    "name": "invented-receipt",
+    "required_reason": "receipt custody"
+  },
+  {
+    "actual_reason": "collision: malformed identity/scope",
+    "exit_code": 1,
+    "input_raw_sha256": "1060b6495784b7da501487dc1aae2adedc02f0ab180d8766f6cfc266d44f3b18",
+    "name": "wrong-collision",
+    "required_reason": "collision"
+  },
+  {
+    "actual_reason": "retry: wrong certificate endpoints",
+    "exit_code": 1,
+    "input_raw_sha256": "04fb8abeed3d52637bde05a022e8eab7d7a8c9c8e2438812f7ac6dbaa2746cd9",
+    "name": "wrong-retry",
+    "required_reason": "retry"
+  },
+  {
+    "actual_reason": "loss/release witness: missing loss, recovery, custody retransmission or settlement",
+    "exit_code": 1,
+    "input_raw_sha256": "c53b7505226b07180d12eeb3223a4018b31069a3d91da5621e5733f81f846cb1",
+    "name": "missing-loss-witness",
+    "required_reason": "loss/release witness"
+  },
+  {
+    "actual_reason": "claim classification: unjustified evidence category/roster",
+    "exit_code": 1,
+    "input_raw_sha256": "ecad160e1ee4c98e8b9a26db6d6abb993af141f78b842b70095ca5c975475022",
+    "name": "overstated-claim",
+    "required_reason": "claim classification"
+  }
+]

@@ -1,0 +1,17 @@
+...
+======================================================================
+FAIL: test_hostile_controls (test_audit.AuditTests) (name='down-actor')
+----------------------------------------------------------------------
+audit.AuditError: post-state: pre-record-loss-and-release step 7 disagrees with causal ledger
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c1/tools/test_audit.py", line 109, in test_hostile_controls
+    audit.audit(data)
+AssertionError: "actor unavailable" does not match "post-state: pre-record-loss-and-release step 7 disagrees with causal ledger"
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.897s
+
+FAILED (failures=1)
