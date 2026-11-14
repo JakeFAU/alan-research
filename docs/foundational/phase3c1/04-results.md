@@ -128,5 +128,5 @@ no new runtime campaign, retained SQLite open or runtime `.envrc` access occurre
 Shared-authority fan-out, arbitrary contexts/topologies, dynamic grants or
 identity, cancellation, split effects, independent-owner runtime recovery,
 reverse runtime refinement and reduced verification-cost claims remain
-unestablished. Phase 3C remains open. Delivery and final whole-branch review are
-separate from the result and remain controller responsibilities.
+unestablished. Phase 3C remains open. [Delivery](07-delivery.md) and
+[final review](06-reviews.md) are recorded separately from the research result.
