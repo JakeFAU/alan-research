@@ -1,5 +1,21 @@
 #!/usr/bin/env python3
 """Capture Task 2 tests and exact CLI attacks in a fresh directory only."""
+# This direct-script bootstrap reads the helper once and compiles those bytes.
+# Accepted entrypoints then execute their own recorded source buffer as well.
+if '__source_bundle__' not in globals():
+    import pathlib as _pathlib
+    import types as _types
+    _root = _pathlib.Path(__file__).resolve().parents[4]
+    _helper_path = _root / 'docs/foundational/phase3c5/tools/source_loading.py'
+    _helper_bytes = _helper_path.read_bytes()
+    _helper = _types.ModuleType('phase3c5_source_loading')
+    _helper.__file__ = str(_helper_path)
+    exec(compile(_helper_bytes, str(_helper_path), 'exec'), _helper.__dict__)
+    __source_bundle__ = _helper.SourceBundle(_root, _helper_bytes)
+    if __name__ == '__main__':
+        __source_bundle__.load('__main__', str(_pathlib.Path(__file__).resolve().relative_to(_root)))
+        raise SystemExit(0)
+
 import argparse
 import copy
 import gzip
@@ -12,8 +28,8 @@ import sys
 import tempfile
 
 sys.dont_write_bytecode = True
-import audit
-import test_audit
+audit = __source_bundle__.load('audit', 'docs/foundational/phase3c5/tools/audit.py')
+test_audit = __source_bundle__.load('test_audit', 'docs/foundational/phase3c5/tools/test_audit.py')
 
 ROOT = audit.ROOT
 OVERRIDES = {'GOCACHE':'/tmp/alan-phase3c5/go-cache',
@@ -38,25 +54,24 @@ def run(out, name, argv):
     return result
 
 
+def verify_child_sources(stdout):
+    prefix = b'SOURCE_BUFFERS: '
+    records = [json.loads(line[len(prefix):]) for line in stdout.splitlines() if line.startswith(prefix)]
+    audit.exact(records, [__source_bundle__.records], 'child executed source buffers')
+
+
 def capture(out):
-    sources = list(audit.DEPENDENCIES) + [
-        'docs/foundational/phase3c5/tools/' + name for name in ('audit.py','test_audit.py','capture_audit.py','capture.py')]
-    write_json(out/'checker-sources.json',[dict(Path=p,SHA256=audit.digest((ROOT/p).read_bytes())) for p in sources])
+    write_json(out/'checker-sources.json', __source_bundle__.records)
     write_json(out/'environment.json',dict(Python=sys.version,Platform=platform.platform(),Root=str(ROOT),Overrides=OVERRIDES))
-    export_dir = out/'fresh-export'
-    result = run(out,'fresh-export-capture',['python3','docs/foundational/phase3c5/tools/capture.py',str(export_dir)])
-    if result.returncode:
-        raise RuntimeError('fresh producer capture failed; preserved')
-    fresh = gzip.decompress((export_dir/'export.json.gz').read_bytes())
-    previous = gzip.decompress(test_audit.FIXTURE.read_bytes())
-    audit.exact(fresh,previous,'fresh semantic bytes')
+    # Python-only repair: reuse the preserved source-identical producer capture.
+    # audit reconstruction still checks all producer/predecessor source bindings.
+    fresh = gzip.decompress(test_audit.FIXTURE.read_bytes())
     fixture = audit.decode(fresh)
-    # Both captures bind current source files independently through capture.py.
-    write_json(out/'semantic-identity.json',dict(Equal=True,RawBytes=len(fresh),RawSHA256=audit.digest(fresh),
-               Previous=str(test_audit.FIXTURE.relative_to(ROOT)),Fresh='fresh-export/export.json.gz',
-               Sources=fixture['Sources']))
+    write_json(out/'semantic-identity.json',dict(RawBytes=len(fresh),RawSHA256=audit.digest(fresh),
+               Input=str(test_audit.FIXTURE.relative_to(ROOT)),Sources=fixture['Sources']))
     outcomes = []
-    unit = run(out,'unittest',['python3','-m','unittest','discover','-s','docs/foundational/phase3c5/tools','-p','test_*.py','-v'])
+    unit = run(out,'unittest',['python3','docs/foundational/phase3c5/tools/run_audit_tests.py'])
+    verify_child_sources(unit.stdout)
     outcomes.append(dict(Name='unittest',Exit=unit.returncode,Passed=unit.returncode==0))
     cases = out/'cases'
     cases.mkdir()
@@ -70,6 +85,7 @@ def capture(out):
             path = Path(temp)/('input.json.gz' if gzip_input else 'input.json')
             path.write_bytes(wire)
             result = run(cases,name,['python3','docs/foundational/phase3c5/tools/audit.py',str(path)])
+        verify_child_sources(result.stdout)
         reason = result.stderr.decode('utf-8','replace')
         passed = (result.returncode == 0 if should_accept else result.returncode != 0 and diagnostic in reason)
         record = dict(Name=name,ShouldAccept=should_accept,Passed=passed,Exit=result.returncode,

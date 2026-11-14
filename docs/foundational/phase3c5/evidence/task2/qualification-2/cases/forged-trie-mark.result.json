@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Marked",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "forged-trie-mark.input.gz",
+  "InputArchiveSHA256": "7c504c0da97a2be1ded01d3d17e3b0c2867d666f214510d3092e977fd235e1c9",
+  "InputBytes": 14093159,
+  "InputSHA256": "6718676513c81f8197633e7e83c1f73e87a770f0e2a05af2bbdd36d518376129",
+  "Name": "forged-trie-mark",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

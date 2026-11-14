@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/run_audit_tests.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+    "GOMODCACHE": "/tmp/alan-phase3c5/mod-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c5/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr_archive": "unittest.stderr.gz",
+  "stderr_bytes": 1151,
+  "stderr_sha256": "b5d5ed41eec20625f51cae85a3ae98b756bc02097b25c5373276e4c876a297f0",
+  "stdout_archive": "unittest.stdout.gz",
+  "stdout_bytes": 3686,
+  "stdout_sha256": "c83bf1f4b8605bce600cbcd32a0aca6c6628b0c8c7b65550a4aadcd54b3cdf76"
+}

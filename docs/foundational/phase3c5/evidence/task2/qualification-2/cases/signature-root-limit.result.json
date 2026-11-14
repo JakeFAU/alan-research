@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Limit",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "signature-root-limit.input.gz",
+  "InputArchiveSHA256": "057ec65b786ce6d01ccaabd99e9526490e0a1c7248d0ca43e5fb498700827831",
+  "InputBytes": 14093160,
+  "InputSHA256": "e183d50b9d6a1d9b4a911638a010a6ed6bd7d172c852a9f59e0c0be92f92945a",
+  "Name": "signature-root-limit",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

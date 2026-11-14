@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "CanComplete",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "wrong-multiword-target-hit.input.gz",
+  "InputArchiveSHA256": "668b02b07e74e07688f01baaf1f873d7edcd5a0bd26a7ab4fe7220101c5398cc",
+  "InputBytes": 324137,
+  "InputSHA256": "b32b4313acf4e954efb6a3d68a99eb847e1f186de3809bb949cd6f2597fd264a",
+  "Name": "wrong-multiword-target-hit",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

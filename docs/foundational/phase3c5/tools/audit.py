@@ -5,10 +5,25 @@ Unchanged, hash-pinned Python utilities provide descriptors, epsilon-NFA
 operations, synchronized products, shortest paths and strict JSON equality.
 All inclusion, equivalence reduction, coverage and finite-hit logic is new.
 """
+# This direct-script bootstrap reads the helper once and compiles those bytes.
+# Accepted entrypoints then execute their own recorded source buffer as well.
+if '__source_bundle__' not in globals():
+    import pathlib as _pathlib
+    import types as _types
+    _root = _pathlib.Path(__file__).resolve().parents[4]
+    _helper_path = _root / 'docs/foundational/phase3c5/tools/source_loading.py'
+    _helper_bytes = _helper_path.read_bytes()
+    _helper = _types.ModuleType('phase3c5_source_loading')
+    _helper.__file__ = str(_helper_path)
+    exec(compile(_helper_bytes, str(_helper_path), 'exec'), _helper.__dict__)
+    __source_bundle__ = _helper.SourceBundle(_root, _helper_bytes)
+    if __name__ == '__main__':
+        __source_bundle__.load('__main__', str(_pathlib.Path(__file__).resolve().relative_to(_root)))
+        raise SystemExit(0)
+
 import copy
 import gzip
 import hashlib
-import importlib.util
 import itertools
 import json
 import pathlib
@@ -26,14 +41,13 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-# Check every executable dependency before importing (including transitive ones).
+# Verify and execute the already frozen buffers, including transitive loaders.
 for dependency, sha in DEPENDENCIES.items():
-    if digest((ROOT / dependency).read_bytes()) != sha:
+    if __source_bundle__.hashes[dependency] != sha:
         raise RuntimeError('checker dependency hash mismatch: ' + dependency)
 sys.dont_write_bytecode = True
-_spec = importlib.util.spec_from_file_location('phase3c4_utilities', ROOT / next(iter(DEPENDENCIES)))
-old = importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(old)
+old = __source_bundle__.load('phase3c4_utilities', next(iter(DEPENDENCIES)))
+EXECUTED_SOURCES = __source_bundle__.records
 prior = old.prior
 InvalidEvidence = old.InvalidEvidence
 require, exact, load, decode = old.require, old.exact, old.load, old.decode
@@ -328,6 +342,7 @@ def main():
     if len(sys.argv) != 2:
         print('usage: audit.py PATH', file=sys.stderr)
         return 2
+    print('SOURCE_BUFFERS: ' + json.dumps(EXECUTED_SOURCES, sort_keys=True), flush=True)
     try:
         counts = audit(load(sys.argv[1]))
     except (InvalidEvidence, KeyError, TypeError, ValueError, OSError, IndexError, EOFError) as exc:

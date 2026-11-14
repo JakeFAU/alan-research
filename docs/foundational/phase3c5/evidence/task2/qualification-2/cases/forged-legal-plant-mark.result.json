@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Marked",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "forged-legal-plant-mark.input.gz",
+  "InputArchiveSHA256": "b145a615a94a6320b0f35b45dbd4648a530ef13215f8e9d221bc124d55907fb8",
+  "InputBytes": 14093161,
+  "InputSHA256": "2863f1e3e1e2bdc59265dd720a242deac650bc15f887c90bf5d47c0e3e756cd8",
+  "Name": "forged-legal-plant-mark",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

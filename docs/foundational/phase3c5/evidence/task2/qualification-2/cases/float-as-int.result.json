@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "type",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "float-as-int.input.gz",
+  "InputArchiveSHA256": "91613f36b0adaab0f5365f0775d54a086899bc494be0cb4d3f8c0ea704df0cc4",
+  "InputBytes": 324137,
+  "InputSHA256": "aa3406f2a422938c2f1d643d6c66c97ca7d1d2630fc0636a0c116509566bf082",
+  "Name": "float-as-int",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

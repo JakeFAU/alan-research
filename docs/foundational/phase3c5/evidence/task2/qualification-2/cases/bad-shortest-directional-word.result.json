@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Outside",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "bad-shortest-directional-word.input.gz",
+  "InputArchiveSHA256": "dc50ce9a19224b5d9a1bc7f3adfce5540715ac3e3529ae2a0ac18af8e954a257",
+  "InputBytes": 14093173,
+  "InputSHA256": "97d63c35ff7659dd0fbc178afc72ff8cceacab60e25cbc68a316ecba0ac51204",
+  "Name": "bad-shortest-directional-word",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Substitutions",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "missing-blocking-substitution.input.gz",
+  "InputArchiveSHA256": "dc15a405b4377a0ae1b816c4637de8431902bb82a35814faa3133295e32bf600",
+  "InputBytes": 324131,
+  "InputSHA256": "858f3afc259b942d0e996ea5266b196c45fa8e7f9a26d9966b9407b61a41fa58",
+  "Name": "missing-blocking-substitution",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

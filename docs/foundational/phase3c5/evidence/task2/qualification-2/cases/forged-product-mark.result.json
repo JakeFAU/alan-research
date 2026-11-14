@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Marked",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "forged-product-mark.input.gz",
+  "InputArchiveSHA256": "5e287d4465fef8992f0ac2bf4cf274c4ae3b326e2986760d8b42a6372d7f6b0a",
+  "InputBytes": 324141,
+  "InputSHA256": "a140cfe20196f9490facc198900b0a8ff24919c1341aa324ed55fab50dff054f",
+  "Name": "forged-product-mark",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

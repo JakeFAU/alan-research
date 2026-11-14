@@ -26,7 +26,9 @@ every local finite H. Actual automaton acceptance checks every H source hit and
 target miss. The initial language remains an independent component of J.
 
 The following unchanged Python modules are checked against these SHA-256 values
-before import, including all transitive executable dependencies:
+and compiled from those same byte buffers, including every transitive executable
+dependency. A private importlib facade redirects the unchanged predecessors’
+explicit loaders to these buffers; it does not consult Python bytecode caches:
 
 | Module | SHA-256 | Used boundary |
 | --- | --- | --- |
@@ -41,9 +43,11 @@ seven inherited monitors, 72 plants and 324 controllers against the pinned
 predecessor before preserving their serialization. The predecessor compressed
 and raw lengths/hashes and all 40 inherited source identities are checked.
 The new 54-entry producer source manifest is reconstructed from current files.
-The Task 1 capture helper separately checks the module-relative compiled roster
-against recorded `go list -deps -json`; its exact source identity is included in
-Task 2's checker manifest. The new helper does not modify Task 1's helper.
+The initial Task 2 capture used the unchanged Task 1 helper to check the
+module-relative compiled roster against recorded `go list -deps -json`; its exact
+source identity is included in the historical `qualification-1` manifest. The
+Python-only repair reuses that unchanged producer evidence and does not rerun Go
+commands or modify Task 1’s helper.
 
 Every product is independently rebuilt using those unchanged Python automaton
 utilities: all relation arcs, private moves, conjunctive marks, reverse
@@ -89,43 +93,82 @@ an exhaustive finite algebra check, separate from the conditional source proof.
 
 ## Qualification and preserved failures
 
-`evidence/task2/qualification-1/` retains a fresh producer capture, exact CLI
-inputs, commands, explicit environment overrides, stdout/stderr, exit statuses,
-source identities and an artifact manifest. Raw semantic bytes equal Task 1
-capture 3 exactly: 14,097,260 bytes, SHA-256
+`evidence/task2/qualification-1/` remains the original immutable capture, with a
+fresh producer export, the original cache-capable unittest command and all exact
+CLI inputs/results. Its raw semantic bytes equal Task 1 capture 3 exactly:
+14,097,260 bytes, SHA-256
 `ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a`.
-The producer source bindings are unchanged. The fresh directory refusal prevents
-replacing captured evidence.
+It recorded ten passing tests, two accepted valid inputs and 56 rejected
+JSON/wire attacks. No JSON/wire attack in that corpus was initially accepted.
+That result did not establish executable-source binding.
 
-The exact CLI matrix contains valid plain and gzip input, 47 semantic attacks,
-and nine JSON/encoding attacks. Semantic cases include deleted non-tree arcs
-with repaired superficial counts, reversed inclusion, lost equivalent minimum
-members, MAX-for-MIN, empty-family confusion, missing/forged H, false hits/misses,
-wrong shortest words/prefixes, forged product states/marks/tau, altered signatures
-and roots, source hashes/uses/omissions, wrong generic observations, bad actual
-paths and discarded blocking substitution rows. Malformed cases include top and
-nested duplicate keys, NaN, infinities, overflowing numbers, trailing JSON,
-invalid UTF-8 and truncated gzip. Input archives are lossless: decompress
-`*.input.gz` once to recover exactly the bytes presented to each CLI, whether
-those bytes were plain JSON or gzip JSON. Command records retain the temporary
-input path and each result record retains its byte length/hash.
+Independent review subsequently reproduced a distinct successful provenance
+attack: a timestamp-valid, same-size C4 bytecode cache substituted
+`ALPHABET = ('CACHE',)` while the on-disk predecessor source hashes remained
+correct. `-B`, `dont_write_bytecode` and `PYTHONDONTWRITEBYTECODE` prevent cache
+writes, not reads. This demonstrated a guarantee gap; it does not establish
+that the original qualification actually used stale code or that its finite
+semantic results were wrong. The review returned **REJECT** for this finding.
 
-The first auditor run incorrectly retained inherited `Use` fields in
-`Input.Sources`; the schema requires Path/SHA256 only. That implementation error
-rejected valid input, was corrected against the schema, and is preserved with
-the original auditor bytes and result in `evidence/task2/red-initial/`. It was
-not a producer counterexample. No semantic evidence was edited to make it pass.
-All ten tests passed; both valid CLI inputs were accepted and all 56 hostile
-inputs were rejected. No hostile input was initially accepted. Exact results are
-recorded in `qualification-1/results.json`. The archive/input hashes were checked,
-and a repeated capture command exited 1 while leaving all 311 captured files
-unchanged (`fresh-directory-refusal.json`).
+`evidence/task2/fix-1-red/` retains the exact successful reviewer script/output,
+a fresh pre-fix replay, original command metadata, and the pre-fix auditor,
+test and capture sources from commit
+`b079c67db3298688f32f2c5c8218a01f81d45601`. The unchanged original reproduction
+reads its current working tree, so reproduce the historical failure against
+that commit (or a temporary tree with the retained C5 auditor and unchanged
+C4/C3/C2 auditors). Do not interpret running that old script against repaired
+sources as a reproduction of the historical experiment.
 
-Commands:
+The correction uses `tools/source_loading.py` to read the declared sources into
+byte buffers, hash them, verify predecessor pins, and compile those buffers.
+The buffers also supply the recorded source identities. It covers C5→C4,
+C4→C3 and C3→C2, local auditor/test/capture imports, the helper, and the new
+source-only test runner. Direct CLI entrypoints bootstrap the helper from one
+read buffer, then execute their own recorded source buffers. The runner loads
+test modules directly from the bundle before constructing the unittest suite.
+Each child auditor and runner reports its buffer identities; the capture checks
+these against its own records. No global importlib hook or predecessor edit is
+needed. The trusted boundary is the Python installation and standard library;
+this is not a general sandbox, nor protection for arbitrary external callers
+that choose their own cache-capable importer.
+
+`evidence/task2/qualification-2/` is the corrected qualification. It reuses the
+unchanged producer export; no Go or root suite is repeated. It records thirteen
+passing tests, two accepted valid CLI inputs and all 56 JSON/wire attacks
+rejected. The three added tests cover nine cache boundaries, changed pinned
+source rejection before execution, and execution of a recorded buffer after
+its disk file changes. Every cache case first proves the normal loader executes
+the prepared poison under `-B`, then checks that the source-only chain executes
+the intended source. These successful stock-loader controls remain distinct
+from the corrected loader’s passing result. The source-only runner replaces
+bare unittest discovery for accepted qualification; the old command and its
+result remain historical and have not acquired this guarantee retroactively.
+
+The exact CLI corpus contains 47 semantic attacks and nine JSON/encoding
+attacks. Semantic cases include deleted non-tree arcs with repaired superficial
+counts, reversed inclusion, lost equivalent minimum members, MAX-for-MIN,
+empty-family confusion, missing/forged H, false hits/misses, wrong shortest
+words/prefixes, forged product states/marks/tau, altered signatures and roots,
+source hashes/uses/omissions, wrong generic observations, bad actual paths and
+discarded blocking substitution rows. Malformed cases include top and nested
+duplicate keys, NaN, infinities, overflowing numbers, trailing JSON, invalid
+UTF-8 and truncated gzip. Decompress each `*.input.gz` once to recover exactly
+the bytes presented to the CLI, whether those bytes were plain or gzip JSON.
+Commands, environment overrides, stdout/stderr, exits and byte hashes remain
+inspectable. Both capture helpers refuse existing output directories.
+
+The first original auditor run also had a separate serialization mistake:
+it retained `Use` fields in `Input.Sources`, while the schema requires
+Path/SHA256 only. Its source snapshot and valid-input rejection remain in
+`evidence/task2/red-initial/`. That was an auditor implementation error, not a
+producer counterexample or a hostile-input rejection. No semantic evidence was
+edited to make it pass.
+
+Current commands:
 
 ```sh
 python3 docs/foundational/phase3c5/tools/audit.py docs/foundational/phase3c5/evidence/task1/capture-3/export.json.gz
-python3 -m unittest discover -s docs/foundational/phase3c5/tools -p 'test_*.py' -v
+python3 docs/foundational/phase3c5/tools/run_audit_tests.py
 python3 docs/foundational/phase3c5/tools/capture_audit.py FRESH_OUTPUT_DIRECTORY
 ```
 
@@ -133,7 +176,9 @@ python3 docs/foundational/phase3c5/tools/capture_audit.py FRESH_OUTPUT_DIRECTORY
 
 Exact finite reconstruction can expose a producer mismatch; agreement cannot
 establish an unrestricted theorem. The reused descriptor/automaton utilities
-and written contract remain shared assumptions. This task ran no Go test suite,
+and written contract remain shared assumptions. Their historical standalone
+entrypoints are unchanged and are not retroactively repaired or qualified by
+this task’s source-only loading boundary. This task ran no Go test suite,
 root build/lint campaign, runtime qualification, SQLite open, old exhaustive
 transport probe, live model call or physical crash history. It does not qualify
 dynamic authority, split effects, arbitrary contexts, divergence, fairness,

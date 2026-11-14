@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "From",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "bad-negative-path.input.gz",
+  "InputArchiveSHA256": "e5a1c06481c6db8229f8bc93dfce3484ccd3b3ee0394d504540e918b2bc47cee",
+  "InputBytes": 14093140,
+  "InputSHA256": "1a67a6802e47ec6a0f201703af40ccde1c34159b23730d3f7f7cef1a85c64c52",
+  "Name": "bad-negative-path",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

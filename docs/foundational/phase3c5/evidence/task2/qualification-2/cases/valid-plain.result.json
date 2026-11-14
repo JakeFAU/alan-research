@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "",
+  "Exit": 0,
+  "Format": "plain",
+  "InputArchive": "valid-plain.input.gz",
+  "InputArchiveSHA256": "5b9bfc9e9f63ab056013671eef4c42705c40732d6ec3d4d3558a75269770a5f4",
+  "InputBytes": 14097260,
+  "InputSHA256": "ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a",
+  "Name": "valid-plain",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": true
+}

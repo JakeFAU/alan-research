@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "ID",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "forged-product-node.input.gz",
+  "InputArchiveSHA256": "d515e72277e104e356954a23702fa6419be7a2571ed1305aa0d36beb918df367",
+  "InputBytes": 324147,
+  "InputSHA256": "87e00bd4ddab294e6144647c5a2ac8cbcbdc761e8ade0f0a47d9b02cbe219137",
+  "Name": "forged-product-node",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

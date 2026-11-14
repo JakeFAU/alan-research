@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "H",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "empty-H-as-epsilon-H.input.gz",
+  "InputArchiveSHA256": "a9acd000db32863d88e8b18531e5cea16dc37c546f13c732fe420741b4e1f9ac",
+  "InputBytes": 324136,
+  "InputSHA256": "da77bbd205d466c1d5c3ffda616b7fb63cdbddebbbfa330666ba3fbda5f64116",
+  "Name": "empty-H-as-epsilon-H",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

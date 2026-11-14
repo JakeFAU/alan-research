@@ -1,0 +1,12 @@
+{
+  "CheckerSourceRecords": 9,
+  "AuthenticatedChildCommands": 59,
+  "Tests": 13,
+  "CacheBoundaries": 9,
+  "ValidInputs": 2,
+  "RejectedJSONWireAttacks": 56,
+  "AcceptedJSONWireAttacks": 0,
+  "HistoricalArtifactManifestUnchanged": true,
+  "PreFixSourcesMatch": "b079c67db3298688f32f2c5c8218a01f81d45601",
+  "CorrectedCaptureFiles": 298
+}

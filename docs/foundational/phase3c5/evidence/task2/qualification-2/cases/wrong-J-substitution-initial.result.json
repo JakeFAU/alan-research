@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "InitialLeft",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "wrong-J-substitution-initial.input.gz",
+  "InputArchiveSHA256": "907604d3ec63b9197bb88488ccae81bdbf781cfaa9affe0622ff577980b544a7",
+  "InputBytes": 14093161,
+  "InputSHA256": "b723ba51119d3eb6cc22d7d6f8cd8c0c64f2a4bee6eccc3df08554d6e3c95ef4",
+  "Name": "wrong-J-substitution-initial",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

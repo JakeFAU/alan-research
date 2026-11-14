@@ -1,8 +1,24 @@
 """Independent semantic controls and exact CLI attack generators."""
+# This direct-script bootstrap reads the helper once and compiles those bytes.
+# Accepted entrypoints then execute their own recorded source buffer as well.
+if '__source_bundle__' not in globals():
+    import pathlib as _pathlib
+    import types as _types
+    _root = _pathlib.Path(__file__).resolve().parents[4]
+    _helper_path = _root / 'docs/foundational/phase3c5/tools/source_loading.py'
+    _helper_bytes = _helper_path.read_bytes()
+    _helper = _types.ModuleType('phase3c5_source_loading')
+    _helper.__file__ = str(_helper_path)
+    exec(compile(_helper_bytes, str(_helper_path), 'exec'), _helper.__dict__)
+    __source_bundle__ = _helper.SourceBundle(_root, _helper_bytes)
+    if __name__ == '__main__':
+        __source_bundle__.load('__main__', str(_pathlib.Path(__file__).resolve().relative_to(_root)))
+        raise SystemExit(0)
+
 import copy
 import itertools
 import unittest
-import audit
+audit = __source_bundle__.load('audit', 'docs/foundational/phase3c5/tools/audit.py')
 
 FIXTURE = audit.ROOT / 'docs/foundational/phase3c5/evidence/task1/capture-3/export.json.gz'
 

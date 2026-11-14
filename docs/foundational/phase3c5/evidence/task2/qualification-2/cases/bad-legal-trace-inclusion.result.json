@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "RightSubset",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "bad-legal-trace-inclusion.input.gz",
+  "InputArchiveSHA256": "988457f3ec013c815f4a3bd954b44bcb1c075bd4d55f8c4a8496d466fa0fb9e2",
+  "InputBytes": 324128,
+  "InputSHA256": "e33b02b3d46f83605d31205f763728d94b29213b84ebf0aab1e6c50311ea769d",
+  "Name": "bad-legal-trace-inclusion",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

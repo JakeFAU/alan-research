@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "CanComplete",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "forged-product-completion.input.gz",
+  "InputArchiveSHA256": "8d77f5d743b630556e0d3c72f3e88cde94a005e75cf02b711058bd1f21fa7535",
+  "InputBytes": 14093161,
+  "InputSHA256": "52e7f6418415114e0a78986d01c55b1cff8830e1cf0b46eb0ee09ab27a12a353",
+  "Name": "forged-product-completion",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "Path": "audit.py",
+    "SHA256": "8944f418c39f21db4b4ad2c38b70b5efe039957d8abbe94cff79f6dc8bbd4235"
+  },
+  {
+    "Path": "capture_audit.py",
+    "SHA256": "eff7f2630ff28071bd69e0fa8472fb5ccae457e255a3f9ff6d4662934d269f33"
+  },
+  {
+    "Path": "replay.command.json",
+    "SHA256": "bb71256a98d5a3e06a4ad5542a6cfd2c9c9c7cb7662406716bd5620b4d123551"
+  },
+  {
+    "Path": "replay.stderr",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Path": "replay.stdout",
+    "SHA256": "3bc0be917b8cffc55b9ed986764565731499abfde19d447961a385cb7ff22872"
+  },
+  {
+    "Path": "review-cache-repro.command.json",
+    "SHA256": "fd06964cf034e2e2d88ad1da64076203f2bb14319bd14ae8ebf9f80dd88cc9a3"
+  },
+  {
+    "Path": "review-cache-repro.py",
+    "SHA256": "d39639b72e12a3de1ffe35516837a106cdbdb5b45cc2ac97e16a6d7520f22788"
+  },
+  {
+    "Path": "review-cache-repro.stderr",
+    "SHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "Path": "review-cache-repro.stdout",
+    "SHA256": "3bc0be917b8cffc55b9ed986764565731499abfde19d447961a385cb7ff22872"
+  },
+  {
+    "Path": "test_audit.py",
+    "SHA256": "6bdeaf38227e06a34c2679a40e70ce775a250e6020945d2e6fbc2cacc22c874a"
+  }
+]

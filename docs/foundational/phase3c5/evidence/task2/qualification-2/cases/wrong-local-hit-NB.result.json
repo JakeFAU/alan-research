@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Nonblocking",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "wrong-local-hit-NB.input.gz",
+  "InputArchiveSHA256": "9fd92659ba376dd11cd2fb72ff07370505df2ea702514427d6e09709a79ed458",
+  "InputBytes": 14093159,
+  "InputSHA256": "820e681a5a110043d8ebd915bd1539669583132dbf4677b538aedc2b7b1598f9",
+  "Name": "wrong-local-hit-NB",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

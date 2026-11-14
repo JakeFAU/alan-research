@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "MIN",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "max-substituted-for-min.input.gz",
+  "InputArchiveSHA256": "51f4c39a803ee6fafb41e993f6a27cf319a5bf9553cf4b315f7de53bbebf9a84",
+  "InputBytes": 14093160,
+  "InputSHA256": "4d7c72b81ed7a12e700b8f45d331712a1a519b230d6eaa7ff9f9ee4ab27f3926",
+  "Name": "max-substituted-for-min",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

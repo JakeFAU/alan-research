@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Extra data",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "trailing-json.input.gz",
+  "InputArchiveSHA256": "123a306012ccd6adb63f0cf3cff922b9f34a0a85bdaaaaf894bfd5be50367663",
+  "InputBytes": 5,
+  "InputSHA256": "2cec2bbf1a64ea5249e8a7ab9ecc782fa48be13f0b35ad5f52bdea741841a230",
+  "Name": "trailing-json",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

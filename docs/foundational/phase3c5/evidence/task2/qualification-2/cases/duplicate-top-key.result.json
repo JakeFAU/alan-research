@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "duplicate key",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "duplicate-top-key.input.gz",
+  "InputArchiveSHA256": "9b0e4d44e464eb2dc622d8963a2792b52ff04a70041a45469d356c16f19ec834",
+  "InputBytes": 23,
+  "InputSHA256": "96e71ef31fc047a4305f52af063f8b18bdfa7a51a8ed39f41048ad8c2d165118",
+  "Name": "duplicate-top-key",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}
