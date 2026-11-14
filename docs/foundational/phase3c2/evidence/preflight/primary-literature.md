@@ -1,0 +1,7 @@
+# Primary background checked by controller, 2026-11-14
+
+This is background attribution, not evidence for the new ALAN propositions.
+
+Coffman, E. G., Jr.; Elphick, M. J.; Shoshani, A. System Deadlocks. Computing Surveys 3(2), June 1971, pp. 67–78. A scanned copy of the original twelve-page article was opened with the web tool at https://uobdv.github.io/Design-Verification/Supplementary/System_Deadlocks-Four_necessary_and_sufficient_conditions_for_deadlock.pdf . Its first-page header/footer and contents page establish title, authors, volume/issue/date and pagination. Page 67 already describes one task holding a resource while waiting for another task's computation. Page 70 discusses exclusion, waiting while holding, nonpreemption and circular wait. Therefore do not claim invention of resource-wait deadlock; the new question is the ALAN abstraction/contract boundary.
+
+Author publication list also opened successfully: https://www.cs.columbia.edu/~coffman/publications.php . It lists System Deadlocks, 1971, pp.67–78, with an abbreviated '2' instead of full volume/issue. Use the article itself for full metadata. https://dl.acm.org/doi/10.1145/356586.356588 returned 403; do not say the publisher page was verified. Search indexes returned that DOI, but no primary DOI page was accessible. A bibliography entry without DOI, with the inspected scan URL, avoids implying verification. No verbatim quotations are needed.
