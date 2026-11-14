@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/verify.py"
+  ],
+  "head": "a49ee5b046b066deee8b766a25787aa606661179",
+  "exit_code": 1,
+  "output": "Traceback (most recent call last):\n  File \"/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/verify.py\", line 209, in <module>\n    print(json.dumps(main(),indent=2,sort_keys=True))\n  File \"/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/verify.py\", line 84, in main\n    require((ROOT/name).read_bytes() == blob(ACCEPTED,name), 'accepted source/archive drift: '+name)\n  File \"/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/verify.py\", line 23, in require\n    raise ValueError(message)\nValueError: accepted source/archive drift: docs/foundational/phase3c5/phase3c5-plan.md\n",
+  "scope": "Controller pre-final run; rejected attempted metadata change in frozen plan. No model execution."
+}

@@ -1,0 +1,7 @@
+{
+  "accepted_commit": "208e1411dd9074f4d97eb9fbba4fb9b8755b3236",
+  "path": "docs/foundational/phase3c5/phase3c5-plan.md",
+  "attempted_sha256": "bcc526318a95eb1ab1392dc6c1c727ca5a915592838799474fb53c8e5b83ff4b",
+  "restored_sha256": "8d2493e1b360f092aa3a4ceac7bf8220da47c77b0c7188efa8079b457ebfe327",
+  "reason": "Controller attempted to mark checkboxes and append review corrections in a plan included in the frozen accepted source roster. Final verifier correctly rejected the drift. Restored the exact accepted bytes; completion and review corrections stay in separate workflow records. No validation was weakened."
+}
