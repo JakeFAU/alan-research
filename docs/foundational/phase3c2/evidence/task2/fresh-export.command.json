@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "run",
+    "./research/capacitycomposition/cmd/export"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "elapsed_seconds": 134.308554,
+  "environment_overrides": {
+    "GOCACHE": "/tmp/alan-phase3c2/gocache",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3c2/pycache"
+  },
+  "exit_code": 0,
+  "stderr": "docs/foundational/phase3c2/evidence/task2/fresh-export.stderr.log",
+  "stdout": "/tmp/alan-phase3c2/task2-fresh-export.json"
+}

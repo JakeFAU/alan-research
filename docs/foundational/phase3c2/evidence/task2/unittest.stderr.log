@@ -1,0 +1,10 @@
+test_genuine_export_is_independently_accepted (test_audit.AuditAcceptance) ... ok
+test_hostile_records_rejected_for_specific_reasons (test_audit.HostileEvidence) ... ok
+test_plain_json_and_gzip_have_identical_meaning (test_audit.HostileEvidence) ... ok
+test_completion_under_every_configuration_and_both_results (test_audit.IndependentlyGeneratedHistories) ... ok
+test_local_transport_guards_reject_impossible_events (test_audit.IndependentlyGeneratedHistories) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 6.453s
+
+OK

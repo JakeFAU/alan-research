@@ -1,0 +1,389 @@
+[
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Schema",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-schema.json.gz",
+    "name": "wrong-schema",
+    "raw_sha256": "752dd16245e1357ef2302f2c6efffeae51d74752b8c3e7062cee6a4570367656",
+    "stderr": "REJECT: Schema: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "keys",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/unknown-top-field.json.gz",
+    "name": "unknown-top-field",
+    "raw_sha256": "b7011ee07a3655473b91d3d9794ce6b511f9f782c4146f5131a663c285eac52e",
+    "stderr": "REJECT: Evidence: keys mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "States",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/boolean-count.json.gz",
+    "name": "boolean-count",
+    "raw_sha256": "4fb9e7dc12e6313324df792d142ed3beb6c1bfa354cd9a7b1051345d1ab1efcc",
+    "stderr": "REJECT: Graphs[0].States: type mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Arcs",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/float-count.json.gz",
+    "name": "float-count",
+    "raw_sha256": "ed26e1686af751872908db3d2770634a5b4d6db30d53093b0a9c7ed6ec4094d5",
+    "stderr": "REJECT: Graphs[0].Arcs: type mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Graphs",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/missing-config.json.gz",
+    "name": "missing-config",
+    "raw_sha256": "4fc701dbb23d9e860c3921bac171d960a3cd345f0a9878d26a393a91ecd4bfb1",
+    "stderr": "REJECT: Graphs: roster"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "CanComplete",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-completion.json.gz",
+    "name": "wrong-completion",
+    "raw_sha256": "10d1f99427aa1b4b853630907959daba0e03c1af0923d4c3b6fe9c2dc68cefa4",
+    "stderr": "REJECT: Graphs[0].Nodes[0].CanComplete: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Parent",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-parent.json.gz",
+    "name": "wrong-parent",
+    "raw_sha256": "bf93e8c2c6ce8544639459ba973fc5f7f54644071a2ef498e3932028b9f841df",
+    "stderr": "REJECT: Graphs[0].Nodes[1].Parent: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Held",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/aggregate-holder.json.gz",
+    "name": "aggregate-holder",
+    "raw_sha256": "17160f12d7df225505d79764f139f482a9e3bf72c532d69a5be28a5d6f2c0935",
+    "stderr": "REJECT: Graphs[0].Nodes[0].State.Held: type mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Held",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/changed-holder.json.gz",
+    "name": "changed-holder",
+    "raw_sha256": "4376dec219c3687b299f6e545ec1bceddbf58152804a89af473ce896978caf8c",
+    "stderr": "REJECT: Witnesses[0].Steps[6].State.Held[0]: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Memberships",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/invented-membership.json.gz",
+    "name": "invented-membership",
+    "raw_sha256": "bbcdcef25a45124324b0911abf0f3a0d1eb012123a8f3cb74fe2ec2ea63a54fd",
+    "stderr": "REJECT: Groupings[0].A.Memberships[0].Root: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Roots",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/conflicting-limit.json.gz",
+    "name": "conflicting-limit",
+    "raw_sha256": "38f398109ef8f50528a7a9dd23663cd39a7dde8799a1193d357caf852f13d5e6",
+    "stderr": "REJECT: Groupings[0].AB.Roots[0].Limit: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Roots",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/copied-pool.json.gz",
+    "name": "copied-pool",
+    "raw_sha256": "28dcc6122ffdeec27a3f3b0080a6a22fbcc9247bc4a9e9087c274b955e604500",
+    "stderr": "REJECT: Groupings[0].Left.Roots: length mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Held",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/capacity-overflow.json.gz",
+    "name": "capacity-overflow",
+    "raw_sha256": "29f7c4af38ed3fbf88ba168c918d1259c0ccb4554b4782b06e70904ddaa09065",
+    "stderr": "REJECT: Witnesses[0].Steps[6].State.Held[1]: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Held",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/early-release-poststate.json.gz",
+    "name": "early-release-poststate",
+    "raw_sha256": "a15c7aa6222b955ecdd0a1d71f932eb1d8f032b399e5666703175f2bba522713",
+    "stderr": "REJECT: Witnesses[7].Steps[7].State.Held[0]: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "actor",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-actor.json.gz",
+    "name": "wrong-actor",
+    "raw_sha256": "1f21d251837e5b5f0abe9ae4df8557bfb7af5b7cf291296b906e5eb129a60248",
+    "stderr": "REJECT: Witnesses[0].Steps[0].Event: actor"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Activation",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-activation.json.gz",
+    "name": "wrong-activation",
+    "raw_sha256": "abb3525fa8a476f867c24c0ec6c0dd22490b2a99293133ac97e6a2ea3bf49b56",
+    "stderr": "REJECT: Witnesses[7].Steps[7].State.Base.Agents[1].Activation: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Binding",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/forged-binding.json.gz",
+    "name": "forged-binding",
+    "raw_sha256": "acf8841fcf991a88dc0d54fc51d50a009688d7ad715cc8ee8c6a0a38a3355a69",
+    "stderr": "REJECT: Witnesses[0].Steps[0].Event.Binding.Grant: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "result provenance",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/forged-receipt.json.gz",
+    "name": "forged-receipt",
+    "raw_sha256": "854856f6de5c09b92063320ae4fac05a1cf4227fe92b8b7d09de85faac1981b5",
+    "stderr": "REJECT: Witnesses[8].Steps[13].Event: result provenance"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Committed",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/poststate-invention.json.gz",
+    "name": "poststate-invention",
+    "raw_sha256": "4ac6bb8430d0eaf1c4b576246a89d5c8fa7be62a86a5591e9905e5b6379553ee",
+    "stderr": "REJECT: Witnesses[0].Steps[0].State.Base.Originals[1].Committed: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Initial",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/invented-initial-receipt.json.gz",
+    "name": "invented-initial-receipt",
+    "raw_sha256": "c0efdb6d7f8bf574861a515a6e2ac679d3db9047c42d690a21a39c4404decbf7",
+    "stderr": "REJECT: Witnesses[0].Initial.Base.Originals[0].Recorded: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "keys",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/unknown-event-field.json.gz",
+    "name": "unknown-event-field",
+    "raw_sha256": "7ffadc454bb472313a44e68059001639517ab09437c2e9909ed5fcac656171fc",
+    "stderr": "REJECT: Witnesses[0].Steps[0].Event: keys mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Generation",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/boolean-generation.json.gz",
+    "name": "boolean-generation",
+    "raw_sha256": "179c5201915b757370957b02e21b96ddfccb9de8bbb9394f02b6d3f725aea6a7",
+    "stderr": "REJECT: Graphs[0].Config.Base.Agents[0].Generation: type mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "keys",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/unknown-nested-field.json.gz",
+    "name": "unknown-nested-field",
+    "raw_sha256": "3a7df038906c1da3ae343bd3cbc89cfddb9148784e69a56ccdf0bcb392421d9f",
+    "stderr": "REJECT: Graphs[0].Nodes[0].State: keys mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Roots",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/null-array.json.gz",
+    "name": "null-array",
+    "raw_sha256": "89d227c46bee9212ab3718717216cf3194573af1758d8765857047f5cdc69607",
+    "stderr": "REJECT: Groupings[0].C.Roots: type mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "probe roster",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/probe-row-omitted.json.gz",
+    "name": "probe-row-omitted",
+    "raw_sha256": "a2fbd852a111fb5404e2bbccfa4753fd1fd4174d7ddd084c68b709d1314550f6",
+    "stderr": "REJECT: probe roster"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "probe total",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/probe-total-forged.json.gz",
+    "name": "probe-total-forged",
+    "raw_sha256": "741db54600ecfd50d4394c016a4eb3254987311839bcf294162b0948728d80d9",
+    "stderr": "REJECT: probe total Lifts"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "OldEdgeStates",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/probe-boolean.json.gz",
+    "name": "probe-boolean",
+    "raw_sha256": "dc3f4723108075bb9274091cec072b3e703ca7de1dbc7263ecd8686e96f5cd4c",
+    "stderr": "REJECT: Probes.OldEdgeStates: nonnegative integer required"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Sources",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/source-forged.json.gz",
+    "name": "source-forged",
+    "raw_sha256": "4d3eb9b3496b73b07c0b077dffc2d22030f74cb7712375089da4d2434b5129ef",
+    "stderr": "REJECT: Sources[0].SHA256: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Projection",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/missing-projection.json.gz",
+    "name": "missing-projection",
+    "raw_sha256": "4b0750150b512075cde7b451e90f2391566be728161bde1536e732aeb495eb49",
+    "stderr": "REJECT: Witnesses[0].Projection: length mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "CanComplete",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-final-label.json.gz",
+    "name": "wrong-final-label",
+    "raw_sha256": "b8d00e8ce5e9bb223ab48ecb815c9a5dc41c93746317e2f1a649ca2d4ae2194a",
+    "stderr": "REJECT: Witnesses[0].CanComplete: value mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "Arcs",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/removed-non-tree-arc.json.gz",
+    "name": "removed-non-tree-arc",
+    "raw_sha256": "96ce4a87b1fc6eb5c78771ab9b3d767cb79dd0e61231568bcb3cb9bdde616540",
+    "stderr": "REJECT: Graphs[0].Nodes[2].Arcs: length mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "reservation",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/duplicate-reservation.json.gz",
+    "name": "duplicate-reservation",
+    "raw_sha256": "4c73a863939172d5fd7602b5d66de94adab0e3990a4aee265e434fdc07b90f53",
+    "stderr": "REJECT: Witnesses[0].Steps[7].Event: illegal reservation"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "apply",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/duplicate-application.json.gz",
+    "name": "duplicate-application",
+    "raw_sha256": "df46e30dcbd5823d57a7f9a027ab213e2cf5b06402d037ab7cde523c8363f0e3",
+    "stderr": "REJECT: Witnesses[8].Steps[13].Event: illegal apply"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "durable ACK",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/premature-ack.json.gz",
+    "name": "premature-ack",
+    "raw_sha256": "c59c9c6b625f8e77da22a7dd1954d4af30a71a50e9fbb66a6b6e6e5d5e1cc0ec",
+    "stderr": "REJECT: Witnesses[8].Steps[20].Event: durable ACK"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "release ACK",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/premature-receipt-release.json.gz",
+    "name": "premature-receipt-release",
+    "raw_sha256": "742b8f964595b2fe8ad613b5794cafcb02df89484b6a43dc89b04ff6647a93e8",
+    "stderr": "REJECT: Witnesses[8].Steps[20].Event: release ACK"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "consume",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/consume-before-record.json.gz",
+    "name": "consume-before-record",
+    "raw_sha256": "c1957c74a239888b25a39490c5edb8c8ad5e045f8199dcf9792f9ba279d8b4ef",
+    "stderr": "REJECT: Witnesses[8].Steps[20].Event: consume before durable record"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "actor down",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/actor-down.json.gz",
+    "name": "actor-down",
+    "raw_sha256": "d8037c14732f76919a9af55db4146d519a81ff995782905a336f645b907d3812",
+    "stderr": "REJECT: Witnesses[8].Steps[8].Event: actor down"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "send-result custody",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/missing-genuine-apply.json.gz",
+    "name": "missing-genuine-apply",
+    "raw_sha256": "6775494ce00ef4bd7e4966f81df8f0a3d1050b21aee716fe6aab7a26c5644991",
+    "stderr": "REJECT: Witnesses[8].Steps[12].Event: send-result custody/channel"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "event kind",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/standalone-capacity-release.json.gz",
+    "name": "standalone-capacity-release",
+    "raw_sha256": "16151bfd1c39d9016cb4244b4b709ee4663086f3d8c50ccf26800aff6a76f93a",
+    "stderr": "REJECT: Witnesses[0].Steps[6].Event: event kind"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "corresponding recovery histories",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/noncorresponding-r2-history.json.gz",
+    "name": "noncorresponding-r2-history",
+    "raw_sha256": "774712975e2b648513e2bf97fbb3d62dbcb60f8e32edcc68723584ac67a52b58",
+    "stderr": "REJECT: corresponding recovery histories.Steps: length mismatch"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "release before consumption",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/wrong-recovery-custody-order.json.gz",
+    "name": "wrong-recovery-custody-order",
+    "raw_sha256": "2944a82345c300e3ab3f850a5a307c02ca65abe5c72884b1ea488dbd4397ca38",
+    "stderr": "REJECT: recovery release before consumption"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "duplicate key",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/duplicate-json-key.json.gz",
+    "name": "duplicate-json-key",
+    "raw_sha256": "63bc96ef64ed142701a403f92d3d55fbf25e3ae72c165be2fe5df34f0664da8e",
+    "stderr": "REJECT: duplicate key: Schema"
+  },
+  {
+    "classification": "forged evidence control",
+    "exit_code": 1,
+    "expected_reason": "nonfinite",
+    "input": "docs/foundational/phase3c2/evidence/task2/hostile/nonfinite-json-number.json.gz",
+    "name": "nonfinite-json-number",
+    "raw_sha256": "54b97b4d1d3a9c5ff5e7c3142f39e90f1d52c4af3fa8da72e6c0729f8f05b135",
+    "stderr": "REJECT: nonfinite JSON number: NaN"
+  }
+]
