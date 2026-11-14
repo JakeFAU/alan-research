@@ -1,0 +1,32 @@
+{
+  "reviewed_head": "70ff695ee6b540e382556edfecb1979f99d4ff59",
+  "audit_command": [
+    "python3",
+    "docs/foundational/phase3b-closure/evidence/verify-audit.py"
+  ],
+  "audit_exit_code": 0,
+  "audit_result": {
+    "base": "7ae2c5ddd5e18d2907dd91fcefc896456a25562d",
+    "hashed_inputs_unchanged": 47,
+    "matrix_rows": 12,
+    "local_links_checked": 67,
+    "original_exit_and_gates_preserved": true,
+    "affected_md_tex_equal": true,
+    "inherited_markdown_section7_unchanged": true,
+    "bibliography_unchanged": true,
+    "tracked_diff_within_document_scope": true,
+    "build_archive_and_installed_sources_match": true,
+    "cancel_trace_checks": 4,
+    "matched_raw_pair_checks": 2,
+    "pdf_sha256": "221e84fd27a6b1e92bde2cae22b51abbe2fa9f0708e5443114f0a975118c7e80"
+  },
+  "workflow_files_checked": 8,
+  "workflow_matches_original_reports": true,
+  "tracked_changes_since_review_limited_to_review_metadata": [
+    "docs/foundational/phase3b-closure/03-reviews.md",
+    "docs/foundational/phase3b-closure/evidence/audit-checks.json",
+    "docs/foundational/phase3b-closure/evidence/workflow/manifest.json",
+    "docs/foundational/phase3b-closure/evidence/workflow/progress.md"
+  ],
+  "runtime_qualification_rerun": false
+}
