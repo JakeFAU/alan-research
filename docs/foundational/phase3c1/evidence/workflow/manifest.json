@@ -1,0 +1,185 @@
+{
+  "schema": "alan.phase3c1.workflow.v1",
+  "base": "1456a0000a0e14bb3dd105026189717c71ab905b",
+  "semantic_head": "dce9de0a7b5795dd646dac58526e70729bc6231b",
+  "phase": "Final review complete; delivery metadata recorded separately.",
+  "files": [
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/progress.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/progress.md",
+      "bytes": 20522,
+      "sha256": "c0e17eb4c41985ed9c942911e1e33e3c1122f572fa7a612ee1b33e9b58793c6c",
+      "compression": "none",
+      "retained_bytes": 20522,
+      "retained_sha256": "c0e17eb4c41985ed9c942911e1e33e3c1122f572fa7a612ee1b33e9b58793c6c"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-review-instructions.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-review-instructions.md",
+      "bytes": 3369,
+      "sha256": "047895f227ada81ddee4fa6a106aa207c38bd87677e9d14cd854a51c4f34d218",
+      "compression": "none",
+      "retained_bytes": 3369,
+      "retained_sha256": "047895f227ada81ddee4fa6a106aa207c38bd87677e9d14cd854a51c4f34d218"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/final-review-instructions.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/final-review-instructions.md",
+      "bytes": 2112,
+      "sha256": "95edffba661dad8c5866456dd32f526cf8befa58795850aa3c8ee4b87a0a9b1c",
+      "compression": "none",
+      "retained_bytes": 2112,
+      "retained_sha256": "95edffba661dad8c5866456dd32f526cf8befa58795850aa3c8ee4b87a0a9b1c"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/final-review.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/final-review.md",
+      "bytes": 18832,
+      "sha256": "05186501c7820a1bbdd32b81beab3412a29c6d57c2f2b1bb4f11c8138a0b4a3c",
+      "compression": "none",
+      "retained_bytes": 18832,
+      "retained_sha256": "05186501c7820a1bbdd32b81beab3412a29c6d57c2f2b1bb4f11c8138a0b4a3c"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-1-brief.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-1-brief.md.gz",
+      "bytes": 2629,
+      "sha256": "f14856684f6af5cbea2c4023619f7382b63feac40bd27404e0ba4fde211ee7e1",
+      "compression": "gzip",
+      "retained_bytes": 1327,
+      "retained_sha256": "ee760613c31fdd06ab27f35025d28fdf93af42f40eb6b63b5970ccc27894c434"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-1-context.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-1-context.md",
+      "bytes": 3461,
+      "sha256": "78575435d86ccd1bb6e0affb955bfcd290ee0f7e2dc14f168af9e01a066f4227",
+      "compression": "none",
+      "retained_bytes": 3461,
+      "retained_sha256": "78575435d86ccd1bb6e0affb955bfcd290ee0f7e2dc14f168af9e01a066f4227"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-1-report.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-1-report.md",
+      "bytes": 11925,
+      "sha256": "f7737c2729804cdace0236011ee01953df2797f7e5c81911d507f6486ff8b89c",
+      "compression": "none",
+      "retained_bytes": 11925,
+      "retained_sha256": "f7737c2729804cdace0236011ee01953df2797f7e5c81911d507f6486ff8b89c"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-1-review.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-1-review.md",
+      "bytes": 10064,
+      "sha256": "4bb40bf9826d1dd74739fded471ab4f0cf0158f3318899b2056dd20efbc4228b",
+      "compression": "none",
+      "retained_bytes": 10064,
+      "retained_sha256": "4bb40bf9826d1dd74739fded471ab4f0cf0158f3318899b2056dd20efbc4228b"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-2-brief.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-2-brief.md.gz",
+      "bytes": 1953,
+      "sha256": "2542449b59801c40c4cdf81ba0e3b0683ecdaf00eaeecc38a0623c88e19eb94c",
+      "compression": "gzip",
+      "retained_bytes": 1028,
+      "retained_sha256": "6b8d98053ee5a4c64a6a9e2c6674ad99712769727abcd27ca19488d78977447b"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-2-context.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-2-context.md",
+      "bytes": 2912,
+      "sha256": "04ebafc1401e913be451b5f48a97f2e4035d1848a1dfbd6f129dec7726000f63",
+      "compression": "none",
+      "retained_bytes": 2912,
+      "retained_sha256": "04ebafc1401e913be451b5f48a97f2e4035d1848a1dfbd6f129dec7726000f63"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-2-report.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-2-report.md",
+      "bytes": 20278,
+      "sha256": "75a96a90cacbf074cfed3a7971d9569a9d0c9e273b2b769b8080312aa2a3f7f1",
+      "compression": "none",
+      "retained_bytes": 20278,
+      "retained_sha256": "75a96a90cacbf074cfed3a7971d9569a9d0c9e273b2b769b8080312aa2a3f7f1"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-2-review.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-2-review.md",
+      "bytes": 8805,
+      "sha256": "1cde855213cb762e5808a4f314be914bba8c05f865870601c174c26fba5f6599",
+      "compression": "none",
+      "retained_bytes": 8805,
+      "retained_sha256": "1cde855213cb762e5808a4f314be914bba8c05f865870601c174c26fba5f6599"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-3-brief.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-3-brief.md",
+      "bytes": 2098,
+      "sha256": "1e738c07b67ad2c9ae394fbb105579591370b7379dfee206cf674e3b4d407d7c",
+      "compression": "none",
+      "retained_bytes": 2098,
+      "retained_sha256": "1e738c07b67ad2c9ae394fbb105579591370b7379dfee206cf674e3b4d407d7c"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-3-context.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-3-context.md",
+      "bytes": 6384,
+      "sha256": "e4c9c32692f6b120bcde8a76b3c4a3ac16753fa1432cd4d5fe6e61fe67ee630b",
+      "compression": "none",
+      "retained_bytes": 6384,
+      "retained_sha256": "e4c9c32692f6b120bcde8a76b3c4a3ac16753fa1432cd4d5fe6e61fe67ee630b"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-3-report.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-3-report.md",
+      "bytes": 9687,
+      "sha256": "214bf4689cc0b4773c0f8992f490276e6bdd979091e8c778faaa43843f938965",
+      "compression": "none",
+      "retained_bytes": 9687,
+      "retained_sha256": "214bf4689cc0b4773c0f8992f490276e6bdd979091e8c778faaa43843f938965"
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/task-3-review.md",
+      "archive": "docs/foundational/phase3c1/evidence/workflow/task-3-review.md",
+      "bytes": 11594,
+      "sha256": "1a1309f77073564f0717f6e07e1b4aa3ff01121c3fcdcc780d07c217d9da865d",
+      "compression": "none",
+      "retained_bytes": 11594,
+      "retained_sha256": "1a1309f77073564f0717f6e07e1b4aa3ff01121c3fcdcc780d07c217d9da865d"
+    }
+  ],
+  "review_packages": [
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/review-1456a000..dce9de0a.diff",
+      "bytes": 2330881,
+      "sha256": "fbd21bdd50ca980a6fd4e484aa4729f05afc62af74842443402a984555a60af0",
+      "retention": "Hash only; reviewed commits preserve source changes. Original working package remains in completed scratch archive."
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/review-4b8a0b8b..5f907cda.diff",
+      "bytes": 1757737,
+      "sha256": "ccfb8f0e96c3c8cbd4f0af07585ec3fb58acc170d3560a2663f7d197491450b5",
+      "retention": "Hash only; reviewed commits preserve source changes. Original working package remains in completed scratch archive."
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/review-5f907cda..7b804df8.diff",
+      "bytes": 168248,
+      "sha256": "80513198b4e3c68753277ac9666cbfc48f556c9418b9f3b36986cd18b8fe4a3b",
+      "retention": "Hash only; reviewed commits preserve source changes. Original working package remains in completed scratch archive."
+    },
+    {
+      "source": ".superpowers/sdd/phase3c1-plan/review-7b804df8..dce9de0a.diff",
+      "bytes": 340108,
+      "sha256": "0e87ca02d1e596d6a5af2ccd14b87bfa52168b00d9ac388b697e18f8ed6fcb87",
+      "retention": "Hash only; reviewed commits preserve source changes. Original working package remains in completed scratch archive."
+    }
+  ],
+  "rulings": [
+    "Ruling: Execute the approved concrete research direction through plan, implementation, independent reviews and draft PR without another approval round \u2014 the user explicitly said to begin and supplied execution/delivery defaults \u2014 a mistaken interpretation costs reviewable research/document rework.",
+    "Ruling: Use a value-abstracted four-stage progress contract with unchanged retry-enabled concrete transport, a two-way finite-path argument and small abstract enumeration \u2014 this isolates the approved hiding/dependency question without inventing sender knowledge or promising a full three-agent product check \u2014 an invalid lifting step would invalidate the positive proposition and must be narrowed or rejected in review.",
+    "Ruling: Defer the confirmed minor M1 diagnostic-message improvement as the final reviewer explicitly recommends \u2014 existing factored assertions remain substantive and no result or proof depends on message detail \u2014 if a future factored regression fails, extra instrumentation may be needed to isolate its context."
+  ],
+  "scope": "Exact task briefs, context, author reports, independent review reports and controller ledger. Review agreement is not proof.",
+  "archive_note": "Two exact extracted task briefs are compressed to retain their original trailing blank lines without adding whitespace errors to the text diff. Decompressed bytes match the original source hashes."
+}

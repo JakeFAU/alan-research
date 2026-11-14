@@ -1,0 +1,44 @@
+# Task 2 independent review
+
+Spec compliance: **APPROVE**.
+Task quality: **APPROVE**.
+
+Reviewed base `5f907cda569d97ec5c08923b35e77de5b3df06ce` to head `7b804df8b0dbbd160a838cdee8681558e69dc200`, using `review-5f907cda..7b804df8.diff`. This is the Task 2 gate, not whole-branch approval.
+
+## Spec compliance and strengths
+
+- `docs/foundational/phase3c1/tools/audit.py:52`: recursive exact-field and primitive-type validation distinguishes integers from booleans. Exact configurations and original bindings are independently constructed; the ordered 16-profile roster is checked at line 452. Duplicate JSON keys are rejected at line 478.
+- `docs/foundational/phase3c1/tools/audit.py:102`, `:120`, `:164`: expected transitions are generated from the frozen stage/guard semantics, followed by independent forward reachability and reverse completion closure. Node sets, every outgoing named arc/target, BFS witnesses, Complete/CanComplete and totals are compared. Exact relation comparison also detects missing non-tree incoming arcs and dangling targets; producer counts are not the oracle. The dependency certificate and prerequisite-first order are independently derived at line 145.
+- `docs/foundational/phase3c1/tools/audit.py:200`, `:207`, `:229`: independently built leaves and joins preserve owners, ports, original bindings, resource identity and endpoint policy incidence. Both closed configurations are reconstructed and their full relations compared with the flat relation. Fixed-profile equality closes the input domain before the index-based semantics is used; this is appropriately a frozen-fixture checker rather than a general join API.
+- `docs/foundational/phase3c1/tools/audit.py:247`, `:274`, `:291`, `:355`: concrete checking starts from empty custody and shared physical-owner state. The event table matches the supplied durable-ACK interface. Application, recording and ACK provenance are tracked separately; receipt bytes come from actual custody/channel fields, while WorldResult is only written as historical application evidence. Every event, full post-state and visible projection is checked. Crash affects both roles through the same owner record and clears only outgoing volatile custody. Concrete apply readiness includes admission and availability, separately from the abstract service guard.
+- `docs/foundational/phase3c1/tools/audit.py:393`: R0/R1 compare complete exposed transports and availability, enforce continuation, and check the claimed completion/readiness distinctions. The serial-cycle classification, exact retry endpoints/path and actual pre-record-loss/recovery/retransmission/settlement history are enforced.
+- `docs/foundational/phase3c1/tools/test_audit.py:15`: 35 separate hostile mutations have specific expected rejection categories. The missing-incoming-arc control changes the reported arc total while retaining every BFS predecessor. Premature release, repeated application and unavailable-actor controls reach their intended causal/availability checks. Genuine records are deep-copied before mutation. Direct tests additionally exercise occupied channels, duplicate deliveries, post-consumption receipts, repeated release and shared owner roles.
+- `docs/foundational/phase3c1/evidence/task2/capture.py:66`, `:89`, `:100`: fresh exports are compared with one another and the frozen sample; raw/packed digests, source digests, actual commands and historical failures are retained. The 88 diff paths are confined to the assigned Task 2 scope. No production/model/schema/dependency edits appear in this diff.
+- `docs/foundational/phase3c1/03-independent-audit.md:23`, `:108`, `:139`: implementation independence is expressly bounded by shared specifications; abstract exhaustiveness, prior factored checks, selected concrete histories and the separate universal source argument remain distinct. Failed Python candidates and the corrected hostile fixture are retained and explained.
+
+## Findings by severity
+
+- Critical: none.
+- Important: none.
+- Minor: none requiring a change in this task.
+
+## Actual review checks
+
+- Read the brief, author report, review instructions and task-reviewer template; compared the task-scoped diff against the frozen contract/schema and retained protocol clarification. Reviewed source/test/documentation/capture hunks in manageable chunks. An initially combined output was truncated; the affected capture and contract beginning were subsequently read separately. Generated manifest/log sections were also parsed from the supplied diff for structured inspection rather than relying on truncated rendering.
+- Ran a read-only `python3 - <<'PY'` integrity probe. It parsed the manifest and rejection report from diff additions; verified all **22 source hashes**, **84 retained-file hashes**, **36 raw/packed compressed artifact digests**, zero gzip mtime and absent gzip filename; checked all **17 Task 1 source digest entries** still match; and inspected all **42 command records** and associated retained outcomes. Exit 0.
+- That probe verified the retained genuine export is byte-identical to the frozen Task 1 sample: **1,584,501 bytes**, SHA-256 `48b4cfb4cc10b7dde4979874f669014f4863e1e05e48737ef4561f119dfc3602`. All **35 hostile artifacts**, rejection logs, required reason strings and recorded exit codes align with the rejection report. The retained final unittest log reports eight methods passing without warnings; this is author-run evidence, not a reviewer rerun.
+- Inspected historical failure headings/footers: initial 36 failures, subsequent one expected-reason failure, then two missing-loss-witness failures. These match the report's descriptions. No exact initial inner exit code was inferred.
+- Ran a second read-only structural probe of all 35 decompressed hostile inputs against the genuine input, printing changed fields/array lengths and all seven witness event streams. For the named doubt that the non-tree deletion might accidentally destroy the BFS witness, independently traversed that hostile graph and checked every parent arc: **all nodes remain reachable and every BFS parent arc survives**. Exit 0. This probe did not rerun the audit or test suite.
+- No Go/Python author suite, exporter, model campaign, Git command, SQLite open or runtime `.envrc` access was performed. No new producer source was inspected. Hash verification read source bytes without treating the Go implementation as oracle logic. The only review write is this report.
+
+## Cannot verify / controller disposition
+
+- `docs/foundational/phase3c1/03-independent-audit.md:23`: the implementation contains no producer imports or reducer calls and follows an independently structured algorithm, but a source diff cannot prove the author's historical reading behavior. The claimed non-inspection of the new producer remains process testimony; the shared contract/schema/protocol specification is an explicit independence boundary.
+- `docs/foundational/phase3c1/03-independent-audit.md:139`: historical RED logs support the stated failures, but intermediate source snapshots and the initial unittest inner exit metadata are not retained. Therefore exact edit chronology cannot be independently reconstructed. This limitation is disclosed and does not undermine the present checker/source/evidence consistency.
+- `docs/foundational/phase3c1/evidence/task2/capture.py:66`: retained logs, digests and capture source support the reported fresh executions, but this review did not independently rerun them or authenticate their wall-clock provenance. Current source/artifact hashes match the recorded inputs.
+- `docs/foundational/phase3c1/tools/audit.py:443` and `03-independent-audit.md:108`: arbitrary prose truth and the universal representative lifting argument are not certified by the checker. Inspected exported claim categories/statements/limits are consistent with the declared bounded scope; the direct proof and prior factored Go qualification still need their owning task/whole-branch review. Concrete CanComplete here uses the independently computed abstract relation under that separately argued correspondence, not an independently enumerated concrete product.
+- `docs/foundational/phase3c1/03-independent-audit.md:154`: manuscript reconciliation, root qualification, bibliography/PDF work, runtime/distributed boundaries and final whole-branch review are outside this task gate. This approval does not establish those obligations or authorize merge.
+
+## Assessment
+
+**Task quality: APPROVE.** The checker has clear schema, graph, grouping, concrete-ledger and evidence responsibilities, with no new dependency or compensating model edit. Its acceptance is meaningfully challenged by causal and relation-completeness controls, and the retained evidence agrees with the reviewed source while preserving the stated limits.
