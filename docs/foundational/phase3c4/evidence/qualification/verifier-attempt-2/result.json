@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/tools/verify.py"
+  ],
+  "exit_code": 1,
+  "diagnosis": "The corrected verifier reached its self/source integrity check and rejected the stale pre-correction verifier hash. Regenerated the Task 3 manifest after source edits; no evidence or semantic change."
+}

@@ -1,0 +1,15 @@
+{
+  "base": "c369e25c8db268d418ab7c11573d46dbc1d9425f",
+  "old_path": "docs/foundational/phase3c3/evidence/qualification/package-list-cache-writable/output.log.gz",
+  "old_archive_sha256": "90311025f61d796a15a145e4644517f3beb38448b7d3b5ee7de3baa96b8e668f",
+  "old_raw_sha256": "b65beca1fce556c00b1cd67e2f20e42524d2b06c7de53b5769b4746fdc882266",
+  "new_raw_sha256": "5dd056e82544bd9ba0ccd2650e3a525ba7e4518e3d7592c8d255a82e9ba56f95",
+  "old_count": 76,
+  "new_count": 78,
+  "added": [
+    "github.com/JakeFAU/alan-research/research/residualinterfaces",
+    "github.com/JakeFAU/alan-research/research/residualinterfaces/cmd/export"
+  ],
+  "removed": [],
+  "scope": "Actual merged prior roster plus new model/exporter; not a fresh full-suite execution."
+}

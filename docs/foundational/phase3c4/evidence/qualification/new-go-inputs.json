@@ -1,0 +1,66 @@
+{
+  "accepted_go_head": "9b762fb2b3e5959997f05b40089d17b05110ea8d",
+  "scope": "All new Go files including tests; final exact-label source. Full pre-correction runs and affected final reruns retain distinct attribution.",
+  "files": [
+    {
+      "path": "research/residualinterfaces/automaton.go",
+      "bytes": 2952,
+      "sha256": "0f29393745be7a29ab754cd603a98d0cd52c408acb7dedda0c2242661b0e62cd"
+    },
+    {
+      "path": "research/residualinterfaces/cmd/export/main.go",
+      "bytes": 228,
+      "sha256": "993fa9e5863032019331b4abc92743f0eb821f496213efb4ee13b130c844d8d7"
+    },
+    {
+      "path": "research/residualinterfaces/evidence.go",
+      "bytes": 5105,
+      "sha256": "061a19ab638ad3d6a064642f5faed942a88519e989f6bd400d8c56ea49342177"
+    },
+    {
+      "path": "research/residualinterfaces/evidence_test.go",
+      "bytes": 5527,
+      "sha256": "bbea8435121611fd8215c77e4db9ec9c988405bad9f373e3ba8125d90ba01025"
+    },
+    {
+      "path": "research/residualinterfaces/fixtures.go",
+      "bytes": 1597,
+      "sha256": "0b5e3564a0d1ee51aaeb303bb3b37957614f7b01fdd22e27aa0f2aea88206837"
+    },
+    {
+      "path": "research/residualinterfaces/input.go",
+      "bytes": 4301,
+      "sha256": "3a33b7ab1220f77413551a13142de9b9062785b7f4b7e3bdc55c246b6a160a78"
+    },
+    {
+      "path": "research/residualinterfaces/language.go",
+      "bytes": 2699,
+      "sha256": "472296e8beff7cec629665a6b9f9340d956846a569bef8023a629027717d6b47"
+    },
+    {
+      "path": "research/residualinterfaces/language_test.go",
+      "bytes": 1740,
+      "sha256": "3b3e90d2c9d26b2d8cadfc307f9277514383bf04777d56bee63f83fac9e32218"
+    },
+    {
+      "path": "research/residualinterfaces/product.go",
+      "bytes": 3386,
+      "sha256": "edbabdeb328ff99b888a7355b3ad488cb717bda046a46c96098df0a24f917a1b"
+    },
+    {
+      "path": "research/residualinterfaces/product_test.go",
+      "bytes": 2181,
+      "sha256": "7d9ad9b5bfe949ccf8583761fdfdd4aec6c6138a5f6c2aa622713ed1834c0872"
+    },
+    {
+      "path": "research/residualinterfaces/profile.go",
+      "bytes": 3961,
+      "sha256": "17914a681f991a307e59b2bdc44215f2c53b1e1bb8d7cfae147238144766002f"
+    },
+    {
+      "path": "research/residualinterfaces/witness.go",
+      "bytes": 3411,
+      "sha256": "add20ff060a391824234783f4344033d86de8166e7a908bae1ce08c14dca4872"
+    }
+  ]
+}

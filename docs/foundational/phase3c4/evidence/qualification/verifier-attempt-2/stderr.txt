@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/tools/verify.py", line 195, in <module>
+    print(json.dumps(main(), indent=2, sort_keys=True))
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/tools/verify.py", line 184, in main
+    check_files(read(QUAL/'artifact-manifest.json'))
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/tools/verify.py", line 40, in check_files
+    require(sha(raw) == digest, f'hash mismatch: {path}')
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/tools/verify.py", line 20, in require
+    raise ValueError(context)
+ValueError: hash mismatch: docs/foundational/phase3c4/tools/verify.py

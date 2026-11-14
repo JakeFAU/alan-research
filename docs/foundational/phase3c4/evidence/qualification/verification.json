@@ -1,0 +1,55 @@
+{
+  "CLI": {
+    "hostile": 48,
+    "valid": 2
+  },
+  "PDF_pages": {
+    "baseline": 50,
+    "current": 51
+  },
+  "accepted_task1_task2_files": 110,
+  "alignment": [
+    "new section",
+    "Abstract",
+    "Conclusion",
+    "editorial corrections"
+  ],
+  "baseline_inputs": 683,
+  "checker_sources": 5,
+  "checker_test_methods": 9,
+  "compiled_local_inputs": 9,
+  "counts": {
+    "BlockingSubstitutions": 1584,
+    "Comparisons": 21,
+    "Controllers": 324,
+    "EqualLanguages": 10,
+    "EqualProfiles": 6,
+    "InitialCanComplete": 886,
+    "LanguageSubsetPairs": 850,
+    "Monitors": 7,
+    "NonblockingProducts": 656,
+    "NonblockingSubstitutions": 792,
+    "Plants": 72,
+    "ProductArcs": 35672,
+    "ProductCanComplete": 14410,
+    "ProductStates": 29156,
+    "Products": 2772,
+    "ProfileSubsetPairs": 89,
+    "ResidualComparisons": 223,
+    "Substitutions": 2376
+  },
+  "dependency_packages": 109,
+  "embedded_inputs": 5,
+  "new_go_inputs": 12,
+  "new_local_links": 13,
+  "packages": {
+    "current": 78,
+    "old": 76
+  },
+  "predecessor_sources": 27,
+  "scope": "Identity and archived-result checks; no suite, model, runtime or SQLite execution",
+  "source_records": 40,
+  "status": "PASS",
+  "task2_archive_entries": 57,
+  "visual_pages": 46
+}

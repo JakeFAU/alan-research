@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "go",
+    "build",
+    "./..."
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "head": "9b762fb2b3e5959997f05b40089d17b05110ea8d",
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c4/gocache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "started_utc": "2026-11-14T17:42:34.758151+00:00"
+}

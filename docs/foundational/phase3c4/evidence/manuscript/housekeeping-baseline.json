@@ -1,0 +1,25 @@
+{
+  "base": "c369e25c8db268d418ab7c11573d46dbc1d9425f",
+  "markdown_sha256": "5e157504a3573408458b0187c60e7fbe5d496be77bba9526f50cfa4d5b6228fb",
+  "latex_sha256": "a1404e92233eb440e8b0785d96efd9522e3231c4cb9baa19c5a623da54a3bfef",
+  "displayed_forms": [
+    "Set",
+    "Add",
+    "Branch",
+    "Jump",
+    "Receive",
+    "Emit",
+    "End",
+    "ForEach",
+    "Next",
+    "Loop",
+    "Append"
+  ],
+  "displayed_form_count": 11,
+  "incorrect_count_phrase": "ten closed instruction forms",
+  "overstated_congruence_sentence": "We resolve these three failures by defining **Interface-Scoped Failure/Divergence Bisimulation ($\\approx^{\\Delta}_I$)** in Section 4.4 and proving its conditional congruence theorem.",
+  "general_claim_status": "Status: unproved over the stated grammar.",
+  "latex_has_same_count_phrase": false,
+  "latex_has_same_overstatement": false,
+  "scope": "Read-only baseline editorial evidence; not a new runtime or proof result."
+}

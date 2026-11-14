@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/tools/verify.py"
+  ],
+  "exit_code": 1,
+  "diagnosis": "Qualification recount omitted the separately retained initial-language subset-pair nodes. Export and independently reconstructed evidence are unchanged; corrected the bookkeeping check to include both initial and cross-state residual decisions."
+}

@@ -1,0 +1,18 @@
+{
+  "contact_sheet_initial_attempt": {
+    "interpreter": "/usr/bin/python3",
+    "code": "from PIL import Image,ImageDraw",
+    "exit_code": 1,
+    "diagnostic": "ModuleNotFoundError: No module named 'PIL'",
+    "scope": "Inline contact-sheet preparation failed before any image was written; no PDF build failure."
+  },
+  "repair": {
+    "argv": [
+      "/Users/jacob/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "docs/foundational/phase3c4/evidence/manuscript/contact_sheets.py"
+    ],
+    "exit_code": 0,
+    "stdout": "46 pages; 12 sheets\n"
+  },
+  "prebuild_self_review": "Removed accidental inline math delimiters inside new display equations before first build; no failed build."
+}
