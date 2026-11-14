@@ -1,0 +1,5 @@
+- Tau cycles and empty visible words can defeat a finite-prefix comparison: Task 1 exact equivalence tests and Task 2 independent closure/pair search.
+- All-marked monitors can preserve initial language yet introduce a bad residual: Task 1 doomed-branch test; Task 2 complete product reverse reachability.
+- A role-invalid monitor could veto someone else's action: Tasks 1/2 reject missing external self-loops and mismatched signatures.
+- Loss of a non-tree arc can preserve BFS parents and superficially valid counts: Task 2 retains a hostile input correcting those counts and requires rejection.
+- Model histories may accidentally reset private state on recovery or forge equality: Tasks 1/2 replay from empty custody, verify common cuts and retained doomed state through interruption.
