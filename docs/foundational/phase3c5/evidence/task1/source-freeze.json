@@ -1,0 +1,78 @@
+[
+  {
+    "Path": "docs/foundational/phase3c5/00-contract.md",
+    "SHA256": "ecafd29a8dcff64e414fab81a1258f93d17ab6a328116c52bb6e50372c96692f"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/01-argument.md",
+    "SHA256": "22575a459fa2f7c43bf92e65ab95975acbd448f7c617e53fd66e063d2447cf47"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/02-evidence-schema.md",
+    "SHA256": "dccf1ed2996a5a2128648b272641d2791f3273ea5ffd9119c1e4d1b1fe6d7366"
+  },
+  {
+    "Path": "docs/foundational/phase3c5/tools/capture.py",
+    "SHA256": "bde3bccb9462ad227f1189cfa1a717515233c9fabcf4a3e4e8b47ee089d63189"
+  },
+  {
+    "Path": "research/residualantichains/antichain.go",
+    "SHA256": "7cc1c7d0ab3242a07731f4ff74246d8d037c6d5a9414a6cc38b3b8300bf2a5d3"
+  },
+  {
+    "Path": "research/residualantichains/antichain_test.go",
+    "SHA256": "e925093767183985e81e37cefe7aaeb9bd1bc3e6795e9bc57feb024531ac5699"
+  },
+  {
+    "Path": "research/residualantichains/automaton.go",
+    "SHA256": "5468d81bb4c9d9a096c1dc9a4ba6f9632be0f754de8c75231f54617c246a1e87"
+  },
+  {
+    "Path": "research/residualantichains/cmd/export/main.go",
+    "SHA256": "0bdc88b24564004ba659f76f0c516c8f7dec34e871a21e07dccaaa75b0aabf93"
+  },
+  {
+    "Path": "research/residualantichains/evidence.go",
+    "SHA256": "ed6004942fda9433d782356db2f73261ec4b049ccfa12ba8bd7db38fdad82dfa"
+  },
+  {
+    "Path": "research/residualantichains/evidence_test.go",
+    "SHA256": "4b14b279dc85b91a5ab2c46cd0a548bf1ef348ec67d3c0588e176c51ec44e51a"
+  },
+  {
+    "Path": "research/residualantichains/fixtures.go",
+    "SHA256": "991adf8c83d640953f940ac9256482b35d635501a9a3b9c198a6d3fb68d2c349"
+  },
+  {
+    "Path": "research/residualantichains/input.go",
+    "SHA256": "0621e4951eb6ff3d2f971d9b0e61de01126d771e04d5dc9686a7bc013026ac84"
+  },
+  {
+    "Path": "research/residualantichains/language.go",
+    "SHA256": "78d08bed2db3cad54bd86a188729ae9813ff035e171b660a519530ff16e92cee"
+  },
+  {
+    "Path": "research/residualantichains/language_test.go",
+    "SHA256": "b7b7e130e9b4b3bb3a363025e925f7c976bb428fcd4bbf6ab0b0f83ce01aecca"
+  },
+  {
+    "Path": "research/residualantichains/product.go",
+    "SHA256": "073e061fad0f0adef0f5083831c013a43e9858e4a27682f61109a0a29c6af342"
+  },
+  {
+    "Path": "research/residualantichains/product_test.go",
+    "SHA256": "47a3182c815a128b0ea09abbe1373f8bf524c322d17bc85ab4a6898cfffb82da"
+  },
+  {
+    "Path": "research/residualantichains/profile.go",
+    "SHA256": "fa48a81fbe8d78681b9a08dc0ad14b628f64523661f54e8852e599bb43c790fd"
+  },
+  {
+    "Path": "research/residualantichains/profile_test.go",
+    "SHA256": "293365d2da4cd4b10dd1b78357e4e160e57edb7c1ece3151feb27971762465c3"
+  },
+  {
+    "Path": "research/residualantichains/witness.go",
+    "SHA256": "ee356ea4b68978eed04f50d416456ac9ce4481cfdabfe37e12028cc869084c40"
+  }
+]

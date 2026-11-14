@@ -1,0 +1,101 @@
+{
+  "AllFailedCoverageTargets": 81,
+  "EmptyH": 28,
+  "MaxHWords": 3,
+  "SourceEntries": 54,
+  "CompiledEntries": 10,
+  "LegalDifferences": [
+    [
+      "commit:BC"
+    ],
+    [
+      "commit:AB",
+      "reserve-capacity:AB",
+      "commit:BC"
+    ]
+  ],
+  "MAXEqualPairs": [
+    [
+      "free",
+      "minimal-base"
+    ],
+    [
+      "free",
+      "minimal-augmented"
+    ],
+    [
+      "release-first",
+      "release-first-tau"
+    ],
+    [
+      "release-first",
+      "release-first-doomed"
+    ],
+    [
+      "release-first",
+      "release-first-duplicate"
+    ],
+    [
+      "release-first",
+      "release-first-loop"
+    ],
+    [
+      "release-first-tau",
+      "release-first-doomed"
+    ],
+    [
+      "release-first-tau",
+      "release-first-duplicate"
+    ],
+    [
+      "release-first-tau",
+      "release-first-loop"
+    ],
+    [
+      "release-first-doomed",
+      "release-first-duplicate"
+    ],
+    [
+      "release-first-doomed",
+      "release-first-loop"
+    ],
+    [
+      "release-first-duplicate",
+      "release-first-loop"
+    ],
+    [
+      "minimal-base",
+      "minimal-augmented"
+    ]
+  ],
+  "JEqualPairs": [
+    [
+      "release-first",
+      "release-first-tau"
+    ],
+    [
+      "release-first",
+      "release-first-duplicate"
+    ],
+    [
+      "release-first",
+      "release-first-loop"
+    ],
+    [
+      "release-first-tau",
+      "release-first-duplicate"
+    ],
+    [
+      "release-first-tau",
+      "release-first-loop"
+    ],
+    [
+      "release-first-duplicate",
+      "release-first-loop"
+    ],
+    [
+      "minimal-base",
+      "minimal-augmented"
+    ]
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "go",
+    "list",
+    "-deps",
+    "-json",
+    "./research/residualantichains/cmd/export"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c5/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c5/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr": "go: writing stat cache: open /Users/jacob/go/pkg/mod/cache/download/github.com/!jake!f!a!u/alan-research/@v/v0.0.0-20261114204153-f4c4fce7459e.info664473260.tmp: operation not permitted\n",
+  "stdout_archive": "go-list-deps.stdout.gz",
+  "stdout_bytes": 194880,
+  "stdout_sha256": "a3b3ae31152a82413d3c0fed533294a8762356447161599ff92c7c9de0de641e"
+}
