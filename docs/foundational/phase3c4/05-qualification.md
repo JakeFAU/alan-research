@@ -105,13 +105,49 @@ source manifest were corrected without changing producer/checker evidence.
 Build/extraction/render commands, PDF/text/log hashes, visual coverage and the
 contact-sheet preparation failure are retained in the [manuscript manifest](evidence/manuscript/manifest.json).
 
-Reproduce the deterministic check from the repository root:
+## Checking the archive and recording a new attempt
+
+From the repository root, the deterministic verifier and standalone audit CLI
+can check existing evidence without writing to the archive:
 
 ```sh
 python3 docs/foundational/phase3c4/tools/verify.py
+python3 docs/foundational/phase3c4/tools/audit.py docs/foundational/phase3c4/evidence/task2/qualification-1/export-third.json.gz
 ```
 
 The verifier reads evidence and sources; it neither imports runtime modules nor
-opens SQLite. Rebuilding/rerendering is separate and uses the archived scripts.
-No new concrete/runtime qualification, old exhaustive probe execution, general
-congruence proof or delivery/integration claim follows.
+opens SQLite. The [final review clarification](evidence/final-review-fix/) retains
+the reviewed qualification manifest and a fresh verifier invocation. Earlier
+qualification runs retain their original source and execution attribution.
+
+The [Task 1 archive README](evidence/task1/README.md) identifies `qualify.py` as
+the historical capture driver. Do not rerun it in place: it still writes to its
+own archive and can replace existing evidence, even if the run fails partway through.
+
+For a new checker test, export, and CLI qualification, use the existing capture
+script from the repository root:
+
+```sh
+mkdir -p /tmp/alan-phase3c4/task2
+python3 docs/foundational/phase3c4/tools/capture.py NEW_ATTEMPT_NAME
+```
+
+Replace `NEW_ATTEMPT_NAME` with a single new directory name, unused under both
+`evidence/task2/` and `/tmp/alan-phase3c4/task2/`. The script creates the archive
+directory without allowing reuse before it writes any results. Its compiler
+roster check uses the absolute paths in the saved Task 1 enumeration, so run it
+at the original checkout path for that comparison to match.
+
+The capture command does not run the Go ordinary or race suites or Staticcheck.
+For a new full scoped run of those checks, run them separately:
+
+```sh
+go test -v -timeout 30m ./research/residualinterfaces/...
+go test -race -v -timeout 30m ./research/residualinterfaces/...
+staticcheck ./research/residualinterfaces/...
+```
+
+The historical final ordinary and race reruns used the narrower test selection
+shown above. Rebuilding and rendering the manuscript are separate and use the
+archived scripts. No new concrete/runtime qualification, old exhaustive probe
+execution, general congruence proof or delivery/integration claim follows.

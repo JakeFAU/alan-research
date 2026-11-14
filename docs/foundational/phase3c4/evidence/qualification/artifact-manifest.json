@@ -6,8 +6,13 @@
   },
   {
     "path": "docs/foundational/phase3c4/05-qualification.md",
-    "bytes": 8043,
-    "sha256": "7d701e0a1d37ef6048d6e5522421a54a04ce7d54a1c91b453f0293a14f3acfd0"
+    "bytes": 9812,
+    "sha256": "a0d1c4f223dca4ec523214dbcb8b65a6b34da71af74f9c418924a59442962cfa"
+  },
+  {
+    "path": "docs/foundational/phase3c4/evidence/task1/README.md",
+    "bytes": 581,
+    "sha256": "5f215908178decf3b9e498a07c89287dfb75bda75166fcc51dbaf017958ce4d3"
   },
   {
     "path": "docs/foundational/phase3/README.md",
