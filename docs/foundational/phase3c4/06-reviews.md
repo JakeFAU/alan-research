@@ -42,7 +42,8 @@ Theorem 4.8 remain open.
 
 Task 1's deferred independent reconstruction and hostile-input checks are complete
 in Task 2. Task 3 completed manuscript/PDF reconciliation. Whole-branch review
-and final clarification returned APPROVE; draft delivery remains pending.
+and final clarification returned APPROVE. [Draft delivery](07-delivery.md) is
+recorded separately from qualification and review.
 
 Task 2 review inspected all 57 archive-manifest entries and 50 CLI records,
 including the 48 rejected hostile inputs and the genuine missing non-tree arc

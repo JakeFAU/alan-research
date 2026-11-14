@@ -35,8 +35,13 @@
     },
     {
       "path": "docs/foundational/phase3c4/evidence/workflow/progress.md",
-      "bytes": 13462,
-      "sha256": "4c588775e70de76152d3dbb22984dec4bbdef9a0ab531ddee26fa42a8001bb1d"
+      "bytes": 14042,
+      "sha256": "f5a73e4d391dd4e56c30180a815da9bb1209f5ad7d439077ec4e40e962a707ce"
+    },
+    {
+      "path": "docs/foundational/phase3c4/evidence/workflow/publication.json",
+      "bytes": 579,
+      "sha256": "1c7929ec29e0f0d83b14c7864e38d6623feea7d18d14a3b818005e574929f03e"
     },
     {
       "path": "docs/foundational/phase3c4/evidence/workflow/review-focus.md",
