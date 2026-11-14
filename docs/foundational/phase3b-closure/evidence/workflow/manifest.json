@@ -1,0 +1,37 @@
+{
+  "description": "Exact workflow snapshots; original review and author reports are unchanged. Review packages are reconstructible from named git ranges and retained in local scratch. Ledger snapshot is updated at milestones.",
+  "task_review_range": {
+    "base": "b0a3b2a1f45f21a770321c5e38d1d55dc0024bea",
+    "head": "cb227ef63dbc458bb30da7b328c72a9018ce93c5"
+  },
+  "files": {
+    "task-1-brief.md": {
+      "bytes": 2263,
+      "sha256": "8ce4b87d15d68c65bac6f9f9b1ae457b260c9912837b7b20435f19c2d2d6357c"
+    },
+    "task-1-context.md": {
+      "bytes": 4792,
+      "sha256": "314ecbbd0ceb76612278edf9f9ee123a72f9aff4c114b0a9eaebc6f405229bf8"
+    },
+    "task-1-report.md": {
+      "bytes": 5776,
+      "sha256": "4274905dd303ce77a10f334d114b5070ae1e00f279b864a0db954977f87118de"
+    },
+    "task-1-review-instructions.md": {
+      "bytes": 3160,
+      "sha256": "8d8f61faadb81c121e43d4f3ae418784998e77356902ea3608b5f0a1ed2b8f63"
+    },
+    "task-1-review.md": {
+      "bytes": 9689,
+      "sha256": "abe596cf5f6677f549116acd18e571fc8aa8db9c272f101a43f3d914936bd9aa"
+    },
+    "final-review-instructions.md": {
+      "bytes": 2790,
+      "sha256": "93fbbd8dbed0a6416315432351e0a8fa61d62c337bd84b423345f366dec2215d"
+    },
+    "progress.md": {
+      "bytes": 4665,
+      "sha256": "3282115a5d03b84b0b9e18b4939001daa5ce8d47233caac145ff64f31ebe61d8"
+    }
+  }
+}

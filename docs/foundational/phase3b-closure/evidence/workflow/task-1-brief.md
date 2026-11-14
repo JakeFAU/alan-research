@@ -1,0 +1,11 @@
+### Task 1: Audit original gates and reconcile the closure verdict
+
+**Files:** Create `docs/foundational/phase3b-closure/01-assessment.md`, `02-verification.md`, `03-reviews.md`, `evidence/`; update `docs/foundational/phase3/README.md`, `paper/alan-dissertation.md`, `.tex`, `.pdf`. Bibliography only if needed. Controller owns final workflow/archive/delivery metadata.
+
+**Interfaces:** Consume the contract and read-only reconnaissance at `/tmp/alan-phase3b-closure/early-evidence.md` and `late-evidence.md`, verifying decisive claims against owning sources. Produce a complete evidence matrix and an unambiguous bounded closure disposition; keep any unresolved core gap visible. Controller and reviewer consume exact audit source hashes, commands and report.
+
+- [ ] Read original exit criteria, progression gates and the relevant source-owned contracts, results and machine-readable evidence. Record sources inspected and exact semantic disagreements rather than relying on recon conclusions alone.
+- [ ] Write the assessment with a row for every original gate, explicit rely/guarantee assumptions, evidence tier, negative witness and disposition. Test the proposed closure against the five review-focus hazards. State whether any original mandatory gap blocks closure, and distinguish it from Phase 3C and later extensions.
+- [ ] Update stale roadmap status without rewriting the original gates. Synchronize the manuscript's affected claims and status; preserve theorem numbering, historical result qualifications, bibliography and inherited divergence. Read PDF skill before the new artifact operation; build and visually inspect changed pages/continuations, recording hashes/warnings.
+- [ ] Verify local links, matrix coverage, input existence/hash stability, MD/TeX alignment and unchanged executable/old evidence inputs. Record this as an audit, not new runtime qualification. Inspect full diff, commit narrowly and report actual commands, conclusion and remaining risks.
+- [ ] Controller obtains independent task spec/quality review and one broad final review, fixes substantiated findings with re-review, archives workflow and pushes/attaches a draft PR. No merge. Final answer states closure decision, evidence, changes and exact remaining obligations.
