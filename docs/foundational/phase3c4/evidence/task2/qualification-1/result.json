@@ -1,0 +1,26 @@
+{
+  "Accepted": 2,
+  "CLICommands": 50,
+  "Counts": {
+    "BlockingSubstitutions": 1584,
+    "Comparisons": 21,
+    "Controllers": 324,
+    "EqualLanguages": 10,
+    "EqualProfiles": 6,
+    "InitialCanComplete": 886,
+    "LanguageSubsetPairs": 850,
+    "Monitors": 7,
+    "NonblockingProducts": 656,
+    "NonblockingSubstitutions": 792,
+    "Plants": 72,
+    "ProductArcs": 35672,
+    "ProductCanComplete": 14410,
+    "ProductStates": 29156,
+    "Products": 2772,
+    "ProfileSubsetPairs": 89,
+    "ResidualComparisons": 223,
+    "Substitutions": 2376
+  },
+  "Failures": [],
+  "Rejected": 48
+}

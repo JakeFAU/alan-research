@@ -1,0 +1,9 @@
+{
+  "Overrides": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "Platform": "macOS-27.2-arm64-arm-64bit",
+  "Python": "3.9.6 (default, Oct 19 2026, 19:18:13) \n[Clang 21.0.0 (clang-2100.4.1.1)]"
+}

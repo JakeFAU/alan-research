@@ -1,0 +1,6 @@
+Command: PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s docs/foundational/phase3c4/tools -p 'test_*.py' -v
+Exit: 1
+Ran 9 tests in 15.883s; FAILED (errors=1)
+Hostile fixture construction failed before invoking audit, identity-generation: KeyError: AB.
+All other test methods and mutation subtests passed. No hostile input was accepted.
+Correction: use actual Signature.Base.Originals[0].CallerGeneration path.
