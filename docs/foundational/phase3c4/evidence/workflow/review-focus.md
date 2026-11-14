@@ -1,0 +1,5 @@
+- Empty weak reach set versus a reached unmarked dead residual: Tasks 1/2 distinguish empty profile from a profile containing the empty language, including a mismatch with no possible nonblocking separator.
+- Multiple reached states with equal residual language: Tasks 1/2 use bidirectional coverage, allowing one-to-many matches; no node bijection or equal state counts.
+- Private cycles with an enabled completion escape: Tasks 1/2 retain the actual lasso and suffix; Task 3 distinguishes nonblocking from inevitability and fairness.
+- A profile separator may need different suffixes against each opposite residual, and its prefix need not be executable in K: Tasks 1/2 preserve individual language comparisons and real product paths separately.
+- Omitted non-tree arcs, altered source/signature identities, unknown JSON fields and bool-as-int values can fake a valid result: Task 2 retains exact hostile inputs and complete reconstruction; Task 3 checks archive/source binding.

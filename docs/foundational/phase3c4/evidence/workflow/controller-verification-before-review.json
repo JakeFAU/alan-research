@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/tools/verify.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "head": "9e94f2156cf993c5a29fabcac8d54b34f2d5b1af",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "started_utc": "2026-11-14T18:18:47.446980+00:00",
+  "elapsed_seconds": 6.932,
+  "exit_code": 0,
+  "stdout": "{\n  \"CLI\": {\n    \"hostile\": 48,\n    \"valid\": 2\n  },\n  \"PDF_pages\": {\n    \"baseline\": 50,\n    \"current\": 51\n  },\n  \"accepted_task1_task2_files\": 110,\n  \"alignment\": [\n    \"new section\",\n    \"Abstract\",\n    \"Conclusion\",\n    \"editorial corrections\"\n  ],\n  \"baseline_inputs\": 683,\n  \"checker_sources\": 5,\n  \"checker_test_methods\": 9,\n  \"compiled_local_inputs\": 9,\n  \"counts\": {\n    \"BlockingSubstitutions\": 1584,\n    \"Comparisons\": 21,\n    \"Controllers\": 324,\n    \"EqualLanguages\": 10,\n    \"EqualProfiles\": 6,\n    \"InitialCanComplete\": 886,\n    \"LanguageSubsetPairs\": 850,\n    \"Monitors\": 7,\n    \"NonblockingProducts\": 656,\n    \"NonblockingSubstitutions\": 792,\n    \"Plants\": 72,\n    \"ProductArcs\": 35672,\n    \"ProductCanComplete\": 14410,\n    \"ProductStates\": 29156,\n    \"Products\": 2772,\n    \"ProfileSubsetPairs\": 89,\n    \"ResidualComparisons\": 223,\n    \"Substitutions\": 2376\n  },\n  \"dependency_packages\": 109,\n  \"embedded_inputs\": 5,\n  \"new_go_inputs\": 12,\n  \"new_local_links\": 13,\n  \"packages\": {\n    \"current\": 78,\n    \"old\": 76\n  },\n  \"predecessor_sources\": 27,\n  \"scope\": \"Identity and archived-result checks; no suite, model, runtime or SQLite execution\",\n  \"source_records\": 40,\n  \"status\": \"PASS\",\n  \"task2_archive_entries\": 57,\n  \"visual_pages\": 46\n}\n",
+  "stderr": "",
+  "verifier_sha256": "36337da4de11a6fe73193f6c40e8948fa238550d0c233266154b051cc55a5df3",
+  "purpose": "Controller checks actual merged Git identities and complete assembled artifact records after Task3 review; no semantic suite or model rerun."
+}
