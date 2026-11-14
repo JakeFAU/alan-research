@@ -1,0 +1,1150 @@
+[
+  {
+    "ExpectedExit": 0,
+    "InputArchive": "export-third.json.gz",
+    "InputArchiveSHA256": "35115c3104cddd8a789c80a8c0e73eb7c7f173632af512776ba8502b61b9afc9",
+    "InputRawBytes": 8271854,
+    "InputRawSHA256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+    "Name": "valid-plain",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/tmp/alan-phase3c4/task2/qualification-1/valid.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 0,
+    "stderr": "",
+    "stdout": "ACCEPT: {\"BlockingSubstitutions\": 1584, \"Comparisons\": 21, \"Controllers\": 324, \"EqualLanguages\": 10, \"EqualProfiles\": 6, \"InitialCanComplete\": 886, \"LanguageSubsetPairs\": 850, \"Monitors\": 7, \"NonblockingProducts\": 656, \"NonblockingSubstitutions\": 792, \"Plants\": 72, \"ProductArcs\": 35672, \"ProductCanComplete\": 14410, \"ProductStates\": 29156, \"Products\": 2772, \"ProfileSubsetPairs\": 89, \"ResidualComparisons\": 223, \"Substitutions\": 2376}\n"
+  },
+  {
+    "ExpectedExit": 0,
+    "InputArchive": "export-third.json.gz",
+    "InputArchiveSHA256": "35115c3104cddd8a789c80a8c0e73eb7c7f173632af512776ba8502b61b9afc9",
+    "InputRawBytes": 8271854,
+    "InputRawSHA256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+    "Name": "valid-gzip",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/export-third.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 0,
+    "stderr": "",
+    "stdout": "ACCEPT: {\"BlockingSubstitutions\": 1584, \"Comparisons\": 21, \"Controllers\": 324, \"EqualLanguages\": 10, \"EqualProfiles\": 6, \"InitialCanComplete\": 886, \"LanguageSubsetPairs\": 850, \"Monitors\": 7, \"NonblockingProducts\": 656, \"NonblockingSubstitutions\": 792, \"Plants\": 72, \"ProductArcs\": 35672, \"ProductCanComplete\": 14410, \"ProductStates\": 29156, \"Products\": 2772, \"ProfileSubsetPairs\": 89, \"ResidualComparisons\": 223, \"Substitutions\": 2376}\n"
+  },
+  {
+    "ExpectedDiagnostic": "Products",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-non-tree-arc-repaired-counts.json.gz",
+    "InputArchiveSHA256": "2043f553d891f888924fbf4d406e48125a4ea8e9fa1f0854aecee9dbb70f2c17",
+    "InputRawBytes": 8267727,
+    "InputRawSHA256": "f7a71ebe3e81fd2872312122757ead9bf4b66b98034259894bf55ae79ff843c4",
+    "Name": "missing-non-tree-arc-repaired-counts",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-non-tree-arc-repaired-counts.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products[0].Nodes[2].Arcs: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Comparisons",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/union-for-profile.json.gz",
+    "InputArchiveSHA256": "1f0ba77196e0571a903d1fbd2a9136195866f96a7e647588d0fb4c8f33f099b3",
+    "InputRawBytes": 8267636,
+    "InputRawSHA256": "24adf89c65dcd17f2ac5a4aa7f05319427afe7807c5cf10d22569fa8812ef61d",
+    "Name": "union-for-profile",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/union-for-profile.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[12].Pairs[1].LeftCoverage[0].Matches: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Coverage",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-coverage.json.gz",
+    "InputArchiveSHA256": "a0ef85ffc3e856e15e7f48fc6f4e2f845c86411a8837032570832d382a26106f",
+    "InputRawBytes": 8267758,
+    "InputRawSHA256": "864f9139ec1db1cbb454db632978e0be4fb6524fd27a8671dde60c5290afdd80",
+    "Name": "missing-coverage",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-coverage.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Pairs[0].LeftCoverage: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Matches",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-one-to-many-match.json.gz",
+    "InputArchiveSHA256": "85b1cf78c46ead81fd6b949c2e28f247c3f6be0e5b5189715e9f047a1d6fd7e9",
+    "InputRawBytes": 8267780,
+    "InputRawSHA256": "9ebc5390ee7354bfe645c50a4d103318c92ee6cdfd632cd656b3de86faabb80a",
+    "Name": "missing-one-to-many-match",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-one-to-many-match.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[13].Pairs[3].LeftCoverage[0].Matches: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Separators",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-separator.json.gz",
+    "InputArchiveSHA256": "322f4f25b5a5f6fb19faa41a5594396a009a96d91371b766ff0274088d10a9bb",
+    "InputRawBytes": 8267692,
+    "InputRawSHA256": "78d3218ec2c7970b4c69f00db194217daf256797e8798e8c4b10a62c16d60522",
+    "Name": "missing-separator",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-separator.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Mismatch.Separators: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Word",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/bad-shortest-prefix.json.gz",
+    "InputArchiveSHA256": "4d2782af485432b09809ab0129ba385145833ec1a887edf27a3e1d4e8fd40269",
+    "InputRawBytes": 8267796,
+    "InputRawSHA256": "d6ffc59686b5077f385a54f09babb6fbecbe5f6a99d86a96b8e4d1872d1ce3fd",
+    "Name": "bad-shortest-prefix",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/bad-shortest-prefix.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[12].Word: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Side",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/wrong-separator-side.json.gz",
+    "InputArchiveSHA256": "364568258519fdf11b037694f04c6a438bea77a739c3dbd4d4a4e7b071064004",
+    "InputRawBytes": 8267783,
+    "InputRawSHA256": "1af521ad2a7329350fcd52f041538f8bb24eb59224aaf4117dda8ec022f0ccae",
+    "Name": "wrong-separator-side",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/wrong-separator-side.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[12].Mismatch.Side: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Word",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/bad-residual-shortest-word.json.gz",
+    "InputArchiveSHA256": "7f790073acc6618498093616b442332a806892b700e95e2ace95f523e7896813",
+    "InputRawBytes": 8267784,
+    "InputRawSHA256": "10da283208351f919b88aa82d7516c9e631fe95edcb63bbcd9150ab2b79ce581",
+    "Name": "bad-residual-shortest-word",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/bad-residual-shortest-word.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Residuals[0].Language.Word[0]: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Arcs",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-language-non-tree-arc.json.gz",
+    "InputArchiveSHA256": "754037e8c54324b9fe0cfafae7bbdcdf10b6da51444b503dc9b073f56d452cc6",
+    "InputRawBytes": 8267754,
+    "InputRawSHA256": "b204e576c01a19095b0ff61dc7dd535c3b94599dbb435398d5f99c6ff31b2b9f",
+    "Name": "missing-language-non-tree-arc",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-language-non-tree-arc.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Residuals[0].Language.Pairs[3].Arcs: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "LeftAccept",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/forged-acceptance.json.gz",
+    "InputArchiveSHA256": "b285f91a3da01376343914798515a847c7fabd890dabc389c6a4176ef4764adc",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "695ba22383e557ca5a45b5591f0ecb41d23b5851787503e10bfa2447c22006e3",
+    "Name": "forged-acceptance",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/forged-acceptance.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].InitialLanguage.Pairs[0].LeftAccept: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Strictness",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/dead-versus-unreachable.json.gz",
+    "InputArchiveSHA256": "c1dbe17c21614778b815a16b3e8a1572883f9f02fb49e64f05a166f452c626b6",
+    "InputRawBytes": 8267703,
+    "InputRawSHA256": "9d25013d5e70f3f1f6699f833c464e18f8ab69bce2531bb6431bae62eb0bffcd",
+    "Name": "dead-versus-unreachable",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/dead-versus-unreachable.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Strictness.Comparison.Pairs[2].Right: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Marked",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/forged-mark.json.gz",
+    "InputArchiveSHA256": "debada0474ee9958773de94948d65b98e65fe986c0d540a4ab06e67fa2acc6f0",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "019ae53c747657a549e03248bb6cac14f8c6be882913da23230922ceb4e3d48c",
+    "Name": "forged-mark",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/forged-mark.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Monitors[6].States[3].Marked: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Edges",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/forged-tau.json.gz",
+    "InputArchiveSHA256": "264a4275c2c84edef9e3f14ff38aa4fd6ae9f743c8513a0bcb84f7353d0a36c1",
+    "InputRawBytes": 8267789,
+    "InputRawSHA256": "063759e8c91eff993dc122e691f249125277a51cea54cd20a4fc0067b2c44a2d",
+    "Name": "forged-tau",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/forged-tau.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Monitors[6].Edges[22].Label: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Monitors",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/external-veto.json.gz",
+    "InputArchiveSHA256": "53969273c4a3a1b6b4b998cbeabe9e418e7317582f4ce83865f866e25abc674f",
+    "InputRawBytes": 8267741,
+    "InputRawSHA256": "c08e444ee4d9931c7b28a9b79be9605ead7204b904c493c241da5cffb917282d",
+    "Name": "external-veto",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/external-veto.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Monitors[2].Edges: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "CallerGeneration",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/identity-generation.json.gz",
+    "InputArchiveSHA256": "c9af44e4b3889e90655fbcebfdb4a0cf646a440030b5b27895ee96b9ed568c55",
+    "InputRawBytes": 8267784,
+    "InputRawSHA256": "6b67c4fadf0e923ca431150123d4984c4d483c8ecd228e99a9fa68a75aa647d1",
+    "Name": "identity-generation",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/identity-generation.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Monitors[0].Signature.Base.Originals[0].CallerGeneration: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Root",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/root-mismatch.json.gz",
+    "InputArchiveSHA256": "1b8b4c1eb313894049e36b41524653c566301bb032e609ca69072b98ff2115e6",
+    "InputRawBytes": 8267788,
+    "InputRawSHA256": "8bf2a9fd630c0eb457ce92e493bffd1c08998b16f6ef35f887420133a09f2717",
+    "Name": "root-mismatch",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/root-mismatch.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Alphabet[0].Root: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Limit",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/signature-root-limit.json.gz",
+    "InputArchiveSHA256": "672f065a55daf12005f473f73155a5d96ffa300d03d0af0cbadcc10cc515bbd0",
+    "InputRawBytes": 8267784,
+    "InputRawSHA256": "be22cd3666c261fe5777374a17e966fa079d5fd9811d26ed8c8b00ff2c70f8e0",
+    "Name": "signature-root-limit",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/signature-root-limit.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Plants[0].Signature.Roots[0].Limit: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Nonblocking",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invented-nonblocking.json.gz",
+    "InputArchiveSHA256": "c4782c6dd102f9af21cafd5539d0220eba4fa2e1362acbce0d9e1aba04e00b40",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "79690556ed5d0ae09f60e2b598410ff6091d35bf28f746e4b0dedba138a64832",
+    "Name": "invented-nonblocking",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invented-nonblocking.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products[2].Nonblocking: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "CanComplete",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invented-node-completion.json.gz",
+    "InputArchiveSHA256": "2668edf634b7dbbf8ba5e0ae8395ba09fc7e1f18abbfa80475775dce369ec9db",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "4df4a3e121301a14046dcac01e3399941a5933f3cdec6e235e5639d1ee17254b",
+    "Name": "invented-node-completion",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invented-node-completion.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products[2].Nodes[0].CanComplete: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Marked",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/forged-product-mark.json.gz",
+    "InputArchiveSHA256": "ebffae1c56ff7f9ff796142d659501051fbf10e6d4fb15ff0ce3186b67d6d291",
+    "InputRawBytes": 8267783,
+    "InputRawSHA256": "00a385aa492b063eebe67c32157c818ebccb5e46b03d2ae1464248786f50be72",
+    "Name": "forged-product-mark",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/forged-product-mark.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products[2].Nodes[0].Marked: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "End",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invalid-lasso-closure.json.gz",
+    "InputArchiveSHA256": "37e70ebea1b3fcfe29bbbb409b7fe31ea8384419ebd2ea502235b03efedc5ce1",
+    "InputRawBytes": 8267771,
+    "InputRawSHA256": "428e27252ead047a1ea257d99457a02219247f1f1a36ade5424e730890835201",
+    "Name": "invalid-lasso-closure",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invalid-lasso-closure.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Loop.Cycle.End: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Label",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invalid-lasso-edge.json.gz",
+    "InputArchiveSHA256": "63cdcec6a00536ac9929cdc30a02a123d3f0afabf6263bee1575fdfe8b35657e",
+    "InputRawBytes": 8267789,
+    "InputRawSHA256": "bf38b910c313a8afbb0f2fc8ae6573e2e51303f12fff082159847c6a86c24f57",
+    "Name": "invalid-lasso-edge",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invalid-lasso-edge.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Loop.Cycle.Steps[1].Label: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "End",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invalid-lasso-debt.json.gz",
+    "InputArchiveSHA256": "472a832421069d4e83e9573c32f7084d00e156807d529ccbe8a911882cbd9e92",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "9099be59e216b3327fdbe109d8d407ad6ffb172f65302e0425e7e64f689fb273",
+    "Name": "invalid-lasso-debt",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invalid-lasso-debt.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Loop.Prefix.End: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Steps",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/incomplete-escape.json.gz",
+    "InputArchiveSHA256": "4234f38c39be1fd35d12d1525ed6531da2b8e97e1e7583c3178b352acc98069f",
+    "InputRawBytes": 8267214,
+    "InputRawSHA256": "29cbb9fee307057e574deb841165210a89bce457e61e05b54b1d38f39a0d8c75",
+    "Name": "incomplete-escape",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/incomplete-escape.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Loop.Escapes[0].Steps: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "From",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/discontinuous-negative-path.json.gz",
+    "InputArchiveSHA256": "40ae896e1c30fcc76bead88b460aa5c313038f14d8dc1f82b2f28edbc1421061",
+    "InputRawBytes": 8267766,
+    "InputRawSHA256": "7c1a4765322d73a2ef90362206f6f4101b3972320f2673e4757a5062b404d948",
+    "Name": "discontinuous-negative-path",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/discontinuous-negative-path.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Negative.RightPath.Steps[1].From: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "NonblockingLeft",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/wrong-substitution-outcome.json.gz",
+    "InputArchiveSHA256": "f3855bfe84a322fb816273ca8c9ae8d55746019e3640692c1ef1fce73d922013",
+    "InputRawBytes": 8267785,
+    "InputRawSHA256": "6dee84980a16ec03c239785f0da3febc85b794ddcf9377ca40a2437ea339c943",
+    "Name": "wrong-substitution-outcome",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/wrong-substitution-outcome.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Substitutions[0].NonblockingLeft: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Substitutions",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/missing-false-context.json.gz",
+    "InputArchiveSHA256": "c572297bee64bb4b2ceff6a09736adf9301890e93b52565e9296c213c6eac0ee",
+    "InputRawBytes": 8267515,
+    "InputRawSHA256": "9acb09676f188340d210fa8aa57e0c821a35838cfbce3c88a133da35d95349e3",
+    "Name": "missing-false-context",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/missing-false-context.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Substitutions: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "SHA256",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/source-hash.json.gz",
+    "InputArchiveSHA256": "0056da16767fa85717275dae051c7269f4aa41f3674bc71a2a99f4e310d36316",
+    "InputRawBytes": 8267784,
+    "InputRawSHA256": "30b03f94844681986669aa7009b52e0cdc2dcf34e5b45a92d1a7a850cb87bd90",
+    "Name": "source-hash",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/source-hash.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Sources[0].SHA256: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Sources",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/source-omission.json.gz",
+    "InputArchiveSHA256": "1aa400481fc36cdc6dfcdcdefadce76a306b27c65ac1eba667519273ab2c5b0a",
+    "InputRawBytes": 8267625,
+    "InputRawSHA256": "209d261bbc906719ae007f89e13dd909a30c51c90391784a02ce8ff2b00bfa70",
+    "Name": "source-omission",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/source-omission.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Sources: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "RawSHA256",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/pinned-raw-hash.json.gz",
+    "InputArchiveSHA256": "5886bed4d9e8c1689b696f62fc65560c1d17b2b0f589947bcceca09f82f2dc6e",
+    "InputRawBytes": 8267784,
+    "InputRawSHA256": "d468d963eb0b0780da8dc62a2962a14b00026de158673c85fc527d83b4fd7885",
+    "Name": "pinned-raw-hash",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/pinned-raw-hash.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Input.RawSHA256: value mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "keys",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/unknown-top-key.json.gz",
+    "InputArchiveSHA256": "0fc0eefe5ca5d5c11c3c59eaa10f40123428e5fcaf1671ad20084d323119816f",
+    "InputRawBytes": 8267799,
+    "InputRawSHA256": "6384885b3a96aa3e8405dd874782290eadc972acebf9df73251749e49758b29b",
+    "Name": "unknown-top-key",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/unknown-top-key.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export: keys mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "keys",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/unknown-nested-key.json.gz",
+    "InputArchiveSHA256": "a31434e4c63b920b41748eb2c4e319c10e04440722a50f5043abe5d2c3bce4a4",
+    "InputRawBytes": 8267799,
+    "InputRawSHA256": "dfd33b3a8d7c3ff8883f710416606cbcee4cd73abc503bcbafc5b82dfd323dd3",
+    "Name": "unknown-nested-key",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/unknown-nested-key.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products[0].Nodes[0]: keys mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "type",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/bool-as-int.json.gz",
+    "InputArchiveSHA256": "5d0b45b3eeb419feeba6a5ff4c2ce39f190c87df2e6fe63f355efc69388d2552",
+    "InputRawBytes": 8267786,
+    "InputRawSHA256": "765bb8540716f2552419758c22bff7aad9a7a0c8282a147b1cdf5daede8f7ba2",
+    "Name": "bool-as-int",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/bool-as-int.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Counts.Plants: type mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "type",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/int-as-bool.json.gz",
+    "InputArchiveSHA256": "3994ffb13e0ce9e7e1b54d21b66b690079f23fe3b64805a46f21b29b8e5318d0",
+    "InputRawBytes": 8267780,
+    "InputRawSHA256": "04add0a700ab2dbf52a122994fc47c31e643d4cae9dd5fc962233efc3f5fe66e",
+    "Name": "int-as-bool",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/int-as-bool.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Equal: type mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "type",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/float-as-int.json.gz",
+    "InputArchiveSHA256": "59f4e6d1c28bf62573a9376997537941c19ca752bb4e1c86c3befd042e17edec",
+    "InputRawBytes": 8267786,
+    "InputRawSHA256": "bc90615a74d7bc628725000f0a0de1f22ce67d0bfd3612d3e21572f39994a1d7",
+    "Name": "float-as-int",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/float-as-int.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Counts.Plants: type mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "type",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/null-array.json.gz",
+    "InputArchiveSHA256": "e4a8c114d5b636f2b178180bd39c1208069cd4b10f41816c71007a2ca97240f6",
+    "InputRawBytes": 8266475,
+    "InputRawSHA256": "cba58abbf15aec22cf41515fcf7fb7cdd99ae0af273415d711ef089026326f96",
+    "Name": "null-array",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/null-array.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Loop.Escapes: type mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Edges",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/duplicate-edge.json.gz",
+    "InputArchiveSHA256": "b6acc6580387579976d95443672fbc6b6c9d44ade171351b713f794e9e415477",
+    "InputRawBytes": 8267826,
+    "InputRawSHA256": "2be0441537f63356a5d35846d1733104b9e438bb6e8f404407f1222463f7bca1",
+    "Name": "duplicate-edge",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/duplicate-edge.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Monitors[0].Edges: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Products",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/duplicate-product.json.gz",
+    "InputArchiveSHA256": "f4e6d831c8a91bea0526e6965c7260c31825e828990f74d8a325bf16cdf04b66",
+    "InputRawBytes": 8272657,
+    "InputRawSHA256": "f4c159514b32e10d45ee39e463390d3d5c1893ec4cb2ba4eaccfc4428daac35b",
+    "Name": "duplicate-product",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/duplicate-product.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Products: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Coverage",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/duplicate-coverage.json.gz",
+    "InputArchiveSHA256": "040f752dd6f59a234841550f20a9cc9b99d04ce1d21059c81fa16e989a072d3f",
+    "InputRawBytes": 8267811,
+    "InputRawSHA256": "20ff7084d2ef71377538d1d1f2d04dcd7e4cc53a1b7cc2c8898b3a46971bd401",
+    "Name": "duplicate-coverage",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/duplicate-coverage.json.gz"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export.Comparisons[0].Pairs[0].LeftCoverage: length mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "duplicate key",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/duplicate-key.json",
+    "InputArchiveSHA256": "96e71ef31fc047a4305f52af063f8b18bdfa7a51a8ed39f41048ad8c2d165118",
+    "InputRawBytes": 23,
+    "InputRawSHA256": "96e71ef31fc047a4305f52af063f8b18bdfa7a51a8ed39f41048ad8c2d165118",
+    "Name": "duplicate-key",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/duplicate-key.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: duplicate key: Schema\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "duplicate key",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/nested-duplicate-key.json",
+    "InputArchiveSHA256": "06d55db68c2ab40693c6dbd8e3d358b352a269731d9ead4defe3e067a6eb6af7",
+    "InputRawBytes": 19,
+    "InputRawSHA256": "06d55db68c2ab40693c6dbd8e3d358b352a269731d9ead4defe3e067a6eb6af7",
+    "Name": "nested-duplicate-key",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/nested-duplicate-key.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: duplicate key: a\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "nonfinite",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/nan.json",
+    "InputArchiveSHA256": "d5b592c05dc25b5032553f1b27f4139be95e881f73db33b02b05ab20c3f9981e",
+    "InputRawBytes": 3,
+    "InputRawSHA256": "d5b592c05dc25b5032553f1b27f4139be95e881f73db33b02b05ab20c3f9981e",
+    "Name": "nan",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/nan.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: nonfinite JSON number: NaN\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "nonfinite",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/infinity.json",
+    "InputArchiveSHA256": "d0067cad9a63e0813759a2bb841051ca73570c0da2e08e840a8eb45db6a7a010",
+    "InputRawBytes": 8,
+    "InputRawSHA256": "d0067cad9a63e0813759a2bb841051ca73570c0da2e08e840a8eb45db6a7a010",
+    "Name": "infinity",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/infinity.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: nonfinite JSON number: Infinity\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "nonfinite",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/negative-infinity.json",
+    "InputArchiveSHA256": "c64ddf11bcd45660f0cf66dd0c22d2b4570ef3d3fc6527a9a6f6c722aefa3c39",
+    "InputRawBytes": 9,
+    "InputRawSHA256": "c64ddf11bcd45660f0cf66dd0c22d2b4570ef3d3fc6527a9a6f6c722aefa3c39",
+    "Name": "negative-infinity",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/negative-infinity.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: nonfinite JSON number: -Infinity\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "keys",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/overflow-number.json",
+    "InputArchiveSHA256": "cb013dcc16fe0e5ca4b3588e94fedb08d57d0671c0bc216f27e5cd61b59d77b0",
+    "InputRawBytes": 11,
+    "InputRawSHA256": "cb013dcc16fe0e5ca4b3588e94fedb08d57d0671c0bc216f27e5cd61b59d77b0",
+    "Name": "overflow-number",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/overflow-number.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: export: keys mismatch\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "utf-8",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/invalid-utf8.json",
+    "InputArchiveSHA256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "InputRawBytes": 1,
+    "InputRawSHA256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "Name": "invalid-utf8",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/invalid-utf8.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Extra data",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/trailing-json.json",
+    "InputArchiveSHA256": "2cec2bbf1a64ea5249e8a7ab9ecc782fa48be13f0b35ad5f52bdea741841a230",
+    "InputRawBytes": 5,
+    "InputRawSHA256": "2cec2bbf1a64ea5249e8a7ab9ecc782fa48be13f0b35ad5f52bdea741841a230",
+    "Name": "trailing-json",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/trailing-json.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: Extra data: line 1 column 4 (char 3)\n",
+    "stdout": ""
+  },
+  {
+    "ExpectedDiagnostic": "Expecting value",
+    "ExpectedExit": 1,
+    "InputArchive": "hostile/truncated-json.json",
+    "InputArchiveSHA256": "48a297450ac755ce1ee8f66984857a3574ff13597e41c0a6e65cb655a667a7b0",
+    "InputRawBytes": 10,
+    "InputRawSHA256": "48a297450ac755ce1ee8f66984857a3574ff13597e41c0a6e65cb655a667a7b0",
+    "Name": "truncated-json",
+    "argv": [
+      "python3",
+      "docs/foundational/phase3c4/tools/audit.py",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c4/evidence/task2/qualification-1/hostile/truncated-json.json"
+    ],
+    "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+    "environment": {
+      "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+    },
+    "exit": 1,
+    "stderr": "REJECT: Expecting value: line 1 column 11 (char 10)\n",
+    "stdout": ""
+  }
+]

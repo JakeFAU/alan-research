@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestPinnedInputAndMonitorProfiles|TestCompleteEvidenceAndWitnesses|TestExactSignatureAndExternalActions|TestConditionalProfileClosureIndependentSmallAutomata",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache"
+  },
+  "exit": 1,
+  "stdout": "=== RUN   TestPinnedInputAndMonitorProfiles\n--- PASS: TestPinnedInputAndMonitorProfiles (0.10s)\n=== RUN   TestCompleteEvidenceAndWitnesses\n    evidence_test.go:154: measured counts: {Plants:72 Monitors:7 Controllers:324 Products:2772 ProductStates:29156 ProductArcs:35672 ProductCanComplete:14410 InitialCanComplete:886 NonblockingProducts:656 Comparisons:21 EqualLanguages:10 EqualProfiles:6 ResidualComparisons:223 LanguageSubsetPairs:850 ProfileSubsetPairs:89 Substitutions:2376 NonblockingSubstitutions:792 BlockingSubstitutions:1584}\n--- PASS: TestCompleteEvidenceAndWitnesses (0.14s)\n=== RUN   TestExactSignatureAndExternalActions\n=== RUN   TestExactSignatureAndExternalActions/signature\n=== RUN   TestExactSignatureAndExternalActions/root\n    evidence_test.go:182: accepted invalid composition root\n=== RUN   TestExactSignatureAndExternalActions/role\n=== RUN   TestExactSignatureAndExternalActions/veto\n=== RUN   TestExactSignatureAndExternalActions/external-target\n--- FAIL: TestExactSignatureAndExternalActions (0.06s)\n    --- PASS: TestExactSignatureAndExternalActions/signature (0.00s)\n    --- FAIL: TestExactSignatureAndExternalActions/root (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/role (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/veto (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/external-target (0.00s)\n=== RUN   TestConditionalProfileClosureIndependentSmallAutomata\n--- PASS: TestConditionalProfileClosureIndependentSmallAutomata (0.05s)\nFAIL\nFAIL\tgithub.com/JakeFAU/alan-research/research/residualinterfaces\t0.569s\nFAIL\n",
+  "stderr": ""
+}

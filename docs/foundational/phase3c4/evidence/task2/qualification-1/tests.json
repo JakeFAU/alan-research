@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "docs/foundational/phase3c4/tools",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr": "test_complete_positive (test_audit.IndependentAuditTests) ... ok\ntest_each_opposite_residual_needs_own_separator (test_audit.IndependentAuditTests) ... ok\ntest_empty_profile_is_not_empty_language (test_audit.IndependentAuditTests) ... ok\ntest_hostile_semantics (test_audit.IndependentAuditTests) ... ok\ntest_json_controls (test_audit.IndependentAuditTests) ... ok\ntest_leading_trailing_tau_and_empty_acceptance (test_audit.IndependentAuditTests) ... ok\ntest_one_to_many_coverage (test_audit.IndependentAuditTests) ... ok\ntest_private_cycle_and_completion_escapes (test_audit.IndependentAuditTests) ... ok\ntest_union_does_not_preserve_nonblocking (test_audit.IndependentAuditTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 15.691s\n\nOK\n",
+  "stdout": ""
+}

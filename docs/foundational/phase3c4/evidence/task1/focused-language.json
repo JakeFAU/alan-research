@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-run",
+    "TestLanguageBoundaries|TestProfileMultiplicityAndEmptyLanguage",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache"
+  },
+  "exit": 0,
+  "stdout": "ok  \tgithub.com/JakeFAU/alan-research/research/residualinterfaces\t0.338s\n",
+  "stderr": ""
+}

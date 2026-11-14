@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestExactSignatureAndExternalActions",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache"
+  },
+  "exit": 0,
+  "stdout": "=== RUN   TestExactSignatureAndExternalActions\n=== RUN   TestExactSignatureAndExternalActions/signature\n=== RUN   TestExactSignatureAndExternalActions/root\n=== RUN   TestExactSignatureAndExternalActions/role\n=== RUN   TestExactSignatureAndExternalActions/veto\n=== RUN   TestExactSignatureAndExternalActions/external-target\n--- PASS: TestExactSignatureAndExternalActions (0.09s)\n    --- PASS: TestExactSignatureAndExternalActions/signature (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/root (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/role (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/veto (0.00s)\n    --- PASS: TestExactSignatureAndExternalActions/external-target (0.00s)\nPASS\nok  \tgithub.com/JakeFAU/alan-research/research/residualinterfaces\t0.244s\n",
+  "stderr": ""
+}

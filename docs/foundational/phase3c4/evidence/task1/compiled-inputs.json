@@ -1,0 +1,32 @@
+{
+  "argv": [
+    "go",
+    "list",
+    "-deps",
+    "-json",
+    "./research/residualinterfaces/cmd/export"
+  ],
+  "Compiled": [
+    "research/residualinterfaces/automaton.go",
+    "research/residualinterfaces/cmd/export/main.go",
+    "research/residualinterfaces/evidence.go",
+    "research/residualinterfaces/fixtures.go",
+    "research/residualinterfaces/input.go",
+    "research/residualinterfaces/language.go",
+    "research/residualinterfaces/product.go",
+    "research/residualinterfaces/profile.go",
+    "research/residualinterfaces/witness.go"
+  ],
+  "ManifestCompiled": [
+    "research/residualinterfaces/automaton.go",
+    "research/residualinterfaces/cmd/export/main.go",
+    "research/residualinterfaces/evidence.go",
+    "research/residualinterfaces/fixtures.go",
+    "research/residualinterfaces/input.go",
+    "research/residualinterfaces/language.go",
+    "research/residualinterfaces/product.go",
+    "research/residualinterfaces/profile.go",
+    "research/residualinterfaces/witness.go"
+  ],
+  "Equal": true
+}

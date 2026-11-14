@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestExactSignatureAndExternalActions",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache"
+  },
+  "exit": 1,
+  "stdout": "FAIL\tgithub.com/JakeFAU/alan-research/research/residualinterfaces [build failed]\nFAIL\n",
+  "stderr": "# github.com/JakeFAU/alan-research/research/residualinterfaces [github.com/JakeFAU/alan-research/research/residualinterfaces.test]\nresearch/residualinterfaces/evidence_test.go:4:2: \"bytes\" imported and not used\n"
+}

@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/evidence/task1/verify-resolved-deps.py"
+  ],
+  "cwd": "repository root",
+  "exit": 0,
+  "stdout": "{\n  \"PackageCount\": 109,\n  \"PackageErrors\": [],\n  \"Compiled\": [\n    \"research/residualinterfaces/automaton.go\",\n    \"research/residualinterfaces/cmd/export/main.go\",\n    \"research/residualinterfaces/evidence.go\",\n    \"research/residualinterfaces/fixtures.go\",\n    \"research/residualinterfaces/input.go\",\n    \"research/residualinterfaces/language.go\",\n    \"research/residualinterfaces/product.go\",\n    \"research/residualinterfaces/profile.go\",\n    \"research/residualinterfaces/witness.go\"\n  ],\n  \"ManifestCompiled\": [\n    \"research/residualinterfaces/automaton.go\",\n    \"research/residualinterfaces/cmd/export/main.go\",\n    \"research/residualinterfaces/evidence.go\",\n    \"research/residualinterfaces/fixtures.go\",\n    \"research/residualinterfaces/input.go\",\n    \"research/residualinterfaces/language.go\",\n    \"research/residualinterfaces/product.go\",\n    \"research/residualinterfaces/profile.go\",\n    \"research/residualinterfaces/witness.go\"\n  ],\n  \"CompiledEqual\": true,\n  \"CheckedSourceHashes\": 40,\n  \"SourceHashesUnchanged\": true,\n  \"CaptureHashesUnchanged\": true,\n  \"DependencyStdoutIdenticalToOriginals\": true,\n  \"PreservedOriginalRecords\": {\n    \"docs/foundational/phase3c4/evidence/task1/go-list-deps-execution.json\": \"7169156348a15fad7c7b00f49798d924ad26a910bfcb82bfdab023bef10264f2\",\n    \"docs/foundational/phase3c4/evidence/task1/go-list-deps.json.gz\": \"605e5361b2f9908d766f3860706cc5443f0dd9e0d66006507acfafacda628a89\",\n    \"docs/foundational/phase3c4/evidence/task1/pre-strictness-correction/go-list-deps-execution.json\": \"526eb75f6c2d15d9f7896f0d2b57364473e9712856199dd0e65af975f0c52252\",\n    \"docs/foundational/phase3c4/evidence/task1/pre-strictness-correction/go-list-deps.json.gz\": \"605e5361b2f9908d766f3860706cc5443f0dd9e0d66006507acfafacda628a89\"\n  }\n}\n",
+  "stderr": ""
+}

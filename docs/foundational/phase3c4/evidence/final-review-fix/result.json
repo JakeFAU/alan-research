@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/tools/verify.py"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "reviewed_head": "7c90a10adba46433653de8509fa7f68333127b6b",
+  "source_state": "Reviewed head with the qualification guidance, Task 1 README, and artifact manifest changes applied.",
+  "before_manifest": {
+    "path": "docs/foundational/phase3c4/evidence/final-review-fix/before-artifact-manifest.json",
+    "bytes": 5422,
+    "sha256": "6c32d2212131aaf4898f9cc3fc368742d10b941945bb90a115aaceb0c3280ffc"
+  },
+  "current_manifest": {
+    "path": "docs/foundational/phase3c4/evidence/qualification/artifact-manifest.json",
+    "bytes": 5597,
+    "sha256": "60f09cdbf9eee6e4c38e93b06f131fa5f87edeb6b24273ca0a8968cbefc5f8ee"
+  },
+  "exit_code": 0,
+  "stdout": {
+    "path": "docs/foundational/phase3c4/evidence/final-review-fix/verification.json",
+    "bytes": 1257,
+    "sha256": "7fb63c42bfd2cdb7c145413940860bac2badb75a41456b3c95ee5bd2c8ce392b"
+  },
+  "stderr": "",
+  "scope": "Fresh read-only verification of existing evidence and updated documentation bindings."
+}

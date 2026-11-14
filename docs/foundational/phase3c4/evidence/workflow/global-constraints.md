@@ -1,0 +1,10 @@
+- This packet replaces finite B continuation monitors over the unchanged whole Phase 3C.2 plant K. It does not extract an entire independently executing agent.
+- New Go code is confined to `research/residualinterfaces/` and its exporter.
+- Do not modify old model, runtime, module, test or evidence files.
+- No event priorities, fairness, inevitability or divergence preservation are assumed. Shared authority, effects and Q remain in the one unchanged K.
+- Monitors restrict only B's reserve/apply AB and commit BC; all other visible labels self-loop without changing private control.
+- Nonblocking means all reachable nodes have CanComplete=true.
+- This is a conditional source argument, not a mechanized proof or a new general process-theory theorem.
+- Do not repeat unchanged suites merely for repetition.
+- No new concrete histories, endpoint/runtime campaign, SQLite opening or old exhaustive transport-probe execution is required or claimed.
+- General Phase 3C, full-agent substitution, dynamic authority, distributed ownership and split effects remain open.

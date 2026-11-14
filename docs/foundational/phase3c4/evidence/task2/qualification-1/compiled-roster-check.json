@@ -1,0 +1,27 @@
+{
+  "Compiled": [
+    "research/residualinterfaces/automaton.go",
+    "research/residualinterfaces/cmd/export/main.go",
+    "research/residualinterfaces/evidence.go",
+    "research/residualinterfaces/fixtures.go",
+    "research/residualinterfaces/input.go",
+    "research/residualinterfaces/language.go",
+    "research/residualinterfaces/product.go",
+    "research/residualinterfaces/profile.go",
+    "research/residualinterfaces/witness.go"
+  ],
+  "Enumeration": "docs/foundational/phase3c4/evidence/task1/go-list-deps-resolved.json.gz",
+  "EnumerationSHA256": "605e5361b2f9908d766f3860706cc5443f0dd9e0d66006507acfafacda628a89",
+  "Equal": true,
+  "Manifest": [
+    "research/residualinterfaces/automaton.go",
+    "research/residualinterfaces/cmd/export/main.go",
+    "research/residualinterfaces/evidence.go",
+    "research/residualinterfaces/fixtures.go",
+    "research/residualinterfaces/input.go",
+    "research/residualinterfaces/language.go",
+    "research/residualinterfaces/product.go",
+    "research/residualinterfaces/profile.go",
+    "research/residualinterfaces/witness.go"
+  ]
+}

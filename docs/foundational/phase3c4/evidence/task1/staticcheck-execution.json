@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "staticcheck",
+    "./research/residualinterfaces/..."
+  ],
+  "cwd": "repository root",
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr": "",
+  "stdout": ""
+}

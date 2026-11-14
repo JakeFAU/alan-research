@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-run",
+    "TestLanguageBoundaries|TestProfileMultiplicityAndEmptyLanguage",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 1,
+  "stdout": "FAIL\tgithub.com/JakeFAU/alan-research/research/residualinterfaces [build failed]\nFAIL\n",
+  "stderr": "# github.com/JakeFAU/alan-research/research/residualinterfaces [github.com/JakeFAU/alan-research/research/residualinterfaces.test]\nresearch/residualinterfaces/language_test.go:9:45: undefined: edge\nresearch/residualinterfaces/language_test.go:9:51: undefined: automaton\nresearch/residualinterfaces/language_test.go:10:7: undefined: automaton\nresearch/residualinterfaces/language_test.go:10:86: undefined: state\nresearch/residualinterfaces/language_test.go:11:52: undefined: state\nresearch/residualinterfaces/language_test.go:15:33: undefined: edge\nresearch/residualinterfaces/language_test.go:16:6: undefined: accepts\nresearch/residualinterfaces/language_test.go:17:5: undefined: accepts\nresearch/residualinterfaces/language_test.go:17:25: undefined: labels\nresearch/residualinterfaces/language_test.go:19:6: undefined: compareLanguages\nresearch/residualinterfaces/language_test.go:19:6: too many errors\n"
+}

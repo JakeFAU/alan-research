@@ -1,0 +1,17 @@
+{
+  "scope": "Exact preparatory source-reconnaissance and builder-check reports; exploratory probe claims are attributed, not new implementation qualification.",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c4/evidence/preflight/design-reconnaissance.md.gz",
+      "bytes": 8171,
+      "sha256": "34c232efea49c28cd851c4d41225a2f184bb3f84ce0c4c3a6aa68436d46e2009",
+      "raw_bytes": 21237,
+      "raw_sha256": "74e029b518ac2fa87f14a4cd39a1991addb0e1bc95d5b8d1bb51fbb6c4782b78"
+    },
+    {
+      "path": "docs/foundational/phase3c4/evidence/preflight/builder-check.md",
+      "bytes": 39,
+      "sha256": "2b6fcea617e20cb2b364ea5fb9d467745f50f4a81914bd9d2f598ff677bdc402"
+    }
+  ]
+}

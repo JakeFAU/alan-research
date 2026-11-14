@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/tools/audit.py",
+    "docs/foundational/phase3c4/evidence/task1/export.json.gz"
+  ],
+  "exit": 1,
+  "stderr": "REJECT: export.Plants[0].States[3].ID: value mismatch\n",
+  "stdout": "",
+  "checker_sha256": "1991030746a3241a58d5d6dcc7c17dac75fa403f16b1f8ad402961f5b44b7303",
+  "input_raw_sha256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+  "reason": "Independent constructor uses different valid BFS sibling order for inherited plant descriptor. Normalize descriptor relations before binding exact pinned serialization; product and certificate ordering remains strict."
+}
