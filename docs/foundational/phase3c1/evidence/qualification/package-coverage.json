@@ -1,0 +1,16 @@
+{
+  "old_count": 70,
+  "current_count": 72,
+  "removed": [],
+  "new": [
+    "github.com/JakeFAU/alan-research/research/contractcomposition",
+    "github.com/JakeFAU/alan-research/research/contractcomposition/cmd/export"
+  ],
+  "old_terminal_package_events": 70,
+  "old_missing_terminal_events": [],
+  "old_failed": [],
+  "baseline_pass_packages": 57,
+  "baseline_no_test_packages": 13,
+  "package_list_source": "package-list-cache-writable/output.log",
+  "initial_mixed_output_disposition": "Initial stdout+stderr log included cache-write diagnostic; preserve separately, do not count it as a package."
+}

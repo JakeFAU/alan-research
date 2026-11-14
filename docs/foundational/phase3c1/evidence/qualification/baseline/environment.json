@@ -1,0 +1,7 @@
+{
+  "go": "go1.27.4 darwin/arm64",
+  "python": "3.9.6",
+  "staticcheck": "2026.2.2 (0.8.2)",
+  "tectonic": "0.17.0",
+  "source": "Actual version command outputs read by controller in this task; no tool installation."
+}

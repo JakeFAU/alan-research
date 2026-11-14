@@ -1,0 +1,165 @@
+{
+  "baseline_frozen_files": 598,
+  "missing": [],
+  "changed": [],
+  "supplemental_preexisting_module_files": {
+    "docs/foundational/phase1d/source/go.mod": {
+      "base_sha256": "1d8b5c8939d1422813ed2b004c6560e3ec3f262709d57e9b957f6994ffd9bdeb",
+      "current_sha256": "1d8b5c8939d1422813ed2b004c6560e3ec3f262709d57e9b957f6994ffd9bdeb",
+      "equal": true
+    },
+    "docs/foundational/phase1d/source/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "docs/go.mod": {
+      "base_sha256": "507241bf040a944cfcc2e002a68967dad8bd652dff6419a32ab95a7829b0f539",
+      "current_sha256": "507241bf040a944cfcc2e002a68967dad8bd652dff6419a32ab95a7829b0f539",
+      "equal": true
+    },
+    "examples/adaptive/consumer/go.mod": {
+      "base_sha256": "81febe2db0c26d8cecc8a98efc3fec2712a79e33b903615bb68446fb06bf0d41",
+      "current_sha256": "81febe2db0c26d8cecc8a98efc3fec2712a79e33b903615bb68446fb06bf0d41",
+      "equal": true
+    },
+    "examples/adaptive/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/callablejoin/consumer/go.mod": {
+      "base_sha256": "61c118719fce6ca7021435336c556ab221cbdf0bfde97c971e788dbd51d8d08e",
+      "current_sha256": "61c118719fce6ca7021435336c556ab221cbdf0bfde97c971e788dbd51d8d08e",
+      "equal": true
+    },
+    "examples/callablejoin/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/communication/consumer/go.mod": {
+      "base_sha256": "6fe34a12b45a5ccbd765b5a31a984592cd46a31aede5055846287ea34eaf0f88",
+      "current_sha256": "6fe34a12b45a5ccbd765b5a31a984592cd46a31aede5055846287ea34eaf0f88",
+      "equal": true
+    },
+    "examples/communication/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/consumingpolicy/consumer/go.mod": {
+      "base_sha256": "a110080fad87c895eedc4e02e9bc9fb9013837eecf41bfabcfa066bc2c0936f0",
+      "current_sha256": "a110080fad87c895eedc4e02e9bc9fb9013837eecf41bfabcfa066bc2c0936f0",
+      "equal": true
+    },
+    "examples/consumingpolicy/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/effectboundary/consumer/go.mod": {
+      "base_sha256": "57a1fd377a8665250ef4a5c47b442e54b801e64a2dd3fcaaa0bf48d6199e5287",
+      "current_sha256": "57a1fd377a8665250ef4a5c47b442e54b801e64a2dd3fcaaa0bf48d6199e5287",
+      "equal": true
+    },
+    "examples/effectboundary/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/effectfulcomposition/consumer/go.mod": {
+      "base_sha256": "fea710a427bb6f280e0ceb9b543b01f47a2f096c9672fbaa352b52dc95cf6884",
+      "current_sha256": "fea710a427bb6f280e0ceb9b543b01f47a2f096c9672fbaa352b52dc95cf6884",
+      "equal": true
+    },
+    "examples/effectfulcomposition/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/invocationjoin/consumer/go.mod": {
+      "base_sha256": "c2035683d734d81620cbdde0a2ddd4d927e383e310feeea8dfe6ae1fbb2a4332",
+      "current_sha256": "c2035683d734d81620cbdde0a2ddd4d927e383e310feeea8dfe6ae1fbb2a4332",
+      "equal": true
+    },
+    "examples/invocationjoin/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/join/consumer/go.mod": {
+      "base_sha256": "c9fe805e9e12ef157500eaba1264465610144bd95dbfb3587b28c68b521095c2",
+      "current_sha256": "c9fe805e9e12ef157500eaba1264465610144bd95dbfb3587b28c68b521095c2",
+      "equal": true
+    },
+    "examples/join/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/owningtree/consumer/go.mod": {
+      "base_sha256": "d9cba043ff2c427588d12028ba517e9352effcdb7265db561580d6bff8a05cf2",
+      "current_sha256": "d9cba043ff2c427588d12028ba517e9352effcdb7265db561580d6bff8a05cf2",
+      "equal": true
+    },
+    "examples/owningtree/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/reconciliation/consumer/go.mod": {
+      "base_sha256": "c76fd7954f4efeba9a23a53e988f284943c0cc57b4c051a8fc3df67901b6a50c",
+      "current_sha256": "c76fd7954f4efeba9a23a53e988f284943c0cc57b4c051a8fc3df67901b6a50c",
+      "equal": true
+    },
+    "examples/reconciliation/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/revocation/consumer/go.mod": {
+      "base_sha256": "5b1fbfaa3053b92b19e33a0f047b8be44ed554ccc5c576299d52356994323c00",
+      "current_sha256": "5b1fbfaa3053b92b19e33a0f047b8be44ed554ccc5c576299d52356994323c00",
+      "equal": true
+    },
+    "examples/revocation/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/substitution/consumer/go.mod": {
+      "base_sha256": "728bedeca7bc722e80ba20d3393b09847911cfb65da6215e31bb67af544928cd",
+      "current_sha256": "728bedeca7bc722e80ba20d3393b09847911cfb65da6215e31bb67af544928cd",
+      "equal": true
+    },
+    "examples/substitution/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    },
+    "examples/worktree/consumer/go.mod": {
+      "base_sha256": "9fb3590f49fdffcf76fc6b1bf763e93d14d67f81c3b617f0b9a46343b0a2924b",
+      "current_sha256": "9fb3590f49fdffcf76fc6b1bf763e93d14d67f81c3b617f0b9a46343b0a2924b",
+      "equal": true
+    },
+    "examples/worktree/consumer/go.sum": {
+      "base_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "current_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "equal": true
+    }
+  },
+  "new_model_files": [
+    "research/contractcomposition/cmd/export/main.go",
+    "research/contractcomposition/cmd/export/main_test.go",
+    "research/contractcomposition/compose.go",
+    "research/contractcomposition/compose_test.go",
+    "research/contractcomposition/concrete.go",
+    "research/contractcomposition/concrete_test.go",
+    "research/contractcomposition/explore.go",
+    "research/contractcomposition/explore_test.go",
+    "research/contractcomposition/model.go",
+    "research/contractcomposition/model_test.go"
+  ],
+  "all_preexisting_inputs_match": true
+}
