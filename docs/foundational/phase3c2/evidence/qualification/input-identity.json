@@ -1,0 +1,150 @@
+{
+  "base": "69534188f796efab2e866750f6a76e2c7a3a1706",
+  "historical_manifest": "docs/foundational/phase3c1/evidence/qualification/go-inputs.json",
+  "historical_files": 637,
+  "unchanged_current": 637,
+  "unchanged_merged_base": 637,
+  "preexisting_tracked_inputs_outside_manifest_verified_against_base": {
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/go.mod": "c09a8d2f4cc99c3f55a118afa9eb66c91bf3f0e29b37de3f18cfcfd7ae5211da",
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/go.sum": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/public_test.go": "6e12206d781b0fbfd98911bf2f630d4637d22baa6b6489f188658a411f42c921",
+    "docs/foundational/phase3b4/evidence/task4-completion-m03/alan-task4-m03-root-order-red.go": "08f81062a754fd635ab22866c2427d3ea7c90109b8cb5c7f56ccf55b98e334bd",
+    "docs/foundational/phase3b4/evidence/task5/apparatus/before-tooling-mutations.go": "9ff10db5540bcbc0e8083ac51917781175702220626a5b3dad7f04254cc92a96",
+    "docs/foundational/phase3b4/evidence/task5/apparatus/tooling-final-mutations.go": "1370b61d1285c3f1efd66efe59939d8cf4107a1895524996ad11fba5029537f7",
+    "docs/foundational/phase3b4/evidence/task5/apparatus/tooling-first-mutations.go": "2d0f2c3a4ef4efb0ee085177f0dc4bf1f41f47561c46582e0dcd0524e815a1d9",
+    "docs/foundational/phase3b4/evidence/task5/runtime-filter-comparison/phase3b4_independent_filter_test.go": "2aac78f47faff142eb09e3d93fe65a5c1cef4ccfd9051c1ed4bb80f03cbb94b3",
+    "examples/evidence/evidence.go": "8871e27f110d5a22fabd540ce82510f91a785ff64047c46bd471446abde9271e",
+    "examples/evidence/evidence_test.go": "229088e62ea94db660b8e364df6a1912f65f43c1a60ec9850c11c95c257b5818",
+    "examples/evidence/excluding_test.go": "f60a6c6331e8b6e33ee5e044a30769690897c6f50dbf5c79d628c94a4d209667",
+    "examples/evidence/external_test.go": "99f382a7d6b6a6e084a61b42a8aaae71e075f766dc086e59ae9c1d920274bc98",
+    "examples/evidence/race_off_test.go": "9c5cfb1ab9a03ef03865930c156c80781c67874dc342c57db6a175d9a801346c",
+    "examples/evidence/race_on_test.go": "ee95f00c1905a4209be891936791e997339b8a36f7591fb15ddb34cdd30ee95a",
+    "examples/evidence/store.go": "fab90f3dcc809873147e7d1816151fbe6afa2e16bc57ad3dc4b6f3faca5f24e7",
+    "examples/evidence/store_decode_test.go": "05bf5d10436083154d6ee0d439000de92d30be8dbe8d63b82c261829bde07c47",
+    "examples/evidence/store_integration_test.go": "bd341821f4d8eb03ae2ffa6e90cac82c8d466adb8517fa831b4a71cee85a3346",
+    "examples/evidence/store_test.go": "a4e8557d2b885aa4cb516e11bfef96ce54c91d1582a485edb9d42df24fc3abc7",
+    "examples/evidence/testdata/consumer.go": "4be491c63982fe00b0c69712807bca7270ac437f808b6d5c3cfaa9c9296a05a8",
+    "examples/evidence/testdata/excluding_consumer.go": "e49d6ba975aa622328aac0c1fc71b27af9a7dc2c86d0764157f512d9cb9c1774"
+  },
+  "new_inputs": {
+    "research/capacitycomposition/cmd/export/main.go": "096ead35f5c997cbda644d5dbaba75bd7307d61bb5b05aba9f33766dc3c4d493",
+    "research/capacitycomposition/cmd/export/main_test.go": "d163f18fdd63bb38644a8a0cd4715fc622edc5dd7b81f3bc86f99b576b01543a",
+    "research/capacitycomposition/compose.go": "f8a75d087a9a35068cd7d385bd21615ac18d62a980800faf8dae36f2a0dbdeb4",
+    "research/capacitycomposition/compose_test.go": "5b8f6913141c9e38e2a258cfb2ed1b845c8dfc866c5caf618979eed3029f954c",
+    "research/capacitycomposition/concrete.go": "401615ef3bfb330440138d3c44c6f40720cdfd79705e5e99fb1c0a007e2bc199",
+    "research/capacitycomposition/concrete_test.go": "b1b6c76d0cf6d8d54e7f62fcfc9e821243cb728c25c01d958b1ee5cbe7af1dec",
+    "research/capacitycomposition/evidence.go": "52c73d7af55302320690473fc1d4c917f811c2db3a245700c018882763e6e972",
+    "research/capacitycomposition/evidence_test.go": "d9c51164d8a8c33f129af6da364d37d9929b99fb9687abcd923eda65382b95f5",
+    "research/capacitycomposition/explore.go": "13b1726dcf380eab5610432ce0e8bcdfdd79f3d33cc566edbb0233865e8e6343",
+    "research/capacitycomposition/model.go": "a07225864bb700c6a307ca40428a6784f1897dc059e6c8a30d7a5b3ab859f2d1",
+    "research/capacitycomposition/model_test.go": "7b568bba4fbeae39cc348b0df2075dafb205d0e63ba9737c9f1acc9546f92c2a",
+    "research/capacitycomposition/probe.go": "09b754ba059621daf075f67ca1fe7294ceece808aebd1c4a4fc99bd37a0e515d"
+  },
+  "new_source_hashes_verified": 32,
+  "task2_artifacts_verified": 201,
+  "historical_full_suite_reused": true,
+  "fresh_full_suite_run": false,
+  "supplemental_historical_baseline_commit": "1456a0000a0e14bb3dd105026189717c71ab905b",
+  "supplemental_historical_baseline_comparison": {
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/go.mod": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "c09a8d2f4cc99c3f55a118afa9eb66c91bf3f0e29b37de3f18cfcfd7ae5211da",
+      "matches_current": true
+    },
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/go.sum": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "matches_current": true
+    },
+    "docs/foundational/phase1k/evidence/runtime/public-consumer/public_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "6e12206d781b0fbfd98911bf2f630d4637d22baa6b6489f188658a411f42c921",
+      "matches_current": true
+    },
+    "docs/foundational/phase3b4/evidence/task4-completion-m03/alan-task4-m03-root-order-red.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "08f81062a754fd635ab22866c2427d3ea7c90109b8cb5c7f56ccf55b98e334bd",
+      "matches_current": true
+    },
+    "docs/foundational/phase3b4/evidence/task5/apparatus/before-tooling-mutations.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "9ff10db5540bcbc0e8083ac51917781175702220626a5b3dad7f04254cc92a96",
+      "matches_current": true
+    },
+    "docs/foundational/phase3b4/evidence/task5/apparatus/tooling-final-mutations.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "1370b61d1285c3f1efd66efe59939d8cf4107a1895524996ad11fba5029537f7",
+      "matches_current": true
+    },
+    "docs/foundational/phase3b4/evidence/task5/apparatus/tooling-first-mutations.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "2d0f2c3a4ef4efb0ee085177f0dc4bf1f41f47561c46582e0dcd0524e815a1d9",
+      "matches_current": true
+    },
+    "docs/foundational/phase3b4/evidence/task5/runtime-filter-comparison/phase3b4_independent_filter_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "2aac78f47faff142eb09e3d93fe65a5c1cef4ccfd9051c1ed4bb80f03cbb94b3",
+      "matches_current": true
+    },
+    "examples/evidence/evidence.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "8871e27f110d5a22fabd540ce82510f91a785ff64047c46bd471446abde9271e",
+      "matches_current": true
+    },
+    "examples/evidence/evidence_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "229088e62ea94db660b8e364df6a1912f65f43c1a60ec9850c11c95c257b5818",
+      "matches_current": true
+    },
+    "examples/evidence/excluding_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "f60a6c6331e8b6e33ee5e044a30769690897c6f50dbf5c79d628c94a4d209667",
+      "matches_current": true
+    },
+    "examples/evidence/external_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "99f382a7d6b6a6e084a61b42a8aaae71e075f766dc086e59ae9c1d920274bc98",
+      "matches_current": true
+    },
+    "examples/evidence/race_off_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "9c5cfb1ab9a03ef03865930c156c80781c67874dc342c57db6a175d9a801346c",
+      "matches_current": true
+    },
+    "examples/evidence/race_on_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "ee95f00c1905a4209be891936791e997339b8a36f7591fb15ddb34cdd30ee95a",
+      "matches_current": true
+    },
+    "examples/evidence/store.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "fab90f3dcc809873147e7d1816151fbe6afa2e16bc57ad3dc4b6f3faca5f24e7",
+      "matches_current": true
+    },
+    "examples/evidence/store_decode_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "05bf5d10436083154d6ee0d439000de92d30be8dbe8d63b82c261829bde07c47",
+      "matches_current": true
+    },
+    "examples/evidence/store_integration_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "bd341821f4d8eb03ae2ffa6e90cac82c8d466adb8517fa831b4a71cee85a3346",
+      "matches_current": true
+    },
+    "examples/evidence/store_test.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "a4e8557d2b885aa4cb516e11bfef96ce54c91d1582a485edb9d42df24fc3abc7",
+      "matches_current": true
+    },
+    "examples/evidence/testdata/consumer.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "4be491c63982fe00b0c69712807bca7270ac437f808b6d5c3cfaa9c9296a05a8",
+      "matches_current": true
+    },
+    "examples/evidence/testdata/excluding_consumer.go": {
+      "historical_baseline_present": true,
+      "historical_baseline_sha256": "e49d6ba975aa622328aac0c1fc71b27af9a7dc2c86d0764157f512d9cb9c1774",
+      "matches_current": true
+    }
+  }
+}

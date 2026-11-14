@@ -9,7 +9,7 @@ From the repository root:
 
 ```sh
 GOCACHE=/tmp/alan-phase3c2/gocache go test ./research/capacitycomposition/...
-GOCACHE=/tmp/alan-phase3c2/gocache go test -race ./research/capacitycomposition/...
+GOCACHE=/tmp/alan-phase3c2/gocache go test -race -timeout 30m ./research/capacitycomposition/...
 GOCACHE=/tmp/alan-phase3c2/gocache staticcheck ./research/capacitycomposition/...
 GOCACHE=/tmp/alan-phase3c2/gocache go run ./research/capacitycomposition/cmd/export > /tmp/alan-phase3c2/export.json
 ```
@@ -32,8 +32,8 @@ premises, not reachability or WorldResult authenticity.
 
 See the frozen [contract](../../docs/foundational/phase3c2/00-contract.md),
 [conditional argument](../../docs/foundational/phase3c2/01-argument.md), and
-[JSON schema](../../docs/foundational/phase3c2/02-evidence-schema.md). Independent
-checker results and manuscript reconciliation are subsequent-task obligations.
+[JSON schema](../../docs/foundational/phase3c2/02-evidence-schema.md). See the [independent audit](../../docs/foundational/phase3c2/03-independent-audit.md)
+and [results and qualification](../../docs/foundational/phase3c2/04-results.md).
 
 Task 1 archives the exact plain stdout bytes as
 `docs/foundational/phase3c2/evidence/task1/export.json.gz`, using gzip with zero

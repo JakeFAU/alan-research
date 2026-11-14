@@ -1,0 +1,142 @@
+{
+  "files": [
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build/job.json",
+      "sha256": "0f88050ab84b98b626176c62d5a55cf1758434a03fc8e3bfa905fc48d21905eb",
+      "bytes": 369,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build/output.log",
+      "sha256": "c959a87f9de96f026f1f30ae8b06d8b40f52fa05be7965222bf5c2cae0de7d4d",
+      "bytes": 186,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build/result.json",
+      "sha256": "44534ef9d1342367a1a33d82412ce4085e6973e9978c0d99932cdb7809d5cb3f",
+      "bytes": 160,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build-cache-writable/job.json",
+      "sha256": "5b0a46553d5db67b302ac67114f6946a869a716c1baeb0c8e3efff281f0db421",
+      "bytes": 369,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build-cache-writable/output.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/build-cache-writable/result.json",
+      "sha256": "a83487922b76634370699f8403a4a156dc4d729dfdb0a764258d9203acbef14a",
+      "bytes": 157,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/capture_inputs.py",
+      "sha256": "9c55335e3d740ed5f87c448c92948a31e3aa54bd6637c9a41990efee708a42ea",
+      "bytes": 2415,
+      "attribution": "Task3 identity/archival verification or controller roster/runner"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/input-identity.json",
+      "sha256": "f588cf17eca13c77a6d7969137e83f38608b6e0e93e63fc99c97ad7b444a79e4",
+      "bytes": 9549,
+      "attribution": "Task3 identity/archival verification or controller roster/runner"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-tidy-diff/job.json",
+      "sha256": "66a631f3060ce2650f1ab286c41b4ab059066a3b39fefcc1ea5f1c37351a4599",
+      "bytes": 379,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-tidy-diff/output.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-tidy-diff/result.json",
+      "sha256": "e9e530ffc6cafd70c3890da2b3d0649d4bccc923a039e31870c85c3d7800b5f9",
+      "bytes": 157,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-verify/job.json",
+      "sha256": "d36143ba1129db2a62fd29f5217c448a1c58b9076a21be4b3970ac9aec5b4025",
+      "bytes": 368,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-verify/output.log",
+      "sha256": "b4537ed75f533f993f371954de47e42a793b8e5b0587577de7e27fb3e50696bd",
+      "bytes": 21,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/module-verify/result.json",
+      "sha256": "3ac415ef633113e987982a5d7985352c32ac0b7e47781149bfb6bfb40c81a7ed",
+      "bytes": 158,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-comparison.json",
+      "sha256": "b8471ed6bb5576c15594aa5bae039edf3ec268a5e02da9c27a01e103562f2b4d",
+      "bytes": 346,
+      "attribution": "Task3 identity/archival verification or controller roster/runner"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list/job.json",
+      "sha256": "4f983d4de9b68f65d7103f599b4b3779049f5e74e6d8f0960934d45a549e3c60",
+      "bytes": 368,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list/output.log",
+      "sha256": "9afaa174e44a5aff36a31bb839dd6240a5b73a347d32fb2b0467ca538a20cedc",
+      "bytes": 4565,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list/result.json",
+      "sha256": "d6e4830d7b4799abcb4cc5ff8e185f870c890d78a0eb21680c6a2a2d60a99f53",
+      "bytes": 160,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list-cache-writable/job.json",
+      "sha256": "7084125b6926f8949419e005846e8d1964f2ea471f00a1b03dda421f769b180d",
+      "bytes": 368,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list-cache-writable/output.log",
+      "sha256": "7154fea743c04eea5ff530f65781840ac98ed31e5377f049e59597c4d9a41f34",
+      "bytes": 4380,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/package-list-cache-writable/result.json",
+      "sha256": "d4594d9fa73cb695c1794e1baad89210cb8bc8c090e843b34dda37ab3e8f517c",
+      "bytes": 160,
+      "attribution": "Controller execution, Task3 archive"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/run_check.py",
+      "sha256": "705166c77d3b65644257af532fc08104e016a3035960e326eaaadffad2565450",
+      "bytes": 1510,
+      "attribution": "Task3 identity/archival verification or controller roster/runner"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/qualification/task3-commands.json",
+      "sha256": "325070cc1d383077bb4c0bac798445516a40604095f6ca717bbf0c67dfd28044",
+      "bytes": 987,
+      "attribution": "Task3 identity/archival verification or controller roster/runner"
+    }
+  ]
+}
