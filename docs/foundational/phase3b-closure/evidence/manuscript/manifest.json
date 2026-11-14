@@ -1,0 +1,80 @@
+{
+  "archive": {
+    "bytes": 1748506,
+    "sha256": "621e0aa1abcc869f166487557906469a0b05f00e6cf50922560c734d551a39bd"
+  },
+  "members": {
+    "after.txt": {
+      "bytes": 184522,
+      "sha256": "5edf1097a48996d55f18b22a934b3566d5dac3db2a8f7fbf58b1e6a7a7c156c2"
+    },
+    "alan-dissertation.blg": {
+      "bytes": 204,
+      "sha256": "3cb4ee6b4e3b322a1af969319b332b00fa9b20daded4eda1c58ae77fff112fa0"
+    },
+    "alan-dissertation.log": {
+      "bytes": 16648,
+      "sha256": "a629d628a3deee255aebbd7c4c97359aee72a854fc8afaf7e93ca0abed2736c4"
+    },
+    "alan-dissertation.md": {
+      "bytes": 282228,
+      "sha256": "8082ba44d842e3adad85b03cb025f52a81bd3a76cd1a8e814b2afa49404e6391"
+    },
+    "alan-dissertation.pdf": {
+      "bytes": 353577,
+      "sha256": "221e84fd27a6b1e92bde2cae22b51abbe2fa9f0708e5443114f0a975118c7e80"
+    },
+    "alan-dissertation.tex": {
+      "bytes": 183920,
+      "sha256": "b50beae708f6542c2f57d7cdc4fde3d531cbfcaf26fa8bd8d0a08c142b0b7f47"
+    },
+    "before.txt": {
+      "bytes": 182805,
+      "sha256": "37b3555f4a02eb3aee0ef524e5d31cab5a3e07a06eea151ce5237774b738cb9b"
+    },
+    "build.log": {
+      "bytes": 2179,
+      "sha256": "95fa27125aed799ef08e0027dc4adbd3fb53aa0f6a0fac5ba940f642a43c666c"
+    },
+    "commands.json": {
+      "bytes": 581,
+      "sha256": "417214fb9d340b64b4578d4514c4f360eb5ed0b2f50a0171597a449fa1bd294a"
+    },
+    "page-41.png": {
+      "bytes": 308698,
+      "sha256": "59256f5bba8ef600c706345a40a7332db019a9feb6209182a0054bc828a0eedd"
+    },
+    "page-42.png": {
+      "bytes": 297316,
+      "sha256": "b7366c6bf313223a5b564ccf8bb36e59eacf5ba2bd3647290f78ad63ab14fa6c"
+    },
+    "page-43.png": {
+      "bytes": 285033,
+      "sha256": "2bd25ead6064d4e08b13a7d3ca6ee1bacda6bba580c23174e0ea510a0b2aa2dd"
+    },
+    "page-44.png": {
+      "bytes": 268080,
+      "sha256": "f1b523f275219d30d048b7d6d166aa1ee1f3f087e67f5eb1b3e650febc6434e8"
+    },
+    "page-45.png": {
+      "bytes": 61618,
+      "sha256": "04be26ab92db9881f0cd51d8746629f6bb0479e2d5cb6b4c777b2daf3fe8f744"
+    },
+    "references.bib": {
+      "bytes": 8562,
+      "sha256": "8cc4bf1c27629e03b0c7260d0c8f0d057a09ed4f27e21331fc968a168a01fff9"
+    },
+    "tool-versions.txt": {
+      "bytes": 161,
+      "sha256": "9c4cbdcb69f588b565f2970330d0e1d0f03483234b02afc631228f06818ed1d7"
+    }
+  },
+  "installed_pdf": {
+    "bytes": 353577,
+    "sha256": "221e84fd27a6b1e92bde2cae22b51abbe2fa9f0708e5443114f0a975118c7e80"
+  },
+  "prior_pdf": {
+    "bytes": 351825,
+    "sha256": "7fc751e059f61423dc307e346826dd17099ac3d99c8a8787dd5d48fed17e8f76"
+  }
+}

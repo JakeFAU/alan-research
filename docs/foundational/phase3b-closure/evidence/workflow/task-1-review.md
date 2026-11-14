@@ -1,0 +1,48 @@
+# Task 1 independent review
+
+Spec compliance: **APPROVE**.
+Task quality: **APPROVE**.
+
+Reviewed base `b0a3b2a1f45f21a770321c5e38d1d55dc0024bea` to head `cb227ef63dbc458bb30da7b328c72a9018ce93c5`, using the supplied `review-b0a3b2a1..cb227ef6.diff`. This is the task gate, not the subsequent whole-branch review or an independent rerun of historical qualification.
+
+## Specification and strengths
+
+- `docs/foundational/phase3b-closure/01-assessment.md:3–7,13–29`: The verdict is explicitly closure of the bounded investigation. All three original exit obligations and nine decomposed progression gates have owning evidence, tier, premises, adverse findings/boundaries and a disposition. The original roadmap text in the supplied diff requires attacks and implemented-fragment correspondence, not a positive cross-product theorem. The independently read closure contract (`00-contract.md:9–19`) permits precisely characterized obstructions. The assessment's closure interpretation satisfies that rule; the stronger positive properties remain visibly unestablished.
+- `docs/foundational/phase3b-closure/01-assessment.md:22,33`: Actual refused Retry requests are described as an obstruction to testing successful cross-invocation preservation. No successful generation transition is inferred from unchanged coordinates or forged-coordinate controls.
+- `docs/foundational/phase3b-closure/01-assessment.md:25,35`: The cancellation row uses genuine prior post-admission CancelRun traces and a narrow later source bridge. It explicitly does not claim delegated reciprocal custody qualification, and it separates cancellation from exact-root revocation. This addresses the original adverse boundary without silently manufacturing a later campaign.
+- `docs/foundational/phase3b-closure/01-assessment.md:24,26,37,39`: Set attenuation/shared authority has an explicit complete-tuple domain; the selected late case's caller, server and endpoint identities are distinguished; atomic whole-pair completion is not transferred to the split-effect single-service result.
+- `docs/foundational/phase3b-closure/01-assessment.md:28–29,41`: Unpaid and unknown work is identified despite locally quiescent reports. The distributed-quiescence gate remains conditional on a future local-to-global implication, which is not asserted.
+- `docs/foundational/phase3b-closure/01-assessment.md:45–51`: Initial checker rejection, post-capture correction, prior negative histories and exact remaining Phase 3C obligations remain visible. Review and delivery status are separated from the research verdict.
+- `docs/foundational/phase3/README.md:18–20,42`: The new status reports bounded closure and dates the old primitive-absence claim to its historical freeze. Original gate prose visible in the diff is preserved.
+- `paper/alan-dissertation.md:1112–1114` and `paper/alan-dissertation.tex:763–765`: The two new explanatory paragraphs have matching substantive prose and preserve the five principal qualifications. The added Conclusion sentence matches in both sources. The supplied diff adds no theorem renumbering or bibliography change.
+- `docs/foundational/phase3b-closure/evidence/inspect-inputs.py:1–89` and `verify-audit.py:1–63`: The scripts extract text/JSON and verify document/input claims, without model execution or database access. Historical and audit evidence are clearly separated in `02-verification.md:3–13`. All assigned deliverable paths appear in the package, including binary PDF/build evidence; executable and old evidence changes do not appear in the task diff.
+
+## Issues
+
+No Critical or Important findings. No new Minor defect found that warrants changing this task.
+
+- Existing warning observation, not an introduced defect: `docs/foundational/phase3b-closure/evidence/manuscript/visual-review.md:13` discloses five inherited TeX box warnings. The archived build log actually contains those five unique warnings, repeated across TeX passes, including the 5.2184pt overfull box. This is not a warning-free build. The affected source locations are outside this diff; prior-warning equivalence was not independently revalidated in this review.
+
+## Actual checks performed
+
+1. Read `task-1-brief.md` first; then `task-1-review-instructions.md`, the unverified author report, and the supplied task-reviewer method. Read the entire 2,851-line diff once in sequential manageable chunks using `sed`, with `wc -l` to establish its length. Did not rerun git commands or reread changed textual files separately.
+2. Named risk: a closure rule might discard an original mandatory obligation. Read the unchanged `docs/foundational/phase3b-closure/00-contract.md` with line numbers, comparing its rules at lines 9–19 against the roadmap gate context and the complete assessment matrix in the diff.
+3. Named risk: G4 might conflate complete-tuple conservation with stronger shared-resource semantics. Used `rg -n -C 3 'Shared|union|conserv|Cartesian|tuple|fan.out' docs/foundational/phase3b2/01-contract.md`. The owning contract at lines 54–95 defines union of complete triples and separately distinguishes ambient consent failure from tuple invention, matching the assessment's bounded interpretation.
+4. Named risk: earlier atomic results might be silently reused as a split-effect completion theorem. Used a focused `rg -n -C 4` search in `research/mutualobligations/model.go` and `research/effectobservation/model.go`. The former sets Applied, Retained and WorldResult together at lines 221–223; the latter separately changes application and retention at lines 158–174. The assessment preserves that distinction.
+5. Named risk: the later source could invalidate the narrow cancellation bridge by adding a hidden physical cancellation fence. Read only archived `internal/executor/dispatch.go:1–89` and `internal/executor/lifecycle.go:340–410` from the pinned runtime-source tar, supplementing the dispatch/transport excerpts already in the diff. The observed lifecycle branch changes retained disposition and terminal obligations; the source bridge remains appropriately limited. This is inspection, not a claim that every runtime path was re-proved.
+6. Ran a read-only Python probe on the four named Phase 2B trace JSON files. Each had `dispatch.admitted` before an accepted `lifecycle.decided` event before release; its actual retained lifecycle result was accepted CancelRun changing open to cancelled, with 0 held contacts, 1 final contact and 1 application. All assertions passed. No database was opened.
+7. In the same probe, read exactly the two named N10e construction-obstruction JSON members from the historical final-normal archive. Both actual Retry results were rejected with successor 0 and reason `invocation_retry_unsupported`, with equal before/after Run identities. All assertions passed.
+8. Read `zero/run.json` and `applied/run.json` from each Phase 3B.7 raw archive. The two bytestrings matched within each mode, Quiescent was true, UnknownExternal identified service `["a",1,4,0]`, and its delegated authority root run was B generation 1. This independently supports the role/quiescence assertions used for closure.
+9. Named risk: the delivered binary might omit the new closure decision. Compared the archived build PDF bytes with the installed PDF; they matched with SHA-256 `221e84fd27a6b1e92bde2cae22b51abbe2fa9f0708e5443114f0a975118c7e80`. The archived `after.txt` contains all three added closure-paragraph openings. Read the actual archived build log and observed the successful PDF-write messages and disclosed warnings. Did not rebuild or render another PDF.
+10. All focused probes exited 0. No broad suites, model enumeration, captures, acceptance checkers, historical SQLite-reading scripts, retained SQLite or runtime `.envrc` were accessed. Only this review report was written; no commits, branch/index changes or subagents were used.
+
+## Cannot independently verify in this task review
+
+- `02-verification.md:11–13`: The reported complete 629-input freeze pass, all 47 input hashes, all local-link results and the author's exact precommit status were not rerun. Their implementation/results are inspectable in the diff; task scope is supported by the supplied diff. This is not a fresh whole-worktree integrity attestation.
+- `evidence/manuscript/visual-review.md:3–13`: The author reports skill-marker execution, a successful build and visual inspection of pages 41–45. I verified archived PDF identity, relevant archived text and the actual log; I did not independently view PNGs, validate the marker invocation, or re-extract text from the installed PDF. Therefore visual-layout approval relies on the author's explicit artifact review, not an independent visual pass here.
+- `01-assessment.md:13–29`: Historical finite-graph counts, every raw custody/physical-world check and every prior acceptance result were not recomputed. They remain attributed historical evidence under the pinned-source and endpoint assumptions. Selected closure-critical identity/cancellation/quiescence facts were checked directly as above.
+- `03-reviews.md:7`: Broad final review, workflow archival and draft-PR delivery are controller obligations still pending. This APPROVE does not satisfy them or authorize a merge.
+
+## Assessment
+
+The task meets its specification and is suitable to advance to the separate broad review. The closure conclusion is justified as a bounded research disposition under the original attack/fragment exit rule; it must not be reused as evidence of successful cross-invocation delegation, cancellation-safe reciprocal custody, whole-pair split-effect completion, universal liveness or distributed compositional closure.

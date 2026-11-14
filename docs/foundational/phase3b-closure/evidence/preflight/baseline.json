@@ -1,0 +1,15 @@
+{
+  "base": "7ae2c5ddd5e18d2907dd91fcefc896456a25562d",
+  "tree": "8bd4cb4026d26c7b1062fd48bee1d753804c2f2f",
+  "argv": [
+    "python3",
+    "docs/foundational/phase3b7/evidence/qualification/freeze-inputs.py",
+    ".",
+    "--check",
+    "docs/foundational/phase3b7/evidence/qualification/freeze-corrected.json"
+  ],
+  "exit": 0,
+  "stdout": "{\"input_count\": 629, \"unchanged\": true}\n",
+  "stderr": "",
+  "kind": "read-only executable/acceptance-input stability check; no test suite rerun"
+}

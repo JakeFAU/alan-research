@@ -1,0 +1,19 @@
+{
+  "url": "https://github.com/JakeFAU/alan-research/pull/49",
+  "number": 49,
+  "state_at_read": "open",
+  "draft_at_read": true,
+  "merged_at_read": false,
+  "mergeable_at_read": true,
+  "base_branch": "main",
+  "base_sha": "7ae2c5ddd5e18d2907dd91fcefc896456a25562d",
+  "head_branch": "codex/phase3b-closure-assessment",
+  "initial_published_head": "7f7e0f33115025fe580fd84238d8506524decb4a",
+  "created_at": "2026-11-14T01:31:31Z",
+  "attached_to_chat": true,
+  "final_reviewed_head": "70ff695ee6b540e382556edfecb1979f99d4ff59",
+  "later_changes": "Review archival and delivery metadata only. This snapshot does not claim remote state is immutable.",
+  "merge_performed": false,
+  "release_performed": false,
+  "runtime_qualification_rerun": false
+}

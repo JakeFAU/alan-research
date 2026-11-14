@@ -15,6 +15,10 @@ safety and system progress are separate claims.
 | 3B | Test recovery, authority attenuation, cancellation and mutual obligations. | Explicit rely/guarantee contracts; adverse crash and revocation schedules; correspondence to an implemented fragment. |
 | 3C | Determine compositional closure. | An induction with explicit interface compatibility and associativity assumptions, or a smallest higher-order counterexample. |
 
+## Current status
+
+[The Phase 3B closure assessment](../phase3b-closure/01-assessment.md) closes the bounded investigation against the original gates below. It records contracts, adverse witnesses, implemented fragments and explicit obstructions, without claiming a unified two-agent correctness theorem. Positive cross-invocation delegation, delegated cancellation-after-admission custody and whole-pair split-effect completion remain unestablished. Phase 3C's composition/equivalence, hiding/regrouping, three-agent cycle and shared-authority fan-out questions remain open.
+
 ## First slice
 
 [Phase 3A](../phase3a/00-charter.md) isolates responsibility for retaining one
@@ -38,7 +42,7 @@ four placements of serial versus servicing policy, and adds a bounded public
 same-Store witness. Its [conditional argument](../phase3b/03-results.md) does not
 close the rest of Phase 3B.
 
-The [Phase 3B.2 authority slice](../phase3b2/03-results.md) adds asymmetric complete-tuple permissions, rooted original-bound delegation, immutable decisions and fresh-admission validity. It separates consent violations from permission invention, and authority safety from completion reachability. Its runtime witnesses qualify static permissions and retained refusals; a general request-bound delegation primitive remains absent.
+The [Phase 3B.2 authority slice](../phase3b2/03-results.md) adds asymmetric complete-tuple permissions, rooted original-bound delegation, immutable decisions and fresh-admission validity. It separates consent violations from permission invention, and authority safety from completion reachability. Its runtime witnesses qualify static permissions and retained refusals; a general request-bound delegation primitive was absent at that frozen Phase 3B.2 boundary. [Phase 3B.3](../phase3b3/04-results.md) and [Phase 3B.4](../phase3b4/08-results.md) subsequently implemented scoped one-hop request-bound versions, with their selection-order and identity limitations retained.
 
 Before calling Phase 3B established, attack stable identity across recovery and
 new invocation, request/result/consumption binding, grant attenuation and shared

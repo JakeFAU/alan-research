@@ -1,0 +1,15 @@
+{
+  "base": "7ae2c5ddd5e18d2907dd91fcefc896456a25562d",
+  "hashed_inputs_unchanged": 47,
+  "matrix_rows": 12,
+  "local_links_checked": 68,
+  "original_exit_and_gates_preserved": true,
+  "affected_md_tex_equal": true,
+  "inherited_markdown_section7_unchanged": true,
+  "bibliography_unchanged": true,
+  "tracked_diff_within_document_scope": true,
+  "build_archive_and_installed_sources_match": true,
+  "cancel_trace_checks": 4,
+  "matched_raw_pair_checks": 2,
+  "pdf_sha256": "221e84fd27a6b1e92bde2cae22b51abbe2fa9f0708e5443114f0a975118c7e80"
+}
