@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "staticcheck",
+    "-version"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 0,
+  "stdout": "staticcheck 2026.2.2 (0.8.2)\n",
+  "stderr": ""
+}

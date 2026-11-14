@@ -1,0 +1,49 @@
+{
+  "schema": "alan/phase3c3/artifact-manifest/v1",
+  "raw": {
+    "sha256": "a073a22fe8ac62e05f2d15b0f5146b19db9606e38ce4619261e7e4108e27269d",
+    "bytes": 25384964
+  },
+  "gzip": {
+    "path": "export.json.gz",
+    "sha256": "86a9d22f9808a67dd0066b6b77dd2b3c01a2125d10863c6fbe1369097f6624c8",
+    "bytes": 403411,
+    "mtime": 0,
+    "filename": ""
+  },
+  "identical_captures": true,
+  "runs": [
+    {
+      "argv": [
+        "go",
+        "run",
+        "./research/componentinterfaces/cmd/export"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c3/gocache"
+      },
+      "exit": 0,
+      "stderr": "",
+      "stdout_artifact": "export.json.gz (decompressed)",
+      "stdout_sha256": "a073a22fe8ac62e05f2d15b0f5146b19db9606e38ce4619261e7e4108e27269d",
+      "stdout_bytes": 25384964,
+      "duration_seconds": 0.863
+    },
+    {
+      "argv": [
+        "go",
+        "run",
+        "./research/componentinterfaces/cmd/export"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c3/gocache"
+      },
+      "exit": 0,
+      "stderr": "",
+      "stdout_artifact": "export.json.gz (decompressed)",
+      "stdout_sha256": "a073a22fe8ac62e05f2d15b0f5146b19db9606e38ce4619261e7e4108e27269d",
+      "stdout_bytes": 25384964,
+      "duration_seconds": 0.569
+    }
+  ]
+}

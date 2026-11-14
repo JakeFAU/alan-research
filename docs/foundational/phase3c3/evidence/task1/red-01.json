@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "./research/componentinterfaces/..."
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 1,
+  "stdout": "FAIL\tgithub.com/JakeFAU/alan-research/research/componentinterfaces [build failed]\nFAIL\n",
+  "stderr": "# github.com/JakeFAU/alan-research/research/componentinterfaces [github.com/JakeFAU/alan-research/research/componentinterfaces.test]\nresearch/componentinterfaces/automaton_test.go:14:6: undefined: monitors\nresearch/componentinterfaces/automaton_test.go:19:48: undefined: edge\nresearch/componentinterfaces/automaton_test.go:20:44: undefined: edge\nresearch/componentinterfaces/automaton_test.go:23:8: undefined: validate\nresearch/componentinterfaces/concrete_test.go:9:8: undefined: histories\nresearch/componentinterfaces/concrete_test.go:12:29: undefined: checkHistory\nresearch/componentinterfaces/concrete_test.go:14:14: undefined: monitors\nresearch/componentinterfaces/concrete_test.go:15:138: undefined: concreteSuccessors\nresearch/componentinterfaces/language_test.go:7:24: undefined: monitors\nresearch/componentinterfaces/language_test.go:9:8: undefined: compareLanguages\nresearch/componentinterfaces/language_test.go:9:8: too many errors\n"
+}

@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "./research/componentinterfaces/..."
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 0,
+  "stdout": "=== RUN   TestValidation\n=== RUN   TestValidation/good\n=== RUN   TestValidation/forged-binding\n=== RUN   TestValidation/wrong-root\n=== RUN   TestValidation/missing-external-loop\n=== RUN   TestValidation/hidden-effect\n=== RUN   TestValidation/bad-state\n=== RUN   TestValidation/duplicate-edge\n--- PASS: TestValidation (0.00s)\n    --- PASS: TestValidation/good (0.00s)\n    --- PASS: TestValidation/forged-binding (0.00s)\n    --- PASS: TestValidation/wrong-root (0.00s)\n    --- PASS: TestValidation/missing-external-loop (0.00s)\n    --- PASS: TestValidation/hidden-effect (0.00s)\n    --- PASS: TestValidation/bad-state (0.00s)\n    --- PASS: TestValidation/duplicate-edge (0.00s)\n=== RUN   TestConcreteHistories\n--- PASS: TestConcreteHistories (0.02s)\n=== RUN   TestLanguageComparison\n=== RUN   TestLanguageComparison/epsilon_acceptance\n=== RUN   TestLanguageComparison/tau_cycle_and_nondeterminism\n=== RUN   TestLanguageComparison/empty_subset\n=== RUN   TestLanguageComparison/beyond_short_samples\n--- PASS: TestLanguageComparison (0.00s)\n    --- PASS: TestLanguageComparison/epsilon_acceptance (0.00s)\n    --- PASS: TestLanguageComparison/tau_cycle_and_nondeterminism (0.00s)\n    --- PASS: TestLanguageComparison/empty_subset (0.00s)\n    --- PASS: TestLanguageComparison/beyond_short_samples (0.00s)\n=== RUN   TestProductsAndGrouping\n--- PASS: TestProductsAndGrouping (0.35s)\nPASS\nok  \tgithub.com/JakeFAU/alan-research/research/componentinterfaces\t0.701s\n",
+  "stderr": ""
+}

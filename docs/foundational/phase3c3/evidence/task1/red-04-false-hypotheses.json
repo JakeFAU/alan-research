@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestAttack",
+    "./research/componentinterfaces"
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache"
+  },
+  "exit": 1,
+  "stdout": "=== RUN   TestAttackSnapshotSufficiency\n    attack_test.go:12: FALSIFIED: identical full old concrete state and config has opposite residual CanComplete\n--- FAIL: TestAttackSnapshotSufficiency (0.01s)\n=== RUN   TestAttackEqualLanguagePreservesNonblocking\n    attack_test.go:30: FALSIFIED: equal initial successful language does not preserve every-reachable-state nonblocking\n--- FAIL: TestAttackEqualLanguagePreservesNonblocking (0.00s)\nFAIL\nFAIL\tgithub.com/JakeFAU/alan-research/research/componentinterfaces\t0.227s\nFAIL\n",
+  "stderr": ""
+}

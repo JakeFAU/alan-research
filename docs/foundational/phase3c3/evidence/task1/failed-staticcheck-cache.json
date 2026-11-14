@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "staticcheck",
+    "./research/componentinterfaces/..."
+  ],
+  "environment": {
+    "GOCACHE": "/tmp/alan-phase3c3/gocache",
+    "XDG_CACHE_HOME": "/tmp/alan-phase3c3/cache"
+  },
+  "exit": 1,
+  "stdout": "-: failed caching data: open /Users/jacob/Library/Caches/staticcheck/b9/b9465163722ec7b03567a63bf74352bf78af87558df6def66c097857b8c79057-d: operation not permitted (compile)\n",
+  "stderr": ""
+}
