@@ -1,0 +1,41 @@
+{
+  "base": "347d93ba25a5f7a10f75144b1a44107be09a2f39",
+  "scope": "All baseline go:embed directive targets matched to actual merged Git blobs and current bytes; identity check, not suite run.",
+  "files": [
+    {
+      "owner": "examples/evidence/store.go",
+      "pattern": "corpus.txt",
+      "path": "examples/evidence/corpus.txt",
+      "bytes": 372,
+      "sha256": "c2d44001abf76e7220188c766c6ca6b4080dd56afbff64ac2bcc48510af84437"
+    },
+    {
+      "owner": "research/delegationcorrespondence/effect_protocol.go",
+      "pattern": "testdata/effect-observation/anchors.json",
+      "path": "research/delegationcorrespondence/testdata/effect-observation/anchors.json",
+      "bytes": 16431,
+      "sha256": "749e2cd82c3b43ec39c6c388b0d3ef6a3bf8f63b6a7b7fdb3b80a5027c2358ad"
+    },
+    {
+      "owner": "research/matchedcapture/fixture_test.go",
+      "pattern": "testdata/historical-json.json.gz",
+      "path": "research/matchedcapture/testdata/historical-json.json.gz",
+      "bytes": 49439,
+      "sha256": "3bc28cdb2690c756321b78402d1d67893e2f8e9d66a515e5f222dbbb8d1820b9"
+    },
+    {
+      "owner": "research/matchedcapture/review_r2_test.go",
+      "pattern": "testdata/native-authorization.json.gz",
+      "path": "research/matchedcapture/testdata/native-authorization.json.gz",
+      "bytes": 4532,
+      "sha256": "5cbdbe2af6d1beb73f6e132aa5156d345ef074e17c18cee9ab9353460595429c"
+    },
+    {
+      "owner": "research/matchedcapture/source.go",
+      "pattern": "testdata/prepared-source.json.gz",
+      "path": "research/matchedcapture/testdata/prepared-source.json.gz",
+      "bytes": 50989,
+      "sha256": "f7802cb9ead8335c079c184198895d20b9db734615575e3fc63736382e7758f0"
+    }
+  ]
+}

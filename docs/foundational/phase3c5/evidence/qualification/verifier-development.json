@@ -1,0 +1,11 @@
+{
+  "attempt": 1,
+  "command": [
+    "python3",
+    "docs/foundational/phase3c5/tools/verify.py"
+  ],
+  "exit_code": 1,
+  "diagnostic": "ValueError: local link evidence/qualification/verification.json",
+  "cause": "Verification checked its report link before the first report output file existed.",
+  "correction": "Redirect verifier stdout to its report path so the shell creates the report before execution; failure still exits nonzero. No semantic source/evidence changed."
+}

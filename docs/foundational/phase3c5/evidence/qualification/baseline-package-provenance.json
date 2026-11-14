@@ -1,0 +1,8 @@
+{
+  "base": "347d93ba25a5f7a10f75144b1a44107be09a2f39",
+  "path": "docs/foundational/phase3c4/evidence/qualification/package-list/output.log",
+  "raw_sha256": "5dd056e82544bd9ba0ccd2650e3a525ba7e4518e3d7592c8d255a82e9ba56f95",
+  "count": 78,
+  "scope": "Actual merged predecessor capture, historical attribution only",
+  "preparation_failure": "Initial git show used nonexistent output.log.gz (exit128); actual tracked output.log located using git ls-tree, then read successfully."
+}

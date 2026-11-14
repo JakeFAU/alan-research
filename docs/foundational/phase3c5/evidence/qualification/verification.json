@@ -1,0 +1,52 @@
+{
+  "CLI": {
+    "hostile": 56,
+    "valid": 2
+  },
+  "PDF_pages": {
+    "base": 51,
+    "current": 54
+  },
+  "accepted_checker_sources": 9,
+  "accepted_child_reports": 59,
+  "accepted_frozen_files": 760,
+  "baseline_inputs": 695,
+  "checker_tests": 13,
+  "compiled_local_files": 10,
+  "counts": {
+    "BlockingSubstitutions": 1928,
+    "Comparisons": 36,
+    "Controllers": 324,
+    "EqualFULL": 6,
+    "EqualJ": 7,
+    "EqualLanguages": 13,
+    "EqualMAX": 13,
+    "EqualMIN": 7,
+    "InitialCanComplete": 1234,
+    "LanguageSubsetPairs": 5208,
+    "Monitors": 9,
+    "NonblockingProducts": 760,
+    "NonblockingSubstitutions": 844,
+    "Plants": 72,
+    "ProductArcs": 59492,
+    "ProductCanComplete": 22716,
+    "ProductStates": 45800,
+    "Products": 3564,
+    "ProfileSubsetPairs": 146,
+    "ResidualComparisons": 1442,
+    "Substitutions": 2772
+  },
+  "dependency_packages": 109,
+  "embedded_inputs": 5,
+  "historical_snapshots": 3,
+  "local_links": 24,
+  "new_go_inputs": 15,
+  "packages": {
+    "current": 80,
+    "old": 78
+  },
+  "producer_source_entries": 54,
+  "scope": "Identity and archived-result checks only; no suite, model, runtime or SQLite execution",
+  "status": "PASS",
+  "visual_pages": 54
+}

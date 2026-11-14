@@ -1,0 +1,28 @@
+{
+  "source": "/Users/jacob/go/pkg/mod",
+  "destination": "/tmp/alan-phase3c5/mod-cache",
+  "module": "github.com/mattn/go-sqlite3@v1.14.52",
+  "scope": "Copy existing pinned SQLite dependency into writable task cache; no dependency update or network fetch. go mod verify remains required.",
+  "download_files": [
+    {
+      "path": "cache/download/github.com/mattn/go-sqlite3/@v/v1.14.52.info",
+      "bytes": 196,
+      "sha256": "cf48e858683b7a3860ca07a9084ccd43471be03200d9faf0be0a91de94de5377"
+    },
+    {
+      "path": "cache/download/github.com/mattn/go-sqlite3/@v/v1.14.52.mod",
+      "bytes": 146,
+      "sha256": "4c08597e14c92d9ed25f1bd14a2242198f0e3011964e798018abceb2ccbe82bf"
+    },
+    {
+      "path": "cache/download/github.com/mattn/go-sqlite3/@v/v1.14.52.zip",
+      "bytes": 2955060,
+      "sha256": "ebd1fef8e9434fbdc2c94e35b9991df62d472c00170f57fc4f75daa69f658a1b"
+    },
+    {
+      "path": "cache/download/github.com/mattn/go-sqlite3/@v/v1.14.52.ziphash",
+      "bytes": 47,
+      "sha256": "a9b7bda73a3bbbcb330903f403e479a04856238a5fb03c287d14bd534dfe4eac"
+    }
+  ]
+}
