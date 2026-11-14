@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/evidence/task1/falsify.py",
+    "union-sufficiency"
+  ],
+  "cwd": "repository root",
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 1,
+  "stderr": "",
+  "stdout": "{\"EqualInitialLanguages\": true, \"Hypothesis\": \"initial-language/derivative-union equality suffices for contextual nonblocking\", \"LeftNonblocking\": true, \"LeftPath\": {\"End\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Start\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Steps\": [{\"From\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"commit:AB\", \"To\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\"}, {\"From\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"reserve-capacity:AB\", \"To\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\"}]}, \"ProfilePrefix\": [\"reserve-capacity:AB\"], \"RightNonblocking\": false, \"RightPath\": {\"End\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\", \"Start\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Steps\": [{\"From\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"commit:AB\", \"To\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\"}, {\"From\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"reserve-capacity:AB\", \"To\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\"}, {\"From\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Label\": \"tau\", \"To\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\"}]}}\n"
+}

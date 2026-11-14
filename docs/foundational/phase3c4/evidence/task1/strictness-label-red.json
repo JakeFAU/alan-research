@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-v",
+    "-run",
+    "TestCompleteEvidenceAndWitnesses",
+    "./research/residualinterfaces"
+  ],
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache"
+  },
+  "exit": 1,
+  "stdout": "=== RUN   TestCompleteEvidenceAndWitnesses\n    evidence_test.go:150: strictness\n--- FAIL: TestCompleteEvidenceAndWitnesses (0.18s)\nFAIL\nFAIL\tgithub.com/JakeFAU/alan-research/research/residualinterfaces\t0.400s\nFAIL\n",
+  "stderr": ""
+}

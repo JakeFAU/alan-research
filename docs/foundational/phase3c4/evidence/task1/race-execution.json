@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-race",
+    "-v",
+    "-timeout",
+    "30m",
+    "-run",
+    "TestCompleteEvidenceAndWitnesses",
+    "./research/residualinterfaces/..."
+  ],
+  "cwd": "repository root",
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr": "",
+  "stdout": "=== RUN   TestCompleteEvidenceAndWitnesses\n    evidence_test.go:152: measured counts: {Plants:72 Monitors:7 Controllers:324 Products:2772 ProductStates:29156 ProductArcs:35672 ProductCanComplete:14410 InitialCanComplete:886 NonblockingProducts:656 Comparisons:21 EqualLanguages:10 EqualProfiles:6 ResidualComparisons:223 LanguageSubsetPairs:850 ProfileSubsetPairs:89 Substitutions:2376 NonblockingSubstitutions:792 BlockingSubstitutions:1584}\n--- PASS: TestCompleteEvidenceAndWitnesses (1.82s)\nPASS\nok  \tgithub.com/JakeFAU/alan-research/research/residualinterfaces\t2.976s\n?   \tgithub.com/JakeFAU/alan-research/research/residualinterfaces/cmd/export\t[no test files]\n"
+}

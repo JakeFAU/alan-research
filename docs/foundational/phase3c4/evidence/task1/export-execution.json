@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "go",
+    "run",
+    "./research/residualinterfaces/cmd/export"
+  ],
+  "cwd": "repository root",
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 0,
+  "stderr": "",
+  "stdout_file": "export.json.gz",
+  "stdout_bytes": 8271854,
+  "stdout_sha256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+  "gzip_sha256": "35115c3104cddd8a789c80a8c0e73eb7c7f173632af512776ba8502b61b9afc9"
+}

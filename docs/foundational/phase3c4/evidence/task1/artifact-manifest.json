@@ -1,0 +1,30 @@
+{
+  "Schema": "alan/phase3c4/v1",
+  "RawBytes": 8271854,
+  "RawSHA256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+  "GzipBytes": 157341,
+  "GzipSHA256": "35115c3104cddd8a789c80a8c0e73eb7c7f173632af512776ba8502b61b9afc9",
+  "SecondRawSHA256": "b40f1d5ac0aea0f43999502ea318cb128f545eb8fb1fd129451915a5aa84bf1f",
+  "Identical": true,
+  "SourceManifestSHA256": "185783ec02fe37b77e0dee8bbec5dabb47a3acd8cd45cce5b7233ba654549a31",
+  "Counts": {
+    "Plants": 72,
+    "Monitors": 7,
+    "Controllers": 324,
+    "Products": 2772,
+    "ProductStates": 29156,
+    "ProductArcs": 35672,
+    "ProductCanComplete": 14410,
+    "InitialCanComplete": 886,
+    "NonblockingProducts": 656,
+    "Comparisons": 21,
+    "EqualLanguages": 10,
+    "EqualProfiles": 6,
+    "ResidualComparisons": 223,
+    "LanguageSubsetPairs": 850,
+    "ProfileSubsetPairs": 89,
+    "Substitutions": 2376,
+    "NonblockingSubstitutions": 792,
+    "BlockingSubstitutions": 1584
+  }
+}

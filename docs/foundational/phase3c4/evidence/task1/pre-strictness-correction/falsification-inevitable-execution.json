@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c4/evidence/task1/falsify.py",
+    "inevitable-completion"
+  ],
+  "cwd": "repository root",
+  "env": {
+    "GOCACHE": "/tmp/alan-phase3c4/go-cache",
+    "STATICCHECK_CACHE": "/tmp/alan-phase3c4/staticcheck-cache"
+  },
+  "exit": 1,
+  "stderr": "",
+  "stdout": "{\"ClosedPrivateUnmarkedCycle\": true, \"Hypothesis\": \"nonblocking implies inevitable completion in the abstract grammar\", \"Nonblocking\": true, \"RuntimeRealization\": \"unestablished\", \"Witness\": {\"Cycle\": {\"End\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Start\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Steps\": [{\"From\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Label\": \"tau\", \"To\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\"}, {\"From\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\", \"Label\": \"tau\", \"To\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\"}]}, \"Escapes\": [{\"End\": \"[\\\"D,D,false,false\\\",\\\"2\\\"]\", \"Start\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Steps\": [{\"From\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Label\": \"apply:AB\", \"To\": \"[\\\"P,U,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"P,U,false,false\\\",\\\"2\\\"]\", \"Label\": \"commit:BC\", \"To\": \"[\\\"P,W,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"P,W,false,false\\\",\\\"2\\\"]\", \"Label\": \"consume:AB\", \"To\": \"[\\\"D,W,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,W,false,false\\\",\\\"2\\\"]\", \"Label\": \"reserve-capacity:BC\", \"To\": \"[\\\"D,W,false,true\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,W,false,true\\\",\\\"2\\\"]\", \"Label\": \"apply:BC\", \"To\": \"[\\\"D,P,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,P,false,false\\\",\\\"2\\\"]\", \"Label\": \"consume:BC\", \"To\": \"[\\\"D,D,false,false\\\",\\\"2\\\"]\"}]}, {\"End\": \"[\\\"D,D,false,false\\\",\\\"2\\\"]\", \"Start\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\", \"Steps\": [{\"From\": \"[\\\"W,U,true,false\\\",\\\"3\\\"]\", \"Label\": \"apply:AB\", \"To\": \"[\\\"P,U,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"P,U,false,false\\\",\\\"2\\\"]\", \"Label\": \"commit:BC\", \"To\": \"[\\\"P,W,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"P,W,false,false\\\",\\\"2\\\"]\", \"Label\": \"consume:AB\", \"To\": \"[\\\"D,W,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,W,false,false\\\",\\\"2\\\"]\", \"Label\": \"reserve-capacity:BC\", \"To\": \"[\\\"D,W,false,true\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,W,false,true\\\",\\\"2\\\"]\", \"Label\": \"apply:BC\", \"To\": \"[\\\"D,P,false,false\\\",\\\"2\\\"]\"}, {\"From\": \"[\\\"D,P,false,false\\\",\\\"2\\\"]\", \"Label\": \"consume:BC\", \"To\": \"[\\\"D,D,false,false\\\",\\\"2\\\"]\"}]}], \"Prefix\": {\"End\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\", \"Start\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Steps\": [{\"From\": \"[\\\"U,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"commit:AB\", \"To\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\"}, {\"From\": \"[\\\"W,U,false,false\\\",\\\"0\\\"]\", \"Label\": \"reserve-capacity:AB\", \"To\": \"[\\\"W,U,true,false\\\",\\\"1\\\"]\"}]}, \"Product\": \"early/shared-1/mask0 || release-first-loop\"}}\n"
+}
