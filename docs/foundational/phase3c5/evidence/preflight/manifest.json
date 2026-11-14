@@ -1,0 +1,223 @@
+{
+  "status": "Design reconnaissance only; not acceptance qualification. Original fixture selected; variant and initial failed assertion retained.",
+  "base": "347d93ba25a5f7a10f75144b1a44107be09a2f39",
+  "files": [
+    {
+      "source": "baseline-inputs.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/baseline-inputs.json.gz",
+      "bytes": 123559,
+      "sha256": "4f3a3f1aedc4de321c0366c540c4f564428f26c1dd13c38a27e6c3d36ce63ddd",
+      "stored_sha256": "9f495b67b9b287a9480e3d45a50a675d8b7bd9c6e58b14ff2e077344a634548d"
+    },
+    {
+      "source": "builder-check.md",
+      "path": "docs/foundational/phase3c5/evidence/preflight/builder-check.md",
+      "bytes": 23,
+      "sha256": "73acaa7fed393a4d119f0c47d9eed132f9341921e4d22140b3b1cf53f2eb181b",
+      "stored_sha256": "73acaa7fed393a4d119f0c47d9eed132f9341921e4d22140b3b1cf53f2eb181b"
+    },
+    {
+      "source": "extra-inclusion-stderr.txt",
+      "path": "docs/foundational/phase3c5/evidence/preflight/extra-inclusion-stderr.txt.gz",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "source": "extra-inclusion-stdout.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/extra-inclusion-stdout.json.gz",
+      "bytes": 111,
+      "sha256": "5faeffd6ae6568fd8b95923df83e2b058617dbc2f8ecaa8f3210c6f0ae666607",
+      "stored_sha256": "4b90097b47e969df85c24efa3a13e1cc0fa612dab462bf189322fc8babca5252"
+    },
+    {
+      "source": "extra_inclusion_probe.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/extra_inclusion_probe.py.gz",
+      "bytes": 652,
+      "sha256": "c3fef883f811353afbc4e8ae19ce76fd2be826b0f492f81932024e0c1ada37d0",
+      "stored_sha256": "b8c5feb80b0babef9aa71ceb91fc9b058ee0719c9a849bc1166aebecd1a88854"
+    },
+    {
+      "source": "fixture-recon-certificates.json.gz",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-certificates.json.gz",
+      "bytes": 18011,
+      "sha256": "bffda86979645d42e306fd2a3bfb3e4a1627c30eaa02774cd269e533ec49cd47",
+      "stored_sha256": "bffda86979645d42e306fd2a3bfb3e4a1627c30eaa02774cd269e533ec49cd47"
+    },
+    {
+      "source": "fixture-recon-output.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-output.json.gz",
+      "bytes": 7457,
+      "sha256": "5ccf9ff99b9e93e8546698407594d7213f56207801920a6e5b3ded78a7cae3c8",
+      "stored_sha256": "a54ea736711c7e553add0e5974c93043b7df5de351ea3a19c893fc0def6c4930"
+    },
+    {
+      "source": "fixture-recon-stderr.txt",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-stderr.txt.gz",
+      "bytes": 714,
+      "sha256": "7c3dfc47e561305f0442bdfa6fbadc6370d81d2e1adac1fb420b2436d335ed93",
+      "stored_sha256": "53078cc08548ca8e892ba798e683a928a6ae4ac1c75b58fd5e58d77302591967"
+    },
+    {
+      "source": "fixture-recon-stdout.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-stdout.json.gz",
+      "bytes": 7457,
+      "sha256": "5ccf9ff99b9e93e8546698407594d7213f56207801920a6e5b3ded78a7cae3c8",
+      "stored_sha256": "a54ea736711c7e553add0e5974c93043b7df5de351ea3a19c893fc0def6c4930"
+    },
+    {
+      "source": "fixture-recon-variant-certificates.json.gz",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-variant-certificates.json.gz",
+      "bytes": 17597,
+      "sha256": "f9f0057976c9a44a3e9c1ec344d940e62d74f14a4ce9aebe316a5e92d4abcbd5",
+      "stored_sha256": "f9f0057976c9a44a3e9c1ec344d940e62d74f14a4ce9aebe316a5e92d4abcbd5"
+    },
+    {
+      "source": "fixture-recon-variant-output.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-variant-output.json.gz",
+      "bytes": 7725,
+      "sha256": "c483996697b596c2d219116eda8712d4910f2e383c067a1479f906ccb854e7e2",
+      "stored_sha256": "ac5845bbeeb5c9aee3755520cfcd85909cbdd7b2a252406ac582751cf4ab998b"
+    },
+    {
+      "source": "fixture-recon-variant-stderr.txt",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-variant-stderr.txt.gz",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "source": "fixture-recon-variant-stdout.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon-variant-stdout.json.gz",
+      "bytes": 7725,
+      "sha256": "c483996697b596c2d219116eda8712d4910f2e383c067a1479f906ccb854e7e2",
+      "stored_sha256": "ac5845bbeeb5c9aee3755520cfcd85909cbdd7b2a252406ac582751cf4ab998b"
+    },
+    {
+      "source": "fixture-recon.md",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture-recon.md.gz",
+      "bytes": 13204,
+      "sha256": "95c4d6472952e7e38be8c659711a4b1c6e81c81618960c19b9658fa5aace6aa0",
+      "stored_sha256": "6a8c0661e3b2dddc3128884969b3edb1acbd4215201969799180e496a7ebedb3"
+    },
+    {
+      "source": "fixture_recon.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture_recon.py.gz",
+      "bytes": 8433,
+      "sha256": "6ab7238cc1a86bf6a41442de51e8a99dfb05c867235e09c3b00f462732b8f11f",
+      "stored_sha256": "4eeb7d1c30f0c804c70776f21196bea8a5fe05c2126998c8cd2d7a14f64ff1e9"
+    },
+    {
+      "source": "fixture_recon_attempt1.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture_recon_attempt1.py.gz",
+      "bytes": 8496,
+      "sha256": "98832daa6ea6e59b3347b1265fabbb3fd6422df3a595242aa4493fc93705efbc",
+      "stored_sha256": "4a6e07d68eb45a8bfee5f132358791119cfefcbf1e74a70e3eed7e7b88c8e9f3"
+    },
+    {
+      "source": "fixture_recon_original.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture_recon_original.py.gz",
+      "bytes": 8433,
+      "sha256": "6ab7238cc1a86bf6a41442de51e8a99dfb05c867235e09c3b00f462732b8f11f",
+      "stored_sha256": "4eeb7d1c30f0c804c70776f21196bea8a5fe05c2126998c8cd2d7a14f64ff1e9"
+    },
+    {
+      "source": "fixture_recon_variant.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/fixture_recon_variant.py.gz",
+      "bytes": 8512,
+      "sha256": "e5132d4dd4dd03bb85372765bb969d2516f2ebebd8e8f58425211d227a0b55d0",
+      "stored_sha256": "490a6fcad939932e41a211650ccb87ab9fb6e76d41e181a27cfd62acf23becac"
+    },
+    {
+      "source": "generic-recon-output.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/generic-recon-output.json.gz",
+      "bytes": 32045,
+      "sha256": "253a402a785205caab71a8202bf7ce15f8ab879acaac595dade1b7fa8c2c9fe3",
+      "stored_sha256": "d96230966af00e3b031f79980654d9171e02c32d7ee404ddf6962107e986d198"
+    },
+    {
+      "source": "generic-recon-stderr.txt",
+      "path": "docs/foundational/phase3c5/evidence/preflight/generic-recon-stderr.txt.gz",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "source": "generic-recon-stdout.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/generic-recon-stdout.json.gz",
+      "bytes": 600,
+      "sha256": "5132d566a1aaad27740de10126c076af078a621449defe55f9d6af88bf5342e5",
+      "stored_sha256": "7a339416ded0422475458b9c2ae705daaa6dedfa713fdfa6624c87a014e4afc1"
+    },
+    {
+      "source": "generic_recon.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/generic_recon.py.gz",
+      "bytes": 2948,
+      "sha256": "81c9c7972ffd4b5fcfe1e44cb87b2638e9484cb09fabd229d4ebff747a8f80d6",
+      "stored_sha256": "4eaf295814128bc44fc0ac96451407a220b2ebea4d019417c035e5c9081d7826"
+    },
+    {
+      "source": "legal-trace-output.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/legal-trace-output.json.gz",
+      "bytes": 94814,
+      "sha256": "6ff367a8a09e28783c304614b1def377f99b2f78e1ed67ea9c1e1b9d0940ad2a",
+      "stored_sha256": "cc3be95493a6eaa5bb21f46f2a5010969b83821bce0f7fbce942b55fdcb331d0"
+    },
+    {
+      "source": "legal-trace-stderr.txt",
+      "path": "docs/foundational/phase3c5/evidence/preflight/legal-trace-stderr.txt.gz",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stored_sha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+    },
+    {
+      "source": "legal-trace-stdout.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/legal-trace-stdout.json.gz",
+      "bytes": 1447,
+      "sha256": "a0ac0ed729f7a5d2e908e80a9c78319f543ca56d8cf08af5959c4c659adf2d5c",
+      "stored_sha256": "6fe0add4288e8facf12b4cec10824ec8487bef20e855d678c8be264b4fe2f040"
+    },
+    {
+      "source": "legal_trace_probe.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/legal_trace_probe.py.gz",
+      "bytes": 1711,
+      "sha256": "833ed4960d83cea335ac7a7b8adf9dfe891ed49a569b0adbd59f43e43b30880b",
+      "stored_sha256": "cb6299ccf065c7c01778770f9ae3726c029a3a0377e62947e24cd427a73b34dd"
+    },
+    {
+      "source": "primary-literature.md",
+      "path": "docs/foundational/phase3c5/evidence/preflight/primary-literature.md.gz",
+      "bytes": 1350,
+      "sha256": "b7c0c6568942ad0d3b06007095b6d5761c61b63ed1eb207116fb36d9bc73ebc7",
+      "stored_sha256": "cb2bc83e87040bb0020f9df8b7f5aff21292cbdeba476a6e858227496117f385"
+    },
+    {
+      "source": "recon-brief.md",
+      "path": "docs/foundational/phase3c5/evidence/preflight/recon-brief.md.gz",
+      "bytes": 5240,
+      "sha256": "9508500dcd5c9c8f575c27cc6239f929b93e58810fea72136f27f0e169dd717c",
+      "stored_sha256": "b816b7d219c608c9e3abdf30a507387207317ae47ae7071aa6e506cb302381eb"
+    },
+    {
+      "source": "rf-doom-inclusion.json",
+      "path": "docs/foundational/phase3c5/evidence/preflight/rf-doom-inclusion.json.gz",
+      "bytes": 5108,
+      "sha256": "d7d2ebeee987c7a44a4692aca3ea2639a584f6b96d53abc02f2b380aa37cf1ab",
+      "stored_sha256": "a60402feeef8663b52560fda5c6526b9bfa606776ec3ce263d2bd8f11917aece"
+    },
+    {
+      "source": "theory-probe.py",
+      "path": "docs/foundational/phase3c5/evidence/preflight/theory-probe.py.gz",
+      "bytes": 2879,
+      "sha256": "70bb943aaa990293c4861b0538d1d14b22954d5ad81ee61478fe4f695a74239f",
+      "stored_sha256": "faa26eaa9d57c29c9bcc88c4648d870655e8f1319b0cacc88cbaac4033b5d94e"
+    },
+    {
+      "source": "theory-recon.md",
+      "path": "docs/foundational/phase3c5/evidence/preflight/theory-recon.md.gz",
+      "bytes": 14926,
+      "sha256": "664032bb08e602d259dfe49daef48e462dad90b011bf53f8bc841c0ab5185911",
+      "stored_sha256": "8da260b1966807b57e939c734537dc10d14388c4d081e5b128c846ee676c10cf"
+    }
+  ]
+}
