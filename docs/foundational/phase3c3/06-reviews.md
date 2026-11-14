@@ -91,8 +91,8 @@ none is an unresolved finding against the accepted bounded claim.
     changed-content alignment, hash-bound inspections and disclosed inherited
     differences. No global equivalence claim is made.
 12. Merge/release/delivery state: technical approval is separate from delivery.
-    The controller will publish a draft PR under standing authorization; no
-    merge or release is performed.
+    The controller published [draft PR 52](07-delivery.md) under standing
+    authorization; no merge or release is performed.
 
 The contract's result concerns initial existential possible completion for
 pointed continuation monitors. Equal successful boundary languages can still
