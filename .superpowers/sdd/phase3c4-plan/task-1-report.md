@@ -127,9 +127,14 @@ records are in the Task 1 evidence root. All use
   of the deliberately false abstract inevitability hypothesis. These have their
   own exact command/stdout/stderr/exit logs, separate from TDD and passing tests.
 
-No cache warnings/failures occurred with these writable caches. No whole-root
-suite, global lint, old campaign, concrete capture, live model, endpoint, SQLite
-open or runtime experiment was run. Controller handles root checks separately.
+Both original `go list -deps -json` records exited 0 but emitted a nonfatal
+module stat-cache write-denied warning under `/Users/jacob/go/pkg/mod/cache/download/`.
+The writable GOCACHE and STATICCHECK_CACHE did not grant writes to that separate
+module cache. Ordinary/race/Staticcheck/export records have empty stderr. The
+earlier claim that no cache warnings occurred was incorrect and is superseded
+by this disclosure and the fix-round-1 record below. No whole-root suite, global
+lint, old campaign, concrete capture, live model, endpoint, SQLite open or runtime
+experiment was run by this implementer. Controller handles root checks separately.
 The evidence driver can reproduce these commands; it checks expected exit 1 for
 the two falsification evaluators and ordinary exit 0 for qualification commands.
 
@@ -181,3 +186,55 @@ full-agent substitution, shared-authority or distributed/split-effect claims.
 Historical concrete evidence remains attributed to its predecessor packet.
 Independent checker/review, manuscript synchronization/PDF, root qualification,
 and delivery remain controller-owned and are not claimed complete here.
+
+
+## Fix round 1 — disclose and resolve dependency-cache diagnostic
+
+Independent review of commit `9b762fb2b3e5959997f05b40089d17b05110ea8d`
+returned REJECT for P2: the clean-cache sentence contradicted both preserved
+`go-list-deps-execution.json` records. The finding is substantiated. The original
+review remains unchanged in `task-1-review.md`; the controller preserved the
+initial report in `task-1-report-initial.md`. The earlier sentence above is now
+accurately corrected. No inference from exit 0 to empty stderr is made.
+
+The two original dependency executions exited 0 and returned a valid dependency
+stream, while each warning reported a denied temporary `.info` stat-cache write
+under `/Users/jacob/go/pkg/mod/cache/download/github.com/!jake!f!a!u/alan-research/`.
+Both original logs and gzipped stdout streams remain byte-for-byte unchanged.
+This warning did not invalidate the parsed nine-file local compiled roster.
+Ordinary/race/Staticcheck/export records were clean; their status is separate.
+
+At the controller's request, one fresh command was run with approved sandbox
+escalation permitting module-cache writes:
+
+```
+GOCACHE=/tmp/alan-phase3c4/go-cache \
+STATICCHECK_CACHE=/tmp/alan-phase3c4/staticcheck-cache \
+GOMODCACHE=/Users/jacob/go/pkg/mod \
+go list -deps -json ./research/residualinterfaces/cmd/export
+```
+
+Actual result: exit 0, empty stderr, 194,831 stdout bytes. New records are
+`docs/foundational/phase3c4/evidence/task1/go-list-deps-resolved-execution.json`
+and `go-list-deps-resolved.json.gz`. Raw stdout SHA-256 is
+`7f8a3d033b9e22ea4a63db93f84f6537fb3c2f89f348595ac892c90c4ed55f2c`;
+gzip SHA-256 is
+`605e5361b2f9908d766f3860706cc5443f0dd9e0d66006507acfafacda628a89`.
+The stdout bytes are identical to both warning-bearing dependency captures.
+
+The read-only follow-up command
+`python3 docs/foundational/phase3c4/evidence/task1/verify-resolved-deps.py`
+exited 0 with empty stderr. Its exact output/exit are retained in
+`go-list-deps-resolved-verification.json`. It parsed 109 dependency package
+records, found no `Error`/`DepsErrors`, matched all nine compiled local inputs
+against the manifest, rechecked all 40 source hashes, and confirmed unchanged
+final capture identities and preserved original diagnostic-record hashes. The
+original-record hashes were additionally compared with a snapshot taken before
+the fresh command and matched.
+
+No Go semantic or test source, contract, argument, schema, source manifest or
+export capture changed. No ordinary/race suite, exporter, Staticcheck or root
+qualification was repeated. Only this report and separate follow-up evidence
+were added/changed. Complete correction diff/status and whitespace checks were
+inspected before the narrow follow-up commit. Re-review is required; this fix
+report does not claim review approval.
