@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "base",
+    "path": "paper/alan-dissertation.tex",
+    "bytes": 214035,
+    "sha256": "8cc9b9eaf70049e36ecf34bd743c087d79bf89b0ae193148e7f533ccf059ffe0"
+  },
+  {
+    "kind": "base",
+    "path": "paper/references.bib",
+    "bytes": 9696,
+    "sha256": "2b03a12c8c485a5e9e253f3579605d61863f2243a83e12fac2b8ee6d3dd8b778"
+  },
+  {
+    "kind": "current",
+    "path": "paper/alan-dissertation.tex",
+    "bytes": 221453,
+    "sha256": "64732d05a67b3370e2c1ce635762a8928d1cf96739b05e30a6741dbf239d36bf"
+  },
+  {
+    "kind": "current",
+    "path": "paper/references.bib",
+    "bytes": 10033,
+    "sha256": "2bfbaeb34f3d16ff61fd886d877f851a93415db847aafad483345a2a60689f0c"
+  }
+]

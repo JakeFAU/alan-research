@@ -13,6 +13,9 @@ M = P / 'evidence/manuscript'
 BASE = '347d93ba25a5f7a10f75144b1a44107be09a2f39'
 ACCEPTED = '208e1411dd9074f4d97eb9fbba4fb9b8755b3236'
 OLD = 'b079c67db3298688f32f2c5c8218a01f81d45601'
+TASK3 = 'fbcedaee554582ec9b2ca5b6ea8f873458516894'
+FIX = M / 'fix-1'
+HISTORICAL_SOURCES = {}
 
 
 def require(value, message):
@@ -32,10 +35,11 @@ def blob(commit, path):
     return subprocess.check_output(['git', 'show', f'{commit}:{path}'], cwd=ROOT)
 
 
-def check(rows, folder=ROOT, commit=None):
+def check(rows, folder=ROOT, commit=None, historical=False):
     for r in rows:
         name = r.get('Path', r.get('path'))
-        raw = (folder / name).read_bytes()
+        path = ROOT / HISTORICAL_SOURCES[name] if historical and name in HISTORICAL_SOURCES else folder / name
+        raw = path.read_bytes()
         require(sha(raw) == r.get('SHA256', r.get('sha256')), 'hash: ' + name)
         require(len(raw) == r.get('Bytes', r.get('bytes', len(raw))), 'bytes: '+name)
         if commit:
@@ -53,6 +57,20 @@ def normal(s):
 
 
 def main():
+    history = read(FIX/'historical-sources.json')
+    require(history['commit'] == TASK3, 'historical Task 3 commit')
+    expected = {
+        'docs/foundational/phase3c5/evidence/manuscript/build_pdf.py',
+        'docs/foundational/phase3c5/evidence/manuscript/render_pdf.py',
+        'docs/foundational/phase3c5/tools/verify.py',
+        'docs/foundational/phase3c5/05-qualification.md',
+    }
+    require({r['path'] for r in history['files']} == expected, 'historical source mapping')
+    for row in history['files']:
+        raw = (ROOT/row['snapshot']).read_bytes()
+        require(raw == blob(TASK3,row['path']), 'historical Task 3 snapshot '+row['path'])
+        require(sha(raw) == row['sha256'] and len(raw) == row['bytes'], 'snapshot identity')
+        HISTORICAL_SOURCES[row['path']] = row['snapshot']
     baseline, embedded, new = [read(Q/n) for n in ['baseline-inputs.json','embedded-inputs.json','new-go-inputs.json']]
     require(baseline['base'] == embedded['base'] == new['base'] == BASE, 'base')
     require([len(x['files']) for x in [baseline,embedded,new]] == [695,5,15], 'input counts')
@@ -150,7 +168,7 @@ def main():
         for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)',path.read_text()):
             if '://' not in target and target not in prior:
                 require((path.parent/target.split('#')[0]).exists(),'local link '+target);links+=1
-    manifest=read(M/'manifest.json');check(manifest['files']);check(manifest['build_inputs']['current'])
+    manifest=read(M/'manifest.json');check(manifest['files'], historical=True);check(manifest['build_inputs']['current'])
     for row in manifest['build_inputs']['base']:require(sha(blob(BASE,row['path']))==row['sha256'],'PDF baseline input')
     comparison=read(M/'comparison.json');require(comparison['normalized_warnings_equal'],'new PDF warning')
     require(manifest['visual_review']['inspected_pages']==comparison['rendered_pages'],'visual coverage')
@@ -160,8 +178,31 @@ def main():
         require(len(pages)==comparison['page_counts'][name],'PDF page count')
     require(all(r['exit_code']==0 for r in read(M/'build-commands.json')+read(M/'render-commands.json')),'final build/render exits')
     marker=read(M/'operation-marker.json');require(marker['exit_code']==0 and marker['argv'][-6:]==['--operation-kind','edit','--expected-output-count','1','--output-format','pdf'],'marker')
-    check(read(Q/'artifact-manifest.json'))
-    return dict(status='PASS',baseline_inputs=695,embedded_inputs=5,new_go_inputs=15,accepted_frozen_files=len(frozen),producer_source_entries=54,compiled_local_files=10,dependency_packages=depcount,historical_snapshots=snapshots,accepted_checker_sources=9,accepted_child_reports=59,CLI={'valid':2,'hostile':56},checker_tests=13,counts=c,packages={'old':78,'current':80},local_links=links,PDF_pages=comparison['page_counts'],visual_pages=len(comparison['rendered_pages']),scope='Identity and archived-result checks only; no suite, model, runtime or SQLite execution')
+    check(read(Q/'artifact-manifest.json'), historical=True)
+    check(read(FIX/'artifact-manifest.json'))
+    before, after = read(FIX/'protected-before.json'), read(FIX/'protected-after.json')
+    require(before == after, 'protected bytes changed during repair checks')
+    protected_names = subprocess.check_output(['git','ls-tree','-r','--name-only',TASK3,'--',
+        'docs/foundational/phase3c5/evidence','paper/alan-dissertation.md',
+        'paper/alan-dissertation.tex','paper/references.bib','paper/alan-dissertation.pdf'],cwd=ROOT).decode().splitlines()
+    retired = {f'docs/foundational/phase3c5/evidence/manuscript/{n}.py' for n in ['build_pdf','render_pdf']}
+    require(set(before) == set(protected_names)-retired, 'complete protected artifact roster')
+    for path, digest in before.items():
+        require(sha((ROOT/path).read_bytes()) == digest == sha(blob(TASK3,path)), 'protected historical file '+path)
+    result = read(FIX/'result.json')
+    require(result['status'] == 'PASS' and result['protected_files'] == len(before)
+            and result['protected_unchanged'] and result['existing_build_render_unchanged'], 'capture preservation result')
+    commands = read(FIX/'commands.json')
+    require(len(commands) == 10, 'capture check command count')
+    require([c['exit_code'] for c in commands] == [0,0]+[1]*8, 'capture success/refusals')
+    require(all('REFUSE:' in c['stderr'] for c in commands[2:]), 'refusal diagnostics')
+    for kind in ['build','render']:
+        archived = read(FIX/(kind+'-manifest.json'))
+        require(archived['status'] == 'PASS', 'fresh '+kind+' capture')
+        identities = read(FIX/'output-identities.json')[kind]
+        require(all(identities[r['path']] == r['sha256'] for r in archived['files']), 'capture file identities')
+    require(all(c['exit_code'] == 0 for c in read(FIX/'fresh-build-commands.json')+read(FIX/'fresh-render-commands.json')), 'fresh command results')
+    return dict(status='PASS',task3_historical_snapshots=4,capture_preservation={'protected_files':len(before),'fresh_successes':2,'refusals':8},baseline_inputs=695,embedded_inputs=5,new_go_inputs=15,accepted_frozen_files=len(frozen),producer_source_entries=54,compiled_local_files=10,dependency_packages=depcount,historical_snapshots=snapshots,accepted_checker_sources=9,accepted_child_reports=59,CLI={'valid':2,'hostile':56},checker_tests=13,counts=c,packages={'old':78,'current':80},local_links=links,PDF_pages=comparison['page_counts'],visual_pages=len(comparison['rendered_pages']),scope='Identity and archived-result checks only; no suite, model, runtime or SQLite execution')
 
 
 if __name__ == '__main__':

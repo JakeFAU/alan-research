@@ -1,0 +1,114 @@
+[
+  {
+    "label": "fresh build",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/build_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build"
+    ],
+    "exit_code": 0,
+    "stdout": "PASS: built into /private/tmp/alan-phase3c5/pdf-fix-1-checks/build; no repository artifact installed\n",
+    "stderr": ""
+  },
+  {
+    "label": "fresh render",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/render_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/render"
+    ],
+    "exit_code": 0,
+    "stdout": "PASS: rendered into /private/tmp/alan-phase3c5/pdf-fix-1-checks/render; no repository artifact installed; visual review not performed\n",
+    "stderr": ""
+  },
+  {
+    "label": "existing build refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/build_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/build\n"
+  },
+  {
+    "label": "existing render refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/render_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/render"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/render\n"
+  },
+  {
+    "label": "retired build_pdf refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/evidence/manuscript/build_pdf.py"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: historical manuscript helper is disabled; use docs/foundational/phase3c5/tools/build_pdf.py with a fresh output directory\n"
+  },
+  {
+    "label": "retired render_pdf refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/evidence/manuscript/render_pdf.py"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: historical manuscript helper is disabled; use docs/foundational/phase3c5/tools/render_pdf.py with a fresh output directory\n"
+  },
+  {
+    "label": "build occupied-file refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/build_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-file"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-file\n"
+  },
+  {
+    "label": "render occupied-file refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/render_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-file"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-file\n"
+  },
+  {
+    "label": "build occupied-link refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/build_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-link"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-link\n"
+  },
+  {
+    "label": "render occupied-link refusal",
+    "argv": [
+      "/Library/Developer/CommandLineTools/usr/bin/python3",
+      "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c5/tools/render_pdf.py",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/build",
+      "/private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-link"
+    ],
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "REFUSE: output already exists: /private/tmp/alan-phase3c5/pdf-fix-1-checks/occupied-link\n"
+  }
+]

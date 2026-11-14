@@ -97,3 +97,42 @@ source/archive/alignment check. [Recorded result](evidence/qualification/verific
 is scoped to these checks. Mathematical and experimental boundaries are in
 [results](04-results.md); no new runtime, SQLite, physical-history or distributed
 qualification is asserted.
+
+
+## Review correction: preserve manuscript captures
+
+Task 3's initial review returned **REJECT** for reproducibility helpers that
+could overwrite the delivered PDF and original capture records. This was a
+helper preservation defect, not evidence that model captures had changed.
+The original helper bytes, verifier and qualification text are retained as inert
+[snapshots](evidence/manuscript/fix-1/historical-sources.json) bound to commit
+`fbcedaee554582ec9b2ca5b6ea8f873458516894`. All original command records,
+PDF/log/text archives, manifests, visual-review statement and verifier result
+remain unchanged. The old executable helper paths now refuse execution.
+The current verifier resolves their historical hashes to the explicit snapshots
+and separately binds the corrected active files; old records are not rewritten
+to describe a new run.
+
+Active helpers are [build_pdf.py](tools/build_pdf.py) and
+[render_pdf.py](tools/render_pdf.py). They require explicit fresh directories
+whose parent already exists, refuse existing directories/files/symlinks before
+writing, and leave partial failures in the newly allocated run directory.
+They never install a PDF or publish capture evidence. Copying a selected PDF
+into `paper/` or accepting a new evidence set requires a separate explicit
+authoring action. Example, with two previously nonexistent paths:
+
+```sh
+python3 docs/foundational/phase3c5/tools/build_pdf.py /tmp/new-c5-build
+python3 docs/foundational/phase3c5/tools/render_pdf.py /tmp/new-c5-build /tmp/new-c5-render
+```
+
+The [focused CLI check](tools/check_pdf_capture.py) actually builds/renders fresh
+outputs, then tests eight refusals (two existing directories, two retired
+entrypoints, and file/symlink output controls for each active helper). It checks
+exact existing-output and committed manuscript/evidence hashes before/after.
+[Results](evidence/manuscript/fix-1/result.json), exact commands, fresh capture
+manifests and output identities are retained under `evidence/manuscript/fix-1/`.
+The fresh generated PDF was not installed and has no claimed visual acceptance;
+this repair qualifies capture preservation only. The delivered PDF and prose,
+including the sparse Contents continuation and seven inherited warnings, stay
+unchanged. No Go/model/root suite or PDF operation marker was repeated.
