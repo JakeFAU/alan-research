@@ -7,14 +7,36 @@
       "sha256": "836ba63e62dc97d1be0e23115f59e8a76234d3d06a34a2593d599de4ee5b29c9"
     },
     {
+      "path": "docs/foundational/phase3c4/evidence/workflow/final-fix-brief.md.gz",
+      "bytes": 1108,
+      "sha256": "f72125ea3e949c7b6c4b5b57eeaba18249ac32515c2ae7c8446e8598c0101e8f",
+      "raw_bytes": 2103,
+      "raw_sha256": "53105dbc527cb921caa11916e0950152497537ad44c789ce0de94efb9031249a"
+    },
+    {
+      "path": "docs/foundational/phase3c4/evidence/workflow/final-fix-report.md",
+      "bytes": 3050,
+      "sha256": "1773bc854f1b965b73278e23fe2ccdcfe42fdd6d4e59962390a70efd2ab8c5b1"
+    },
+    {
+      "path": "docs/foundational/phase3c4/evidence/workflow/final-rereview-1.md",
+      "bytes": 2583,
+      "sha256": "ad873dcb02a85bd9796068f9c1b62b8f8e516c231a7420284ec2dd47adfb5feb"
+    },
+    {
+      "path": "docs/foundational/phase3c4/evidence/workflow/final-review.md",
+      "bytes": 7542,
+      "sha256": "4cafa5828c46ab040e84eb691adae775742b65b1cc704d34edf56872477a91be"
+    },
+    {
       "path": "docs/foundational/phase3c4/evidence/workflow/global-constraints.md",
       "bytes": 1066,
       "sha256": "e29625fd547695b17f3a01ce56a2505cb6b2649c742822deb24b27ca8272df0f"
     },
     {
       "path": "docs/foundational/phase3c4/evidence/workflow/progress.md",
-      "bytes": 11123,
-      "sha256": "d8ed383726b137721e2eef86c92ac511e6a7d8a128a015cc8d1ddac45f2f2bfb"
+      "bytes": 13462,
+      "sha256": "4c588775e70de76152d3dbb22984dec4bbdef9a0ab531ddee26fa42a8001bb1d"
     },
     {
       "path": "docs/foundational/phase3c4/evidence/workflow/review-focus.md",

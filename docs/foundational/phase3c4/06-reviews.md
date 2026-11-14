@@ -11,7 +11,8 @@ status remain separate.
 | Task 1 fix round 1 | `5b0496f9de78149df69937e052297af377a82dc2` | APPROVE | Accurate diagnostic attribution, preserved originals and separate clean dependency capture |
 | Task 2 | `92c5d55a95dbcc08525deee5619f51fce47b7789` | APPROVE | Complete independent reconstruction and exact hostile evidence; no findings |
 | Task 3 | `9e94f2156cf993c5a29fabcac8d54b34f2d5b1af` | APPROVE | Qualification, manuscript/PDF and both corrections; no new findings |
-| Whole branch | Pending | Pending | Integrated claim, evidence and bounded scope |
+| Whole branch | `7c90a10adba46433653de8509fa7f68333127b6b` | APPROVE | No Critical/Important findings; one P3 historical-driver overwrite hazard |
+| Final clarification | `0bc7207efd8bd31c65a4ea18b04fb6fb50583466` | APPROVE | P3 addressed by explicit historical classification and reproduction guidance; executable hazard remains |
 
 The original Task 1 report and REJECT are preserved. Both original dependency
 enumerations exited zero but reported a nonfatal module stat-cache write denial.
@@ -40,8 +41,8 @@ ALAN roster. Full-agent substitution, runtime refinement and manuscript
 Theorem 4.8 remain open.
 
 Task 1's deferred independent reconstruction and hostile-input checks are complete
-in Task 2. Task 3 completed manuscript/PDF reconciliation. Whole-branch review and
-draft delivery remain pending; no stronger guarantee is inferred from task review.
+in Task 2. Task 3 completed manuscript/PDF reconciliation. Whole-branch review
+and final clarification returned APPROVE; draft delivery remains pending.
 
 Task 2 review inspected all 57 archive-manifest entries and 50 CLI records,
 including the 48 rejected hostile inputs and the genuine missing non-tree arc
@@ -63,3 +64,53 @@ Permanent workflow evidence preserves each task brief, report and review, the
 original rejected report and review, the scoped re-review, and the controller
 ledger. The transient tracked Task 1 report is relocated byte for byte into
 that archive; no transient workspace file belongs in the delivered branch.
+
+## Whole-branch finding and dispositions
+
+The [complete final review](evidence/workflow/final-review.md) returned APPROVE.
+P3 is substantiated: `evidence/task1/qualify.py` writes directly into its own
+archive. The current captures are intact. The controller retains that script
+byte for byte as historical evidence and added explicit reproduction guidance.
+This does not add a technical guard to the historical executable; direct reruns
+remain unsafe. New checker/export/CLI captures use the existing fresh-attempt
+entry point. A separate guarded full-Task-1 driver is not delivered here.
+
+Each item the final reviewer declined to judge has an explicit disposition:
+
+1. General congruence, hiding and richer observations remain open; the finite
+   product assumptions define the present argument's domain.
+2. Full-agent extraction and runtime/compiler refinement remain unestablished;
+   the abstract cycle is not a claim about validated runtime programs.
+3. No new crash, endpoint, persistence or distributed-recovery qualification is
+   claimed or needed for this model packet.
+4. Dynamic authority, fan-out and split effects remain outside the unchanged-K
+   monitor substitution boundary.
+5. Necessity, weakest equivalence, minimality, performance and strictness within
+   the all-marked roster are not established. The strictness witness belongs to
+   the generic marked-automata domain outside that roster.
+6. Fairness, inevitability and divergence preservation are not assumed; the
+   private lasso separates nonblocking from inevitable completion.
+7. Predecessor source identity preserves attribution and does not expand its
+   historical qualification scope.
+8. Fresh whole-root test/race/global-lint status is not claimed. Actual scoped
+   runs and root checks are separately recorded, with unchanged source identities.
+9. The exporter accepts fixed authenticated fixtures, not arbitrary automaton
+   inputs; no production or platform qualification is inferred.
+10. Historical chronology and independence of thought remain attributed process
+    observations; saved records are not independent attestations of uncaptured work.
+11. Visual inspection remains the worker's recorded 46-page observation, with
+    separate controller spot checks of pages 47–48; no broader proofread is claimed.
+12. Inherited manuscript-format differences and seven unchanged PDF warnings
+    remain disclosed; no global normalization is implied by the two corrections.
+13. The publisher-text inspection is attributed to the controller's saved note.
+    The conditional argument imports no priority-abstraction theorem or novelty claim.
+14. Publication and merge status will be established by actual delivery actions;
+    this review neither publishes the branch nor authorizes merging.
+
+The [scoped re-review](evidence/workflow/final-rereview-1.md) returned APPROVE on
+`0bc7207e`: the historical-identification recommendation is addressed, the exact
+manifest delta and new verification record check, and no new breakage was found.
+This is a documentation disposition, not an overwrite-prevention implementation.
+All existing Task 1/2 sources and captures, tools and manuscript bytes remained
+unchanged by that clarification. The new read-only verification differs only in
+its local-link count (13 to 15); it does not repeat Go or model qualification.
