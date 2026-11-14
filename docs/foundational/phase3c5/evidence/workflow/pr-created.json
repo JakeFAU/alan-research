@@ -1,0 +1,16 @@
+{
+  "source": "GitHub connector create_pull_request structured response; selected fields only, not the complete response",
+  "observed_event": "draft PR creation",
+  "url": "https://github.com/JakeFAU/alan-research/pull/54",
+  "number": 54,
+  "created_at": "2026-11-14T22:05:23Z",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "base": "main",
+  "base_sha": "347d93ba25a5f7a10f75144b1a44107be09a2f39",
+  "head": "codex/phase3c5-residual-antichains",
+  "head_sha": "6c7aa2cb6be35034bb0c001b2d88b16a40728ac6",
+  "reviewed_head": "bbf58bf49407480a8de747f5c1b18c42b05b7074",
+  "subsequent_scope": "Review/delivery metadata only; no reviewed research input changed."
+}

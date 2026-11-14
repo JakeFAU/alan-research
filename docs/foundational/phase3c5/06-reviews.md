@@ -1,8 +1,8 @@
 # Phase 3C.5 review record
 
-The three task gates and final whole-branch review are complete. Publication
-remains separate. The original plan stays frozen because it is part of the accepted
-source roster; completion and review-driven corrections are recorded here.
+The three task gates and final whole-branch review are complete. Publication is
+[recorded separately](07-delivery.md). The original plan stays frozen as part of
+the accepted source roster; completion and review-driven corrections are recorded here.
 
 | Gate | Range / result | Evidence |
 | --- | --- | --- |

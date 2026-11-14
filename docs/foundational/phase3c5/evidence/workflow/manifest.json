@@ -1,5 +1,5 @@
 {
-  "scope": "Workflow/review history through final whole-branch APPROVE at bbf58bf49407480a8de747f5c1b18c42b05b7074; publication pending. All earlier entries and captures are unchanged.",
+  "scope": "Workflow/review history through final whole-branch APPROVE at bbf58bf49407480a8de747f5c1b18c42b05b7074 and draft PR54 creation at 6c7aa2cb6be35034bb0c001b2d88b16a40728ac6. All earlier entries and captures are unchanged.",
   "files": [
     {
       "path": "docs/foundational/phase3c5/evidence/workflow/controller-attempted-plan.md.gz",
@@ -145,6 +145,16 @@
       "path": "docs/foundational/phase3c5/evidence/workflow/progress-final-review.md",
       "bytes": 12331,
       "sha256": "638d016820fab7955039a7f6308da01fd9c3f42698ee612031e3b69b3096499c"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/pr-created.json",
+      "bytes": 674,
+      "sha256": "054031fd578e9975d60cd077ddb03cac5887b1bcc12623f413f1d60d56ece283"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/progress-delivery.md",
+      "bytes": 12755,
+      "sha256": "f12c54702e01a7f7a29356472078c710881b29802ded54330f5ed99ffe921f44"
     }
   ]
 }
