@@ -1,0 +1,17 @@
+{
+  "scope": "Preparatory source analysis and independent builder check; no tests or proofs executed by these reports.",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c3/evidence/preflight/builder-check.md",
+      "sha256": "b302be6e393030ed46575cff532f0387fe6d4c6ee88d4a2987b0abd012753cd4",
+      "bytes": 8151
+    },
+    {
+      "path": "docs/foundational/phase3c3/evidence/preflight/design-reconnaissance.md.gz",
+      "sha256": "6c892390cc442c91dc46a9da5f30d1876fab9f03613eb430b2bda10159d098fd",
+      "bytes": 7534,
+      "raw_sha256": "445ea2a46e1430e258a468b44aee01969e48216c440795d8e3c7693237600f54",
+      "raw_bytes": 19009
+    }
+  ]
+}
