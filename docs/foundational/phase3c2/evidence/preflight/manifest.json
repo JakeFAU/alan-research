@@ -1,0 +1,31 @@
+{
+  "scope": "Read-only preflight reports and historical source-identity check; proposed designs are not executed results. Final contract supersedes alternatives in reconnaissance.",
+  "base": "69534188f796efab2e866750f6a76e2c7a3a1706",
+  "files": [
+    {
+      "path": "docs/foundational/phase3c2/evidence/preflight/next-boundary-recon.md",
+      "source": "/tmp/alan-phase3c2/next-boundary-recon.md",
+      "sha256": "72ee89988f28079e80525041af032189c6dcbbb4df60d2e9e09f4c6f13320fa9"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/preflight/authority-recon.md",
+      "source": "/tmp/alan-phase3c2/authority-recon.md",
+      "sha256": "aa457e34863b018224cfa6f830e656e7ea53e8f64fd971edb4931d24e4902e75"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/preflight/builder-check.md",
+      "source": "/tmp/alan-phase3c2/builder-check.md",
+      "sha256": "5b00fda74959b9ac76b13bd3670706d5ae88c8509a9598c8104441f02ec0c813"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/preflight/baseline-identity.json",
+      "source": "/tmp/alan-phase3c2/baseline-identity.json",
+      "sha256": "2f5165a4d12840d38503e6c8003ed9fc184bf575edb811044ff17055537ee1c5"
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/preflight/primary-literature.md",
+      "source": "/tmp/alan-phase3c2/primary-literature.md",
+      "sha256": "855544018b65f72665b22b1d3f3b5a5b9471ccc762736ebcf69edd423d579dcc"
+    }
+  ]
+}

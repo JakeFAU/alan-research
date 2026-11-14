@@ -1,0 +1,9 @@
+{
+  "Schema": "alan/phase3c2/artifact-manifest/v1",
+  "Archive": "export.json.gz",
+  "Encoding": "gzip; mtime=0; filename empty",
+  "RawBytes": 4514212,
+  "PackedBytes": 72472,
+  "RawSHA256": "a7cf316219b30cdc83d455b95a16549c022d55aa422b642b8f5976315e0c0fd2",
+  "PackedSHA256": "9b38c8c1a4ae83eeb7b9bf16f2c05600a72a31385e6f337bdf7b443886a12ffd"
+}

@@ -1,0 +1,5 @@
+Command: GOCACHE=/tmp/alan-phase3c2/gocache go version
+go version go1.27.4 darwin/arm64
+
+Exit status: 0
+Elapsed seconds: 0.009

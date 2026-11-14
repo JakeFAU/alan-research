@@ -1,0 +1,22 @@
+{
+  "arcs": 2412,
+  "can_complete": 1624,
+  "cannot_complete": 8,
+  "genuine_histories": 10,
+  "independent_abstract_graphs": 72,
+  "operational_probes_independently_reenumerated": false,
+  "replayed_microsteps": 161,
+  "reported_operational_probes": {
+    "Configurations": 72,
+    "Domain": "factored-old-edge-v1",
+    "LiftMicroSteps": 4833504,
+    "Lifts": 2451168,
+    "MicroArcs": 11972664,
+    "OldEdgeStates": 311,
+    "Representatives": 1854036
+  },
+  "schema": "alan/phase3c2/v1",
+  "source_hashes_verified": 32,
+  "states": 1632,
+  "static_groupings": 72
+}

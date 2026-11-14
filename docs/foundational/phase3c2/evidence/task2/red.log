@@ -1,0 +1,15 @@
+test_genuine_export_is_independently_accepted (test_audit.AuditAcceptance) ... FAIL
+
+======================================================================
+FAIL: test_genuine_export_is_independently_accepted (test_audit.AuditAcceptance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/tools/test_audit.py", line 16, in test_genuine_export_is_independently_accepted
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : /Library/Developer/CommandLineTools/usr/bin/python3: can't open file '/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/tools/audit.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+FAILED (failures=1)

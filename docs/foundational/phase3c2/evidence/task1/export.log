@@ -1,0 +1,9 @@
+Command: GOCACHE=/tmp/alan-phase3c2/gocache go run ./research/capacitycomposition/cmd/export > docs/foundational/phase3c2/evidence/task1/export.json
+Exit status: 0; elapsed seconds: 150.045
+Command: GOCACHE=/tmp/alan-phase3c2/gocache go run ./research/capacitycomposition/cmd/export > /tmp/alan-phase3c2/export-second.json
+Exit status: 0; elapsed seconds: 149.243
+Command: cmp -s docs/foundational/phase3c2/evidence/task1/export.json /tmp/alan-phase3c2/export-second.json
+Exit status: 0
+Bytes: 4514212
+SHA256: a7cf316219b30cdc83d455b95a16549c022d55aa422b642b8f5976315e0c0fd2
+All 32 source hashes match current files.

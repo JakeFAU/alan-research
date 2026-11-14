@@ -1,0 +1,4 @@
+Command: GOCACHE=/tmp/alan-phase3c2/gocache env STATICCHECK_CACHE=/tmp/alan-phase3c2/staticcheck-cache staticcheck ./research/capacitycomposition/...
+
+Exit status: 0
+Elapsed seconds: 0.848

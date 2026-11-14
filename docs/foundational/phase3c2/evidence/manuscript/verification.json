@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "historical_manifest_inputs": 637,
+  "supplemental_inputs": 20,
+  "new_go_inputs": 12,
+  "producer_inputs": 32,
+  "task2_artifacts": 201,
+  "qualification_files": 23,
+  "compressed_manuscript_artifacts": 8,
+  "local_links": 29,
+  "new_section_aligned": true,
+  "changed_abstract_conclusion_equal": true,
+  "paper_hashes_match": true,
+  "warnings_unchanged": true,
+  "changed_pages_inspected": true,
+  "race_readme_matches_timeout": true
+}

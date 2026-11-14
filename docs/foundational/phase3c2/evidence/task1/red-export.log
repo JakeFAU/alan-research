@@ -1,0 +1,7 @@
+--- FAIL: TestExportUsesFrozenSchemaAndCompleteRoster (0.00s)
+    main_test.go:6: unexpected end of JSON input
+--- FAIL: TestExportRejectsArguments (0.00s)
+    main_test.go:9: ignored argument
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/capacitycomposition/cmd/export	0.098s
+FAIL

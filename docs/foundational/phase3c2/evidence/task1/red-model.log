@@ -1,0 +1,13 @@
+--- FAIL: TestExactRootAccounting (0.00s)
+    model_test.go:21: shared root is not one exact retained record
+--- FAIL: TestAggregateEqualDifferentCompletion (0.00s)
+    model_test.go:28: missing AB commit from {Base:{Stages:[  ]} Held:[false false]}
+--- FAIL: TestReadyNowInvalidatedByCommit (0.00s)
+    model_test.go:34: missing AB commit from {Base:{Stages:[  ]} Held:[false false]}
+--- FAIL: TestStableReadyAndControlsEveryReachableCompletion (0.00s)
+    model_test.go:40: empty exploration
+--- FAIL: TestOldABApplyTraceExcluded (0.00s)
+    model_test.go:47: missing AB commit from {Base:{Stages:[  ]} Held:[false false]}
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/capacitycomposition	0.337s
+FAIL

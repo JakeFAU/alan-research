@@ -1,0 +1,31 @@
+{
+  "all_bfs_parent_arcs_preserved": true,
+  "mutated_arcs": 33,
+  "original_arcs": 34,
+  "rejection": "Graphs[0].Nodes[2].Arcs: length mismatch",
+  "removed": [
+    {
+      "arc": {
+        "Action": {
+          "Binding": {
+            "Callee": "B",
+            "CalleeGeneration": 1,
+            "Caller": "A",
+            "CallerGeneration": 1,
+            "Grant": "grant:A/g1->B/g1:counter-B",
+            "Operation": 1,
+            "Original": "AB",
+            "Request": "increment",
+            "Resource": "counter-B"
+          },
+          "Kind": "commit",
+          "Original": "AB"
+        },
+        "To": 3
+      },
+      "from": 2
+    }
+  ],
+  "reported_arc_total_matches_actual": true,
+  "states": 24
+}

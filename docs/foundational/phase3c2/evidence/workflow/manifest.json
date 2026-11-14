@@ -1,0 +1,72 @@
+{
+  "scope": "Exact task briefs (deterministic gzip preserving original trailing bytes), implementer/reviewer reports and controller ledger snapshot. Whole-branch review APPROVE at a86146fe; attributions and exclusions remain explicit. Review agreement is not mathematical proof.",
+  "task_heads": {
+    "1": "60d46a43dd32caa07f0b814e6741213f506a9cb6",
+    "2": "a24f8ff1c6aac22a0cffcffc2c614ccfca819c71",
+    "3": "fcb2a6d53b5a0240dda3d530868d803bea77b8b0"
+  },
+  "files": [
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/final-review.md",
+      "sha256": "ea493a4909a2f4c4260f9f32fb66b447434701b353f5c9368c41c421e0ae5e34",
+      "bytes": 13835
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/progress.md",
+      "sha256": "c4ab4ae557bb5bfd7bdb3700457d7a813cb0898e742dfdd1b33af55c5ee8fa71",
+      "bytes": 9990
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-1-brief.md.gz",
+      "sha256": "3238af27a40b23d663d768bab5a0be06e65b24877d66f1c475156cb5fc9529ed",
+      "bytes": 1515,
+      "raw_sha256": "653c421b209d2826dc8893e9e7ddfa401d8da888b162b1d38704ffa6a273ec8e",
+      "raw_bytes": 3244
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-1-report.md",
+      "sha256": "c61fa9f83f3016f76683aa2010cd3763d0ef139f778c441b54b6c11e623e00e5",
+      "bytes": 13554
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-1-review.md",
+      "sha256": "512e5b4f71d71f429e16d736df32fd16247d73e4d7f9e2fb33fac229bb0be7be",
+      "bytes": 8963
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-2-brief.md.gz",
+      "sha256": "45a7092049af484f08315e4f421bfbd241cf108d375fca3fe47ad5e2f058f74f",
+      "bytes": 1173,
+      "raw_sha256": "d24f530b5bfa71a039d234740194cb93990189878ec36858ec4c1f4b8191a1f4",
+      "raw_bytes": 2304
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-2-report.md",
+      "sha256": "f37330974e951dd610708b528423197cd017521862ef60eb065d30bad169902b",
+      "bytes": 38411
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-2-review.md",
+      "sha256": "3c141134a23068253e78303d5f9a62b6a6db0246a94d8ace26be062ff4f8e089",
+      "bytes": 7730
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-3-brief.md.gz",
+      "sha256": "29b31d1f23588a495c96b7bb6c107e45ad7c40937713a80814b62c1f5a2737a1",
+      "bytes": 1397,
+      "raw_sha256": "8d7cd6a4ab7f603a2a5af1142ea7ecc0efc200c2dacc8fed43163c731b8b5a1e",
+      "raw_bytes": 2753
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-3-report.md",
+      "sha256": "bb175e9763f0150a3eafcd7ffe72ee8d69fa1dfd4d83fcfc7d4d9f7e8c9882e8",
+      "bytes": 11716
+    },
+    {
+      "path": "docs/foundational/phase3c2/evidence/workflow/task-3-review.md",
+      "sha256": "60b6079d634b8b184008c0456d358d48cbad9e2a53665f6d6fde5edc35f6e6f7",
+      "bytes": 8762
+    }
+  ],
+  "reviewed_head": "a86146fe041ede25753bf470205c1cb5ecf565f2"
+}

@@ -1,0 +1,8 @@
+{
+  "prior_manifest": "docs/foundational/phase3c1/evidence/qualification/go-inputs.json",
+  "files_checked": 637,
+  "changed": [],
+  "missing": [],
+  "current_head": "072cf44cc89879d60bf49233d3d4dc541209df0d",
+  "attribution": "Historical Phase 3C.1 tests, not rerun in this check"
+}

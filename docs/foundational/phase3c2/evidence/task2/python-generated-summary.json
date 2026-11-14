@@ -1,0 +1,11 @@
+{
+  "classification": "checker test fixtures, not independent semantic evidence",
+  "configurations": 72,
+  "histories": 144,
+  "independence": "independent of Go; generator and replay share Python transition rules",
+  "microsteps": 7200,
+  "result_values": [
+    "r1",
+    "r2"
+  ]
+}

@@ -1,0 +1,10 @@
+Task 1 self-review of all generated records; not an independent semantic oracle.
+Command: gofmt -l research/capacitycomposition
+Exit status: 0; no unformatted files.
+Command: git diff --cached --check
+Exit status: 0; no whitespace diagnostics.
+Command: git diff 072cf44cc89879d60bf49233d3d4dc541209df0d -- research/contractcomposition research/twoagent go.mod go.sum
+Exit status: 0; unchanged predecessor source and dependencies.
+Parsed every exported graph/grouping/witness/probe record; all graph counts, targets, BFS parent arcs, grouping identities and actual matched prefixes are consistent.
+32 current source hashes match; compressed bytes decompress to the deterministic raw capture.
+Complete new source/test/document contents reviewed; no runtime changes, unrelated files, historical evidence rewrites, temporary instrumentation or dependency changes.

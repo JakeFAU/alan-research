@@ -1,0 +1,25 @@
+test_genuine_export_is_independently_accepted (test_audit.AuditAcceptance) ... ok
+test_hostile_records_rejected_for_specific_reasons (test_audit.HostileEvidence) ... test_plain_json_and_gzip_have_identical_meaning (test_audit.HostileEvidence) ... ok
+test_completion_under_every_configuration_and_both_results (test_audit.IndependentlyGeneratedHistories) ... ok
+test_local_transport_guards_reject_impossible_events (test_audit.IndependentlyGeneratedHistories) ... ok
+
+======================================================================
+FAIL: test_hostile_records_rejected_for_specific_reasons (test_audit.HostileEvidence) (control='noncorresponding-r2-history')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/tools/test_audit.py", line 142, in test_hostile_records_rejected_for_specific_reasons
+    audit.check(audit.decode(raw), ROOT)
+AssertionError: InvalidEvidence not raised
+
+======================================================================
+FAIL: test_hostile_records_rejected_for_specific_reasons (test_audit.HostileEvidence) (control='wrong-recovery-custody-order')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/tools/test_audit.py", line 142, in test_hostile_records_rejected_for_specific_reasons
+    audit.check(audit.decode(raw), ROOT)
+AssertionError: InvalidEvidence not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 6.364s
+
+FAILED (failures=2)

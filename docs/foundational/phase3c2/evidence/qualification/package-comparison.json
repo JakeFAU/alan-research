@@ -1,0 +1,10 @@
+{
+  "current": 74,
+  "prior": 72,
+  "added": [
+    "github.com/JakeFAU/alan-research/research/capacitycomposition",
+    "github.com/JakeFAU/alan-research/research/capacitycomposition/cmd/export"
+  ],
+  "removed": [],
+  "attribution": "Current clean package enumeration; historical prior 72-package test coverage remains separately attributed."
+}

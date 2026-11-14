@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/Library/Developer/CommandLineTools/usr/bin/python3",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/tools/audit.py",
+    "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research/docs/foundational/phase3c2/evidence/task2/hostile/duplicate-application.json.gz"
+  ],
+  "cwd": "/Users/jacob/.codex/worktrees/phase3b4-research/alan-research",
+  "elapsed_seconds": 0.10978,
+  "environment_overrides": {
+    "GOCACHE": "/tmp/alan-phase3c2/gocache",
+    "PYTHONPYCACHEPREFIX": "/tmp/alan-phase3c2/pycache"
+  },
+  "exit_code": 1,
+  "stderr": "docs/foundational/phase3c2/evidence/task2/hostile/duplicate-application.stderr.log",
+  "stdout": "docs/foundational/phase3c2/evidence/task2/hostile/duplicate-application.stdout.log"
+}
