@@ -118,6 +118,8 @@ t = t.replace(r'\[', '$$').replace(r'\]', '$$')
 t = t.replace(r"Tang and Moor's work on compositional non-blockingness~\cite{tang2024compositional}", "Tang and Moor's work on compositional non-blockingness (2024)")
 t = t.replace(r'\path{docs/foundational/phase3c3/04-results.md}', '[Phase 3C.3 results](../docs/foundational/phase3c3/04-results.md)')
 assert m == t, 'changed mathematical content differs'
+assert 'The snapshot therefore omits a completion-relevant distinction in future ordering.' in m
+assert 'The forgotten future transition relation is therefore semantically necessary' not in md + tex
 for start in ['If a crash leaves a non-idempotent request', 'The Phase 3B investigation is closed within those explicit fragments']:
     assert md[md.index(start):].split('\n', 1)[0] == tex[tex.index(start):].split('\n', 1)[0], start
 bib = (ROOT / 'paper/references.bib').read_text()
@@ -136,16 +138,20 @@ comparison = manifest['warning_comparison']
 assert comparison['exact_warning_lines_equal'] and comparison['baseline'] == comparison['current']
 texts = {}
 for stage, warning_key in [('base', 'baseline'), ('current', 'current')]:
-    log = gzip.decompress((PACKET / 'evidence/manuscript' / (stage + '-alan-dissertation.log.gz')).read_bytes()).decode()
+    stage_prefix = manifest.get('artifact_stage_prefixes', {}).get(stage, stage)
+    log = gzip.decompress((PACKET / 'evidence/manuscript' / (stage_prefix + '-alan-dissertation.log.gz')).read_bytes()).decode()
     warnings = [line for line in log.splitlines() if re.search(r'(Underfull \\hbox|Overfull \\hbox|LaTeX.*Warning)', line)]
     assert warnings == comparison[warning_key]
-    texts[stage] = gzip.decompress((PACKET / 'evidence/manuscript' / (stage + '-text.txt.gz')).read_bytes()).decode().split('\f')
+    texts[stage] = gzip.decompress((PACKET / 'evidence/manuscript' / (stage_prefix + '-text.txt.gz')).read_bytes()).decode().split('\f')
     if not texts[stage][-1].strip():
         texts[stage].pop()
     assert len(texts[stage]) == manifest['page_counts'][stage]
 assert manifest['changed_current_pages'] == [i + 1 for i, text in enumerate(texts['current']) if i >= len(texts['base']) or text != texts['base'][i]]
 for command in read('evidence/manuscript/build-commands.json') + read('evidence/manuscript/render-commands.json'):
     assert command['exit_code'] == 0
+for path in manifest.get('additional_command_records', []):
+    for command in json.loads((ROOT / path).read_text()):
+        assert command['exit_code'] == 0
 for name in ['alan-dissertation.tex', 'references.bib']:
     assert manifest['build_sources']['current'][name] == manifest['current_paper'][name]
     assert manifest['build_sources']['base'][name] == sha(subprocess.check_output(['git', 'show', manifest['baseline_commit'] + ':paper/' + name], cwd=ROOT))
