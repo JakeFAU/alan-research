@@ -1,5 +1,5 @@
 {
-  "scope": "Workflow/review history through all task gates; final whole-branch review and publication pending. No model capture edited.",
+  "scope": "Workflow/review history through final whole-branch APPROVE at bbf58bf49407480a8de747f5c1b18c42b05b7074; publication pending. All earlier entries and captures are unchanged.",
   "files": [
     {
       "path": "docs/foundational/phase3c5/evidence/workflow/controller-attempted-plan.md.gz",
@@ -135,6 +135,16 @@
       "path": "docs/foundational/phase3c5/evidence/workflow/task3-handoff.md.gz",
       "bytes": 3271,
       "sha256": "2458c629ce882e6e8b39c26d2a05d9e58df2d70f20fc4d8c66bbc53d522d1d57"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/final-review.md",
+      "bytes": 11239,
+      "sha256": "b4d700d0d0528a8f61008773181da17a1fe7c706196f23b2666c8a1706c0c2d1"
+    },
+    {
+      "path": "docs/foundational/phase3c5/evidence/workflow/progress-final-review.md",
+      "bytes": 12331,
+      "sha256": "638d016820fab7955039a7f6308da01fd9c3f42698ee612031e3b69b3096499c"
     }
   ]
 }
