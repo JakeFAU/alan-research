@@ -1,0 +1,5 @@
+--- FAIL: TestLiftingDoesNotConsultWorldOracle (0.00s)
+    concrete_test.go:332: inaccessible oracle affected lifting: split application/retention premise
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition	0.171s
+FAIL

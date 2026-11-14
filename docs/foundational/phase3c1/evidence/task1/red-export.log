@@ -1,0 +1,9 @@
+--- FAIL: TestEvidenceIncludesAllConfigsOpenInterfacesAndRetry (0.00s)
+    explore_test.go:52: missing evidence domain or candidate failures
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition	0.099s
+--- FAIL: TestExportDeterministicCompleteAndDecodable (0.00s)
+    main_test.go:7: unexpected end of JSON input
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition/cmd/export	0.104s
+FAIL

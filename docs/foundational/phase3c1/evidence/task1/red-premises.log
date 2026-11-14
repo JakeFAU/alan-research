@@ -1,0 +1,6 @@
+--- FAIL: TestLiftRejectsForgedOrLostCustodyRepresentative (0.00s)
+    concrete_test.go:266: accepted violated premise binding
+    concrete_test.go:266: accepted violated premise activation
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition	0.096s
+FAIL

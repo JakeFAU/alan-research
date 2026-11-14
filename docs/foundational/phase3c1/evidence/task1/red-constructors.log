@@ -1,0 +1,10 @@
+--- FAIL: TestStateAndActionConstructorsRejectUndeclaredRecords (0.00s)
+    model_test.go:89: accepted undeclared or invalid stage [U U U]
+    model_test.go:89: accepted undeclared or invalid stage [U invalid ]
+    model_test.go:90: accepted undeclared action [apply CA]
+    model_test.go:90: accepted undeclared action [release AB]
+    model_test.go:90: accepted undeclared action [consume unknown]
+    model_test.go:91: action lacks exact declared binding
+FAIL
+FAIL	github.com/JakeFAU/alan-research/research/contractcomposition	0.115s
+FAIL

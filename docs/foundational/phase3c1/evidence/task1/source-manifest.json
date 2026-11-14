@@ -1,0 +1,327 @@
+{
+  "Schema": "alan.phase3c1.task1.provenance.v1",
+  "BaseCommit": "4b8a0b8b135e314660a2146401f494aad4525cdb",
+  "SourceSHA256": {
+    "docs/foundational/phase3c1/00-contract.md": "13ece18e483693ad69c8e8cd707250750777dfee57260e458ce0d8d8da9e03b5",
+    "docs/foundational/phase3c1/01-argument.md": "9b6c5ace730da0eaf4f4e740ae378d2147ce4a53ca029974a7fd176726a06e58",
+    "docs/foundational/phase3c1/02-evidence-schema.md": "25b489fa016d672db04fe7a0a8fb9e4e385fa53190ffc7db7a5147a5bc45c055",
+    "research/contractcomposition/README.md": "7151330d220d2c0f0d0b29e1d940e41f10bf7b16b11ce71dd70777560a545367",
+    "research/contractcomposition/cmd/export/main.go": "b7c552f4e9ac8342158ea6b4cd6398f7c14c5e027e4d30f509fc27b52efa16ee",
+    "research/contractcomposition/cmd/export/main_test.go": "4417201bb233eba2e3ead48e893749a49f0f6cffad18ee73d03d293852f13194",
+    "research/contractcomposition/compose.go": "5e4ce913310d50ab8172da27642bdd26e412b4936354f27db043538ccb0e12b1",
+    "research/contractcomposition/compose_test.go": "a5f3bc84b502712c7e7d5a8c342ddcb430046264f6e97b5766eacd071f6a3a55",
+    "research/contractcomposition/concrete.go": "0c5e2c1226189e1e597a135e7203c31dd07cca72b2765d4fb0de7df0bc8898b0",
+    "research/contractcomposition/concrete_test.go": "0738ada30213681acdb9d5d151e07e57be0edb34ecb0193c679b780869a7bfb9",
+    "research/contractcomposition/explore.go": "bc524c014a8e7e58b4bc6fcd077c8a169709ed408e4c7eaea01b6eb99b63b573",
+    "research/contractcomposition/explore_test.go": "ffaeafd89a953d91f4dbada1ccbfc368c7d673fbca350bf036f23f5c559a2760",
+    "research/contractcomposition/model.go": "c146d28476ebd11647c9457f8ab4994ec465e2428ed5901004d6f75ba46f69b0",
+    "research/contractcomposition/model_test.go": "fb3f22425cee10e1563674b7bf328b8a283c891b5f4d3e2531d8bcb8d4190f81",
+    "research/twoagent/explore.go": "9240ed39125dd9a59c4599304800d349c174a104c7eec297ff52f974d4982694",
+    "research/twoagent/model.go": "8d8ce74bd91b27cd4f511bdf2b5a24863a3243f257e92d682f3377b6f04ce3ee",
+    "research/twoagent/oracle.go": "e0d229e8ed028b5889bb9a4077c6ec5110b1f58d08486be67b3eaead6bb3052a"
+  },
+  "ToolVersions": {
+    "go": "go version go1.27.4 darwin/arm64",
+    "staticcheck": "staticcheck 2026.2.2 (0.8.2)"
+  },
+  "Commands": [
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-progress.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-progress.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestConcrete|TestPreRecord|TestAbstractEligibility|TestWitnessHostile|TestEveryOld",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-concrete.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "-run",
+        "TestConcrete|TestPreRecord|TestAbstractEligibility|TestWitnessHostile|TestEveryOld",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-concrete.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestEvidence|TestExport",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-export.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestEvidence|TestExport",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-export.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestLiftRejects",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-premises.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestLiftRejects|TestCrashDisables|TestOldLedger",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-premises.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestLiftingDoesNotConsultWorldOracle",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-lifting-oracle.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestLiftingDoesNotConsultWorldOracle",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-lifting-oracle.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestStateAndActionConstructorsRejectUndeclaredRecords",
+        "./research/contractcomposition"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/red-constructors.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "-run",
+        "TestEveryOldEdgeRepresentativeProjectionAndLifting",
+        "./research/contractcomposition"
+      ],
+      "environment": {},
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-factored-expanded.log"
+    },
+    {
+      "argv": [
+        "go",
+        "run",
+        "./research/contractcomposition/cmd/export"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/export.json",
+      "comparison": "byte-equal to retained earlier export",
+      "sha256": "48b4cfb4cc10b7dde4979874f669014f4863e1e05e48737ef4561f119dfc3602"
+    },
+    {
+      "argv": [
+        "gofmt",
+        "-l",
+        "research/contractcomposition/model.go",
+        "research/contractcomposition/model_test.go",
+        "research/contractcomposition/compose.go",
+        "research/contractcomposition/compose_test.go",
+        "research/contractcomposition/concrete.go",
+        "research/contractcomposition/concrete_test.go",
+        "research/contractcomposition/explore.go",
+        "research/contractcomposition/explore_test.go",
+        "research/contractcomposition/cmd/export/main.go",
+        "research/contractcomposition/cmd/export/main_test.go"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache",
+        "STATICCHECK_CACHE": "/tmp/alan-phase3c1/task1/staticcheck-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/formatting.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-run",
+        "TestStateAndActionConstructorsRejectUndeclaredRecords",
+        "./research/contractcomposition"
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/green-constructors.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/normal-before-constructors.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-v",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache",
+        "STATICCHECK_CACHE": "/tmp/alan-phase3c1/task1/staticcheck-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/normal.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/race-before-constructors.log"
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache",
+        "STATICCHECK_CACHE": "/tmp/alan-phase3c1/task1/staticcheck-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/race.log"
+    },
+    {
+      "argv": [
+        "staticcheck",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache"
+      },
+      "exit_code": 1,
+      "output": "docs/foundational/phase3c1/evidence/task1/staticcheck-cache-failure.log"
+    },
+    {
+      "argv": [
+        "staticcheck",
+        "./research/contractcomposition/..."
+      ],
+      "environment": {
+        "GOCACHE": "/tmp/alan-phase3c1/task1/go-cache",
+        "STATICCHECK_CACHE": "/tmp/alan-phase3c1/task1/staticcheck-cache"
+      },
+      "exit_code": 0,
+      "output": "docs/foundational/phase3c1/evidence/task1/staticcheck.log"
+    }
+  ],
+  "ToolFailures": [
+    {
+      "action": "first go run export attempt with default cache and subsequent sample parsing",
+      "observed_shell_exit": 1,
+      "diagnostic": "open /Users/jacob/Library/Caches/go-build/ff/ff9234184c905b819c0a679aadfaceb59deac016e6123a00b1626b9481966693-d: operation not permitted; downstream JSON parser saw an empty file",
+      "resolution": "Reran exporter with task-local GOCACHE; sample regenerated and byte equality checked."
+    }
+  ],
+  "UnchangedTwoagentInputs": true,
+  "ExportSHA256": "48b4cfb4cc10b7dde4979874f669014f4863e1e05e48737ef4561f119dfc3602"
+}

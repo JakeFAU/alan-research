@@ -1,0 +1,57 @@
+=== RUN   TestClosedPortsOwnersResourcesRejected
+--- PASS: TestClosedPortsOwnersResourcesRejected (0.00s)
+=== RUN   TestGroupedEqualityAllMasks
+--- PASS: TestGroupedEqualityAllMasks (0.00s)
+=== RUN   TestConcreteHiddenDebtAndHiddenWait
+--- PASS: TestConcreteHiddenDebtAndHiddenWait (0.00s)
+=== RUN   TestPreRecordLossCustodyAndNoReapplication
+--- PASS: TestPreRecordLossCustodyAndNoReapplication (0.00s)
+=== RUN   TestAbstractEligibilityIsNotImmediateReadiness
+--- PASS: TestAbstractEligibilityIsNotImmediateReadiness (0.00s)
+=== RUN   TestWitnessHostileBindingsReleaseAndDuplicateApplication
+--- PASS: TestWitnessHostileBindingsReleaseAndDuplicateApplication (0.00s)
+=== RUN   TestEveryOldEdgeRepresentativeProjectionAndLifting
+    concrete_test.go:269: old durable-ACK states=311; factored representatives=24258; micro arcs checked=184256; enabled named-edge lifts=14058
+--- PASS: TestEveryOldEdgeRepresentativeProjectionAndLifting (0.71s)
+=== RUN   TestLiftRejectsForgedOrLostCustodyRepresentative
+--- PASS: TestLiftRejectsForgedOrLostCustodyRepresentative (0.00s)
+=== RUN   TestCrashDisablesBothRolesAndPreservesDurableCustody
+--- PASS: TestCrashDisablesBothRolesAndPreservesDurableCustody (0.00s)
+=== RUN   TestOldLedgerRejectsReleaseAndReapplication
+--- PASS: TestOldLedgerRejectsReleaseAndReapplication (0.00s)
+=== RUN   TestLiftingDoesNotConsultWorldOracle
+--- PASS: TestLiftingDoesNotConsultWorldOracle (0.00s)
+=== RUN   TestSerialCycleObstructionAndAcyclicSufficiency
+--- PASS: TestSerialCycleObstructionAndAcyclicSufficiency (0.00s)
+=== RUN   TestCompleteGraphRetainsAllIncomingArcs
+--- PASS: TestCompleteGraphRetainsAllIncomingArcs (0.00s)
+=== RUN   TestEvidenceIncludesAllConfigsOpenInterfacesAndRetry
+--- PASS: TestEvidenceIncludesAllConfigsOpenInterfacesAndRetry (0.00s)
+=== RUN   TestHiddenDebtCompletionCollision
+--- PASS: TestHiddenDebtCompletionCollision (0.00s)
+=== RUN   TestHiddenWaitReadinessCollision
+--- PASS: TestHiddenWaitReadinessCollision (0.00s)
+=== RUN   TestConfigRejectsChangedBindingsAndResources
+=== RUN   TestConfigRejectsChangedBindingsAndResources/resource_alias
+=== RUN   TestConfigRejectsChangedBindingsAndResources/grant
+=== RUN   TestConfigRejectsChangedBindingsAndResources/generation
+=== RUN   TestConfigRejectsChangedBindingsAndResources/operation
+=== RUN   TestConfigRejectsChangedBindingsAndResources/duplicate_identity
+=== RUN   TestConfigRejectsChangedBindingsAndResources/owner
+=== RUN   TestConfigRejectsChangedBindingsAndResources/mask
+--- PASS: TestConfigRejectsChangedBindingsAndResources (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/resource_alias (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/grant (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/generation (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/operation (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/duplicate_identity (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/owner (0.00s)
+    --- PASS: TestConfigRejectsChangedBindingsAndResources/mask (0.00s)
+=== RUN   TestStateAndActionConstructorsRejectUndeclaredRecords
+--- PASS: TestStateAndActionConstructorsRejectUndeclaredRecords (0.00s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/contractcomposition	0.789s
+=== RUN   TestExportDeterministicCompleteAndDecodable
+--- PASS: TestExportDeterministicCompleteAndDecodable (0.02s)
+PASS
+ok  	github.com/JakeFAU/alan-research/research/contractcomposition/cmd/export	0.113s
