@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "LeftAccept",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "false-initial-acceptance.input.gz",
+  "InputArchiveSHA256": "ea2eb112e678cc43d6270370691a3cd09247a2b27b2df40520840931ec1db4bf",
+  "InputBytes": 324143,
+  "InputSHA256": "c742bb9722beb83c2a919f8edf065ccbd4e069199a5146a9b52db18f6c907928",
+  "Name": "false-initial-acceptance",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

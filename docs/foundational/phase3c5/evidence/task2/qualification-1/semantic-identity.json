@@ -1,0 +1,279 @@
+{
+  "Equal": true,
+  "Fresh": "fresh-export/export.json.gz",
+  "Previous": "docs/foundational/phase3c5/evidence/task1/capture-3/export.json.gz",
+  "RawBytes": 14097260,
+  "RawSHA256": "ab3cbdfda577a3ae804eb76a94a8c7ac665cf00c69f992ad6804b6e0d0e27b8a",
+  "Sources": [
+    {
+      "Path": "docs/foundational/phase3c3/00-contract.md",
+      "SHA256": "bb5cacdc65deeab583f97a61e2080da790a02aa9fa1d9de92f9dd3a756ac2b81",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c3/01-argument.md",
+      "SHA256": "7aeb55fbe982f434f10d26845ad6b05189902fe3dd751cf4c758fc203137a2df",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c3/02-evidence-schema.md",
+      "SHA256": "f2b5ff7e08e5f5baa0d85fba4183e2e73ef30937ae3ad7eee61b9e1cf835f54f",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c3/evidence/task1/export.json.gz",
+      "SHA256": "86a9d22f9808a67dd0066b6b77dd2b3c01a2125d10863c6fbe1369097f6624c8",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c4/00-contract.md",
+      "SHA256": "5515783f9a2cf3b905de48e26641d5e4a93698d4027df70c3781984eec725ad0",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c4/01-argument.md",
+      "SHA256": "9496eb32879cdfeca5fba7b194013faad98f3b9a5f2b8292c4e30d286c862f62",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c4/02-evidence-schema.md",
+      "SHA256": "3e0081620381cd12b6f301903529ec3da64592ebdf9f617fb90502776ecf5b18",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "docs/foundational/phase3c4/evidence/task1/export.json.gz",
+      "SHA256": "35115c3104cddd8a789c80a8c0e73eb7c7f173632af512776ba8502b61b9afc9",
+      "Use": "decoded pinned automata"
+    },
+    {
+      "Path": "docs/foundational/phase3c5/00-contract.md",
+      "SHA256": "ecafd29a8dcff64e414fab81a1258f93d17ab6a328116c52bb6e50372c96692f",
+      "Use": "hash-checked specification"
+    },
+    {
+      "Path": "docs/foundational/phase3c5/01-argument.md",
+      "SHA256": "22575a459fa2f7c43bf92e65ab95975acbd448f7c617e53fd66e063d2447cf47",
+      "Use": "hash-checked specification"
+    },
+    {
+      "Path": "docs/foundational/phase3c5/02-evidence-schema.md",
+      "SHA256": "dccf1ed2996a5a2128648b272641d2791f3273ea5ffd9119c1e4d1b1fe6d7366",
+      "Use": "hash-checked specification"
+    },
+    {
+      "Path": "go.mod",
+      "SHA256": "c8f0dc6ba18888769a104aa2f808cf720a3fdaff7ccaf36ed78b4dfd200646e2",
+      "Use": "module"
+    },
+    {
+      "Path": "go.sum",
+      "SHA256": "9eb975c181ebee792e06f732fc13ef81acad0779d94731f75133ad2bba52c5ca",
+      "Use": "module"
+    },
+    {
+      "Path": "research/capacitycomposition/compose.go",
+      "SHA256": "f8a75d087a9a35068cd7d385bd21615ac18d62a980800faf8dae36f2a0dbdeb4",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/capacitycomposition/concrete.go",
+      "SHA256": "401615ef3bfb330440138d3c44c6f40720cdfd79705e5e99fb1c0a007e2bc199",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/capacitycomposition/evidence.go",
+      "SHA256": "52c73d7af55302320690473fc1d4c917f811c2db3a245700c018882763e6e972",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/capacitycomposition/explore.go",
+      "SHA256": "13b1726dcf380eab5610432ce0e8bcdfdd79f3d33cc566edbb0233865e8e6343",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/capacitycomposition/model.go",
+      "SHA256": "a07225864bb700c6a307ca40428a6784f1897dc059e6c8a30d7a5b3ab859f2d1",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/capacitycomposition/probe.go",
+      "SHA256": "09b754ba059621daf075f67ca1fe7294ceece808aebd1c4a4fc99bd37a0e515d",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/automaton.go",
+      "SHA256": "8725ba61e19f7ce11356f003e91ad00f5fe102d421183d0c7e18a9470b6ca133",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/capture.go",
+      "SHA256": "3e7d0e2e7494ad95bedce6c4559ab3213bfbe619287aa83c8b8eda602ee4de57",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/cmd/export/main.go",
+      "SHA256": "68e287f14ee3ef5c43012ba2faba11ea185e1275d4639efee98f036212b8ddec",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/concrete.go",
+      "SHA256": "94577d0f355a163458be57521828aadc36441bede6370be01dca8107c9e366f8",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/evidence.go",
+      "SHA256": "b002561e012caea0f56dbdfb98a5beb767bc5e27dcfd8ba7c0ed820f72301e5d",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/fixtures.go",
+      "SHA256": "7327ae7e2de142d802e73a7352ff11c9e1f74092dd5ea26c9863e4c6bbe175b8",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/language.go",
+      "SHA256": "eae4653ba2a834fa34b62a248fc4e7de577cd53126c28be275213d1a26db813d",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/plant.go",
+      "SHA256": "c6bafb266607ef50380573d43cdbb78ee80141959cc5cb75e9c4fe2209039ef6",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/componentinterfaces/product.go",
+      "SHA256": "0c254b99546461ab5820ae973e6dc2f48d99ed89265a8dba4c09fa495609c0f4",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/contractcomposition/compose.go",
+      "SHA256": "5e4ce913310d50ab8172da27642bdd26e412b4936354f27db043538ccb0e12b1",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/contractcomposition/concrete.go",
+      "SHA256": "0c5e2c1226189e1e597a135e7203c31dd07cca72b2765d4fb0de7df0bc8898b0",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/contractcomposition/explore.go",
+      "SHA256": "bc524c014a8e7e58b4bc6fcd077c8a169709ed408e4c7eaea01b6eb99b63b573",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/contractcomposition/model.go",
+      "SHA256": "c146d28476ebd11647c9457f8ab4994ec465e2428ed5901004d6f75ba46f69b0",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualantichains/antichain.go",
+      "SHA256": "7cc1c7d0ab3242a07731f4ff74246d8d037c6d5a9414a6cc38b3b8300bf2a5d3",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/automaton.go",
+      "SHA256": "5468d81bb4c9d9a096c1dc9a4ba6f9632be0f754de8c75231f54617c246a1e87",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/cmd/export/main.go",
+      "SHA256": "0bdc88b24564004ba659f76f0c516c8f7dec34e871a21e07dccaaa75b0aabf93",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/evidence.go",
+      "SHA256": "ed6004942fda9433d782356db2f73261ec4b049ccfa12ba8bd7db38fdad82dfa",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/fixtures.go",
+      "SHA256": "991adf8c83d640953f940ac9256482b35d635501a9a3b9c198a6d3fb68d2c349",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/input.go",
+      "SHA256": "0621e4951eb6ff3d2f971d9b0e61de01126d771e04d5dc9686a7bc013026ac84",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/language.go",
+      "SHA256": "78d08bed2db3cad54bd86a188729ae9813ff035e171b660a519530ff16e92cee",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/product.go",
+      "SHA256": "073e061fad0f0adef0f5083831c013a43e9858e4a27682f61109a0a29c6af342",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/profile.go",
+      "SHA256": "fa48a81fbe8d78681b9a08dc0ad14b628f64523661f54e8852e599bb43c790fd",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualantichains/witness.go",
+      "SHA256": "ee356ea4b68978eed04f50d416456ac9ce4481cfdabfe37e12028cc869084c40",
+      "Use": "compiled producer"
+    },
+    {
+      "Path": "research/residualinterfaces/automaton.go",
+      "SHA256": "0f29393745be7a29ab754cd603a98d0cd52c408acb7dedda0c2242661b0e62cd",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/cmd/export/main.go",
+      "SHA256": "993fa9e5863032019331b4abc92743f0eb821f496213efb4ee13b130c844d8d7",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/evidence.go",
+      "SHA256": "061a19ab638ad3d6a064642f5faed942a88519e989f6bd400d8c56ea49342177",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/fixtures.go",
+      "SHA256": "0b5e3564a0d1ee51aaeb303bb3b37957614f7b01fdd22e27aa0f2aea88206837",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/input.go",
+      "SHA256": "3a33b7ab1220f77413551a13142de9b9062785b7f4b7e3bdc55c246b6a160a78",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/language.go",
+      "SHA256": "472296e8beff7cec629665a6b9f9340d956846a569bef8023a629027717d6b47",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/product.go",
+      "SHA256": "edbabdeb328ff99b888a7355b3ad488cb717bda046a46c96098df0a24f917a1b",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/profile.go",
+      "SHA256": "17914a681f991a307e59b2bdc44215f2c53b1e1bb8d7cfae147238144766002f",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/residualinterfaces/witness.go",
+      "SHA256": "add20ff060a391824234783f4344033d86de8166e7a908bae1ce08c14dca4872",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/twoagent/explore.go",
+      "SHA256": "9240ed39125dd9a59c4599304800d349c174a104c7eec297ff52f974d4982694",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/twoagent/model.go",
+      "SHA256": "8d8ce74bd91b27cd4f511bdf2b5a24863a3243f257e92d682f3377b6f04ce3ee",
+      "Use": "hash-checked predecessor provenance"
+    },
+    {
+      "Path": "research/twoagent/oracle.go",
+      "SHA256": "e0d229e8ed028b5889bb9a4077c6ec5110b1f58d08486be67b3eaead6bb3052a",
+      "Use": "hash-checked predecessor provenance"
+    }
+  ]
+}

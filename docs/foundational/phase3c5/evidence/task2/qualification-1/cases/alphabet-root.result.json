@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Root",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "alphabet-root.input.gz",
+  "InputArchiveSHA256": "25ebc12bd534af14de2dfaef605e72b436e490542af4d73cd689ef4b7cc23ec4",
+  "InputBytes": 324142,
+  "InputSHA256": "8b9312607c8ef737f5dbd8c00dc89bbd1dc4c8775c76f40c05015c0b67d4d3ce",
+  "Name": "alphabet-root",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

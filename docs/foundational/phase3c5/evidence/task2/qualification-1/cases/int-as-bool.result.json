@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "type",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "int-as-bool.input.gz",
+  "InputArchiveSHA256": "97bd347acade925244ed809c174ee05771c815013ffc763726c3583e2bd73ceb",
+  "InputBytes": 14093156,
+  "InputSHA256": "71d445c173e611f0cb23f8db023b534aa307d4a4c1213887950b1d38fd5f2cdf",
+  "Name": "int-as-bool",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

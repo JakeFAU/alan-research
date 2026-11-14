@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/audit.py",
+    "docs/foundational/phase3c5/evidence/task1/capture-3/export.json.gz"
+  ],
+  "exit": 1,
+  "stderr": "REJECT: export.Input.Sources[0]: keys mismatch\n",
+  "stdout": "",
+  "reason": "Auditor initial construction retained Use in Input.Sources; accepted schema explicitly requires Path/SHA256 only. Correct auditor constructor, not producer/evidence.",
+  "auditor_sha256": "1fe59e74f9f69fc633a6c6e800ca3482a0cdb0b6f2911944b97e34b91e1f5274"
+}

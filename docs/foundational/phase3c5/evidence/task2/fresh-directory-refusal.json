@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "python3",
+    "docs/foundational/phase3c5/tools/capture_audit.py",
+    "docs/foundational/phase3c5/evidence/task2/qualification-1"
+  ],
+  "exit": 1,
+  "stdout": "",
+  "stderr": "refusing existing capture directory\n",
+  "CaptureFilesUnchanged": true,
+  "Files": 311
+}

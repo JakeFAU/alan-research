@@ -1,0 +1,45 @@
+{
+  "AuditSHA256": "8944f418c39f21db4b4ad2c38b70b5efe039957d8abbe94cff79f6dc8bbd4235",
+  "Counts": {
+    "BlockingSubstitutions": 1928,
+    "Comparisons": 36,
+    "Controllers": 324,
+    "EqualFULL": 6,
+    "EqualJ": 7,
+    "EqualLanguages": 13,
+    "EqualMAX": 13,
+    "EqualMIN": 7,
+    "InitialCanComplete": 1234,
+    "LanguageSubsetPairs": 5208,
+    "Monitors": 9,
+    "NonblockingProducts": 760,
+    "NonblockingSubstitutions": 844,
+    "Plants": 72,
+    "ProductArcs": 59492,
+    "ProductCanComplete": 22716,
+    "ProductStates": 45800,
+    "Products": 3564,
+    "ProfileSubsetPairs": 146,
+    "ResidualComparisons": 1442,
+    "Substitutions": 2772
+  },
+  "DependencyHashes": {
+    "docs/foundational/phase3c2/tools/audit.py": "1dc485fb2e3f0594b6122daa3a63ec05a12c8f5a6b9988afe5d2a775a768f193",
+    "docs/foundational/phase3c3/tools/audit.py": "287be61a4e632b37510d401a658be7fa3fea465697d5586b43f07a58b2b7ad75",
+    "docs/foundational/phase3c4/tools/audit.py": "163fb14ea65af59a507e52b88c188c0b4fe2df65b40e8d2d5c7aef7f076fc88e"
+  },
+  "EmptyH": 28,
+  "LargestH": 3,
+  "LegalShortestWords": [
+    [
+      "commit:BC"
+    ],
+    [
+      "commit:AB",
+      "reserve-capacity:AB",
+      "commit:BC"
+    ]
+  ],
+  "LocalFailedTargets": 81,
+  "SingletonEpsilonH": 0
+}

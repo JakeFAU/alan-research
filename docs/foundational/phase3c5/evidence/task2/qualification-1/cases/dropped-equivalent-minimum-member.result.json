@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Members",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "dropped-equivalent-minimum-member.input.gz",
+  "InputArchiveSHA256": "9d15c36a77d2bdf83ad3fbeccbc1715c68d912b19eeb71dad1f3c9934735c4a6",
+  "InputBytes": 324130,
+  "InputSHA256": "23cd16a7baa26fa15c609884cd7fdad5c439ed461bf04e68d622ba50673c542c",
+  "Name": "dropped-equivalent-minimum-member",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

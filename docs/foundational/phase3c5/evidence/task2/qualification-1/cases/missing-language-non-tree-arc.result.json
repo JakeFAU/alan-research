@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Arcs",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "missing-language-non-tree-arc.input.gz",
+  "InputArchiveSHA256": "4bd3a990f3e52867864dad3ee09435afa05df56c53566d72a60876333a970fcb",
+  "InputBytes": 14093130,
+  "InputSHA256": "cc6a3e31bb9598a100ad0cb66613af4507a524fd7f22dfe7dc42fc40ab0b30f2",
+  "Name": "missing-language-non-tree-arc",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

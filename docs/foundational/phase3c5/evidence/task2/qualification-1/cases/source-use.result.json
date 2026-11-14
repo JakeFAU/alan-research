@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Use",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "source-use.input.gz",
+  "InputArchiveSHA256": "b978a63e2303646bd14c8b27979e6df8bed0e5290fd8eda5d42d8d067f2c5b2c",
+  "InputBytes": 324136,
+  "InputSHA256": "6b2838a1a878abdb37349b3cd4895c74ab8bd8d531048aff589ee237308a9eef",
+  "Name": "source-use",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

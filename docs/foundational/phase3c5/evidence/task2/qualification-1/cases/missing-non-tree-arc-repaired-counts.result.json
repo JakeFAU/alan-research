@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Products",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "missing-non-tree-arc-repaired-counts.input.gz",
+  "InputArchiveSHA256": "ce0b336cc7b1721a06dc15b5c653c5e5f05ca7ea125ddad49ad27f4801e22c51",
+  "InputBytes": 324136,
+  "InputSHA256": "28a01769841944670e625deabd721fbc155709238fecbc473742d5299362629e",
+  "Name": "missing-non-tree-arc-repaired-counts",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

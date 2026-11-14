@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Arcs",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "missing-profile-non-tree-arc.input.gz",
+  "InputArchiveSHA256": "f2d96427797c0a9ef0cda1f2f16ac85f8bfa4b25a1ed6085272937eacc55f687",
+  "InputBytes": 324134,
+  "InputSHA256": "9e29e4f9a8c8d563a632f64ff48a4d033e27ebdc80d8dd67fac7b7a2f67b281c",
+  "Name": "missing-profile-non-tree-arc",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

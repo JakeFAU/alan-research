@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "CallerGeneration",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "signature-generation.input.gz",
+  "InputArchiveSHA256": "db31a4d478063c56200441f4d66f29643a7e408e6f64ae4d095c07b2c24b4d23",
+  "InputBytes": 324139,
+  "InputSHA256": "dd4b167e6747cbfa09e3d06dca3345c4b58c9908914cc47aeb9e7100d498048d",
+  "Name": "signature-generation",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

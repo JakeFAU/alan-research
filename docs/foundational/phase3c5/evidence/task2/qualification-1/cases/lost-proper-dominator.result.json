@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "ProperSubsets",
+  "Exit": 1,
+  "Format": "gzip",
+  "InputArchive": "lost-proper-dominator.input.gz",
+  "InputArchiveSHA256": "452b725f5917c348c935e59bce66cd0753d2365757231c13b972aebb18be876e",
+  "InputBytes": 324129,
+  "InputSHA256": "ab948e832d520fdb6dfae4655ca6e5e9e37129f6bd483de1b798e81154e8b372",
+  "Name": "lost-proper-dominator",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Compressed file ended",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "malformed-gzip.input.gz",
+  "InputArchiveSHA256": "3eb79f4e51c8fe51a71f94dc4e7c54a29d99992343aa00b2caac8b2a9855223e",
+  "InputBytes": 5,
+  "InputSHA256": "25520a09f2483061efa834bec542315157a93ac0da01b40db6851181aaadb7c8",
+  "Name": "malformed-gzip",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}

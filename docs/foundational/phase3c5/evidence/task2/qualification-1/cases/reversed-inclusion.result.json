@@ -1,0 +1,13 @@
+{
+  "Diagnostic": "Subset",
+  "Exit": 1,
+  "Format": "plain",
+  "InputArchive": "reversed-inclusion.input.gz",
+  "InputArchiveSHA256": "c4ecf88251b9d938511a452e6aa00dd595b750ba41e9a82ca23f9298a737dfe0",
+  "InputBytes": 14093160,
+  "InputSHA256": "9f56eba0e84b597ccc87bd5d83b2b0c49e59574abc2dfffd8d80a37e4c4f8a28",
+  "Name": "reversed-inclusion",
+  "Passed": true,
+  "Recovery": "gzip-decompress InputArchive once to recover exact CLI input bytes",
+  "ShouldAccept": false
+}
