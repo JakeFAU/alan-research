@@ -1,0 +1,14 @@
+# Phase 3C.1 builder sanity check
+
+Result: no important unanswered design questions remain before implementation. The contract and plan specify a buildable, bounded research target without requiring additional user decisions or hidden environmental premises. This is a source/design assessment, not execution evidence or acceptance of an implemented theorem.
+
+Reviewed `docs/foundational/phase3c1/00-contract.md`, `docs/foundational/phase3c1/phase3c1-plan.md`, and the model/independent-ledger sources in `research/twoagent` and `research/mutualobligations`. No tests, models, runtime configuration, or retained databases were run or opened.
+
+The consequential distinctions are already resolved:
+
+- Universal-representative lifting means every reachable concrete representative, with finite progress stutters followed by the specified stage change. Availability recovery and request admission can precede that change; physical readiness need not agree immediately. Receipt values are outside the progress observation, while actual retained/recorded receipt custody remains an obligation of the concrete proof. The durable-ACK source supports the relevant argument: release requires an ACK sent after durable recording; before such recording, release cannot destroy the only retained receipt. This still needs the promised transition-by-transition proof and executable qualification.
+- Open components retain unresolved endpoint obligations and named policy incidence. Only compatible closed chain/cycle constructions receive the completion claim. The contract expressly prohibits treating an absent endpoint as non-waiting and prohibits compressing multiple agents into a single policy or availability record. Choice of representation for unresolved ports can be left to the implementer without expanding the theorem.
+- Independent validation has an explicit scope: the old single-edge causal ledger checks renamed edge histories; the new Python checker must independently check shared availability, bindings, serial guards, complete abstract relations and selected joint histories. Neither check establishes exhaustive concrete-product coverage or the universal lifting theorem. The plan already requires separate evidence labels and a source argument.
+- R0 is a concrete information-loss witness with equal exposed BC state; R1 tests immediate readiness under controlled physical/admission facts. The plan explicitly bars promoting R1 into a refutation of a weaker observation that omits readiness. The all-serial cycle separately tests assumption discharge.
+
+No additional question is raised merely to choose data structures, serialization, witness search, or finite lifting construction. Any failure to establish the universal clause must be reported as an unresolved obligation or narrowed result, as the approved contract already requires.

@@ -1,0 +1,14 @@
+{
+  "semantics-recon.md": {
+    "bytes": 17366,
+    "sha256": "c35d4f1f1c2af4b37885919afdb38c3774830789202f3dc6b455adc45be78f7f"
+  },
+  "tooling-recon.md": {
+    "bytes": 20622,
+    "sha256": "b36fa98eef5dc9bf467dd54ea67183124ec83f7f42d770fe98b5c522fe599734"
+  },
+  "builder-check.md": {
+    "bytes": 2846,
+    "sha256": "494086b1fc774f209442d6eafe832765ab8e0977ec96f534dbeec8f85831a253"
+  }
+}
