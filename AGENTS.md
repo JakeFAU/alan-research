@@ -81,7 +81,7 @@ A spelling fix or unrelated refactor does **not** require a paper edit. A semant
 ### For substantive changes
 
 1. **Specify:** Write the intended transition, observable behavior, invariant, or theorem hypothesis precisely enough to be falsified.
-2. **Attack:** Construct a minimal adverse schedule, malformed observation, permission race, crash window, retry ambiguity, or resource-bound counterexample. Try to make the claim fail before implementing it.
+2. **Attack:** Construct a minimal adverse schedule, malformed observation, permission race, crash window, retry ambiguity, or resource-bound counterexample. Try to make the claim fail before implementing it. When performing an adversarial check or review, consult `./memory/adversarial/known_weaknesses.md` (read-only — never modify it unless explicitly instructed by the user). Those entries are neither rules nor a mandatory test checklist, and most will not apply to a given task; treat them solely as a list of failure patterns the agent has had trouble spotting in the past.
 3. **Implement narrowly:** Prefer simple, explicit state transitions and stable representations. Avoid special-case runtime roles when ordinary programs suffice.
 4. **Qualify:** Add targeted positive and negative tests, boundary conditions, and reproducible witnesses. Use an independent model/oracle when code and replay share the same reducer or compiler.
 5. **Reconcile:** Update the manuscript and supporting research artifacts for semantic changes; preserve failed attempts as evidence.
