@@ -47,7 +47,8 @@ type pendingDelivery struct {
 }
 
 // Run automatically schedules finite ordinary commits and committed deliveries.
-// Quiescence means no supported eligible work now, not completion or liveness.
+// A run-local reduction fault leaves the run open and is reported after other
+// eligible work drains. Quiescence describes current work eligibility.
 func (s *Store) Run(ctx context.Context, options RunOptions) (report RunReport, runErr error) {
 	if options.MaxInFlight == 0 {
 		options.MaxInFlight = DefaultMaxInFlight
@@ -230,7 +231,7 @@ func (s *Store) Run(ctx context.Context, options RunOptions) (report RunReport, 
 			}
 			progressed = true
 		}
-		ready, err := s.selectReady(ctx, last)
+		ready, reductionFaults, err := s.selectReady(ctx, last)
 		if err != nil {
 			return report, err
 		}
@@ -258,7 +259,7 @@ func (s *Store) Run(ctx context.Context, options RunOptions) (report RunReport, 
 		}
 		if active == 0 {
 			quiescent = true
-			return report, nil
+			return report, reductionFaults
 		}
 		if err := boundary.Reached(ctx, boundary.Event{Boundary: "runner.waiting", Phase: "in-flight"}); err != nil {
 			return report, err
@@ -305,15 +306,18 @@ func (s *Store) deliverOrdinary(ctx context.Context, delivery pendingDelivery) (
 	}
 	return err
 }
-func (s *Store) selectReady(ctx context.Context, last *RunID) (*readyRun, error) {
+
+// selectReady reports run-local faults only after scanning every run without a
+// ready selection. Invalid retained inputs and store errors abort the scan.
+func (s *Store) selectReady(ctx context.Context, last *RunID) (ready *readyRun, reductionFaults, err error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	if s.closed {
-		return nil, sql.ErrConnDone
+		return nil, nil, sql.ErrConnDone
 	}
 	ids, err := readRunIDs(ctx, s.conn)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	start := 0
 	if last != nil {
@@ -326,57 +330,74 @@ func (s *Store) selectReady(ctx context.Context, last *RunID) (*readyRun, error)
 	}
 	observations, err := readObservations(ctx, s.conn, s.limits)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	observationIDs := make([]string, 0, len(observations))
 	for id := range observations {
 		observationIDs = append(observationIDs, id)
 	}
 	sort.Strings(observationIDs)
+	var faults []error
 	for i := 0; i < len(ids); i++ {
 		id := ids[(start+i)%len(ids)]
 		run, err := loadRun(ctx, s.conn, id)
 		if err != nil {
-			return nil, err
+			return nil, nil, err
 		}
 		var generation int64
 		var retired bool
 		if err = s.conn.QueryRowContext(ctx, "SELECT generation,retired FROM subjects WHERE id=?", id.Subject).Scan(&generation, &retired); err != nil {
-			return nil, err
+			return nil, nil, err
 		}
 		if run.Projection.Status != "open" || retired || generation != id.Generation {
 			continue
 		}
 		p, err := loadProgram(ctx, s.conn, run.ProgramID, s.limits)
 		if err != nil {
-			return nil, err
+			return nil, nil, err
 		}
 		p, err = boundCompositionProgram(ctx, s.conn, p, id, s.limits)
 		if err != nil {
-			return nil, err
+			return nil, nil, err
 		}
+		if err := validateReductionInput(p, run.Projection, id, run.Sequence+1, s.limits); err != nil {
+			return nil, nil, err
+		}
+		var reductionErr error
 		if p.Code[run.Projection.PC].Op != "receive" {
-			if _, err = Reduce(p, run.Projection, nil, id, run.Sequence+1, s.limits); err != nil {
-				return nil, err
+			if _, reductionErr = reduceInstruction(p, run.Projection, nil, id, run.Sequence+1, s.limits); reductionErr == nil {
+				return &readyRun{authority: run.Authority()}, nil, nil
 			}
-			return &readyRun{authority: run.Authority()}, nil
+		} else {
+			for _, observationID := range observationIDs {
+				observation := observations[observationID]
+				if observation.Run != id || observation.consumed.Valid {
+					continue
+				}
+				_, err := reduceInstruction(p, run.Projection, &observation.Observation, id, run.Sequence+1, s.limits)
+				if err == nil {
+					return &readyRun{authority: run.Authority(), observation: observationID}, nil, nil
+				}
+				if !errors.Is(err, ErrIneligible) {
+					reductionErr = err
+					break
+				}
+				// Plain nonmatches are expected. Retain the first candidate
+				// fault for diagnosis if this receive cannot make progress.
+				if err != ErrIneligible && reductionErr == nil {
+					reductionErr = fmt.Errorf("observation %q: %w", observationID, err)
+				}
+			}
 		}
-		for _, observationID := range observationIDs {
-			observation := observations[observationID]
-			if observation.Run != id || observation.consumed.Valid {
-				continue
+		if reductionErr != nil {
+			fault := fmt.Errorf("run %s/%d at pc %d: %w", id.Subject, id.Generation, run.Projection.PC, reductionErr)
+			if errors.Is(reductionErr, ErrCorrupt) {
+				return nil, nil, fault
 			}
-			_, err = Reduce(p, run.Projection, &observation.Observation, id, run.Sequence+1, s.limits)
-			if errors.Is(err, ErrIneligible) {
-				continue
-			}
-			if err != nil {
-				return nil, err
-			}
-			return &readyRun{authority: run.Authority(), observation: observationID}, nil
+			faults = append(faults, fault)
 		}
 	}
-	return nil, nil
+	return nil, errors.Join(faults...), nil
 }
 func (s *Store) pendingDeliveries(ctx context.Context) ([]pendingDelivery, error) {
 	s.mu.Lock()
