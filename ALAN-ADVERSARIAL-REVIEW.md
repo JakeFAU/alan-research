@@ -18,7 +18,7 @@ Specifically, four defect clusters were reproduced via minimal adversarial tests
 1. **Total `Store.Run` starvation and observation poison-pill deadlocks:** Any non-`ErrIneligible` `Reduce` error inside `selectReady` (such as an `"end"` output-schema rejection or an oversized input observation on a `"receive"` PC) aborts `Store.Run` immediately before advancing `last` or testing remaining observations/runs, permanently wedging every healthy run in the store.
 2. **Unsound `author.Compile` static schema checking:** `checkOperand` ignores `MaxBytes` on variable-to-variable copies, tests existential enum intersection (`src ∩ want ≠ ∅`) instead of subset inclusion (`src ⊆ want`), and CFG branch joins delete conflicting field schemas—allowing statically illegal programs to pass compilation and trigger defect (1) at runtime.
 3. **Composition scope-closure split-brain:** When a root run terminates (`Status != "open"`) with an unawaited admitted child, `AuthorizeIntent` still permits child work while `compositionScopeClosed` blocks `prepareAdapterWork` (`scope_closed`), stranding `PrepareRoot` at `Pending: descendant_outcome`. Meanwhile, rejected unpublished child invocations let `SettleRoot` succeed while `RootCompletion.PendingInvocations` reports them pending forever.
-4. **Unchecked dynamic `AwaitInvocation` strings and manuscript divergence:** `author.Compile` downgrades `request:invocation:*` handles to raw `"string"`, allowing bogus strings to strand open runs at quiescence, while `DelegateAuthority`, `RevokeAuthority`, storage formats 13–16, and `RetireSubject` revision increments remain unimplemented.
+4. **Unchecked dynamic `AwaitInvocation` strings and manuscript divergence:** On the reviewed `alan-research` commit `aa7a1d21`, `author.Compile` downgrades `request:invocation:*` handles to raw `"string"`, allowing bogus strings to strand open runs at quiescence. That checkout also lacks `DelegateAuthority`, `RevokeAuthority`, storage formats 13–16, and `RetireSubject` revision increments.
 
 ---
 
@@ -166,7 +166,7 @@ Ranked by severity and blast radius.
 
 ---
 
-### Finding 6: `RetireSubject` leaves `subjects.revision` unchanged, and manuscript `DelegateAuthority` / `RevokeAuthority` & storage formats 13–16 are unimplemented
+### Finding 6: The reviewed research checkout lacks authority lifecycle operations, formats 13–16, and a `RetireSubject` revision increment
 
 - **Claim violated:** Distinct `authority-revision` evolution on authority mutations (`AGENTS.md` §4 / manuscript §6) and documented `DelegateAuthority`, `RevokeAuthority`, and storage formats 13–16 (`paper/alan-dissertation.md` §§6.11–6.15, lines 1027–1102).
 - **Relevant source:**
@@ -347,11 +347,13 @@ Ranked from highest to lowest expected defect-discovery value:
 
 The framework is suitable right now **only** as an experimental research prototype on a single host when all authoring inputs and compositions are trusted, well-typed by manual discipline, and tested end-to-end against composition closure paths.
 
-**Guarantees callers MUST NOT rely upon today:**
+**Guarantees callers MUST NOT rely upon at the reviewed `alan-research` commit `aa7a1d21`:**
 - Do **not** rely on one failing run or malformed observation not halting every other unrelated run sharing the same SQLite `Store`.
 - Do **not** rely on `author.Compile` passing as proof that `MaxBytes`, `Enum` constraints, CFG-merged variables, or dynamic `AwaitInvocation` handles are type-safe at runtime.
 - Do **not** rely on composition scope closure allowing unawaited child invocations to settle cleanly, nor on `RootCompletion.PendingInvocations` matching `SettleRoot` when child invocations are rejected.
-- Do **not** rely on `RetireSubject` bumping `subjects.revision`, on `DelegateAuthority`/`RevokeAuthority` or schema formats 13–16 existing, or on exactly-once external HTTP delivery across arbitrary process crashes against non-idempotent endpoints.
+- Do **not** rely on that checkout incrementing `subjects.revision` on `RetireSubject`, supporting `DelegateAuthority`/`RevokeAuthority` or schema formats 13–16, or guaranteeing exactly-once external HTTP delivery across arbitrary process crashes against non-idempotent endpoints.
+
+The separately maintained `JakeFAU/alan` runtime at [`c8a39047`](https://github.com/JakeFAU/alan/commit/c8a39047da2cd4214149b7a057f240b1833439e1) documents formats 13/14 for request authority v1 and 15/16 for exact request binding v2. See its [SQLite format contract](https://github.com/JakeFAU/alan/blob/c8a39047da2cd4214149b7a057f240b1833439e1/README.md#L87) and [format constants in the executor](https://github.com/JakeFAU/alan/blob/c8a39047da2cd4214149b7a057f240b1833439e1/internal/executor/request_authority.go#L15-L20).
 
 ---
 
