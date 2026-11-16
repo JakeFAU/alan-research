@@ -21,6 +21,7 @@ import (
 	"path/filepath"
 	"reflect"
 	"strings"
+	"sync"
 	"syscall"
 	"testing"
 	"time"
@@ -218,13 +219,29 @@ func TestProcessChild(t *testing.T) {
 	cut, template := os.Getenv("ALAN_COMPOSITION_CUT"), os.Getenv("ALAN_COMPOSITION_TEMPLATE")
 	if cut != "" {
 		pipe := ctx
+		var collectorMu sync.Mutex
+		var collector string
 		ctx = boundary.WithObserver(ctx, func(ctx context.Context, e boundary.Event) error {
 			if e.Boundary != "execution.committed" && e.Boundary != "invocation.result-recorded" {
+				return nil
+			}
+			collectorMu.Lock()
+			knownCollector := collector
+			collectorMu.Unlock()
+			if cut != "pre-admission" && knownCollector != "" && e.Subject != knownCollector {
 				return nil
 			}
 			s, err := runtime.Inspect(ctx, path, runtime.DefaultLimits())
 			if err != nil {
 				return err
+			}
+			if cut != "pre-admission" && knownCollector == "" {
+				_, subject := collection(s, template)
+				if subject != "" {
+					collectorMu.Lock()
+					collector = subject
+					collectorMu.Unlock()
+				}
 			}
 			items := input()
 			if os.Getenv("ALAN_COMPOSITION_ENDPOINT") != "" {

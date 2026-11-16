@@ -282,14 +282,14 @@ For any valid program $P$, run identity $x = (a,g)$, sequence $n \in \mathbb{N}^
 \end{lemma}
 
 \subsection{Global Transition Rules at the Runtime Boundary}
-Embedding $\delta_v$ into a global configuration $\Gamma$ yields the atomic commit and authorization transitions:
+Embedding $\delta_v$ into a global configuration $\Gamma$ yields the atomic commit and authorization transitions. Preparation captures the run authority revision $w_p$ alongside its activation epoch and sequence; commit requires that revision to remain current:
 \[
 \small\textbf{(G-Commit)} \; \frac{
   \begin{array}{c}
-    p = \langle x=(a,g), e, n+1, o_{\text{opt}}, \sigma', \vec{\iota} \rangle \in \Gamma.\mathsf{Prop} \quad \Gamma.\Subj[a] = \langle g_{\text{curr}}, \mathit{owner}, w, \mathit{retired} \rangle \\
-    g = g_{\text{curr}} \quad \neg \mathit{retired} \quad \Gamma.\mathsf{Runs}[x] = \langle P_v, e_{\text{curr}}, n_{\text{curr}}, \sigma \rangle \\
+    p = \langle x=(a,g), e, n+1, w_p, o_{\text{opt}}, \sigma', \vec{\iota} \rangle \in \Gamma.\mathsf{Prop} \quad \Gamma.\Subj[a] = \langle g_{\text{curr}}, \mathit{owner}, w, \mathit{retired} \rangle \\
+    g = g_{\text{curr}} \quad w_p = w \quad \neg \mathit{retired} \quad \Gamma.\mathsf{Runs}[x] = \langle P_v, e_{\text{curr}}, n_{\text{curr}}, \sigma \rangle \\
     e = e_{\text{curr}} \quad n = n_{\text{curr}} \quad \sigma.\mathit{status} = \mathtt{"open"} \\
-    (o_{\text{opt}} = \mathsf{Some}(o) \implies o \in \Gamma.\Obs[x] \land o.\mathit{consumed} = \bot) \quad \neg \mathsf{scopeClosed}(\Gamma, x)
+    (o_{\text{opt}} = \mathsf{Some}(o) \implies o \in \Gamma.\Obs[x] \land o.\mathit{consumed} = \bot)
   \end{array}
 }{
   \Gamma \xrightarrow{\;\mathsf{Commit}(x, e, n+1)\;} \Gamma'
@@ -300,13 +300,15 @@ Embedding $\delta_v$ into a global configuration $\Gamma$ yields the atomic comm
   \begin{array}{c}
     \iota \in \Gamma.\mathsf{Int} \quad \iota.\mathit{ID} \notin \operatorname{dom}(\Gamma.\mathsf{Att}) \quad x = \iota.\mathit{Run} = (a, g) \\
     \Gamma.\Subj[a] = \langle g_{\text{curr}}, \mathit{owner}, w_{\text{curr}}, \mathit{retired} \rangle \quad \Gamma.\mathsf{Runs}[x] = \langle P_v, e, n, \sigma \rangle \\
-    \mathit{allowed} \iff (g = g_{\text{curr}} \land \neg \mathit{retired} \land w_{\text{curr}} = \iota.\mathit{revision} \land \sigma.\mathit{status} = \mathtt{"open"} \\
-    \land \neg \mathsf{scopeClosed}(\Gamma, x) \land \mathsf{grant}(\Gamma.\mathsf{Perm}, \iota))
+    \mathit{allowed} \iff (g = g_{\text{curr}} \land w_{\text{curr}} = \iota.\mathit{revision} \\
+    \land (\mathsf{boundReply}(\Gamma,\iota) \lor (\neg \mathit{retired} \land \sigma.\mathit{status} = \mathtt{"open"})))
   \end{array}
 }{
   \Gamma \xrightarrow{\;\mathsf{Authorize}(\iota.\mathit{ID})\;} \Gamma\big[\mathsf{Att}[\iota.\mathit{ID}] \leftarrow \langle \mathit{Allowed}: \mathit{allowed},\; \mathit{Reason}: \mathit{reason} \rangle\big]
 }
 \]
+
+The function \texttt{compositionReplyBinding} authenticates the exact reply denoted by $\mathsf{boundReply}$. It permits that retained reply after local closure or retirement while still requiring the original generation and revision. Repeating authorization returns the retained first disposition. Source authorization alone does not establish a recipient, adapter or lifecycle grant, invocation admission, or permission to launch an effect. Those operation-specific decisions remain separate. Invocation admission, fresh effect reservation and dispatch apply their respective scope fences. Under composition v2, already-admitted descendants can continue after ordinary root success; failure, retirement and final publication still fence that work. Composition v1 retains its earlier root-terminal fence. The commit rule checks local authority and reduction eligibility without an enclosing-scope guard. Consumption is marked only when the selected observation is present.
 
 \section{Pillar III: Dynamic Concurrency, Orthogonal Authority, and Compositional Congruence}
 
@@ -689,7 +691,9 @@ An independent retained-history ledger checks ancestry, full tuples, bindings, t
 
 Can the public runtime realize S2 through ordinary retained computation? The pre-primitive experiment answers negatively for the specified service: A lacks the required permission, and a message claim or a prior result supplies none. The S1 apparatus control completes both authentic result chains. This is an executable obstruction at the frozen API, not an impossibility theorem for every encoding. A's permissions are not broadened to manufacture S2 completion.
 
-The separate ALAN runtime repository implements \path{DelegateAuthority} and \path{RevokeAuthority} as committed lifecycle operations in its opt-in storage formats 13/14. The \path{research/authorityservice} package contains a finite authority model. The research executor provides retry, cancellation, abandonment, and retirement. A grant retains the original holder, its actual resource root and complete permission row, the recipient and its root/revision, the authentic original request and the exact future service operation. Programs name logical root locators; retained decisions bind them to the Store namespace and check membership. A computed root identifier alone is not evidence of a root. The service explicitly selects its own or delegated path, without ambient fallback or redelegation. The implementation reuses the existing lifecycle journal, composition facts, scheduler and accounting. This is a small sufficient primitive for the experiment; universal minimality is not proved.
+In formats 13 and 14, the separate ALAN runtime commits \texttt{DelegateAuthority} and \texttt{RevokeAuthority} as lifecycle operations. The \path{research/authorityservice} package contains a finite authority model. The research executor provides retry, cancellation, abandonment, and retirement.
+
+A grant in the separate runtime retains the original holder, its actual resource root and complete permission row, the recipient and its root/revision, the authentic original request and the exact future service operation. Programs name logical root locators; retained decisions bind them to the Store namespace and check membership. A computed root identifier alone is not evidence of a root. The service explicitly selects its own or delegated path, without ambient fallback or redelegation. The implementation reuses the existing lifecycle journal, composition facts, scheduler and accounting. This is a small sufficient primitive for the experiment; universal minimality is not proved.
 
 Original authorization and fresh admission are separate. Each physical opportunity rechecks the original request, immutable first decision, original debit and current validity of the same selected path in an owned Store transaction. A retained admission fact precedes worker release. Its ordinal and current activation epoch are distinct from the immutable original request's epoch. Reopening does not manufacture a grant, replace a refusal or charge the effect again. Revocation blocks future admission on its named root; it does not undo an already admitted opportunity or a completed effect. Retained result knowledge remains usable after revocation. Opaque adapter wire preparation and the endpoint's stated behavior remain trusted boundaries.
 
