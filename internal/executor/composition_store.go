@@ -50,7 +50,7 @@ func retainCompositionProfile(ctx context.Context, q queryer, namespace string, 
 	if err := validateCompositionEncoding(c); err != nil {
 		return nil, err
 	}
-	if c.Version != "" && c.Version != compositionProtocolVersion {
+	if c.Version != "" && !invocationProtocolVersion(c.Version) {
 		return nil, ErrVersion
 	}
 	// JSON is both the retained boundary and the defensive copy; no caller-owned
@@ -174,7 +174,7 @@ func retainCompositionProfile(ctx context.Context, q queryer, namespace string, 
 	if err = validateHandoff(ctx, q, out, l); err != nil {
 		return nil, err
 	}
-	if out.Version == compositionProtocolVersion {
+	if invocationProtocolVersion(out.Version) {
 		if err = validateInvocationCatalogue(ctx, q, out, l); err != nil {
 			return nil, err
 		}
@@ -255,14 +255,14 @@ func readCompositionProfile(ctx context.Context, q queryer, l Limits) (*composit
 	if err = q.QueryRowContext(ctx, "SELECT version,descriptor FROM composition_profile WHERE singleton=1").Scan(&version, &raw); err != nil {
 		return nil, err
 	}
-	if version != compositionProfileVersion && version != compositionProtocolVersion {
+	if version != compositionProfileVersion && !invocationProtocolVersion(version) {
 		return nil, ErrVersion
 	}
 	var c compositionProvision
 	if err = decode(raw, &c); err != nil {
 		return nil, err
 	}
-	if version != compositionVersion(c) {
+	if version != compositionVersion(c) || (version == compositionDrainProtocolVersion) != (n == compositionDrainSchemaVersion || n == reconciliationDrainSchemaVersion) {
 		return nil, ErrVersion
 	}
 	retained, err := retainCompositionProfile(ctx, q, namespace, c, l)
@@ -364,7 +364,7 @@ func validateCompositionStore(ctx context.Context, q queryer, l Limits) (ReplayR
 	if len(seen) != len(expectedMembers) {
 		return report, corrupt("missing static membership")
 	}
-	if c0.Version == compositionProtocolVersion {
+	if invocationProtocolVersion(c0.Version) {
 		if err = validateCompositionProtocol(ctx, q, l, c0); err != nil {
 			return report, err
 		}
@@ -390,7 +390,7 @@ func compositionVersion(c compositionProvision) string {
 	return compositionProfileVersion
 }
 func createInvocationStore(ctx context.Context, path string, p Provision, c compositionProvision, l Limits) (*Store, error) {
-	c.Version = compositionProtocolVersion
+	c.Version = compositionDrainProtocolVersion
 	return createStore(ctx, path, p, l, &c)
 }
 func (s *Store) invocationEnabled() bool {
@@ -398,5 +398,5 @@ func (s *Store) invocationEnabled() bool {
 		return false
 	}
 	c, err := s.composition.descriptor()
-	return err == nil && c.Version == compositionProtocolVersion
+	return err == nil && invocationProtocolVersion(c.Version)
 }

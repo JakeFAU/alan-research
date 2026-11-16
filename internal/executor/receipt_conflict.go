@@ -15,7 +15,7 @@ func hasReceiptConflictSchema(version int) bool {
 	switch version {
 	case SchemaVersion + receiptConflictSchemaOffset,
 		compositionSchemaVersion + receiptConflictSchemaOffset,
-		reconciliationSchemaVersion + receiptConflictSchemaOffset:
+		reconciliationSchemaVersion + receiptConflictSchemaOffset, 19, 20:
 		return true
 	default:
 		return false
@@ -23,6 +23,12 @@ func hasReceiptConflictSchema(version int) bool {
 }
 
 func protocolSchemaNumber(version int) int {
+	if version == 19 {
+		return compositionDrainSchemaVersion
+	}
+	if version == 20 {
+		return reconciliationDrainSchemaVersion
+	}
 	if hasReceiptConflictSchema(version) {
 		return version - receiptConflictSchemaOffset
 	}
@@ -55,7 +61,13 @@ func ensureReceiptConflictSchema(ctx context.Context, tx *sql.Tx) error {
 		PRIMARY KEY(intent_id,offer_digest))`); err != nil {
 		return err
 	}
-	version += receiptConflictSchemaOffset
+	if version == compositionDrainSchemaVersion {
+		version = 19
+	} else if version == reconciliationDrainSchemaVersion {
+		version = 20
+	} else {
+		version += receiptConflictSchemaOffset
+	}
 	if _, err = tx.ExecContext(ctx, "UPDATE metadata SET schema_version=? WHERE singleton=1", version); err != nil {
 		return err
 	}

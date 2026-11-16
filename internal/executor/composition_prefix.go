@@ -12,8 +12,11 @@ import (
 func (x *compositionPrefix) closed(run RunID) bool {
 	scope := x.scopes[run]
 	root := x.roots[scope.RootID]
-	if x.states[root.Run].Status != "open" {
-		return true
+	if status := x.states[root.Run].Status; status != "open" {
+		_, descendant := x.bindings[run]
+		if status != "succeeded" || !x.drain || !descendant {
+			return true
+		}
 	}
 	closed := func(id string) bool {
 		f, has := x.freezes[id]

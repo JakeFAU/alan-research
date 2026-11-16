@@ -70,7 +70,7 @@ func Inspect(ctx context.Context, path string, limits Limits) (snapshot Inspecti
 		snapshot.Roots = report.Roots
 		evidence = report.ReceiptEvidence
 		tables = append(append([]string{}, inspectionTables...), compositionInspectionTables...)
-		if schemaVersion == reconciliationSchemaVersion {
+		if isReconciliationSchema(schemaVersion) {
 			tables = append(tables, "reconciliation_profile", "receipt_read_ordinals")
 		}
 	} else if schemaVersion == SchemaVersion {

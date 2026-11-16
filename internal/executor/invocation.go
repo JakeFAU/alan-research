@@ -172,11 +172,24 @@ func compositionScopeClosed(ctx context.Context, q queryer, run RunID) (bool, er
 		return false, err
 	}
 	if r.Projection.Status != "open" {
-		return true, nil
+		if r.Projection.Status != "succeeded" {
+			return true, nil
+		}
+		var version string
+		if err = q.QueryRowContext(ctx, "SELECT version FROM composition_profile WHERE singleton=1").Scan(&version); err != nil {
+			return false, err
+		}
+		var descendant int
+		if err = q.QueryRowContext(ctx, "SELECT count(*) FROM composition_members WHERE subject=? AND generation=?", run.Subject, run.Generation).Scan(&descendant); err != nil {
+			return false, err
+		}
+		if version != compositionDrainProtocolVersion || descendant == 0 {
+			return true, nil
+		}
 	}
 	var n int
 	if err = q.QueryRowContext(ctx,
-		"SELECT (SELECT count(*) FROM composition_freezes WHERE scope_id=? AND json_extract(descriptor,'$.Status')!='succeeded') + (SELECT count(*) FROM composition_closures WHERE scope_id=?) + (SELECT count(*) FROM composition_results WHERE invocation_id=?)",
+		"SELECT (SELECT count(*) FROM composition_freezes WHERE scope_id=? AND json_extract(descriptor,'$.Status')!='succeeded') + (SELECT count(*) FROM composition_closures WHERE scope_id=?) + (SELECT count(*) FROM composition_root_publications WHERE scope_id=?)",
 		"root:"+root.ID, "root:"+root.ID, "root:"+root.ID).Scan(&n); err != nil {
 		return false, err
 	}

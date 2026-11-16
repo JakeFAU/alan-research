@@ -353,6 +353,7 @@ func invocationObservation(outcome compositionOutcome, intent Intent) Observatio
 }
 
 type compositionPrefix struct {
+	drain        bool
 	states       map[RunID]Projection
 	sequences    map[RunID]int64
 	retired      map[RunID]bool
@@ -375,6 +376,7 @@ type compositionPrefix struct {
 
 func validateCompositionPrefix(ctx context.Context, q queryer, l Limits, c compositionProvision, admissions map[string]compositionAdmission, facts []compositionFact) error {
 	x := compositionPrefix{public: map[string]bool{}, states: map[RunID]Projection{}, sequences: map[RunID]int64{}, retired: map[RunID]bool{}, active: map[RunID]bool{}, intents: map[string]Intent{}, authorized: map[string]bool{}, admitted: map[string]compositionAdmission{}, replies: map[string]compositionReply{}, freezes: map[string]compositionFreeze{}, closures: map[string]compositionClosure{}, outcomes: map[string]compositionOutcome{}, reservations: map[string]bool{}, known: map[string]bool{}, charges: map[string]compositionCharge{}, scopes: map[RunID]compositionScope{}, roots: map[string]compositionRoot{}, bindings: map[RunID]compositionBinding{}}
+	x.drain = c.Version == compositionDrainProtocolVersion
 	for _, r := range c.Roots {
 		x.roots[r.ID] = r
 		for _, m := range r.Members {

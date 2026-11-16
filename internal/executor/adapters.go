@@ -582,7 +582,7 @@ func validateAdapters(ctx context.Context, q queryer, l Limits) error {
 			if err != nil {
 				return err
 			}
-			if version != reconciliationSchemaVersion {
+			if !isReconciliationSchema(version) {
 				return corrupt("receipt proof in legacy schema")
 			}
 		}

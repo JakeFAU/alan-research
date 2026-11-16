@@ -23,7 +23,7 @@ func compositionProtocol(ctx context.Context, q queryer) (bool, error) {
 	}
 	var version string
 	err = q.QueryRowContext(ctx, "SELECT version FROM composition_profile WHERE singleton=1").Scan(&version)
-	return version == compositionProtocolVersion, err
+	return invocationProtocolVersion(version), err
 }
 func compositionReservationDecision(ctx context.Context, q queryer, i Intent, allowed bool, reason string) (bool, string, error) {
 	enabled, err := compositionProtocol(ctx, q)

@@ -13,7 +13,11 @@ import (
 const reconciliationSchemaVersion = 5
 
 func isCompositionSchema(n int) bool {
-	return n == compositionSchemaVersion || n == reconciliationSchemaVersion
+	return n == compositionSchemaVersion || n == reconciliationSchemaVersion || n == compositionDrainSchemaVersion || n == reconciliationDrainSchemaVersion
+}
+
+func isReconciliationSchema(n int) bool {
+	return n == reconciliationSchemaVersion || n == reconciliationDrainSchemaVersion
 }
 
 // ReceiptGrant authorizes one resolver to query one original operation on one

@@ -12,6 +12,14 @@ import (
 // program IDs; legacy stores retain schema3 without conversion.
 const compositionSchemaVersion = 4
 const compositionProtocolVersion = "alan/composition/v1"
+const compositionDrainProtocolVersion = "alan/composition/v2"
+const compositionDrainSchemaVersion = 17
+const reconciliationDrainSchemaVersion = 18
+
+func invocationProtocolVersion(v string) bool {
+	return v == compositionProtocolVersion || v == compositionDrainProtocolVersion
+}
+
 const compositionProfileVersion = "alan/composition-foundation/v1"
 const compositionTemplateVersion = "alan/template/v1"
 const compositionBindingVersion = "alan/binding/v1"
