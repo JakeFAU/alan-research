@@ -1,0 +1,103 @@
+name: Main validation
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      qualification:
+        description: Additional full root suite (can be expensive)
+        type: choice
+        options: [none, ordinary, integration]
+        default: none
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+# Each landed SHA gets its own validation. Manual reruns have a separate group.
+concurrency:
+  group: main-${{ github.event_name }}-${{ github.sha }}
+  cancel-in-progress: false
+
+env:
+  CGO_ENABLED: '1'
+  GOTOOLCHAIN: local
+  GOWORK: 'off'
+  GOFLAGS: -mod=readonly -buildvcs=false
+  PYTHONDONTWRITEBYTECODE: '1'
+
+jobs:
+  validation:
+    name: Main (${{ matrix.suite }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: ${{ matrix.minutes }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {suite: pr, minutes: 15}
+          - {suite: regression, minutes: 30}
+          - {suite: worktree, minutes: 15}
+          - {suite: adaptive, minutes: 90}
+          - {suite: security, minutes: 20}
+          - {suite: lint-report, minutes: 20}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+        with:
+          go-version: '1.27.4'
+          cache-dependency-path: |
+            go.sum
+            examples/worktree/consumer/go.sum
+            examples/adaptive/consumer/go.sum
+      - name: Install Staticcheck
+        if: matrix.suite == 'pr' || matrix.suite == 'lint-report'
+        run: go install honnef.co/go/tools/cmd/staticcheck@v0.8.2
+      - name: Install govulncheck
+        if: matrix.suite == 'security'
+        run: go install golang.org/x/vuln/cmd/govulncheck@v1.9.0
+      - name: Run selected checks
+        env:
+          CI_SUITE: ${{ matrix.suite }}
+          CI_LOG_DIR: ${{ runner.temp }}/ci-logs
+        run: |
+          mkdir -p "$CI_LOG_DIR"
+          python3 scripts/ci/check.py "$CI_SUITE" 2>&1 | tee "$CI_LOG_DIR/check.log"
+      - name: Retain check logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: main-${{ matrix.suite }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ci-logs
+          retention-days: 30
+
+  qualification:
+    name: Full ${{ inputs.qualification }} qualification
+    if: github.event_name == 'workflow_dispatch' && inputs.qualification != 'none'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@44694675825211faa026b3c33043df3e48a5fa00 # v6.0.0
+        with:
+          go-version: '1.27.4'
+          cache-dependency-path: go.sum
+      - name: Run explicitly selected full suite
+        env:
+          QUALIFICATION: ${{ inputs.qualification }}
+        run: python3 scripts/ci/check.py "full-$QUALIFICATION" 2>&1 | tee "$RUNNER_TEMP/qualification.log"
+      - name: Retain qualification log
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: qualification-${{ inputs.qualification }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/qualification.log
+          retention-days: 30
