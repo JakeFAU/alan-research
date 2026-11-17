@@ -6,9 +6,9 @@ on:
   workflow_dispatch:
     inputs:
       qualification:
-        description: Additional full root suite (can be expensive)
+        description: Additional full qualification suite (can be expensive)
         type: choice
-        options: [none, ordinary, integration]
+        options: [none, ordinary, integration, adaptive-race]
         default: none
 
 permissions:
@@ -42,7 +42,7 @@ jobs:
           - {suite: pr, minutes: 15}
           - {suite: regression, minutes: 30}
           - {suite: worktree, minutes: 15}
-          - {suite: adaptive, minutes: 90}
+          - {suite: adaptive, minutes: 30}
           - {suite: security, minutes: 20}
           - {suite: lint-report, minutes: 20}
     steps:
@@ -78,7 +78,7 @@ jobs:
           retention-days: 30
 
   qualification:
-    name: Full ${{ inputs.qualification }} qualification
+    name: Full qualification
     if: github.event_name == 'workflow_dispatch' && inputs.qualification != 'none'
     runs-on: ubuntu-24.04
     timeout-minutes: 120

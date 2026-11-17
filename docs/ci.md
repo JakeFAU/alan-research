@@ -14,7 +14,7 @@ commit SHAs. Go's module and build caches are reused. Every test invocation uses
 | Main (pr) | Same checks on the landed SHA | 15 minutes |
 | Main (regression) | Seven runtime tests, conflict-receipt crash recovery, and two CLI crash-boundary tests, each normally and with race instrumentation | 30 minutes |
 | Main (worktree) | Separate worktree consumer module verification, vet, ordinary and race tests | 15 minutes |
-| Main (adaptive) | Separate adaptive consumer module verification, vet, ordinary and race tests | 90 minutes |
+| Main (adaptive) | Separate adaptive consumer module verification, vet, ordinary tests, and one nested/capacity-two/paired race fixture | 30 minutes |
 | Main (security) | govulncheck for the ordinary and integration root module and the two consumer modules | 20 minutes |
 | Main (lint-report) | Repository-wide ordinary and integration Staticcheck diagnostics | 20 minutes |
 
@@ -54,6 +54,14 @@ as `none` for the automatic scopes, or explicitly choose `ordinary` or
 `integration` to add the corresponding full root suite. Those suites retain
 the README's `-timeout=60m` per-package watchdog and a 120-minute job watchdog.
 They use a full working tree containing the frozen evidence.
+
+Choose `adaptive-race` to run the complete adaptive consumer race profile with
+its documented 60-minute per-package watchdog. Automatic CI runs all ordinary
+adaptive consumer cases and the existing race subtest
+`TestAdaptivePublicConsumerDirectNested/nested=true/capacity=2/paired=true`.
+CI verifies that this exact subtest passed, so a renamed/missing case fails.
+The complete local race profile's CLI cases alone took 654 seconds during CI
+setup, which motivated keeping the full profile opt-in.
 
 The complete integration race campaign retains its existing README command
 and 600-minute per-package watchdog. Run that campaign in a suitable local
