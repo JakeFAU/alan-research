@@ -54,17 +54,21 @@ func TestReceiptConflictCrash(t *testing.T) {
 		return
 	}
 
-	for _, version := range []int{3, 4, 5} {
+	for _, version := range []int{3, 4, 5, 17, 18} {
 		for _, cut := range []string{"precommit", "acknowledged"} {
 			t.Run(fmt.Sprintf("v%d/%s", version, cut), func(t *testing.T) {
 				p := externalProvision(t, "http://127.0.0.1:1", "non-idempotent")
 				if version >= 4 {
 					client := RunID{"client", 1}
-					p.Composition = &compositionProvision{Roots: []compositionRoot{{
+					protocol := compositionProtocolVersion
+					if version >= 17 {
+						protocol = compositionDrainProtocolVersion
+					}
+					p.Composition = &compositionProvision{Version: protocol, Roots: []compositionRoot{{
 						Run: client, Members: []RunID{client}, Limits: compositionLimits{MaxEffects: 1, MaxInFlight: 1},
 					}}}
 				}
-				if version == 5 {
+				if version == 5 || version == 18 {
 					p.Reconciliation = &ReconciliationProfile{}
 				}
 				path := filepath.Join(t.TempDir(), "effect.sqlite")
@@ -104,6 +108,9 @@ func TestReceiptConflictCrash(t *testing.T) {
 				wantVersion := version
 				if cut == "acknowledged" {
 					wantVersion = version + 3
+					if version == 17 || version == 18 {
+						wantVersion = version + 2
+					}
 					if len(replayed.ReceiptEvidence) != 1 || replayed.ReceiptEvidence[0].IntentID != id ||
 						replayed.ReceiptEvidence[0].State != "conflict" || len(seen.Tables["receipt_conflicts"]) != 1 {
 						t.Fatalf("lost acknowledged conflict: %+v", replayed.ReceiptEvidence)

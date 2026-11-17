@@ -168,7 +168,7 @@ func validateReceiptLedger(ctx context.Context, q queryer, namespace string, ids
 	if err = q.QueryRowContext(ctx, "SELECT count(*) FROM sqlite_schema WHERE type='table' AND name IN ('reconciliation_profile','receipt_read_ordinals')").Scan(&tables); err != nil {
 		return err
 	}
-	if version != reconciliationSchemaVersion {
+	if !isReconciliationSchema(version) {
 		if tables != 0 {
 			return ErrVersion
 		}
@@ -252,7 +252,7 @@ func validateReceiptLedger(ctx context.Context, q queryer, namespace string, ids
 // assuming an eligible resolver at reopen implies eligibility when A occurred.
 func receiptPrefixChecks(ctx context.Context, q queryer) (map[int64][]receiptReadOrdinal, error) {
 	n, err := schemaNumber(ctx, q)
-	if err != nil || n != reconciliationSchemaVersion {
+	if err != nil || !isReconciliationSchema(n) {
 		return nil, err
 	}
 	rows, err := q.QueryContext(ctx, "SELECT descriptor FROM receipt_read_ordinals")
@@ -286,7 +286,7 @@ func verifyReadPrefix(x *compositionPrefix, o receiptReadOrdinal) error {
 // observed the cause. Reconstruct the durable prerequisites at that prefix.
 func verifyLocalReadAtPrefix(ctx context.Context, q queryer, x *compositionPrefix, f compositionFact) error {
 	version, err := schemaNumber(ctx, q)
-	if err != nil || version != reconciliationSchemaVersion {
+	if err != nil || !isReconciliationSchema(version) {
 		return err
 	}
 	a, err := loadAdapterAttempt(ctx, q, f.OperationID)

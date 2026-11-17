@@ -16,7 +16,7 @@ func compositionProtocolEvidence(ctx context.Context, q queryer, kind compositio
 	if err := q.QueryRowContext(ctx, "SELECT version FROM composition_profile WHERE singleton=1").Scan(&version); err != nil {
 		return compositionFact{}, err
 	}
-	if version != compositionProtocolVersion {
+	if !invocationProtocolVersion(version) {
 		return compositionFact{}, ErrVersion
 	}
 	if kind == compositionAuthorizationFact || kind == compositionExternalResultFact {

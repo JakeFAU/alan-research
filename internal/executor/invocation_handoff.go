@@ -29,7 +29,7 @@ func validateHandoff(ctx context.Context, q queryer, c compositionProvision, l L
 		return nil
 	}
 	paired := edges[0].Version == PairedHandoffTemplateVersion
-	if c.Version != compositionProtocolVersion || (paired && len(edges) != 2) || (!paired && len(edges) != 1) {
+	if !invocationProtocolVersion(c.Version) || (paired && len(edges) != 2) || (!paired && len(edges) != 1) {
 		return fmt.Errorf("invalid number of fixed handoff edges")
 	}
 	caller := edges[0].Handoff.Caller

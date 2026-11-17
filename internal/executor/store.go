@@ -283,10 +283,12 @@ func Create(ctx context.Context, path string, p Provision, limits Limits) (*Stor
 	}
 	if p.Composition != nil {
 		c := *p.Composition
-		if c.Version != "" && c.Version != compositionProtocolVersion {
+		if c.Version != "" && !invocationProtocolVersion(c.Version) {
 			return nil, ErrVersion
 		}
-		c.Version = compositionProtocolVersion
+		if c.Version == "" {
+			c.Version = compositionDrainProtocolVersion
+		}
 		return createStore(ctx, path, p, limits, &c)
 	}
 	return createStore(ctx, path, p, limits, nil)
@@ -339,6 +341,9 @@ func createStore(ctx context.Context, path string, p Provision, limits Limits, c
 	version := SchemaVersion
 	if composition != nil {
 		version = compositionSchemaVersion
+		if composition.Version == compositionDrainProtocolVersion {
+			version = compositionDrainSchemaVersion
+		}
 		ddl := compositionSchema
 		if p.Reconciliation != nil {
 			ddl = compositionReconciliationSchema
@@ -347,13 +352,16 @@ func createStore(ctx context.Context, path string, p Provision, limits Limits, c
 			return nil, err
 		}
 	}
-	if composition != nil && composition.Version == compositionProtocolVersion {
+	if composition != nil && invocationProtocolVersion(composition.Version) {
 		if _, err = tx.ExecContext(ctx, invocationSchema); err != nil {
 			return nil, err
 		}
 	}
 	if p.Reconciliation != nil {
 		version = reconciliationSchemaVersion
+		if composition != nil && composition.Version == compositionDrainProtocolVersion {
+			version = reconciliationDrainSchemaVersion
+		}
 		s.reconciliation = true
 		if err = createReconciliationProfile(ctx, tx, *p.Reconciliation); err != nil {
 			return nil, err
@@ -456,7 +464,7 @@ func createStore(ctx context.Context, path string, p Provision, limits Limits, c
 			return nil, err
 		}
 	}
-	if composition != nil && composition.Version == compositionProtocolVersion {
+	if composition != nil && invocationProtocolVersion(composition.Version) {
 		deployment, e := json.Marshal(compositionDeployment{Subjects: p.Subjects, Runs: p.Runs})
 		if e != nil {
 			return nil, e
@@ -611,7 +619,7 @@ func openStore(ctx context.Context, path string, limits Limits, composition bool
 	if err != nil {
 		return nil, err
 	}
-	s.reconciliation = n == reconciliationSchemaVersion
+	s.reconciliation = isReconciliationSchema(n)
 	s.namespace = report.Namespace
 	for _, r := range report.Runs {
 		if r.Projection.Status != "open" {

@@ -86,6 +86,15 @@ func (p *provider) snapshot() ([]contact, int, int) {
 	return append([]contact{}, p.ledger...), p.active, p.peak
 }
 func TestProcessPartialWithOutstandingTransport(t *testing.T) {
+	for _, version := range []string{"alan/composition/v1", "alan/composition/v2"} {
+		t.Run(version, func(t *testing.T) {
+			testProcessPartialWithOutstandingTransport(t, version)
+		})
+	}
+}
+
+func testProcessPartialWithOutstandingTransport(t *testing.T, version string) {
+	t.Helper()
 	p := &provider{ended: make(chan struct{}), ledger: []contact{}, entered: make(chan struct{}), release: make(chan struct{})}
 	server := httptest.NewServer(http.HandlerFunc(p.serve))
 	defer server.Close()
@@ -98,6 +107,7 @@ func TestProcessPartialWithOutstandingTransport(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
+	d.Provision.Composition.Version = version
 	path := filepath.Join(t.TempDir(), "effect.sqlite")
 	s, err := runtime.Create(t.Context(), path, d.Provision, runtime.DefaultLimits())
 	if err != nil {
@@ -116,6 +126,9 @@ func TestProcessPartialWithOutstandingTransport(t *testing.T) {
 	}
 	ack := child.acknowledgment(t)
 	before := inspect(t, path)
+	if profiles := before.Tables["composition_profile"]; len(profiles) != 1 || profiles[0]["version"] != version {
+		t.Fatal("unexpected retained composition profile", profiles)
+	}
 	if err = durableAck(before, ack); err != nil {
 		t.Fatal(err)
 	}
