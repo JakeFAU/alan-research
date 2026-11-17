@@ -169,6 +169,10 @@ The store uses SQLite WAL and synchronous=FULL, verifies effective settings, and
 
 ## Tests and research
 
+Pull requests and pushes to `main` have bounded [CI checks](docs/ci.md).
+The same guide describes opt-in full qualification and manually triggered
+semantic version releases pinned to validated research commits.
+
 ```sh
 GOTOOLCHAIN=local go test -count=1 -timeout=60m ./...
 GOTOOLCHAIN=local go test -count=1 -timeout=60m -tags integration ./...
