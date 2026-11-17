@@ -1,0 +1,44 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Semantic version, for example v0.1.0 or v0.2.0-rc.1
+        required: true
+        type: string
+      commit:
+        description: Optional full SHA from a successful main validation (defaults to dispatch SHA)
+        required: false
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+# Serialize publication across versions, including retries after partial failure.
+concurrency:
+  group: research-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Require a main dispatch
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+        run: test "$DISPATCH_REF" = refs/heads/main
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+          sparse-checkout: scripts/ci
+      - name: Publish validated commit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_VERSION: ${{ inputs.version }}
+          RELEASE_SHA: ${{ inputs.commit || github.sha }}
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 scripts/ci/release.py "$RELEASE_VERSION"
