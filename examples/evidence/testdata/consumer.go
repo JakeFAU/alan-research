@@ -32,6 +32,9 @@ func main() {
 		caller, err := author.Compile(author.Definition{Name: "independent two-helper customer", Outputs: schema.Record{"answer": {Kind: "string", MaxBytes: 8192}}, Ports: map[string]author.Port{"a": first.Port, "b": second.Port}, Steps: []author.Step{
 			author.Send("a", map[string]author.Expr{"question": author.String("How does WAL work?")}), author.Receive("a", map[string]string{"disposition": "first_disposition", "answer": "first_answer"}),
 			author.IfEqual(author.Var("first_disposition"), author.String("clarification"), nil, []author.Step{author.Failure()}),
+			// Public answers allow 8192 bytes, but questions allow only 4096.
+			// This controlled client forwards only its expected clarification.
+			author.IfEqual(author.Var("first_answer"), author.String("Which durability guarantee do you mean?"), nil, []author.Step{author.Failure()}),
 			author.Send("b", map[string]author.Expr{"question": author.Var("first_answer")}), author.Receive("b", map[string]string{"disposition": "second_disposition", "answer": "answer"}),
 			author.IfEqual(author.Var("second_disposition"), author.String("clarification"), []author.Step{author.Success()}, []author.Step{author.Failure()}),
 		}})

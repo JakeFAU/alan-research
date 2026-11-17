@@ -186,16 +186,19 @@ func newReviewer(caller string) (author.Artifact, error) {
 	// Two distinct pending variables preserve both identities after a revision.
 	for round := 1; round <= 2; round++ {
 		pending := fmt.Sprintf("pending_review%d", round)
+		valid := fmt.Sprintf("review_valid%d", round)
 		reply := fmt.Sprintf("reply%d", round)
 		values[pending] = schema.Text("")
 		invalid := []author.Step{author.Set("decision", author.String("invalid_result")), author.Set("reason", author.String("Invalid review result.")), author.Goto(reply)}
 		input := expressions(reviewInput(), "")
 		input["instructions"] = author.String(reviewPrompt)
+		result := bindings(resultRecord(reviewPayload()), "")
+		result[schema.ResultValid] = valid
 		steps = append(steps, author.Receive("coordinator", bindings(reviewInput(), "")),
 			author.IfEqual(author.Var("model_spent"), author.Var("model_limit"), []author.Step{author.Set("decision", author.String("budget_exhausted")), author.Set("reason", author.String("Reviewer model budget exhausted.")), author.Goto(reply)}, nil),
 			author.Request(pending, "review", input, map[string]author.Expr{"model_spent": author.Offset("model_spent", 1)}),
-			author.Await("review", pending, bindings(resultRecord(reviewPayload()), "")),
-			author.IfEqual(author.Var("valid"), author.Boolean(true), nil, invalid),
+			author.Await("review", pending, result),
+			author.IfEqual(author.Var(valid), author.Boolean(true), nil, invalid),
 			author.IfEqual(author.Var("reason"), author.String(""), invalid, nil),
 			author.IfEqual(author.Var("decision"), author.String("revise"), []author.Step{
 				author.IfEqual(author.Var("subquestion1"), author.String(""), invalid, nil), author.IfEqual(author.Var("subquestion2"), author.String(""), invalid, nil),
