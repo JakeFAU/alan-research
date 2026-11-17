@@ -148,14 +148,14 @@ func TestNominalDataFlowAttacks(t *testing.T) {
 		ordinaryRefusal, nominalRefusal bool
 	}{
 		{"genuine-copy", []author.Step{author.Set("copy", handle), await("helper", "copy", "data")}, false, false},
-		{"literal-forgery", []author.Step{author.Set("copy", txt), await("helper", "copy", "data")}, false, true},
+		{"literal-forgery", []author.Step{author.Set("copy", txt), await("helper", "copy", "data")}, true, false},
 		{"wrong-declaration", []author.Step{author.Set("copy", handle), await("other", "copy", "data")}, true, false},
 		{"payload-data", []author.Step{author.Set("copy", txt), out(copyOf)}, false, false},
 		{"alias-payload-escape", []author.Step{author.Set("copy", handle), out(copyOf)}, false, true},
 		{"same-sort-join", []author.Step{choice(handle, handle), await("helper", "copy", "data")}, false, false},
 		{"mixed-join", []author.Step{choice(handle, txt), await("helper", "copy", "data")}, true, false},
 		{"mixed-unused-join", []author.Step{choice(handle, txt)}, false, true},
-		{"overwrite-with-data", []author.Step{author.Set("copy", handle), author.Set("copy", txt), await("helper", "copy", "data")}, false, true},
+		{"overwrite-with-data", []author.Step{author.Set("copy", handle), author.Set("copy", txt), await("helper", "copy", "data")}, true, false},
 		{"optional-response-rebinds-handle", []author.Step{await("helper", "original", "original"), out(handle)}, false, true},
 		{"invoke-update-escape", []author.Step{author.Invoke("second", "helper", map[string]author.Expr{"value": txt}, map[string]author.Expr{"copy": handle}), out(copyOf)}, false, true},
 	} {
@@ -167,6 +167,9 @@ func TestNominalDataFlowAttacks(t *testing.T) {
 			if tc.ordinaryRefusal {
 				if err == nil {
 					t.Fatal("ordinary author admitted bad expression")
+				}
+				if (tc.name == "literal-forgery" || tc.name == "overwrite-with-data") && !strings.Contains(err.Error(), `await requires proven request for "invocation:helper"`) {
+					t.Fatalf("unexpected ordinary refusal: %v", err)
 				}
 				t.Logf("ordinary refusal: %v", err)
 				return
@@ -207,8 +210,9 @@ func TestNominalTransitiveIdentity(t *testing.T) {
 	}
 }
 
-// The first iteration can send literal data while the second can leak an
-// earlier commit. A forward-only pass over the lowered loop misses that edge.
+// The historical negative writes a handle into a data register in the loop;
+// its next iteration could send that handle. The nominal checker rejects the
+// mixed-sort assignment itself. Current ordinary validation refuses it earlier.
 func TestNominalIterationBackedge(t *testing.T) {
 	helper := echo(t, "string")
 	rows := schema.Field{Kind: "list", MaxItems: 2, MaxBytes: 4096, Element: schema.Record{"n": {Kind: "int"}}}
@@ -217,12 +221,21 @@ func TestNominalIterationBackedge(t *testing.T) {
 		if launder {
 			last = author.Var("original")
 		}
-		p := compiled(t, author.Definition{Ports: publicPort(schema.Field{Kind: "string"}),
+		p, compileErr := author.Compile(author.Definition{Ports: publicPort(schema.Field{Kind: "string"}),
 			Invocations: map[string]author.Template{"helper": helper}, Collections: map[string]schema.Field{"rows": rows},
 			Values: map[string]schema.Value{"rows": schema.List(map[string]schema.Value{"n": schema.Int(0)}, map[string]schema.Value{"n": schema.Int(1)})},
 			Steps: []author.Step{invoke("original", author.String(operationLiteral)), author.Set("carry", author.String(operationLiteral)),
 				author.ForEach(author.Var("rows"), map[string]string{"n": "index"},
 					author.Send("public", map[string]author.Expr{"value": author.Var("carry")}), author.Set("carry", last)), author.Success()}})
+		if launder {
+			if compileErr == nil || !strings.Contains(compileErr.Error(), `send:public: payload "value": source string schema exceeds destination bound or enum`) {
+				t.Fatalf("expected conservative loop-bound refusal: %v", compileErr)
+			}
+			continue
+		}
+		if compileErr != nil {
+			t.Fatalf("positive loop compile: %v", compileErr)
+		}
 		_, err := nominal.CheckArtifact(p)
 		if (err != nil) != launder {
 			t.Fatalf("second-iteration leak=%v artifact=%s nominal_err=%v", launder, p.ID(), err)
