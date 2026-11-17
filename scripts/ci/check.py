@@ -4,6 +4,7 @@ import argparse
 import json
 import os
 from pathlib import Path
+import re
 import shlex
 import subprocess
 
@@ -28,7 +29,7 @@ def run(*args, cwd=ROOT, capture=False):
     return result.stdout
 
 
-def tests(packages, timeout, *, names=(), integration=False, race=False, cwd=ROOT):
+def tests(packages, timeout, *, names=(), subtests=(), integration=False, race=False, cwd=ROOT):
     flags = ["-count=1", f"-timeout={timeout}"]
     if integration:
         flags += ["-tags", "integration"]
@@ -41,8 +42,14 @@ def tests(packages, timeout, *, names=(), integration=False, race=False, cwd=ROO
         missing = set(names) - set(listed.splitlines())
         if missing:
             raise RuntimeError(f"CI test selector lost tests: {sorted(missing)}")
+        pattern += "".join(f"/^{re.escape(name)}$" for name in subtests)
         flags += ["-run", pattern]
-    run("go", "test", *flags, "-v", *packages, cwd=cwd)
+    output = run("go", "test", *flags, "-v", *packages, cwd=cwd, capture=bool(subtests))
+    if subtests:
+        print(output, end="")
+        full_name = "/".join([names[0], *subtests])
+        if f"--- PASS: {full_name} (" not in output:
+            raise RuntimeError(f"CI subtest did not pass: {full_name}")
 
 
 def pr():
@@ -85,7 +92,14 @@ def consumer(name):
     run("go", "mod", "verify", cwd=cwd)
     run("go", "vet", "./...", cwd=cwd)
     tests(["./..."], "240s" if name == "worktree" else "15m", cwd=cwd)
-    tests(["./..."], "240s" if name == "worktree" else "60m", race=True, cwd=cwd)
+    if name == "worktree":
+        tests(["./..."], "240s", race=True, cwd=cwd)
+    else:
+        tests(
+            ["./..."], "10m", race=True, cwd=cwd,
+            names=["TestAdaptivePublicConsumerDirectNested"],
+            subtests=["nested=true", "capacity=2", "paired=true"],
+        )
 
 
 def security():
@@ -126,7 +140,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("suite", choices=[
         "pr", "regression", "worktree", "adaptive", "security", "lint-report",
-        "full-ordinary", "full-integration",
+        "full-ordinary", "full-integration", "full-adaptive-race",
     ])
     suite = parser.parse_args().suite
     run("go", "version")
@@ -140,6 +154,8 @@ def main():
         security()
     elif suite == "lint-report":
         lint_report()
+    elif suite == "full-adaptive-race":
+        tests(["./..."], "60m", race=True, cwd=ROOT / "examples/adaptive/consumer")
     else:
         tests(["./..."], "60m", integration=suite == "full-integration")
 
